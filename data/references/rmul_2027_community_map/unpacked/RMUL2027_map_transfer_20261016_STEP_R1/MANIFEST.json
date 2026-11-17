@@ -1,0 +1,286 @@
+{
+  "format": "rmul-map-transfer-v1",
+  "date": "2026-10-16",
+  "revision": "STEP_R1",
+  "package_scope": "field assets and integration tools only, not the complete robot project",
+  "source_step_sha256": "7d47c1b6a6a0253a732e46cb122bb84410b11d5134bcb5658104299db4a48ca4",
+  "source_manual_sha256": "a8fd7b7f6ea5212b9e4dfa590b478827992598d91912ed671653c8bdd9727fd6",
+  "files": {
+    "DEPENDENCIES.md": {
+      "sha256": "c5e64c3b6dbcde62c5f7bf6efa92d112bc55fdc1b817a1f35b582099c101505c",
+      "bytes": 1296
+    },
+    "docs/RMUL_2027.md": {
+      "sha256": "db280a6e3a1dd5389edd1f64b103d4f44861b6e71c6111538d8b3d3fe4b02259",
+      "bytes": 5951
+    },
+    "docs/RMUL_2027_STEP_AUDIT.md": {
+      "sha256": "0f6b198f7717c2423ecfade8a43797973d7b99ed213dea8ba905b37094d46c78",
+      "bytes": 5272
+    },
+    "docs/validation/source_machine.json": {
+      "sha256": "fb59c315a925ad6cd1b2c1663421cdd03c34df43f773b0d93202a99c2f82166a",
+      "bytes": 4481
+    },
+    "install_into_sim.py": {
+      "sha256": "6f073005cf43ce6b41d3b9110c5383474d480bd2fb2278cb553fe45324372f40",
+      "bytes": 7722
+    },
+    "previews/overview_source_machine.png": {
+      "sha256": "822f5d0ed7a68025d805ac18cd6a3614a298d6cbd141906ccf5d570646e79f44",
+      "bytes": 224797
+    },
+    "previews/overview_step_native.png": {
+      "sha256": "750dcfb70761c2c355fdb24198b2beb419b83d407646a82580749283f29e10af",
+      "bytes": 36991
+    },
+    "previews/top_source_machine.png": {
+      "sha256": "3949bca9f6018d1827c98224bfc54d68165c504b3957bade8af18c3a904e1db3",
+      "bytes": 531982
+    },
+    "previews/top_step_native.png": {
+      "sha256": "ad54e853cb7921ad2432e5aa0e83f2686204b5daacbfb9e2c1fecace4f3b36ab",
+      "bytes": 22332
+    },
+    "README_迁移说明.md": {
+      "sha256": "6e0921424d6fcf29379d19e6dc440d9ffacb874b34e130ff96a873b1534181dd",
+      "bytes": 7398
+    },
+    "scripts/build_integrated.sh": {
+      "sha256": "1bdb500226ec7d1b9c56a8f33ac7253b3565f192a92647fb627c009b947a8637",
+      "bytes": 824
+    },
+    "scripts/run_integrated.sh": {
+      "sha256": "255d17059a2a82ab25c2d181060c2ce725dbff76d483a8f9ff3a6bc941cd391d",
+      "bytes": 686
+    },
+    "scripts/view_field.sh": {
+      "sha256": "10553893172c35bda374d89289bc4b51476de1574b758eb493c61eb04abd6331",
+      "bytes": 699
+    },
+    "source_cad/RMUL2027_3V3_V1.0.0.stp": {
+      "sha256": "7d47c1b6a6a0253a732e46cb122bb84410b11d5134bcb5658104299db4a48ca4",
+      "bytes": 1989786
+    },
+    "SOURCE_NOTICE.txt": {
+      "sha256": "530ffa674c5eb0495867ea65536111e13111ce3fa7aefeda59d6bccdba724e68",
+      "bytes": 542
+    },
+    "src/guodong_sentry_sim/launch/sentry_sim.launch.py": {
+      "sha256": "4860dfdae445678a5bc1458c8ad03b41ea3e0598bea2b4e184e53772daa0c276",
+      "bytes": 3314
+    },
+    "src/guodong_sentry_sim/maps/rmul_2027/geometry_overlay.png": {
+      "sha256": "36c831a6e007a15c9033c2c9466cacb3023807d883abab16943173db922026cf",
+      "bytes": 779767
+    },
+    "src/guodong_sentry_sim/maps/rmul_2027/parameters.json": {
+      "sha256": "71952fdaf63a2d3a994acc337dc764f5d20df81e557bac1969ca902f32791840",
+      "bytes": 5820
+    },
+    "src/guodong_sentry_sim/maps/rmul_2027/rmul_2027.pgm": {
+      "sha256": "cbc170a5cbb36ae33a24e7179b576bb345574816276ddf12bfcf6f3d43431801",
+      "bytes": 180239
+    },
+    "src/guodong_sentry_sim/maps/rmul_2027/rmul_2027.yaml": {
+      "sha256": "77b33e66737d25a74b0f341f3e2785497b61a25262dc8662a1ed2490dd8d392c",
+      "bytes": 130
+    },
+    "src/guodong_sentry_sim/maps/rmul_2027/scenario.json": {
+      "sha256": "bc3ae7c151b55a0c978633c4ce0a31a56554cbca4e86ad47480630ca42fd1aeb",
+      "bytes": 630
+    },
+    "src/guodong_sentry_sim/maps/rmul_2027/step_geometry.json.gz": {
+      "sha256": "30bb7ab7626394c626c06506ec0688d2709ae387451d6ef4cf88573f45b311f2",
+      "bytes": 34115
+    },
+    "src/guodong_sentry_sim/maps/rmul_2027/step_import.json": {
+      "sha256": "f838210619c54a6e9536abf7670a2d1682fccc183fe1471567bff828978348de",
+      "bytes": 880
+    },
+    "src/guodong_sentry_sim/maps/rmul_2027/step_measurements.json": {
+      "sha256": "69902dafe10f5080ce7af5b4c0cbc87211520d38e92bd1b89cc4647f5e8b36fc",
+      "bytes": 3481
+    },
+    "src/guodong_sentry_sim/models/rmul_2027/materials/textures/official_top.png": {
+      "sha256": "7ecd458541c0eb72e2578ed4205394c9eaa8a67ab695a9105f907c21d0a732aa",
+      "bytes": 450465
+    },
+    "src/guodong_sentry_sim/models/rmul_2027/meshes/blue_highland_control_extra_pvc.dae": {
+      "sha256": "f97ea4d1940c3512d958d52f3e23e4c39d4d5a26eb01040c9bcf59a602039ec5",
+      "bytes": 7791
+    },
+    "src/guodong_sentry_sim/models/rmul_2027/meshes/blue_highland_pvc_2mm.dae": {
+      "sha256": "ab53b74f498a44e826945e292b38d84017cef7e1c65c311b42c528833eeec96c",
+      "bytes": 10144
+    },
+    "src/guodong_sentry_sim/models/rmul_2027/meshes/blue_highland_wood.dae": {
+      "sha256": "0596f457f99c2f7345bbdbf7e391918fc291bb25de109769152f6d833409b2ad",
+      "bytes": 10144
+    },
+    "src/guodong_sentry_sim/models/rmul_2027/meshes/blue_metal_transition.dae": {
+      "sha256": "1b9834c49011afc097ec12fc65022a5f52d4278b6bb9501d07b976a28c94a4f9",
+      "bytes": 7791
+    },
+    "src/guodong_sentry_sim/models/rmul_2027/meshes/blue_parapet.dae": {
+      "sha256": "20cbc2986d5d610c608716ea019458d6d3d6b6b6b945243fc2d7d9cee46877d2",
+      "bytes": 7791
+    },
+    "src/guodong_sentry_sim/models/rmul_2027/meshes/blue_supply_extra_pvc.dae": {
+      "sha256": "ec9e09d9764c94a9115ec86e288e55c93b3219272569479178837a35abcf44c3",
+      "bytes": 7809
+    },
+    "src/guodong_sentry_sim/models/rmul_2027/meshes/blue_tunnel_far_support.dae": {
+      "sha256": "dab87c99faf5bfdb64ca98415f256ad88b05af426a853ffa1e0ab715206cf3ba",
+      "bytes": 7791
+    },
+    "src/guodong_sentry_sim/models/rmul_2027/meshes/blue_tunnel_gain_extra_pvc.dae": {
+      "sha256": "313a2da97c4575b8de9ac7e5f7244d8a00ef8a99c8547284dce26537c10efe6d",
+      "bytes": 7791
+    },
+    "src/guodong_sentry_sim/models/rmul_2027/meshes/blue_tunnel_metal_roof.dae": {
+      "sha256": "7b8b5fc46b4a466ac11c61dc0866159dacf4d3e7c7e8373ab9338ab13cec0c8b",
+      "bytes": 7791
+    },
+    "src/guodong_sentry_sim/models/rmul_2027/meshes/blue_workbench.dae": {
+      "sha256": "cd9b27b1ae71f34a466b983338106f8ff40febded5fd7809735005e5d7d5483c",
+      "bytes": 12571
+    },
+    "src/guodong_sentry_sim/models/rmul_2027/meshes/center_control_extra_pvc.dae": {
+      "sha256": "928e8a4c3f99fe7f3a2aa1103677bc5917947e29e4acdd98d1307714a9767d37",
+      "bytes": 7785
+    },
+    "src/guodong_sentry_sim/models/rmul_2027/meshes/floor_pvc_2mm.dae": {
+      "sha256": "e98e71530b55f8723a6179b335c5ba427a503f13b417ff20c736812ba1d57802",
+      "bytes": 7821
+    },
+    "src/guodong_sentry_sim/models/rmul_2027/meshes/floor_wood.dae": {
+      "sha256": "812e2fb69cf50b18b1e678e0d18570bfb49269e3d8035c59bc2df58cbd12441d",
+      "bytes": 7823
+    },
+    "src/guodong_sentry_sim/models/rmul_2027/meshes/perimeter_east.dae": {
+      "sha256": "75bfd29677b14ada7c1bd34fe0210cdbe841e17c075220aa304563ff4f78b3be",
+      "bytes": 7823
+    },
+    "src/guodong_sentry_sim/models/rmul_2027/meshes/perimeter_north.dae": {
+      "sha256": "b4ae26f1f48d1239d819d992d77462b1f7ad1a49371841f657bcd87d46c29248",
+      "bytes": 7841
+    },
+    "src/guodong_sentry_sim/models/rmul_2027/meshes/perimeter_south.dae": {
+      "sha256": "1ebceb39a21b79a44f1dcdbeb36570b4965f6e40fbf04866903cd0895dcc2f3f",
+      "bytes": 7877
+    },
+    "src/guodong_sentry_sim/models/rmul_2027/meshes/perimeter_west.dae": {
+      "sha256": "1c4689bd3a3d97bf4dcbba181f140dbdc8f92f04a47e120f06b6c0bef7b2e310",
+      "bytes": 7823
+    },
+    "src/guodong_sentry_sim/models/rmul_2027/meshes/red_highland_control_extra_pvc.dae": {
+      "sha256": "a8d8122465439b33be7739c30db83022832ff4da2645542da69345dde40a6b35",
+      "bytes": 7785
+    },
+    "src/guodong_sentry_sim/models/rmul_2027/meshes/red_highland_pvc_2mm.dae": {
+      "sha256": "5edb7628b1960d9d16ddd38af77036df9b98f02005ad348884f74ba2841cb0bc",
+      "bytes": 10129
+    },
+    "src/guodong_sentry_sim/models/rmul_2027/meshes/red_highland_wood.dae": {
+      "sha256": "fce2cecb6832e6c1ec8ed145f9c09c109ece17ca41eeeed4f313b89991a1b678",
+      "bytes": 10129
+    },
+    "src/guodong_sentry_sim/models/rmul_2027/meshes/red_metal_transition.dae": {
+      "sha256": "f5739872c6e33dccd525a68ede011bdefccbdbf405ba45707e6644bec583810c",
+      "bytes": 7791
+    },
+    "src/guodong_sentry_sim/models/rmul_2027/meshes/red_parapet.dae": {
+      "sha256": "8986ce3be3c85df1f73c36cfd13ace65728d94b76ee56e27168116b1758b4335",
+      "bytes": 7785
+    },
+    "src/guodong_sentry_sim/models/rmul_2027/meshes/red_supply_extra_pvc.dae": {
+      "sha256": "db65efe764c91f4ee4a24604bc717d42ff68209b35c4f81a61d36cfef99478b6",
+      "bytes": 7785
+    },
+    "src/guodong_sentry_sim/models/rmul_2027/meshes/red_tunnel_far_support.dae": {
+      "sha256": "cd7ba6d0ff22efa72b7511769ac70b987d232bdfcac1fe802b21044b67a07b3b",
+      "bytes": 7785
+    },
+    "src/guodong_sentry_sim/models/rmul_2027/meshes/red_tunnel_gain_extra_pvc.dae": {
+      "sha256": "0cc20b6fc2c1c4793707c8b02a94aebeccc5ada6f2c8568e448f3e4cc0d7da51",
+      "bytes": 7785
+    },
+    "src/guodong_sentry_sim/models/rmul_2027/meshes/red_tunnel_metal_roof.dae": {
+      "sha256": "810488bb36c56ece3c8dbe08fe21929ae761617f0307ba2fb40f80d72c887071",
+      "bytes": 7785
+    },
+    "src/guodong_sentry_sim/models/rmul_2027/meshes/red_workbench.dae": {
+      "sha256": "94f7dffcb768cdd51333c80b2d15ea866362390bed1f88389ca29295a50414ea",
+      "bytes": 12484
+    },
+    "src/guodong_sentry_sim/models/rmul_2027/meshes/step_native.dae": {
+      "sha256": "bb5597990739b59f30db36ff9860e05d1b0757f61be85b09e9847e43027e3498",
+      "bytes": 1393981
+    },
+    "src/guodong_sentry_sim/models/rmul_2027/meshes/step_textured.dae": {
+      "sha256": "525410242a7b7981f9a6141e3625d4a975cdeeddb578866bf33f0ecb0db6c07d",
+      "bytes": 1393237
+    },
+    "src/guodong_sentry_sim/models/rmul_2027/model.config": {
+      "sha256": "871414909cee6cbb3b987f6bd1888310e5b684fd955e2229c15a12d72a987903",
+      "bytes": 310
+    },
+    "src/guodong_sentry_sim/models/rmul_2027/model.sdf": {
+      "sha256": "6489dd85d99715b62fc5005c467529d029b5ec189657317452caf7329a445f70",
+      "bytes": 743
+    },
+    "src/guodong_sentry_sim/worlds/rmul_2027.sdf": {
+      "sha256": "9f689acd8f872ed1b8e0d5ad1c08d5a9cbf98abf5ecdf25763741341837c1e61",
+      "bytes": 1857
+    },
+    "src/guodong_sentry_sim/worlds/rmul_2027_native.sdf": {
+      "sha256": "4ae09dc7344b051d2bce1ca43eba660a185ee5a895e31e78dbab99ca6f64ac66",
+      "bytes": 2463
+    },
+    "src/guodong_sentry_sim/worlds/rmul_2027_native_preview.sdf": {
+      "sha256": "916018db8ca63904c769880b5b1bfeb536f3846c9f6afcc7556ea10b2bef1f16",
+      "bytes": 2471
+    },
+    "src/guodong_sentry_sim/worlds/rmul_2027_preview.sdf": {
+      "sha256": "9d7d010081e9f2be4f0609acd306a7949e2800be79901cd7c35e9e2dafffee26",
+      "bytes": 1865
+    },
+    "standalone/field_only.sdf": {
+      "sha256": "84f405202c5e56f84e85638931ce75a6dae367edbe37590c45df8779549d5172",
+      "bytes": 1756
+    },
+    "tools/audit_rmul_step.py": {
+      "sha256": "f4101619def57fa1af493dc177f9979778bb90bedfcb1fab61408f7ec73484b9",
+      "bytes": 9290
+    },
+    "tools/check_rmul_runtime.py": {
+      "sha256": "5a731fabd6f256963f819f8942df8fd20b8cea52853cc7655bfbb6b54d4ae40c",
+      "bytes": 12149
+    },
+    "tools/rmul_field.py": {
+      "sha256": "2569d67af8899387c4538ca7e7eb88c8e946e25a721188b56835a0ec0fcb7ddf",
+      "bytes": 16879
+    },
+    "tools/step_field.py": {
+      "sha256": "a2568e1fa21ff64580bda9a31e0dadc1d01bd2bb4d4f417f7237b2abdecc1876",
+      "bytes": 9195
+    },
+    "tools/test_rmul_field.py": {
+      "sha256": "f19de827304cbd19172c055d84cf0b439552b2b035fcb7fdcf5a5d9b49c0dc31",
+      "bytes": 3974
+    },
+    "tools/test_step_field.py": {
+      "sha256": "9775d125d55a5ba651b4a61a2733510ab01e899bde74bfd7ca028fe50b68ae6e",
+      "bytes": 3332
+    },
+    "verify_package.py": {
+      "sha256": "20960e987c490c69200f546e3145c93cc6a02548f73ee0902f3da0032095aaff",
+      "bytes": 920
+    },
+    "迁移提示词.txt": {
+      "sha256": "08fd871cf21b3bda4391442211255cdcc08f9b136d2c3b9db0896d23fd204c2b",
+      "bytes": 3707
+    }
+  }
+}

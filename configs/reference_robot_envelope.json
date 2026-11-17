@@ -1,0 +1,40 @@
+{
+  "artifact_type": "approximate_envelope_of_user_selected_navigation_sim_robot_not_measured_hardware",
+  "source_robot": "assets/navigation_reference/configs/robot.yaml",
+  "source_builder": "assets/navigation_reference/source/mid360_mujoco/model.py",
+  "source_sha256": {
+    "assets/navigation_reference/configs/robot.yaml": "602e2d57d9b577ec23d6381ca5a13fb64eaf2e37c04d66be4ed4e50d016fd128",
+    "assets/navigation_reference/configs/simulation.yaml": "a6c99161c2825b83f16de04ea7ec1b075aca27e4e89c01979c895e5126c96355",
+    "assets/navigation_reference/source/mid360_mujoco/model.py": "37904b4c7f644ebb1eeef73e76c644da2fd2d3fc0ae84b6e367728672cd3cc7f"
+  },
+  "user_authorized_reference_shape": true,
+  "body_geom_count": 107,
+  "local_bounds_nominal_zero_suspension_m": [
+    [
+      -0.266,
+      -0.22260000000037214,
+      -1.1066147997951248e-13
+    ],
+    [
+      0.3706432905375091,
+      0.22260000000037214,
+      0.23424999999999166
+    ]
+  ],
+  "nominal_span_m": [
+    0.6366432905375091,
+    0.4452000000007443,
+    0.23425000000010232
+  ],
+  "conservative_planar_radius_m": 0.38093775528554374,
+  "nominal_height_above_contact_plane_m": 0.23425000000010232,
+  "static_full_suspension_extension_added_height_m": 0.01,
+  "planning_radius_m": 0.391,
+  "planning_height_m": 0.245,
+  "extra_planar_margin_m": 0.02,
+  "extra_vertical_margin_m": 0.01,
+  "suspension_and_roll_pitch_swept_envelope_verified": false,
+  "mesh_ground_navigation_only": true,
+  "all_mount_yaws_sampled_degrees": 2,
+  "warning": "Geometric AABBs and full mount-yaw sweep; static extension allowance included. Dynamic attitude, actual armor and cables unverified. Source parameters unmodified."
+}

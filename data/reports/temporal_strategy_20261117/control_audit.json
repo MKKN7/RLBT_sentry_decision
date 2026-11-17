@@ -1,0 +1,78 @@
+{
+  "summary": {
+    "status": "complete",
+    "episodes": 16,
+    "all_completed": true,
+    "SGD_steps": 0,
+    "learned_weights_loaded": false,
+    "exploratory_posthoc": true,
+    "independent_new_test": false,
+    "checkpoint_selection": false,
+    "real_nav2_in_loop": false,
+    "official_UL_UC_training": false,
+    "wall_s": 35.79094017483294,
+    "policies": {
+      "continue_only": {
+        "episodes": 8,
+        "completed": 8,
+        "truncated": 0,
+        "wins": 8,
+        "draws": 0,
+        "win_rate": 1.0,
+        "match_points_rate": 1.0,
+        "mean_return": 11.072885883757294,
+        "mean_decisions": 67.0,
+        "mean_actual_duration_s": 33.349999999999994,
+        "mean_switches": 0.0,
+        "mean_overrides": 0.0,
+        "mean_recoveries": 0.0,
+        "mean_sampled_alive_fraction": 1.0,
+        "mean_sampled_center_fraction": 0.0,
+        "mean_sampled_home_fraction": 1.0,
+        "mean_sampled_mean_own_hp_fraction": 1.0,
+        "mean_damage_dealt": 133.17418670654297,
+        "mean_damage_share_of_team": 0.09496571800517961,
+        "mean_injected_detection_missing_fraction": 0.06746480937471563,
+        "mean_overrides_per_decision": 0.0,
+        "independent_exogenous_seeds": 2,
+        "win_rate_seed_bootstrap_95": [
+          1.0,
+          1.0
+        ]
+      },
+      "fixed_center": {
+        "episodes": 8,
+        "completed": 8,
+        "truncated": 0,
+        "wins": 8,
+        "draws": 0,
+        "win_rate": 1.0,
+        "match_points_rate": 1.0,
+        "mean_return": 10.498287582633704,
+        "mean_decisions": 61.75,
+        "mean_actual_duration_s": 30.687499999999996,
+        "mean_switches": 1.875,
+        "mean_overrides": 16.375,
+        "mean_recoveries": 0.875,
+        "mean_sampled_alive_fraction": 0.7559576347231205,
+        "mean_sampled_center_fraction": 0.6694535691283519,
+        "mean_sampled_home_fraction": 0.016982746961192906,
+        "mean_sampled_mean_own_hp_fraction": 0.2180606177147582,
+        "mean_damage_dealt": 310.6202583312988,
+        "mean_damage_share_of_team": 0.23179272612320978,
+        "mean_injected_detection_missing_fraction": 0.06910007216206579,
+        "mean_overrides_per_decision": 0.2428218098708605,
+        "independent_exogenous_seeds": 2,
+        "win_rate_seed_bootstrap_95": [
+          1.0,
+          1.0
+        ]
+      }
+    }
+  },
+  "original_directory": "/home/kellen/桌面/RL_BT_decision/runs/temporal_leverage_audit_20261117",
+  "manifest_sha256": "65cb4ab0d10d049ca2be72048ce59c7ba1f43ca70d251b913aab88c33cfb9fea",
+  "episodes_sha256": "468b42ff730d44648dab964efe0c8532dc9fb306110ca505a07a1dcb39b76368",
+  "same_case_GRU_s271_and_continue_only_returns_and_actions_identical": true,
+  "interpretation": "Posthoc controls on already-seen cases. Outcome has low sensitivity to candidate task policy; no causal teammate attribution or independent generalization claim."
+}

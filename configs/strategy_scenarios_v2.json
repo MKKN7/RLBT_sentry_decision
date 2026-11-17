@@ -1,0 +1,15 @@
+{
+  "scenario_id": "alpharm_role_balanced_v2",
+  "observation_semantics": "unchanged_alpharm_task_state148_candidates16x16_mask16",
+  "support_modes": ["anchors", "balanced"],
+  "default_support_mode": "anchors",
+  "anchor_candidates": [5, 7],
+  "support_retreat_hp_fraction": 0.4,
+  "physics_rules_rewards": "unchanged_frozen_ONNX_and_upstream_team_reward",
+  "opponent_styles": ["pretrained", "capture", "defense", "resupply", "pursuit"],
+  "pretrained_opponent_note": "Original pretrained enemy only; own two teammates use fixed skills, explicitly a stronger asymmetric opponent pool.",
+  "scripted_opponent_note": "Mirrored same-role fixed navigation/combat skills for both teams.",
+  "learner_outputs": ["task_candidate_id"],
+  "real_nav2_in_loop": false,
+  "official_UL_UC_training": false
+}

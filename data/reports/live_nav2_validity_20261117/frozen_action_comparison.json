@@ -1,0 +1,50 @@
+{
+  "artifact_type": "offline_identical_recorded_observation_comparison_not_physical_evaluation",
+  "checkpoint_proof": [
+    {
+      "path": "/home/kellen/桌面/RL_BT_decision/runs/uc_live_actor_validity_train_20261117/initial.pt",
+      "sha256": "9b27c61b607f22b968fcd9b907b20aa8d726c8c171e10417b9d2a08e15d40228"
+    },
+    {
+      "path": "/home/kellen/桌面/RL_BT_decision/runs/uc_live_actor_validity_train_20261117/final.pt",
+      "sha256": "0718f56bc9923b4d8ccb9edae3ebfb93e5faef50ef31454bd838a02d078a208b"
+    }
+  ],
+  "source_sha256": "438f28a1742466f33d0e249f27866c1b06dd355386ab64fae10dcffb075ecdab",
+  "runs": [
+    {
+      "run": "/home/kellen/桌面/RL_BT_decision/runs/uc_live_actor_validity_train_20261117",
+      "transition_sha256": "ed9cb292921a8babd585f7029f84f63478d3afdf4684d1b21a6e845294836df2",
+      "recorded_observations": 108,
+      "multiple_legal_action_observations": 26,
+      "greedy_action_differences": 0,
+      "different_decisions": [],
+      "mean_probability_L1_change": 0.00011780257679034818
+    },
+    {
+      "run": "/home/kellen/桌面/RL_BT_decision/runs/uc_live_actor_validity_bc_eval_20261117",
+      "transition_sha256": "fc83cfe232a2b26632d2006ef15a4fe4a206512fdeac6f76b60cf48736dcda74",
+      "recorded_observations": 15,
+      "multiple_legal_action_observations": 15,
+      "greedy_action_differences": 0,
+      "different_decisions": [],
+      "mean_probability_L1_change": 0.0005008847559414183
+    },
+    {
+      "run": "/home/kellen/桌面/RL_BT_decision/runs/uc_live_actor_validity_ppo_eval_20261117",
+      "transition_sha256": "0bbb77db6fe8b1c637becd5cb6118b894cf3d43cc510cd881bf264fd69317ffd",
+      "recorded_observations": 12,
+      "multiple_legal_action_observations": 11,
+      "greedy_action_differences": 0,
+      "different_decisions": [],
+      "mean_probability_L1_change": 0.0004483862066990696
+    }
+  ],
+  "total_observations": 135,
+  "total_greedy_action_differences": 0,
+  "limits": [
+    "No physical rollout, optimizer, reward relabeling or hidden-state policy input.",
+    "Identical actions on recorded observations do not prove identical behavior on unseen states.",
+    "This comparison does not turn independent physics into paired seeded trials."
+  ]
+}

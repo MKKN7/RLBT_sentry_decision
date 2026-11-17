@@ -1,0 +1,6 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+# Keep run artifacts on disk; source manifests track them separately.
+runs/

@@ -1,0 +1,834 @@
+{
+  "scope": "known_v1_failure_regression_not_heldout_test",
+  "seeds": [
+    85024,
+    85025
+  ],
+  "implementation": "v2 finite task and slot permutation, score unchanged",
+  "results": [
+    {
+      "algorithm": "vanilla",
+      "seed": 271,
+      "episodes": [
+        {
+          "seed": 85024,
+          "success": true,
+          "navigation_success": true,
+          "wait_success": false,
+          "return": 12.617559721064968,
+          "steps": 89,
+          "time_s": 44.5,
+          "recoveries": 0,
+          "BT_veto_count": 0,
+          "switches": 0,
+          "needless_recoveries": 0,
+          "health_stops": 1,
+          "unsafe_executions": 0,
+          "support_gate_rejections": 0,
+          "checked_motion_segments": 73,
+          "stage_completed": 5,
+          "stages": 5,
+          "score_100": 93.00880537591863,
+          "score_components": {
+            "task_progress": 60.0,
+            "time_efficiency": 13.008805375918628,
+            "recovery_discipline": 10.0,
+            "safety": 10.0
+          },
+          "source_run_id": "uc_support_dual_lateral_final_20261116",
+          "parameters": {
+            "seed": 85024,
+            "source_sample": 5,
+            "split": "validation",
+            "scenario": "support_gap",
+            "speed_mps": 0.1548468204539744,
+            "acceptance_delay_s": 0.7377856194541403,
+            "fault_begin_s": 4.518297464147389,
+            "fault_end_s": 9.74998753733495,
+            "objective_xy_m": [
+              [
+                0.09999999999999987,
+                -0.4
+              ],
+              [
+                -1.1102230246251565e-16,
+                -0.25000000000000006
+              ],
+              [
+                0.22499999999999964,
+                -0.5250000000000021
+              ],
+              [
+                0.1499999999999999,
+                -0.4
+              ],
+              [
+                0.6749999999999989,
+                -1.7250000000000014
+              ]
+            ],
+            "scheduled_length_m": 5.173750820819146,
+            "no_safe_goal": false,
+            "fixed_start_reset": true,
+            "executor": "calibrated_proxy_NOT_Nav2_rollout",
+            "scenario_id": "uc2027_observed_support_finite_task_v2",
+            "navigation_slot_permutation": [
+              12,
+              2,
+              6,
+              8,
+              9,
+              10,
+              0,
+              7,
+              4,
+              1,
+              11,
+              5,
+              3
+            ]
+          },
+          "terminal_reason": "all_stages_completed",
+          "idle_healthy_steps": 0,
+          "recovery_opportunity_steps": 0,
+          "action_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            6,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            76,
+            7
+          ]
+        },
+        {
+          "seed": 85025,
+          "success": true,
+          "navigation_success": true,
+          "wait_success": false,
+          "return": 12.921104781949955,
+          "steps": 102,
+          "time_s": 51.0,
+          "recoveries": 0,
+          "BT_veto_count": 0,
+          "switches": 0,
+          "needless_recoveries": 0,
+          "health_stops": 0,
+          "unsafe_executions": 0,
+          "support_gate_rejections": 0,
+          "checked_motion_segments": 101,
+          "stage_completed": 5,
+          "stages": 5,
+          "score_100": 92.8305090973339,
+          "score_components": {
+            "task_progress": 60.0,
+            "time_efficiency": 12.830509097333902,
+            "recovery_discipline": 10.0,
+            "safety": 10.0
+          },
+          "source_run_id": "uc_support_dual_lateral_final_20261116",
+          "parameters": {
+            "seed": 85025,
+            "source_sample": 5,
+            "split": "validation",
+            "scenario": "nominal",
+            "speed_mps": 0.12316159939321489,
+            "acceptance_delay_s": 0.19675957300691366,
+            "fault_begin_s": 3.3085073548587847,
+            "fault_end_s": 8.253095227046156,
+            "objective_xy_m": [
+              [
+                -0.07500000000000107,
+                -0.22500000000000142
+              ],
+              [
+                0.09999999999999987,
+                -0.30000000000000004
+              ],
+              [
+                0.19999999999999984,
+                -0.45
+              ],
+              [
+                0.6749999999999989,
+                -1.575000000000001
+              ],
+              [
+                -0.0500000000000001,
+                -0.35000000000000003
+              ]
+            ],
+            "scheduled_length_m": 5.872334249470581,
+            "no_safe_goal": false,
+            "fixed_start_reset": true,
+            "executor": "calibrated_proxy_NOT_Nav2_rollout",
+            "scenario_id": "uc2027_observed_support_finite_task_v2",
+            "navigation_slot_permutation": [
+              12,
+              0,
+              7,
+              9,
+              6,
+              1,
+              10,
+              11,
+              2,
+              5,
+              8,
+              3,
+              4
+            ]
+          },
+          "terminal_reason": "all_stages_completed",
+          "idle_healthy_steps": 0,
+          "recovery_opportunity_steps": 0,
+          "action_counts": [
+            0,
+            5,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            97,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "algorithm": "vanilla",
+      "seed": 809,
+      "episodes": [
+        {
+          "seed": 85024,
+          "success": true,
+          "navigation_success": true,
+          "wait_success": false,
+          "return": 12.617559721064968,
+          "steps": 89,
+          "time_s": 44.5,
+          "recoveries": 0,
+          "BT_veto_count": 0,
+          "switches": 0,
+          "needless_recoveries": 0,
+          "health_stops": 1,
+          "unsafe_executions": 0,
+          "support_gate_rejections": 0,
+          "checked_motion_segments": 73,
+          "stage_completed": 5,
+          "stages": 5,
+          "score_100": 93.00880537591863,
+          "score_components": {
+            "task_progress": 60.0,
+            "time_efficiency": 13.008805375918628,
+            "recovery_discipline": 10.0,
+            "safety": 10.0
+          },
+          "source_run_id": "uc_support_dual_lateral_final_20261116",
+          "parameters": {
+            "seed": 85024,
+            "source_sample": 5,
+            "split": "validation",
+            "scenario": "support_gap",
+            "speed_mps": 0.1548468204539744,
+            "acceptance_delay_s": 0.7377856194541403,
+            "fault_begin_s": 4.518297464147389,
+            "fault_end_s": 9.74998753733495,
+            "objective_xy_m": [
+              [
+                0.09999999999999987,
+                -0.4
+              ],
+              [
+                -1.1102230246251565e-16,
+                -0.25000000000000006
+              ],
+              [
+                0.22499999999999964,
+                -0.5250000000000021
+              ],
+              [
+                0.1499999999999999,
+                -0.4
+              ],
+              [
+                0.6749999999999989,
+                -1.7250000000000014
+              ]
+            ],
+            "scheduled_length_m": 5.173750820819146,
+            "no_safe_goal": false,
+            "fixed_start_reset": true,
+            "executor": "calibrated_proxy_NOT_Nav2_rollout",
+            "scenario_id": "uc2027_observed_support_finite_task_v2",
+            "navigation_slot_permutation": [
+              12,
+              2,
+              6,
+              8,
+              9,
+              10,
+              0,
+              7,
+              4,
+              1,
+              11,
+              5,
+              3
+            ]
+          },
+          "terminal_reason": "all_stages_completed",
+          "idle_healthy_steps": 0,
+          "recovery_opportunity_steps": 0,
+          "action_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            6,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            76,
+            7
+          ]
+        },
+        {
+          "seed": 85025,
+          "success": true,
+          "navigation_success": true,
+          "wait_success": false,
+          "return": 12.921104781949955,
+          "steps": 102,
+          "time_s": 51.0,
+          "recoveries": 0,
+          "BT_veto_count": 0,
+          "switches": 0,
+          "needless_recoveries": 0,
+          "health_stops": 0,
+          "unsafe_executions": 0,
+          "support_gate_rejections": 0,
+          "checked_motion_segments": 101,
+          "stage_completed": 5,
+          "stages": 5,
+          "score_100": 92.8305090973339,
+          "score_components": {
+            "task_progress": 60.0,
+            "time_efficiency": 12.830509097333902,
+            "recovery_discipline": 10.0,
+            "safety": 10.0
+          },
+          "source_run_id": "uc_support_dual_lateral_final_20261116",
+          "parameters": {
+            "seed": 85025,
+            "source_sample": 5,
+            "split": "validation",
+            "scenario": "nominal",
+            "speed_mps": 0.12316159939321489,
+            "acceptance_delay_s": 0.19675957300691366,
+            "fault_begin_s": 3.3085073548587847,
+            "fault_end_s": 8.253095227046156,
+            "objective_xy_m": [
+              [
+                -0.07500000000000107,
+                -0.22500000000000142
+              ],
+              [
+                0.09999999999999987,
+                -0.30000000000000004
+              ],
+              [
+                0.19999999999999984,
+                -0.45
+              ],
+              [
+                0.6749999999999989,
+                -1.575000000000001
+              ],
+              [
+                -0.0500000000000001,
+                -0.35000000000000003
+              ]
+            ],
+            "scheduled_length_m": 5.872334249470581,
+            "no_safe_goal": false,
+            "fixed_start_reset": true,
+            "executor": "calibrated_proxy_NOT_Nav2_rollout",
+            "scenario_id": "uc2027_observed_support_finite_task_v2",
+            "navigation_slot_permutation": [
+              12,
+              0,
+              7,
+              9,
+              6,
+              1,
+              10,
+              11,
+              2,
+              5,
+              8,
+              3,
+              4
+            ]
+          },
+          "terminal_reason": "all_stages_completed",
+          "idle_healthy_steps": 0,
+          "recovery_opportunity_steps": 0,
+          "action_counts": [
+            0,
+            5,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            97,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "algorithm": "anchored",
+      "seed": 271,
+      "episodes": [
+        {
+          "seed": 85024,
+          "success": true,
+          "navigation_success": true,
+          "wait_success": false,
+          "return": 12.617559721064968,
+          "steps": 89,
+          "time_s": 44.5,
+          "recoveries": 0,
+          "BT_veto_count": 0,
+          "switches": 0,
+          "needless_recoveries": 0,
+          "health_stops": 1,
+          "unsafe_executions": 0,
+          "support_gate_rejections": 0,
+          "checked_motion_segments": 73,
+          "stage_completed": 5,
+          "stages": 5,
+          "score_100": 93.00880537591863,
+          "score_components": {
+            "task_progress": 60.0,
+            "time_efficiency": 13.008805375918628,
+            "recovery_discipline": 10.0,
+            "safety": 10.0
+          },
+          "source_run_id": "uc_support_dual_lateral_final_20261116",
+          "parameters": {
+            "seed": 85024,
+            "source_sample": 5,
+            "split": "validation",
+            "scenario": "support_gap",
+            "speed_mps": 0.1548468204539744,
+            "acceptance_delay_s": 0.7377856194541403,
+            "fault_begin_s": 4.518297464147389,
+            "fault_end_s": 9.74998753733495,
+            "objective_xy_m": [
+              [
+                0.09999999999999987,
+                -0.4
+              ],
+              [
+                -1.1102230246251565e-16,
+                -0.25000000000000006
+              ],
+              [
+                0.22499999999999964,
+                -0.5250000000000021
+              ],
+              [
+                0.1499999999999999,
+                -0.4
+              ],
+              [
+                0.6749999999999989,
+                -1.7250000000000014
+              ]
+            ],
+            "scheduled_length_m": 5.173750820819146,
+            "no_safe_goal": false,
+            "fixed_start_reset": true,
+            "executor": "calibrated_proxy_NOT_Nav2_rollout",
+            "scenario_id": "uc2027_observed_support_finite_task_v2",
+            "navigation_slot_permutation": [
+              12,
+              2,
+              6,
+              8,
+              9,
+              10,
+              0,
+              7,
+              4,
+              1,
+              11,
+              5,
+              3
+            ]
+          },
+          "terminal_reason": "all_stages_completed",
+          "idle_healthy_steps": 0,
+          "recovery_opportunity_steps": 0,
+          "action_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            6,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            76,
+            7
+          ]
+        },
+        {
+          "seed": 85025,
+          "success": true,
+          "navigation_success": true,
+          "wait_success": false,
+          "return": 12.921104781949955,
+          "steps": 102,
+          "time_s": 51.0,
+          "recoveries": 0,
+          "BT_veto_count": 0,
+          "switches": 0,
+          "needless_recoveries": 0,
+          "health_stops": 0,
+          "unsafe_executions": 0,
+          "support_gate_rejections": 0,
+          "checked_motion_segments": 101,
+          "stage_completed": 5,
+          "stages": 5,
+          "score_100": 92.8305090973339,
+          "score_components": {
+            "task_progress": 60.0,
+            "time_efficiency": 12.830509097333902,
+            "recovery_discipline": 10.0,
+            "safety": 10.0
+          },
+          "source_run_id": "uc_support_dual_lateral_final_20261116",
+          "parameters": {
+            "seed": 85025,
+            "source_sample": 5,
+            "split": "validation",
+            "scenario": "nominal",
+            "speed_mps": 0.12316159939321489,
+            "acceptance_delay_s": 0.19675957300691366,
+            "fault_begin_s": 3.3085073548587847,
+            "fault_end_s": 8.253095227046156,
+            "objective_xy_m": [
+              [
+                -0.07500000000000107,
+                -0.22500000000000142
+              ],
+              [
+                0.09999999999999987,
+                -0.30000000000000004
+              ],
+              [
+                0.19999999999999984,
+                -0.45
+              ],
+              [
+                0.6749999999999989,
+                -1.575000000000001
+              ],
+              [
+                -0.0500000000000001,
+                -0.35000000000000003
+              ]
+            ],
+            "scheduled_length_m": 5.872334249470581,
+            "no_safe_goal": false,
+            "fixed_start_reset": true,
+            "executor": "calibrated_proxy_NOT_Nav2_rollout",
+            "scenario_id": "uc2027_observed_support_finite_task_v2",
+            "navigation_slot_permutation": [
+              12,
+              0,
+              7,
+              9,
+              6,
+              1,
+              10,
+              11,
+              2,
+              5,
+              8,
+              3,
+              4
+            ]
+          },
+          "terminal_reason": "all_stages_completed",
+          "idle_healthy_steps": 0,
+          "recovery_opportunity_steps": 0,
+          "action_counts": [
+            0,
+            5,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            97,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "algorithm": "anchored",
+      "seed": 809,
+      "episodes": [
+        {
+          "seed": 85024,
+          "success": true,
+          "navigation_success": true,
+          "wait_success": false,
+          "return": 12.617559721064968,
+          "steps": 89,
+          "time_s": 44.5,
+          "recoveries": 0,
+          "BT_veto_count": 0,
+          "switches": 0,
+          "needless_recoveries": 0,
+          "health_stops": 1,
+          "unsafe_executions": 0,
+          "support_gate_rejections": 0,
+          "checked_motion_segments": 73,
+          "stage_completed": 5,
+          "stages": 5,
+          "score_100": 93.00880537591863,
+          "score_components": {
+            "task_progress": 60.0,
+            "time_efficiency": 13.008805375918628,
+            "recovery_discipline": 10.0,
+            "safety": 10.0
+          },
+          "source_run_id": "uc_support_dual_lateral_final_20261116",
+          "parameters": {
+            "seed": 85024,
+            "source_sample": 5,
+            "split": "validation",
+            "scenario": "support_gap",
+            "speed_mps": 0.1548468204539744,
+            "acceptance_delay_s": 0.7377856194541403,
+            "fault_begin_s": 4.518297464147389,
+            "fault_end_s": 9.74998753733495,
+            "objective_xy_m": [
+              [
+                0.09999999999999987,
+                -0.4
+              ],
+              [
+                -1.1102230246251565e-16,
+                -0.25000000000000006
+              ],
+              [
+                0.22499999999999964,
+                -0.5250000000000021
+              ],
+              [
+                0.1499999999999999,
+                -0.4
+              ],
+              [
+                0.6749999999999989,
+                -1.7250000000000014
+              ]
+            ],
+            "scheduled_length_m": 5.173750820819146,
+            "no_safe_goal": false,
+            "fixed_start_reset": true,
+            "executor": "calibrated_proxy_NOT_Nav2_rollout",
+            "scenario_id": "uc2027_observed_support_finite_task_v2",
+            "navigation_slot_permutation": [
+              12,
+              2,
+              6,
+              8,
+              9,
+              10,
+              0,
+              7,
+              4,
+              1,
+              11,
+              5,
+              3
+            ]
+          },
+          "terminal_reason": "all_stages_completed",
+          "idle_healthy_steps": 0,
+          "recovery_opportunity_steps": 0,
+          "action_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            6,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            76,
+            7
+          ]
+        },
+        {
+          "seed": 85025,
+          "success": true,
+          "navigation_success": true,
+          "wait_success": false,
+          "return": 12.921104781949955,
+          "steps": 102,
+          "time_s": 51.0,
+          "recoveries": 0,
+          "BT_veto_count": 0,
+          "switches": 0,
+          "needless_recoveries": 0,
+          "health_stops": 0,
+          "unsafe_executions": 0,
+          "support_gate_rejections": 0,
+          "checked_motion_segments": 101,
+          "stage_completed": 5,
+          "stages": 5,
+          "score_100": 92.8305090973339,
+          "score_components": {
+            "task_progress": 60.0,
+            "time_efficiency": 12.830509097333902,
+            "recovery_discipline": 10.0,
+            "safety": 10.0
+          },
+          "source_run_id": "uc_support_dual_lateral_final_20261116",
+          "parameters": {
+            "seed": 85025,
+            "source_sample": 5,
+            "split": "validation",
+            "scenario": "nominal",
+            "speed_mps": 0.12316159939321489,
+            "acceptance_delay_s": 0.19675957300691366,
+            "fault_begin_s": 3.3085073548587847,
+            "fault_end_s": 8.253095227046156,
+            "objective_xy_m": [
+              [
+                -0.07500000000000107,
+                -0.22500000000000142
+              ],
+              [
+                0.09999999999999987,
+                -0.30000000000000004
+              ],
+              [
+                0.19999999999999984,
+                -0.45
+              ],
+              [
+                0.6749999999999989,
+                -1.575000000000001
+              ],
+              [
+                -0.0500000000000001,
+                -0.35000000000000003
+              ]
+            ],
+            "scheduled_length_m": 5.872334249470581,
+            "no_safe_goal": false,
+            "fixed_start_reset": true,
+            "executor": "calibrated_proxy_NOT_Nav2_rollout",
+            "scenario_id": "uc2027_observed_support_finite_task_v2",
+            "navigation_slot_permutation": [
+              12,
+              0,
+              7,
+              9,
+              6,
+              1,
+              10,
+              11,
+              2,
+              5,
+              8,
+              3,
+              4
+            ]
+          },
+          "terminal_reason": "all_stages_completed",
+          "idle_healthy_steps": 0,
+          "recovery_opportunity_steps": 0,
+          "action_counts": [
+            0,
+            5,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            97,
+            0
+          ]
+        }
+      ]
+    }
+  ]
+}

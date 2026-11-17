@@ -1,0 +1,1714 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<!-- new favicon config and versions by realfavicongenerator.net -->
+<link rel="apple-touch-icon" sizes="180x180" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/favicon-16x16.png">
+<link rel="manifest" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/site.webmanifest">
+<link rel="mask-icon" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/safari-pinned-tab.svg" color="#b31b1b">
+<link rel="shortcut icon" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/favicon.ico">
+<meta name="msapplication-TileColor" content="#b31b1b">
+<meta name="msapplication-config" content="images/icons/browserconfig.xml">
+<meta name="theme-color" content="#b31b1b">
+<!-- end favicon config -->
+<title>Search | arXiv e-print repository</title>
+<script defer src="https://static.arxiv.org/static/base/1.0.0a5/fontawesome-free-5.11.2-web/js/all.js"></script>
+<link rel="stylesheet" href="https://static.arxiv.org/static/base/1.0.0a5/css/arxivstyle.css" />
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    messageStyle: "none",
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true,
+      ignoreClass: '.*',
+      processClass: 'mathjax.*'
+    },
+    TeX: {
+        extensions: ["AMSmath.js", "AMSsymbols.js", "noErrors.js"],
+        noErrors: {
+          inlineDelimiters: ["$","$"],
+          multiLine: false,
+          style: {
+            "font-size": "normal",
+            "border": ""
+          }
+        }
+    },
+    "HTML-CSS": { availableFonts: ["TeX"] }
+  });
+</script>
+<script src='//static.arxiv.org/MathJax-2.7.3/MathJax.js'></script>
+<script src="https://static.arxiv.org/static/base/1.0.0a5/js/notification.js"></script>
+
+    
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="stylesheet" href="https://static.arxiv.org/static/design-system/latest/design-system-components.css">
+<link rel="stylesheet" href="https://static.arxiv.org/static/design-system/latest/fonts.css">
+  <link rel="stylesheet" href="https://static.arxiv.org/static/search/0.5.6/css/bulma-tooltip.min.css" />
+  <link rel="stylesheet" href="https://static.arxiv.org/static/search/0.5.6/css/search.css" />
+  <script
+    src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+    crossorigin="anonymous"></script>
+
+  <script src="https://static.arxiv.org/static/search/0.5.6/js/fieldset.js"></script>
+  <style>
+  radio#cf-customfield_11400 {
+    display: none;
+  }
+  /* Render the spinout .ds-site-footer standalone / full-bleed. search extends the
+     legacy base, whose bare wrapping <footer> (in base/base.html, outside any
+     overridable block — so it can't be removed from here) is styled by
+     arxivstyle.css with a grey background (hsl(0,0%,95%)) + 1em 2em padding,
+     boxing our warm-wash footer inside a second grey band. display:contents drops
+     the wrapper's box entirely (cleaner than zeroing individual properties) so
+     .ds-site-footer renders in its place; it inherits flex-shrink:0 from the same
+     legacy `footer` rule, so the sticky footer still works. Search-specific
+     legacy-base integration; the shared chrome CSS stays byte-identical to the SSOT. */
+  body > footer {
+    display: contents;
+  }
+  </style>
+
+  </head>
+  <body>
+  
+  
+  <header><a href="#main-container" class="is-sr-only">Skip to main content</a>
+    
+
+<div id="ds-announcement"></div>
+
+<script src="https://static.arxiv.org/static/design-system/latest/chrome/banner.js" defer></script>
+<script src="https://static.arxiv.org/static/design-system/latest/chrome/header.js" defer></script>
+<header class="ds-site-header ">
+  <a aria-hidden="true" tabindex="-1" href="https://arxiv.org/IgnoreMe" class="is-sr-only"></a>
+  <a href="https://arxiv.org/" class="ds-site-header-logo" aria-label="archive home">
+    <img src="https://static.arxiv.org/static/design-system/latest/logos/arxiv-logo.svg" alt="archive">
+  </a>
+  
+  <a id="ds-search-toggle" class="ds-site-header-search-link" href="https://arxiv.org/search" aria-controls="ds-search-overlay" aria-expanded="false">
+    <svg class="ds-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+      <circle cx="11" cy="11" r="8"/>
+      <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+    </svg>
+    <span>Search</span>
+  </a>
+  
+  <button type="button" id="ds-nav-toggle" class="ds-site-header-nav-toggle"
+    aria-label="Open menu" aria-controls="ds-site-header-nav" aria-expanded="false">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+      <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+    </svg>
+  </button>
+  
+  <nav class="ds-site-header-nav" id="ds-site-header-nav" aria-label="Main navigation">
+    <a href="https://arxiv.org/submit">Submit</a>
+    <a href="https://info.arxiv.org/about/donate.html">Donate</a>
+    <span class="ds-site-header-divider" aria-hidden="true"></span>
+    
+    <a href="https://arxiv.org/login" class="ds-site-header-login">Log in</a>
+  </nav>
+  
+  
+</header>
+
+<div class="ds-search-overlay" id="ds-search-overlay" hidden>
+  <div class="ds-search-overlay-panel" role="search">
+    <form method="GET" action="https://arxiv.org/search">
+      <label for="ds-search-input" class="is-sr-only">Search arXiv</label>
+      <input type="text" name="query" id="ds-search-input" class="ds-input" autocomplete="off"
+        placeholder="Search papers by title, author, abstract, or ID...">
+      <input type="hidden" name="searchtype" value="all">
+      <input type="hidden" name="source" value="header">
+    </form>
+    <p class="ds-hint">
+      Press Enter to search &middot; <a href="https://arxiv.org/search/advanced">Advanced search</a>
+    </p>
+  </div>
+</div>
+
+
+  </header>
+  <main class="container" id="main-container">
+    
+
+
+    
+  <div class="level is-marginless">
+    <div class="level-left">
+      <h1 class="title is-clearfix">
+    
+        Showing 1&ndash;24 of 24 results for all: <span class="mathjax">&#34;behavior trees&#34; AND &#34;reinforcement learning&#34;</span>
+    
+</h1>
+    </div>
+    <div class="level-right is-hidden-mobile">
+      <!-- feedback for mobile is moved to footer -->
+      <span class="help" style="display: inline-block;"><a href="https://github.com/arXiv/arxiv-search/releases">Search v0.5.6 released 2020-02-24</a>&nbsp;&nbsp;</span>
+    </div>
+  </div>
+    <div class="content">
+      
+  <form method="GET" action="/search/"  aria-role="search">
+    
+
+    
+    <div class="field has-addons-tablet">
+      <div class="control is-expanded">
+        <label for="query" class="hidden-label">Search term or terms</label>
+        
+          <input class="input is-medium" id="query" name="query" placeholder="Search term..." type="text" value="&quot;behavior trees&quot; AND &quot;reinforcement learning&quot;">
+        
+        
+      </div>
+      <div class="select control is-medium">
+        <label class="is-hidden" for="searchtype">Field</label>
+        <select class="is-medium" id="searchtype" name="searchtype"><option selected value="all">All fields</option><option value="title">Title</option><option value="author">Author(s)</option><option value="abstract">Abstract</option><option value="comments">Comments</option><option value="journal_ref">Journal reference</option><option value="acm_class">ACM classification</option><option value="msc_class">MSC classification</option><option value="report_num">Report number</option><option value="paper_id">arXiv identifier</option><option value="doi">DOI</option><option value="orcid">ORCID</option><option value="license">License (URI)</option><option value="author_id">arXiv author ID</option><option value="help">Help pages</option><option value="full_text">Full text</option></select>
+      </div>
+      <div class="control">
+          <button class="button is-link is-medium">Search</button>
+      </div>
+    </div>
+    <div class="field">
+      <div class="control is-size-7">
+        
+        <label class="radio">
+          <input checked id="abstracts-0" name="abstracts" type="radio" value="show"> Show abstracts
+        </label>
+        
+        <label class="radio">
+          <input id="abstracts-1" name="abstracts" type="radio" value="hide"> Hide abstracts
+        </label>
+        
+      </div>
+    </div>
+    <div class="is-clearfix" style="height: 2.5em"> 
+      <div class="is-pulled-right">
+        
+        <a href="/search/advanced?terms-0-term=%22behavior+trees%22+AND+%22reinforcement+learning%22&amp;terms-0-field=all&amp;size=50&amp;order=None">Advanced Search</a>
+        
+      </div>
+    </div>
+    <input type="hidden" name="order" value="">
+    <input type="hidden" name="size" value="50">
+  </form>
+
+  
+
+  
+      
+<div class="level breathe-horizontal">
+  <div class="level-left">
+    <form method="GET" action="/search/">
+      <div style="display: none;">
+        
+          
+            <select id="searchtype" name="searchtype"><option selected value="all">All fields</option><option value="title">Title</option><option value="author">Author(s)</option><option value="abstract">Abstract</option><option value="comments">Comments</option><option value="journal_ref">Journal reference</option><option value="acm_class">ACM classification</option><option value="msc_class">MSC classification</option><option value="report_num">Report number</option><option value="paper_id">arXiv identifier</option><option value="doi">DOI</option><option value="orcid">ORCID</option><option value="license">License (URI)</option><option value="author_id">arXiv author ID</option><option value="help">Help pages</option><option value="full_text">Full text</option></select>
+          
+        
+          
+            <input id="query" name="query" type="text" value="&quot;behavior trees&quot; AND &quot;reinforcement learning&quot;">
+          
+        
+          
+        
+          
+        
+          
+            <ul id="abstracts"><li><input checked id="abstracts-0" name="abstracts" type="radio" value="show"> <label for="abstracts-0">Show abstracts</label></li><li><input id="abstracts-1" name="abstracts" type="radio" value="hide"> <label for="abstracts-1">Hide abstracts</label></li></ul>
+          
+        
+      </div>
+      <div class="box field is-grouped is-grouped-multiline level-item">
+        <div class="control">
+          <span class="select is-small">
+            <select id="size" name="size"><option value="25">25</option><option selected value="50">50</option><option value="100">100</option><option value="200">200</option></select>
+          </span>
+          <label for="size">results per page</label>.
+        </div>
+        <div class="control">
+          <label for="order">Sort results by</label>
+          <span class="select is-small">
+            <select id="order" name="order"><option value="-announced_date_first">Announcement date (newest first)</option><option value="announced_date_first">Announcement date (oldest first)</option><option value="-submitted_date">Submission date (newest first)</option><option value="submitted_date">Submission date (oldest first)</option><option selected value="">Relevance</option></select>
+          </span>
+        </div>
+        <div class="control">
+          <button class="button is-small is-link">Go</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+      
+
+
+
+
+<ol class="breathe-horizontal" start="1"> 
+
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2611.13993">arXiv:2611.13993</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2611.13993">pdf</a>, <a href="https://arxiv.org/ps/2611.13993">ps</a>, <a href="https://arxiv.org/format/2611.13993">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Temporal <span class="search-hit mathjax">Behavior</span> <span class="search-hit mathjax">Trees</span> for <span class="search-hit mathjax">Reinforcement</span> <span class="search-hit mathjax">Learning</span>: Specifications as Rewards, Curricula, and Diagnostics
+      
+    </p>
+    <p class="authors">
+      <span class="has-text-black-bis has-text-weight-semibold">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Krsmanovic%2C+V">Vladimir Krsmanovic</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Finkbeiner%2C+B">Bernd Finkbeiner</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2611.13993v1-abstract-short" style="display: inline;">
+        <span class="search-hit mathjax">Reinforcement</span>&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2611.13993v1-abstract-full').style.display = 'inline'; document.getElementById('2611.13993v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2611.13993v1-abstract-full" style="display: none;">
+        <span class="search-hit mathjax">Reinforcement</span> <span class="search-hit mathjax">learning</span> from formal specifications often separates task definition, reward shaping, curriculum design, and policy diagnostics into different mathematical objects. This fragmentation requires additional conversion steps and discards structure already present in the specification, such as subtask boundaries, ordering constraints, and quantitative measures. We introduce TBTCL (Temporal <span class="search-hit mathjax">Behavior</span> <span class="search-hit mathjax">Tree</span> Centric Learning), a framework that uses Temporal <span class="search-hit mathjax">Behavior</span> <span class="search-hit mathjax">Trees</span> (TBTs) as a unified interface for specification-guided <span class="search-hit mathjax">reinforcement</span> <span class="search-hit mathjax">learning</span>. A single TBT specifies the task, induces dense robustness-based rewards, defines a curriculum, and supports better understanding of learned policies. By adapting TBT syntax and semantics for specification-guided <span class="search-hit mathjax">reinforcement</span> <span class="search-hit mathjax">learning</span>, we provide a formalism that is more expressive than popular specification languages such as LTL and inherently hierarchical. We present algorithms to automatically extract a curriculum DAG and derive dense, robustness-based rewards directly from TBT semantics. Furthermore, we utilize TBT trace segmentation to build understandable competence profiles and automatically adapt the reward toward bottlenecks. We evaluate TBTCL on six specifications across discrete and continuous domains and show that Temporal <span class="search-hit mathjax">Behavior</span> <span class="search-hit mathjax">Trees</span> can serve as a specification, a reward, a curriculum, and a diagnostic.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2611.13993v1-abstract-full').style.display = 'none'; document.getElementById('2611.13993v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 10 November, 2026; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> November 2026.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2610.25420">arXiv:2610.25420</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2610.25420">pdf</a>, <a href="https://arxiv.org/ps/2610.25420">ps</a>, <a href="https://arxiv.org/format/2610.25420">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Cryptography and Security">cs.CR</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Adaptive Cyber-Defense for Evolving Attacker Capabilities using <span class="search-hit mathjax">Reinforcement</span> <span class="search-hit mathjax">Learning</span> and <span class="search-hit mathjax">Behavior</span> <span class="search-hit mathjax">Trees</span>
+      
+    </p>
+    <p class="authors">
+      <span class="has-text-black-bis has-text-weight-semibold">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Potteiger%2C+N">Nicholas Potteiger</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Samaddar%2C+A">Ankita Samaddar</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Koutsoukos%2C+X">Xenofon Koutsoukos</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2610.25420v1-abstract-short" style="display: inline;">
+        Autonomous cyber-defense agents trained using <span class="search-hit mathjax">reinforcement</span>&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2610.25420v1-abstract-full').style.display = 'inline'; document.getElementById('2610.25420v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2610.25420v1-abstract-full" style="display: none;">
+        Autonomous cyber-defense agents trained using <span class="search-hit mathjax">reinforcement</span> <span class="search-hit mathjax">learning</span> (RL) are increasingly adopted for defending enterprise computer networks. However, existing approaches may become brittle as attacker capabilities evolve and enable new attack strategies. In this work, we study the problem of adapting defender policies learned in CAGE Challenge Scenario 2 (CC2), a benchmark enterprise network defense scenario, to an extended network scenario with new attacker capabilities represented by new attacker actions. Effective attack strategies that leverage new actions are initially unknown, and therefore attacker policies must be learned before defender adaptation can occur. To address this challenge, we develop adversarial RL (ARL) with <span class="search-hit mathjax">behavior</span> <span class="search-hit mathjax">trees</span> (ARLBT), which uses reward <span class="search-hit mathjax">behavior</span> <span class="search-hit mathjax">trees</span> (RBTs) to define progression-based reward functions and condition attacker policies on RBT execution. The proposed RBT incorporates the new attacker actions into structured attack strategies while leveraging parallel execution to generate rewards across multiple network nodes simultaneously. We evaluate ARLBT for learning attacker policies against two baseline defender policies across network scenarios with different sets of new attacker actions and compare against multiple attacker baselines. The results demonstrate that ARLBT improves attacker success compared to ARL using the original CC2 reward function and that conditioning policies on RBT execution can improve sample efficiency. We further show that defender policies can be adapted against the learned attackers, improving robustness to attacks that leverage new attacker actions.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2610.25420v1-abstract-full').style.display = 'none'; document.getElementById('2610.25420v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 18 October, 2026; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> October 2026.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2609.24025">arXiv:2609.24025</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2609.24025">pdf</a>, <a href="https://arxiv.org/ps/2609.24025">ps</a>, <a href="https://arxiv.org/format/2609.24025">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+        </div>
+      
+        
+          <div class="is-inline-block" style="margin-left: 0.5rem">
+            <div class="tags has-addons">
+              <span class="tag is-dark is-size-7">doi</span>
+              <span class="tag is-light is-size-7"><a class="" href="https://doi.org/10.1145/3829340.3842379">10.1145/3829340.3842379 <i class="fa fa-external-link" aria-hidden="true"></i></a></span>
+            </div>
+          </div>
+        
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Synthesizing Reactive Character Behaviors for Continuous Games via Programmatic Policy Search
+      
+    </p>
+    <p class="authors">
+      <span class="has-text-black-bis has-text-weight-semibold">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Gumin%2C+M">Maxim Gumin</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Liu%2C+H+D">Hsueh-Ti Derek Liu</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Zordan%2C+V">Victor Zordan</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Ritchie%2C+D">Daniel Ritchie</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2609.24025v1-abstract-short" style="display: inline;">
+        &hellip;a method for synthesizing reactive character behaviors for continuous games as compact, human-readable programs. Game AI practice still relies heavily on manually authored <span class="search-hit mathjax">behavior</span>&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2609.24025v1-abstract-full').style.display = 'inline'; document.getElementById('2609.24025v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2609.24025v1-abstract-full" style="display: none;">
+        We present a method for synthesizing reactive character behaviors for continuous games as compact, human-readable programs. Game AI practice still relies heavily on manually authored <span class="search-hit mathjax">behavior</span> <span class="search-hit mathjax">trees</span>, state machines, and scripts, while academic <span class="search-hit mathjax">reinforcement</span> <span class="search-hit mathjax">learning</span> typically produces opaque neural controllers that are expensive to train and difficult to edit. Our approach bridges this gap by searching directly over a domain-specific language for continuous-space game policies. The language is designed around reactive geometric decisions and includes higher-order constructs such as direction maximization. These constructs help discretize a continuous behavior space into enumerable program structures. To make program search practical, we introduce a large set of synthesis antipatterns that remove redundant program forms while preserving behavioral coverage. We further combine bottom-up symbolic enumeration with top-down guidance from a coding agent. Our resulting method, agentic sketching, has the agent propose high-level policy structure and call an enumerator to complete local program slots. We evaluate the method on a benchmark of 14 continuous games, ranging from classic control tasks to multi-agent football. We find that pure enumeration is often more efficient than using a coding agent alone, while the combined method substantially outperforms both. Our results suggest that programmatic policy search can be a practical authoring tool for game AI: designers specify reward functions, and the system discovers editable behaviors that are effective, portable, and often surprising.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2609.24025v1-abstract-full').style.display = 'none'; document.getElementById('2609.24025v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 20 September, 2026; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> September 2026.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">To be presented at SIGGRAPH Asia 2026</span>
+    </p>
+    
+
+    
+      <p class="comments is-size-7">
+        
+
+        
+
+        
+          <span class="has-text-black-bis has-text-weight-semibold">ACM Class:</span>
+          I.2.2
+        
+      </p>
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2608.05365">arXiv:2608.05365</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2608.05365">pdf</a>, <a href="https://arxiv.org/ps/2608.05365">ps</a>, <a href="https://arxiv.org/format/2608.05365">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Robotics">cs.RO</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Unified Planning-Learning Framework for Robust UUV Navigation Under Partial Observability
+      
+    </p>
+    <p class="authors">
+      <span class="has-text-black-bis has-text-weight-semibold">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Deowan%2C+M+E">Md Ether Deowan</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Kelasidi%2C+E">Eleni Kelasidi</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2608.05365v1-abstract-short" style="display: inline;">
+        &hellip;occupancy maps solely from onboard sonar and depth image observations, adapts a clearance-constrained global planner (GP) to provide long-horizon structure, and integrates a <span class="search-hit mathjax">reinforcement</span>&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2608.05365v1-abstract-full').style.display = 'inline'; document.getElementById('2608.05365v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2608.05365v1-abstract-full" style="display: none;">
+        This paper presents an observation-only autonomy framework for Unmanned Underwater Vehicles (UUVs) navigation in dynamic underwater environments that integrates persistent occupancy mapping, global clearance-aware planning, and risk-aware local control. The proposed pipeline constructs occupancy maps solely from onboard sonar and depth image observations, adapts a clearance-constrained global planner (GP) to provide long-horizon structure, and integrates a <span class="search-hit mathjax">reinforcement</span> <span class="search-hit mathjax">learning</span> (RL) policy to handle short-range tracking and reactive avoidance. To further support decision-making under partial observability, the system learns a compact latent state representation from onboard sensor data, encoding environmental structure, obstacle dynamics, and uncertainty. <span class="search-hit mathjax">Behavior</span> <span class="search-hit mathjax">tree</span> (BT) distillation with staged supervision is introduced to improve safety and training stability, while an uncertainty-calibrated distillation mechanism reweights teacher guidance using online latent-model uncertainty, emphasizing uncertain regimes during learning, with time-to-collision (TTC) and clearance cues remaining explicit in planning and local policy features. To demonstrate the efficacy of the framework, a reproducible multi-seed evaluation protocol is established in high-fidelity GPU-accelerated simulation using NVIDIA Isaac Sim, and performance is benchmarked against BT-only and standard RL baselines. The results obtained demonstrate improved robustness and safety under dynamic conditions, thus providing a general pipeline with a unified hybrid planning learning architecture and a reproducible methodology for robust UUV autonomy under partial observability.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2608.05365v1-abstract-full').style.display = 'none'; document.getElementById('2608.05365v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 5 August, 2026; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> August 2026.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">8 pages, 6 figures. Accepted for presentation at the 2026 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS 2026), Philadelphia, PA, USA</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2607.14093">arXiv:2607.14093</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2607.14093">pdf</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Intelligent Three Level Learning Architecture for Autonomous UAV Swarms in Search and Rescue
+      
+    </p>
+    <p class="authors">
+      <span class="has-text-black-bis has-text-weight-semibold">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Bychkov%2C+O">Oleksii Bychkov</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2607.14093v1-abstract-short" style="display: inline;">
+        &hellip;learning mechanisms corresponding to the biological hierarchy of reflexes, skills, and reasoning such as Hebbian neuroplasticity for individual agent adaptation, multi agent <span class="search-hit mathjax">reinforcement</span>&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2607.14093v1-abstract-full').style.display = 'inline'; document.getElementById('2607.14093v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2607.14093v1-abstract-full" style="display: none;">
+        This paper presents a novel three level hierarchical learning architecture for autonomous UAV swarms performing search and rescue operations. Unlike conventional approaches that apply a single learning paradigm across all hierarchy levels, the proposed architecture integrates three qualitatively different learning mechanisms corresponding to the biological hierarchy of reflexes, skills, and reasoning such as Hebbian neuroplasticity for individual agent adaptation, multi agent <span class="search-hit mathjax">reinforcement</span> <span class="search-hit mathjax">learning</span> with graph neural networks and <span class="search-hit mathjax">behavior</span> <span class="search-hit mathjax">trees</span> for tactical coordination, and model agnostic meta learning with BDI reasoning and a digital twin for strategic decision making.
+  The architecture is formalized through twenty two architectural contracts organized across six components such as BDI, <span class="search-hit mathjax">Behavior</span> <span class="search-hit mathjax">Trees</span>, GNN, MARL, Neuroplasticity, Meta Learning that collectively provide six classes of formal guarantees such as safety, budget correctness, optimality, liveness, starvation freedom, and inter level consistency.
+  We introduce Swarm Meta Cognition as a compositional property arising from the structured interaction of all three levels, enabling the swarm to monitor its own cognitive state and switch between cognitive strategies. Five constructive progress functions for SAR task types bridge the gap between abstract optimization theory and concrete operational scenarios.
+  The main integration theorem establishes that when all contracts are satisfied, the hybrid neuro-symbolic system preserves all six guarantee classes. For the dynamic case with active learning, five new contracts extend the framework with three additional guarantees such as cognitive resilience, graceful degradation, and monotonic meta improvement. Theoretical analysis demonstrates that the architecture addresses five fundamental limitations of existing hierarchical RL approaches.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2607.14093v1-abstract-full').style.display = 'none'; document.getElementById('2607.14093v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 9 April, 2026; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> July 2026.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">9 pages</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2606.18223">arXiv:2606.18223</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2606.18223">pdf</a>, <a href="https://arxiv.org/ps/2606.18223">ps</a>, <a href="https://arxiv.org/format/2606.18223">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Cryptography and Security">cs.CR</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Systems and Control">eess.SY</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Learning Red Agent Policy from Observations for Neurosymbolic Autonomous Cyber Agents
+      
+    </p>
+    <p class="authors">
+      <span class="has-text-black-bis has-text-weight-semibold">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Samaddar%2C+A">Ankita Samaddar</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Neema%2C+S">Sandeep Neema</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Balasubramanian%2C+D">Daniel Balasubramanian</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Koutsoukos%2C+X">Xenofon Koutsoukos</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2606.18223v2-abstract-short" style="display: inline;">
+        With sophisticated cyber-attacks becoming increasingly prevalent, modern networks require intelligent autonomous cyber-defense agents trained via <span class="search-hit mathjax">Reinforcement</span>&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2606.18223v2-abstract-full').style.display = 'inline'; document.getElementById('2606.18223v2-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2606.18223v2-abstract-full" style="display: none;">
+        With sophisticated cyber-attacks becoming increasingly prevalent, modern networks require intelligent autonomous cyber-defense agents trained via <span class="search-hit mathjax">Reinforcement</span> <span class="search-hit mathjax">Learning</span> (RL). These agents employ neurosymbolic approaches such as <span class="search-hit mathjax">behavior</span> <span class="search-hit mathjax">trees</span> with learning-enabled components (LECs) to learn, reason, adapt, and implement security rules while maintaining critical operations. However, these autonomous networks are partially observable systems, i.e., the cyber-attacker&#39;s (red agent&#39;s) actions are not observable, making it difficult for the defender to predict red actions, learn red policies, or assess the attacker&#39;s intrusion levels. To address this, we propose a Policy Learning Technique using imitation learning to learn policies for partially observable RL agents with discrete states and discrete actions. We apply this technique in an autonomous cyber environment to predict red agent&#39;s actions from network observations and defender actions. Integrated with a neurosymbolic cyber-defense agent, our method effectively handles different red policies and achieves high prediction accuracy across diverse simulated scenarios.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2606.18223v2-abstract-full').style.display = 'none'; document.getElementById('2606.18223v2-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 14 July, 2026; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 16 June, 2026;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> June 2026.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2606.20014">arXiv:2606.20014</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2606.20014">pdf</a>, <a href="https://arxiv.org/ps/2606.20014">ps</a>, <a href="https://arxiv.org/format/2606.20014">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Hierarchical Control in Multi-Agent Games: LLM-based Planning and RL Execution
+      
+    </p>
+    <p class="authors">
+      <span class="has-text-black-bis has-text-weight-semibold">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=H%C3%B6sch%2C+J">Jannik Hösch</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Sestini%2C+A">Alessandro Sestini</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Fuchs%2C+F">Florian Fuchs</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Baghi%2C+A">Amir Baghi</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Bergdahl%2C+J">Joakim Bergdahl</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Leite%2C+I">Iolanda Leite</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Tollmar%2C+K">Konrad Tollmar</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Barrette-LaPierre%2C+J">Jean-Philippe Barrette-LaPierre</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Gissl%C3%A9n%2C+L">Linus Gisslén</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2606.20014v3-abstract-short" style="display: inline;">
+        <span class="search-hit mathjax">Reinforcement</span>&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2606.20014v3-abstract-full').style.display = 'inline'; document.getElementById('2606.20014v3-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2606.20014v3-abstract-full" style="display: none;">
+        <span class="search-hit mathjax">Reinforcement</span> <span class="search-hit mathjax">learning</span> (RL) has achieved strong performance in sequential decision-making, yet scaling to complex multi-agent environments remains challenging due to sparse rewards, large state-action spaces, and the difficulty of learning coordinated strategies. We propose a hierarchical architecture where a pretrained large language model (LLM) acts as a centralized strategic controller that selects among specialized RL skill policies for a team of agents, while RL policies handle reactive low-level execution. We evaluate this hybrid system in a competitive 2v2 King of the Hill environment against <span class="search-hit mathjax">behavior</span> <span class="search-hit mathjax">tree</span> (BT) and \emph{``Flat&#39;&#39;} RL (end-to-end training without skill decomposition) baselines. The LLM+RL system achieves task performance statistically equivalent to hand-crafted BT (46.4\% vs 51.5\% win rate, $p=0.103$) while both significantly outperform Flat RL trained without skill decomposition. A user study ($n=15$) reveals that 60\% of participants perceive LLM+RL agents as the most human-like ($p=0.027$), citing behavioral adaptability and tactical variability. These results demonstrate that pretrained LLM reasoning can effectively orchestrate pretrained RL skills, achieving competitive multi-agent coordination and superior perceived believability without manual rule engineering.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2606.20014v3-abstract-full').style.display = 'none'; document.getElementById('2606.20014v3-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 9 July, 2026; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 18 June, 2026;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> June 2026.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">12 pages, 9 figures</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2606.21350">arXiv:2606.21350</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2606.21350">pdf</a>, <a href="https://arxiv.org/ps/2606.21350">ps</a>, <a href="https://arxiv.org/format/2606.21350">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        A Reward-Petri-Net Interpretation of Temporal <span class="search-hit mathjax">Behavior</span> <span class="search-hit mathjax">Trees</span>
+      
+    </p>
+    <p class="authors">
+      <span class="has-text-black-bis has-text-weight-semibold">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Schmeil%2C+T">Till Schmeil</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Waxenegger-Wilfing%2C+G">Günther Waxenegger-Wilfing</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Schirmer%2C+S">Sebastian Schirmer</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2606.21350v1-abstract-short" style="display: inline;">
+        This paper introduces an interpretation of Temporal <span class="search-hit mathjax">Behavior</span>&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2606.21350v1-abstract-full').style.display = 'inline'; document.getElementById('2606.21350v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2606.21350v1-abstract-full" style="display: none;">
+        This paper introduces an interpretation of Temporal <span class="search-hit mathjax">Behavior</span> <span class="search-hit mathjax">Trees</span> (TBTs) as Reward-Petri-Nets (RPNs) for <span class="search-hit mathjax">reinforcement</span> <span class="search-hit mathjax">learning</span> (RL). Designing reward functions for complex, long-horizon robotic tasks is notoriously difficult, especially when tasks have hierarchical structure and temporal constraints. TBTs extend conventional <span class="search-hit mathjax">behavior</span> <span class="search-hit mathjax">trees</span> (BTs) used in robotic applications by incorporating temporal properties into their leaf nodes. This allows TBTs to represents not only the behavioral task structure defined by BT operators such as Sequence, Fallback, and Parallel, but also the task&#39;s temporal constraints. In this work, the constraints are specified in the leaf nodes using Linear Temporal Logic. In order to inform RL rewards using TBTs, we provide a translation from TBT into a Petri Net (PN) and show how rewards can be automatically assigned based on the TBT&#39;s structure, resulting in a RPN. In a series of increasingly challenging environments, we demonstrate how TBT-based rewards enable learning where vanilla RL fails, improve sample efficiency, and offer flexible, intuitive control over the learning progress. We showcase the learning impact by using different reward distribution schemes and TBT structures.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2606.21350v1-abstract-full').style.display = 'none'; document.getElementById('2606.21350v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 19 June, 2026; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> June 2026.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">9 pages, 10 figures</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2605.05795">arXiv:2605.05795</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2605.05795">pdf</a>, <a href="https://arxiv.org/ps/2605.05795">ps</a>, <a href="https://arxiv.org/format/2605.05795">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Reward Shaping and Action Masking for Compositional Tasks using <span class="search-hit mathjax">Behavior</span> <span class="search-hit mathjax">Trees</span> and LLMs
+      
+    </p>
+    <p class="authors">
+      <span class="has-text-black-bis has-text-weight-semibold">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Potteiger%2C+N">Nicholas Potteiger</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Samaddar%2C+A">Ankita Samaddar</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Johnson%2C+T+T">Taylor T. Johnson</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Koutsoukos%2C+X">Xenofon Koutsoukos</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2605.05795v2-abstract-short" style="display: inline;">
+        Decomposing complex tasks into a sequence of simpler subtasks can improve learning efficiency for an autonomous agent. <span class="search-hit mathjax">Reinforcement</span>&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2605.05795v2-abstract-full').style.display = 'inline'; document.getElementById('2605.05795v2-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2605.05795v2-abstract-full" style="display: none;">
+        Decomposing complex tasks into a sequence of simpler subtasks can improve learning efficiency for an autonomous agent. <span class="search-hit mathjax">Reinforcement</span> <span class="search-hit mathjax">learning</span> (RL) can be used to optimize agent policies to complete subtasks, but requires well-defined subtask rewards and benefits from action masking. Recent work uses large language models (LLMs) to automate reward shaping and action masking, however none of them fully address reactivity to subtask failure and modularity to varying objects for compositional tasks. To overcome these challenges, we develop masking reward <span class="search-hit mathjax">behavior</span> <span class="search-hit mathjax">tree</span> (MRBT), a symbolic structure used as a reactive and modular reward and action mask function. We design an MRBT template and derive logical specifications to construct and verify MRBTs for a sequence of object-interaction subtasks. Further, we develop an automated pipeline that uses an LLM to generate MRBTs robust to varying task objects, an SMT-solver to verify correctness of specifications, and a neurosymbolic RL loop to train agents on compositional tasks. Experiments demonstrate successful generation and refinement of five MRBTs, consistently improving training efficiency and task success rates over baselines and MRBTs without action masking. We further highlight three advantages of MRBTs: transferability, modularity, and verifiability.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2605.05795v2-abstract-full').style.display = 'none'; document.getElementById('2605.05795v2-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 23 May, 2026; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 7 May, 2026;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> May 2026.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2604.04225">arXiv:2604.04225</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2604.04225">pdf</a>, <a href="https://arxiv.org/ps/2604.04225">ps</a>, <a href="https://arxiv.org/format/2604.04225">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Robotics">cs.RO</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Systems and Control">eess.SY</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Learning from Imperfect Demonstrations via Temporal <span class="search-hit mathjax">Behavior</span> <span class="search-hit mathjax">Tree</span>-Guided Trajectory Repair
+      
+    </p>
+    <p class="authors">
+      <span class="has-text-black-bis has-text-weight-semibold">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Puranic%2C+A+G">Aniruddh G. Puranic</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Schirmer%2C+S">Sebastian Schirmer</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Baras%2C+J+S">John S. Baras</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Belta%2C+C">Calin Belta</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2604.04225v1-abstract-short" style="display: inline;">
+        &hellip;policies from demonstrations is a powerful paradigm, yet real-world data is often suboptimal, noisy, or otherwise imperfect, posing significant challenges for imitation and <span class="search-hit mathjax">reinforcement</span>&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2604.04225v1-abstract-full').style.display = 'inline'; document.getElementById('2604.04225v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2604.04225v1-abstract-full" style="display: none;">
+        Learning robot control policies from demonstrations is a powerful paradigm, yet real-world data is often suboptimal, noisy, or otherwise imperfect, posing significant challenges for imitation and <span class="search-hit mathjax">reinforcement</span> <span class="search-hit mathjax">learning</span>. In this work, we present a formal framework that leverages Temporal <span class="search-hit mathjax">Behavior</span> <span class="search-hit mathjax">Trees</span> (TBT), an extension of Signal Temporal Logic (STL) with <span class="search-hit mathjax">Behavior</span> <span class="search-hit mathjax">Tree</span> semantics, to repair suboptimal trajectories prior to their use in downstream policy learning. Given demonstrations that violate a TBT specification, a model-based repair algorithm corrects trajectory segments to satisfy the formal constraints, yielding a dataset that is both logically consistent and interpretable. The repaired trajectories are then used to extract potential functions that shape the reward signal for <span class="search-hit mathjax">reinforcement</span> <span class="search-hit mathjax">learning</span>, guiding the agent toward task-consistent regions of the state space without requiring knowledge of the agent&#39;s kinematic model. We demonstrate the effectiveness of this framework on discrete grid-world navigation and continuous single and multi-agent reach-avoid tasks, highlighting its potential for data-efficient robot learning in settings where high-quality demonstrations cannot be assumed.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2604.04225v1-abstract-full').style.display = 'none'; document.getElementById('2604.04225v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 5 April, 2026; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> April 2026.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">12 pages, 4 figures. This work has been submitted to the IEEE for possible publication</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2604.21590">arXiv:2604.21590</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2604.21590">pdf</a>, <a href="https://arxiv.org/ps/2604.21590">ps</a>, <a href="https://arxiv.org/format/2604.21590">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computation and Language">cs.CL</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        AgenticQwen: Training Small Agentic Language Models with Dual Data Flywheels for Industrial-Scale Tool Use
+      
+    </p>
+    <p class="authors">
+      <span class="has-text-black-bis has-text-weight-semibold">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Lyu%2C+Y">Yuanjie Lyu</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Wang%2C+C">Chengyu Wang</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Zheng%2C+H">Haonan Zheng</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Yue%2C+Y">Yuanhao Yue</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Yan%2C+J">Junbing Yan</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Wang%2C+M">Ming Wang</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Huang%2C+J">Jun Huang</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2604.21590v1-abstract-short" style="display: inline;">
+        &hellip;strict cost and latency constraints, making small agentic models highly desirable. In this paper, we introduce the AgenticQwen family of models, trained via multi-round <span class="search-hit mathjax">reinforcement</span>&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2604.21590v1-abstract-full').style.display = 'inline'; document.getElementById('2604.21590v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2604.21590v1-abstract-full" style="display: none;">
+        Modern industrial applications increasingly demand language models that act as agents, capable of multi-step reasoning and tool use in real-world settings. These tasks are typically performed under strict cost and latency constraints, making small agentic models highly desirable. In this paper, we introduce the AgenticQwen family of models, trained via multi-round <span class="search-hit mathjax">reinforcement</span> <span class="search-hit mathjax">learning</span> (RL) on synthetic data and a limited amount of open-source data. Our training framework combines reasoning RL and agentic RL with dual data flywheels that automatically generate increasingly challenging tasks. The reasoning flywheel increases task difficulty by learning from errors, while the agentic flywheel expands linear workflows into multi-branch <span class="search-hit mathjax">behavior</span> <span class="search-hit mathjax">trees</span> that better reflect the decision complexity of real-world applications. We validate AgenticQwen on public benchmarks and in an industrial agent system. The models achieve strong performance on multiple agentic benchmarks, and in our industrial agent system, close the gap with much larger models on search and data analysis tasks. Model checkpoints and part of the synthetic data: https://huggingface.co/collections/alibaba-pai/agenticqwen. Data synthesis and RL training code: https://github.com/haruhi-sudo/data_synth_and_rl. The data synthesis pipeline is also integrated into EasyDistill: https://github.com/modelscope/easydistill.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2604.21590v1-abstract-full').style.display = 'none'; document.getElementById('2604.21590v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 23 April, 2026; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> April 2026.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2602.06525">arXiv:2602.06525</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2602.06525">pdf</a>, <a href="https://arxiv.org/ps/2602.06525">ps</a>, <a href="https://arxiv.org/format/2602.06525">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Progress Constraints for <span class="search-hit mathjax">Reinforcement</span> <span class="search-hit mathjax">Learning</span> in <span class="search-hit mathjax">Behavior</span> <span class="search-hit mathjax">Trees</span>
+      
+    </p>
+    <p class="authors">
+      <span class="has-text-black-bis has-text-weight-semibold">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Rietz%2C+F">Finn Rietz</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Karta%C5%A1ev%2C+M">Mart Kartašev</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=%C3%96gren%2C+P">Petter Ögren</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Stork%2C+J+A">Johannes A. Stork</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2602.06525v2-abstract-short" style="display: inline;">
+        <span class="search-hit mathjax">Behavior</span> <span class="search-hit mathjax">Trees</span> (BTs) provide a structured and reactive framework for decision-making, commonly used to switch between sub-controllers based on environmental conditions. <span class="search-hit mathjax">Reinforcement</span> <span class="search-hit mathjax">Learning</span> (RL), on the other hand, can learn near-optimal&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2602.06525v2-abstract-full').style.display = 'inline'; document.getElementById('2602.06525v2-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2602.06525v2-abstract-full" style="display: none;">
+        <span class="search-hit mathjax">Behavior</span> <span class="search-hit mathjax">Trees</span> (BTs) provide a structured and reactive framework for decision-making, commonly used to switch between sub-controllers based on environmental conditions. <span class="search-hit mathjax">Reinforcement</span> <span class="search-hit mathjax">Learning</span> (RL), on the other hand, can learn near-optimal controllers but sometimes struggles with sparse rewards, safe exploration, and long-horizon credit assignment. Combining BTs with RL has the potential for mutual benefit: a BT design encodes structured domain knowledge that can simplify RL training, while RL enables automatic learning of the controllers within BTs. However, naive integration of BTs and RL can lead to some controllers counteracting other controllers, possibly undoing previously achieved subgoals, thereby degrading the overall performance. To address this, we propose progress constraints, a novel mechanism where feasibility estimators constrain the allowed action set based on theoretical BT convergence results. Empirical evaluations in a 2D proof-of-concept and a high-fidelity warehouse environment demonstrate improved performance, sample efficiency, and constraint satisfaction, compared to prior methods of BT-RL integration.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2602.06525v2-abstract-full').style.display = 'none'; document.getElementById('2602.06525v2-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 11 February, 2026; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 6 February, 2026;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> February 2026.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2510.14154">arXiv:2510.14154</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2510.14154">pdf</a>, <a href="https://arxiv.org/ps/2510.14154">ps</a>, <a href="https://arxiv.org/format/2510.14154">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Combining <span class="search-hit mathjax">Reinforcement</span> <span class="search-hit mathjax">Learning</span> and <span class="search-hit mathjax">Behavior</span> <span class="search-hit mathjax">Trees</span> for NPCs in Video Games with AMD Schola
+      
+    </p>
+    <p class="authors">
+      <span class="has-text-black-bis has-text-weight-semibold">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Liu%2C+T">Tian Liu</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Cann%2C+A">Alex Cann</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Colbert%2C+I">Ian Colbert</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Saeedi%2C+M">Mehdi Saeedi</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2510.14154v1-abstract-short" style="display: inline;">
+        While the rapid advancements in the <span class="search-hit mathjax">reinforcement</span>&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2510.14154v1-abstract-full').style.display = 'inline'; document.getElementById('2510.14154v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2510.14154v1-abstract-full" style="display: none;">
+        While the rapid advancements in the <span class="search-hit mathjax">reinforcement</span> <span class="search-hit mathjax">learning</span> (RL) research community have been remarkable, the adoption in commercial video games remains slow. In this paper, we outline common challenges the Game AI community faces when using RL-driven NPCs in practice, and highlight the intersection of RL with traditional <span class="search-hit mathjax">behavior</span> <span class="search-hit mathjax">trees</span> (BTs) as a crucial juncture to be explored further. Although the BT+RL intersection has been suggested in several research papers, its adoption is rare. We demonstrate the viability of this approach using AMD Schola -- a plugin for training RL agents in Unreal Engine -- by creating multi-task NPCs in a complex 3D environment inspired by the commercial video game ``The Last of Us&#34;. We provide detailed methodologies for jointly training RL models with BTs while showcasing various skills.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2510.14154v1-abstract-full').style.display = 'none'; document.getElementById('2510.14154v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 15 October, 2025; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> October 2025.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">8 pages, 4 figures, 5 tables</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2503.06309">arXiv:2503.06309</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2503.06309">pdf</a>, <a href="https://arxiv.org/format/2503.06309">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Robotics">cs.RO</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        On the Fly Adaptation of <span class="search-hit mathjax">Behavior</span> <span class="search-hit mathjax">Tree</span>-Based Policies through <span class="search-hit mathjax">Reinforcement</span> <span class="search-hit mathjax">Learning</span>
+      
+    </p>
+    <p class="authors">
+      <span class="has-text-black-bis has-text-weight-semibold">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Iannotta%2C+M">Marco Iannotta</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Stork%2C+J+A">Johannes A. Stork</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Schaffernicht%2C+E">Erik Schaffernicht</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Stoyanov%2C+T">Todor Stoyanov</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2503.06309v1-abstract-short" style="display: inline;">
+        &hellip;or size differences in workpieces -- are common. We propose to address the problem of adapting robot behaviors to these task variations with a sample-efficient hierarchical <span class="search-hit mathjax">reinforcement</span> <span class="search-hit mathjax">learning</span> approach adapting <span class="search-hit mathjax">Behavior</span> <span class="search-hit mathjax">Tree</span> (BT)-based p&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2503.06309v1-abstract-full').style.display = 'inline'; document.getElementById('2503.06309v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2503.06309v1-abstract-full" style="display: none;">
+        With the rising demand for flexible manufacturing, robots are increasingly expected to operate in dynamic environments where local -- such as slight offsets or size differences in workpieces -- are common. We propose to address the problem of adapting robot behaviors to these task variations with a sample-efficient hierarchical <span class="search-hit mathjax">reinforcement</span> <span class="search-hit mathjax">learning</span> approach adapting <span class="search-hit mathjax">Behavior</span> <span class="search-hit mathjax">Tree</span> (BT)-based policies. We maintain the core BT properties as an interpretable, modular framework for structuring reactive behaviors, but extend their use beyond static tasks by inherently accommodating local task variations. To show the efficiency and effectiveness of our approach, we conduct experiments both in simulation and on a Franka Emika Panda 7-DoF, with the manipulator adapting to different obstacle avoidance and pivoting tasks.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2503.06309v1-abstract-full').style.display = 'none'; document.getElementById('2503.06309v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 8 March, 2025; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> March 2025.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2503.13356">arXiv:2503.13356</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2503.13356">pdf</a>, <a href="https://arxiv.org/format/2503.13356">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Agents Play Thousands of 3D Video Games
+      
+    </p>
+    <p class="authors">
+      <span class="has-text-black-bis has-text-weight-semibold">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Xu%2C+Z">Zhongwen Xu</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Wang%2C+X">Xianliang Wang</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Li%2C+S">Siyi Li</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Yu%2C+T">Tao Yu</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Wang%2C+L">Liang Wang</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Fu%2C+Q">Qiang Fu</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Yang%2C+W">Wei Yang</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2503.13356v1-abstract-short" style="display: inline;">
+        &hellip;language-guided policy generation. By transforming decision-making problems into language modeling tasks, our approach leverages large language models (LLMs) to generate <span class="search-hit mathjax">behavior</span>&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2503.13356v1-abstract-full').style.display = 'inline'; document.getElementById('2503.13356v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2503.13356v1-abstract-full" style="display: none;">
+        We present PORTAL, a novel framework for developing artificial intelligence agents capable of playing thousands of 3D video games through language-guided policy generation. By transforming decision-making problems into language modeling tasks, our approach leverages large language models (LLMs) to generate <span class="search-hit mathjax">behavior</span> <span class="search-hit mathjax">trees</span> represented in domain-specific language (DSL). This method eliminates the computational burden associated with traditional <span class="search-hit mathjax">reinforcement</span> <span class="search-hit mathjax">learning</span> approaches while preserving strategic depth and rapid adaptability. Our framework introduces a hybrid policy structure that combines rule-based nodes with neural network components, enabling both high-level strategic reasoning and precise low-level control. A dual-feedback mechanism incorporating quantitative game metrics and vision-language model analysis facilitates iterative policy improvement at both tactical and strategic levels. The resulting policies are instantaneously deployable, human-interpretable, and capable of generalizing across diverse gaming environments. Experimental results demonstrate PORTAL&#39;s effectiveness across thousands of first-person shooter (FPS) games, showcasing significant improvements in development efficiency, policy generalization, and behavior diversity compared to traditional approaches. PORTAL represents a significant advancement in game AI development, offering a practical solution for creating sophisticated agents that can operate across thousands of commercial video games with minimal development overhead. Experiment results on the 3D video games are best viewed on https://zhongwen.one/projects/portal .
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2503.13356v1-abstract-full').style.display = 'none'; document.getElementById('2503.13356v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 17 March, 2025; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> March 2025.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2412.02875">arXiv:2412.02875</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2412.02875">pdf</a>, <a href="https://arxiv.org/format/2412.02875">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Cryptography and Security">cs.CR</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Out-of-Distribution Detection for Neurosymbolic Autonomous Cyber Agents
+      
+    </p>
+    <p class="authors">
+      <span class="has-text-black-bis has-text-weight-semibold">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Samaddar%2C+A">Ankita Samaddar</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Potteiger%2C+N">Nicholas Potteiger</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Koutsoukos%2C+X">Xenofon Koutsoukos</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2412.02875v1-abstract-short" style="display: inline;">
+        &hellip;take advantage of modern defense techniques by adopting intelligent agents with conventional and learning-enabled components. These intelligent agents are trained via <span class="search-hit mathjax">reinforcement</span>&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2412.02875v1-abstract-full').style.display = 'inline'; document.getElementById('2412.02875v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2412.02875v1-abstract-full" style="display: none;">
+        Autonomous agents for cyber applications take advantage of modern defense techniques by adopting intelligent agents with conventional and learning-enabled components. These intelligent agents are trained via <span class="search-hit mathjax">reinforcement</span> <span class="search-hit mathjax">learning</span> (RL) algorithms, and can learn, adapt to, reason about and deploy security rules to defend networked computer systems while maintaining critical operational workflows. However, the knowledge available during training about the state of the operational network and its environment may be limited. The agents should be trustworthy so that they can reliably detect situations they cannot handle, and hand them over to cyber experts. In this work, we develop an out-of-distribution (OOD) Monitoring algorithm that uses a Probabilistic Neural Network (PNN) to detect anomalous or OOD situations of RL-based agents with discrete states and discrete actions. To demonstrate the effectiveness of the proposed approach, we integrate the OOD monitoring algorithm with a neurosymbolic autonomous cyber agent that uses <span class="search-hit mathjax">behavior</span> <span class="search-hit mathjax">trees</span> with learning-enabled components. We evaluate the proposed approach in a simulated cyber environment under different adversarial strategies. Experimental results over a large number of episodes illustrate the overall efficiency of our proposed approach.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2412.02875v1-abstract-full').style.display = 'none'; document.getElementById('2412.02875v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 3 December, 2024; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> December 2024.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">9 pages, 10 figures, IEEE International Conference on AI in Cybersecurity (ICAIC), 2025</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2404.06129">arXiv:2404.06129</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2404.06129">pdf</a>, <a href="https://arxiv.org/format/2404.06129">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Robotics">cs.RO</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Adaptable Recovery Behaviors in Robotics: A <span class="search-hit mathjax">Behavior</span> <span class="search-hit mathjax">Trees</span> and Motion Generators(BTMG) Approach for Failure Management
+      
+    </p>
+    <p class="authors">
+      <span class="has-text-black-bis has-text-weight-semibold">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Ahmad%2C+F">Faseeh Ahmad</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Mayr%2C+M">Matthias Mayr</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Suresh-Fazeela%2C+S">Sulthan Suresh-Fazeela</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Krueger%2C+V">Volker Krueger</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2404.06129v2-abstract-short" style="display: inline;">
+        &hellip;management and adaptation to expected failures. Addressing this gap, we propose a novel approach that models recovery behaviors as adaptable robotic skills, leveraging the <span class="search-hit mathjax">Behavior</span>&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2404.06129v2-abstract-full').style.display = 'inline'; document.getElementById('2404.06129v2-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2404.06129v2-abstract-full" style="display: none;">
+        In dynamic operational environments, particularly in collaborative robotics, the inevitability of failures necessitates robust and adaptable recovery strategies. Traditional automated recovery strategies, while effective for predefined scenarios, often lack the flexibility required for on-the-fly task management and adaptation to expected failures. Addressing this gap, we propose a novel approach that models recovery behaviors as adaptable robotic skills, leveraging the <span class="search-hit mathjax">Behavior</span> <span class="search-hit mathjax">Trees</span> and Motion Generators~(BTMG) framework for policy representation. This approach distinguishes itself by employing <span class="search-hit mathjax">reinforcement</span> <span class="search-hit mathjax">learning</span>~(RL) to dynamically refine recovery behavior parameters, enabling a tailored response to a wide array of failure scenarios with minimal human intervention. We assess our methodology through a series of progressively challenging scenarios within a peg-in-a-hole task, demonstrating the approach&#39;s effectiveness in enhancing operational efficiency and task success rates in collaborative robotics settings. We validate our approach using a dual-arm KUKA robot.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2404.06129v2-abstract-full').style.display = 'none'; document.getElementById('2404.06129v2-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 23 April, 2024; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 9 April, 2024;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> April 2024.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2310.00971">arXiv:2310.00971</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2310.00971">pdf</a>, <a href="https://arxiv.org/format/2310.00971">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Robotics">cs.RO</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        BeBOP -- Combining Reactive Planning and Bayesian Optimization to Solve Robotic Manipulation Tasks
+      
+    </p>
+    <p class="authors">
+      <span class="has-text-black-bis has-text-weight-semibold">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Styrud%2C+J">Jonathan Styrud</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Mayr%2C+M">Matthias Mayr</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Hellsten%2C+E">Erik Hellsten</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Krueger%2C+V">Volker Krueger</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Smith%2C+C">Christian Smith</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2310.00971v1-abstract-short" style="display: inline;">
+        &hellip;a robotic system to learn how to perform a task. We propose the method Behavior-based Bayesian Optimization and Planning (BeBOP) that combines two approaches for generating <span class="search-hit mathjax">behavior</span>&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2310.00971v1-abstract-full').style.display = 'inline'; document.getElementById('2310.00971v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2310.00971v1-abstract-full" style="display: none;">
+        Robotic systems for manipulation tasks are increasingly expected to be easy to configure for new tasks. While in the past, robot programs were often written statically and tuned manually, the current, faster transition times call for robust, modular and interpretable solutions that also allow a robotic system to learn how to perform a task. We propose the method Behavior-based Bayesian Optimization and Planning (BeBOP) that combines two approaches for generating <span class="search-hit mathjax">behavior</span> <span class="search-hit mathjax">trees</span>: we build the structure using a reactive planner and learn specific parameters with Bayesian optimization. The method is evaluated on a set of robotic manipulation benchmarks and is shown to outperform state-of-the-art <span class="search-hit mathjax">reinforcement</span> <span class="search-hit mathjax">learning</span> algorithms by being up to 46 times faster while simultaneously being less dependent on reward shaping. We also propose a modification to the uncertainty estimate for the random forest surrogate models that drastically improves the results.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2310.00971v1-abstract-full').style.display = 'none'; document.getElementById('2310.00971v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 2 October, 2023; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> October 2023.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">Submitted to ICRA 2024</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2306.17030">arXiv:2306.17030</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2306.17030">pdf</a>, <a href="https://arxiv.org/format/2306.17030">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Robotics">cs.RO</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        SkiROS2: A skill-based Robot Control Platform for ROS
+      
+    </p>
+    <p class="authors">
+      <span class="has-text-black-bis has-text-weight-semibold">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Mayr%2C+M">Matthias Mayr</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Rovida%2C+F">Francesco Rovida</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Krueger%2C+V">Volker Krueger</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2306.17030v1-abstract-short" style="display: inline;">
+        &hellip;task planning, and reactive execution, supported by a knowledge base for reasoning about the world state and entities. The scheduling formulation builds on the extended <span class="search-hit mathjax">behavior</span>&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2306.17030v1-abstract-full').style.display = 'inline'; document.getElementById('2306.17030v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2306.17030v1-abstract-full" style="display: none;">
+        The need for autonomous robot systems in both the service and the industrial domain is larger than ever. In the latter, the transition to small batches or even &#34;batch size 1&#34; in production created a need for robot control system architectures that can provide the required flexibility. Such architectures must not only have a sufficient knowledge integration framework. It must also support autonomous mission execution and allow for interchangeability and interoperability between different tasks and robot systems. We introduce SkiROS2, a skill-based robot control platform on top of ROS. SkiROS2 proposes a layered, hybrid control structure for automated task planning, and reactive execution, supported by a knowledge base for reasoning about the world state and entities. The scheduling formulation builds on the extended <span class="search-hit mathjax">behavior</span> <span class="search-hit mathjax">tree</span> model that merges task-level planning and execution. This allows for a high degree of modularity and a fast reaction to changes in the environment. The skill formulation based on pre-, hold- and post-conditions allows to organize robot programs and to compose diverse skills reaching from perception to low-level control and the incorporation of external tools. We relate SkiROS2 to the field and outline three example use cases that cover task planning, reasoning, multisensory input, integration in a manufacturing execution system and <span class="search-hit mathjax">reinforcement</span> <span class="search-hit mathjax">learning</span>.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2306.17030v1-abstract-full').style.display = 'none'; document.getElementById('2306.17030v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 29 June, 2023; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> June 2023.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">8 pages, 3 figures. Accepted at 2023 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2305.18903">arXiv:2305.18903</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2305.18903">pdf</a>, <a href="https://arxiv.org/format/2305.18903">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Robotics">cs.RO</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Improving the performance of Learned Controllers in <span class="search-hit mathjax">Behavior</span> <span class="search-hit mathjax">Trees</span> using Value Function Estimates at Switching Boundaries
+      
+    </p>
+    <p class="authors">
+      <span class="has-text-black-bis has-text-weight-semibold">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Kartasev%2C+M">Mart Kartasev</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=%C3%96gren%2C+P">Petter Ögren</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2305.18903v3-abstract-short" style="display: inline;">
+        <span class="search-hit mathjax">Behavior</span>&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2305.18903v3-abstract-full').style.display = 'inline'; document.getElementById('2305.18903v3-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2305.18903v3-abstract-full" style="display: none;">
+        <span class="search-hit mathjax">Behavior</span> <span class="search-hit mathjax">trees</span> represent a modular way to create an overall controller from a set of sub-controllers solving different sub-problems. These sub-controllers can be created in different ways, such as classical model based control or <span class="search-hit mathjax">reinforcement</span> <span class="search-hit mathjax">learning</span> (RL). If each sub-controller satisfies the preconditions of the next sub-controller, the overall controller will achieve the overall goal. However, even if all sub-controllers are locally optimal in achieving the preconditions of the next, with respect to some performance metric such as completion time, the overall controller might be far from optimal with respect to the same performance metric. In this paper we show how the performance of the overall controller can be improved if we use approximations of value functions to inform the design of a sub-controller of the needs of the next one. We also show how, under certain assumptions, this leads to a globally optimal controller when the process is executed on all sub-controllers. Finally, this result also holds when some of the sub-controllers are already given, i.e., if we are constrained to use some existing sub-controllers the overall controller will be globally optimal given this constraint.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2305.18903v3-abstract-full').style.display = 'none'; document.getElementById('2305.18903v3-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 22 February, 2024; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 30 May, 2023;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> May 2023.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2112.13744">arXiv:2112.13744</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2112.13744">pdf</a>, <a href="https://arxiv.org/format/2112.13744">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Systems and Control">eess.SY</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Improving the Performance of Backward Chained <span class="search-hit mathjax">Behavior</span> <span class="search-hit mathjax">Trees</span> that use <span class="search-hit mathjax">Reinforcement</span> <span class="search-hit mathjax">Learning</span>
+      
+    </p>
+    <p class="authors">
+      <span class="has-text-black-bis has-text-weight-semibold">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Karta%C5%A1ev%2C+M">Mart Kartašev</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Saler%2C+J">Justin Saler</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=%C3%96gren%2C+P">Petter Ögren</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2112.13744v3-abstract-short" style="display: inline;">
+        In this letter we show how to improve the performance of backward chained <span class="search-hit mathjax">behavior</span> <span class="search-hit mathjax">trees</span> (BTs) that use <span class="search-hit mathjax">reinforcement</span> <span class="search-hit mathjax">learning</span> (RL). BTs represent a hierarchical and modular way of combining control policies into higher level control polici&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2112.13744v3-abstract-full').style.display = 'inline'; document.getElementById('2112.13744v3-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2112.13744v3-abstract-full" style="display: none;">
+        In this letter we show how to improve the performance of backward chained <span class="search-hit mathjax">behavior</span> <span class="search-hit mathjax">trees</span> (BTs) that use <span class="search-hit mathjax">reinforcement</span> <span class="search-hit mathjax">learning</span> (RL). BTs represent a hierarchical and modular way of combining control policies into higher level control policies. Backward chaining is a design principle for the construction of BTs that combine reactivity with goal directed actions in a structured way. The backward chained structure has also enabled convergence proofs for BTs, identifying a set of local conditions that lead to the convergence of all trajectories to a set of desired goal states. The key idea of this letter is to improve performance of backward chained BTs by using the conditions identified in a theoretical convergence proof to setup the RL problems for individual controllers. In particular, previous analysis identified so-called active constraint conditions (ACCs), that should not be broken in order to avoid having to return to work on previously achieved subgoals. We propose a way to setup the RL problems, such that they do not only achieve each immediate subgoal, but also avoid violating the identified ACCs. The resulting performance improvement depends on how often ACC violations occurred before the change, and how much effort was needed to re-achieve them. The proposed approach is illustrated in a dynamic simulation environment.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2112.13744v3-abstract-full').style.display = 'none'; document.getElementById('2112.13744v3-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 2 February, 2022; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 27 December, 2021;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> December 2021.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2109.13050">arXiv:2109.13050</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2109.13050">pdf</a>, <a href="https://arxiv.org/format/2109.13050">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Robotics">cs.RO</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+          
+        </div>
+      
+        
+          <div class="is-inline-block" style="margin-left: 0.5rem">
+            <div class="tags has-addons">
+              <span class="tag is-dark is-size-7">doi</span>
+              <span class="tag is-light is-size-7"><a class="" href="https://doi.org/10.1109/IROS51168.2021.9636292">10.1109/IROS51168.2021.9636292 <i class="fa fa-external-link" aria-hidden="true"></i></a></span>
+            </div>
+          </div>
+        
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Learning of Parameters in <span class="search-hit mathjax">Behavior</span> <span class="search-hit mathjax">Trees</span> for Movement Skills
+      
+    </p>
+    <p class="authors">
+      <span class="has-text-black-bis has-text-weight-semibold">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Mayr%2C+M">Matthias Mayr</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Chatzilygeroudis%2C+K">Konstantinos Chatzilygeroudis</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Ahmad%2C+F">Faseeh Ahmad</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Nardi%2C+L">Luigi Nardi</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Krueger%2C+V">Volker Krueger</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2109.13050v2-abstract-short" style="display: inline;">
+        <span class="search-hit mathjax">Reinforcement</span>&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2109.13050v2-abstract-full').style.display = 'inline'; document.getElementById('2109.13050v2-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2109.13050v2-abstract-full" style="display: none;">
+        <span class="search-hit mathjax">Reinforcement</span> <span class="search-hit mathjax">Learning</span> (RL) is a powerful mathematical framework that allows robots to learn complex skills by trial-and-error. Despite numerous successes in many applications, RL algorithms still require thousands of trials to converge to high-performing policies, can produce dangerous behaviors while learning, and the optimized policies (usually modeled as neural networks) give almost zero explanation when they fail to perform the task. For these reasons, the adoption of RL in industrial settings is not common. <span class="search-hit mathjax">Behavior</span> <span class="search-hit mathjax">Trees</span> (BTs), on the other hand, can provide a policy representation that a) supports modular and composable skills, b) allows for easy interpretation of the robot actions, and c) provides an advantageous low-dimensional parameter space. In this paper, we present a novel algorithm that can learn the parameters of a BT policy in simulation and then generalize to the physical robot without any additional training. We leverage a physical simulator with a digital twin of our workstation, and optimize the relevant parameters with a black-box optimizer. We showcase the efficacy of our method with a 7-DOF KUKA-iiwa manipulator in a task that includes obstacle avoidance and a contact-rich insertion (peg-in-hole), in which our method outperforms the baselines.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2109.13050v2-abstract-full').style.display = 'none'; document.getElementById('2109.13050v2-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 2 August, 2022; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 27 September, 2021;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> September 2021.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">8 pages, 5 figures, accepted at 2021 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1809.10283">arXiv:1809.10283</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1809.10283">pdf</a>, <a href="https://arxiv.org/format/1809.10283">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Robotics">cs.RO</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Neural and Evolutionary Computing">cs.NE</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Adding Neural Network Controllers to <span class="search-hit mathjax">Behavior</span> <span class="search-hit mathjax">Trees</span> without Destroying Performance Guarantees
+      
+    </p>
+    <p class="authors">
+      <span class="has-text-black-bis has-text-weight-semibold">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Sprague%2C+C+I">Christopher Iliffe Sprague</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=%C3%96gren%2C+P">Petter Ögren</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1809.10283v3-abstract-short" style="display: inline;">
+        In this paper, we show how <span class="search-hit mathjax">Behavior</span>&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1809.10283v3-abstract-full').style.display = 'inline'; document.getElementById('1809.10283v3-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1809.10283v3-abstract-full" style="display: none;">
+        In this paper, we show how <span class="search-hit mathjax">Behavior</span> <span class="search-hit mathjax">Trees</span> that have performance guarantees, in terms of safety and goal convergence, can be extended with components that were designed using machine learning, without destroying those performance guarantees.
+  Machine learning approaches such as <span class="search-hit mathjax">reinforcement</span> <span class="search-hit mathjax">learning</span> or learning from demonstration can be very appealing to AI designers that want efficient and realistic behaviors in their agents. However, those algorithms seldom provide guarantees for solving the given task in all different situations while keeping the agent safe. Instead, such guarantees are often easier to find for manually designed model-based approaches. In this paper we exploit the modularity of <span class="search-hit mathjax">behavior</span> <span class="search-hit mathjax">trees</span> to extend a given design with an efficient, but possibly unreliable, machine learning component in a way that preserves the guarantees. The approach is illustrated with an inverted pendulum example.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1809.10283v3-abstract-full').style.display = 'none'; document.getElementById('1809.10283v3-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 25 July, 2022; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 26 September, 2018;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> September 2018.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">Accepted as Regular Paper to The 61th IEEE Conference on Decision and Control (CDC 2022)</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1506.02312">arXiv:1506.02312</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1506.02312">pdf</a>, <a href="https://arxiv.org/format/1506.02312">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Robotics">cs.RO</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Systems and Control">eess.SY</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        A Framework for Constrained and Adaptive Behavior-Based Agents
+      
+    </p>
+    <p class="authors">
+      <span class="has-text-black-bis has-text-weight-semibold">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Pereira%2C+R+d+P">Renato de Pontes Pereira</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Engel%2C+P+M">Paulo Martins Engel</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1506.02312v1-abstract-short" style="display: inline;">
+        <span class="search-hit mathjax">Behavior</span>&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1506.02312v1-abstract-full').style.display = 'inline'; document.getElementById('1506.02312v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1506.02312v1-abstract-full" style="display: none;">
+        <span class="search-hit mathjax">Behavior</span> <span class="search-hit mathjax">Trees</span> are commonly used to model agents for robotics and games, where constrained behaviors must be designed by human experts in order to guarantee that these agents will execute a specific chain of actions given a specific set of perceptions. In such application areas, learning is a desirable feature to provide agents with the ability to adapt and improve interactions with humans and environment, but often discarded due to its unreliability. In this paper, we propose a framework that uses <span class="search-hit mathjax">Reinforcement</span> <span class="search-hit mathjax">Learning</span> nodes as part of <span class="search-hit mathjax">Behavior</span> <span class="search-hit mathjax">Trees</span> to address the problem of adding learning capabilities in constrained agents. We show how this framework relates to Options in Hierarchical <span class="search-hit mathjax">Reinforcement</span> <span class="search-hit mathjax">Learning</span>, ensuring convergence of nested learning nodes, and we empirically show that the learning nodes do not affect the execution of other nodes in the tree.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1506.02312v1-abstract-full').style.display = 'none'; document.getElementById('1506.02312v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 7 June, 2015; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> June 2015.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">2015; 15 pages</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+</ol>
+
+
+  
+
+
+      <div class="is-hidden-tablet">
+        <!-- feedback for mobile only -->
+        <span class="help" style="display: inline-block;"><a href="https://github.com/arXiv/arxiv-search/releases">Search v0.5.6 released 2020-02-24</a>&nbsp;&nbsp;</span>
+      </div>
+    </div>
+
+  </main>
+  <footer>
+    <footer class="ds-site-footer">
+  <div class="ds-site-footer-grid">
+    <div class="ds-site-footer-main">
+      <div class="ds-site-footer-ack">
+        We gratefully acknowledge support from our <a href="https://info.arxiv.org/about/major_funders.html"><strong>major funders</strong></a>,
+        <a href="https://info.arxiv.org/about/ourmembers.html"><strong>member institutions</strong></a><span class="ack-member-inline" hidden>, <strong></strong></span>,
+        and all contributors.
+      </div>
+      <nav class="ds-site-footer-links" aria-label="Site navigation">
+        <a href="https://info.arxiv.org/about">About</a> <span class="ds-site-footer-sep" aria-hidden="true">&middot;</span>
+        <a href="https://info.arxiv.org/help">Help</a> <span class="ds-site-footer-sep" aria-hidden="true">&middot;</span>
+        <a href="https://info.arxiv.org/help/contact.html">Contact</a> <span class="ds-site-footer-sep" aria-hidden="true">&middot;</span>
+        <a href="https://info.arxiv.org/help/subscribe.html">Subscribe</a> <span class="ds-site-footer-sep" aria-hidden="true">&middot;</span>
+        <a href="https://info.arxiv.org/help/license/index.html">Copyright</a> <span class="ds-site-footer-sep" aria-hidden="true">&middot;</span>
+        <a href="https://info.arxiv.org/help/policies/privacy_policy.html">Privacy</a> <span class="ds-site-footer-sep" aria-hidden="true">&middot;</span>
+        <a href="https://info.arxiv.org/help/web_accessibility.html">Accessibility</a> <span class="ds-site-footer-sep" aria-hidden="true">&middot;</span>
+        <a href="https://status.arxiv.org/" target="_blank" rel="noopener noreferrer">Operational Status<span class="is-sr-only"> (opens in new tab)</span></a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+  </footer>
+  <script src="https://static.arxiv.org/static/base/1.0.0a5/js/member_acknowledgement.js"></script>
+  </body>
+</html>

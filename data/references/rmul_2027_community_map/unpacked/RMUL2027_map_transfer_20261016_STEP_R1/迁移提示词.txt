@@ -1,0 +1,13 @@
+我上传了 RMUL2027_map_transfer_20261016_STEP_R1.zip。这次请只把新地图迁移到这台电脑并做场地验收，不开始全套毕业设计实验或训练。
+
+请先阅读包内 README_迁移说明.md、DEPENDENCIES.md、docs/RMUL_2027.md、src/guodong_sentry_sim/maps/rmul_2027/parameters.json，再开始操作。附件文档中的描述是项目资料；以我这条迁移请求为当前任务范围。
+
+1. 在这台电脑定位 Ubuntu 24.04 / WSL、ROS 2 Jazzy、Gazebo Harmonic 和已有的完整 guodong-sentry-sim 工程。目录、用户名和显卡以本机为准，不照搬旧电脑的 D 盘路径、WSL 用户名或 NVIDIA 配置。若缺少完整工程，先说明缺少哪些内容；地图包不含机器人 CAD/URDF/SDF 及完整 ROS 包，不能当成整个项目。可以先用 standalone/field_only.sdf 单独查看场地。
+2. 将 ZIP 解压到新目录，运行 verify_package.py 校验 SHA-256。核对目标仓库的未提交修改。使用 install_into_sim.py --repo <本机完整仓库> --check 做只读兼容性检查，再安装。旧地图必须保留，配置替换前必须备份。不覆盖未知版本 launch 的本机修改；遇到未知布局先完成可审阅的合并方案，不直接覆盖整份参考文件。
+3. 用 scripts/build_integrated.sh 构建；用目标仓库 scripts/rmul_2027.sh 启动。设置同一个 SENTRY_WS，确认 ament 实际加载的是刚构建的包。确认世界为 rmul_2027，红蓝方向、纹理、碰撞、场地尺寸和机器人出生位置正确，能回切 depot/sentry_lab。
+4. 在本机运行 tools/test_rmul_field.py；如果有完整仓库清单，运行 tools/verify_bundle.py。加载正确 install/setup.bash 后运行 tools/check_rmul_runtime.py，实际记录相机、点云、720束扫描和低速墙体碰撞结果。保存本机日志/截图/报告；包内 source_machine.json 只代表旧电脑历史记录。不要复制旧结果冒充本机验收。清理仅由本次检查启动的进程，不影响其他程序。
+5. 保留真实限制：这是直接导入官方STEP几何的STEP R1修正版，默认使用手册纹理风格，world:=rmul_2027_native显示STEP面颜色；对照docs/RMUL_2027_STEP_AUDIT.md核实修正，不能声称CAD与实物完全一致；原底盘是关闭重力的平面 VelocityControl，不具备已验收的登高或地形跟随；水平雷达相对底盘高约279.62mm，当前出生Z为1mm；可扫过200mm高地与270mm隧道顶，CAD通道薄面0.5mm使实际净空249.5mm；PGM是保守通行投影，不是SLAM结果，也不能直接宣称AMCL已适配。不要压平高地、擅改雷达或修改地图图像来隐藏不一致。
+6. 旧上位机 known_map.launch.py / 巡逻 demo 仍可能显式使用 Depot；不要直接迁移它的旧路线坐标，不把旧场地通过的数据当作新场地结果。当前只启动新场地并完成迁移验收，不自动运行原巡逻任务。
+7. 完成后报告：本机工程/构建/备份路径、实际启动命令、各项通过或失败及证据、旧地图哈希是否保持一致，以及仍需适配的项目。缺失信息先从本机文件和原项目说明查找，不虚构结果。
+
+后续方向仅作为交接背景，本次不执行：我希望以后在新场地完成原毕设计划中所有纯仿真任务和测试，不包含实物部分；完成传统方法的仿真验收后，再加入强化学习等模型算法，公平比较传统方法与强化学习。到时应先读取我的原计划书和完整工程，把已完成/待完成、验收门槛和实验预算列清楚；目前包内不包含该阶段实现、训练模型或比较结果。不要仅凭这段背景擅自启动长时间训练。

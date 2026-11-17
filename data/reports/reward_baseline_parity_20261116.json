@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "checked_decisions": 80,
+  "reward_profile": "upstream",
+  "old_source": "runs/phase1_continue_65536_20261116/source/rl_bt/alpharm_task_env.py",
+  "observations_physics_and_scalar_reward_exactly_equal": true,
+  "scope": "same actions and seeds; diagnostic logging adds no actor truth"
+}

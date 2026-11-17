@@ -1,0 +1,26 @@
+{
+  "checkpoint": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/phase1_bt_warmstart_20261115/latest.pt",
+  "checkpoint_sha256": "e9422e6a186895c2995bc7fa5ffcbc34c0bf45ccab25eadadde733194ff2f6e9",
+  "training_decisions": 4096,
+  "evaluation_split": "validation",
+  "evaluation_seeds": [
+    11001,
+    11002
+  ],
+  "styles": [
+    "capture"
+  ],
+  "sides": [
+    0,
+    1
+  ],
+  "randomization": true,
+  "learned_action_selection": "deterministic_argmax",
+  "trace": "none",
+  "paired_on": [
+    "seed",
+    "style",
+    "side"
+  ],
+  "evaluator_sha256": "f65a5f8374238eab52106da10af634929b5100df288ba5bd22b6df0b886a31ee"
+}

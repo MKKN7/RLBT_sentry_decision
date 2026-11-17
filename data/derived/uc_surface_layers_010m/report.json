@@ -1,0 +1,39 @@
+{
+  "artifact_type": "vertical_mesh_intersection_cache_not_navigation_acceptance",
+  "source": "/home/kellen/桌面/RL_BT_decision/assets/navigation_reference/field/field.stl",
+  "source_sha256": "3aea8445574b08fa2bc3ae571deb50a2d39befd07f3a48e19f694906526c4685",
+  "source_prepared_world_coordinates": true,
+  "additional_translation_or_scaling_applied": false,
+  "resolution_m": 0.1,
+  "grid_shape_xy": [
+    280,
+    161
+  ],
+  "triangles": 385026,
+  "sampled_surfaces": 126751,
+  "columns_total": 45080,
+  "columns_with_hits": 44800,
+  "columns_with_multiple_surfaces": 44800,
+  "max_surfaces_per_column": 30,
+  "low_slope_intersections": 123755,
+  "vertical_or_degenerate_triangles": 7661,
+  "low_slope_with_finite_upper_intersection": 80961,
+  "low_slope_vertical_gap_quantiles_m": {
+    "p10": 0.0040000081062316895,
+    "p50": 0.20000003278255463,
+    "p90": 0.29999998211860657
+  },
+  "cache": "data/derived/uc_surface_layers_010m/surfaces.npz",
+  "cache_sha256": "ea5ede6c6d89bd87be877a16375845baf382bd4df4a9f07ee1c7213fc76efa03",
+  "official_zone_polygons_registered": false,
+  "robot_envelope_verified": false,
+  "limitations": [
+    "Intersections have no ground/roof/interior semantic classification.",
+    "No higher sampled surface is unknown/open, never infinite certified clearance.",
+    "Vertical faces, thin objects and between-ray geometry require full mesh footprint tests.",
+    "Surface spacing is not free-space certification; solid interior intervals remain possible.",
+    "No ground connectivity, tunnel route, official zones or Nav2 integration inferred.",
+    "Copied simulator world geometry; official field coordinate registration remains incomplete."
+  ],
+  "wall_s": 4.272559020901099
+}

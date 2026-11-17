@@ -1,0 +1,1286 @@
+{
+  "code": 0,
+  "message": "success",
+  "success": true,
+  "data": {
+    "id": 20204847,
+    "categoryId": 501,
+    "ownerId": 39696,
+    "ownerName": "RoboMaster 高校赛务",
+    "name": "规则/资料中心 Rules/Resources Hub",
+    "summary": "RoboMaster 组委会",
+    "desc": "<p>欢迎来到RoboMaster 规则/资料中心！此站点由RoboMaster组委会建设与维护，集中提供参赛所需的官方资料，旨在帮助队伍高效获取信息。您可以通过<strong>左侧导航或搜索功能</strong>，快速定位所需内容。希望这里能成为您备赛和学习的首选平台，助力每一支队伍实现突破与成长。</p><p>内容覆盖范围</p><ul><li><span style=\"font-family: 宋体;\"><strong>赛事规则</strong></span><span style=\"font-family: 宋体;\">：比赛规则手册、机器人制作规范手册、参赛手册、串口协议</span></li><li><span style=\"font-family: 宋体;\"><strong>赛事产品</strong></span><span style=\"font-family: 宋体;\">：裁判系统（含机载端模块、赛事引擎）、机器人套件&amp;配件、RM Assistant的产品详情、资料下载、购买&amp;售后政策</span></li><li><span style=\"font-family: 宋体;\"><strong>技术评审</strong></span><span style=\"font-family: 宋体;\">：技术评审细则、各环节须知</span></li><li><span style=\"font-family: 宋体;\"><strong>品牌宣传</strong></span><span style=\"font-family: 宋体;\">：品牌宣传素材包</span></li><li><span style=\"font-family: 宋体;\"><strong>招商指引</strong></span><span style=\"font-family: 宋体;\">：招商手册、招商指南</span></li><li><span style=\"font-family: 宋体;\"><strong>培训体系</strong></span><span style=\"font-family: 宋体;\">：参赛攻略、课程沙龙、开源资料</span></li></ul><p>Welcome to the RoboMaster Rules/Resource Center! The RoboMaster Organizing Committee builds and maintains this site to provide participants with streamlined access to all essential official resources. You can quickly locate the content you need through the <strong>left-hand navigation or the search function</strong>. We hope this platform will become your go-to resource for preparation and learning, empowering every team to achieve breakthroughs and growth.</p><p>Content Coverage</p><ul><li><strong>Rulebooks:</strong> rules manuals, robot building specifications manual, participant manuals, serial protocol</li><li><strong>Event Products:</strong> referee system (including onboard modules and the RoboMaster Champion), robot kits & accessories, RM Assistant product details, downloads, purchase & after-sales policies</li><li><strong>Technical Assessment: </strong>mid-term & final robot assessment criteria, instructions for each stage</li><li><strong>Event Promotion Kit:</strong> promotional material package</li><li><strong>Event Sponsorship Guide:</strong> sponsorship guidelines</li><li><strong>Learning Labs: </strong>participation guide, course salon, open-source materials</li></ul><p><br></p><p><br></p><p><br></p><p><br></p>",
+    "descPostsId": 803958,
+    "descPostCanComment": 0,
+    "disableCopy": null,
+    "headImg": "https://rm-static.djicdn.com/documents/68659/9eb66bab6cafb1723811240976291454.png",
+    "type": "SHOW",
+    "wikiType": 1,
+    "typeDesc": "公开",
+    "role": "",
+    "treeRoot": {
+      "key": 20204847,
+      "parentId": null,
+      "title": "规则/资料中心 Rules/Resources Hub",
+      "postsId": 803958,
+      "postsCategory": "WIKI",
+      "children": [
+        {
+          "key": 20216309,
+          "parentId": 20204847,
+          "title": "比赛规则 Rulebooks",
+          "postsId": 804039,
+          "postsCategory": "WIKI",
+          "children": [
+            {
+              "key": 20567693,
+              "parentId": 20216309,
+              "title": "阅读指南 Welcome & Reading Guide",
+              "postsId": 811012,
+              "postsCategory": "WIKI",
+              "children": [],
+              "isDraft": false
+            },
+            {
+              "key": 50179169,
+              "parentId": 20216309,
+              "title": "RMUC 2027 比赛规则文件 Competition Rules",
+              "postsId": 1969149,
+              "postsCategory": "WIKI",
+              "children": [],
+              "isDraft": false
+            },
+            {
+              "key": 50179206,
+              "parentId": 20216309,
+              "title": "RMUL 2027 比赛规则文件 Competition Rules",
+              "postsId": 1969150,
+              "postsCategory": "WIKI",
+              "children": [],
+              "isDraft": false
+            },
+            {
+              "key": 50179263,
+              "parentId": 20216309,
+              "title": "RMU 2027 通信协议 Communication Protocol",
+              "postsId": 1969151,
+              "postsCategory": "WIKI",
+              "children": [],
+              "isDraft": false
+            },
+            {
+              "key": 50178800,
+              "parentId": 20216309,
+              "title": "历史资料 Archives",
+              "postsId": 1969147,
+              "postsCategory": "WIKI",
+              "children": [
+                {
+                  "key": 50178969,
+                  "parentId": 50178800,
+                  "title": "2026 比赛规则 2026 Rulebooks",
+                  "postsId": 1969148,
+                  "postsCategory": "WIKI",
+                  "children": [
+                    {
+                      "key": 20269826,
+                      "parentId": 50178969,
+                      "title": "RMUC 2026 比赛规则文件 Competition Rules",
+                      "postsId": 809871,
+                      "postsCategory": "WIKI",
+                      "children": [],
+                      "isDraft": false
+                    },
+                    {
+                      "key": 20269852,
+                      "parentId": 50178969,
+                      "title": "RMUL 2026 比赛规则文件 Competition Rules",
+                      "postsId": 809872,
+                      "postsCategory": "WIKI",
+                      "children": [],
+                      "isDraft": false
+                    },
+                    {
+                      "key": 20269890,
+                      "parentId": 50178969,
+                      "title": "RMUA 2026 比赛规则文件 Competition Rules",
+                      "postsId": 809873,
+                      "postsCategory": "WIKI",
+                      "children": [],
+                      "isDraft": false
+                    },
+                    {
+                      "key": 20639631,
+                      "parentId": 50178969,
+                      "title": "RMU 2026 通信协议 Communication Protocol",
+                      "postsId": 811363,
+                      "postsCategory": "WIKI",
+                      "children": [],
+                      "isDraft": false
+                    }
+                  ],
+                  "isDraft": false
+                }
+              ],
+              "isDraft": false
+            }
+          ],
+          "isDraft": false
+        },
+        {
+          "key": 20216757,
+          "parentId": 20204847,
+          "title": "赛事产品 Event Products",
+          "postsId": 804051,
+          "postsCategory": "WIKI",
+          "children": [
+            {
+              "key": 20570126,
+              "parentId": 20216757,
+              "title": "产品购买 & 售后 Purchase & Support",
+              "postsId": 811056,
+              "postsCategory": "WIKI",
+              "children": [],
+              "isDraft": false
+            },
+            {
+              "key": 20216683,
+              "parentId": 20216757,
+              "title": "裁判系统 Referee System",
+              "postsId": 804050,
+              "postsCategory": "WIKI",
+              "children": [
+                {
+                  "key": 20225199,
+                  "parentId": 20216683,
+                  "title": "裁判系统概述 Referee System Overview",
+                  "postsId": 804679,
+                  "postsCategory": "WIKI",
+                  "children": [],
+                  "isDraft": false
+                },
+                {
+                  "key": 20225452,
+                  "parentId": 20216683,
+                  "title": "常见问题 FAQ",
+                  "postsId": 804681,
+                  "postsCategory": "WIKI",
+                  "children": [],
+                  "isDraft": false
+                },
+                {
+                  "key": 20225578,
+                  "parentId": 20216683,
+                  "title": "机载端 Onboard Modules",
+                  "postsId": 804682,
+                  "postsCategory": "WIKI",
+                  "children": [
+                    {
+                      "key": 20297605,
+                      "parentId": 20225578,
+                      "title": "电源管理模块 Power Management Module",
+                      "postsId": 809902,
+                      "postsCategory": "WIKI",
+                      "children": [],
+                      "isDraft": false
+                    },
+                    {
+                      "key": 20301382,
+                      "parentId": 20225578,
+                      "title": "装甲模块 Armor Module",
+                      "postsId": 809912,
+                      "postsCategory": "WIKI",
+                      "children": [
+                        {
+                          "key": 20699046,
+                          "parentId": 20301382,
+                          "title": "小装甲模块 Small Armor Module",
+                          "postsId": 811816,
+                          "postsCategory": "WIKI",
+                          "children": [],
+                          "isDraft": false
+                        },
+                        {
+                          "key": 20699071,
+                          "parentId": 20301382,
+                          "title": "大装甲模块 Large Armor Module",
+                          "postsId": 811817,
+                          "postsCategory": "WIKI",
+                          "children": [],
+                          "isDraft": false
+                        },
+                        {
+                          "key": 20699461,
+                          "parentId": 20301382,
+                          "title": "装甲支撑架 Armor Frame",
+                          "postsId": 811821,
+                          "postsCategory": "WIKI",
+                          "children": [],
+                          "isDraft": false
+                        }
+                      ],
+                      "isDraft": false
+                    },
+                    {
+                      "key": 20299878,
+                      "parentId": 20225578,
+                      "title": "测速模块 Speed Monitor Module",
+                      "postsId": 809907,
+                      "postsCategory": "WIKI",
+                      "children": [
+                        {
+                          "key": 20700035,
+                          "parentId": 20299878,
+                          "title": "17 mm 测速模块 Speed Monitor",
+                          "postsId": 811827,
+                          "postsCategory": "WIKI",
+                          "children": [],
+                          "isDraft": false
+                        },
+                        {
+                          "key": 20700274,
+                          "parentId": 20299878,
+                          "title": "42 mm 测速模块 Speed Monitor",
+                          "postsId": 811828,
+                          "postsCategory": "WIKI",
+                          "children": [],
+                          "isDraft": false
+                        }
+                      ],
+                      "isDraft": false
+                    },
+                    {
+                      "key": 20300246,
+                      "parentId": 20225578,
+                      "title": "相机图传模块 Video Transmission Module",
+                      "postsId": 809908,
+                      "postsCategory": "WIKI",
+                      "children": [
+                        {
+                          "key": 20701126,
+                          "parentId": 20300246,
+                          "title": "相机图传模块 （接收端） VTM (Receiver)",
+                          "postsId": 811832,
+                          "postsCategory": "WIKI",
+                          "children": [],
+                          "isDraft": false
+                        },
+                        {
+                          "key": 21378326,
+                          "parentId": 20300246,
+                          "title": "相机图传模块 （发送端） VTM (Transmitter)",
+                          "postsId": 817329,
+                          "postsCategory": "WIKI",
+                          "children": [],
+                          "isDraft": false
+                        }
+                      ],
+                      "isDraft": false
+                    },
+                    {
+                      "key": 20302157,
+                      "parentId": 20225578,
+                      "title": "定位模块 UWB Module",
+                      "postsId": 809915,
+                      "postsCategory": "WIKI",
+                      "children": [],
+                      "isDraft": false
+                    },
+                    {
+                      "key": 20701788,
+                      "parentId": 20225578,
+                      "title": "场地交互模块 RFID Interaction Module",
+                      "postsId": 811837,
+                      "postsCategory": "WIKI",
+                      "children": [],
+                      "isDraft": false
+                    },
+                    {
+                      "key": 20646235,
+                      "parentId": 20225578,
+                      "title": "灯条模块 Light Indicator Module",
+                      "postsId": 811452,
+                      "postsCategory": "WIKI",
+                      "children": [],
+                      "isDraft": false
+                    },
+                    {
+                      "key": 20226766,
+                      "parentId": 20225578,
+                      "title": "超级电容管理模块 Super-capacitor Management Module",
+                      "postsId": 804781,
+                      "postsCategory": "WIKI",
+                      "children": [],
+                      "isDraft": false
+                    },
+                    {
+                      "key": 20702265,
+                      "parentId": 20225578,
+                      "title": "场地交互卡 Interaction Card",
+                      "postsId": 811840,
+                      "postsCategory": "WIKI",
+                      "children": [],
+                      "isDraft": false
+                    },
+                    {
+                      "key": 20227062,
+                      "parentId": 20225578,
+                      "title": "主控模块 Main Controller",
+                      "postsId": 804782,
+                      "postsCategory": "WIKI",
+                      "children": [],
+                      "isDraft": false
+                    }
+                  ],
+                  "isDraft": false
+                },
+                {
+                  "key": 20225865,
+                  "parentId": 20216683,
+                  "title": "赛事引擎 RoboMaster Champion",
+                  "postsId": 804683,
+                  "postsCategory": "WIKI",
+                  "children": [
+                    {
+                      "key": 20588597,
+                      "parentId": 20225865,
+                      "title": "RoboMaster Tool 2",
+                      "postsId": 811111,
+                      "postsCategory": "WIKI",
+                      "children": [],
+                      "isDraft": false
+                    },
+                    {
+                      "key": 20227211,
+                      "parentId": 20225865,
+                      "title": "RMUC 2026 赛事引擎学生版 RoboMaster Champion",
+                      "postsId": 804784,
+                      "postsCategory": "WIKI",
+                      "children": [],
+                      "isDraft": false
+                    },
+                    {
+                      "key": 20227235,
+                      "parentId": 20225865,
+                      "title": "RMUL 2026 赛事引擎学生版 RoboMaster Champion",
+                      "postsId": 804785,
+                      "postsCategory": "WIKI",
+                      "children": [],
+                      "isDraft": false
+                    },
+                    {
+                      "key": 21176369,
+                      "parentId": 20225865,
+                      "title": "历史资料 Archive",
+                      "postsId": 814756,
+                      "postsCategory": "WIKI",
+                      "children": [
+                        {
+                          "key": 21176398,
+                          "parentId": 21176369,
+                          "title": "RMUC 2025 赛事引擎学生版 RoboMaster Champion",
+                          "postsId": 814757,
+                          "postsCategory": "WIKI",
+                          "children": [],
+                          "isDraft": false
+                        },
+                        {
+                          "key": 21176717,
+                          "parentId": 21176369,
+                          "title": "RMUL 2025 赛事引擎学生版 RoboMaster Champion",
+                          "postsId": 814759,
+                          "postsCategory": "WIKI",
+                          "children": [],
+                          "isDraft": false
+                        }
+                      ],
+                      "isDraft": false
+                    }
+                  ],
+                  "isDraft": false
+                }
+              ],
+              "isDraft": false
+            },
+            {
+              "key": 20227377,
+              "parentId": 20216757,
+              "title": "配件 Accessories",
+              "postsId": 804789,
+              "postsCategory": "WIKI",
+              "children": [
+                {
+                  "key": 21105116,
+                  "parentId": 20227377,
+                  "title": "在售 On Sale",
+                  "postsId": 814536,
+                  "postsCategory": "WIKI",
+                  "children": [
+                    {
+                      "key": 21093330,
+                      "parentId": 21105116,
+                      "title": "42 mm 普通弹丸 Standard Projectile",
+                      "postsId": 814485,
+                      "postsCategory": "WIKI",
+                      "children": [],
+                      "isDraft": false
+                    },
+                    {
+                      "key": 20570053,
+                      "parentId": 21105116,
+                      "title": "17mm 荧光弹丸 Fluorescent Projectile",
+                      "postsId": 811052,
+                      "postsCategory": "WIKI",
+                      "children": [],
+                      "isDraft": false
+                    },
+                    {
+                      "key": 20569823,
+                      "parentId": 21105116,
+                      "title": "麦克纳姆轮小胶轮 Mecanum Wheel (Components)",
+                      "postsId": 811036,
+                      "postsCategory": "WIKI",
+                      "children": [],
+                      "isDraft": false
+                    },
+                    {
+                      "key": 21377467,
+                      "parentId": 21105116,
+                      "title": "C610 无刷电机调速器 2 Brushless DC Motor Speed Controller 2",
+                      "postsId": 817325,
+                      "postsCategory": "WIKI",
+                      "children": [],
+                      "isDraft": false
+                    },
+                    {
+                      "key": 20569745,
+                      "parentId": 21105116,
+                      "title": "C615 电调 Brushless DC Motor Speed Controller",
+                      "postsId": 811031,
+                      "postsCategory": "WIKI",
+                      "children": [],
+                      "isDraft": false
+                    },
+                    {
+                      "key": 21377418,
+                      "parentId": 21105116,
+                      "title": "C620 无刷电机调速器 2 Brushless DC Motor Speed Controller 2",
+                      "postsId": 817324,
+                      "postsCategory": "WIKI",
+                      "children": [],
+                      "isDraft": false
+                    },
+                    {
+                      "key": 20570011,
+                      "parentId": 21105116,
+                      "title": "电池架 2 Battery Rack 2",
+                      "postsId": 811049,
+                      "postsCategory": "WIKI",
+                      "children": [],
+                      "isDraft": false
+                    },
+                    {
+                      "key": 20569994,
+                      "parentId": 21105116,
+                      "title": "电调中心板 2 ESC Center Board 2",
+                      "postsId": 811048,
+                      "postsCategory": "WIKI",
+                      "children": [],
+                      "isDraft": false
+                    },
+                    {
+                      "key": 20355490,
+                      "parentId": 21105116,
+                      "title": "17mm 荧光弹丸充能装置 Fluorescent Projectile Engergy Charger",
+                      "postsId": 810121,
+                      "postsCategory": "WIKI",
+                      "children": [],
+                      "isDraft": false
+                    },
+                    {
+                      "key": 20310984,
+                      "parentId": 21105116,
+                      "title": "M2006 动力系统 Propulsion System",
+                      "postsId": 809956,
+                      "postsCategory": "WIKI",
+                      "children": [],
+                      "isDraft": false
+                    },
+                    {
+                      "key": 20310940,
+                      "parentId": 21105116,
+                      "title": "M3508 减速直流电机套装 DC Gear Motor Kit",
+                      "postsId": 809954,
+                      "postsCategory": "WIKI",
+                      "children": [],
+                      "isDraft": false
+                    },
+                    {
+                      "key": 21377347,
+                      "parentId": 21105116,
+                      "title": "M3508 直流无刷电机 Brushless DC Motor",
+                      "postsId": 817322,
+                      "postsCategory": "WIKI",
+                      "children": [],
+                      "isDraft": false
+                    },
+                    {
+                      "key": 20310928,
+                      "parentId": 21105116,
+                      "title": "GM6020",
+                      "postsId": 809953,
+                      "postsCategory": "WIKI",
+                      "children": [],
+                      "isDraft": false
+                    },
+                    {
+                      "key": 20310768,
+                      "parentId": 21105116,
+                      "title": "开发板 C 型 Development Board Type C",
+                      "postsId": 809947,
+                      "postsCategory": "WIKI",
+                      "children": [],
+                      "isDraft": false
+                    },
+                    {
+                      "key": 21153237,
+                      "parentId": 21105116,
+                      "title": "飞镖触发装置 2 Dart Trigger 2",
+                      "postsId": 814725,
+                      "postsCategory": "WIKI",
+                      "children": [],
+                      "isDraft": false
+                    }
+                  ],
+                  "isDraft": false
+                },
+                {
+                  "key": 20603413,
+                  "parentId": 20227377,
+                  "title": "停产 EOL",
+                  "postsId": 811137,
+                  "postsCategory": "WIKI",
+                  "children": [
+                    {
+                      "key": 20570099,
+                      "parentId": 20603413,
+                      "title": "17mm 普通弹丸 Standard Projectile",
+                      "postsId": 811055,
+                      "postsCategory": "WIKI",
+                      "children": [],
+                      "isDraft": false
+                    },
+                    {
+                      "key": 20570062,
+                      "parentId": 20603413,
+                      "title": "17mm 发光弹丸 Luminous Projectile",
+                      "postsId": 811053,
+                      "postsCategory": "WIKI",
+                      "children": [],
+                      "isDraft": false
+                    },
+                    {
+                      "key": 20570084,
+                      "parentId": 20603413,
+                      "title": "42mm 发光弹丸 Luminous Projectil",
+                      "postsId": 811054,
+                      "postsCategory": "WIKI",
+                      "children": [],
+                      "isDraft": false
+                    },
+                    {
+                      "key": 21097785,
+                      "parentId": 20603413,
+                      "title": "妙算 Manifold 2G",
+                      "postsId": 814506,
+                      "postsCategory": "WIKI",
+                      "children": [],
+                      "isDraft": false
+                    },
+                    {
+                      "key": 20569683,
+                      "parentId": 20603413,
+                      "title": "UWB 定位系统套装 Positioning System Kit",
+                      "postsId": 811028,
+                      "postsCategory": "WIKI",
+                      "children": [],
+                      "isDraft": false
+                    },
+                    {
+                      "key": 20569759,
+                      "parentId": 20603413,
+                      "title": "Snail 2305 电机 Brushless DC Motor",
+                      "postsId": 811032,
+                      "postsCategory": "WIKI",
+                      "children": [],
+                      "isDraft": false
+                    },
+                    {
+                      "key": 20569773,
+                      "parentId": 20603413,
+                      "title": "GM3510 直流无刷电机 DC Brushless Motor",
+                      "postsId": 811033,
+                      "postsCategory": "WIKI",
+                      "children": [],
+                      "isDraft": false
+                    },
+                    {
+                      "key": 20569791,
+                      "parentId": 20603413,
+                      "title": "RM35直流有刷减速电机 Brush DC Gear Motor",
+                      "postsId": 811034,
+                      "postsCategory": "WIKI",
+                      "children": [],
+                      "isDraft": false
+                    },
+                    {
+                      "key": 20569808,
+                      "parentId": 20603413,
+                      "title": "红点激光器 Red Laser Sight",
+                      "postsId": 811035,
+                      "postsCategory": "WIKI",
+                      "children": [],
+                      "isDraft": false
+                    },
+                    {
+                      "key": 20569853,
+                      "parentId": 20603413,
+                      "title": "820R 电调 ESC",
+                      "postsId": 811039,
+                      "postsCategory": "WIKI",
+                      "children": [],
+                      "isDraft": false
+                    },
+                    {
+                      "key": 20569867,
+                      "parentId": 20603413,
+                      "title": "3510 减速电机 Gear Motor",
+                      "postsId": 811040,
+                      "postsCategory": "WIKI",
+                      "children": [],
+                      "isDraft": false
+                    },
+                    {
+                      "key": 20569900,
+                      "parentId": 20603413,
+                      "title": "6025 直流无刷电机 Brushless DC Motor",
+                      "postsId": 811042,
+                      "postsCategory": "WIKI",
+                      "children": [],
+                      "isDraft": false
+                    },
+                    {
+                      "key": 20569884,
+                      "parentId": 20603413,
+                      "title": "6025 电调 ESC",
+                      "postsId": 811041,
+                      "postsCategory": "WIKI",
+                      "children": [],
+                      "isDraft": false
+                    },
+                    {
+                      "key": 20569915,
+                      "parentId": 20603413,
+                      "title": "6623 无刷直流电机 Brushless DC Motor",
+                      "postsId": 811043,
+                      "postsCategory": "WIKI",
+                      "children": [],
+                      "isDraft": false
+                    },
+                    {
+                      "key": 20569930,
+                      "parentId": 20603413,
+                      "title": "6623 电调 ESC",
+                      "postsId": 811044,
+                      "postsCategory": "WIKI",
+                      "children": [],
+                      "isDraft": false
+                    },
+                    {
+                      "key": 20569947,
+                      "parentId": 20603413,
+                      "title": "EC60 无刷直流电机",
+                      "postsId": 811045,
+                      "postsCategory": "WIKI",
+                      "children": [],
+                      "isDraft": false
+                    },
+                    {
+                      "key": 21102795,
+                      "parentId": 20603413,
+                      "title": "420S 电子调速器 ESC",
+                      "postsId": 814530,
+                      "postsCategory": "WIKI",
+                      "children": [],
+                      "isDraft": false
+                    },
+                    {
+                      "key": 21075834,
+                      "parentId": 20603413,
+                      "title": "开发板套件 Development Board Kit",
+                      "postsId": 814345,
+                      "postsCategory": "WIKI",
+                      "children": [],
+                      "isDraft": false
+                    },
+                    {
+                      "key": 20355472,
+                      "parentId": 20603413,
+                      "title": "飞镖触发装置 Dart Trigger",
+                      "postsId": 810120,
+                      "postsCategory": "WIKI",
+                      "children": [],
+                      "isDraft": false
+                    },
+                    {
+                      "key": 20570044,
+                      "parentId": 20603413,
+                      "title": "中心板 Center Board",
+                      "postsId": 811051,
+                      "postsCategory": "WIKI",
+                      "children": [],
+                      "isDraft": false
+                    },
+                    {
+                      "key": 20570032,
+                      "parentId": 20603413,
+                      "title": "电池架 Battery Rack",
+                      "postsId": 811050,
+                      "postsCategory": "WIKI",
+                      "children": [],
+                      "isDraft": false
+                    },
+                    {
+                      "key": 20569834,
+                      "parentId": 20603413,
+                      "title": "麦克纳姆轮 Mecanum Wheel",
+                      "postsId": 811037,
+                      "postsCategory": "WIKI",
+                      "children": [],
+                      "isDraft": false
+                    },
+                    {
+                      "key": 20569960,
+                      "parentId": 20603413,
+                      "title": "420S 电子调速器 Electronic Speed Controller",
+                      "postsId": 811046,
+                      "postsCategory": "WIKI",
+                      "children": [],
+                      "isDraft": false
+                    },
+                    {
+                      "key": 21097251,
+                      "parentId": 20603413,
+                      "title": "DJI E1200动力系统专业版 PRO Tuned Propulsion System",
+                      "postsId": 814503,
+                      "postsCategory": "WIKI",
+                      "children": [],
+                      "isDraft": false
+                    },
+                    {
+                      "key": 21097358,
+                      "parentId": 20603413,
+                      "title": "遥控器套装 Remote Controller",
+                      "postsId": 814505,
+                      "postsCategory": "WIKI",
+                      "children": [],
+                      "isDraft": false
+                    }
+                  ],
+                  "isDraft": false
+                }
+              ],
+              "isDraft": false
+            },
+            {
+              "key": 20227330,
+              "parentId": 20216757,
+              "title": "机器人套件 Robot Kits",
+              "postsId": 804788,
+              "postsCategory": "WIKI",
+              "children": [
+                {
+                  "key": 21105184,
+                  "parentId": 20227330,
+                  "title": "在售 On Sale",
+                  "postsId": 814537,
+                  "postsCategory": "WIKI",
+                  "children": [],
+                  "isDraft": false
+                },
+                {
+                  "key": 20603581,
+                  "parentId": 20227330,
+                  "title": "停产 EOL",
+                  "postsId": 811138,
+                  "postsCategory": "WIKI",
+                  "children": [
+                    {
+                      "key": 20568264,
+                      "parentId": 20603581,
+                      "title": "RoboMaster AI Robot 2019",
+                      "postsId": 811014,
+                      "postsCategory": "WIKI",
+                      "children": [],
+                      "isDraft": false
+                    },
+                    {
+                      "key": 20568243,
+                      "parentId": 20603581,
+                      "title": "RoboMaster AI Robot 2020",
+                      "postsId": 811013,
+                      "postsCategory": "WIKI",
+                      "children": [],
+                      "isDraft": false
+                    },
+                    {
+                      "key": 20565937,
+                      "parentId": 20603581,
+                      "title": "RoboMaster 2023 飞行器套件空机版",
+                      "postsId": 811007,
+                      "postsCategory": "WIKI",
+                      "children": [],
+                      "isDraft": false
+                    },
+                    {
+                      "key": 20567366,
+                      "parentId": 20603581,
+                      "title": "RoboMaster 2020 自组装版A型 Self-Assembly Robot Type A",
+                      "postsId": 811010,
+                      "postsCategory": "WIKI",
+                      "children": [],
+                      "isDraft": false
+                    }
+                  ],
+                  "isDraft": false
+                }
+              ],
+              "isDraft": false
+            },
+            {
+              "key": 20438623,
+              "parentId": 20216757,
+              "title": "RM Assistant",
+              "postsId": 810714,
+              "postsCategory": "WIKI",
+              "children": [],
+              "isDraft": false
+            }
+          ],
+          "isDraft": false
+        },
+        {
+          "key": 20216797,
+          "parentId": 20204847,
+          "title": "技术评审 Technical Assessment",
+          "postsId": 804052,
+          "postsCategory": "WIKI",
+          "children": [
+            {
+              "key": 50181387,
+              "parentId": 20216797,
+              "title": "RMUC 2027 技术评审 Technical Assessment",
+              "postsId": 1969161,
+              "postsCategory": "WIKI",
+              "children": [
+                {
+                  "key": 53103575,
+                  "parentId": 50181387,
+                  "title": "RMUC 2027 赛季规划 Season Planning",
+                  "postsId": 1970971,
+                  "postsCategory": "WIKI",
+                  "children": [
+                    {
+                      "key": 77751761,
+                      "parentId": 53103575,
+                      "title": "RMUC 2027 赛季规划文档评审细则 Season Planning Documentation Assessment Criteria",
+                      "postsId": 1973254,
+                      "postsCategory": "WIKI",
+                      "children": [],
+                      "isDraft": false
+                    }
+                  ],
+                  "isDraft": false
+                },
+                {
+                  "key": 53108203,
+                  "parentId": 50181387,
+                  "title": "RMUC 2027 规则测评 Rule Exam",
+                  "postsId": 1970973,
+                  "postsCategory": "WIKI",
+                  "children": [],
+                  "isDraft": false
+                },
+                {
+                  "key": 53110454,
+                  "parentId": 50181387,
+                  "title": "RMUC 2027 中期进度文档 Mid-term Progress Documentation",
+                  "postsId": 1970974,
+                  "postsCategory": "WIKI",
+                  "children": [
+                    {
+                      "key": 77748647,
+                      "parentId": 53110454,
+                      "title": "RMUC 2027 中期进度考核文档评审细则 Mid-term Documentation Assessment Criteria",
+                      "postsId": 1973252,
+                      "postsCategory": "WIKI",
+                      "children": [],
+                      "isDraft": false
+                    }
+                  ],
+                  "isDraft": false
+                },
+                {
+                  "key": 53112617,
+                  "parentId": 50181387,
+                  "title": "RMUC 2027 裁判系统考核 Referee System Assessment",
+                  "postsId": 1970975,
+                  "postsCategory": "WIKI",
+                  "children": [],
+                  "isDraft": false
+                },
+                {
+                  "key": 53114413,
+                  "parentId": 50181387,
+                  "title": "RMUC 2027 完整形态考核 Final Robot Assessment",
+                  "postsId": 1970976,
+                  "postsCategory": "WIKI",
+                  "children": [
+                    {
+                      "key": 61506593,
+                      "parentId": 53114413,
+                      "title": "RMUC 2027 完整形态考核细则 Final Robot Assessment Criteria",
+                      "postsId": 1971755,
+                      "postsCategory": "WIKI",
+                      "children": [],
+                      "isDraft": false
+                    },
+                    {
+                      "key": 77731623,
+                      "parentId": 53114413,
+                      "title": "RMUC 2027 完整形态考核文档评审细则 Final Documentation Assessment Criteria",
+                      "postsId": 1973251,
+                      "postsCategory": "WIKI",
+                      "children": [],
+                      "isDraft": false
+                    }
+                  ],
+                  "isDraft": false
+                },
+                {
+                  "key": 53119926,
+                  "parentId": 50181387,
+                  "title": "RMUC 2027 赛季总结 Season Summary",
+                  "postsId": 1970977,
+                  "postsCategory": "WIKI",
+                  "children": [
+                    {
+                      "key": 77750317,
+                      "parentId": 53119926,
+                      "title": "RMUC 2027 赛季总结文档评审细则 Season Summary Documentation Assessment Criteria",
+                      "postsId": 1973253,
+                      "postsCategory": "WIKI",
+                      "children": [],
+                      "isDraft": false
+                    }
+                  ],
+                  "isDraft": false
+                }
+              ],
+              "isDraft": false
+            },
+            {
+              "key": 50181407,
+              "parentId": 20216797,
+              "title": "RMUL 2027 技术评审 Technical Assessment",
+              "postsId": 1969162,
+              "postsCategory": "WIKI",
+              "children": [
+                {
+                  "key": 53094091,
+                  "parentId": 50181407,
+                  "title": "RMUL 2027 完整形态考核 Final Robot Assessment",
+                  "postsId": 1970969,
+                  "postsCategory": "WIKI",
+                  "children": [
+                    {
+                      "key": 52237154,
+                      "parentId": 53094091,
+                      "title": "RMUL 2027 完整形态考核细则 Final Robot Assessment Criteria",
+                      "postsId": 1970940,
+                      "postsCategory": "WIKI",
+                      "children": [],
+                      "isDraft": false
+                    }
+                  ],
+                  "isDraft": false
+                }
+              ],
+              "isDraft": false
+            },
+            {
+              "key": 50181346,
+              "parentId": 20216797,
+              "title": "历史资料 Archives",
+              "postsId": 1969160,
+              "postsCategory": "WIKI",
+              "children": [
+                {
+                  "key": 20706169,
+                  "parentId": 50181346,
+                  "title": "RMUC 2026 技术评审 Technical Assessment",
+                  "postsId": 812028,
+                  "postsCategory": "WIKI",
+                  "children": [
+                    {
+                      "key": 20706691,
+                      "parentId": 20706169,
+                      "title": "RMUC 2026 赛季规划 Season Planning",
+                      "postsId": 812041,
+                      "postsCategory": "WIKI",
+                      "children": [],
+                      "isDraft": false
+                    },
+                    {
+                      "key": 20706729,
+                      "parentId": 20706169,
+                      "title": "RMUC 2026 规则测评 Rule Exam",
+                      "postsId": 812042,
+                      "postsCategory": "WIKI",
+                      "children": [],
+                      "isDraft": false
+                    },
+                    {
+                      "key": 20706800,
+                      "parentId": 20706169,
+                      "title": "RMUC 2026 中期进度文档 Mid-term Progress Documentation",
+                      "postsId": 812044,
+                      "postsCategory": "WIKI",
+                      "children": [
+                        {
+                          "key": 22010059,
+                          "parentId": 20706800,
+                          "title": "RMUC 2026 中期进度考核文档评审细则 Mid-term Documentation Assessment Criteria",
+                          "postsId": 839168,
+                          "postsCategory": "WIKI",
+                          "children": [],
+                          "isDraft": false
+                        }
+                      ],
+                      "isDraft": false
+                    },
+                    {
+                      "key": 20706766,
+                      "parentId": 20706169,
+                      "title": "RMUC 2026 裁判系统考核 Referee System Assessment",
+                      "postsId": 812043,
+                      "postsCategory": "WIKI",
+                      "children": [],
+                      "isDraft": false
+                    },
+                    {
+                      "key": 20706827,
+                      "parentId": 20706169,
+                      "title": "RMUC 2026 完整形态考核 Final Robot Assessment",
+                      "postsId": 812045,
+                      "postsCategory": "WIKI",
+                      "children": [
+                        {
+                          "key": 20706909,
+                          "parentId": 20706827,
+                          "title": "RMUC 2026 完整形态考核细则 Final Robot Assessment Criteria",
+                          "postsId": 812048,
+                          "postsCategory": "WIKI",
+                          "children": [],
+                          "isDraft": false
+                        },
+                        {
+                          "key": 22012286,
+                          "parentId": 20706827,
+                          "title": "RMUC 2026 完整形态考核文档评审细则 Final Documentation Assessment Criteria",
+                          "postsId": 839183,
+                          "postsCategory": "WIKI",
+                          "children": [],
+                          "isDraft": false
+                        }
+                      ],
+                      "isDraft": false
+                    },
+                    {
+                      "key": 21105293,
+                      "parentId": 20706169,
+                      "title": "RMUC 2026 赛季总结 Season Summary",
+                      "postsId": 814542,
+                      "postsCategory": "WIKI",
+                      "children": [
+                        {
+                          "key": 22013067,
+                          "parentId": 21105293,
+                          "title": "RMUC 2026 赛季总结文档评审细则 Season Summary Documentation Assessment Criteria",
+                          "postsId": 839188,
+                          "postsCategory": "WIKI",
+                          "children": [],
+                          "isDraft": false
+                        },
+                        {
+                          "key": 46324823,
+                          "parentId": 21105293,
+                          "title": "RMUC 2026 区域赛赛季总结须知 Regional Competiton Season Summary Note",
+                          "postsId": 1884486,
+                          "postsCategory": "WIKI",
+                          "children": [],
+                          "isDraft": false
+                        },
+                        {
+                          "key": 48754217,
+                          "parentId": 21105293,
+                          "title": "RMUC 2026 全国赛赛季总结须知 Final Tournament Season Summary Note",
+                          "postsId": 1938369,
+                          "postsCategory": "WIKI",
+                          "children": [],
+                          "isDraft": false
+                        }
+                      ],
+                      "isDraft": false
+                    },
+                    {
+                      "key": 36823321,
+                      "parentId": 20706169,
+                      "title": "RMUC 2026 超级对抗赛飞手考核细则",
+                      "postsId": 1646731,
+                      "postsCategory": "WIKI",
+                      "children": [],
+                      "isDraft": false
+                    }
+                  ],
+                  "isDraft": false
+                },
+                {
+                  "key": 20706251,
+                  "parentId": 50181346,
+                  "title": "RMUL 2026 技术评审 Technical Assessment",
+                  "postsId": 812030,
+                  "postsCategory": "WIKI",
+                  "children": [
+                    {
+                      "key": 20706490,
+                      "parentId": 20706251,
+                      "title": "RMUL 2026 裁判系统基础测评 Referee System (Basics) Assessment",
+                      "postsId": 812035,
+                      "postsCategory": "WIKI",
+                      "children": [],
+                      "isDraft": false
+                    },
+                    {
+                      "key": 20706519,
+                      "parentId": 20706251,
+                      "title": "RMUL 2026 完整形态考核 Final Robot Assessment",
+                      "postsId": 812036,
+                      "postsCategory": "WIKI",
+                      "children": [
+                        {
+                          "key": 20706335,
+                          "parentId": 20706519,
+                          "title": "RMUL 2026 完整形态考核细则 Final Robot Assessment Criteria",
+                          "postsId": 812032,
+                          "postsCategory": "WIKI",
+                          "children": [],
+                          "isDraft": false
+                        }
+                      ],
+                      "isDraft": false
+                    }
+                  ],
+                  "isDraft": false
+                }
+              ],
+              "isDraft": false
+            }
+          ],
+          "isDraft": false
+        },
+        {
+          "key": 20564447,
+          "parentId": 20204847,
+          "title": "品牌宣传包 Event Branding Kit",
+          "postsId": 810999,
+          "postsCategory": "WIKI",
+          "children": [],
+          "isDraft": false
+        },
+        {
+          "key": 20564515,
+          "parentId": 20204847,
+          "title": "招商指引 Event Sponsorship Guide",
+          "postsId": 811002,
+          "postsCategory": "WIKI",
+          "children": [],
+          "isDraft": false
+        },
+        {
+          "key": 20216944,
+          "parentId": 20204847,
+          "title": "培训体系 Learning Labs",
+          "postsId": 804055,
+          "postsCategory": "WIKI",
+          "children": [
+            {
+              "key": 20227546,
+              "parentId": 20216944,
+              "title": "参赛攻略 Beginner's Guide",
+              "postsId": 804794,
+              "postsCategory": "WIKI",
+              "children": [],
+              "isDraft": false
+            },
+            {
+              "key": 20227931,
+              "parentId": 20216944,
+              "title": "课程沙龙 Course Workshop",
+              "postsId": 804796,
+              "postsCategory": "WIKI",
+              "children": [],
+              "isDraft": false
+            },
+            {
+              "key": 20227963,
+              "parentId": 20216944,
+              "title": "开源材料 Open-source Materials",
+              "postsId": 804797,
+              "postsCategory": "WIKI",
+              "children": [],
+              "isDraft": false
+            }
+          ],
+          "isDraft": false
+        },
+        {
+          "key": 29325175,
+          "parentId": 20204847,
+          "title": "语言版本说明 Notice on Language Support",
+          "postsId": 1316479,
+          "postsCategory": "WIKI",
+          "children": [],
+          "isDraft": false
+        },
+        {
+          "key": 20216593,
+          "parentId": 20204847,
+          "title": "参考文献",
+          "postsId": 804049,
+          "postsCategory": "WIKI",
+          "children": [],
+          "isDraft": null
+        }
+      ],
+      "isDraft": null
+    },
+    "createAt": "2025-09-01T07:34:56.000+00:00",
+    "belongTeamContent": false,
+    "literaturePostsId": 804049,
+    "teamInfo": null,
+    "contributeRecords": [],
+    "openSourceProtocolId": null,
+    "openSourceProtocolContent": ""
+  }
+}

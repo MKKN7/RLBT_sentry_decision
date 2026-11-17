@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mid360-mujoco"
+version = "0.1.0"
+description = "Continuous-time dual MID360 simulation for the sentry robot"
+requires-python = ">=3.10"
+dependencies = ["mujoco==3.17.0", "numpy>=1.26,<3", "scipy>=1.11", "PyYAML>=6", "glfw>=2.7", "Pillow>=10", "trimesh>=5", "embreex==4.4.0.post1"]
+
+[project.optional-dependencies]
+gpu = ["warp-lang==1.19.0"]
+dev = ["pytest>=8"]
+field = ["fast-simplification==0.2.0", "networkx", "shapely>=2.1"]
+
+[project.scripts]
+mid360-mujoco = "mid360_mujoco.cli:main"
+mid360-mujoco-gui = "mid360_mujoco.gui:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+

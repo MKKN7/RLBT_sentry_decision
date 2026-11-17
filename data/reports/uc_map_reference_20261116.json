@@ -1,0 +1,2162 @@
+{
+  "container": "Combat_Sentry2026",
+  "prepared_field_dir": "/opt/mid360_mujoco/generated/rmuc2027-v5",
+  "prepared_mesh": {
+    "path": "/opt/mid360_mujoco/generated/rmuc2027-v5/field.stl",
+    "bytes": 19251384,
+    "sha256": "3aea8445574b08fa2bc3ae571deb50a2d39befd07f3a48e19f694906526c4685",
+    "triangles": 385026,
+    "bounds_m": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        27.9999942779541,
+        16.003131866455078,
+        3.7988295555114746
+      ]
+    ]
+  },
+  "driveable_source_mesh": {
+    "path": "/opt/pb2025_nav_ws/src/pb2025_light_sim/meshes/rmuc_2027_driveable.stl",
+    "bytes": 19251384,
+    "sha256": "97faa279776cc7b00a635dde51b1bc3dcf8ea91cb949fc73e88e28ea7b94905f",
+    "triangles": 385026,
+    "bounds_m": [
+      [
+        0.14910008013248444,
+        0.06378698348999023,
+        0.019413471221923828
+      ],
+      [
+        28.149093627929688,
+        16.066919326782227,
+        3.8182430267333984
+      ]
+    ]
+  },
+  "original_unsuffixed_rmuc_mesh": {
+    "path": "/opt/pb2025_nav_ws/src/pb2025_light_sim/meshes/rmuc_2027.stl",
+    "bytes": 18954184,
+    "sha256": "2835c0e755c255f757d810d260283c623fbd4a49a8fd986487c70ad2a89e9d10",
+    "triangles": 379082,
+    "bounds_m": [
+      [
+        0.14910008013248444,
+        0.06378698348999023,
+        0.019413471221923828
+      ],
+      [
+        28.149093627929688,
+        16.066919326782227,
+        3.8182430267333984
+      ]
+    ]
+  },
+  "original_vs_driveable_difference": {
+    "comparison": "exact float32 vertex triangle records ignoring vertex ordering",
+    "original_triangles_absent_from_driveable": 10271,
+    "driveable_triangles_absent_from_original": 16215,
+    "original_only_bounds_source_frame_m": [
+      [
+        0.14910008013248444,
+        0.06378698348999023,
+        0.10988499224185944
+      ],
+      [
+        28.149093627929688,
+        16.066919326782227,
+        0.6625746488571167
+      ]
+    ],
+    "driveable_only_bounds_source_frame_m": [
+      [
+        0.14910008013248444,
+        0.06378698348999023,
+        0.10988499224185944
+      ],
+      [
+        28.149093627929688,
+        16.066919326782227,
+        0.6625746488571167
+      ]
+    ],
+    "geometrically_identical": false
+  },
+  "source_matches_manifest_sha256": true,
+  "translation_applied_once_m": [
+    -0.14910008013248444,
+    -0.06378698348999023,
+    -0.019413471221923828
+  ],
+  "prepared_vs_translated_source_max_vertex_error_m": 7.301568984985352e-07,
+  "prepared_preserves_source_triangle_order_and_surface_within_3um": true,
+  "field_manifest_sha256": "29b0741c979e4e9e347838a45eead1f577935d3f1260568e2a6393cec591d49b",
+  "collision": {
+    "count": 24325,
+    "matches_manifest_file_set": true,
+    "aggregate_sorted_name_and_sha256": "9d7d5f4e7560691f93f1e95f783fe4dc18a4ca2c8f0fe44698c28b1e22f926dd",
+    "obj_bytes": 9169252,
+    "model_builder_uses_piece_positions": true,
+    "limitations_from_source_manifest": "1mm centered contact shells; disconnected details under 85cm or elevated details (bottom above 45cm) under 1.3m use local convex hulls. Ray mesh retains source triangles. Contact approximation requires tunnel clearance tests."
+  },
+  "visual_mesh_count": 5,
+  "source_robot_config": {
+    "path": "/opt/mid360_mujoco/configs/robot.yaml",
+    "sha256": "602e2d57d9b577ec23d6381ca5a13fb64eaf2e37c04d66be4ed4e50d016fd128",
+    "open_test_spawn_xyz_yaw": [
+      3.4,
+      9.5,
+      0.31,
+      0.0
+    ],
+    "spawn_is_rule_defined": false,
+    "vertical_surface_intersections_at_spawn_xy_m": [
+      0.0,
+      0.2607622
+    ]
+  },
+  "read_only": true,
+  "original_files_modified": false,
+  "full_contact_or_tunnel_traversal_validated": false,
+  "official_referee_coordinate_registration_validated": false,
+  "rfid_and_healing_semantics_inferred_from_mesh": false,
+  "project_prepared_snapshot": {
+    "path": "/home/kellen/桌面/RL_BT_decision/assets/navigation_reference/field/field.stl",
+    "bytes": 19251384,
+    "sha256": "3aea8445574b08fa2bc3ae571deb50a2d39befd07f3a48e19f694906526c4685",
+    "matches_live_prepared_mesh": true
+  },
+  "source_documented_geometry_derivation": {
+    "path": "/home/kellen/pb2025_sim_nuc/README.md",
+    "sha256": "9bb71916a871e50e54e10f59404c89aa00cc08b88ae702404d65e9233b1a712d",
+    "evidence": [
+      {
+        "line": 162,
+        "text": "2026-11-03按用户要求生成独立派生的`rmuc_2027_driveable.stl`用于碰撞（后续已恢复CAD彩色视觉，见文末）：普通支撑地面约2mm以内的凸线对齐原1.5°地面/平台；南侧x5.24–7.76/y0.48–2.62及其北侧对称波纹区的主要行驶面削平，沿Y边缘0.36m平滑接回原坡面。边缘过渡仍保留部分原起伏，明显墙体、隧道和主要坡道保留，z>0.65m的全部原三角记录未修改/删除。原`rmuc_2027.stl`及用户原始输入保留，不覆盖旧bag。2m/s同路线双IMU单轴峰值由南608.13/北735.37降至12.46/12.13m/s²；四条隧道与12°坡回归通过，不代表全场/4m/s验收。详见[地面整平报告](../../测试数据/测试结果/pb2025_sim_nuc/20261103_ground-flatten/报告.md)。Fortress网格碰撞通过AttachMeshShape创建，跳过SDF表面摩擦参数；因此轮胎采用解析球面，避免设定摩擦未生效。完整试验、失败版本和原版源码对照见`测试数据/测试结果/pb2025_sim_nuc/20261102-203647_wheel-contact/报告.md`。"
+      },
+      {
+        "line": 208,
+        "text": "原始来源为用户2026-11-02提供的`rmuc_2027.stl`，379,082个三角面、18,954,184字节。输入原样保留于`src/pb2025_light_sim/meshes/rmuc_2027.stl`，SHA256为`2835c0e755c255f757d810d260283c623fbd4a49a8fd986487c70ad2a89e9d10`；未重新简化或缩放。"
+      },
+      {
+        "line": 210,
+        "text": "当前场景入口仍为`worlds/rmuc_2027_world.sdf`。静态collision使用已整平的`rmuc_2027_driveable.stl`（385,026面，SHA256 `97faa279776cc7b00a635dde51b1bc3dcf8ea91cb949fc73e88e28ea7b94905f`），本次恢复颜色未改动碰撞、摩擦或驱动参数。"
+      }
+    ],
+    "classification": "driveable_is_a_previous_flattened_derivative_not_the_original_rmuc_stl",
+    "instructions_in_evidence_executed": false
+  },
+  "status": "PASS_READ_ONLY_RESOURCE_IDENTITY",
+  "local_route_checks": {
+    "scope": "finite_offline_surface_and_box_probes_for_engineering_route_selection",
+    "mesh_source": "assets/navigation_reference/field/field.stl",
+    "source_is_driveable_derivative": true,
+    "surface_cache": "data/derived/uc_surface_layers_010m/surfaces.npz",
+    "surface_cache_sha256": "ea5ede6c6d89bd87be877a16375845baf382bd4df4a9f07ee1c7213fc76efa03",
+    "full_mesh_triangles": 385026,
+    "local_aabb_query_triangles": 30,
+    "planning_circle_radius_m": 0.41100000000000003,
+    "conservative_square_envelope_length_width_m": [
+      0.8220000000000001,
+      0.8220000000000001
+    ],
+    "body_query_vertical_interval_above_center_support_m": [
+      0.015,
+      0.255
+    ],
+    "support_tolerance_m": 0.02,
+    "world_from_local_xy_translation_m": [
+      3.4,
+      9.5
+    ],
+    "world_from_local_yaw_rad": 0.0,
+    "registration_scope": "explicit_static_test_spawn_XY_only_no_dynamic_GT_injection",
+    "official_map_and_referee_registration_verified": false,
+    "recommended_first_goal_local_xy_m": [
+      1.2,
+      0.0
+    ],
+    "authoritative_RL_action_mask": false,
+    "hardware_or_continuous_sweep_certified": false,
+    "routes": [
+      {
+        "id": "forward_1p2m",
+        "start_world_xy_m": [
+          3.4,
+          9.5
+        ],
+        "goal_world_xy_m": [
+          4.6,
+          9.5
+        ],
+        "goal_local_xy_m": [
+          1.2,
+          0.0
+        ],
+        "length_m": 1.2,
+        "support_height_range_m": [
+          0.2607621456555495,
+          0.26076215300269057
+        ],
+        "support_height_change_m": -4.91592627716031e-09,
+        "max_selected_slope_deg": 1.5000011771070056,
+        "sample_count": 25,
+        "support_samples_per_pose": 9,
+        "maximum_translation_sampling_step_m": 0.05,
+        "max_cache_support_error_m": 0.0013093033761494288,
+        "sampled_reference_pass": true,
+        "dynamic_contact_validated": false,
+        "samples": [
+          {
+            "world_xy_m": [
+              3.4,
+              9.5
+            ],
+            "local_xy_m": [
+              0.0,
+              0.0
+            ],
+            "selected_support_z_m": 0.26076215300269057,
+            "selected_support_slope_deg": 1.5000011771070056,
+            "all_vertical_intersections_z_slope": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.26076215300269057,
+                1.5000011771070056
+              ]
+            ],
+            "nearest_cache_support_z_m": 0.25945284962654114,
+            "cache_support_error_m": 0.0013093033761494288,
+            "next_higher_intersection_gap_m": null,
+            "no_higher_intersection_means": "unknown_or_open_not_certified_clearance",
+            "sampled_support_stencil_pass": true,
+            "body_box_intersecting_face_count": 0,
+            "sampled_reference_pass": true
+          },
+          {
+            "world_xy_m": [
+              3.4499999999999997,
+              9.5
+            ],
+            "local_xy_m": [
+              0.04999999999999982,
+              0.0
+            ],
+            "selected_support_z_m": 0.2607621523943877,
+            "selected_support_slope_deg": 1.5000011771070056,
+            "all_vertical_intersections_z_slope": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.2607621523943877,
+                1.5000011771070056
+              ]
+            ],
+            "nearest_cache_support_z_m": 0.25945284962654114,
+            "cache_support_error_m": 0.0013093027678465763,
+            "next_higher_intersection_gap_m": null,
+            "no_higher_intersection_means": "unknown_or_open_not_certified_clearance",
+            "sampled_support_stencil_pass": true,
+            "body_box_intersecting_face_count": 0,
+            "sampled_reference_pass": true
+          },
+          {
+            "world_xy_m": [
+              3.5,
+              9.5
+            ],
+            "local_xy_m": [
+              0.10000000000000009,
+              0.0
+            ],
+            "selected_support_z_m": 0.2607621517860849,
+            "selected_support_slope_deg": 1.5000011771070056,
+            "all_vertical_intersections_z_slope": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.2607621517860849,
+                1.5000011771070056
+              ]
+            ],
+            "nearest_cache_support_z_m": 0.25945284962654114,
+            "cache_support_error_m": 0.0013093021595437793,
+            "next_higher_intersection_gap_m": null,
+            "no_higher_intersection_means": "unknown_or_open_not_certified_clearance",
+            "sampled_support_stencil_pass": true,
+            "body_box_intersecting_face_count": 0,
+            "sampled_reference_pass": true
+          },
+          {
+            "world_xy_m": [
+              3.55,
+              9.5
+            ],
+            "local_xy_m": [
+              0.1499999999999999,
+              0.0
+            ],
+            "selected_support_z_m": 0.2607621511777821,
+            "selected_support_slope_deg": 1.5000011771070056,
+            "all_vertical_intersections_z_slope": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.2607621511777821,
+                1.5000011771070056
+              ]
+            ],
+            "nearest_cache_support_z_m": 0.25945284962654114,
+            "cache_support_error_m": 0.0013093015512409822,
+            "next_higher_intersection_gap_m": null,
+            "no_higher_intersection_means": "unknown_or_open_not_certified_clearance",
+            "sampled_support_stencil_pass": true,
+            "body_box_intersecting_face_count": 0,
+            "sampled_reference_pass": true
+          },
+          {
+            "world_xy_m": [
+              3.5999999999999996,
+              9.5
+            ],
+            "local_xy_m": [
+              0.19999999999999973,
+              0.0
+            ],
+            "selected_support_z_m": 0.26076215056947927,
+            "selected_support_slope_deg": 1.5000011771070056,
+            "all_vertical_intersections_z_slope": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.26076215056947927,
+                1.5000011771070056
+              ]
+            ],
+            "nearest_cache_support_z_m": 0.25945284962654114,
+            "cache_support_error_m": 0.0013093009429381297,
+            "next_higher_intersection_gap_m": null,
+            "no_higher_intersection_means": "unknown_or_open_not_certified_clearance",
+            "sampled_support_stencil_pass": true,
+            "body_box_intersecting_face_count": 0,
+            "sampled_reference_pass": true
+          },
+          {
+            "world_xy_m": [
+              3.65,
+              9.5
+            ],
+            "local_xy_m": [
+              0.25,
+              0.0
+            ],
+            "selected_support_z_m": 0.26076214996117647,
+            "selected_support_slope_deg": 1.5000011771070056,
+            "all_vertical_intersections_z_slope": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.26076214996117647,
+                1.5000011771070056
+              ]
+            ],
+            "nearest_cache_support_z_m": 0.25945284962654114,
+            "cache_support_error_m": 0.0013093003346353327,
+            "next_higher_intersection_gap_m": null,
+            "no_higher_intersection_means": "unknown_or_open_not_certified_clearance",
+            "sampled_support_stencil_pass": true,
+            "body_box_intersecting_face_count": 0,
+            "sampled_reference_pass": true
+          },
+          {
+            "world_xy_m": [
+              3.6999999999999997,
+              9.5
+            ],
+            "local_xy_m": [
+              0.2999999999999998,
+              0.0
+            ],
+            "selected_support_z_m": 0.2607621493528736,
+            "selected_support_slope_deg": 1.5000011771070056,
+            "all_vertical_intersections_z_slope": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.2607621493528736,
+                1.5000011771070056
+              ]
+            ],
+            "nearest_cache_support_z_m": 0.25945284962654114,
+            "cache_support_error_m": 0.0013092997263324802,
+            "next_higher_intersection_gap_m": null,
+            "no_higher_intersection_means": "unknown_or_open_not_certified_clearance",
+            "sampled_support_stencil_pass": true,
+            "body_box_intersecting_face_count": 0,
+            "sampled_reference_pass": true
+          },
+          {
+            "world_xy_m": [
+              3.75,
+              9.5
+            ],
+            "local_xy_m": [
+              0.3500000000000001,
+              0.0
+            ],
+            "selected_support_z_m": 0.2607621487445708,
+            "selected_support_slope_deg": 1.5000011771070056,
+            "all_vertical_intersections_z_slope": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.2607621487445708,
+                1.5000011771070056
+              ]
+            ],
+            "nearest_cache_support_z_m": 0.25945284962654114,
+            "cache_support_error_m": 0.0013092991180296831,
+            "next_higher_intersection_gap_m": null,
+            "no_higher_intersection_means": "unknown_or_open_not_certified_clearance",
+            "sampled_support_stencil_pass": true,
+            "body_box_intersecting_face_count": 0,
+            "sampled_reference_pass": true
+          },
+          {
+            "world_xy_m": [
+              3.8,
+              9.5
+            ],
+            "local_xy_m": [
+              0.3999999999999999,
+              0.0
+            ],
+            "selected_support_z_m": 0.260762148136268,
+            "selected_support_slope_deg": 1.5000011771070056,
+            "all_vertical_intersections_z_slope": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.260762148136268,
+                1.5000011771070056
+              ]
+            ],
+            "nearest_cache_support_z_m": 0.25945284962654114,
+            "cache_support_error_m": 0.001309298509726886,
+            "next_higher_intersection_gap_m": null,
+            "no_higher_intersection_means": "unknown_or_open_not_certified_clearance",
+            "sampled_support_stencil_pass": true,
+            "body_box_intersecting_face_count": 0,
+            "sampled_reference_pass": true
+          },
+          {
+            "world_xy_m": [
+              3.8499999999999996,
+              9.5
+            ],
+            "local_xy_m": [
+              0.44999999999999973,
+              0.0
+            ],
+            "selected_support_z_m": 0.2607621475279652,
+            "selected_support_slope_deg": 1.5000011771070056,
+            "all_vertical_intersections_z_slope": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.2607621475279652,
+                1.5000011771070056
+              ]
+            ],
+            "nearest_cache_support_z_m": 0.25945284962654114,
+            "cache_support_error_m": 0.001309297901424089,
+            "next_higher_intersection_gap_m": null,
+            "no_higher_intersection_means": "unknown_or_open_not_certified_clearance",
+            "sampled_support_stencil_pass": true,
+            "body_box_intersecting_face_count": 0,
+            "sampled_reference_pass": true
+          },
+          {
+            "world_xy_m": [
+              3.9,
+              9.5
+            ],
+            "local_xy_m": [
+              0.5,
+              0.0
+            ],
+            "selected_support_z_m": 0.26076214691966243,
+            "selected_support_slope_deg": 1.5000011771070056,
+            "all_vertical_intersections_z_slope": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.26076214691966243,
+                1.5000011771070056
+              ]
+            ],
+            "nearest_cache_support_z_m": 0.25945284962654114,
+            "cache_support_error_m": 0.001309297293121292,
+            "next_higher_intersection_gap_m": null,
+            "no_higher_intersection_means": "unknown_or_open_not_certified_clearance",
+            "sampled_support_stencil_pass": true,
+            "body_box_intersecting_face_count": 0,
+            "sampled_reference_pass": true
+          },
+          {
+            "world_xy_m": [
+              3.9499999999999997,
+              9.5
+            ],
+            "local_xy_m": [
+              0.5499999999999998,
+              0.0
+            ],
+            "selected_support_z_m": 0.2607621463113595,
+            "selected_support_slope_deg": 1.5000011771070056,
+            "all_vertical_intersections_z_slope": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.2607621463113595,
+                1.5000011771070056
+              ]
+            ],
+            "nearest_cache_support_z_m": 0.25945284962654114,
+            "cache_support_error_m": 0.001309296684818384,
+            "next_higher_intersection_gap_m": null,
+            "no_higher_intersection_means": "unknown_or_open_not_certified_clearance",
+            "sampled_support_stencil_pass": true,
+            "body_box_intersecting_face_count": 0,
+            "sampled_reference_pass": true
+          },
+          {
+            "world_xy_m": [
+              4.0,
+              9.5
+            ],
+            "local_xy_m": [
+              0.6000000000000001,
+              0.0
+            ],
+            "selected_support_z_m": 0.2607621457030567,
+            "selected_support_slope_deg": 1.5000011771070056,
+            "all_vertical_intersections_z_slope": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.2607621457030567,
+                1.5000011771070056
+              ]
+            ],
+            "nearest_cache_support_z_m": 0.25945284962654114,
+            "cache_support_error_m": 0.001309296076515587,
+            "next_higher_intersection_gap_m": null,
+            "no_higher_intersection_means": "unknown_or_open_not_certified_clearance",
+            "sampled_support_stencil_pass": true,
+            "body_box_intersecting_face_count": 0,
+            "sampled_reference_pass": true
+          },
+          {
+            "world_xy_m": [
+              4.05,
+              9.5
+            ],
+            "local_xy_m": [
+              0.6499999999999999,
+              0.0
+            ],
+            "selected_support_z_m": 0.2607621456555495,
+            "selected_support_slope_deg": 1.4999977623322494,
+            "all_vertical_intersections_z_slope": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.2607621456555495,
+                1.4999977623322494
+              ]
+            ],
+            "nearest_cache_support_z_m": 0.25945284962654114,
+            "cache_support_error_m": 0.0013092960290083666,
+            "next_higher_intersection_gap_m": null,
+            "no_higher_intersection_means": "unknown_or_open_not_certified_clearance",
+            "sampled_support_stencil_pass": true,
+            "body_box_intersecting_face_count": 0,
+            "sampled_reference_pass": true
+          },
+          {
+            "world_xy_m": [
+              4.1,
+              9.5
+            ],
+            "local_xy_m": [
+              0.6999999999999997,
+              0.0
+            ],
+            "selected_support_z_m": 0.26076214587656904,
+            "selected_support_slope_deg": 1.4999977623322494,
+            "all_vertical_intersections_z_slope": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.26076214587656904,
+                1.4999977623322494
+              ]
+            ],
+            "nearest_cache_support_z_m": 0.25945284962654114,
+            "cache_support_error_m": 0.0013092962500279026,
+            "next_higher_intersection_gap_m": null,
+            "no_higher_intersection_means": "unknown_or_open_not_certified_clearance",
+            "sampled_support_stencil_pass": true,
+            "body_box_intersecting_face_count": 0,
+            "sampled_reference_pass": true
+          },
+          {
+            "world_xy_m": [
+              4.1499999999999995,
+              9.5
+            ],
+            "local_xy_m": [
+              0.7499999999999996,
+              0.0
+            ],
+            "selected_support_z_m": 0.2607621460975886,
+            "selected_support_slope_deg": 1.4999977623322494,
+            "all_vertical_intersections_z_slope": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.2607621460975886,
+                1.4999977623322494
+              ]
+            ],
+            "nearest_cache_support_z_m": 0.25945284962654114,
+            "cache_support_error_m": 0.0013092964710474386,
+            "next_higher_intersection_gap_m": null,
+            "no_higher_intersection_means": "unknown_or_open_not_certified_clearance",
+            "sampled_support_stencil_pass": true,
+            "body_box_intersecting_face_count": 0,
+            "sampled_reference_pass": true
+          },
+          {
+            "world_xy_m": [
+              4.199999999999999,
+              9.5
+            ],
+            "local_xy_m": [
+              0.7999999999999994,
+              0.0
+            ],
+            "selected_support_z_m": 0.2607621463186081,
+            "selected_support_slope_deg": 1.4999977623322494,
+            "all_vertical_intersections_z_slope": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.2607621463186081,
+                1.4999977623322494
+              ]
+            ],
+            "nearest_cache_support_z_m": 0.25945284962654114,
+            "cache_support_error_m": 0.0013092966920669746,
+            "next_higher_intersection_gap_m": null,
+            "no_higher_intersection_means": "unknown_or_open_not_certified_clearance",
+            "sampled_support_stencil_pass": true,
+            "body_box_intersecting_face_count": 0,
+            "sampled_reference_pass": true
+          },
+          {
+            "world_xy_m": [
+              4.25,
+              9.5
+            ],
+            "local_xy_m": [
+              0.8500000000000001,
+              0.0
+            ],
+            "selected_support_z_m": 0.2607621465396276,
+            "selected_support_slope_deg": 1.4999977623322494,
+            "all_vertical_intersections_z_slope": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.2607621465396276,
+                1.4999977623322494
+              ]
+            ],
+            "nearest_cache_support_z_m": 0.25945284962654114,
+            "cache_support_error_m": 0.0013092969130864551,
+            "next_higher_intersection_gap_m": null,
+            "no_higher_intersection_means": "unknown_or_open_not_certified_clearance",
+            "sampled_support_stencil_pass": true,
+            "body_box_intersecting_face_count": 0,
+            "sampled_reference_pass": true
+          },
+          {
+            "world_xy_m": [
+              4.3,
+              9.5
+            ],
+            "local_xy_m": [
+              0.8999999999999999,
+              0.0
+            ],
+            "selected_support_z_m": 0.26076214676064713,
+            "selected_support_slope_deg": 1.4999977623322494,
+            "all_vertical_intersections_z_slope": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.26076214676064713,
+                1.4999977623322494
+              ]
+            ],
+            "nearest_cache_support_z_m": 0.25945284962654114,
+            "cache_support_error_m": 0.0013092971341059911,
+            "next_higher_intersection_gap_m": null,
+            "no_higher_intersection_means": "unknown_or_open_not_certified_clearance",
+            "sampled_support_stencil_pass": true,
+            "body_box_intersecting_face_count": 0,
+            "sampled_reference_pass": true
+          },
+          {
+            "world_xy_m": [
+              4.35,
+              9.5
+            ],
+            "local_xy_m": [
+              0.9499999999999997,
+              0.0
+            ],
+            "selected_support_z_m": 0.26076214698166666,
+            "selected_support_slope_deg": 1.4999977623322494,
+            "all_vertical_intersections_z_slope": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.26076214698166666,
+                1.4999977623322494
+              ]
+            ],
+            "nearest_cache_support_z_m": 0.25945284962654114,
+            "cache_support_error_m": 0.0013092973551255271,
+            "next_higher_intersection_gap_m": null,
+            "no_higher_intersection_means": "unknown_or_open_not_certified_clearance",
+            "sampled_support_stencil_pass": true,
+            "body_box_intersecting_face_count": 0,
+            "sampled_reference_pass": true
+          },
+          {
+            "world_xy_m": [
+              4.3999999999999995,
+              9.5
+            ],
+            "local_xy_m": [
+              0.9999999999999996,
+              0.0
+            ],
+            "selected_support_z_m": 0.2607621472026862,
+            "selected_support_slope_deg": 1.4999977623322494,
+            "all_vertical_intersections_z_slope": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.2607621472026862,
+                1.4999977623322494
+              ]
+            ],
+            "nearest_cache_support_z_m": 0.25945284962654114,
+            "cache_support_error_m": 0.0013092975761450631,
+            "next_higher_intersection_gap_m": null,
+            "no_higher_intersection_means": "unknown_or_open_not_certified_clearance",
+            "sampled_support_stencil_pass": true,
+            "body_box_intersecting_face_count": 0,
+            "sampled_reference_pass": true
+          },
+          {
+            "world_xy_m": [
+              4.449999999999999,
+              9.5
+            ],
+            "local_xy_m": [
+              1.0499999999999994,
+              0.0
+            ],
+            "selected_support_z_m": 0.26076214742370574,
+            "selected_support_slope_deg": 1.4999977623322494,
+            "all_vertical_intersections_z_slope": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.26076214742370574,
+                1.4999977623322494
+              ]
+            ],
+            "nearest_cache_support_z_m": 0.25945284962654114,
+            "cache_support_error_m": 0.0013092977971645992,
+            "next_higher_intersection_gap_m": null,
+            "no_higher_intersection_means": "unknown_or_open_not_certified_clearance",
+            "sampled_support_stencil_pass": true,
+            "body_box_intersecting_face_count": 0,
+            "sampled_reference_pass": true
+          },
+          {
+            "world_xy_m": [
+              4.5,
+              9.5
+            ],
+            "local_xy_m": [
+              1.1,
+              0.0
+            ],
+            "selected_support_z_m": 0.2607621476447253,
+            "selected_support_slope_deg": 1.4999977623322494,
+            "all_vertical_intersections_z_slope": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.2607621476447253,
+                1.4999977623322494
+              ]
+            ],
+            "nearest_cache_support_z_m": 0.25945284962654114,
+            "cache_support_error_m": 0.0013092980181841352,
+            "next_higher_intersection_gap_m": null,
+            "no_higher_intersection_means": "unknown_or_open_not_certified_clearance",
+            "sampled_support_stencil_pass": true,
+            "body_box_intersecting_face_count": 0,
+            "sampled_reference_pass": true
+          },
+          {
+            "world_xy_m": [
+              4.55,
+              9.5
+            ],
+            "local_xy_m": [
+              1.15,
+              0.0
+            ],
+            "selected_support_z_m": 0.2607621478657448,
+            "selected_support_slope_deg": 1.4999977623322494,
+            "all_vertical_intersections_z_slope": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.2607621478657448,
+                1.4999977623322494
+              ]
+            ],
+            "nearest_cache_support_z_m": 0.25945284962654114,
+            "cache_support_error_m": 0.0013092982392036712,
+            "next_higher_intersection_gap_m": null,
+            "no_higher_intersection_means": "unknown_or_open_not_certified_clearance",
+            "sampled_support_stencil_pass": true,
+            "body_box_intersecting_face_count": 0,
+            "sampled_reference_pass": true
+          },
+          {
+            "world_xy_m": [
+              4.6,
+              9.5
+            ],
+            "local_xy_m": [
+              1.1999999999999997,
+              0.0
+            ],
+            "selected_support_z_m": 0.2607621480867643,
+            "selected_support_slope_deg": 1.4999977623322494,
+            "all_vertical_intersections_z_slope": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.2607621480867643,
+                1.4999977623322494
+              ]
+            ],
+            "nearest_cache_support_z_m": 0.25945284962654114,
+            "cache_support_error_m": 0.0013092984602231517,
+            "next_higher_intersection_gap_m": null,
+            "no_higher_intersection_means": "unknown_or_open_not_certified_clearance",
+            "sampled_support_stencil_pass": true,
+            "body_box_intersecting_face_count": 0,
+            "sampled_reference_pass": true
+          }
+        ]
+      },
+      {
+        "id": "backward_1m",
+        "start_world_xy_m": [
+          3.4,
+          9.5
+        ],
+        "goal_world_xy_m": [
+          2.4,
+          9.5
+        ],
+        "goal_local_xy_m": [
+          -1.0,
+          0.0
+        ],
+        "length_m": 1.0,
+        "support_height_range_m": [
+          0.2607621355227081,
+          0.26076215665250746
+        ],
+        "support_height_change_m": -1.7479982461487964e-08,
+        "max_selected_slope_deg": 1.5000011771070056,
+        "sample_count": 21,
+        "support_samples_per_pose": 9,
+        "maximum_translation_sampling_step_m": 0.05,
+        "max_cache_support_error_m": 0.001309307025966322,
+        "sampled_reference_pass": true,
+        "dynamic_contact_validated": false,
+        "samples": [
+          {
+            "world_xy_m": [
+              3.4,
+              9.5
+            ],
+            "local_xy_m": [
+              0.0,
+              0.0
+            ],
+            "selected_support_z_m": 0.26076215300269057,
+            "selected_support_slope_deg": 1.5000011771070056,
+            "all_vertical_intersections_z_slope": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.26076215300269057,
+                1.5000011771070056
+              ]
+            ],
+            "nearest_cache_support_z_m": 0.25945284962654114,
+            "cache_support_error_m": 0.0013093033761494288,
+            "next_higher_intersection_gap_m": null,
+            "no_higher_intersection_means": "unknown_or_open_not_certified_clearance",
+            "sampled_support_stencil_pass": true,
+            "body_box_intersecting_face_count": 0,
+            "sampled_reference_pass": true
+          },
+          {
+            "world_xy_m": [
+              3.35,
+              9.5
+            ],
+            "local_xy_m": [
+              -0.04999999999999982,
+              0.0
+            ],
+            "selected_support_z_m": 0.26076215361099336,
+            "selected_support_slope_deg": 1.5000011771070056,
+            "all_vertical_intersections_z_slope": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.26076215361099336,
+                1.5000011771070056
+              ]
+            ],
+            "nearest_cache_support_z_m": 0.25945284962654114,
+            "cache_support_error_m": 0.0013093039844522258,
+            "next_higher_intersection_gap_m": null,
+            "no_higher_intersection_means": "unknown_or_open_not_certified_clearance",
+            "sampled_support_stencil_pass": true,
+            "body_box_intersecting_face_count": 0,
+            "sampled_reference_pass": true
+          },
+          {
+            "world_xy_m": [
+              3.3,
+              9.5
+            ],
+            "local_xy_m": [
+              -0.10000000000000009,
+              0.0
+            ],
+            "selected_support_z_m": 0.26076215421929616,
+            "selected_support_slope_deg": 1.5000011771070056,
+            "all_vertical_intersections_z_slope": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.26076215421929616,
+                1.5000011771070056
+              ]
+            ],
+            "nearest_cache_support_z_m": 0.25945284962654114,
+            "cache_support_error_m": 0.0013093045927550229,
+            "next_higher_intersection_gap_m": null,
+            "no_higher_intersection_means": "unknown_or_open_not_certified_clearance",
+            "sampled_support_stencil_pass": true,
+            "body_box_intersecting_face_count": 0,
+            "sampled_reference_pass": true
+          },
+          {
+            "world_xy_m": [
+              3.25,
+              9.5
+            ],
+            "local_xy_m": [
+              -0.1499999999999999,
+              0.0
+            ],
+            "selected_support_z_m": 0.260762154827599,
+            "selected_support_slope_deg": 1.5000011771070056,
+            "all_vertical_intersections_z_slope": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.260762154827599,
+                1.5000011771070056
+              ]
+            ],
+            "nearest_cache_support_z_m": 0.25945284962654114,
+            "cache_support_error_m": 0.0013093052010578754,
+            "next_higher_intersection_gap_m": null,
+            "no_higher_intersection_means": "unknown_or_open_not_certified_clearance",
+            "sampled_support_stencil_pass": true,
+            "body_box_intersecting_face_count": 0,
+            "sampled_reference_pass": true
+          },
+          {
+            "world_xy_m": [
+              3.1999999999999997,
+              9.5
+            ],
+            "local_xy_m": [
+              -0.20000000000000018,
+              0.0
+            ],
+            "selected_support_z_m": 0.2607621554359018,
+            "selected_support_slope_deg": 1.5000011771070056,
+            "all_vertical_intersections_z_slope": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.2607621554359018,
+                1.5000011771070056
+              ]
+            ],
+            "nearest_cache_support_z_m": 0.25945284962654114,
+            "cache_support_error_m": 0.0013093058093606724,
+            "next_higher_intersection_gap_m": null,
+            "no_higher_intersection_means": "unknown_or_open_not_certified_clearance",
+            "sampled_support_stencil_pass": true,
+            "body_box_intersecting_face_count": 0,
+            "sampled_reference_pass": true
+          },
+          {
+            "world_xy_m": [
+              3.15,
+              9.5
+            ],
+            "local_xy_m": [
+              -0.25,
+              0.0
+            ],
+            "selected_support_z_m": 0.2607621560442046,
+            "selected_support_slope_deg": 1.5000011771070056,
+            "all_vertical_intersections_z_slope": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.2607621560442046,
+                1.5000011771070056
+              ]
+            ],
+            "nearest_cache_support_z_m": 0.25945284962654114,
+            "cache_support_error_m": 0.0013093064176634694,
+            "next_higher_intersection_gap_m": null,
+            "no_higher_intersection_means": "unknown_or_open_not_certified_clearance",
+            "sampled_support_stencil_pass": true,
+            "body_box_intersecting_face_count": 0,
+            "sampled_reference_pass": true
+          },
+          {
+            "world_xy_m": [
+              3.1,
+              9.5
+            ],
+            "local_xy_m": [
+              -0.2999999999999998,
+              0.0
+            ],
+            "selected_support_z_m": 0.26076215665250746,
+            "selected_support_slope_deg": 1.5000011771070056,
+            "all_vertical_intersections_z_slope": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.26076215665250746,
+                1.5000011771070056
+              ]
+            ],
+            "nearest_cache_support_z_m": 0.25945284962654114,
+            "cache_support_error_m": 0.001309307025966322,
+            "next_higher_intersection_gap_m": null,
+            "no_higher_intersection_means": "unknown_or_open_not_certified_clearance",
+            "sampled_support_stencil_pass": true,
+            "body_box_intersecting_face_count": 0,
+            "sampled_reference_pass": true
+          },
+          {
+            "world_xy_m": [
+              3.05,
+              9.5
+            ],
+            "local_xy_m": [
+              -0.3500000000000001,
+              0.0
+            ],
+            "selected_support_z_m": 0.2607621520476425,
+            "selected_support_slope_deg": 1.4999832844964345,
+            "all_vertical_intersections_z_slope": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.2607621520476425,
+                1.4999832844964345
+              ]
+            ],
+            "nearest_cache_support_z_m": 0.25945284962654114,
+            "cache_support_error_m": 0.0013093024211013882,
+            "next_higher_intersection_gap_m": null,
+            "no_higher_intersection_means": "unknown_or_open_not_certified_clearance",
+            "sampled_support_stencil_pass": true,
+            "body_box_intersecting_face_count": 0,
+            "sampled_reference_pass": true
+          },
+          {
+            "world_xy_m": [
+              3.0,
+              9.5
+            ],
+            "local_xy_m": [
+              -0.3999999999999999,
+              0.0
+            ],
+            "selected_support_z_m": 0.2607621436360237,
+            "selected_support_slope_deg": 1.4999833050820386,
+            "all_vertical_intersections_z_slope": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.2607621436360237,
+                1.4999833050820386
+              ]
+            ],
+            "nearest_cache_support_z_m": 0.25945284962654114,
+            "cache_support_error_m": 0.0013092940094825423,
+            "next_higher_intersection_gap_m": null,
+            "no_higher_intersection_means": "unknown_or_open_not_certified_clearance",
+            "sampled_support_stencil_pass": true,
+            "body_box_intersecting_face_count": 0,
+            "sampled_reference_pass": true
+          },
+          {
+            "world_xy_m": [
+              2.9499999999999997,
+              9.5
+            ],
+            "local_xy_m": [
+              -0.4500000000000002,
+              0.0
+            ],
+            "selected_support_z_m": 0.2607621367087686,
+            "selected_support_slope_deg": 1.499999757897819,
+            "all_vertical_intersections_z_slope": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.2607621367087686,
+                1.499999757897819
+              ]
+            ],
+            "nearest_cache_support_z_m": 0.25945284962654114,
+            "cache_support_error_m": 0.0013092870822274394,
+            "next_higher_intersection_gap_m": null,
+            "no_higher_intersection_means": "unknown_or_open_not_certified_clearance",
+            "sampled_support_stencil_pass": true,
+            "body_box_intersecting_face_count": 0,
+            "sampled_reference_pass": true
+          },
+          {
+            "world_xy_m": [
+              2.9,
+              9.5
+            ],
+            "local_xy_m": [
+              -0.5,
+              0.0
+            ],
+            "selected_support_z_m": 0.26076213660094494,
+            "selected_support_slope_deg": 1.499999757897819,
+            "all_vertical_intersections_z_slope": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.26076213660094494,
+                1.499999757897819
+              ]
+            ],
+            "nearest_cache_support_z_m": 0.25945284962654114,
+            "cache_support_error_m": 0.0013092869744038005,
+            "next_higher_intersection_gap_m": null,
+            "no_higher_intersection_means": "unknown_or_open_not_certified_clearance",
+            "sampled_support_stencil_pass": true,
+            "body_box_intersecting_face_count": 0,
+            "sampled_reference_pass": true
+          },
+          {
+            "world_xy_m": [
+              2.8499999999999996,
+              9.5
+            ],
+            "local_xy_m": [
+              -0.5500000000000003,
+              0.0
+            ],
+            "selected_support_z_m": 0.2607621364931212,
+            "selected_support_slope_deg": 1.499999757897819,
+            "all_vertical_intersections_z_slope": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.2607621364931212,
+                1.499999757897819
+              ]
+            ],
+            "nearest_cache_support_z_m": 0.25945284962654114,
+            "cache_support_error_m": 0.0013092868665800506,
+            "next_higher_intersection_gap_m": null,
+            "no_higher_intersection_means": "unknown_or_open_not_certified_clearance",
+            "sampled_support_stencil_pass": true,
+            "body_box_intersecting_face_count": 0,
+            "sampled_reference_pass": true
+          },
+          {
+            "world_xy_m": [
+              2.8,
+              9.5
+            ],
+            "local_xy_m": [
+              -0.6000000000000001,
+              0.0
+            ],
+            "selected_support_z_m": 0.26076213638529755,
+            "selected_support_slope_deg": 1.499999757897819,
+            "all_vertical_intersections_z_slope": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.26076213638529755,
+                1.499999757897819
+              ]
+            ],
+            "nearest_cache_support_z_m": 0.25945284962654114,
+            "cache_support_error_m": 0.0013092867587564117,
+            "next_higher_intersection_gap_m": null,
+            "no_higher_intersection_means": "unknown_or_open_not_certified_clearance",
+            "sampled_support_stencil_pass": true,
+            "body_box_intersecting_face_count": 0,
+            "sampled_reference_pass": true
+          },
+          {
+            "world_xy_m": [
+              2.75,
+              9.5
+            ],
+            "local_xy_m": [
+              -0.6499999999999999,
+              0.0
+            ],
+            "selected_support_z_m": 0.26076213627747385,
+            "selected_support_slope_deg": 1.499999757897819,
+            "all_vertical_intersections_z_slope": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.26076213627747385,
+                1.499999757897819
+              ]
+            ],
+            "nearest_cache_support_z_m": 0.25945284962654114,
+            "cache_support_error_m": 0.0013092866509327172,
+            "next_higher_intersection_gap_m": null,
+            "no_higher_intersection_means": "unknown_or_open_not_certified_clearance",
+            "sampled_support_stencil_pass": true,
+            "body_box_intersecting_face_count": 0,
+            "sampled_reference_pass": true
+          },
+          {
+            "world_xy_m": [
+              2.7,
+              9.5
+            ],
+            "local_xy_m": [
+              -0.6999999999999997,
+              0.0
+            ],
+            "selected_support_z_m": 0.26076213616965016,
+            "selected_support_slope_deg": 1.499999757897819,
+            "all_vertical_intersections_z_slope": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.26076213616965016,
+                1.499999757897819
+              ]
+            ],
+            "nearest_cache_support_z_m": 0.25945284962654114,
+            "cache_support_error_m": 0.0013092865431090228,
+            "next_higher_intersection_gap_m": null,
+            "no_higher_intersection_means": "unknown_or_open_not_certified_clearance",
+            "sampled_support_stencil_pass": true,
+            "body_box_intersecting_face_count": 0,
+            "sampled_reference_pass": true
+          },
+          {
+            "world_xy_m": [
+              2.65,
+              9.5
+            ],
+            "local_xy_m": [
+              -0.75,
+              0.0
+            ],
+            "selected_support_z_m": 0.2607621360618265,
+            "selected_support_slope_deg": 1.499999757897819,
+            "all_vertical_intersections_z_slope": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.2607621360618265,
+                1.499999757897819
+              ]
+            ],
+            "nearest_cache_support_z_m": 0.25945284962654114,
+            "cache_support_error_m": 0.001309286435285384,
+            "next_higher_intersection_gap_m": null,
+            "no_higher_intersection_means": "unknown_or_open_not_certified_clearance",
+            "sampled_support_stencil_pass": true,
+            "body_box_intersecting_face_count": 0,
+            "sampled_reference_pass": true
+          },
+          {
+            "world_xy_m": [
+              2.5999999999999996,
+              9.5
+            ],
+            "local_xy_m": [
+              -0.8000000000000003,
+              0.0
+            ],
+            "selected_support_z_m": 0.2607621359540028,
+            "selected_support_slope_deg": 1.499999757897819,
+            "all_vertical_intersections_z_slope": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.2607621359540028,
+                1.499999757897819
+              ]
+            ],
+            "nearest_cache_support_z_m": 0.25945284962654114,
+            "cache_support_error_m": 0.0013092863274616895,
+            "next_higher_intersection_gap_m": null,
+            "no_higher_intersection_means": "unknown_or_open_not_certified_clearance",
+            "sampled_support_stencil_pass": true,
+            "body_box_intersecting_face_count": 0,
+            "sampled_reference_pass": true
+          },
+          {
+            "world_xy_m": [
+              2.55,
+              9.5
+            ],
+            "local_xy_m": [
+              -0.8500000000000001,
+              0.0
+            ],
+            "selected_support_z_m": 0.26076213584617913,
+            "selected_support_slope_deg": 1.499999757897819,
+            "all_vertical_intersections_z_slope": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.26076213584617913,
+                1.499999757897819
+              ]
+            ],
+            "nearest_cache_support_z_m": 0.25945284962654114,
+            "cache_support_error_m": 0.001309286219637995,
+            "next_higher_intersection_gap_m": null,
+            "no_higher_intersection_means": "unknown_or_open_not_certified_clearance",
+            "sampled_support_stencil_pass": true,
+            "body_box_intersecting_face_count": 0,
+            "sampled_reference_pass": true
+          },
+          {
+            "world_xy_m": [
+              2.5,
+              9.5
+            ],
+            "local_xy_m": [
+              -0.8999999999999999,
+              0.0
+            ],
+            "selected_support_z_m": 0.2607621357383555,
+            "selected_support_slope_deg": 1.499999757897819,
+            "all_vertical_intersections_z_slope": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.2607621357383555,
+                1.499999757897819
+              ]
+            ],
+            "nearest_cache_support_z_m": 0.25945284962654114,
+            "cache_support_error_m": 0.0013092861118143562,
+            "next_higher_intersection_gap_m": null,
+            "no_higher_intersection_means": "unknown_or_open_not_certified_clearance",
+            "sampled_support_stencil_pass": true,
+            "body_box_intersecting_face_count": 0,
+            "sampled_reference_pass": true
+          },
+          {
+            "world_xy_m": [
+              2.45,
+              9.5
+            ],
+            "local_xy_m": [
+              -0.9499999999999997,
+              0.0
+            ],
+            "selected_support_z_m": 0.2607621356305318,
+            "selected_support_slope_deg": 1.499999757897819,
+            "all_vertical_intersections_z_slope": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.2607621356305318,
+                1.499999757897819
+              ]
+            ],
+            "nearest_cache_support_z_m": 0.25945284962654114,
+            "cache_support_error_m": 0.0013092860039906618,
+            "next_higher_intersection_gap_m": null,
+            "no_higher_intersection_means": "unknown_or_open_not_certified_clearance",
+            "sampled_support_stencil_pass": true,
+            "body_box_intersecting_face_count": 0,
+            "sampled_reference_pass": true
+          },
+          {
+            "world_xy_m": [
+              2.4,
+              9.5
+            ],
+            "local_xy_m": [
+              -1.0,
+              0.0
+            ],
+            "selected_support_z_m": 0.2607621355227081,
+            "selected_support_slope_deg": 1.499999757897819,
+            "all_vertical_intersections_z_slope": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.2607621355227081,
+                1.499999757897819
+              ]
+            ],
+            "nearest_cache_support_z_m": 0.25945284962654114,
+            "cache_support_error_m": 0.0013092858961669673,
+            "next_higher_intersection_gap_m": null,
+            "no_higher_intersection_means": "unknown_or_open_not_certified_clearance",
+            "sampled_support_stencil_pass": true,
+            "body_box_intersecting_face_count": 0,
+            "sampled_reference_pass": true
+          }
+        ]
+      },
+      {
+        "id": "diagonal_0p8_0p4m",
+        "start_world_xy_m": [
+          3.4,
+          9.5
+        ],
+        "goal_world_xy_m": [
+          4.2,
+          9.9
+        ],
+        "goal_local_xy_m": [
+          0.8,
+          0.4
+        ],
+        "length_m": 0.894427190999916,
+        "support_height_range_m": [
+          0.25028778255086503,
+          0.26076215300269057
+        ],
+        "support_height_change_m": -0.010474370451825532,
+        "max_selected_slope_deg": 1.500003981430378,
+        "sample_count": 19,
+        "support_samples_per_pose": 9,
+        "maximum_translation_sampling_step_m": 0.05,
+        "max_cache_support_error_m": 0.0013093033761494288,
+        "sampled_reference_pass": true,
+        "dynamic_contact_validated": false,
+        "samples": [
+          {
+            "world_xy_m": [
+              3.4,
+              9.5
+            ],
+            "local_xy_m": [
+              0.0,
+              0.0
+            ],
+            "selected_support_z_m": 0.26076215300269057,
+            "selected_support_slope_deg": 1.5000011771070056,
+            "all_vertical_intersections_z_slope": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.26076215300269057,
+                1.5000011771070056
+              ]
+            ],
+            "nearest_cache_support_z_m": 0.25945284962654114,
+            "cache_support_error_m": 0.0013093033761494288,
+            "next_higher_intersection_gap_m": null,
+            "no_higher_intersection_means": "unknown_or_open_not_certified_clearance",
+            "sampled_support_stencil_pass": true,
+            "body_box_intersecting_face_count": 0,
+            "sampled_reference_pass": true
+          },
+          {
+            "world_xy_m": [
+              3.444444444444444,
+              9.522222222222222
+            ],
+            "local_xy_m": [
+              0.04444444444444429,
+              0.022222222222222143
+            ],
+            "selected_support_z_m": 0.26018024263691775,
+            "selected_support_slope_deg": 1.5000011771070056,
+            "all_vertical_intersections_z_slope": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.26018024263691775,
+                1.5000011771070056
+              ]
+            ],
+            "nearest_cache_support_z_m": 0.25945284962654114,
+            "cache_support_error_m": 0.0007273930103766091,
+            "next_higher_intersection_gap_m": null,
+            "no_higher_intersection_means": "unknown_or_open_not_certified_clearance",
+            "sampled_support_stencil_pass": true,
+            "body_box_intersecting_face_count": 0,
+            "sampled_reference_pass": true
+          },
+          {
+            "world_xy_m": [
+              3.488888888888889,
+              9.544444444444444
+            ],
+            "local_xy_m": [
+              0.08888888888888902,
+              0.04444444444444429
+            ],
+            "selected_support_z_m": 0.259598332271145,
+            "selected_support_slope_deg": 1.5000011771070056,
+            "all_vertical_intersections_z_slope": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.259598332271145,
+                1.5000011771070056
+              ]
+            ],
+            "nearest_cache_support_z_m": 0.25945284962654114,
+            "cache_support_error_m": 0.00014548264460384486,
+            "next_higher_intersection_gap_m": null,
+            "no_higher_intersection_means": "unknown_or_open_not_certified_clearance",
+            "sampled_support_stencil_pass": true,
+            "body_box_intersecting_face_count": 0,
+            "sampled_reference_pass": true
+          },
+          {
+            "world_xy_m": [
+              3.533333333333333,
+              9.566666666666666
+            ],
+            "local_xy_m": [
+              0.1333333333333333,
+              0.06666666666666643
+            ],
+            "selected_support_z_m": 0.25901642190537216,
+            "selected_support_slope_deg": 1.5000011771070056,
+            "all_vertical_intersections_z_slope": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.25901642190537216,
+                1.5000011771070056
+              ]
+            ],
+            "nearest_cache_support_z_m": 0.25945284962654114,
+            "cache_support_error_m": 0.0004364277211689749,
+            "next_higher_intersection_gap_m": null,
+            "no_higher_intersection_means": "unknown_or_open_not_certified_clearance",
+            "sampled_support_stencil_pass": true,
+            "body_box_intersecting_face_count": 0,
+            "sampled_reference_pass": true
+          },
+          {
+            "world_xy_m": [
+              3.577777777777778,
+              9.588888888888889
+            ],
+            "local_xy_m": [
+              0.17777777777777803,
+              0.08888888888888857
+            ],
+            "selected_support_z_m": 0.2584345115395994,
+            "selected_support_slope_deg": 1.5000011771070056,
+            "all_vertical_intersections_z_slope": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.2584345115395994,
+                1.5000011771070056
+              ]
+            ],
+            "nearest_cache_support_z_m": 0.25945284962654114,
+            "cache_support_error_m": 0.001018338086941739,
+            "next_higher_intersection_gap_m": null,
+            "no_higher_intersection_means": "unknown_or_open_not_certified_clearance",
+            "sampled_support_stencil_pass": true,
+            "body_box_intersecting_face_count": 0,
+            "sampled_reference_pass": true
+          },
+          {
+            "world_xy_m": [
+              3.6222222222222222,
+              9.61111111111111
+            ],
+            "local_xy_m": [
+              0.22222222222222232,
+              0.11111111111111072
+            ],
+            "selected_support_z_m": 0.2578526012659674,
+            "selected_support_slope_deg": 1.4999977623322494,
+            "all_vertical_intersections_z_slope": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.2578526012659674,
+                1.4999977623322494
+              ]
+            ],
+            "nearest_cache_support_z_m": 0.2568342685699463,
+            "cache_support_error_m": 0.0010183326960210848,
+            "next_higher_intersection_gap_m": null,
+            "no_higher_intersection_means": "unknown_or_open_not_certified_clearance",
+            "sampled_support_stencil_pass": true,
+            "body_box_intersecting_face_count": 0,
+            "sampled_reference_pass": true
+          },
+          {
+            "world_xy_m": [
+              3.6666666666666665,
+              9.633333333333333
+            ],
+            "local_xy_m": [
+              0.2666666666666666,
+              0.13333333333333286
+            ],
+            "selected_support_z_m": 0.2572706929627017,
+            "selected_support_slope_deg": 1.4999977623322494,
+            "all_vertical_intersections_z_slope": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.2572706929627017,
+                1.4999977623322494
+              ]
+            ],
+            "nearest_cache_support_z_m": 0.2568342685699463,
+            "cache_support_error_m": 0.0004364243927554301,
+            "next_higher_intersection_gap_m": null,
+            "no_higher_intersection_means": "unknown_or_open_not_certified_clearance",
+            "sampled_support_stencil_pass": true,
+            "body_box_intersecting_face_count": 0,
+            "sampled_reference_pass": true
+          },
+          {
+            "world_xy_m": [
+              3.7111111111111112,
+              9.655555555555555
+            ],
+            "local_xy_m": [
+              0.31111111111111134,
+              0.155555555555555
+            ],
+            "selected_support_z_m": 0.2566887846594361,
+            "selected_support_slope_deg": 1.4999977623322494,
+            "all_vertical_intersections_z_slope": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.2566887846594361,
+                1.4999977623322494
+              ]
+            ],
+            "nearest_cache_support_z_m": 0.2568342685699463,
+            "cache_support_error_m": 0.00014548391051016907,
+            "next_higher_intersection_gap_m": null,
+            "no_higher_intersection_means": "unknown_or_open_not_certified_clearance",
+            "sampled_support_stencil_pass": true,
+            "body_box_intersecting_face_count": 0,
+            "sampled_reference_pass": true
+          },
+          {
+            "world_xy_m": [
+              3.7555555555555555,
+              9.677777777777777
+            ],
+            "local_xy_m": [
+              0.3555555555555556,
+              0.17777777777777715
+            ],
+            "selected_support_z_m": 0.2561068763561704,
+            "selected_support_slope_deg": 1.4999977623322494,
+            "all_vertical_intersections_z_slope": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.2561068763561704,
+                1.4999977623322494
+              ]
+            ],
+            "nearest_cache_support_z_m": 0.2568342685699463,
+            "cache_support_error_m": 0.0007273922137758793,
+            "next_higher_intersection_gap_m": null,
+            "no_higher_intersection_means": "unknown_or_open_not_certified_clearance",
+            "sampled_support_stencil_pass": true,
+            "body_box_intersecting_face_count": 0,
+            "sampled_reference_pass": true
+          },
+          {
+            "world_xy_m": [
+              3.8,
+              9.7
+            ],
+            "local_xy_m": [
+              0.3999999999999999,
+              0.1999999999999993
+            ],
+            "selected_support_z_m": 0.2555249680529048,
+            "selected_support_slope_deg": 1.4999977623322494,
+            "all_vertical_intersections_z_slope": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.2555249680529048,
+                1.4999977623322494
+              ]
+            ],
+            "nearest_cache_support_z_m": 0.2568342685699463,
+            "cache_support_error_m": 0.0013093005170414784,
+            "next_higher_intersection_gap_m": null,
+            "no_higher_intersection_means": "unknown_or_open_not_certified_clearance",
+            "sampled_support_stencil_pass": true,
+            "body_box_intersecting_face_count": 0,
+            "sampled_reference_pass": true
+          },
+          {
+            "world_xy_m": [
+              3.8444444444444446,
+              9.722222222222223
+            ],
+            "local_xy_m": [
+              0.44444444444444464,
+              0.2222222222222232
+            ],
+            "selected_support_z_m": 0.2549430597496391,
+            "selected_support_slope_deg": 1.4999977623322494,
+            "all_vertical_intersections_z_slope": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.2549430597496391,
+                1.4999977623322494
+              ]
+            ],
+            "nearest_cache_support_z_m": 0.25421568751335144,
+            "cache_support_error_m": 0.00072737223628766,
+            "next_higher_intersection_gap_m": null,
+            "no_higher_intersection_means": "unknown_or_open_not_certified_clearance",
+            "sampled_support_stencil_pass": true,
+            "body_box_intersecting_face_count": 0,
+            "sampled_reference_pass": true
+          },
+          {
+            "world_xy_m": [
+              3.888888888888889,
+              9.744444444444445
+            ],
+            "local_xy_m": [
+              0.48888888888888893,
+              0.24444444444444535
+            ],
+            "selected_support_z_m": 0.25436115144637345,
+            "selected_support_slope_deg": 1.4999977623322494,
+            "all_vertical_intersections_z_slope": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.25436115144637345,
+                1.4999977623322494
+              ]
+            ],
+            "nearest_cache_support_z_m": 0.25421568751335144,
+            "cache_support_error_m": 0.00014546393302200533,
+            "next_higher_intersection_gap_m": null,
+            "no_higher_intersection_means": "unknown_or_open_not_certified_clearance",
+            "sampled_support_stencil_pass": true,
+            "body_box_intersecting_face_count": 0,
+            "sampled_reference_pass": true
+          },
+          {
+            "world_xy_m": [
+              3.9333333333333336,
+              9.766666666666667
+            ],
+            "local_xy_m": [
+              0.5333333333333337,
+              0.2666666666666675
+            ],
+            "selected_support_z_m": 0.2537792431431078,
+            "selected_support_slope_deg": 1.4999977623322494,
+            "all_vertical_intersections_z_slope": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.2537792431431078,
+                1.4999977623322494
+              ]
+            ],
+            "nearest_cache_support_z_m": 0.25421568751335144,
+            "cache_support_error_m": 0.00043644437024364935,
+            "next_higher_intersection_gap_m": null,
+            "no_higher_intersection_means": "unknown_or_open_not_certified_clearance",
+            "sampled_support_stencil_pass": true,
+            "body_box_intersecting_face_count": 0,
+            "sampled_reference_pass": true
+          },
+          {
+            "world_xy_m": [
+              3.977777777777778,
+              9.78888888888889
+            ],
+            "local_xy_m": [
+              0.577777777777778,
+              0.28888888888888964
+            ],
+            "selected_support_z_m": 0.25319733264552374,
+            "selected_support_slope_deg": 1.500003981430378,
+            "all_vertical_intersections_z_slope": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.25319733264552374,
+                1.500003981430378
+              ]
+            ],
+            "nearest_cache_support_z_m": 0.25421568751335144,
+            "cache_support_error_m": 0.0010183548678276977,
+            "next_higher_intersection_gap_m": null,
+            "no_higher_intersection_means": "unknown_or_open_not_certified_clearance",
+            "sampled_support_stencil_pass": true,
+            "body_box_intersecting_face_count": 0,
+            "sampled_reference_pass": true
+          },
+          {
+            "world_xy_m": [
+              4.022222222222222,
+              9.811111111111112
+            ],
+            "local_xy_m": [
+              0.6222222222222222,
+              0.3111111111111118
+            ],
+            "selected_support_z_m": 0.25261542128963244,
+            "selected_support_slope_deg": 1.500003981430378,
+            "all_vertical_intersections_z_slope": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.25261542128963244,
+                1.500003981430378
+              ]
+            ],
+            "nearest_cache_support_z_m": 0.2515970766544342,
+            "cache_support_error_m": 0.0010183446351982317,
+            "next_higher_intersection_gap_m": null,
+            "no_higher_intersection_means": "unknown_or_open_not_certified_clearance",
+            "sampled_support_stencil_pass": true,
+            "body_box_intersecting_face_count": 0,
+            "sampled_reference_pass": true
+          },
+          {
+            "world_xy_m": [
+              4.066666666666666,
+              9.833333333333334
+            ],
+            "local_xy_m": [
+              0.6666666666666665,
+              0.3333333333333339
+            ],
+            "selected_support_z_m": 0.2520335101781018,
+            "selected_support_slope_deg": 1.4999978169482613,
+            "all_vertical_intersections_z_slope": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.2520335101781018,
+                1.4999978169482613
+              ]
+            ],
+            "nearest_cache_support_z_m": 0.2515970766544342,
+            "cache_support_error_m": 0.0004364335236676231,
+            "next_higher_intersection_gap_m": null,
+            "no_higher_intersection_means": "unknown_or_open_not_certified_clearance",
+            "sampled_support_stencil_pass": true,
+            "body_box_intersecting_face_count": 0,
+            "sampled_reference_pass": true
+          },
+          {
+            "world_xy_m": [
+              4.111111111111112,
+              9.855555555555556
+            ],
+            "local_xy_m": [
+              0.7111111111111117,
+              0.35555555555555607
+            ],
+            "selected_support_z_m": 0.25145160127388483,
+            "selected_support_slope_deg": 1.499999672353264,
+            "all_vertical_intersections_z_slope": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.25145160127388483,
+                1.499999672353264
+              ]
+            ],
+            "nearest_cache_support_z_m": 0.2515970766544342,
+            "cache_support_error_m": 0.0001454753805493758,
+            "next_higher_intersection_gap_m": null,
+            "no_higher_intersection_means": "unknown_or_open_not_certified_clearance",
+            "sampled_support_stencil_pass": true,
+            "body_box_intersecting_face_count": 0,
+            "sampled_reference_pass": true
+          },
+          {
+            "world_xy_m": [
+              4.155555555555556,
+              9.877777777777778
+            ],
+            "local_xy_m": [
+              0.755555555555556,
+              0.3777777777777782
+            ],
+            "selected_support_z_m": 0.25086969191237496,
+            "selected_support_slope_deg": 1.499999672353264,
+            "all_vertical_intersections_z_slope": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.25086969191237496,
+                1.499999672353264
+              ]
+            ],
+            "nearest_cache_support_z_m": 0.2515970766544342,
+            "cache_support_error_m": 0.000727384742059245,
+            "next_higher_intersection_gap_m": null,
+            "no_higher_intersection_means": "unknown_or_open_not_certified_clearance",
+            "sampled_support_stencil_pass": true,
+            "body_box_intersecting_face_count": 0,
+            "sampled_reference_pass": true
+          },
+          {
+            "world_xy_m": [
+              4.2,
+              9.9
+            ],
+            "local_xy_m": [
+              0.8000000000000003,
+              0.40000000000000036
+            ],
+            "selected_support_z_m": 0.25028778255086503,
+            "selected_support_slope_deg": 1.499999672353264,
+            "all_vertical_intersections_z_slope": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.25028778255086503,
+                1.499999672353264
+              ]
+            ],
+            "nearest_cache_support_z_m": 0.24897848069667816,
+            "cache_support_error_m": 0.0013093018541868728,
+            "next_higher_intersection_gap_m": null,
+            "no_higher_intersection_means": "unknown_or_open_not_certified_clearance",
+            "sampled_support_stencil_pass": true,
+            "body_box_intersecting_face_count": 0,
+            "sampled_reference_pass": true
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "code": 0,
+  "message": "success",
+  "success": true,
+  "data": {
+    "id": 1970956,
+    "category": "ARTICLE",
+    "state": "PASS",
+    "stateDesc": "审核通过",
+    "auditRejectReason": null,
+    "official": false,
+    "top": false,
+    "marrow": false,
+    "title": "RMU 2027场地图纸&可移动道具开源",
+    "contentType": "HTML",
+    "htmlContent": "<p style=\"text-align: left;\">以下开源图纸基于RMUC&amp;RMUL 2027比赛规则手册V1.0.0制作。</p><p style=\"text-align: left;\">RMUC场地图纸（step格式）：<a data-w-e-type=\"attachment\" data-w-e-is-void=\"\" data-w-e-is-inline=\"\" href=\"https://hz-rm-bbs-web-prod.oss-cn-hangzhou.aliyuncs.com/080ae7230f6c469c9bec9d2c892797b61791994813953/RMUC2027_V1.0.0.stp\" data-file-name=\"RMUC2027_V1.0.0.stp\" data-file-md5=\"3d3d6a411f44e9a4983794261b3f0bf7\" data-file-len=\"653443279\" data-file-key=\"1790135455381-653443279-RMUC2027_V1.0.0.stp-w5l0k71ShqHXKuCLsE_RC\" data-file-state=\"uploadSuccess\">RMUC2027_V1.0.0.stp</a></p><p style=\"text-align: left;\">RMUL 3V3对抗赛场地图纸（step格式）：<a data-w-e-type=\"attachment\" data-w-e-is-void=\"\" data-w-e-is-inline=\"\" href=\"https://hz-rm-bbs-web-prod.oss-cn-hangzhou.aliyuncs.com/12d6225c83984f00a0cc27628ecea74b1791994867597/RMUL2027_3V3_V1.0.0.stp\" data-file-name=\"RMUL2027_3V3_V1.0.0.stp\" data-file-md5=\"d00a4553faea81c49ba1598a75eccec0\" data-file-len=\"1989786\" data-file-key=\"1790050807406-1989786-RMUL2027_3V3_V1.0.0.stp-8rbOPHc2w150CnWxugl16\" data-file-state=\"uploadSuccess\">RMUL2027_3V3_V1.0.0.stp</a></p><p style=\"text-align: left;\">RMUL 1V1对抗赛场地图纸（step格式）：<a data-w-e-type=\"attachment\" data-w-e-is-void=\"\" data-w-e-is-inline=\"\" href=\"https://hz-rm-bbs-web-prod.oss-cn-hangzhou.aliyuncs.com/cc52e8820e32454e8d34bcddc0b8ddfa1791994866414/RMUL2027_1V1_V1.0.0.stp\" data-file-name=\"RMUL2027_1V1_V1.0.0.stp\" data-file-md5=\"dda727e50c0b10ba2cf8e27e90a67089\" data-file-len=\"1111060\" data-file-key=\"1790051651169-1111060-RMUL2027_1V1_V1.0.0.stp-GtV0rSOjvnyDNPOka8KKT\" data-file-state=\"uploadSuccess\">RMUL2027_1V1_V1.0.0.stp</a></p><p style=\"text-align: left;\">能量单元图纸（step格式）：<a data-w-e-type=\"attachment\" data-w-e-is-void=\"\" data-w-e-is-inline=\"\" href=\"https://hz-rm-bbs-web-prod.oss-cn-hangzhou.aliyuncs.com/2c5546d12d7b4f5492998eef274d2f341791994875037/能量单元.stp\" data-file-name=\"能量单元.stp\" data-file-md5=\"a3f361d81761837e8500c41cb7cb5c7c\" data-file-len=\"3066696\" data-file-key=\"1790048674938-3066696-能量单元.stp-2xSNq2v7vraxmlin4soDR\" data-file-state=\"uploadSuccess\">能量单元.stp</a></p><p style=\"text-align: left;\"><br></p><p style=\"text-align: left;\">注：本文件为RMUC&amp;RMUL 2027的场地模型，仅做参考使用，若此模型与规则手册标注或与比赛现场场地有结构出入，以规则手册和现场场地为准。</p>",
+    "markdownContent": "",
+    "headImg": "[]",
+    "authorId": 39696,
+    "authorNickname": "RoboMaster 高校赛务",
+    "authorAvatar": "https://terra-cn-oss-cdn-public-pro.oss-cn-hangzhou.aliyuncs.com/b2a076471c6c4b72b574a977334d3e05/659ff4b3-304c-43dc-9653-0dbb5fed87e1",
+    "createAt": "2026-10-15T09:47:59.000+00:00",
+    "updateAt": "2026-11-04T03:10:58.000+00:00",
+    "views": 10351,
+    "approvals": 60,
+    "comments": 0,
+    "originalAuthor": null,
+    "originalTitle": null,
+    "originalUrl": null,
+    "directory": null,
+    "difficultyScore": 250,
+    "tags": [
+      {
+        "id": 17,
+        "groupName": "官方信息",
+        "name": "公告",
+        "headImg": null
+      }
+    ],
+    "solutionId": null,
+    "solution": null,
+    "belongWikis": [],
+    "dynamicCategory": null,
+    "draft": null,
+    "jobCategoryId": null,
+    "canComment": 0,
+    "timesCited": 1,
+    "timesCiting": 0,
+    "history": false,
+    "contactText": "",
+    "contactPic": "",
+    "attachments": [
+      {
+        "id": 460724,
+        "src": "https://hz-rm-bbs-web-prod.oss-cn-hangzhou.aliyuncs.com/080ae7230f6c469c9bec9d2c892797b61791994813953/RMUC2027_V1.0.0.stp",
+        "name": "RMUC2027_V1.0.0.stp",
+        "downloads": 881
+      },
+      {
+        "id": 460725,
+        "src": "https://hz-rm-bbs-web-prod.oss-cn-hangzhou.aliyuncs.com/12d6225c83984f00a0cc27628ecea74b1791994867597/RMUL2027_3V3_V1.0.0.stp",
+        "name": "RMUL2027_3V3_V1.0.0.stp",
+        "downloads": 588
+      },
+      {
+        "id": 460726,
+        "src": "https://hz-rm-bbs-web-prod.oss-cn-hangzhou.aliyuncs.com/cc52e8820e32454e8d34bcddc0b8ddfa1791994866414/RMUL2027_1V1_V1.0.0.stp",
+        "name": "RMUL2027_1V1_V1.0.0.stp",
+        "downloads": 235
+      },
+      {
+        "id": 460727,
+        "src": "https://hz-rm-bbs-web-prod.oss-cn-hangzhou.aliyuncs.com/2c5546d12d7b4f5492998eef274d2f341791994875037/能量单元.stp",
+        "name": "能量单元.stp",
+        "downloads": 255
+      }
+    ],
+    "fileItems": [
+      {
+        "id": 14836957,
+        "src": "https://hz-rm-bbs-web-prod.oss-cn-hangzhou.aliyuncs.com/080ae7230f6c469c9bec9d2c892797b61791994813953/RMUC2027_V1.0.0.stp",
+        "name": "RMUC2027_V1.0.0.stp",
+        "downloads": 0,
+        "md5": "3d3d6a411f44e9a4983794261b3f0bf7",
+        "len": 653443279
+      },
+      {
+        "id": 14836958,
+        "src": "https://hz-rm-bbs-web-prod.oss-cn-hangzhou.aliyuncs.com/12d6225c83984f00a0cc27628ecea74b1791994867597/RMUL2027_3V3_V1.0.0.stp",
+        "name": "RMUL2027_3V3_V1.0.0.stp",
+        "downloads": 0,
+        "md5": "d00a4553faea81c49ba1598a75eccec0",
+        "len": 1989786
+      },
+      {
+        "id": 14836959,
+        "src": "https://hz-rm-bbs-web-prod.oss-cn-hangzhou.aliyuncs.com/cc52e8820e32454e8d34bcddc0b8ddfa1791994866414/RMUL2027_1V1_V1.0.0.stp",
+        "name": "RMUL2027_1V1_V1.0.0.stp",
+        "downloads": 0,
+        "md5": "dda727e50c0b10ba2cf8e27e90a67089",
+        "len": 1111060
+      },
+      {
+        "id": 14836960,
+        "src": "https://hz-rm-bbs-web-prod.oss-cn-hangzhou.aliyuncs.com/2c5546d12d7b4f5492998eef274d2f341791994875037/能量单元.stp",
+        "name": "能量单元.stp",
+        "downloads": 0,
+        "md5": "a3f361d81761837e8500c41cb7cb5c7c",
+        "len": 3066696
+      }
+    ],
+    "references": null,
+    "belongTeamContent": false,
+    "teamInfo": null,
+    "isWikiLiteratureNode": false,
+    "license": true,
+    "licenseId": "5",
+    "linkedTeam": false
+  }
+}

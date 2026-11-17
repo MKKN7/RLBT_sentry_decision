@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<!-- new favicon config and versions by realfavicongenerator.net -->
+<link rel="apple-touch-icon" sizes="180x180" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/favicon-16x16.png">
+<link rel="manifest" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/site.webmanifest">
+<link rel="mask-icon" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/safari-pinned-tab.svg" color="#b31b1b">
+<link rel="shortcut icon" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/favicon.ico">
+<meta name="msapplication-TileColor" content="#b31b1b">
+<meta name="msapplication-config" content="images/icons/browserconfig.xml">
+<meta name="theme-color" content="#b31b1b">
+<!-- end favicon config -->
+<title>Search | arXiv e-print repository</title>
+<script defer src="https://static.arxiv.org/static/base/1.0.0a5/fontawesome-free-5.11.2-web/js/all.js"></script>
+<link rel="stylesheet" href="https://static.arxiv.org/static/base/1.0.0a5/css/arxivstyle.css" />
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    messageStyle: "none",
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true,
+      ignoreClass: '.*',
+      processClass: 'mathjax.*'
+    },
+    TeX: {
+        extensions: ["AMSmath.js", "AMSsymbols.js", "noErrors.js"],
+        noErrors: {
+          inlineDelimiters: ["$","$"],
+          multiLine: false,
+          style: {
+            "font-size": "normal",
+            "border": ""
+          }
+        }
+    },
+    "HTML-CSS": { availableFonts: ["TeX"] }
+  });
+</script>
+<script src='//static.arxiv.org/MathJax-2.7.3/MathJax.js'></script>
+<script src="https://static.arxiv.org/static/base/1.0.0a5/js/notification.js"></script>
+
+    
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="stylesheet" href="https://static.arxiv.org/static/design-system/latest/design-system-components.css">
+<link rel="stylesheet" href="https://static.arxiv.org/static/design-system/latest/fonts.css">
+  <link rel="stylesheet" href="https://static.arxiv.org/static/search/0.5.6/css/bulma-tooltip.min.css" />
+  <link rel="stylesheet" href="https://static.arxiv.org/static/search/0.5.6/css/search.css" />
+  <script
+    src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+    crossorigin="anonymous"></script>
+
+  <script src="https://static.arxiv.org/static/search/0.5.6/js/fieldset.js"></script>
+  <style>
+  radio#cf-customfield_11400 {
+    display: none;
+  }
+  /* Render the spinout .ds-site-footer standalone / full-bleed. search extends the
+     legacy base, whose bare wrapping <footer> (in base/base.html, outside any
+     overridable block — so it can't be removed from here) is styled by
+     arxivstyle.css with a grey background (hsl(0,0%,95%)) + 1em 2em padding,
+     boxing our warm-wash footer inside a second grey band. display:contents drops
+     the wrapper's box entirely (cleaner than zeroing individual properties) so
+     .ds-site-footer renders in its place; it inherits flex-shrink:0 from the same
+     legacy `footer` rule, so the sticky footer still works. Search-specific
+     legacy-base integration; the shared chrome CSS stays byte-identical to the SSOT. */
+  body > footer {
+    display: contents;
+  }
+  </style>
+
+  </head>
+  <body>
+  
+  
+  <header><a href="#main-container" class="is-sr-only">Skip to main content</a>
+    
+
+<div id="ds-announcement"></div>
+
+<script src="https://static.arxiv.org/static/design-system/latest/chrome/banner.js" defer></script>
+<script src="https://static.arxiv.org/static/design-system/latest/chrome/header.js" defer></script>
+<header class="ds-site-header ">
+  <a aria-hidden="true" tabindex="-1" href="https://arxiv.org/IgnoreMe" class="is-sr-only"></a>
+  <a href="https://arxiv.org/" class="ds-site-header-logo" aria-label="archive home">
+    <img src="https://static.arxiv.org/static/design-system/latest/logos/arxiv-logo.svg" alt="archive">
+  </a>
+  
+  <a id="ds-search-toggle" class="ds-site-header-search-link" href="https://arxiv.org/search" aria-controls="ds-search-overlay" aria-expanded="false">
+    <svg class="ds-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+      <circle cx="11" cy="11" r="8"/>
+      <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+    </svg>
+    <span>Search</span>
+  </a>
+  
+  <button type="button" id="ds-nav-toggle" class="ds-site-header-nav-toggle"
+    aria-label="Open menu" aria-controls="ds-site-header-nav" aria-expanded="false">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+      <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+    </svg>
+  </button>
+  
+  <nav class="ds-site-header-nav" id="ds-site-header-nav" aria-label="Main navigation">
+    <a href="https://arxiv.org/submit">Submit</a>
+    <a href="https://info.arxiv.org/about/donate.html">Donate</a>
+    <span class="ds-site-header-divider" aria-hidden="true"></span>
+    
+    <a href="https://arxiv.org/login" class="ds-site-header-login">Log in</a>
+  </nav>
+  
+  
+</header>
+
+<div class="ds-search-overlay" id="ds-search-overlay" hidden>
+  <div class="ds-search-overlay-panel" role="search">
+    <form method="GET" action="https://arxiv.org/search">
+      <label for="ds-search-input" class="is-sr-only">Search arXiv</label>
+      <input type="text" name="query" id="ds-search-input" class="ds-input" autocomplete="off"
+        placeholder="Search papers by title, author, abstract, or ID...">
+      <input type="hidden" name="searchtype" value="all">
+      <input type="hidden" name="source" value="header">
+    </form>
+    <p class="ds-hint">
+      Press Enter to search &middot; <a href="https://arxiv.org/search/advanced">Advanced search</a>
+    </p>
+  </div>
+</div>
+
+
+  </header>
+  <main class="container" id="main-container">
+    
+
+
+    
+  <div class="level is-marginless">
+    <div class="level-left">
+      <h1 class="title is-clearfix">
+    
+        Showing 1&ndash;5 of 5 results for all: <span class="mathjax">&#34;learning behavior trees&#34;</span>
+    
+</h1>
+    </div>
+    <div class="level-right is-hidden-mobile">
+      <!-- feedback for mobile is moved to footer -->
+      <span class="help" style="display: inline-block;"><a href="https://github.com/arXiv/arxiv-search/releases">Search v0.5.6 released 2020-02-24</a>&nbsp;&nbsp;</span>
+    </div>
+  </div>
+    <div class="content">
+      
+  <form method="GET" action="/search/"  aria-role="search">
+    
+
+    
+    <div class="field has-addons-tablet">
+      <div class="control is-expanded">
+        <label for="query" class="hidden-label">Search term or terms</label>
+        
+          <input class="input is-medium" id="query" name="query" placeholder="Search term..." type="text" value="&quot;learning behavior trees&quot;">
+        
+        
+      </div>
+      <div class="select control is-medium">
+        <label class="is-hidden" for="searchtype">Field</label>
+        <select class="is-medium" id="searchtype" name="searchtype"><option selected value="all">All fields</option><option value="title">Title</option><option value="author">Author(s)</option><option value="abstract">Abstract</option><option value="comments">Comments</option><option value="journal_ref">Journal reference</option><option value="acm_class">ACM classification</option><option value="msc_class">MSC classification</option><option value="report_num">Report number</option><option value="paper_id">arXiv identifier</option><option value="doi">DOI</option><option value="orcid">ORCID</option><option value="license">License (URI)</option><option value="author_id">arXiv author ID</option><option value="help">Help pages</option><option value="full_text">Full text</option></select>
+      </div>
+      <div class="control">
+          <button class="button is-link is-medium">Search</button>
+      </div>
+    </div>
+    <div class="field">
+      <div class="control is-size-7">
+        
+        <label class="radio">
+          <input checked id="abstracts-0" name="abstracts" type="radio" value="show"> Show abstracts
+        </label>
+        
+        <label class="radio">
+          <input id="abstracts-1" name="abstracts" type="radio" value="hide"> Hide abstracts
+        </label>
+        
+      </div>
+    </div>
+    <div class="is-clearfix" style="height: 2.5em"> 
+      <div class="is-pulled-right">
+        
+        <a href="/search/advanced?terms-0-term=%22learning+behavior+trees%22&amp;terms-0-field=all&amp;size=50&amp;order=None">Advanced Search</a>
+        
+      </div>
+    </div>
+    <input type="hidden" name="order" value="">
+    <input type="hidden" name="size" value="50">
+  </form>
+
+  
+
+  
+      
+<div class="level breathe-horizontal">
+  <div class="level-left">
+    <form method="GET" action="/search/">
+      <div style="display: none;">
+        
+          
+            <select id="searchtype" name="searchtype"><option selected value="all">All fields</option><option value="title">Title</option><option value="author">Author(s)</option><option value="abstract">Abstract</option><option value="comments">Comments</option><option value="journal_ref">Journal reference</option><option value="acm_class">ACM classification</option><option value="msc_class">MSC classification</option><option value="report_num">Report number</option><option value="paper_id">arXiv identifier</option><option value="doi">DOI</option><option value="orcid">ORCID</option><option value="license">License (URI)</option><option value="author_id">arXiv author ID</option><option value="help">Help pages</option><option value="full_text">Full text</option></select>
+          
+        
+          
+            <input id="query" name="query" type="text" value="&quot;learning behavior trees&quot;">
+          
+        
+          
+        
+          
+        
+          
+            <ul id="abstracts"><li><input checked id="abstracts-0" name="abstracts" type="radio" value="show"> <label for="abstracts-0">Show abstracts</label></li><li><input id="abstracts-1" name="abstracts" type="radio" value="hide"> <label for="abstracts-1">Hide abstracts</label></li></ul>
+          
+        
+      </div>
+      <div class="box field is-grouped is-grouped-multiline level-item">
+        <div class="control">
+          <span class="select is-small">
+            <select id="size" name="size"><option value="25">25</option><option selected value="50">50</option><option value="100">100</option><option value="200">200</option></select>
+          </span>
+          <label for="size">results per page</label>.
+        </div>
+        <div class="control">
+          <label for="order">Sort results by</label>
+          <span class="select is-small">
+            <select id="order" name="order"><option value="-announced_date_first">Announcement date (newest first)</option><option value="announced_date_first">Announcement date (oldest first)</option><option value="-submitted_date">Submission date (newest first)</option><option value="submitted_date">Submission date (oldest first)</option><option selected value="">Relevance</option></select>
+          </span>
+        </div>
+        <div class="control">
+          <button class="button is-small is-link">Go</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+      
+
+
+
+
+<ol class="breathe-horizontal" start="1"> 
+
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2405.16753">arXiv:2405.16753</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2405.16753">pdf</a>, <a href="https://arxiv.org/format/2405.16753">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Information Theory">cs.IT</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Multi-answer Constrained Optimal Querying: Maximum Information Gain Coding
+      
+    </p>
+    <p class="authors">
+      <span class="has-text-black-bis has-text-weight-semibold">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Li%2C+Z">Zhefan Li</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Fan%2C+P">Pingyi Fan</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="search-hit">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2405.16753v1-abstract-short" style="display: inline;">
+        As the rapidly developments of artificial intelligence and machine <span class="search-hit mathjax">learning</span>, <span class="search-hit mathjax">behavior</span> <span class="search-hit mathjax">tree</span> design in multiagent system or AI game become more important. The behavior tree design problem is highly related to the source coding in information theory. &#34;Twenty Questions&#34; probl&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2405.16753v1-abstract-full').style.display = 'inline'; document.getElementById('2405.16753v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2405.16753v1-abstract-full" style="display: none;">
+        As the rapidly developments of artificial intelligence and machine <span class="search-hit mathjax">learning</span>, <span class="search-hit mathjax">behavior</span> <span class="search-hit mathjax">tree</span> design in multiagent system or AI game become more important. The behavior tree design problem is highly related to the source coding in information theory. &#34;Twenty Questions&#34; problem is a typical example for the behavior tree design, usually used to explain the source coding application in information theory and can be solved by Huffman coding. In some realistic scenarios, there are some constraints on the asked questions. However, for general question set, finding the minimum expected querying length is an open problem, belongs to NP-hard. Recently, a new coding scheme has been proposed to provide a near optimal solution for binary cases with some constraints, named greedy binary separation coding (GBSC). In this work, we shall generalize it to D-ary cases and propose maximum information gain coding (MIGC) approach to solve the multi-answer decision constrained querying problem. The optimality of the proposed MIGC is discussed in theory. Later on, we also apply MIGC to discuss three practical scenarios and showcase that MIGC has better performance than GBSC and Shannon Coding in terms of bits persymbol.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2405.16753v1-abstract-full').style.display = 'none'; document.getElementById('2405.16753v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 26 May, 2024; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> May 2024.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">17 pages, 11 figures</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2303.11026">arXiv:2303.11026</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2303.11026">pdf</a>, <a href="https://arxiv.org/format/2303.11026">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Robotics">cs.RO</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        A Framework for <span class="search-hit mathjax">Learning</span> <span class="search-hit mathjax">Behavior</span> <span class="search-hit mathjax">Trees</span> in Collaborative Robotic Applications
+      
+    </p>
+    <p class="authors">
+      <span class="has-text-black-bis has-text-weight-semibold">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Iovino%2C+M">Matteo Iovino</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Styrud%2C+J">Jonathan Styrud</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Falco%2C+P">Pietro Falco</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Smith%2C+C">Christian Smith</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="search-hit">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2303.11026v1-abstract-short" style="display: inline;">
+        &hellip;need to be controlled by reactive policies to face the unpredictability of the environment they operate in. In this paper we propose a framework that combines a method that <span class="search-hit mathjax">learns</span> <span class="search-hit mathjax">Behavior</span> <span class="search-hit mathjax">Trees</span> (BTs) from demonstration with a method that evolves them with Genetic Programming (GP&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2303.11026v1-abstract-full').style.display = 'inline'; document.getElementById('2303.11026v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2303.11026v1-abstract-full" style="display: none;">
+        In modern industrial collaborative robotic applications, it is desirable to create robot programs automatically, intuitively, and time-efficiently. Moreover, robots need to be controlled by reactive policies to face the unpredictability of the environment they operate in. In this paper we propose a framework that combines a method that <span class="search-hit mathjax">learns</span> <span class="search-hit mathjax">Behavior</span> <span class="search-hit mathjax">Trees</span> (BTs) from demonstration with a method that evolves them with Genetic Programming (GP) for collaborative robotic applications. The main contribution of this paper is to show that by combining the two learning methods we obtain a method that allows non-expert users to semi-automatically, time-efficiently, and interactively generate BTs. We validate the framework with a series of manipulation experiments. The BT is fully learnt in simulation and then transferred to a real collaborative robot.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2303.11026v1-abstract-full').style.display = 'none'; document.getElementById('2303.11026v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 20 March, 2023; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> March 2023.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">Submitted to IEEE 19th Conference on Automation Science and Engineering (CASE) 2023</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2203.02994">arXiv:2203.02994</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2203.02994">pdf</a>, <a href="https://arxiv.org/format/2203.02994">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Robotics">cs.RO</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Interactive Disambiguation for Behavior Tree Execution
+      
+    </p>
+    <p class="authors">
+      <span class="has-text-black-bis has-text-weight-semibold">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Iovino%2C+M">Matteo Iovino</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Do%C4%9Fan%2C+F+I">Fethiye Irmak Doğan</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Leite%2C+I">Iolanda Leite</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Smith%2C+C">Christian Smith</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="search-hit">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2203.02994v2-abstract-short" style="display: inline;">
+        &hellip;to have methods capable of generating robot programs easily, that are made as general as possible by handling uncertainties. We present a system that integrates a method to <span class="search-hit mathjax">learn</span> <span class="search-hit mathjax">Behavior</span> <span class="search-hit mathjax">Trees</span> (BTs) from demonstration for pick and place tasks, with a framework that uses verbal i&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2203.02994v2-abstract-full').style.display = 'inline'; document.getElementById('2203.02994v2-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2203.02994v2-abstract-full" style="display: none;">
+        In recent years, robots are used in an increasing variety of tasks, especially by small- and medium- sized enterprises. These tasks are usually fast-changing, they have a collaborative scenario and happen in unpredictable environments with possible ambiguities. It is important to have methods capable of generating robot programs easily, that are made as general as possible by handling uncertainties. We present a system that integrates a method to <span class="search-hit mathjax">learn</span> <span class="search-hit mathjax">Behavior</span> <span class="search-hit mathjax">Trees</span> (BTs) from demonstration for pick and place tasks, with a framework that uses verbal interaction to ask follow-up clarification questions to resolve ambiguities. During the execution of a task, the system asks for user input when there is need to disambiguate an object in the scene, when the targets of the task are objects of a same type that are present in multiple instances. The integrated system is demonstrated on different scenarios of a pick and place task, with increasing level of ambiguities. The code used for this paper is made publicly available.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2203.02994v2-abstract-full').style.display = 'none'; document.getElementById('2203.02994v2-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 10 March, 2022; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 6 March, 2022;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> March 2022.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2109.07133">arXiv:2109.07133</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2109.07133">pdf</a>, <a href="https://arxiv.org/format/2109.07133">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Robotics">cs.RO</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Combining Context Awareness and Planning to <span class="search-hit mathjax">Learn</span> <span class="search-hit mathjax">Behavior</span> <span class="search-hit mathjax">Trees</span> from Demonstration
+      
+    </p>
+    <p class="authors">
+      <span class="has-text-black-bis has-text-weight-semibold">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Gustavsson%2C+O">Oscar Gustavsson</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Iovino%2C+M">Matteo Iovino</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Styrud%2C+J">Jonathan Styrud</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Smith%2C+C">Christian Smith</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="search-hit">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2109.07133v2-abstract-short" style="display: inline;">
+        &hellip;in short time with small effort, and the robot able to react dynamically to the environment. To address this we propose a method that combines context awareness and planning to <span class="search-hit mathjax">learn</span> <span class="search-hit mathjax">Behavior</span> <span class="search-hit mathjax">Trees</span> (BTs), a reactive policy representation that is becoming more popular in robotics&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2109.07133v2-abstract-full').style.display = 'inline'; document.getElementById('2109.07133v2-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2109.07133v2-abstract-full" style="display: none;">
+        Fast changing tasks in unpredictable, collaborative environments are typical for medium-small companies, where robotised applications are increasing. Thus, robot programs should be generated in short time with small effort, and the robot able to react dynamically to the environment. To address this we propose a method that combines context awareness and planning to <span class="search-hit mathjax">learn</span> <span class="search-hit mathjax">Behavior</span> <span class="search-hit mathjax">Trees</span> (BTs), a reactive policy representation that is becoming more popular in robotics and has been used successfully in many collaborative scenarios. Context awareness allows to infer from the demonstration the frames in which actions are executed and to capture relevant aspects of the task, while a planner is used to automatically generate the BT from the sequence of actions from the demonstration. The learned BT is shown to solve non-trivial manipulation tasks where learning the context is fundamental to achieve the goal. Moreover, we collected non-expert demonstrations to study the performances of the algorithm in industrial scenarios.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2109.07133v2-abstract-full').style.display = 'none'; document.getElementById('2109.07133v2-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 17 March, 2022; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 15 September, 2021;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> September 2021.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">Submitted to RO-MAN 2022</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2011.03252">arXiv:2011.03252</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2011.03252">pdf</a>, <a href="https://arxiv.org/format/2011.03252">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Robotics">cs.RO</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        <span class="search-hit mathjax">Learning</span> <span class="search-hit mathjax">Behavior</span> <span class="search-hit mathjax">Trees</span> with Genetic Programming in Unpredictable Environments
+      
+    </p>
+    <p class="authors">
+      <span class="has-text-black-bis has-text-weight-semibold">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Iovino%2C+M">Matteo Iovino</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Styrud%2C+J">Jonathan Styrud</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Falco%2C+P">Pietro Falco</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Smith%2C+C">Christian Smith</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2011.03252v1-abstract-short" style="display: inline;">
+        Modern industrial applications require robots to be able to operate in unpredictable environments, and programs to be created with a minimal effort, as there may be frequent changes to the task. In this paper, we show that genetic programming can be effectively used to learn the structure of a behavior tree (BT) to solve a robotic task in an unpredictable environment. Moreover, we propose to use a&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2011.03252v1-abstract-full').style.display = 'inline'; document.getElementById('2011.03252v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2011.03252v1-abstract-full" style="display: none;">
+        Modern industrial applications require robots to be able to operate in unpredictable environments, and programs to be created with a minimal effort, as there may be frequent changes to the task. In this paper, we show that genetic programming can be effectively used to learn the structure of a behavior tree (BT) to solve a robotic task in an unpredictable environment. Moreover, we propose to use a simple simulator for the learning and demonstrate that the learned BTs can solve the same task in a realistic simulator, reaching convergence without the need for task specific heuristics. The learned solution is tolerant to faults, making our method appealing for real robotic applications.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2011.03252v1-abstract-full').style.display = 'none'; document.getElementById('2011.03252v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 6 November, 2020; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> November 2020.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+</ol>
+
+
+  
+
+
+      <div class="is-hidden-tablet">
+        <!-- feedback for mobile only -->
+        <span class="help" style="display: inline-block;"><a href="https://github.com/arXiv/arxiv-search/releases">Search v0.5.6 released 2020-02-24</a>&nbsp;&nbsp;</span>
+      </div>
+    </div>
+
+  </main>
+  <footer>
+    <footer class="ds-site-footer">
+  <div class="ds-site-footer-grid">
+    <div class="ds-site-footer-main">
+      <div class="ds-site-footer-ack">
+        We gratefully acknowledge support from our <a href="https://info.arxiv.org/about/major_funders.html"><strong>major funders</strong></a>,
+        <a href="https://info.arxiv.org/about/ourmembers.html"><strong>member institutions</strong></a><span class="ack-member-inline" hidden>, <strong></strong></span>,
+        and all contributors.
+      </div>
+      <nav class="ds-site-footer-links" aria-label="Site navigation">
+        <a href="https://info.arxiv.org/about">About</a> <span class="ds-site-footer-sep" aria-hidden="true">&middot;</span>
+        <a href="https://info.arxiv.org/help">Help</a> <span class="ds-site-footer-sep" aria-hidden="true">&middot;</span>
+        <a href="https://info.arxiv.org/help/contact.html">Contact</a> <span class="ds-site-footer-sep" aria-hidden="true">&middot;</span>
+        <a href="https://info.arxiv.org/help/subscribe.html">Subscribe</a> <span class="ds-site-footer-sep" aria-hidden="true">&middot;</span>
+        <a href="https://info.arxiv.org/help/license/index.html">Copyright</a> <span class="ds-site-footer-sep" aria-hidden="true">&middot;</span>
+        <a href="https://info.arxiv.org/help/policies/privacy_policy.html">Privacy</a> <span class="ds-site-footer-sep" aria-hidden="true">&middot;</span>
+        <a href="https://info.arxiv.org/help/web_accessibility.html">Accessibility</a> <span class="ds-site-footer-sep" aria-hidden="true">&middot;</span>
+        <a href="https://status.arxiv.org/" target="_blank" rel="noopener noreferrer">Operational Status<span class="is-sr-only"> (opens in new tab)</span></a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+  </footer>
+  <script src="https://static.arxiv.org/static/base/1.0.0a5/js/member_acknowledgement.js"></script>
+  </body>
+</html>

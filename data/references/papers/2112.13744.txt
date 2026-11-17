@@ -1,0 +1,604 @@
+                                                                                                                                                                                                                      1
+
+
+
+
+                                             Improving the Performance of Backward Chained
+                                              Behavior Trees that use Reinforcement Learning
+                                                                                       Mart Kartašev, Justin Salér, and Petter Ögren
+
+
+
+                                             Abstract—In this letter we show how to improve the per-                                                                  —>
+                                          formance of backward chained behavior trees (BTs) that use
+                                          reinforcement learning (RL). BTs represent a hierarchical and                                     ?                         ?                           ?
+                                          modular way of combining control policies into higher level
+arXiv:2112.13744v3 [eess.SY] 2 Feb 2022
+
+
+
+
+                                          control policies. Backward chaining is a design principle for the
+                                                                                                                           Safe from      Escape          Safe from           Defeat             Not
+                                          construction of BTs that combine reactivity with goal directed                      Fire          fire           Hostiles           Hostile           Hungry
+                                                                                                                                                                                                                —>
+                                          actions in a structured way. The backward chained structure has
+                                          also enabled convergence proofs for BTs, identifying a set of local
+                                          conditions that lead to the convergence of all trajectories to a set                                                                                                  Eat
+                                                                                                                                 ?
+                                          of desired goal states.
+                                             The key idea of this letter is to improve performance of
+                                          backward chained BTs by using the conditions identified in                        Has Food       —>                                               —>
+                                          a theoretical convergence proof to setup the RL problems for
+                                          individual controllers. In particular, previous analysis identified
+                                          so-called active constraint conditions (ACCs), that should not be                Is close to     Pick
+                                                                                                                                                               ?                        ?         Kill Cow
+                                                                                                                              Apple       Apple
+                                          broken in order to avoid having to return to work on previously
+                                          achieved subgoals. We propose a way to setup the RL problems,
+                                                                                                                                                     Has                          Is close to
+                                          such that they do not only achieve each immediate subgoal,                                                                  —>                                        —>
+                                                                                                                                                    Sword                            Cow
+                                          but also avoid violating the identified ACCs. The resulting
+                                          performance improvement depends on how often ACC violations                                                                Has
+                                                                                                                                                     Has                            Craft                     Chase
+                                                                                                                                                                   crafting                           ?
+                                          occurred before the change, and how much effort was needed                                               materials                       Sword                       Cow
+                                                                                                                                                                    table
+                                          to re-achieve them. The proposed approach is illustrated in a
+                                          dynamic simulation environment.                                                                                                               Can See            Search
+                                                                                                                                                                                         Cow              for Cow
+                                             Index Terms—Behavior trees, Reinforcement learning, Au-
+                                          tonomous systems, Artificial Intelligence
+                                                                                                                         Fig. 1. A backward chained BT, the result of recursively replacing conditions
+                                                                                                                         with small BTs achieving those conditions, as illustrated in Figure 3. The ACC
+                                                                                                                         concept is illustrated for the action Chase Cow (yellow double rectangles).
+                                                                    I. I NTRODUCTION                                     The convergence proof of [4] states that all actions need to achieve their
+                                                                                                                         postconditions, while not violating their so-called ACCs. Thus, when using
+                                          B     EHAVIOR TREES (BTs) are a modular and hierarchical
+                                                tool for combining a set of control policies into more
+                                          complex high level control policies. Reinforcement learning
+                                                                                                                         RL to improve this action, there should be a positive award for achieving the
+                                                                                                                         postcondition Is close to cow (red double ovals) but also a negative reward for
+                                                                                                                         violating the ACCs, Safe from fire, safe from hostiles and has sword (green
+                                          (RL) on the other hand, is a way to create control policies                    ovals).
+                                          based on reward. Even though many complex problems have
+                                          been solved using only RL, so-called end-to-end learning [1],
+                                          it is reasonable to believe that in the coming years, many                     to be an optimally modular decision structure [2]. Modularity
+                                          complex robotics problems will still need to be solved by a                    was also one of the primary reasons for the initial development
+                                          combination of policies tailored for different sub-tasks. A BT                 of BTs in the computer game industry [3].
+                                          is a way to combine such policies and it is therefore important
+                                                                                                                            In this letter we will show how to use the structure of so-
+                                          to investigate how BTs can be combined with RL.
+                                                                                                                         called backward chained BTs, see Figure 1, to implement a
+                                             Robot control systems are often quite complex, and mod-
+                                                                                                                         controller using RL. Ideally, there are few dependencies be-
+                                          ularity is a well known tool for handling complexity. Ideally,
+                                                                                                                         tween different parts of a system, but if a particular submodule
+                                          different modules can be developed and tested separately,
+                                                                                                                         reverses the achievements of previous submodules, the overall
+                                          and then put together to form a bigger system. Hierarchical
+                                                                                                                         system is not likely to work well. Thus there is a need to
+                                          modularity, where a module is made up of submodules, is
+                                                                                                                         identify the dependencies between different modules and cre-
+                                          also beneficial, since having a single layer of modules in
+                                                                                                                         ate design specifications out of these dependencies to improve
+                                          a big system either leads to very large modules, or a very
+                                                                                                                         performance. We make use of previously published theoretical
+                                          large set of modules. BTs are a hierarchically modular tool
+                                                                                                                         convergence proofs [4] to identifying such dependencies, and
+                                          for composing control policies. In fact, BTs have been shown
+                                                                                                                         use them to set up RL problems with consideration for earlier
+                                            The authors are with the Robotics, Perception and Learning Lab., School of   achievements.
+                                          Electrical Engineering and Computer Science, Royal Institute of Technology
+                                          (KTH), SE-100 44 Stockholm, Sweden, kartasev@kth.se                              To be specific, consider the simple example in Figure 1.
+                                            Digital Object Identifier (DOI): see top of this page.                       The overall goal of the agent is to be safe from fire, safe from
+2
+
+
+
+hostiles and not hungry. 1 In order to satisfy the final objective,            state. In [15], parameters throughout a BT, such as goal points
+it is currently chasing a cow. The local goal is to get close to               of actions and threshold values of conditions, was learned
+the cow in order to kill it. However, the convergence analysis                 simultaneously using an evolutionary strategy.
+in [4] shows that there are also a set of non-local goals that                    The idea of learning the structure of a BT using genetic
+needs to be preserved. This includes not stepping into fire,                   algorithms was first proposed in [11]. It was noted how the
+staying away from hostiles, and keeping the sword that is later                BT structure, with identical interfaces between subtrees on
+needed to kill the cow. If any of these are violated, the agent                all levels, provided a policy representation that could easily
+needs to stop chasing the cow and make sure they are satisfied                 be subjected to operations such as crossovers and mutations.
+before starting the chase again. Similar non-local constraints                 These ideas were extended in [12] where grammatical evo-
+can be identified for any node, in any backward chained BT.                    lution was used to enforce a given structure to the investi-
+   The main contribution of this letter is an approach for                     gated BTs. Another approach for learning BT structures using
+combining RL with backward chained BTs in a structured                         genetic algorithms was used in [13]. There, the and-or tree
+way, based on the convergence proof in [4]. This is done by                    analogy of BTs was used to keep the size of the created trees
+using the prerequisites of the proof as positive and negative                  down, while adding new functionality.
+rewards in the RL formulation. Thus the learning process will                     The approach proposed in this paper goes beyond the work
+not only take into account the natural local subgoals, but also                described above by looking at a particular subset of BTs with
+other, non-local constraints that are vital for the progress and               a backchained structure [16] and using the convergence proof
+performance of the overall policy, of which the RL problem                     of such BTs in [4], to provide insights into how to define
+is only a small part.                                                          individual learning problems that are adapted to the rest of
+   The outline of this letter is as follows. In Section II we                  the BT.
+describe the related work, and in Section III we give a
+background on RL and BTs. Then the proposed approach is
+presented in Section IV, followed by experiments in Section                                         III. BACKGROUND
+V. Finally, conclusions can be found in Section VI.                              In this section we will give a very brief description of
+                                                                               Markov Decision Processes (MDPs), and a more detailed
+                        II. R ELATED W ORK                                     description of BTs, designing backchained BTs and results
+   In this section we will describe earlier work investigating                 regarding their convergence.
+different aspects of combinations of learning with BTs [5]–
+[10]. There are a number of different ways of incorporating
+                                                                               A. Reinforcement learning
+RL into a BT. One can either replace or design a single leaf
+node using RL, as was done in [5], or one can replace the                        Reinforcement learning is generally applied to find a control
+interior composition nodes, sequence and fallback, with an RL                  policy π(s) = a for a MDP, [17], [18], defined as follows.
+node where the actions are the children of the original node,
+                                                                               Definition 1. (Markov Decision Process). A MDP is a 4-tuple
+as was done in [6]–[8], [10]. One can also apply learning on
+the tree structure itself, moving, adding and deleting subtrees                                       (X, A, Pa , Ra ),                     (1)
+to improve the performance of the overall policy [11]–[14].
+   In [6] the authors aim to improve an existing BT. Given                     where X is a set of states, A is a set of actions, Pa (x, x0 ) =
+a reward function, the lowest level sequences of the BT are                    P (xt+1 = x0 |xt = x, at = a) is the probability of state
+identified and used as actions in an RL problem. The q-value                   transitions, and Ra (x, x0 ) is the reward for transitioning to
+is estimated, and used to create so-called q-conditions for each               state x0 from state x.
+action, returning success when the corresponding action has
+the highest q-value. Using these, a BT is constructed that
+executes the proper action at the proper time.                                 B. Behaviour tree definition
+   In [5] two types of learning nodes are suggested, the                       Definition 2 (Behavior tree). A BT Ti is a pair
+learning action node and the learning composite node. In the
+learning action node, the user defines a complete RL problem,                                           Ti = (ui , ri )                     (2)
+including states, actions and reward. In the learning composite
+node, the actions are the children, either leaves or subtrees                  where i is an index, ui : X → U is the controller that
+themselves, but the states as well as the reward are defined                   runs when the BT is executing, and ri : X → {R, S, F}
+by the user. In a similar spirit, [7] and [10], replace each                   provides metadata regarding the applicability and progress of
+fallback node with an RL-node, using its children as actions                   the execution.
+and user defined reward. The q-values are estimated, and the
+node executes the child with highest q-value, given the current                   A BT can either be created through a hierarchical combina-
+                                                                               tion of other BTs, using the Sequence and Fallback operators
+   1 In search of an openly accessible simulation environment that is highly   described below, or it can be defined by directly specifying
+complex, in terms of having many independent agents with different objec-      ui (x) and ri (x).
+tives, many different types of objects, and many ways to interact with both
+objects and agents, we have chosen Project Malmö, created by Microsoft           The metadata ri is interpreted as follows: Running (R),
+Research https://www.microsoft.com/en-us/research/project/project-malmo/.      Success (S), and Failure (F). Let the Running region (Ri ),
+                                                                                                                                                         3
+
+
+
+Success region (Si ) and Failure region (Fi ) correspond to a                  ?
+partitioning of the state space, defined as follows:
+                    Ri = {x ∈ X : ri (x) = R},                  (3)        Has Food         —>                                           —>
+                    Si = {x ∈ X : ri (x) = S},                  (4)
+                    Fi = {x ∈ X : ri (x) = F}.                  (5)      Is close to         Pick           Has            Is close to
+                                                                                                                                              Kill Cow
+                                                                            Apple           Apple          Sword              Cow
+Definition 3. Assuming the BT Ti is the root, and not a subtree
+of another BT, and x ∈ Ri , the system evolves according to            Fig. 2. A small BT designed to first check is the agent has food, and if not
+ẋ = f (x, ui (x)) or xt+1 = f (xt , ui (x)) depending on if the       try to make sure it does.
+system is continuous time or discrete time.
+Definition 4. (Sequence Compositions of BTs) Two or more               immediately return success. If not, it will act to make the
+BTs can be composed into a more complex BT using a                     condition true. Sometimes there are multiple ways of making
+Sequence operator, T0 = Sequence(T1 , T2 ). Then r0 , u0 are           a condition true, in those cases the options are collected under
+defined as follows                                                     a fallback node, so if one option (Pick Apple) fails, or is not
+                                                                       applicable, another option (Kill Cow) can be invoked. Both
+        If x ∈ S1 :      r0 (x) = r2 (x), u0 (x) = u2 (x)       (6)    actions have their own preconditions, describing when they
+              else :     r0 (x) = r1 (x), u0 (x) = u1 (x)       (7)    can be invoked, as illustrated in Figure 2. Given a list of the
+                                                                       available actions, with preconditions and postconditions, such
+   T1 and T2 are called children of T0 . Note that when                as the one in Table I, one can collect all actions having the
+executing T0 , the first child T1 in (7) is executed as long as        same postconditions and create a small BTs of the form shown
+it returns Running or Failure (xk 6∈ S1 ). The second child of         in Figure 2.
+the Sequence is executed in (6), only when the first returns
+Success (xk ∈ S1 ). Finally, the Sequence itself, T0 returns                                        TABLE I
+Success only when all children have succeeded (x ∈ S1 ∩ S2 ).                 A LIST OF AVAILABLE ACTIONS , WITH PRECONDITIONS AND
+   For notational convenience, we write                                                         POSTCONDITIONS .
+
+                                                                             Action                    Precondition                Postcondition
+  Sequence(T1 , Sequence(T2 , T3 )) = Sequence(T1 , T2 , T3 ),           Escape from fire                    -                     Safe from fire
+                                                             (8)          Defeat hostile                     -                   Safe from hostiles
+and similarly for arbitrarily long compositions. The sequence                  Eat                       Has food                   Not hungry
+                                                                           Pick Apple                Is close to apple               Has food
+node is also denoted by (→), as seen in Figure 1.                           Kill Cow           Is close to cow, has sword            Has food
+                                                                           Craft sword       Has materials, Has crafting table       Has sword
+Definition 5. (Fallback Compositions of BTs) Two or more                   Chase cow                   Can see cow                 Close to cow
+BTs can be composed into a more complex BT using a Fallback              Search for cow                      -                     Can see cow
+                                                                                 ..                          ..                           ..
+operator, T0 = Fallback(T1 , T2 ). Then r0 , u0 are defined as                    .                           .                            .
+follows
+                                                                          The key idea is now to recursively apply the design in
+     If x ∈ F1 :        r0 (x) = r2 (x), u0 (x) = u2 (x)        (9)    Figure 2, as illustrated in Figure 3. First we list three top
+           else :       r0 (x) = r1 (x), u0 (x) = u1 (x)       (10)    priority goals in a sequence node, safe from fire, safe from
+                                                                       hostiles and not hungry. Then, instead of just checking the
+  Note that when executing the new BT, T0 first keeps
+                                                                       conditions we can replace them (illustrated by dashed lines)
+executing its first child T1 , in (10) as long as it returns Running
+                                                                       with a small BT, of the form shown in Figure 2, to make them
+or Success (x 6∈ F1 ). The second child of the Fallback is
+                                                                       true. The resulting BT will have some new conditions, which
+executed in (9), only when the first returns Failure (x ∈ F1 ).
+                                                                       in turn can be replaced by small BTs achieving them, and so
+Finally, the Fallback itself T0 returns Failure only when all
+                                                                       on. This process is formally described in Algorithm 1.
+children have been tried, but failed (x ∈ F1 ∩ F2 ), hence the
+name Fallback.
+                                                                        Algorithm 1: Creating a Backward Chained BT
+  For notational convenience, we write
+                                                                         Input: Goals C1 , . . . , CM
+  Fallback(T1 , Fallback(T2 , T3 )) = Fallback(T1 , T2 , T3 ), (11)    1 T0 ← Sequence (C1 , . . . , CM );
+                                                                                        0
+                                                                       2 while Exists C ∈ T0 such that
+and similarly for arbitrarily long compositions. The fallback
+                                                                          Parent(C ) = Sequence AND C 0 is postcondition
+                                                                                      0
+node is also denoted by (?), as seen in Figure 1.
+                                                                          of some action(s) Aj do
+                                                                       3     T 0 ← Fallb(Ci , Seq(Pre(Aj ),Aj ), . . .);
+C. Backward chained BTs                                                4     Replace Ci in T0 with T 0
+  In this section we will describe the backward chained ap-
+proach that was suggested in [16] and parts of the convergence
+                                                                          The class of BTs we will analyse is defined as follows.
+analysis described in [4].
+  Consider the example BT in Figure 2, designed to make                Definition 6. (Backward chained BT) A Backward chained BT
+sure that the agent has food. If the agent has food it will            is a BT that is constructed from a set of desired top level goal
+4
+
+
+
+                                               —>                                                indefinitely.
+                                                                                                    Note that ACCs is not simply a list of all achieved subgoals.
+                  Safe from                 Safe from                   Not
+                     Fire                    Hostiles                  Hungry                    In order to craft the sword, the agent had to have materials
+                                                                                                 and a crafting table. But once it has the sword, those subgoals
+                    ?                            ?                           ?                   are no longer important. Thus ACCs are exactly the important
+                                                                                                 subgoals that should not be violated.
+    Safe from     Escape           Safe from         Defeat              Not                        The key idea of this paper is to use the information
+                                                                                       —>
+       Fire         fire            Hostiles         Hostile            Hungry                   embedded in the ACC concept, taken from the proof in [4],
+                                                                                                 in the definition of RL problems for individual actions.
+                                                                    Has Food               Eat
+          ?
+                                                                                                                   IV. P ROPOSED APPROACH
+                                                                                                    In this section we will first state the problem we are trying
+     Has Food      —>                                              —>
+                                                                                                 to solve, and then provide the details of the solution we are
+                                                                                                 proposing.
+    Is close to    Pick              Has             Is close to
+                                                                         Kill Cow
+       Apple      Apple             Sword               Cow
+
+                                                                                                 A. Problem
+                              ?                                    ?
+                                                                                                    The problem we are addressing is what to do when a
+                            Has                                Is close to
+                                                                                                 backchained BT created using Algorithm 1, that includes RL
+                                            —>                                         —>
+                           Sword                                  Cow                            policies for some or all of the actions does not succeed, i.e.,
+                                           Has
+                                                                                                 it does not end up in a state where the overall BT returns
+                          Has                             Craft                      Chase
+                        materials
+                                         crafting
+                                                         Sword
+                                                                             ?
+                                                                                      Cow        success (x 6∈ S0 ). Instead, it might end up in a state where the
+                                          table
+                                                                                                 BT returns failure (x ∈ F0 ), or it keeps running indefinitely
+                                                               Can See            Search         (x ∈ R0 ), either executing the same action or switching
+                                                                Cow              for Cow
+                                                                                                 between a set of actions.
+                                                                                                    Looking at the example in Figure 1 we could either have
+Fig. 3. A backward chained BT can be created by recursively replacing (along
+dashed lines) condition checks with BTs trying to achieve those conditions.                      that Chase Cow is never able to catch up with the cow, or that
+The process is started with the three top level goals listed at the top of the                   there are some hostile agents around and when chasing the
+figure. The result can be seen in Figure 1.                                                      cow the agent comes too close to the hostiles, resulting in a
+                                                                                                 switch to Defeat hostile, followed by a switch back to Chase
+                                                                                                 Cow and so on. As we will see below, this problem can be
+conditions in a Sequence, that are then recursively replaced
+                                                                                                 addressed in a structured way of making the agent chase the
+by BTs achieving them, as described in Algorithm 1.
+                                                                                                 cow but at the same time trying to stay away from hostiles.
+  In [4], sufficient conditions for convergence of backchained                                      We assume that the world the agent inhabits can be mod-
+BTs were presented. A key part of the requirements were that                                     elled by a (MDP), see Definition 1.
+each action does not violate its own ACCs, defined as follows.
+Definition 7 (Active Constraint Conditions (ACC)). Given a                                       B. Creating an action using RL
+BT T0 , and an action Ai in that BT, the Active Constraint                                          We propose to address the problem above by improving the
+Conditions ACC(i) of Ai is the sets of conditions, apart from                                    performance of the BT using a combination of RL and ideas
+the preconditions of A, that needs to return Success (be true)                                   from the convergence proof described in [4]. Formulating the
+for A to execute.                                                                                RL problem, we will not only use the desired postcondition
+   Looking at Figure 1, we see that the ACCs of Chase Cow                                        (see Table I) as a positive reward, but also take ACCs (Def-
+has three ACCs: Safe from Fire, Safe from Hostiles and Has                                       inition 7) into account by applying a negative reward and/or
+Sword. Note that if one of these is violated, the agent has to                                   ending the episode when an ACC is violated.
+switch to another action, to satisfy the condition again. If the                                 Definition 8 (RL problem for creating an Action Ti ). Let the
+agent comes too close to fire, it will invoke Escape fire. If the                                reward be given by three constants Mp >> 0 > Mt > MACC ,
+agent is threatened by a hostile entity, it will invoke Defeat                                   with p for postcondition and t for time, as
+Hostile, and if it brakes the sword it will have to make a new
+one. Thus, violating an ACC once might delay progress to                                             Ra (x0 , x) = Mp >> 0                       if x0 ∈ Si   (12)
+                                                                                                                                                  \
+achieving all goals, while repeated violation of ACCs might                                                     = MACC < 0          if x0 6∈             Sj   (13)
+result in infinite loops where the agent is stuck undoing its                                                                                  j∈ACC(i)
+own actions. To illustrate the latter case we note that if Chase
+                                                                                                                = Mt < 0                              else.   (14)
+Cow is completely unaware of fires, and there happens to be a
+fire between the agent and the cow, then the agent will move                                     The episode is ended when the postcondition is achieved, the
+towards the cow, thereby getting too close to the fire, switch to                                agent dies, or the maximum number of time steps is reached.
+Escape fire, thereby moving away from the cow, switch back                                       We will additionally evaluate the effect of also ending the
+to Chase Cow and again move towards the fire, and so on                                          episode when an ACC is violated. After training we let Ti
+                                                                                                                                     5
+
+
+
+be given in terms of the learned state-value function qi (x, a)      not. We first give an overview of the technical setup of the
+as described below.                                                  environment and experimental configurations and then present
+                                                                     the results of our experiments. As will be seen, the benefits of
+                                                                     taking ACCs into account varies with the context. If violating
+                   ui (x) = argmaxa qi (x, a)                (15)
+                                                                     the earlier achieved objective can be remedied quickly (such
+   The reason for ending the episode upon ACC violation is           as stepping away from the fire), and there is no risk of getting
+as follows: During the normal execution of the BT, once the          stuck in a pattern of repeatedly doing and undoing the same
+policy is trained, a violation of an ACC would by definition         action, then the performance improvements will be very small.
+cause the BT to switch to a different action. Thereby it has         If however, it takes considerable time to achieve the objective
+the same effect as ending the episode - the action is forced to      (such as defeating a hostile agent), or there is risk of infinite
+stop executing in favour of another action. Similarly, in this       loops, then the performance improvement can be significant.
+version of training, the episode is ended, but the environment       The experiments below will show examples of both these
+is not reset. The training resumes with a new episode after          cases.
+the ACC violation has been resolved by the rest of the tree.
+This results in episodes that better represent the situations that   A. Technical setup
+the policy will encounter during real execution. Additionally,          The technical setup for our experiments is based upon the
+it stops the agent from accumulating further reward during the       simulation environment Project Malmö [19] and the RL algo-
+episode, making the impact of a single ACC violation larger.         rithms in Stable-Baselines 3, [20]. These modules were chosen
+                                                                     because they provide an extremely dynamic environment with
+C. When to apply RL to actions                                       countless objects and other agents that can be interacted
+   As stated above, the main problem we are addressing               with in numerous ways, while at the same time being freely
+in this letter is to improve the performance of an existing          accessible enabling reproducible results. The source code of
+backward chained BT. Either because it reaches a state where it      the resulting technical solution is available online at [21]
+returns failure, or because it executes forever, possibly looping    alongside the results of the training.
+through the same set of actions, or just keeps executing a single       Project Malmö [19] is an open-source platform developed
+one.                                                                 by Microsoft Research, for the purpose of supporting AI
+   In light of the convergence proof of [4], one would then          experiments by providing a simulation environment based on
+try to identify actions that violate their ACCs or fail to reach     the Minecraft engine. Malmö is a customisable virtual envi-
+their their postconditions, and then apply RL to them using          ronment which allows for the testing of algorithms on tasks
+Definition 8.                                                        freely determined by the users. The Malmö interface allows
+   Looking at Figure 1, we see that an example of failure to         for custom design of so called missions, which can be used to
+reach the postcondition might be that Escape fire does not           recreate common AI and Robotics related problem scenarios
+get the agent out of the fire. Furthermore, examples of ACC          ranging from path-planning to multi-agent collaboration. One
+violations might be that Defeat hostile keeps running into the       of the technical aspects of Malmö is that the control of
+fire and thereby initiates the execution of Escape fire, or that     the agent happens asynchronously from the stepping of the
+Chase cow moves too close to a hostile agent and thereby             environment. This sets time constraints on the decision making
+initiates the execution of Defeat hostile.                           process for an agent acting in the environment, in a way that
+   Beyond improving the performance of a BT with existing            is similar to a non-simulated system.
+controllers, one could also use Definition 8 to learn all               For RL we decided to use the open-source implementation
+controllers of a BT. Imagine a BT that was created using             Stable-Baselines 3 [20]. It is based on Open-AI Gym [22] and
+Algorithm 1 from a list of action names with preconditions and       Baselines [23], and provides a customisable Gym interface
+postconditions, such as Table I. Then we have no implementa-         which can be used to integrate it with many different environ-
+tions beyond the conditions, but a clear description of when to      ments, including Project Malmö. The central Gym interface
+run each action, and what postconditions it should achieve and       allows for integration to different environments as well as
+what ACCs it should not violate. Given these, we can apply           switching between different RL algorithms, as long as they
+the RL problem in Definition 8 to find implementations, ui ,         implement the Gym interface. At the time of writing, Stable-
+for all actions.                                                     Baselines supports many widely known RL algorithms, such
+   Note that Definition 8 is different from the baseline ap-         as PPO [24], DQN [25] and A2C [26]. We used PPO for the
+proach of just running the RL based on the information in            experiments of this letter.
+Table I, i.e., only trying to achieve the postconditions, without
+taking the ACCs into account. In the next section we will            B. Experimental setup
+compare the proposed approach with such a baseline method.             The primary aim of the experiments is to investigate to what
+                                                                     extent the setup in Definition 8 does improve the efficiency of
+                 V. E XPERIMENTAL RESULTS                            the BT execution, by not violating the previously achieved
+   In this section we will provide an empirical analysis of          subgoals, as encoded by the ACCs.
+the method proposed above, identifying scenarios when it has           We define our experiments based on the agent in Figure 1.
+significant impact on performance and scenarios when it has          Two different actions, Defeat hostile and Chase cow, will be
+6
+
+
+
+trained using the RL problem in Definition 8, and the complete
+BT will be evaluated in two different scenarios, see Table II,
+one starting near a hostile, away from fire and not hungry,
+and the other starting hungry, but currently away from fire
+and hostiles.
+
+                               TABLE II
+    T HE TWO SCENARIOS TO BE EVALUATED , WITH REMAINING TOP LEVEL
+                          GOAL EMPHASIZED .
+
+                                        Starting state
+      Scenario 1     Safe from fire, Not Safe from Hostiles, Not Hungry
+      Scenario 2         Safe from fire, Safe from Hostiles, Hungry
+
+
+   We will evaluate four different designs, see Table III. First
+one where the two actions are trained using a standard RL
+reward, taking only the desired postcondition into account.
+Then three different variations of ACC-aware RL, following
+Definition 8. There are two ways to take the ACC into account.             Fig. 4. Training results for Defeat hostile.
+First using a negative reward MACC , and second by ending
+the episode when the ACC is violated (this is what happens
+when the BT starts executing another action). We will evaluate
+all tree combinations of these two options, see Table III.
+
+                                 TABLE III
+                         PARAMETERS OF RL PROBLEMS
+
+     Configuration                Reward     for End episode when
+                                  violating ACC violating ACC
+                                  MACC
+     Standard RL                  0              False
+     ACC Aware (Neg. Reward)      -10            False
+     ACC Aware (End Episode)      0              True
+     ACC Aware (NR and EE)        -1000          True
+     All configurations use Mp = 1000 and Mt = −0.1, see Definition 8.
+
+  As mentioned above, we train policies for two different
+BT actions, Defeat hostile and Chase cow. In Scenario 1, see
+Table II, the agent is not hungry, so Chase cow will not be
+executed, but in Scenario 2 both the trained actions might be              Fig. 5. Training results for Chase cow.
+used.
+
+                                TABLE IV                                      It can be seen that the training has converged to policies that
+                     ACC S OF THE TWO TO BE TRAINED .                      consistently produce good rewards in the all of the respective
+                                               ACCs                        configurations. There is a larger variance of rewards in the
+       Defeat hostiles                     Safe from fire                  later stages of training for the Defeat hostile policies in Figure
+        Chase cow          Safe from fire, Safe from Hostiles, Has sword   4. This is caused by the fact that defeating hostiles is a
+                                                                           very dynamic activity that can play out in many different
+   The ACCs of the two actions to be trained can be seen in                ways. Even a small mistake can lead the agent to be pushed
+Table IV. Thus, when defeating hostiles the agent should try               into the fire by the opposing agent. As the training will still
+to keep out of the fire, while when chasing the cow it should              keep experimenting with small random deviations from the
+try to keep out of the fire, keep out of the way of hostiles, and          currently known best policy in the later training stages, it
+avoid losing the sword.                                                    can lead to relatively large deviations in accumulated reward
+                                                                           during training, as small changes in behavior can quickly lead
+C. Training Results                                                        to large negative rewards. There is a smaller variance in Chase
+  The PPO algorithm [24] was used for training in all cases.               cow, as the hostile is mostly static while not having seen the
+Both the policy and the value function were modelled as a                  agent.
+Multi-Layer Perceptron, with default parameters from Stable-
+Baselines used during the training process. Each RL policy                 D. Evaluation Results
+was trained for 2 million timesteps, using the configurations                 To see the effect on the performance of the overall BTs, in-
+described in Table III. The training results are shown in                  cluding trained actions, were ran evaluations for 1000 episodes
+Figures 4 and 5.                                                           in the two scenarios described in Table II.
+                                                                                                                                       7
+
+
+
+                            TABLE V                                  ACC-aware (Neg. Reward). We can also see that for the
+ E VALUATION OF S CENARIO 1, STARTING NOT HUNGRY BUT CLOSE TO        standard RL configuration the percentage of episodes with at
+                            HOSTILE .
+                                                                     least one ACC violation is very high (100%), and in each
+ Configuration    ACC*           ACC*              Time (steps) to   episode over 50% of the total number of time steps (790 time
+                  violations     violations        completion        steps out of 952) violate ACCs. Thus, in Scenario 2 we see a
+                  (% episodes)   (# steps)
+                  %              Mean       SD     Mean     SD       very clear performance improvement from using the ACCs.
+ Standard RL      20.8%          2.1        5.24   446      78          The reason for these outcomes is that the ACC violation of
+ ACC aware RL     5.60%          0.4        1.96   422      77       Safe from hostiles leads to the hostile agent approaching the
+ (Neg. Reward)
+ ACC aware RL     3.40%          0.24      1.39    437      85
+                                                                     agent and a subsequent fight. So even though all agents are
+ (End Episode)                                                       able to eventually defeat the hostile, the fight itself creates a
+ ACC aware RL     2.90%           0.15     0.94    460      76       significant delay in reaching the cow.
+ (NR and EE)
+ *ACC = ”Safe from Fire”                                                Looking at the difference between the three ACC-aware
+                                                                     configurations in Tables V and VI we note the following. The
+                                                                     negative reward alone has an effect on the ACC violation rate,
+                            TABLE VI
+          E VALUATION OF S CENARIO 2, STARTING HUNGRY.
+                                                                     but on average has a smaller impact than ending the episode.
+                                                                     It could be argued that larger negative rewards might have a
+ Configuration    ACC*           ACC*              Time (steps) to   larger impact, but it could theoretically lead to instability if it
+                  violations     violations        completion
+                  (% episodes)   (# steps)
+                                                                     is too large, as this reward would be given for every timestep
+                  %              Mean       SD     Mean     SD       in which the ACC is violated.
+ Standard RL      100.0%         790        90     952      89          The ”End Episode” configuration has a strong effect on
+ ACC aware RL     18.6%          134        300    303      301      ACC violations in both scenarios. This sort of ending to the
+ (Neg. Reward)
+ ACC aware RL     1.1%           6.7       71      184      71       episode is always a negative occurrence, because the potential
+ (End Episode)                                                       positive reward can no-longer be reached, leaving the agent
+ ACC aware RL     0.0%           0.0       0.0     176      7.2      with a lower cumulative reward. Using the configuration of
+ (NR and EE)
+ *ACC = ”Safe from Fire”
+                                                                     ”End Episode” and ”Negative Reward” together appears to
+                                                                     have the largest overall effect. This option not only prevents
+                                                                     future progress towards a positive reward, but also lowers the
+   The numerical evaluation metrics, as seen in Tables V and         reward accumulated during the episode, without the risk of
+VI, were the time taken for mission completion, and the              instability as the large reward is only given once.
+number of ACC violations both as a percentage of episodes               To summarise, we note that avoiding ACC violations can
+with at least one violation and as the average number of ACC         have either a very small or a very large impact on the overall
+violations per episode.                                              performance of the BT, in a way that depends on how much
+   Looking at the data from Scenario 1 in Table V, we see            extra effort is needed to re-achieve the ACC. Furthermore, the
+that the differences in completion time are fairly small (less       strongest effect in terms of reducing the ACC violations is
+than 10%), with the ACC-aware (Neg. Reward) configuration            given by the combination of a negative reward and ending the
+performing best, but only slightly better than the ACC-aware         episode.
+(End Episode) followed by standard RL. The worst performing
+is the ACC-aware (NR and EE). We can also see that for the
+standard RL configuration the percentage of episodes with at                               VI. C ONCLUSIONS
+least one ACC violation are fairly high (21%), but in each
+episode it only spends less than 0.5% of the total number of            This letter investigated the use of RL policies for improving
+time steps (2.1 time steps out of 446) violating those ACCs.         the performance of backward chained BTs. The key idea was
+Thus, in Scenario 1 we see no clear performance improvement          to use the ACCs, that were defined in the literature as an
+from using the ACCs.                                                 important part of theoretical convergence proofs, in the setup
+   The reason for these outcomes is that the ACC violation           of the RL problems for individual actions. Our experiments
+of Safe from fire can be fixed in a very short amount of time        show that the proposed approach can produce significant
+by moving out of the fire. Therefore, even though standard           performance improvements in cases where achieving the ACC
+RL does violate an ACC in many episodes, the time spent              takes significant effort (such as defeating a hostile). The
+violating the ACC is fairly small, and the resulting impact          improvements can be smaller in cases where achieving the
+on average completion time is also fairly small. If, however,        ACC requires less effort (stepping away from fire) or there is
+there would have been cases of infinite loops of violating and       no risk of getting caught in a loop of repeatedly doing and
+achieving an ACC, an easily fixed violation would have had           undoing the same action.
+a larger impact on performance.                                         Finally, we conclude that ACCs can be used to both analyse
+   Looking at the data from Scenario 2 in Table VI, we see           the BT, when considering the implementation of an RL based
+that the differences in completion time are fairly large (more       action, and to provide inputs to the reward function and the
+than 500%), with the ACC-aware (NR and EE) configuration             training process itself.
+performing best, followed by ACC-aware (End Episode) and
+8
+
+
+
+                              R EFERENCES                                         [24] J. Schulman, F. Wolski, P. Dhariwal, A. Radford, and O. Klimov, “Prox-
+                                                                                       imal policy optimization algorithms,” arXiv preprint arXiv:1707.06347,
+ [1] O. Vinyals, I. Babuschkin, W. M. Czarnecki, M. Mathieu, A. Dudzik,                2017.
+     J. Chung, D. H. Choi, R. Powell, T. Ewalds, P. Georgiev, et al., “Grand-     [25] V. Mnih, K. Kavukcuoglu, D. Silver, A. Graves, I. Antonoglou, D. Wier-
+     master level in starcraft ii using multi-agent reinforcement learning,”           stra, and M. Riedmiller, “Playing atari with deep reinforcement learn-
+     Nature, vol. 575, no. 7782, pp. 350–354, 2019.                                    ing,” 2013.
+ [2] O. Biggar, M. Zamani, and I. Shames, “On modularity in reactive control      [26] V. Mnih, A. P. Badia, M. Mirza, A. Graves, T. P. Lillicrap, T. Harley,
+     architectures, with an application to formal verification,” arXiv preprint        D. Silver, and K. Kavukcuoglu, “Asynchronous methods for deep
+     arXiv:2008.12515, 2020.                                                           reinforcement learning,” 2016.
+ [3] M. Mateas and A. Stern, “Façade: An experiment in building a fully-
+     realized interactive drama,” in Game developers conference, vol. 2, 2003,
+     pp. 4–8.
+ [4] P. Ögren, “Convergence analysis of hybrid control systems in the form
+     of backward chained behavior trees,” IEEE Robotics and Automation
+     Letters, vol. 5, no. 4, pp. 6073–6080, 2020.
+ [5] R. d. P. Pereira and P. M. Engel, “A framework for constrained
+     and adaptive behavior-based agents,” arXiv preprint arXiv:1506.02312,
+     2015.
+ [6] R. Dey and C. Child, “Ql-bt: Enhancing behaviour tree design and imple-
+     mentation with q-learning,” in 2013 IEEE Conference on Computational
+     Inteligence in Games (CIG). IEEE, 2013, pp. 1–8.
+ [7] Y. Fu, L. Qin, and Q. Yin, “A reinforcement learning behavior tree
+     framework for game ai,” in Proceedings of the 2016 International Con-
+     ference on Economics, Social Science, Arts, Education and Management
+     Engineering, 2016.
+ [8] B. Hannaford, D. Hu, D. Zhang, and Y. Li, “Simulation results on
+     selector adaptation in behavior trees,” arXiv preprint arXiv:1606.09219,
+     2016.
+ [9] C. I. Sprague and P. Ögren, “Adding neural network controllers to be-
+     havior trees without destroying performance guarantees,” arXiv preprint
+     arXiv:1809.10283, 2018.
+[10] Q. Zhang, L. Sun, P. Jiao, and Q. Yin, “Combining behavior trees
+     with maxq learning to facilitate cgfs behavior modeling,” in 2017 4th
+     International Conference on Systems and Informatics (ICSAI). IEEE,
+     2017, pp. 525–531.
+[11] C.-U. Lim, R. Baumgarten, and S. Colton, “Evolving behaviour trees
+     for the commercial game defcon,” in European conference on the
+     applications of evolutionary computation. Springer, 2010, pp. 100–
+     110.
+[12] M. Nicolau, D. Perez-Liebana, M. O’Neill, and A. Brabazon, “Evolu-
+     tionary behavior tree approaches for navigating platform games,” IEEE
+     Transactions on Computational Intelligence and AI in Games, vol. 9,
+     no. 3, pp. 227–238, 2016.
+[13] M. Colledanchise, R. Parasuraman, and P. Ögren, “Learning of behavior
+     trees for autonomous agents,” IEEE Transactions on Games, vol. 11,
+     no. 2, pp. 183–189, 2018.
+[14] C. Paduraru and M. Paduraru, “Automatic difficulty management and
+     testing in games using a framework based on behavior trees and genetic
+     algorithms,” in 2019 24th International Conference on Engineering of
+     Complex Computer Systems (ICECCS). IEEE, 2019, pp. 170–179.
+[15] M. Mayr, K. Chatzilygeroudis, F. Ahmad, L. Nardi, and V. Krueger,
+     “Learning of parameters in behavior trees for movement skills,” arXiv
+     preprint arXiv:2109.13050, 2021.
+[16] M. Colledanchise, D. Almeida, and P. Ögren, “Towards blended reactive
+     planning and acting using behavior trees,” in 2019 International Confer-
+     ence on Robotics and Automation (ICRA). IEEE, 2019, pp. 8839–8845.
+[17] R. A. Howard, Dynamic Programming and Markov Processes. Cam-
+     bridge, MA: MIT Press, 1960.
+[18] R. S. Sutton and A. G. Barto, Reinforcement learning: An introduction.
+     MIT press, 2018.
+[19] M. Johnson, K. Hofmann, T. Hutton, and D. Bignell, “The malmo plat-
+     form for artificial intelligence experimentation,” in Proceedings of the
+     Twenty-Fifth International Joint Conference on Artificial Intelligence,
+     ser. IJCAI’16. AAAI Press, 2016, p. 4246–4247.
+[20] A. Raffin, A. Hill, M. Ernestus, A. Gleave, A. Kanervisto,
+     and N. Dormann, “Stable baselines3,” https://github.com/DLR-RM/
+     stable-baselines3, 2019.
+[21] M. Kartasev and S. J. Ramberg, “Repository: Improving the performance
+     of backward chainedbehavior trees using reinforcement learning,” https:
+     //github.com/martkartasev/BTBackchainingRL, 2021.
+[22] G. Brockman, V. Cheung, L. Pettersson, J. Schneider, J. Schul-
+     man, J. Tang, and W. Zaremba, “Openai gym,” arXiv preprint
+     arXiv:1606.01540, 2016.
+[23] P. Dhariwal, C. Hesse, O. Klimov, A. Nichol, M. Plappert, A. Radford,
+     J. Schulman, S. Sidor, Y. Wu, and P. Zhokhov, “Openai baselines,” https:
+     //github.com/openai/baselines, 2017.
+

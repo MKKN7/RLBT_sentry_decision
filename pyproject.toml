@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rl-bt-decision-prototype"
+version = "0.1.0"
+description = "Task-level RL/BT research prototype for RoboMaster sentry decisions"
+requires-python = ">=3.11"
+dependencies = ["numpy", "scipy", "torch", "onnx", "onnxruntime"]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+reports = ["matplotlib", "tensorboard"]
+
+[tool.setuptools.packages.find]
+include = ["rl_bt*", "scripts*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

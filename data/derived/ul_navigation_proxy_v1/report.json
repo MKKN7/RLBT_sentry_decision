@@ -1,0 +1,499 @@
+{
+  "artifact_type": "UL_ground_only_course_motion_proxy",
+  "resolution_m": 0.1,
+  "grid_shape_xy": [
+    120,
+    80
+  ],
+  "planning_circle_radius_with_margin_m": 0.41100000000000003,
+  "planning_height_with_margin_m": 0.255,
+  "mesh_sha256": "0f8be9e82d06f25fbcdfa0e17785c51225c0770349d8ae108637112ceece5f71",
+  "mesh_triangle_count": 3811,
+  "supported_cells": 7868,
+  "obstacle_cells_before_inflation": 2340,
+  "free_cells_red_blue": [
+    3908,
+    3908
+  ],
+  "actual_Nav2_MPPI_connected": false,
+  "hardware_reachability_certified": false,
+  "authoritative_live_BT_mask": false,
+  "limitations": [
+    "Ground-only upright circular envelope; no deck climbing.",
+    "Mesh-derived nominal zones are not surveyed RFID or hardware frames.",
+    "No dynamic contact, attitude, suspension, moving obstacles or localization errors.",
+    "Conservative finite grid may reject physically possible routes."
+  ],
+  "build_s": 0.11465154914185405,
+  "cached_1000_queries_s": 0.24430142203345895,
+  "candidates": {
+    "0": [
+      {
+        "id": 0,
+        "name": "own_supply",
+        "xy": [
+          1.5,
+          7.0
+        ],
+        "task_type": "resupply",
+        "static_legal": true,
+        "source": "nominal_rule_surface_anchor"
+      },
+      {
+        "id": 1,
+        "name": "center_control",
+        "xy": [
+          6.0,
+          4.0
+        ],
+        "task_type": "capture",
+        "static_legal": true,
+        "source": "nominal_rule_surface_anchor"
+      },
+      {
+        "id": 2,
+        "name": "west_lane",
+        "xy": [
+          1.5,
+          4.0
+        ],
+        "task_type": "position",
+        "static_legal": true,
+        "source": "engineering_anchor"
+      },
+      {
+        "id": 3,
+        "name": "east_lane",
+        "xy": [
+          10.5,
+          4.0
+        ],
+        "task_type": "position",
+        "static_legal": true,
+        "source": "engineering_anchor"
+      },
+      {
+        "id": 4,
+        "name": "south_midfield",
+        "xy": [
+          6.0,
+          1.0
+        ],
+        "task_type": "position",
+        "static_legal": true,
+        "source": "engineering_anchor"
+      },
+      {
+        "id": 5,
+        "name": "north_midfield",
+        "xy": [
+          6.0,
+          7.0
+        ],
+        "task_type": "position",
+        "static_legal": true,
+        "source": "engineering_anchor"
+      },
+      {
+        "id": 6,
+        "name": "center_north_approach",
+        "xy": [
+          6.0,
+          5.9
+        ],
+        "task_type": "position",
+        "static_legal": true,
+        "source": "engineering_anchor"
+      },
+      {
+        "id": 7,
+        "name": "center_south_approach",
+        "xy": [
+          6.0,
+          2.1
+        ],
+        "task_type": "position",
+        "static_legal": true,
+        "source": "engineering_anchor"
+      },
+      {
+        "id": 8,
+        "name": "own_supply_exit",
+        "xy": [
+          1.5,
+          5.4
+        ],
+        "task_type": "position",
+        "static_legal": true,
+        "source": "engineering_anchor"
+      },
+      {
+        "id": 9,
+        "name": "enemy_supply_standoff",
+        "xy": [
+          10.5,
+          3.0
+        ],
+        "task_type": "position",
+        "static_legal": true,
+        "source": "engineering_anchor"
+      },
+      {
+        "id": 10,
+        "name": "own_highland",
+        "xy": [
+          3.5,
+          4.8
+        ],
+        "task_type": "highland",
+        "static_legal": false,
+        "source": "nominal_rule_surface_anchor"
+      },
+      {
+        "id": 11,
+        "name": "enemy_highland",
+        "xy": [
+          8.5,
+          3.2
+        ],
+        "task_type": "highland",
+        "static_legal": false,
+        "source": "nominal_rule_surface_anchor"
+      },
+      {
+        "id": 12,
+        "name": "own_tunnel",
+        "xy": [
+          3.5,
+          7.46
+        ],
+        "task_type": "tunnel",
+        "static_legal": false,
+        "source": "nominal_rule_surface_anchor"
+      },
+      {
+        "id": 13,
+        "name": "enemy_tunnel",
+        "xy": [
+          8.5,
+          0.54
+        ],
+        "task_type": "tunnel",
+        "static_legal": false,
+        "source": "nominal_rule_surface_anchor"
+      }
+    ],
+    "1": [
+      {
+        "id": 0,
+        "name": "own_supply",
+        "xy": [
+          10.5,
+          1.0
+        ],
+        "task_type": "resupply",
+        "static_legal": true,
+        "source": "nominal_rule_surface_anchor"
+      },
+      {
+        "id": 1,
+        "name": "center_control",
+        "xy": [
+          6.0,
+          4.0
+        ],
+        "task_type": "capture",
+        "static_legal": true,
+        "source": "nominal_rule_surface_anchor"
+      },
+      {
+        "id": 2,
+        "name": "west_lane",
+        "xy": [
+          10.5,
+          4.0
+        ],
+        "task_type": "position",
+        "static_legal": true,
+        "source": "engineering_anchor"
+      },
+      {
+        "id": 3,
+        "name": "east_lane",
+        "xy": [
+          1.5,
+          4.0
+        ],
+        "task_type": "position",
+        "static_legal": true,
+        "source": "engineering_anchor"
+      },
+      {
+        "id": 4,
+        "name": "south_midfield",
+        "xy": [
+          6.0,
+          7.0
+        ],
+        "task_type": "position",
+        "static_legal": true,
+        "source": "engineering_anchor"
+      },
+      {
+        "id": 5,
+        "name": "north_midfield",
+        "xy": [
+          6.0,
+          1.0
+        ],
+        "task_type": "position",
+        "static_legal": true,
+        "source": "engineering_anchor"
+      },
+      {
+        "id": 6,
+        "name": "center_north_approach",
+        "xy": [
+          6.0,
+          2.0999999999999996
+        ],
+        "task_type": "position",
+        "static_legal": true,
+        "source": "engineering_anchor"
+      },
+      {
+        "id": 7,
+        "name": "center_south_approach",
+        "xy": [
+          6.0,
+          5.9
+        ],
+        "task_type": "position",
+        "static_legal": true,
+        "source": "engineering_anchor"
+      },
+      {
+        "id": 8,
+        "name": "own_supply_exit",
+        "xy": [
+          10.5,
+          2.5999999999999996
+        ],
+        "task_type": "position",
+        "static_legal": true,
+        "source": "engineering_anchor"
+      },
+      {
+        "id": 9,
+        "name": "enemy_supply_standoff",
+        "xy": [
+          1.5,
+          5.0
+        ],
+        "task_type": "position",
+        "static_legal": true,
+        "source": "engineering_anchor"
+      },
+      {
+        "id": 10,
+        "name": "own_highland",
+        "xy": [
+          8.5,
+          3.2
+        ],
+        "task_type": "highland",
+        "static_legal": false,
+        "source": "nominal_rule_surface_anchor"
+      },
+      {
+        "id": 11,
+        "name": "enemy_highland",
+        "xy": [
+          3.5,
+          4.8
+        ],
+        "task_type": "highland",
+        "static_legal": false,
+        "source": "nominal_rule_surface_anchor"
+      },
+      {
+        "id": 12,
+        "name": "own_tunnel",
+        "xy": [
+          8.5,
+          0.54
+        ],
+        "task_type": "tunnel",
+        "static_legal": false,
+        "source": "nominal_rule_surface_anchor"
+      },
+      {
+        "id": 13,
+        "name": "enemy_tunnel",
+        "xy": [
+          3.5,
+          7.46
+        ],
+        "task_type": "tunnel",
+        "static_legal": false,
+        "source": "nominal_rule_surface_anchor"
+      }
+    ]
+  },
+  "checks": {
+    "team0_candidate0": {
+      "path_found": true,
+      "static_legal": true,
+      "path_length_m": 0.14142135623731059
+    },
+    "team0_candidate1": {
+      "path_found": true,
+      "static_legal": true,
+      "path_length_m": 9.98700576850888
+    },
+    "team0_candidate2": {
+      "path_found": true,
+      "static_legal": true,
+      "path_length_m": 3.141421356237311
+    },
+    "team0_candidate3": {
+      "path_found": true,
+      "static_legal": true,
+      "path_length_m": 16.632590180780454
+    },
+    "team0_candidate4": {
+      "path_found": true,
+      "static_legal": true,
+      "path_length_m": 9.528427124746191
+    },
+    "team0_candidate5": {
+      "path_found": true,
+      "static_legal": true,
+      "path_length_m": 12.987005768508885
+    },
+    "team0_candidate6": {
+      "path_found": true,
+      "static_legal": true,
+      "path_length_m": 11.887005768508882
+    },
+    "team0_candidate7": {
+      "path_found": true,
+      "static_legal": true,
+      "path_length_m": 9.072792206135787
+    },
+    "team0_candidate8": {
+      "path_found": true,
+      "static_legal": true,
+      "path_length_m": 1.7414213562373104
+    },
+    "team0_candidate9": {
+      "path_found": true,
+      "static_legal": true,
+      "path_length_m": 17.632590180780454
+    },
+    "team0_candidate10": {
+      "path_found": false,
+      "static_legal": false,
+      "path_length_m": null
+    },
+    "team0_candidate11": {
+      "path_found": false,
+      "static_legal": false,
+      "path_length_m": null
+    },
+    "team0_candidate12": {
+      "path_found": false,
+      "static_legal": false,
+      "path_length_m": null
+    },
+    "team0_candidate13": {
+      "path_found": false,
+      "static_legal": false,
+      "path_length_m": null
+    },
+    "team0_enemy_supply": {
+      "path_found": false
+    },
+    "team1_candidate0": {
+      "path_found": true,
+      "static_legal": true,
+      "path_length_m": 0.14142135623731059
+    },
+    "team1_candidate1": {
+      "path_found": true,
+      "static_legal": true,
+      "path_length_m": 9.787005768508882
+    },
+    "team1_candidate2": {
+      "path_found": true,
+      "static_legal": true,
+      "path_length_m": 3.14142135623731
+    },
+    "team1_candidate3": {
+      "path_found": true,
+      "static_legal": true,
+      "path_length_m": 16.632590180780454
+    },
+    "team1_candidate4": {
+      "path_found": true,
+      "static_legal": true,
+      "path_length_m": 9.411269837220809
+    },
+    "team1_candidate5": {
+      "path_found": true,
+      "static_legal": true,
+      "path_length_m": 12.78700576850888
+    },
+    "team1_candidate6": {
+      "path_found": true,
+      "static_legal": true,
+      "path_length_m": 11.78700576850888
+    },
+    "team1_candidate7": {
+      "path_found": true,
+      "static_legal": true,
+      "path_length_m": 8.955634918610404
+    },
+    "team1_candidate8": {
+      "path_found": true,
+      "static_legal": true,
+      "path_length_m": 1.6414213562373103
+    },
+    "team1_candidate9": {
+      "path_found": true,
+      "static_legal": true,
+      "path_length_m": 17.632590180780454
+    },
+    "team1_candidate10": {
+      "path_found": false,
+      "static_legal": false,
+      "path_length_m": null
+    },
+    "team1_candidate11": {
+      "path_found": false,
+      "static_legal": false,
+      "path_length_m": null
+    },
+    "team1_candidate12": {
+      "path_found": false,
+      "static_legal": false,
+      "path_length_m": null
+    },
+    "team1_candidate13": {
+      "path_found": false,
+      "static_legal": false,
+      "path_length_m": null
+    },
+    "team1_enemy_supply": {
+      "path_found": false
+    }
+  },
+  "candidate_schema_version": "ul_ground_course_v1",
+  "tunnel_clearance_nominal_m": 0.2495,
+  "tunnel_reference_height_test": "blocked: planning height .255m exceeds nominal .2495m gap",
+  "ground_support_policy": "upward near-ground faces from -1e-6 to .015m only; floor bottom -.1m excluded",
+  "grid_inflation_policy": "planning circle plus both raw/destination square half-diagonals",
+  "enemy_supply_policy": "reject entire pose cell when planning circle may intersect nominal enemy supply",
+  "training_use": "task-level course motion proxy only; not a formal match or live hardware navigation mask",
+  "written_npz_bytes": 12241
+}

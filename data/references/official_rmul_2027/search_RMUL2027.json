@@ -1,0 +1,57 @@
+{
+  "code": 0,
+  "message": "success",
+  "success": true,
+  "data": {
+    "list": [
+      {
+        "id": 9272,
+        "entityType": "ARTICLE",
+        "entityTypeLabel": "文章",
+        "category": "ARTICLE",
+        "title": "【RM2023-电控完整框架开源】（超详细教程和注释）",
+        "introduction": "gitee链接：basic_framework: Hey this is the basic frame work for robomaster standard infantry Robots! enjoy using it, have fun developing Robot with us (...",
+        "wikiName": null,
+        "wikiNodeName": null,
+        "highlightTitle": "【RM2023-电控完整框架开源】（超详细教程和注释）",
+        "highlightContent": "gitee链接：basic_framework: Hey this is the basic frame work for robomaster standard infantry Robots! enjoy using it, have fun developing Robot with us (...",
+        "authorId": 49024,
+        "authorNickname": "蚌埠市市长",
+        "authorAvatar": "https://terra-cn-oss-cdn-public-pro.oss-cn-hangzhou.aliyuncs.com/b2a076471c6c4b72b574a977334d3e05/ae4cb81d-5ea3-4757-a207-94c3aab0af2e",
+        "headImg": "",
+        "tags": [
+          {
+            "id": 1,
+            "groupName": "历史数据",
+            "name": "历史数据",
+            "headImg": null
+          }
+        ],
+        "matchTier": "M7",
+        "matchSlot": null,
+        "matchSource": "semantic",
+        "redirectUrl": "/articles/9272",
+        "createAt": 1675776985000,
+        "views": 22440,
+        "approvals": 2,
+        "comments": 7,
+        "official": false,
+        "marrow": false,
+        "teamId": null,
+        "wikiId": null,
+        "timesCited": 0,
+        "timesCiting": 0,
+        "teamInfo": null
+      }
+    ],
+    "total": 1,
+    "totalHit": 1,
+    "maxScore": null,
+    "page": 1,
+    "currentPage": 1,
+    "size": 30,
+    "totalPages": 1,
+    "sortBy": "comprehensive",
+    "contentTypes": null
+  }
+}

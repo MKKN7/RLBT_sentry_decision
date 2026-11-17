@@ -1,0 +1,537 @@
+ Progress Constraints for Reinforcement Learning in Behavior Trees
+                               Finn Rietz1,† , Mart Kartašev2,† , Petter Ögren2 , Johannes A. Stork1
+
+
+
+   Abstract—Behavior Trees (BTs) provide a structured and re-
+active framework for decision-making, commonly used to switch                                                                                Greedy path
+between sub-controllers based on environmental conditions. Re-                                        Manipulator
+inforcement Learning (RL), on the other hand, can learn near-
+optimal controllers but sometimes struggles with sparse rewards,
+safe exploration, and long-horizon credit assignment. Combining
+BTs with RL has the potential for mutual benefit: a BT design
+encodes structured domain knowledge that can simplify RL                         Held item
+training, while RL enables automatic learning of the controllers
+within BTs. However, naïve integration of BTs and RL can lead to                 Mobile base                                                     Safety margin
+some controllers counteracting other controllers, possibly undo-
+ing previously achieved subgoals, thereby degrading the overall                                                              →
+performance. To address this, we propose progress constraints,
+a novel mechanism where feasibility estimators constrain the
+allowed action set based on theoretical BT convergence results.                                  Safe from forklift          ?           Select new item
+Empirical evaluations in a 2D proof-of-concept and a high-
+fidelity warehouse environment demonstrate improved perfor-                                                                                                  π1 : Move
+                                                                                 Item placed            →                    →                   →
+mance, sample efficiency, and constraint satisfaction, compared                                                                                              (to item)
+to prior methods of BT-RL integration.
+                                                                                Have       At        π3 : Place       Have       π1 : Move      Near       π2 : Grasp
+                                                                                item      goal        (item)          item       (to goal)      item         (item)
+
+         I. INTRODUCTION AND MOTIVATION
+                                                                              Figure 1: Top: High-fidelity warehouse environment. The
+      EHAVIOR TREES (BTs) provide a reactive plan exe-
+B     cution framework that switches between multiple con-
+trollers based on the current state, and are commonly used in
+                                                                              agent, a small mobile manipulator, must collect and deliver
+                                                                              items while avoiding collisions with the bigger, dynamic fork-
+                                                                              lift with unknown dynamics. Bottom: Corresponding Behavior
+robotics [1] and video games [2, 3]. Traditionally, such trees                Tree with RL controllers π1 , π2 , and π3 . Naïvely learning the
+are built by a human designer with expert knowledge of the                    controllers with RL can result in unsafe or greedy behavior,
+problem, who specifies both the task-switching tree structure                 while our method accounts for long-term BT progress con-
+and the controllers in the leaf nodes of the tree (π1 , π2 , π3               straints. Note that the lower part of the BT applies the Implicit
+in Fig. 1). Reinforcement Learning (RL), on the other hand,                   Sequence design principle [16].
+can learn near-optimal controllers [4] for various domains [5,
+6, 7, 8] – but suffers from a number of practical limitations:                algorithms greedily optimizing rewards without considering
+It is often difficult to design scalar-valued reward functions                the constraints imposed by the BT.
+that induce the desired behavior [9, 10, 11, 12] and (safe)                       We suggest that these constraints are automatically iden-
+exploration in high-dimensional, sparse-reward tasks remains                  tified from the BT, and then taken into account in the RL
+challenging [13, 14, 15].                                                     training. For example, the BT in Fig. 1 works best if the
+   There exists mutual benefit in combining these two frame-                  Place controller π3 remains close to the goal location, and
+works: From the BT perspective, RL can provide a way for                      does not prematurely drop the item, since if it moves away
+learning near-optimal controllers to be used in the BT, while                 Move has to move it back, and if it drops the item in the
+from the RL perspective, BTs can add structured domain                        wrong place, Grasp has to pick it up again. Note that the
+knowledge and simplify the learning problem by breaking it                    Move controller π1 appears twice in the BT, and is subject
+down into smaller subproblems that can be learned separately.                 to different constraints, depending on the state. When moving
+However, naïvely learning controllers with RL as part of BTs                  towards the item, no effort is needed to avoid dropping it.
+can lead to poor performance. Shortcomings can take the form                      Thus, in this paper, we investigate how to integrate RL
+of internal control switching oscillations [17] or suboptimal                 with BTs to leverage the structured domain knowledge that
+handover between controllers [18]. These issues stem from RL                  BTs provide while ensuring that the RL learns controllers
+                                                                              that respect the constraints imposed by the BT. Our approach
+  † Equal contribution
+  1 Adaptive and Interpretable Learning Systems Lab, Department of Com-       introduces so-called progress constraints, which prevent RL
+puter Science, Örebro University.                                             controllers from undoing already completed steps in the BT
+  2 Robotics, Perception and Learning Lab, School of Electrical Engineering   task, such as dropping an object that was just grasped. We
+and Computer Science, Royal Institute of Technology.                          exploit theoretical convergence results for BTs to identify the
+  This work was partially supported by the Wallenberg AI, Autonomous
+Systems and Software Program (WASP) funded by the Knut and Alice              constraint set [19], and then use feasibility estimation to learn
+Wallenberg Foundation.                                                        estimators for these constraints.
+  Thus, we present the first method for learning both RL              Sec. III-A and review important convergence properties of
+controllers and constraints within BTs and make the following         BTs in Sec. III-B. We then provide the necessary definitions
+contributions:                                                        from RL in Sec. III-C and lastly review feasibility analysis in
+  1) An extension of BT convergence concepts previously               Sec. III-D.
+      used for RL in BTs [17] using the results in [19] to
+      address a broader class of BTs.                                 A. Behavior Trees
+  2) Progress constraints: We show how to learn feasibility
+                                                                        Let the state be x ∈ X ⊂ Rn and evolve according to
+      estimators that constrain the action set to avoid undoing
+                                                                      the (unknown) discrete-time dynamics xt+1 = f (xt , u). With
+      the progress of BTs.
+                                                                      control actions u ∈ U ⊂ Rk , the policy πi : X → U is the
+  3) We show how to use these estimators in RL algorithms,
+                                                                      controller that runs when the BT node i is executing [19].
+      thereby providing a general-purpose learning algorithm
+      for BTs with RL controllers.                                    Definition 1 (Behavior Tree). A BT is a two-tuple
+
+                    II. RELATED WORK                                                           Ti = {πi , ri },                    (1)
+   One of the earliest works on combining BTs and RL is               where i ∈ N is the index of the tree, πi is the controller and
+[20], which introduces a “learning node” that applies naïve           ri : Rn → {R, S, F} is the return status that can output
+Q-learning [21, 22], without accounting for the implicit con-         either Running (R), Success (S), or Failure (F). Let the
+straints a BT imposes on its controllers discussed in this paper.     Running region (Ri ), Success region (Si ) and Failure region
+Prior work [17] and our results show that this approach does          (Fi ) correspond to a partitioning of the state space:
+not respect the constraints induced by the BT, which can be
+attributed to the greedy, off-policy backup in Q-learning [23,                            Ri = {x : ri (x) = R},
+24].                                                                                      Si = {x : ri (x) = S},
+   The work that is most similar to this one is [17]. Both papers                         Fi = {x : ri (x) = F}.
+are based on the idea of using convergence analysis of BTs to
+improve RL when learning controllers. There are however two              The return status ri is used when combining BTs into larger
+fundamental differences. First, [17] uses convergence results         trees. While every node in the tree can formally be considered
+from [25] that only covers a specific class of BTs (backward          an individual tree, we often call certain types of nodes by
+chained designs) whereas this paper uses newer convergence            different names [33]. Nodes that execute controllers are called
+results from [19] that apply to all BTs. Second, in [17]              behaviors (rectangles containing π0 , π1 , π2 in Fig. 1). Nodes
+reward shaping is used, giving the undesired transitions a large      that return only Success (true) or Failure (false) are known as
+negative reward, whereas in this paper we construct progress          conditions that can be used as predicates (ellipsoids in Fig. 1).
+constraints using feasibility estimators to avoid such transition        For example, consider the BT in Fig. 1. Nodes are iterated
+all-together, independently of the reward functions. Finally, in      from left to right. The Sequence (→) node returns Success
+the evaluation we compare the results to that of [17].                if all children succeed, while the Fallback (?) node returns
+   Another recent work combining BT and RL [18] deals with            Success if any child succeeds. The fallback node in the
+the optimization of control switching on the boundary between         figure represents a so-called implicit sequence [16], with
+two controllers. While dealing with a similar setting as this         intended progression from right to left. If the condition Safe
+paper, [18] addresses a different issue that aims to improve          (from Forklift) is unsatisfied (returns Failure), the whole
+the handover between different controllers by giving rewards          tree returns Failure and an emergency stop is triggered.
+to one controller based on the preferences of the next.               The middle subtree is executed only if the condition Safe
+   A review of safe control can be found in [26]. We draw             is satisfied and Item Placed is not. If conditions like At
+motivation from methods that identify safe state-space regions        Goal or Have Item change their values during execution of
+that controllers should not leave, i.e. keep invariant. In particu-   controller πi , the BT automatically switches to the appropriate
+lar, we make use of dynamic programming “feasibility” meth-           controller. For instance, if Have Item becomes unsatisfied
+ods, as introduced in [27] and expanded on in [28], that are          while executing π3 :Place or π1 : Move (to goal), the
+traditionally used for identifying sets of safe states. Differently   BT will return to executing π2 in the next time step.
+from these prior works, we are applying feasibility methods
+not for safe control but to track and support the progress in         B. Behavior Tree convergence analysis
+a BT and use the resulting estimators for constraining the RL
+                                                                         We build on the BT convergence analysis [25, 19] to
+controllers. A comprehensive review of constrained RL can be
+                                                                      constrain the RL controllers in a BT. The key idea is to make
+found in [29], but that work contains no results on how BTs
+                                                                      sure the RL controllers keep the so-called convergence sets
+can be used to identify contraints. Finally, we apply “action
+                                                                      invariant while striving to complete each subtask. In order to
+masking” methods as described in [30, 31, 32]. However, none
+                                                                      define these sets, we first have to define so-called influence
+of those works share our BT application.
+                                                                      and operating regions. The influence regions can be recursively
+                  III. BACKGROUND                                     computed considering the BT structure.
+   We begin with a summary of relevant background in-                 Definition 2. (Influence region) For a given node i, we
+formation. First, we give a formal definition of BTs in               define p(i) as the parent node of i and b(i) as the closest
+brother/sibling (having the same parent) node to the left of
+i. Based on that, the Influence region Ii for node i can be
+determined recursively as:                                                  X                                                           = C2
+                                                                                                          ✓       Ω2
+                                                                                    ✗
+    Ii = X                                     If i is the root
+                                                                                Ω1
+    Ii = Ip(i)                              If ∄b(i) & ∃p(i)
+    Ii = Ib(i) ∩ Sb(i)           If p(i) is a Sequence ∃b(i)                            π2
+                                                                                                                          ✓
+                                                                                                                                       Ω3
+    Ii = Ib(i) ∩ Fb(i)             If p(i) is a Fallback ∃b(i)
+                                                                                                ✓
+  Intuitively, the influence region Ii is the part of the state-                                                              ✓
+                                                                                ✗                                                 S0
+space in which subtree i is able to influence the execution of
+the BT, by either its controller π or its return status ri .
+  Based on influence regions, we can define operating regions,        Figure 2: Visualization of operating regions, a controller, and
+which are the parts of the space where node i has return status       its convergence set. The controller π2 may leave its operating
+Running and executing its controller πi .                             region Ω2 but must remain in its convergence set C2 .
+Definition 3. (Operating Regions) The operating region Ωi
+of node i, is the intersection of it’s influence region Ii and        the BT was designed using the backward chaining approach
+running regions Ri                                                    [34], the intended order of progression can be found by a
+                         Ωi = Ii ∩ Ri                       (2)       depths/left first numbering of the leaves. Another example is
+                                                                      the so-called implicit sequence, see [33], and the lower part
+For a given node i, with operating region Ωi , the correspond-        of the BT in Fig. 1, where the intended progression would be
+ing controller πi is executed when x ∈ Ωi . The operating             right to left.
+regions of the children of i are a partitioning of Ωi .
+                                                                      Remark 2. For the example in Figure 1 we have an intended
+   Thus, a given BT induces a partition of the state space into       progression from right to left due to the implicit sequence,
+operating regions Ωi , where controller πi is executing when          i.e. Move(ToItem) → Grasp → Move(ToGoal) →
+the state x ∈ Ωi , for more details, see [19].                        Place), with the corresponding convergence sets to be kept
+   Given these concepts, we can state the main convergence            invariant
+result from [19], giving sufficient conditions for reaching the
+overall success region S0 , corresponding to completion of all          CM ove(T oItem) =ΩM ove(T oItem) ∪ ΩGrasp
+tasks.                                                                                       ∪ ΩM ove(T oGoal) ∪ ΩP lace ∪ S0
+Theorem 1. (Convergence of BTs, from [19]) Given the set                        CGrasp =ΩGrasp ∪ ΩM ove(T oGoal) ∪ ΩP lace ∪ S0
+of BT leaf nodes J = {1, ..., j}, let                                   CM ove(T oGoal) =ΩM ove(T oGoal) ∪ ΩP lace ∪ S0
+                            [                                                   CP lace =ΩP lace ∪ S0 .
+                   Ci = (( Ωj ) ∪ S0 ).              (3)
+                             j≥i
+                                                                      C. Reinforcement Learning
+If there exists a re-labeling of the nodes such that for all i ∈ J,
+the convergence set Ci is invariant under πi and there exists            Reinforcement learning problems are formalized as Markov
+a time-horizon h, such that if xt ∈ Ωi then xt+h ∈    / Ωi . Then,    Decision Processes (MDPs). An MDP is a tuple M ≡
+the state x will enter the success region S0 of the root of the       ⟨X , U, r, f, γ, µ⟩, where X , U, and f are aligned with the BT
+tree (the overall success of the BT) in finite time.                  notation above and respectively denote the state-space, action-
+                                                                      space, and transition function. r : X × U → R is a scalar-
+   The intuition behind Theorem 1 is as follows: Assume some          valued reward function, γ ∈ [0, 1] is a discount factor, and µ
+intended progression (see Remark 1) through the operating             is a distribution over initial states. The goal in RL is to find a
+regions Ω1 , . . . ΩJ and let us label the leaf nodes of the          policy (henceforth referred to as controller) π : X ×U → [0, 1]
+BT such that the controllers for the operating regions are            that maximizes expected, discounted return
+numbered in order of increasing intended progression. Then,
+                                                                                                    ∞
+if we can guarantee that all controllers strictly transition
+                                                                                                   hX                    i
+                                                                                         E(τ ∼π)          γ t r(xt , ut ) ,                    (4)
+between operating regions according to Ωj ⇝ Ωj+k , k ≥ 1, as
+                                                                                                    t=0
+illustrated in Fig. 2, each Ci is invariant under the respective
+πi and the BT is guaranteed to reach a state x ∈ S0 in finite         where xt ∈ X , ut ∈ U, and (τ ∼ π) is shorthand for denoting
+time. Conversely, if any controller violates this order, it is        trajectories τ with actions sampled according to the policy and
+undoing progression that has already been achieved, forcing           states sampled according to the transition dynamics.
+the agent to go back and do the same task again. The key idea
+of our method is make use of the invariance constraints from          D. Feasibility Estimation
+Theorem 1 on Ci and imposing them on the RL controller πi .
+                                                                        The main idea in feasibility estimation is to use dynamic
+Remark 1 (Intended order of progression). The intended order          programming techniques for safety analysis, as suggested in
+of progression is often clear for a manually designed BT. If          [27]. Imagine we have some set of failure states that we want
+to avoid because they either correspond to collisions or are           to before, directly maximizing the different Mi with RL
+undesirable in some other way. Then we call the complement             does not necessarily induce convergent behavior of the overall
+of these states the constraint set K ⊂ X . Assuming K is               system [17].
+closed, let l : X → R such that l(x) > 0 ⇔ x ∈ K (for
+example, l(x) might be a measure of the distance from x to the
+nearest failure state). We can then define the state feasibility       B. Implementing Progress constraints
+function as
+                                                                          To solve CBTRL problems, we take the convergence anal-
+                    V (x) = sup inf l(x(t)),                 (5)
+                               π t≥0                                   ysis of BTs into account. According to Theorem 1, the BT
+                                                                       is guaranteed to converge to the overall success region S0 if
+where x(t) is a state trajectory resulting from the controller
+                                                                       each controller πi leaves its operating region Ωi in finite time
+π. Intuitively, V (x) measures how close to the set of failure
+                                                                       while keeping the convergence region Ci invariant. With this
+states we will come in the future, starting from x and applying
+                                                                       in mind, let Πi denote the set of controllers under which Ci
+a controller that optimally avoids the unsafe set. It is shown in
+                                                                       remains invariant. While computing Πi directly is generally
+[27] that the state feasibility function satisfies the discrete-time
+                                                                       intractable, Equations (8, 9) provide a method to estimate
+Bellman equation
+                                                                       the set of feasible actions U(x) that preserve invariance of
+             V (x) = min[l(x), max V (f (x, u))].               (6)    a constraint set K.
+                                    u
+                                                                          Therefore, for controllers used in a single behavior node,
+However, this equation does not induce a contraction, which is         we directly set K = Ci and restrict the action space of Mi
+needed to ensure convergence. To remedy this, Fisac et al. [27]        according to Ui (xt ), effectively projecting πi into Πi . For
+introduce the following estimator                                      controllers used in multiple behavior nodes, the applicable
+   V (x) = (1 − γ)l(x) + γ min[l(x), max V (f (x, u))],         (7)    constraint set depends on which behavior node j ∈ Ji selected
+                                           u
+                                                                       the controller. This can be uniquely determined by identifying
+which induces a contraction mapping and show that the                  the active operating region Ωj ⊂ Ci for the current state
+solution converges to Eq. (6) as γ → 1. Finally, the state-            x. Since convergence regions are nested, i.e., Cj ⊆ Ci for
+action feasibility function Q can be found by solving                  any j ≥ i, masking the action space according to Uj (x)
+                                                   V (x′ )             still ensures that Ci remains invariant. Thus, by selecting the
+                                       z       }|
+                                                         ′
+                                                          {            appropriate constraint set Cj based on the active operating
+ Q(x, u) = (1 − γ)l(x) + γ min[l(x), max    Q(f (x, u), u  )].         region and masking the action space according to Uj (x), we
+                                         u′
+                                                            (8)        can use controller πi in multiple behavior nodes Ji , while
+Now, for any state x : V (x) > 0, there must be a non-empty            still guaranteeing that the corresponding convergence set Ci
+set of safe actions                                                    is kept invariant. This allows us to use any RL algorithm that
+                  U(x) = {u : Q(x, u) ≥ 0},                     (9)    supports invalid action masking [30, 31, 32] to optimize πi
+                                                                       while satisfying progress constraints. This is the core idea
+and as long as we select ut ∈ U(x), the next state will also           behind our method, based on which we derive our full learning
+be in K.                                                               algorithm for solving CBTRL problems.
+
+  IV. M ETHOD : F EASIBILITY- CONSTRAINED B EHAVIOR
+          T REE R EINFORCEMENT L EARNING                               C. Learning algorithm
+A. Problem definition                                                     Our method learns the controllers π1 , . . . , πI iteratively
+   We now present our method for solving Progress-                     and separately, following the intended order of progression
+Constrained Behavior Tree Reinforcement Learning (CBTRL)               (Remark 1) in the BT T to ensure that subtrees T0 , . . . , Ti−1
+problems: Given a BT T0 with J behavior nodes that partitions          and controllers are available to induce µi when learning
+the state X into operating regions Ω1 , . . . , ΩJ , we wish to        controller i. If there are constraints affecting even the first
+use RL to learn controllers π1 , . . . , πI , I ≤ J, such that the     controller π1 , like in Fig. 1, we assume the availability of
+overall task modeled by the BT is solved successfully when             some dataset of transitions D0 for training the feasibility
+the learned controllers are used in the BT’s behavior nodes.           estimator Q1 for C1 . If unavailable, D0 can be obtained using
+Since we often want to reuse the same controller πi in multiple        exploration techniques like [35] – more detailed data collection
+behavior nodes, e.g. the Move controller in Fig. 1, we allow           procedures, methods obtaining Q1 analytically, or computing
+I ≤ J and denote the set of behavior nodes in which controller         Q1 with access to environment dynamics [36] are applicable
+i is used by Ji . For each controller i that we want to learn,         but out of scope for this work.
+we define a “subtask” MDP Mi = ⟨X , U, ri , f, γ, µi ⟩, i ∈               Learning Q1 requires a labeling function l1 : X → R such
+{1, . . . I} that shares the BTs state space X , action space U,       that l1 (x) > 0 ⇔ x ∈ C1 . We define l1 as an binary indicator
+and transition function f . The distribution of initial states, µi ,   function l1 : 1 ⇐⇒ x ∈ C1 , which weScan compute using
+is a subset of the operating region Ωi and can be induced              Theorem 1 by checking whether x ∈ ( j≥1 Ωj ) ∪ S0 . We
+with the controllers in Ti−1 , while each reward function ri           now compute Q1 using the transitions in D0 labeled with l1 ,
+can be chosen to facilitate quick learning of controller πi to         following [27] by performing SGD w.r.t. the parameter ϕ1
+reach the respective success region Si . However, as alluded           on the Bellman feasibility residual from Equation (8). More
+generally, for some constraint j, this means minimizing the                                          →
+loss
+                               h                      2 i
+       L(ϕj , D) = E(x,u,x′ )∼D ȳ − Qj (x, u, ϕj ) ,
+                                                                                        ?
+                                                  ′     ′
+   ȳ = (1 − γ)lj (s) + γ min lj (x), max
+                                       ′
+                                          Q  j (x   , u   , ϕj )  ,
+                                         u
+                                                              (10)            Safe              π1 : Safety           π2 : Goal
+
+With access to Q1 , we can learn π1 by optimizing M1 while
+masking the action space according to U1 and storing the
+collected transitions as D1 .
+   We follow the same scheme in all subsequent iterations
+of our method. In iteration j, we first train the feasibility
+estimator Qj using all data available thus far, i.e. Dj =
+D0 ∪ · · · ∪ Dj−1 , then train controller πj using the action
+mask Uj induced from Qj . If controller πj is shared with some
+previous behavior nodes Jj = {l, . . . , k} ≤ j, the action space
+is masked based on the operating region Ωk for each state.
+   Since the i-th feasibility estimator Qi and RL policy πi can
+                                                                      Figure 3: 2D goal-reach environment. Top: Task-switching
+be learned independently from prior components, the overall
+                                                                      BT with RL-based controllers. The BT selects the goal
+complexity of this approach grows only linearly with I. Lower
+                                                                      controller π2 , when the state is in its convergence set C2 ,
+priority RL controllers with higher indices are subject to
+                                                                      which corresponds to states outside of the unsafe region
+increasingly many constraints, which naturally restricts their
+                                                                      and the slope. Bottom: Trajectories generated by different
+freedom over actions. This is by design of the priority induced
+                                                                      methods. Our method converges to a near-optimal behavior
+by the BT and does not increase the computational complexity
+                                                                      for the BT task of reaching the goal without entering the
+or difficulty of the RL objective, in fact, the smaller action
+                                                                      unsafe region. Note that with our method, π2 never violates
+space simplifies exploration.
+                                                                      the progress constraint “safe” during learning.
+   To summarize, for each RL controller in {π1 , . . . πI }, we
+first produce the feasibility estimator for the corresponding
+convergence region Ci and then learn the RL controller πi                  in the BT with RL. This is similar to the method used
+subject to that constraint.                                                in [17] but without presuming a positive reward structure
+                                                                           for the task reward.
+Remark 3 (Customization). Since each controller πi in a               2D goal-reach environment:
+BT operates within a fixed region Ωi , we are not restricted             This environment, shown in Fig. 3, features a point-mass
+to using learning for all controllers. There can be a mix or          agent that has to navigate to a fixed goal location while
+RL and model based controllers. The constraint estimator Qj           avoiding an unsafe region. The state-space is R4 and contains
+can be trained independently of how the controllers in the            the agent’s x and y position and velocity. The discrete action
+rest of the tree function. The constraints prevent transitions        space is of size 25 and corresponds to accelerations at differing
+into the local failure region of each controller, making their        angles and magnitudes. Episodes are truncated after 200 steps.
+learning modular. Furthermore, due to the off-policy nature of        When the agent is on the slope, actions have no effect,
+the feasibility estimation, if prior data exists or the constraint    simulating the agent sliding into the unsafe region. The slope
+can be inferred from a model, it can be applied directly without      serves to illustrate the need for temporally extended feasibility
+using the iterative process described above.                          estimation and progress constraints, since stepping onto the
+                                                                      slope results in an inevitable but delayed constraint violation.
+                     V. EXPERIMENTS                                   While knowledge about the unsafe region is encoded in the
+A. Experimental setup                                                 BT, due to the model-free setting, the agent must learn about
+Baselines:                                                            the dynamics of the slope by exploration. The subtask reward
+  • Standard RL: A standard RL agent that receives -1 reward
+                                                                      functions for which we learn controllers are as follows:
+    for each subtask that is not achieved at step t. Since this          • r1 Safe: -1 reward for each step spent in the unsafe area,
+    baseline features no BT, it reveals how the structured                 otherwise 0.
+    domain knowledge from the BT can affect the final agent.             • r2 Goal: A negative term inversely proportional to the
+  • BTRL (DQN / PPO): Proposed by [20] as a Learning Ac-                   distance from the goal.
+    tion Node. This method employs standard, unconstrained            Warehouse environment:
+    RL principles to learn the controllers in the BT, using              To test the method’s scalability to more complex environ-
+    the environment subtask rewards, and can be seen as               ments, we implemented the example seen in Fig. 1. Here, the
+    an ablation of our method that does not use progress              agent is a mobile manipulator that has to pick up and deliver
+    constraints.                                                      items while avoiding collision with a dynamic forklift, for
+  • BT-Penalty: A reward penalty is added to transitions that         which the dynamics are unknown. The environment features an
+    violate progress constraints when learning the controllers        observation space of 37 continuous vector features containing
+the position of the manipulator’s joints in the body frame, the
+state of the suction cup, the pose and velocity of the agent and
+forklift, as well as the varying positions of the box and goal
+locations in the body frame. The action space of 6250 discrete
+actions represents a product space of the possible controls for
+the wheels, arms, and suction cup of the agent. The subtask
+policies Move, Grasp, and Place have the following reward
+functions.
+  • r1 Move: A positive term proportional to the decrease in        Figure 4: Empirical results on 2D navigation environment. We
+    the agent’s distance to the goal and a negative term for        plot the mean of five repetitions with varying random seeds,
+    colliding with the static environment (walls, shelves).         the shaded area corresponds to one standard deviation around
+  • r2 Grasp: A positive term proportional to the decrease of
+                                                                    the mean. To enhance readability, the x-axis is linearly scaled
+    the distance of the arm to the item and a second term           in the range [0, 105 ] and logarithmically scaled from 105 to
+    proportional to the decrease of the item’s distance to the      106 .
+    desired grasping position.
+  • r3 Place: A positive term proportional to decreasing the
+    box’s distance to the placing position.
+The MDPs also use a small negative penalty for passing time.
+   This environment only uses the BTRL, BT-Penalty, and
+CBTRL methods, as the Standard RL policy did not converge
+to a solution within the project’s computational constraints. To
+demonstrate the effect of the constraint, we also test applying
+the constraint to the BTRL and BT-Penalty methods without
+training them explicitly with the constraint active, as is done
+in CBTRL. All methods use PPO to train the policy and store
+the experiences in a dataset for later use during the training of   Figure 5: Left: Learned state feasibility function for the unsafe
+the feasibility estimators. Each controller is trained separately   region in the 2D environment accounts for both agent and
+in a dedicated learning environment to reduce the complexity        environment dynamics. Right: Induced action space mask U1
+of the learning process. There is also a dynamic obstacle in        with the agent placed at and velocities as in the top image
+the form of the Forklift, which makes the “Safe” condition          on the left. Even though the safety constraint violation only
+depend on the changing forklift position.                           occurs in the unsafe area, the constraint prevents the agent
+   For evaluation, we created a scenario that requires a com-       from stepping onto the slope.
+bination of all the separately trained controllers in a BT using
+task settings analogous to the training tasks in a previously       not account for progress constraints and gets stuck in a task-
+unforeseen configuration. The results of this evaluation can be     switching loop: Underneath the unsafe region, π2 attempts to
+seen in Table I.                                                    drive upwards towards the goal and enters the unsafe region.
+                                                                    Inside the unsafe region, the π1 safety controller is selected,
+                                                                    driving down, out of the unsafe region. Now π2 again attempts
+B. Results and discussion
+                                                                    to drive upwards to the goal, and the cycle repeats. This is a
+   We now analyze our proposed method, CBTRL in compar-             typical problem that might occur when doing task-switching.
+ison to the above-mentioned baselines on our two environ-              A similar problem exists in the Warehouse scenario results
+ments. We focus on comparisons with respect to success rate,        of Table I. The individually trained BTRL-Move behavior
+progress constraint violation, and sample complexity.               causes Have Item violations by dropping the box. This causes
+     a) Progress constraints induce RL controllers that suc-        the system to chatter between the controllers, making little
+cessfully solve the BT tasks: It can be seen that progress          progress. This behavior is reduced in BT-Penalty, which learns
+constraints have a strong effect on the agent, both during          to prevent the negative reward from the Have Item violation,
+learning and in the final behavior. For the 2D environment,         and is eliminated in the CBTRL method, which prohibits
+Fig. 3 shows trajectories of the final agents, while Fig. 4         releasing the box. Applying the constraints after training to
+shows metrics collected during the training of π2 . CBTRL           BTRL and BT-Penalty also eliminates such violations (rows 2
+solves the task modeled by the BT much faster than the              and 4), but induces problems discussed in the next paragraph.
+baselines and, crucially, without violating constraints even              b) Ad-hoc constraints degrade performance and intro-
+during training. Standard RL, without the task-switching BT         duce failure modes: Learning RL controllers decoupled from
+structure, learns to drive the shorter path through the unsafe      progress constraint estimators and enforcing the constraints
+region. While the penalty-based method also learns to solve         only at inference time might make sense from a modularity
+the BT task, it initially incurs constraint violations and learns   perspective, but leads to suboptimal performance and incon-
+slower, as the large penalties have a destabilizing effect on the   sistent behaviors. Table I shows that applying progress con-
+RL training. Lastly, the unconstrained BTRL method [20] does        straints to controllers learned in unconstrained fashion (BTRL
+     Evaluated               Steps to       Success   Timeout   Failure      Have Item          Near Item           At Goal              Safe
+     Method                  Complete        Rate       Rate     Rate     Violations # : %   Violations # : %   Violations # : %   Violations # : %
+     BTRL                1186.99 ± 959.33    78%         3%      19%       1211 : 54.55%          0 : 0%          62 : 2.99%        400 : 37.66%
+     BTRL w. pc         2782.40 ± 1842.94    44%        31%      25%         2 : 0.20%            0 : 0%          99 : 1.30%        389 : 34.37%
+     BT-Penalty          1154.91 ± 624.51    83%         1%      16%       155 : 13.77%           0 : 0%           1 : 0.10%        481 : 43.46%
+     BT-Penalty w. pc    1208.41 ± 500.16    82%         1%      17%        11 : 1.10%            0 : 0%           1 : 0.10%        296 : 27.27%
+     CBTRL (ours)       1005.59 ± 302.97     93%        0%       7%           0 : 0%              0 : 0%            0 : 0%          198 : 19.30%
+
+Table I: Agent evaluation in the warehouse environment. Values are given over 1000 random episodes on an unseen but
+analogous setting. w. pc indicates evaluation with progress constraint, where the constraint is applied to the resulting controllers
+after training but not during training. Violations given as total number (#) and percentage of episodes that had violations (%)
+
+                                                                          violation only occurs when the agent enters the unsafe region,
+                                                                          The use of the Bellman feasibility equations also identifies the
+                                                                          “slope” area as infeasible, i.e. as outside of the convergence set
+                                                                          C2 for π2 . This is correct since once the agent steps onto the
+                                                                          slope, it will inevitably slide into the unsafe area. If we were
+                                                                          to mask the action space by forbidding only those actions that
+                                                                          immediately violate the progress constraints, stepping onto the
+                                                                          slope would be wrongfully allowed. Thus, the visualization
+                                                                          in Fig. 5 shows that feasibility estimation can be used to
+                                                                          capture the long-term dynamics w.r.t progress constraints,
+                                                                          which is needed to estimate the convergence region Ci for
+                                                                          the controllers in the BT.
+
+                                                                               d) BT task decomposition with progress constraints re-
+                                                                          duces RL sample complexity: The structured domain knowl-
+                                                                          edge in a BT seems to simplify the RL learning problem. Be-
+                                                                          yond the general benefits associated with task decomposition,
+                                                                          the method further seems to speed up learning as the progress
+                                                                          constraints remove parts of the action space. This limits the
+                                                                          policy search space since we prevent the subtask controllers πi
+                                                                          from exploring solutions we already know to be suboptimal.
+                                                                             The effect can be most prominently seen in Fig. 6 during the
+                                                                          learning of the Place behaviors in the Warehouse environment.
+                                                                          We see that the constrained CBTRL-Place behavior, which is
+Figure 6: Training results of the controllers in the Warehouse            constrained by the estimator trained with data from the BTRL-
+environment (Grasp (top), Move (middle), Place (bottom)).                 Grasp behavior, converges to a stable result after around 13 ×
+                                                                          106 experiences; much faster than BTRL-Place, which needs
+w.pc and BT-Penalty w.pc) can drastically lower respective                about 22 × 106 experiences. This is because all actions in the
+constraint violations. However, this comes at the cost of                 product space where the box is released are removed and do
+considerably increased timeout rates and reduced overall task             not have to be explored. This can be verified by the failure
+completion. This problem stems from the fact that the policy              rate of zero during the training of "CBTRL-Place". Similarly,
+was never trained under the constraint-aware action space. For            in Fig. 4, CBTRL converges after roughly 105 steps, while the
+example, the BTRL-Place controller might learn to complete                BT-penalty method requires roughly 106 steps.
+its subtask by dropping the item from an unsafe height – a                      e) Feasibility estimator overhead: For some BTs, like
+behavior that becomes invalid once the progress constraint is             the one in Fig. 1, where the first policy, π1 : Move, is subject
+enforced. Since the controller never experienced this restriction         to a constraint, “Safe from forklift”, training the feasibility
+during training, it fails by exceeding the mission time limit             estimator requires access to an a priori dataset. We used
+when its preferred behavior is disallowed during inference.               5M transitions collected by the BTRL baseline for training
+The CBTRL method, in contrast, integrates constraints during              the first estimator for CBTRL-Move. Compared to the 100M
+training, thereby forcing controllers to learn feasible strategies        transitions for the policy itself, the amount of additional data
+from the outset, leading to consistent and successful task                required is only 5% extra of what is required for the policy.
+execution. This demonstrates that progress constraints must               For the BT in Fig. 3, no additional data was needed, since
+be incorporated throughout training, not merely applied after-            the feasibility estimator for π2 : Goal can be trained using the
+ward, in order to achieve the desired behavior within BTs.                transition collected during learning of π1 : Safety. The overhead
+     c) Feasibility estimation captures long-term conse-                  from the feasibility estimators varies by domain and BT, but
+quences of actions w.r.t progress constraints: The impor-                 is generally small compared to RL’s high data demands. A
+tance of long-term feasibility estimation w.r.t BT progress               detailed analysis of data requirements for feasibility estimation
+constraints can be seen in Fig. 5. While the safety constraint            is interesting, but beyond this work’s scope.
+                    VI. CONCLUSIONS                                [14]   L. Chen et al. “Decision transformer: Reinforce-
+   The main contribution of this paper is an algorithm for                ment learning via sequence modeling”. In: Advances
+learning controllers in a BT with RL. We propose novel                    in neural information processing systems 34 (2021),
+progress constraints based on feasibility estimation and BT               pp. 15084–15097.
+convergence properties, which are then used to learn the           [15]   D. Precup. Temporal abstraction in reinforcement learn-
+controllers in the BT with constrained RL. A limitation of                ing. University of Massachusetts Amherst, 2000.
+this work lies in potentially insufficient data collection for     [16]   M. Colledanchise. “Behavior Trees in Robotics”. PhD
+learning the progress constraints, since we assume that the               thesis. KTH Royal Institute of Technology, 2017.
+data collected during exploration with RL suffices for training    [17]   M. Kartašev et al. “Improving the Performance of Back-
+robust feasibility estimators. We see a more informed and                 ward Chained Behavior Trees That Use Reinforcement
+optimized way of gathering data for learning these estimators,            Learning”. In: IEEE IROS. 2023.
+or the integration of model-based progress constraints, as         [18]   M. Kartašev et al. “Improving the Performance of
+important future work.                                                    Learned Controllers in Behavior Trees Using Value
+                                                                          Function Estimates at Switching Boundaries”. In: IEEE
+                         R EFERENCES                                      Robotics and Automation Letters (2024).
+                                                                   [19]   P. Ögren et al. “Behavior Trees in Robot Control
+ [1]   M. Iovino et al. “A survey of behavior trees in robotics           Systems”. In: Annual Review of Control, Robotics, and
+       and ai”. In: RAS 154 (2022).                                       Autonomous Systems 5.1 (2022).
+ [2]   D. Isla. “Handling Complexity in the Halo 2 AI”.            [20]   R. d. P. Pereira et al. “A framework for constrained
+       In: Proceedings of the Game Developers Conference                  and adaptive behavior-based agents”. In: arXiv preprint
+       (GDC). 2005.                                                       arXiv:1506.02312 (2015).
+ [3]   O. Biggar et al. “On Modularity in Reactive Control         [21]   C. J. Watkins et al. “Q-learning”. In: Machine learning
+       Architectures, with an Application to Formal Verifica-             8 (1992), pp. 279–292.
+       tion”. In: ACM Transactions on Cyber-Physical Systems       [22]   V. Mnih et al. “Human-level control through deep
+       (TCPS) (May 2022).                                                 reinforcement learning”. In: nature 518.7540 (2015),
+ [4]   R. S. Sutton et al. Reinforcement learning: An introduc-           pp. 529–533.
+       tion. MIT press, 2018.                                      [23]   S. J. Russell et al. “Q-decomposition for reinforcement
+ [5]   C. Berner et al. “Dota 2 with large scale deep reinforce-          learning agents”. In: Proceedings of the 20th inter-
+       ment learning”. In: arXiv preprint arXiv:1912.06680                national conference on machine learning (ICML-03).
+       (2019).                                                            2003, pp. 656–663.
+ [6]   J. Degrave et al. “Magnetic control of tokamak plas-        [24]   R. Laroche et al. “Multi-advisor reinforcement learn-
+       mas through deep reinforcement learning”. In: Nature               ing”. In: arXiv preprint arXiv:1704.00756 (2017).
+       602.7897 (2022), pp. 414–419.                               [25]   P. Ögren. “Convergence analysis of hybrid control sys-
+ [7]   J. Schrittwieser et al. “Mastering Atari, Go, chess and            tems in the form of backward chained behavior trees”.
+       shogi by planning with a learned model”. In: Nat.                  In: IEEE Robotics and Automation Letters 5.4 (2020),
+       588.7839 (2020), pp. 604–609.                                      pp. 6073–6080.
+ [8]   I. Kostrikov et al. “Demonstrating A Walk in the Park:      [26]   K.-C. Hsu et al. “The safety filter: A unified view
+       Learning to Walk in 20 Minutes With Model-Free                     of safety-critical control in autonomous systems”. In:
+       Reinforcement Learning”. In: Robotics: Science and                 Annual Review of Control, Robotics, and Autonomous
+       Systems XIX, Daegu, Republic of Korea, July 10-14,                 Systems 7 (2023).
+       2023. Ed. by K. E. Bekris et al. 2023.                      [27]   J. F. Fisac et al. “Bridging hamilton-jacobi safety analy-
+ [9]   S. Ha et al. “Learning to walk in the real world                   sis and reinforcement learning”. In: 2019 International
+       with minimal human effort”. In: arXiv preprint                     Conference on Robotics and Automation (ICRA). IEEE.
+       arXiv:2002.08550 (2020).                                           2019, pp. 8550–8556.
+[10]   C. Tessler et al. “Reward constrained policy optimiza-      [28]   D. Yu et al. “Reachability constrained reinforcement
+       tion”. In: arXiv preprint arXiv:1805.11074 (2018).                 learning”. In: International Conference on Machine
+[11]   A. Irpan. Deep Reinforcement Learning Doesn’t Work                 Learning. PMLR. 2022, pp. 25636–25655.
+       Yet. https://www.alexirpan.com/2018/02/14/rl- hard.         [29]   S. Gu et al. “A review of safe reinforcement learning:
+       html. 2018.                                                        Methods, theory and applications”. In: arXiv preprint
+[12]   P. Vamplew et al. “Scalar reward is not enough: a                  arXiv:2205.10330 (2022).
+       response to Silver, Singh, Precup and Sutton (2021)”.       [30]   G. Kalweit et al. “Deep constrained q-learning”. In:
+       In: Auton. Agents Multi Agent Syst. 36.2 (2022), p. 41.            arXiv preprint arXiv:2003.09398 (2020).
+[13]   M. Riedmiller et al. “Learning by Playing Solving           [31]   S. Huang et al. “A closer look at invalid action masking
+       Sparse Reward Tasks from Scratch”. In: Proceedings of              in policy gradient algorithms. arXiv 2020”. In: arXiv
+       the 35th International Conference on Machine Learn-                preprint arXiv:2006.14171 (2020).
+       ing. Ed. by J. Dy et al. Vol. 80. Proceedings of Machine    [32]   F. Rietz et al. “Prioritized Soft Q-Decomposition
+       Learning Research. PMLR, Oct. 2018, pp. 4344–4353.                 for Lexicographic Reinforcement Learning”. In: The
+       Twelfth International Conference on Learning Repre-
+       sentations (ICLR2023). 2024.
+[33]   M. Colledanchise et al. Behavior trees in robotics and
+       AI: An introduction. CRC Press, 2018.
+[34]   M. Colledanchise et al. “Towards Blended Reactive
+       Planning and Acting Using Behavior Trees”. In: IEEE
+       Int. Conference on Robotics and Automation. Montreal,
+       Canada: IEEE, May 2019.
+[35]   B. Thananjeyan et al. “Recovery RL: Safe Reinforce-
+       ment Learning With Learned Recovery Zones”. In:
+       IEEE Robotics and Automation Letters 6.3 (2021),
+       pp. 4915–4922.
+[36]   A. D. Ames et al. “Control barrier functions: Theory
+       and applications”. In: 2019 18th European control con-
+       ference (ECC). IEEE. 2019, pp. 3420–3431.
+

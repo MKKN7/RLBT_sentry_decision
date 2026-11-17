@@ -1,0 +1,49 @@
+{
+  "dataset": "uc_support_training_v1",
+  "artifact_type": "observed_support_navigation_task_proxy_not_full_UC_match",
+  "source_map_sha256": "93ff0118af176f388c171b239acfdcac72c17cbe0b523350d5d916d3236fe10b",
+  "samples": 13,
+  "candidate_slots": 16,
+  "canvas_xy": [
+    121,
+    121
+  ],
+  "footprint_radius_m": 0.411,
+  "allowed_tasks": [
+    "goto",
+    "waypoint",
+    "wait",
+    "continue",
+    "BT_recover"
+  ],
+  "official_RFID_or_match_region_labels": false,
+  "opponent_data_included": false,
+  "GT_or_STL_as_actor_input": false,
+  "unknown_filled_by_dataset_builder": false,
+  "existing_fixed_initial_support_prior_retained_and_reported": true,
+  "synthetic_resets_to_original_fixed_start_labeled": true,
+  "pointlio_nav2_mppi_rollout_training": false,
+  "limits": [
+    "Only local observations around one engineering spawn; no geometric or match generalization claim.",
+    "Maps are frozen replay snapshots; executor timing proxy is calibrated from separate actual events.",
+    "Matched estimated current poses may be unsupported. Such conditions are retained; explicit fixed-start resets are labeled.",
+    "No base healing, money, ammo, posture, target shooting, or opponent policy is modeled by this dataset.",
+    "Held-out families and seeds reduce snapshot leakage but share the same local geometry."
+  ],
+  "source_kind": {
+    "0": "fixture/support_latest",
+    "1": "action/semantic_support_at_plan"
+  },
+  "start_source_kind": {
+    "0": "matched_estimated_pose",
+    "1": "explicit_fixed_initial_prior_center"
+  },
+  "split_id": {
+    "0": "train",
+    "1": "validation",
+    "2": "test"
+  },
+  "no_candidate_samples": 1,
+  "eligible_source_runs": 11,
+  "skipped": []
+}

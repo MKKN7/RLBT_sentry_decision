@@ -1,0 +1,293 @@
+{
+  "method": "Simulation-clock action events; estimated Point-LIO poses matched within .25 s; no GT. Speed summaries use successful tasks only. Clear-prior runs contribute timing only, never support labels.",
+  "training_summary": {
+    "acceptance_delay_s": {
+      "n": 4,
+      "min": 0.0,
+      "median": 0.0,
+      "max": 0.0,
+      "values": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "task_time_s": {
+      "n": 4,
+      "min": 2.01,
+      "median": 4.432499999999999,
+      "max": 6.2,
+      "values": [
+        6.2,
+        2.01,
+        5.96,
+        2.9049999999999994
+      ]
+    },
+    "goal_length_m": {
+      "n": 4,
+      "min": 0.486649631806802,
+      "median": 1.238672216837693,
+      "max": 2.035876436991745,
+      "values": [
+        1.2332347980527065,
+        2.035876436991745,
+        1.244109635622679,
+        0.486649631806802
+      ]
+    },
+    "effective_goal_speed_mps": {
+      "n": 2,
+      "min": 0.1989088383955978,
+      "median": 0.20382603292453372,
+      "max": 0.20874322745346965,
+      "values": [
+        0.1989088383955978,
+        0.20874322745346965
+      ]
+    },
+    "estimated_displacement_speed_mps": {
+      "n": 2,
+      "min": 0.17941627225600867,
+      "median": 0.18514318720281064,
+      "max": 0.1908701021496126,
+      "values": [
+        0.17941627225600867,
+        0.1908701021496126
+      ]
+    },
+    "support_dropout_cancel_delay_s": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "max": null,
+      "values": []
+    },
+    "stale_threshold_excess_s": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "max": null,
+      "values": []
+    }
+  },
+  "all_observations_summary_for_audit_only": {
+    "acceptance_delay_s": {
+      "n": 7,
+      "min": 0.0,
+      "median": 0.0,
+      "max": 0.0,
+      "values": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "task_time_s": {
+      "n": 7,
+      "min": 1.5150000000000006,
+      "median": 2.9049999999999994,
+      "max": 6.2,
+      "values": [
+        6.2,
+        2.01,
+        5.96,
+        2.9049999999999994,
+        2.5349999999999993,
+        3.4399999999999995,
+        1.5150000000000006
+      ]
+    },
+    "goal_length_m": {
+      "n": 7,
+      "min": 0.3875191911449609,
+      "median": 0.5031811379804276,
+      "max": 2.035876436991745,
+      "values": [
+        1.2332347980527065,
+        2.035876436991745,
+        1.244109635622679,
+        0.486649631806802,
+        0.3875191911449609,
+        0.5031811379804276,
+        0.5031811379804276
+      ]
+    },
+    "effective_goal_speed_mps": {
+      "n": 4,
+      "min": 0.14627358662221734,
+      "median": 0.17588818470962553,
+      "max": 0.20874322745346965,
+      "values": [
+        0.1989088383955978,
+        0.20874322745346965,
+        0.15286753102365327,
+        0.14627358662221734
+      ]
+    },
+    "estimated_displacement_speed_mps": {
+      "n": 4,
+      "min": 0.09772675703063147,
+      "median": 0.14524164542437884,
+      "max": 0.1908701021496126,
+      "values": [
+        0.17941627225600867,
+        0.1908701021496126,
+        0.09772675703063147,
+        0.11106701859274899
+      ]
+    },
+    "support_dropout_cancel_delay_s": {
+      "n": 1,
+      "min": 1.5999999999999996,
+      "median": 1.5999999999999996,
+      "max": 1.5999999999999996,
+      "values": [
+        1.5999999999999996
+      ]
+    },
+    "stale_threshold_excess_s": {
+      "n": 1,
+      "min": 0.09916499999999928,
+      "median": 0.09916499999999928,
+      "max": 0.09916499999999928,
+      "values": [
+        0.09916499999999928
+      ]
+    }
+  },
+  "all_records_for_audit_only": [
+    {
+      "source_run": "uc_rmuc_original_nav2_forward_20261116",
+      "family": "uc_rmuc_original_nav2_forward",
+      "split": "train",
+      "result": "succeeded",
+      "source_sha256": {
+        "fixture/result.json": "65ac54d750a7f3097fcfaf35ca95132f00a7109d17371c448668450c362a524b",
+        "action/result.json": "ce26b1fde3ef291963c539165da63de8fabdcb3303db782ce3d2196a7d0e5c4b"
+      },
+      "terrain_prior": "clear_or_legacy_execution_only",
+      "acceptance_delay_s": 0.0,
+      "task_time_s": 6.2,
+      "goal_length_m": 1.2332347980527065,
+      "effective_goal_speed_mps": 0.1989088383955978,
+      "estimated_displacement_speed_mps": 0.17941627225600867,
+      "support_dropout_cancel_delay_s": null,
+      "stale_threshold_excess_s": null
+    },
+    {
+      "source_run": "uc_rmuc_original_nav2_worker_cancel_20261116",
+      "family": "uc_rmuc_original_nav2_worker_cancel",
+      "split": "train",
+      "result": "canceled",
+      "source_sha256": {
+        "fixture/result.json": "14767ad1ff413297c5f0c7622ee0cc42960df859e0eaf6ca3a56c03f45d475e4",
+        "action/result.json": "70da0aa9f604efc37d5d53a5fe97eb3d7041a858a19141dee8f9a2994c40a6d7"
+      },
+      "terrain_prior": "clear_or_legacy_execution_only",
+      "acceptance_delay_s": 0.0,
+      "task_time_s": 2.01,
+      "goal_length_m": 2.035876436991745,
+      "effective_goal_speed_mps": null,
+      "estimated_displacement_speed_mps": null,
+      "support_dropout_cancel_delay_s": null,
+      "stale_threshold_excess_s": null
+    },
+    {
+      "source_run": "uc_rmuc_original_nav2_worker_forward_20261116",
+      "family": "uc_rmuc_original_nav2_worker_forward",
+      "split": "train",
+      "result": "succeeded",
+      "source_sha256": {
+        "fixture/result.json": "3766a039ad744482feb18369935ff9b2280a7c7da820df16032f2e7a78d85c60",
+        "action/result.json": "574e74ebbc1de0356cbb85d351d272c14a6b7333c992807e180c65cb8874e723"
+      },
+      "terrain_prior": "clear_or_legacy_execution_only",
+      "acceptance_delay_s": 0.0,
+      "task_time_s": 5.96,
+      "goal_length_m": 1.244109635622679,
+      "effective_goal_speed_mps": 0.20874322745346965,
+      "estimated_displacement_speed_mps": 0.1908701021496126,
+      "support_dropout_cancel_delay_s": null,
+      "stale_threshold_excess_s": null
+    },
+    {
+      "source_run": "uc_support_active_footprint_lateral_20261116",
+      "family": "uc_support_active_footprint_lateral",
+      "split": "train",
+      "result": "canceled",
+      "source_sha256": {
+        "fixture/result.json": "5ffe6eb72582431a71c6b5cf53df71f3d1212be9b14927036362708da1753aea",
+        "action/result.json": "a7f2203e608033a9383613653cabf93cec0399ee8314e6a8786949c99ffd1f4e"
+      },
+      "terrain_prior": "observed",
+      "acceptance_delay_s": 0.0,
+      "task_time_s": 2.9049999999999994,
+      "goal_length_m": 0.486649631806802,
+      "effective_goal_speed_mps": null,
+      "estimated_displacement_speed_mps": null,
+      "support_dropout_cancel_delay_s": null,
+      "stale_threshold_excess_s": null
+    },
+    {
+      "source_run": "uc_support_active_footprint_short_20261116",
+      "family": "uc_support_active_footprint_short",
+      "split": "test",
+      "result": "succeeded",
+      "source_sha256": {
+        "fixture/result.json": "4e25b67ec033d3001a6743fee6056dc19aee47ea5d305a37e36ecbafdb7bdbc3",
+        "action/result.json": "bfff9c8f58d3532a8ad7fd2d345a4764f38b39d1a8dfc4a17c1f90a4920dc575"
+      },
+      "terrain_prior": "observed",
+      "acceptance_delay_s": 0.0,
+      "task_time_s": 2.5349999999999993,
+      "goal_length_m": 0.3875191911449609,
+      "effective_goal_speed_mps": 0.15286753102365327,
+      "estimated_displacement_speed_mps": 0.09772675703063147,
+      "support_dropout_cancel_delay_s": null,
+      "stale_threshold_excess_s": null
+    },
+    {
+      "source_run": "uc_support_dual_lateral_20261116",
+      "family": "uc_support_dual_lateral",
+      "split": "validation",
+      "result": "succeeded",
+      "source_sha256": {
+        "fixture/result.json": "a028bc4df7887b594f7c86de25247fee45e19de9f6c2828f0ab87d87895d4a81",
+        "action/result.json": "810b9cb4bfe8af43a57394ca986e18d2619fefa5705e65e2874c2cc62433b5d8"
+      },
+      "terrain_prior": "observed",
+      "acceptance_delay_s": 0.0,
+      "task_time_s": 3.4399999999999995,
+      "goal_length_m": 0.5031811379804276,
+      "effective_goal_speed_mps": 0.14627358662221734,
+      "estimated_displacement_speed_mps": 0.11106701859274899,
+      "support_dropout_cancel_delay_s": null,
+      "stale_threshold_excess_s": null
+    },
+    {
+      "source_run": "uc_support_map_dropout_20261116",
+      "family": "uc_support_map_dropout",
+      "split": "test",
+      "result": "canceled",
+      "source_sha256": {
+        "fixture/result.json": "f7a15bbd7a50684da63471193f80f74b3dc25e9c892d549805f5ce7e441eed27",
+        "action/result.json": "135e2d096543e2f931fd31a239812adfa98e06e6ab0fa33fe9d587c0a806e8bd"
+      },
+      "terrain_prior": "observed",
+      "acceptance_delay_s": 0.0,
+      "task_time_s": 1.5150000000000006,
+      "goal_length_m": 0.5031811379804276,
+      "effective_goal_speed_mps": null,
+      "estimated_displacement_speed_mps": null,
+      "support_dropout_cancel_delay_s": 1.5999999999999996,
+      "stale_threshold_excess_s": 0.09916499999999928
+    }
+  ],
+  "heldout_records_used_to_fit_training_calibration": false
+}

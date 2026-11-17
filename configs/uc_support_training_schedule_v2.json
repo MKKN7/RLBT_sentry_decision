@@ -1,0 +1,85 @@
+{
+  "scenario_id": "uc2027_observed_support_finite_task_v2",
+  "registered_on": "2026-11-16",
+  "declared_before_v2_validation_or_test": true,
+  "training_seeds": [
+    271,
+    809
+  ],
+  "algorithms": [
+    "vanilla",
+    "anchored"
+  ],
+  "rounds_cumulative_ppo_decisions": [
+    16384,
+    32768
+  ],
+  "bt_imitation_decisions_once_per_seed": 2048,
+  "evaluation_score_unchanged_from_v1": true,
+  "checkpoint_selection": "fixed_final_32768_for_each_algorithm_and_seed",
+  "validation_seed_range_inclusive": [
+    105001,
+    105032
+  ],
+  "final_test_seed_range_inclusive": [
+    115001,
+    115064
+  ],
+  "exclude_from_training_seed_ranges": [
+    [
+      85001,
+      85032
+    ],
+    [
+      95001,
+      95064
+    ],
+    [
+      105001,
+      105032
+    ],
+    [
+      115001,
+      115064
+    ]
+  ],
+  "heldout_maps": "same frozen v1 source-run splits; new episode seeds are not new geometry or new real runs",
+  "common_v2_changes": [
+    "finite observed 60s task deadline is a terminal failure",
+    "terminal failure penalty -3 * incomplete fraction",
+    "separate actor and critic encoders",
+    "per-episode navigation-slot permutation independent of task and fault RNG",
+    "continue candidate carries observable active-route features"
+  ],
+  "anchored_changes": {
+    "actor_learning_rate": 0.0001,
+    "critic_learning_rate": 0.0003,
+    "frozen_BC_forward_KL_coefficient": 0.05,
+    "train_BC_supervised_CE_coefficient": 0.05,
+    "auxiliary_data": "same train-only BT labels as BC, stratified by action class"
+  },
+  "vanilla_changes": {
+    "actor_learning_rate": 0.0003,
+    "critic_learning_rate": 0.0003,
+    "BC_auxiliary_losses": false
+  },
+  "common_PPO": {
+    "epochs": 4,
+    "rollout": 256,
+    "clip": 0.2,
+    "entropy_coefficient": 0.01,
+    "gamma_per_decision": 0.99,
+    "GAE_lambda": 0.95
+  },
+  "causal_scope": "Bundled optimization comparison. Does not isolate each of timeout, encoder separation, learning rate or BC constraints as a single cause.",
+  "test_policy": "evaluate each fixed final checkpoint once; do not choose a best checkpoint from test results",
+  "runtime": "CPU two threads, no ROS or GPU jobs",
+  "scope": "local observed-support calibrated task proxy, no match combat or economy and no live Nav2 training",
+  "common_BC": {
+    "epochs": 10,
+    "sampling": "equal represented navigate/recover/continue/hold class probability, with replacement",
+    "natural_frequency_accuracy_and_per_class_recall_reported": true,
+    "same_labels_and_initial_actor_across_algorithms_per_seed": true
+  },
+  "actual_execution_date": "2026-11-17"
+}

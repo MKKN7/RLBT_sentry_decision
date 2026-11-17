@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "type": "recording_smoke_not_policy_improvement",
+  "run": "runs/reward_logging_smoke_20261116",
+  "decisions": 128,
+  "weight_initialization_exact": true,
+  "fresh_optimizer_state_empty": true,
+  "parent_decisions_not_counted_as_new_training": true,
+  "reward_profile": "no_home",
+  "component_means_reconcile_with_training_reward": true,
+  "upstream_physics_and_full_UL_UC_unmodified": true,
+  "test_suite": "21 tests passed before coefficient provenance guard; reward-specific suite rerun after guard",
+  "parity": "data/reports/reward_baseline_parity_20261116.json",
+  "new_reward_long_training_started": false
+}

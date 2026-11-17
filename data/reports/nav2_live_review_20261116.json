@@ -1,0 +1,29 @@
+{
+  "artifact_type": "independent_readonly_review_findings_and_root_followup",
+  "checked_on": "2026-11-16",
+  "review_agent": "nav2_live_review",
+  "reviewed_limits": [
+    "No official map/terrain or RL environment replacement has been established",
+    "Early obstacle trials failed and must remain visible"
+  ],
+  "findings_followup": [
+    {
+      "finding": "post-terminal observation duration was inaccurate for failed runs",
+      "resolution": "runner reports1s only when action process succeeds; 0s otherwise",
+      "source": "scripts/run_nav2_closed_loop.py"
+    },
+    {
+      "finding": "failed terminal had no independent lock-stop request",
+      "resolution": "failed/canceled terminal emits navigation_safety_stop",
+      "evidence": "runs/nav2_pointlio_replan_clear_goal_20261116/action.log"
+    },
+    {
+      "finding": "TF existence lacked source timestamp health",
+      "resolution": "health checks transform timestamp via sample_freshness; final cancellation run passed",
+      "evidence": "runs/nav2_pointlio_final_cancel_20261116/verification.json"
+    }
+  ],
+  "later_obstacle_position_goal_pass": "runs/nav2_pointlio_position_goal_obstacle_20261116/verification.json",
+  "latest_source_snapshots": "runs/nav2_pointlio_final_cancel_20261116/source_sha256.json",
+  "status": "reported_findings_fixed_with_stated_fixture_limits"
+}

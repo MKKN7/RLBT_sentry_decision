@@ -1,0 +1,131 @@
+{
+  "status": "PASS",
+  "artifact_type": "offline_UC_rule_and_economy_integration_smoke",
+  "rules_basis": "user_supplied_UC_V1.0.0_20261015",
+  "max_hp_test_case": 400,
+  "passive_rates": {
+    "safe_cover_or_base_buff_only": {
+      "239.999": {
+        "source": "none",
+        "fraction_max_hp_per_s": 0.0,
+        "hp_per_s": 0.0,
+        "logistics": 1.0
+      },
+      "240.0": {
+        "source": "none",
+        "fraction_max_hp_per_s": 0.0,
+        "hp_per_s": 0.0,
+        "logistics": 1.0
+      }
+    },
+    "own_supply": {
+      "239.999": {
+        "source": "own_supply",
+        "fraction_max_hp_per_s": 0.1,
+        "hp_per_s": 40.0,
+        "logistics": 1.0
+      },
+      "240.0": {
+        "source": "own_supply",
+        "fraction_max_hp_per_s": 0.25,
+        "hp_per_s": 100.0,
+        "logistics": 1.0
+      }
+    },
+    "outpost_temporarily_controlled": {
+      "239.999": {
+        "source": "none",
+        "fraction_max_hp_per_s": 0.0,
+        "hp_per_s": 0.0,
+        "logistics": 1.0
+      },
+      "240.0": {
+        "source": "none",
+        "fraction_max_hp_per_s": 0.0,
+        "hp_per_s": 0.0,
+        "logistics": 1.0
+      }
+    },
+    "outpost_fully_controlled": {
+      "239.999": {
+        "source": "own_controlled_outpost",
+        "fraction_max_hp_per_s": 0.05,
+        "hp_per_s": 20.0,
+        "logistics": 1.0
+      },
+      "240.0": {
+        "source": "own_controlled_outpost",
+        "fraction_max_hp_per_s": 0.125,
+        "hp_per_s": 50.0,
+        "logistics": 1.0
+      }
+    },
+    "dead_at_supply": {
+      "239.999": {
+        "source": "none",
+        "fraction_max_hp_per_s": 0.0,
+        "hp_per_s": 0.0,
+        "logistics": 1.0
+      },
+      "240.0": {
+        "source": "none",
+        "fraction_max_hp_per_s": 0.0,
+        "hp_per_s": 0.0,
+        "logistics": 1.0
+      }
+    }
+  },
+  "remote_transactions": [
+    {
+      "death_during_delay": false,
+      "before_effect": {
+        "status": "pending",
+        "hp_delta": 0.0,
+        "raw_heal_hp": 0.0
+      },
+      "due_effect": {
+        "status": "effect_applied_once",
+        "hp_delta": 240,
+        "raw_heal_hp": 240.0
+      },
+      "repeated_settlement": {
+        "status": "already_finalized",
+        "hp_delta": 0.0,
+        "raw_heal_hp": 0.0
+      },
+      "team_balance_after": 450,
+      "sentry_spent": 50,
+      "transaction_status": "effect_confirmed"
+    },
+    {
+      "death_during_delay": true,
+      "before_effect": {
+        "status": "pending",
+        "hp_delta": 0.0,
+        "raw_heal_hp": 0.0
+      },
+      "due_effect": {
+        "status": "invalid_death_no_refund",
+        "hp_delta": 0.0,
+        "raw_heal_hp": 0.0
+      },
+      "repeated_settlement": {
+        "status": "already_finalized",
+        "hp_delta": 0.0,
+        "raw_heal_hp": 0.0
+      },
+      "team_balance_after": 450,
+      "sentry_spent": 50,
+      "transaction_status": "failed_no_refund"
+    }
+  ],
+  "budgets_are_illustrative_test_inputs_not_team_policy": true,
+  "map_coordinates_invented": false,
+  "live_referee_connected": false,
+  "phase1_alphaRM_training_changed": false,
+  "limits": [
+    "Explicit event inputs, not observations inferred from candidate names.",
+    "Requires an event loop that advances to effect deadlines and tracks deaths.",
+    "No complete UC battle simulator, autonomous purchase policy or official UL implementation."
+  ]
+}

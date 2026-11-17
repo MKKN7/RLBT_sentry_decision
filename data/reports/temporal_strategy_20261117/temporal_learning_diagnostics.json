@@ -1,0 +1,658 @@
+{
+  "271": {
+    "summary": {
+      "status": "complete",
+      "scenario_id": "alpharm_temporal_global_phase_v1",
+      "memory": "mlp",
+      "decisions": 4116,
+      "updates": 14,
+      "sequence_count": 56,
+      "completed_training_episodes": 56,
+      "truncated_sequences": 0,
+      "target_decisions": 4096,
+      "actual_budget_meets_target": true,
+      "budget_overshoot_decisions": 20,
+      "model_weight_change_l2": 0.7333221919496888,
+      "all_parameters_finite": true,
+      "real_nav2_in_loop": false,
+      "official_UL_UC_training": false,
+      "wall_s": 527.2453278440516,
+      "evaluation_status": "independent_frozen_common_seed_evaluation_required"
+    },
+    "parameter_change": {
+      "actor": {
+        "l2": 0.3749890908700715,
+        "initial_l2": 9.863885379937896,
+        "relative_l2": 0.038016367427865676,
+        "max_absolute": 0.008406482636928558
+      },
+      "critic": {
+        "l2": 0.6301941121913361,
+        "initial_l2": 9.929202407526803,
+        "relative_l2": 0.06346875472229464,
+        "max_absolute": 0.008742930367588997
+      }
+    },
+    "training_episodes": {
+      "count": 56,
+      "length_decisions": {
+        "mean": 73.5,
+        "median": 68.5,
+        "min": 50.0,
+        "max": 131.0
+      },
+      "length_s": {
+        "mean": 36.566071428571426,
+        "median": 34.25,
+        "min": 25.0,
+        "max": 65.4,
+        "total": 2047.6999999999998,
+        "at_least_90s": 0,
+        "at_least_179s": 0
+      },
+      "style_counts": {
+        "pretrained": 18,
+        "resupply": 7,
+        "capture": 20,
+        "defense": 11
+      },
+      "side_counts": {
+        "0": 26,
+        "1": 30
+      },
+      "training_wins": 32,
+      "draws": 0,
+      "switches": 2523,
+      "overrides": 1200,
+      "recoveries": 100
+    },
+    "updates": {
+      "count": 14,
+      "actor_decisions": 2920,
+      "forced_decisions": 1196,
+      "actor_fraction": 0.7094266277939747,
+      "actor_count_min": 177,
+      "first_epoch_kl_max_abs": 0.0,
+      "entropy": {
+        "first": 2.772537350654602,
+        "last": 2.7724782526493073,
+        "mean": 2.7725286845649992,
+        "min": 2.7724782526493073,
+        "max": 2.7725526839494705
+      },
+      "approx_kl": {
+        "first": 1.8209859717899235e-06,
+        "last": 3.0273771756128554e-07,
+        "mean": 4.607396212489131e-07,
+        "min": 5.765775856758637e-08,
+        "max": 1.8209859717899235e-06
+      },
+      "clip_fraction": {
+        "first": 0.0,
+        "last": 0.0,
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "actor_gradient_norm": {
+        "first": 0.0371574442833662,
+        "last": 0.04857888072729111,
+        "mean": 0.036391288274899125,
+        "min": 0.014665764290839434,
+        "max": 0.07939206808805466
+      },
+      "critic_gradient_norm": {
+        "first": 6.197949171066284,
+        "last": 1.9871269464492798,
+        "mean": 5.178303152322769,
+        "min": 1.3702635169029236,
+        "max": 12.649216175079346
+      },
+      "value_loss": {
+        "first": 14.518847942352295,
+        "last": 29.238600254058838,
+        "mean": 32.72000412430082,
+        "min": 14.518847942352295,
+        "max": 50.370564460754395
+      }
+    },
+    "same_training_observation_policy_comparison": {
+      "data_role": "training_only_diagnostic_not_evaluation",
+      "valid_rows": 2920,
+      "greedy_flip_count": 2920,
+      "greedy_flip_fraction": 1.0,
+      "sampled_action_counts": {
+        "8": 205,
+        "0": 172,
+        "11": 186,
+        "14": 184,
+        "3": 196,
+        "5": 184,
+        "12": 168,
+        "2": 162,
+        "15": 186,
+        "13": 177,
+        "7": 177,
+        "1": 181,
+        "9": 180,
+        "6": 193,
+        "10": 186,
+        "4": 183
+      },
+      "initial_entropy": {
+        "mean": 2.7725349414022,
+        "std": 8.718121439631934e-06,
+        "min": 2.772498846054077,
+        "max": 2.772555351257324
+      },
+      "final_entropy": {
+        "mean": 2.7724626820381375,
+        "std": 1.2626933530381682e-05,
+        "min": 2.7724292278289795,
+        "max": 2.772500991821289
+      },
+      "initial_kl_uniform": {
+        "mean": 5.378845619828734e-05,
+        "std": 8.718121439631934e-06,
+        "min": 3.337860107421875e-05,
+        "max": 8.988380432128906e-05
+      },
+      "final_kl_uniform": {
+        "mean": 0.00012604782026107996,
+        "std": 1.2626933530381682e-05,
+        "min": 8.7738037109375e-05,
+        "max": 0.0001595020294189453
+      },
+      "final_kl_initial": {
+        "mean": 9.286139323455855e-05,
+        "std": 1.0345360340095595e-05,
+        "min": 6.616563769057393e-05,
+        "max": 0.000125611899420619
+      },
+      "tv": {
+        "mean": 0.005391586112011581,
+        "std": 0.00036651234498733096,
+        "min": 0.004204224795103073,
+        "max": 0.006573881953954697
+      },
+      "final_max_probability": {
+        "mean": 0.06418398168091088,
+        "std": 7.675888359498365e-05,
+        "min": 0.06390947103500366,
+        "max": 0.06452511250972748
+      },
+      "advantage": {
+        "mean": 2.649428930388738,
+        "std": 5.30362074820898,
+        "min": -6.433626651763916,
+        "max": 11.650824546813965
+      },
+      "initial_greedy_histogram": {
+        "10": 144,
+        "2": 2776
+      },
+      "final_greedy_histogram": {
+        "8": 2920
+      },
+      "legal_count_histogram": {
+        "16": 2920,
+        "1": 1196
+      },
+      "initial_top2_probability_gap_mean": 0.0006104768317652075,
+      "final_top2_probability_gap_mean": 0.00039069873012908515
+    },
+    "rewards": {
+      "hit": {
+        "sum": 4.034359036667108,
+        "mean_per_episode": 0.07204212565476978,
+        "mean_absolute_per_episode": 0.07204212565476978
+      },
+      "center_near": {
+        "sum": 2.6982361759491393,
+        "mean_per_episode": 0.04818278885623463,
+        "mean_absolute_per_episode": 0.04984910794395553
+      },
+      "center_progress": {
+        "sum": -0.5209826847333718,
+        "mean_per_episode": -0.00930326222738164,
+        "mean_absolute_per_episode": 0.03089541978897201
+      },
+      "occupancy": {
+        "sum": -1.6466666666666674,
+        "mean_per_episode": -0.029404761904761916,
+        "mean_absolute_per_episode": 0.1780238095238095
+      },
+      "score": {
+        "sum": -0.62102456219339,
+        "mean_per_episode": -0.011089724324881964,
+        "mean_absolute_per_episode": 0.22266013192686454
+      },
+      "kill": {
+        "sum": 21.86666699250539,
+        "mean_per_episode": 0.3904761962947391,
+        "mean_absolute_per_episode": 0.3904761962947391
+      },
+      "survival": {
+        "sum": 0.6254439312923913,
+        "mean_per_episode": 0.011168641630221273,
+        "mean_absolute_per_episode": 0.011168641630221273
+      },
+      "low_hp_home": {
+        "sum": 0.2988873507469052,
+        "mean_per_episode": 0.00533727412048045,
+        "mean_absolute_per_episode": 0.00533727412048045
+      },
+      "outward": {
+        "sum": 0.7086561232816525,
+        "mean_per_episode": 0.012654573630029508,
+        "mean_absolute_per_episode": 0.012654573630029508
+      },
+      "death": {
+        "sum": -10.866666666666665,
+        "mean_per_episode": -0.19404761904761902,
+        "mean_absolute_per_episode": 0.19404761904761902
+      },
+      "camp": {
+        "sum": -0.06359757879353309,
+        "mean_per_episode": -0.0011356710498845195,
+        "mean_absolute_per_episode": 0.0011356710498845195
+      },
+      "fire_heat": {
+        "sum": -1.79,
+        "mean_per_episode": -0.031964285714285716,
+        "mean_absolute_per_episode": 0.031964285714285716
+      },
+      "contact_and_precision_residual": {
+        "sum": -24.955776668094305,
+        "mean_per_episode": -0.4456388690731126,
+        "mean_absolute_per_episode": 0.4456388690731126
+      },
+      "terminal": {
+        "sum": 198.115460395813,
+        "mean_per_episode": 3.5377760784966603,
+        "mean_absolute_per_episode": 8.680633221353803
+      },
+      "upstream_dense": {
+        "sum": -10.232465308586711,
+        "mean_per_episode": -0.18272259479619127,
+        "mean_absolute_per_episode": 0.64566402515211
+      },
+      "upstream_terminal": {
+        "sum": 198.11546230316162,
+        "mean_per_episode": 3.5377761125564575,
+        "mean_absolute_per_episode": 8.6806332554136
+      },
+      "upstream_total": {
+        "sum": 187.88299912090076,
+        "mean_per_episode": 3.355053555730371,
+        "mean_absolute_per_episode": 9.311237639291571
+      },
+      "profile_adjustment": {
+        "sum": 0.0,
+        "mean_per_episode": 0.0,
+        "mean_absolute_per_episode": 0.0
+      },
+      "own_hit_raw": {
+        "sum": 1.7027286849067762,
+        "mean_per_episode": 0.03040586937333529,
+        "mean_absolute_per_episode": 0.03040586937333529
+      },
+      "selected_total": {
+        "sum": 187.88299912090076,
+        "mean_per_episode": 3.355053555730371,
+        "mean_absolute_per_episode": 9.311237639291571
+      },
+      "switch_cost": {
+        "sum": 5.046000000000004,
+        "mean_per_episode": 0.09010714285714293,
+        "mean_absolute_per_episode": 0.09010714285714293
+      },
+      "total": {
+        "sum": 182.8369991209007,
+        "mean_per_episode": 3.264946412873227,
+        "mean_absolute_per_episode": 9.287916210720141
+      }
+    }
+  },
+  "809": {
+    "summary": {
+      "status": "complete",
+      "scenario_id": "alpharm_temporal_global_phase_v1",
+      "memory": "mlp",
+      "decisions": 4124,
+      "updates": 13,
+      "sequence_count": 51,
+      "completed_training_episodes": 51,
+      "truncated_sequences": 0,
+      "target_decisions": 4096,
+      "actual_budget_meets_target": true,
+      "budget_overshoot_decisions": 28,
+      "model_weight_change_l2": 0.8463698377998867,
+      "all_parameters_finite": true,
+      "real_nav2_in_loop": false,
+      "official_UL_UC_training": false,
+      "wall_s": 405.4291176958941,
+      "evaluation_status": "independent_frozen_common_seed_evaluation_required"
+    },
+    "parameter_change": {
+      "actor": {
+        "l2": 0.36394814899163125,
+        "initial_l2": 9.866014289708419,
+        "relative_l2": 0.036889075801489375,
+        "max_absolute": 0.006763657554984093
+      },
+      "critic": {
+        "l2": 0.7641227959365673,
+        "initial_l2": 9.898155239810729,
+        "relative_l2": 0.07719850592595665,
+        "max_absolute": 0.007964979857206345
+      }
+    },
+    "training_episodes": {
+      "count": 51,
+      "length_decisions": {
+        "mean": 80.86274509803921,
+        "median": 71.0,
+        "min": 46.0,
+        "max": 136.0
+      },
+      "length_s": {
+        "mean": 40.20196078431372,
+        "median": 35.1,
+        "min": 22.7,
+        "max": 68.0,
+        "total": 2050.2999999999997,
+        "at_least_90s": 0,
+        "at_least_179s": 0
+      },
+      "style_counts": {
+        "defense": 12,
+        "resupply": 13,
+        "capture": 10,
+        "pretrained": 16
+      },
+      "side_counts": {
+        "0": 29,
+        "1": 22
+      },
+      "training_wins": 26,
+      "draws": 0,
+      "switches": 2454,
+      "overrides": 1300,
+      "recoveries": 110
+    },
+    "updates": {
+      "count": 13,
+      "actor_decisions": 2828,
+      "forced_decisions": 1296,
+      "actor_fraction": 0.6857419980601358,
+      "actor_count_min": 149,
+      "first_epoch_kl_max_abs": 0.0,
+      "entropy": {
+        "first": 2.7725407034158707,
+        "last": 2.7725209295749664,
+        "mean": 2.7724934151539435,
+        "min": 2.772449940443039,
+        "max": 2.772545963525772
+      },
+      "approx_kl": {
+        "first": 3.13943278484885e-07,
+        "last": 6.005894874760997e-07,
+        "mean": 2.507965067117983e-07,
+        "min": 3.5827927846732166e-09,
+        "max": 6.005894874760997e-07
+      },
+      "clip_fraction": {
+        "first": 0.0,
+        "last": 0.0,
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "actor_gradient_norm": {
+        "first": 0.010267029516398907,
+        "last": 0.054055528715252876,
+        "mean": 0.032819774180937275,
+        "min": 0.010267029516398907,
+        "max": 0.05915744788944721
+      },
+      "critic_gradient_norm": {
+        "first": 1.7800025343894958,
+        "last": 5.356401681900024,
+        "mean": 3.2963807995502767,
+        "min": 1.2038415670394897,
+        "max": 11.759637355804443
+      },
+      "value_loss": {
+        "first": 23.470669388771057,
+        "last": 26.074376106262207,
+        "mean": 27.50905745763045,
+        "min": 15.438119888305664,
+        "max": 43.63519740104675
+      }
+    },
+    "same_training_observation_policy_comparison": {
+      "data_role": "training_only_diagnostic_not_evaluation",
+      "valid_rows": 2828,
+      "greedy_flip_count": 2286,
+      "greedy_flip_fraction": 0.8083451202263083,
+      "sampled_action_counts": {
+        "1": 171,
+        "0": 190,
+        "3": 182,
+        "6": 157,
+        "7": 170,
+        "2": 162,
+        "13": 192,
+        "8": 163,
+        "15": 184,
+        "12": 178,
+        "14": 192,
+        "5": 187,
+        "10": 175,
+        "11": 176,
+        "4": 181,
+        "9": 168
+      },
+      "initial_entropy": {
+        "mean": 2.772541945354942,
+        "std": 6.8567238373738125e-06,
+        "min": 2.7725164890289307,
+        "max": 2.7725653648376465
+      },
+      "final_entropy": {
+        "mean": 2.772540935279625,
+        "std": 8.81585479566768e-06,
+        "min": 2.772519111633301,
+        "max": 2.7725605964660645
+      },
+      "initial_kl_uniform": {
+        "mean": 4.6784503456558166e-05,
+        "std": 6.8567238373738125e-06,
+        "min": 2.3365020751953125e-05,
+        "max": 7.224082946777344e-05
+      },
+      "final_kl_uniform": {
+        "mean": 4.779457877346616e-05,
+        "std": 8.81585479566768e-06,
+        "min": 2.8133392333984375e-05,
+        "max": 6.961822509765625e-05
+      },
+      "final_kl_initial": {
+        "mean": 2.9794465030125762e-05,
+        "std": 6.4999779292088905e-06,
+        "min": 1.2886303011327982e-05,
+        "max": 4.00360586354509e-05
+      },
+      "tv": {
+        "mean": 0.0028654851251225153,
+        "std": 0.00032915542610554714,
+        "min": 0.0019326377660036087,
+        "max": 0.0034004095941781998
+      },
+      "final_max_probability": {
+        "mean": 0.0636996826976327,
+        "std": 0.00035057488560814496,
+        "min": 0.06324141472578049,
+        "max": 0.06461621075868607
+      },
+      "advantage": {
+        "mean": 1.7616019256655364,
+        "std": 5.122599729361261,
+        "min": -6.488171577453613,
+        "max": 11.594249725341797
+      },
+      "initial_greedy_histogram": {
+        "3": 1859,
+        "1": 126,
+        "0": 192,
+        "4": 447,
+        "11": 170,
+        "13": 32,
+        "12": 2
+      },
+      "final_greedy_histogram": {
+        "11": 1355,
+        "1": 164,
+        "3": 178,
+        "13": 196,
+        "12": 176,
+        "15": 181,
+        "14": 196,
+        "5": 191,
+        "4": 188,
+        "10": 1,
+        "7": 1,
+        "2": 1
+      },
+      "legal_count_histogram": {
+        "16": 2828,
+        "1": 1296
+      },
+      "initial_top2_probability_gap_mean": 7.500733437261622e-05,
+      "final_top2_probability_gap_mean": 0.00039297924541685167
+    },
+    "rewards": {
+      "hit": {
+        "sum": 4.151418559877736,
+        "mean_per_episode": 0.08140036391917128,
+        "mean_absolute_per_episode": 0.08140036391917128
+      },
+      "center_near": {
+        "sum": 2.364787137411872,
+        "mean_per_episode": 0.046368375243370036,
+        "mean_absolute_per_episode": 0.04801982907056821
+      },
+      "center_progress": {
+        "sum": -0.06254071941095476,
+        "mean_per_episode": -0.001226288615901074,
+        "mean_absolute_per_episode": 0.030108252444725935
+      },
+      "occupancy": {
+        "sum": -1.8113333333333328,
+        "mean_per_episode": -0.03551633986928104,
+        "mean_absolute_per_episode": 0.2089019607843137
+      },
+      "score": {
+        "sum": -0.739344623081075,
+        "mean_per_episode": -0.014496953393746568,
+        "mean_absolute_per_episode": 0.2665483113513115
+      },
+      "kill": {
+        "sum": 17.76666693141063,
+        "mean_per_episode": 0.3483660182629535,
+        "mean_absolute_per_episode": 0.3483660182629535
+      },
+      "survival": {
+        "sum": 0.612358328915153,
+        "mean_per_episode": 0.012007026057159862,
+        "mean_absolute_per_episode": 0.012007026057159862
+      },
+      "low_hp_home": {
+        "sum": 0.259230317048654,
+        "mean_per_episode": 0.005082947393110863,
+        "mean_absolute_per_episode": 0.005082947393110863
+      },
+      "outward": {
+        "sum": 0.6967014051344069,
+        "mean_per_episode": 0.013660811865380528,
+        "mean_absolute_per_episode": 0.013660811865380528
+      },
+      "death": {
+        "sum": -11.933333333333334,
+        "mean_per_episode": -0.23398692810457516,
+        "mean_absolute_per_episode": 0.23398692810457516
+      },
+      "camp": {
+        "sum": -0.0714930315849393,
+        "mean_per_episode": -0.0014018241487243,
+        "mean_absolute_per_episode": 0.0014018241487243
+      },
+      "fire_heat": {
+        "sum": -1.7986666666666666,
+        "mean_per_episode": -0.035267973856209146,
+        "mean_absolute_per_episode": 0.035267973856209146
+      },
+      "contact_and_precision_residual": {
+        "sum": -23.951796517985358,
+        "mean_per_episode": -0.46964306898010505,
+        "mean_absolute_per_episode": 0.46964306898010505
+      },
+      "terminal": {
+        "sum": 121.15394306182861,
+        "mean_per_episode": 2.3755675110162473,
+        "mean_absolute_per_episode": 8.257920452192717
+      },
+      "upstream_dense": {
+        "sum": -14.51734551476661,
+        "mean_per_episode": -0.2846538336228747,
+        "mean_absolute_per_episode": 0.688705318658351
+      },
+      "upstream_terminal": {
+        "sum": 121.15394020080566,
+        "mean_per_episode": 2.3755674549177583,
+        "mean_absolute_per_episode": 8.257920396094228
+      },
+      "upstream_total": {
+        "sum": 106.63660146662036,
+        "mean_per_episode": 2.0909137542474583,
+        "mean_absolute_per_episode": 8.895870473296423
+      },
+      "profile_adjustment": {
+        "sum": 0.0,
+        "mean_per_episode": 0.0,
+        "mean_absolute_per_episode": 0.0
+      },
+      "own_hit_raw": {
+        "sum": 1.4694335297346117,
+        "mean_per_episode": 0.028812422151659054,
+        "mean_absolute_per_episode": 0.028812422151659054
+      },
+      "selected_total": {
+        "sum": 106.63660146662036,
+        "mean_per_episode": 2.0909137542474583,
+        "mean_absolute_per_episode": 8.895870473296423
+      },
+      "switch_cost": {
+        "sum": 4.908000000000003,
+        "mean_per_episode": 0.09623529411764711,
+        "mean_absolute_per_episode": 0.09623529411764711
+      },
+      "total": {
+        "sum": 101.72860146662038,
+        "mean_per_episode": 1.9946784601298113,
+        "mean_absolute_per_episode": 8.880262630159168
+      }
+    }
+  },
+  "discount_diagnostics": {
+    "gamma_per_second": 0.997,
+    "lambda_per_second": 0.97,
+    "gamma_half_life_s": 230.70231304914802,
+    "trace_half_life_s": 20.71339507242801,
+    "lambda_half_life_s": 22.75657306277341,
+    "gamma_at180s": 0.5822754719939923,
+    "trace_at180s": 0.002421255744039303,
+    "trace_at40s": 0.2622259715281648
+  }
+}

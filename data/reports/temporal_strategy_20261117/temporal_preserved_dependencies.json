@@ -1,0 +1,54 @@
+{
+  "purpose": "supplemental dependency inventory; not a claim of full environment snapshot",
+  "files": [
+    {
+      "path": "rl_bt/alpharm_task_env.py",
+      "sha256": "ed77f2f432388593f6eefd914338f887823e317773d85ba5b17c93aaf9ae3221",
+      "matches_previous_inventory": true,
+      "previous_inventory_has_entry": true
+    },
+    {
+      "path": "rl_bt/geometry.py",
+      "sha256": "8ba0448a8ef43235c79653e6c5a58f17cded6a9b089107284c90d5b7bde0bfbb",
+      "matches_previous_inventory": true,
+      "previous_inventory_has_entry": true
+    },
+    {
+      "path": "rl_bt/rewards.py",
+      "sha256": "a7ab15578289ae450cf1c41ecff422d1af5ccd0c14015aa3a640cdbe0c71dbe4",
+      "matches_previous_inventory": true,
+      "previous_inventory_has_entry": true
+    },
+    {
+      "path": "rl_bt/reward_components.py",
+      "sha256": "0c949af5b0102fc87901060577286bc62e75877e328f6ce4d9b34be0570ec882",
+      "matches_previous_inventory": true,
+      "previous_inventory_has_entry": true
+    },
+    {
+      "path": "rl_bt/contracts.py",
+      "sha256": "1b9bef4da0347bf5c52d62b8dff7c039c84327d19add973a3fd5e9d675c1c95e",
+      "matches_previous_inventory": true,
+      "previous_inventory_has_entry": true
+    },
+    {
+      "path": "scripts/probe_alpharm_onnx.py",
+      "sha256": "7f1ec03c089ce7646e3bcbb680f7b3936d8d897d872b596f3c9c4ece9f877073",
+      "matches_previous_inventory": true,
+      "previous_inventory_has_entry": true
+    },
+    {
+      "path": "data/references/alpharm_jax_review_manifest.json",
+      "sha256": "a5cd50e90e3f8093af27085b0999b30cb1a31012bdeeb03409fb48bf6142c04c",
+      "matches_previous_inventory": true,
+      "previous_inventory_has_entry": true
+    },
+    {
+      "path": "data/references/alpharm_jax_review/upstream/jaxmarl/environments/rm/config.py",
+      "sha256": "3fedcd44e5cec0d3429b7ebfb367e2acab9c5b18abcec978eaae559ebfbf8fe6",
+      "matches_previous_inventory": true,
+      "previous_inventory_has_entry": true
+    }
+  ],
+  "original_dependencies_modified_by_temporal_work": false
+}

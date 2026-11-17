@@ -1,0 +1,710 @@
+                                                                                    The Option-Critic Architecture
+
+                                                                        Pierre-Luc Bacon and Jean Harb and Doina Precup
+                                                                             Reasoning and Learning Lab, School of Computer Science
+                                                                                               McGill University
+                                                                              {pbacon, jharb, dprecup}@cs.mcgill.ca
+
+
+
+
+                                                                    Abstract                                learning process of the intra-option policies and termination
+arXiv:1609.05140v2 [cs.AI] 3 Dec 2016
+
+
+
+
+                                                                                                            functions, simultaneously with the policy over them. This
+                                          Temporal abstraction is key to scaling up learning and plan-      approach works naturally with both linear and non-linear
+                                          ning in reinforcement learning. While planning with tempo-
+                                          rally extended actions is well understood, creating such ab-
+                                                                                                            function approximators, under discrete or continuous state
+                                          stractions autonomously from data has remained challenging.       and action spaces. Existing methods for learning options are
+                                          We tackle this problem in the framework of options [Sutton,       considerably slower when learning from a single task: much
+                                          Precup & Singh, 1999; Precup, 2000]. We derive policy gra-        of the benefit comes from re-using the learned options in
+                                          dient theorems for options and propose a new option-critic        similar tasks. In contrast, we show that our approach is ca-
+                                          architecture capable of learning both the internal policies and   pable of successfully learning options within a single task
+                                          the termination conditions of options, in tandem with the pol-    without incurring any slowdown and while still providing
+                                          icy over options, and without the need to provide any addi-       benefits for transfer learning.
+                                          tional rewards or subgoals. Experimental results in both dis-        We start by reviewing background related to the two main
+                                          crete and continuous environments showcase the flexibility        ingredients of our work: policy gradient methods and op-
+                                          and efficiency of the framework.
+                                                                                                            tions. We then describe the core ideas of our approach:
+                                                                                                            the intra-option policy and termination gradient theorems.
+                                                                Introduction                                Additional technical details are included in the appendix.
+                                        Temporal abstraction allows representing knowledge about            We present experimental results showing that our approach
+                                        courses of action that take place at different time scales.         learns meaningful temporally extended behaviors in an ef-
+                                        In reinforcement learning, options (Sutton, Precup, and             fective manner. As opposed to other methods, we only need
+                                        Singh 1999; Precup 2000) provide a framework for defin-             to specify the number of desired options; it is not necessary
+                                        ing such courses of action and for seamlessly learning and          to have subgoals, extra rewards, demonstrations, multiple
+                                        planning with them. Discovering temporal abstractions au-           problems or any other special accommodations (however,
+                                        tonomously has been the subject of extensive research ef-           the approach can take advantage of pseudo-reward functions
+                                        forts in the last 15 years (McGovern and Barto 2001;                if desired). To our knowledge, this is the first end-to-end ap-
+                                        Stolle and Precup 2002; Menache, Mannor, and Shimkin                proach for learning options that scales to very large domains
+                                        2002; Şimşek and Barto 2009; Silver and Ciosek 2012),             at comparable efficiency.
+                                        but approaches that can be used naturally with continu-
+                                        ous state and/or action spaces have only recently started                        Preliminaries and Notation
+                                        to become feasible (Konidaris et al. 2011; Niekum 2013;             A Markov Decision Process consists of a set of states S, a set
+                                        Mann, Mannor, and Precup 2015; Mankowitz, Mann, and                 of actions A, a transition function P : S ×A → (S → [0, 1])
+                                        Mannor 2016; Kulkarni et al. 2016; Vezhnevets et al. 2016;          and a reward function r : S × A → R. For convenience,
+                                        Daniel et al. 2016).                                                we develop our ideas assuming discrete state and action
+                                           The majority of the existing work has focused on finding         sets. However, our results extend to continuous spaces using
+                                        subgoals (useful states that an agent should reach) and sub-        usual measure-theoretic assumptions (some of our empirical
+                                        sequently learning policies to achieve them. This idea has          results are in continuous tasks). A (Markovian stationary)
+                                        led to interesting methods but ones which are also difficult        policy is a probability distribution over actions conditioned
+                                        to scale up given their “combinatorial” flavor. Additionally,       on states, π : S × A → [0, 1]. In discounted problems, the
+                                        learning policies associated with subgoals can be expensive         value function ofPa∞policy π is defined as the expected return:
+                                        in terms of data and computation time; in the worst case, it        Vπ (s) = Eπ [ t=0 γ t rt+1P    | s0 = s] and its action-value
+                                                                                                                                             ∞
+                                        can be as expensive as solving the entire task.                     function as Qπ (s, a) = Eπ [ t=0 γ t rt+1 | s0 = s, a0 = a],
+                                           We present an alternative view, which blurs the line be-         where γ ∈ [0, 1) is the discount factor. A policy π is
+                                        tween the problem of discovering options from that of learn-        greedy with respect to a given action-value function Q if
+                                        ing options. Based on the policy gradient theorem (Sutton           π(s, a) > 0 iff a = argmaxa0 Q(s, a0 ). In a discrete MDP,
+                                        et al. 2000), we derive new results which enable a gradual          there is at least one optimal policy which is greedy with re-
+spect to its own action-value function.                                ω parameterized by ϑ. We present two new results for learn-
+   Policy gradient methods (Sutton et al. 2000; Konda                  ing options, obtained using as blueprint the policy gradient
+and Tsitsiklis 2000) address the problem of finding a                  theorem (Sutton et al. 2000). Both results are derived under
+good policy by performing stochastic gradient descent                  the assumption that the goal is to learn options that maxi-
+to optimize a performance objective over a given fam-                  mize the expected return in the current task. However, if one
+ily of parametrized stochastic policies, πθ . The policy               wanted to add extra information to the objective function,
+gradient theorem (Sutton et al. 2000) provides expres-                 this could readily be done so long as it comes in the form of
+sions for the gradient of the average reward and dis-                  an additive differentiable function.
+counted reward objectives with respect to θ. In the dis-                  Suppose we aim to optimize directly the discounted re-
+counted setting, the objective is defined with respect to              turn, expected over all the trajectories starting at a des-
+a designated     start state (or distribution) s0 : ρ(θ, s0 ) =        ignated Pstate s0 and option ω0 , then: ρ(Ω, θ, ϑ, s0 , ω0 ) =
+      P∞                                                                          ∞
+Eπθ [ t=0 γ t rt+1 | s0 ]. The policy gradient theorem shows           EΩ,θ,ω [ t=0 γ t rt+1 | s0 , ω0 ]. Note that this return depends
+that: ∂ρ(θ,s  0)
+                        P                   P ∂πθ (a|s)                on the policy over options, as well as the parameters of the
+           ∂θ      =       sµ π θ
+                                  (s | s0 )    a   ∂θ    Qπθ (s, a),
+where µπθ (s | s0 ) =
+                            P∞ t
+                                     γ  P  (s  = s | s )               option policies and termination functions. We will take gra-
+                                t=0          t        0 is a dis-
+counted weighting of the states along the trajectories start-          dients of this objective with respect to θ and ϑ. In order to
+ing from s0 . In practice, the policy gradient is estimated            do this, we will manipulate equations similar to those used in
+from samples along the on-policy stationary distribution.              intra-option learning (Sutton, Precup, and Singh 1999, sec-
+(Thomas 2014) showed that neglecting the discount factor               tion 8). Specifically, the definition of the option-value func-
+in this stationary distribution makes the usual policy gradi-          tion can be written as:
+ent estimator biased. However, correcting for this discrep-
+                                                                                               X
+                                                                                 QΩ (s, ω) =       πω,θ (a | s) QU (s, ω, a) ,      (1)
+ancy also reduces data efficiency. For simplicity, we build                                     a
+on the framework of (Sutton et al. 2000) and discuss how to
+extend our results according to (Thomas 2014).                         where QU : S × Ω × A → R is the value of executing an
+   The options framework (Sutton, Precup, and Singh                    action in the context of a state-option pair:
+1999; Precup 2000) formalizes the idea of temporally ex-                                              X
+tended actions. A Markovian option ω ∈ Ω is a triple                     QU (s, ω, a) = r(s, a) + γ       P (s0 | s, a) U (ω, s0 ) . (2)
+(Iω , πω , βω ) in which Iω ⊆ S is an initiation set, πω is                                              s0
+an intra-option policy, and βω : S → [0, 1] is a termi-                Note that the (s, ω) pairs lead to an augmented state space,
+nation function. We also assume that ∀s ∈ S, ∀ω ∈ Ω :                  cf. (Levy and Shimkin 2011). However, we will not work ex-
+s ∈ Iω (i.e., all options are available everywhere), an as-            plicitly with this space; it is used only to simplify the deriva-
+sumption made in the majority of option discovery algo-                tion. The function U : Ω × S → R is called the option-value
+rithms. We will discuss how to dispense with this assump-              function upon arrival, (Sutton, Precup, and Singh 1999,
+tion in the final section. (Sutton, Precup, and Singh 1999;            equation 20). The value of executing ω upon entering a state
+Precup 2000) show that an MDP endowed with a set of                    s0 is given by:
+options becomes a Semi-Markov Decision Process (Puter-
+man 1994, chapter 11), which has a corresponding optimal               U (ω, s0 ) = (1 − βω,ϑ (s0 ))QΩ (s0 , ω) + βω,ϑ (s0 )VΩ (s0 ) (3)
+value function over options VΩ (s) and option-value function
+QΩ (s, ω). Learning and planning algorithms for MDPs have              Note that QU and U both depend on θ and ϑ, but we do
+their counterparts in this setting. However, the existence of          not include these in the notation for clarity. The last ingredi-
+the underlying MDP offers the possibility of learning about            ent required to derive policy gradients is the Markov chain
+many different options in parallel : this is the idea of intra-        along which the performance measure is estimated. The nat-
+option learning, which we leverage in our work.                        ural approach is to consider the chain defined in the aug-
+                                                                       mented state space, because state-option pairs now play the
+                     Learning Options                                  role of regular states in a usual Markov chain. If option ωt
+                                                                       has been initiated or is executing at time t in state st , then
+We adopt a continual perspective on the problem of learn-              the probability of transitioning to (st+1 , ωt+1 ) in one step
+ing options. At any time, we would like to distill all of the          is:
+available experience into every component of our system:                                             X
+value function and policy over options, intra-option policies           P (st+1 , ωt+1 | st , ωt ) =   πωt ,θ (a | st ) P(st+1 | st , a)(
+and termination functions. To achieve this goal, we focus on                                         a
+learning option policies and termination functions, assum-             (1 − βωt ,ϑ (st+1 ))1ωt =ωt+1 + βωt ,ϑ (st+1 )πΩ (ωt+1 | st+1 ))
+ing they are represented using differentiable parameterized                                                                        (4)
+function approximators.
+   We consider the call-and-return option execution model,                Clearly, the process given by (4) is homogeneous. Under
+in which an agent picks option ω according to its policy over          mild conditions, and with options available everywhere, it
+options πΩ , then follows the intra-option policy πω until ter-        is in fact ergodic, and a unique stationary distribution over
+mination (as dictated by βω ), at which point this procedure           state-option pairs exists.
+is repeated. Let πω,θ denote the intra-option policy of option            We will now compute the gradient of the expected dis-
+ω parametrized by θ and βω,ϑ , the termination function of             counted return with respect to the parameters θ of the intra-
+option policies, assuming that they are stochastic and differ-            discounted return objective with respect to ϑ and the initial
+entiable. From (1 , 2), it follows that:                                  condition (s1 , ω0 ) is:
+                                                                                                             ∂βω,ϑ (s0 )
+                                                   !                              X
+∂QΩ (s, ω)         X ∂πω,θ (a | s)                                              −     µΩ (s0 , ω | s1 , ω0 )             AΩ (s0 , ω) ,
+             =                       QU (s, ω, a)                                                              ∂ϑ
+     ∂θ             a
+                             ∂θ                                                    0
+                                                                                  s ,ω
+               X                 X                   ∂U (ω, s0 )          where µΩ (s0 , ω | s1 , ω0 ) is a discounted weighting of
+             +      πω,θ (a | s)     γ P (s0 | s, a)             .        state-option    pairs from (s1 , ω0 ): µΩ (s, ω | s1 , ω0 ) =
+                 a                 0
+                                                        ∂θ                P∞ t
+                                      s
+                                                                             t=0  γ P  (st+1  = s, ωt = ω | s1 , ω0 ).
+We can further expand the right hand side using (3) and (4),                 The advantage function often appears in policy gradient
+which yields the following theorem:                                       methods (Sutton et al. 2000) when forming a baseline to re-
+Theorem 1 (Intra-Option Policy Gradient Theorem). Given                   duce the variance in the gradient estimates. Its presence in
+a set of Markov options with stochastic intra-option poli-                that context has to do mostly with algorithm design. It is in-
+cies differentiable in their parameters θ, the gradient of the            teresting that in our case, it follows as a direct consequence
+expected discounted return with respect to θ and initial con-             of the derivation and gives the theorem an intuitive interpre-
+dition (s0 , ω0 ) is:                                                     tation: when the option choice is suboptimal with respect to
+                                                                          the expected value over all options, the advantage function is
+   X                             X ∂πω,θ (a | s)                          negative and it drives the gradient corrections up, which in-
+          µΩ (s, ω | s0 , ω0 )                     QU (s, ω, a) ,         creases the odds of terminating. After termination, the agent
+    s,ω                           a
+                                          ∂θ
+                                                                          has the opportunity to pick a better option using πΩ . A sim-
+                                                                          ilar idea also underlies the interrupting execution model of
+where µΩ (s, ω | s0 , ω0 ) is a discounted weighting of state-            options (Sutton, Precup, and Singh 1999) in which termina-
+option pairs along P   trajectories starting from (s0 , ω0 ):             tion is forced whenever the value of QΩ (s0 , ω) for the cur-
+                         ∞
+µΩ (s, ω | s0 , ω0 ) = t=0 γ t P (st = s, ωt = ω | s0 , ω0 ).             rent option ω is less than VΩ (s0 ). (Mann, Mankowitz, and
+   The proof is in the appendix. This gradient describes the              Mannor 2014) recently studied interrupting options through
+effect of a local change at the primitive level on the global             the lens of an interrupting Bellman Operator in a value-
+expected discounted return. In contrast, subgoal or pseudo-               iteration setting. The termination gradient theorem can be
+reward methods assume the objective of an option is simply                interpreted as providing a gradient-based interrupting Bell-
+to optimize its own reward function, ignoring how a pro-                  man operator.
+posed change would propagate in the overall objective.
+   We now turn our attention to computing gradients for the                              Algorithms and Architecture
+termination functions, assumed this time to be stochastic and
+differentiable in ϑ. From (1, 2, 3), we have:                                                      Policy over options
+                                                                                                                         ωt
+                                                                                                           πΩ
+∂QΩ (s, ω) X               X                  ∂U (ω, s0 )
+          =   πω,θ (a | s)    γ P (s0 | s, a)             .                                               Options
+  ∂ϑ        a               0
+                                                 ∂ϑ
+                                      s
+                                                                                                       πω , β ω
+Hence, the key quantity is the gradient of U . This is a natural
+consequence of the call-and-return execution, in which the
+“goodness” of termination functions can only be evaluated                                         Gradients
+upon entering the next state. The relevant gradient can be                                                                TD error
+                                                                                    st        Critic                                 at
+further expanded as:                                                                                     QU , AΩ
+
+
+
+   ∂U (ω, s0 )      ∂βω,ϑ (s0 )                                                                           rt
+                =−               AΩ (s0 , ω) +
+      ∂ϑ                ∂ϑ
+                 XX                             ∂U (ω 0 , s00 )                                        Environment
+               γ         P (s00 , ω 0 | s0 , ω)                 ,   (5)
+                  0  00
+                                                    ∂ϑ
+                   ω    s                                                 Figure 1: Diagram of the option-critic architecture. The op-
+where AΩ is the advantage function (Baird 1993) over                      tion execution model is depicted by a switch ⊥ over the
+options AΩ (s0 , ω) = QΩ (s0 , ω) − VΩ (s0 ). Expanding                   contacts (. A new option is selected according to πΩ only
+∂U (ω 0 ,s00 )                                                            when the current option terminates.
+    ∂ϑ         recursively leads to a similar form as in theo-
+rem (1) but where the weighting of state-option pairs is
+                                                                             Based on theorems 1 and 2, we can now design a stochas-
+now according to a Markov chain shifted by one time step:
+                                                                          tic gradient descent algorithm for learning options. Using a
+µΩ (st+1 , ωt | st , ωt−1 ) (details are in the appendix).
+                                                                          two-timescale framework (Konda and Tsitsiklis 2000), we
+Theorem 2 (Termination Gradient Theorem). Given a set of                  propose to learn the values at a fast timescale while updat-
+Markov options with stochastic termination functions differ-              ing the intra-option policies and termination functions at a
+entiable in their parameters ϑ, the gradient of the expected              slower rate.
+   We refer to the resulting system as an option-critic archi-              states, QU (s, ω, a) = Es0 ∼P [r(s, a) + γU (ω, s0 ) | s, ω, a],
+tecture, in reference to the actor-critic architectures (Sutton                              (1)
+                                                                            it follows that gt is an appropriate estimator. We chose this
+1984). The intra-option policies, termination functions and                 approach for our experiment with deep neural networks in
+policy over options belong to the actor part of the system                  the Arcade Learning Environment.
+while the critic consists of QU and AΩ . The option-critic
+architecture does not prescribe how to obtain πΩ since a va-
+riety of existing approaches would apply: using policy gra-
+                                                                                                     Experiments
+dient methods at the SMDP level, with a planner over the                    We first consider a navigation task in the four-rooms do-
+options models, or using temporal difference updates. If πΩ                 main (Sutton, Precup, and Singh 1999). Our goal is to evalu-
+is the greedy policy over options, it follows from (2) that the             ate the ability of a set of options learned fully autonomously
+                                                     (1)                    to recover from a sudden change in the environment. (Sut-
+corresponding one-step off-policy update target gt is:
+                                                                            ton, Precup, and Singh 1999) presented a similar experiment
+  (1)
+gt = rt+1 +                                                                 for a set of pre-specified options; the options in our results
+                      X                                                    have not been specified a priori.
+γ (1 − βωt ,ϑ (st+1 ))   πωt ,θ (a | st+1 ) QU (st+1 , ωt , a)                 Initially the goal is located in the east doorway and the
+                           a                                                initial state is drawn uniformly from all the other cells. After
+                        X                                           
+ + βωt ,ϑ (st+1 ) max           πω,θ (a | st+1 ) QU (st+1 , ω, a)       ,   1000 episodes, the goal moves to a random location in the
+                    ω                                                       lower right room. Primitive movements can fail with proba-
+                         a
+                                                                            bility 1/3, in which case the agent transitions randomly to
+which is also the update target of the intra-option Q-learning
+                                                                            one of the empty adjacent cells. The discount factor was
+algorithm of (Sutton, Precup, and Singh 1999). A prototyp-
+                                                                            0.99, and the reward was +1 at the goal and 0 otherwise.
+ical implementation of option-critic which uses intra-option
+                                                                            We chose to parametrize the intra-option policies with Boltz-
+Q-learning is shown in Algorithm 1. The tabular setting is
+                                                                            mann distributions and the terminations with sigmoid func-
+assumed only for clarity of presentation. We write α, αθ and
+                                                                            tions. The policy over options was learned using intra-option
+αϑ for the learning rates of the critic, intra-option policies
+                                                                            Q-learning. We also implemented primitive actor-critic (de-
+and termination functions respectively.
+                                                                            noted AC-PG) using a Boltzmann policy. We also compared
+                                                                            option-critic to a primitive SARSA agent using Boltzmann
+ Algorithm 1: Option-critic with tabular intra-option Q-                    exploration and no eligibility traces. For all Boltzmann poli-
+ learning                                                                   cies, we set the temperature parameter to 0.001. All the
+   s ← s0                                                                   weights were initialized to zero.
+   Choose ω according to an -soft policy over options
+    πΩ (s)                                                                                                               SARSA(0)
+   repeat                                                                                                                AC-PG
+                                                                                    500
+      Choose a according to πω,θ (a | s)                                                                                 OC 4 options
+      Take action a in s, observe s0 , r                                                                                 OC 8 options
+                                                                                    400
+                                                                            Steps
+
+
+
+
+        1. Options evaluation:
+                                                                                    300
+        δ ← r − QU (s, ω, a)
+        if s0 is non-terminal then
+                                                                                    200
+             δ ← δ + γ(1 − βω,ϑ (s0 ))QΩ (s0 , ω) +
+               γβω,ϑ (s0 ) max QΩ (s0 , ω̄)
+                           ω̄                                                       100
+        end
+        QU (s, ω, a) ← QU (s, ω, a) + αδ                                              0
+                                                                                       0       500          1000          1500
+                                                                                                           Episodes
+        2. Options improvement:
+                    ∂ log πω,θ (a | s)
+        θ ← θ + αθ         ∂θ          QU (s, ω, a)                         Figure 2: After a 1000 episodes, the goal location in the four-
+                  ∂β   (s0 )                                                rooms domain is moved randomly. Option-critic (“OC”) re-
+        ϑ ← ϑ − αϑ ω,ϑ
+                     ∂ϑ      (QΩ (s0 , ω) − VΩ (s0 ))
+                                                                            covers faster than the primitive actor-critic (“AC-PG”) and
+                                                                            SARSA(0). Each line is averaged over 350 runs.
+     if βω,ϑ terminates in s0 then
+     choose new ω according to -soft(πΩ (s0 ))
+     s ← s0                                                                    As can be seen in Figure 2, when the goal suddenly
+  until s0 is terminal                                                      changes, the option-critic agent recovers faster. Further-
+                                                                            more, the initial set of options is learned from scratch at a
+                                                                            rate comparable to primitive methods. Despite the simplic-
+   Learning QU in addition to QΩ is computationally waste-                  ity of the domain, we are not aware of other methods which
+ful both in terms of the number of parameters and samples.                  could have solved this task without incurring a cost much
+A practical solution is to only learn QΩ and derive an esti-                larger than when using primitive actions alone (McGovern
+mate of QU from it. Because QU is an expectation over next                  and Barto 2001; Şimşek and Barto 2009).
+                                                                    2011) of order 3. We experimented with 2, 3 or 4 options.
+                                                                    We used Boltzmann policies for the intra-option policies and
+                                                                    linear-sigmoid functions for the termination functions. The
+                                                                    learning rates were set to 0.01 for the critic and 0.001 for
+                                                                    both the intra and termination gradients. We used an epsilon-
+                                                                    greedy policy over options with  = 0.01.
+
+                                                                                           8500
+                                                                                           7500
+
+
+
+
+                                                                     Undiscounted Return
+                                                                                           5000
+Figure 3: Termination probabilities for the option-critic
+agent learning with 4 options. The darkest color represents
+the walls in the environment while lighter colors encode                                      0
+higher termination probabilities.
+
+                                                                                           -5000                                       4 options
+   In the two temporally extended settings, with 4 options                                                                             3 options
+and 8 options, termination events are more likely to occur                                                                             2 options
+near the doorways (Figure 3), agreeing with the intuition
+                                                                                                   0   25   50    100          150   200        250
+that they would be good subgoals. As opposed to (Sutton,                                                                Episodes
+Precup, and Singh 1999), we did not encode this knowledge
+ourselves but simply let the agents find options that would                                  Figure 5: Learning curves in the Pinball domain.
+maximize the expected discounted return.
+                                                                       In (Konidaris and Barto 2009), an option can only be
+Pinball Domain                                                      used and updated after a gestation period of 10 episodes. As
+                                                                    learning is fully integrated in option-critic, by 40 episodes a
+                                                                    near optimal set of options had already been learned in all
+                                                                    settings. From a qualitative point of view, the options ex-
+                                                                    hibit temporal extension and specialization (fig. 4). We also
+                                                                    observed that across many successful trajectories the red op-
+                                                                    tion would consistently be used in the vicinity of the goal.
+
+                                                                    Arcade Learning Environment
+                                                                    We applied the option-critic architecture in the Arcade
+                                                                    Learning Environment (ALE) (Bellemare et al. 2013) using
+                                                                    a deep neural network to approximate the critic and repre-
+Figure 4: Pinball: Sample trajectory of the solution found
+                                                                    sent the intra-option policies and termination functions. We
+after 250 episodes of training using 4 options All options
+                                                                    used the same configuration as (Mnih et al. 2013) for the
+(color-coded) are used by the policy over options in success-
+                                                                    first 3 convolutional layers of the network. We used 32 con-
+ful trajectories. The initial state is in the top left corner and
+                                                                    volutional filters of size 8×8 and stride of 4 in the first layer,
+the goal is in the bottom right one (red circle).
+                                                                    64 filters of size 4 × 4 with a stride of 2 in the second and
+                                                                    64 3 × 3 filters with a stride of 1 in the third layer. We then
+   In the Pinball domain (Konidaris and Barto 2009), a ball         fed the output of the third layer into a dense shared layer of
+must be guided through a maze of arbitrarily shaped poly-           512 neurons, as depicted in Figure 6. We fixed the learning
+gons to a designated target location. The state space is con-       rate for the intra-option policies and termination gradient to
+tinuous over the position and velocity of the ball in the x-        0.00025 and used RMSProp for the critic.
+y plane. At every step, the agent must choose among five
+discrete primitive actions: move the ball faster or slower, in                                                                             πΩ (·|s)
+the vertical or horizontal direction, or take the null action.
+Collisions with obstacles are elastic and can be used to the                                                                               {βω (s)}
+advantage of the agent. In this domain, a drag coefficient of                                                                              {πω (·|s)}
+0.995 effectively stops ball movements after a finite num-
+ber of steps when the null action is chosen repeatedly. Each
+thrust action incurs a penalty of −5 while taking no action         Figure 6: Deep neural network architecture. A concatenation
+costs −1. The episode terminates with +10000 reward when            of the last 4 images is fed through the convolutional layers,
+the agent reaches the target. We interrupted any episode tak-       producing a dense representation shared across intra-option
+ing more than 10000 steps and set the discount factor to 0.99.      policies, termination functions and policy over options.
+   We used intra-option Q-learning in the critic with linear
+function approximation over Fourier bases (Konidaris et al.                        We represented the intra-option policies as linear-softmax
+of the fourth (dense) layer, so as to output a probability dis-                                                                                   Seaquest and Zaxxon. For comparison, we allowed the sys-
+tribution over actions conditioned on the current observa-                                                                                        tem to learn for the same number of episodes as (Mnih et al.
+tion. The termination functions were similarly defined using                                                                                      2013) and fixed the parameters to the same values in all four
+sigmoid functions, with one output neuron per termination.                                                                                        domains. Despite having more parameters to learn, option-
+   The critic network was trained using intra-option Q-                                                                                           critic was capable of learning options that would achieve the
+learning with experience replay. Option policies and termi-                                                                                       goal in all games, from the ground up, within 200 episodes
+nations were updated on-line. We used an -greedy policy                                                                                          (Figure 8). In Asterisk, Seaquest and Zaxxon, option-critic
+over options with  = 0.05 during the test phase (Mnih et al.                                                                                     surpassed the performance of the original DQN architecture
+2013).                                                                                                                                            based on primitive actions. The eight options learned in each
+   As a consequence of optimizing for the return, the ter-                                                                                        game are learned fully end-to-end, in tandem with the fea-
+mination gradient tends to shrink options over time. This is                                                                                      ture representation, with no prior specification of a subgoal
+expected since in theory primitive actions are sufficient for                                                                                     or pseudo-reward structure.
+solving any MDP. We tackled this issue by adding a small                                                                                             The solution found by option-critic was easy to interpret
+ξ = 0.01 term to the advantage function, used by the termi-                                                                                       in the game of Seaquest when learning with only two op-
+nation gradient: AΩ (s, ω) + ξ = QΩ (s, ω) − VΩ (s) + ξ. This                                                                                     tions. We found that each option specialized in a behavior
+term has a regularization effect, by imposing an ξ-margin                                                                                         sequence which would include either the up or the down but-
+between the value estimate of an option and that of the “op-                                                                                      ton. Figure 9 shows a typical transition from one option to
+timal” one reflected in VΩ . This makes the advantage func-                                                                                       the other, first going upward with option 0 then switching
+tion positive if the value of an option is near the optimal one,                                                                                  to option 1 downward. Options with a similar structure were
+thereby stretching it. A similar regularizer was proposed in                                                                                      also found in this game by (Krishnamurthy et al. 2016) using
+(Mann, Mankowitz, and Mannor 2014).                                                                                                               an option discovery algorithm based on graph partitioning.
+   As in (Mnih et al. 2016), we observed that the intra-option
+policies would quickly become deterministic. This problem                                                                                                               Related Work
+seems to pertain to the use of policy gradient methods with                                                                                       As option discovery has received a lot of attention recently,
+deep neural networks in general, and not from option-critic                                                                                       we now discuss in more detail the place of our approach
+itself. We applied the regularizer prescribed by (Mnih et al.                                                                                     with respect to others. (Comanici and Precup 2010) used a
+2016), by penalizing for low-entropy intra-option policies.                                                                                       gradient-based approach for improving only the termination
+                                8 options, no baseline 8 options, baseline                                                  2 options, baseline
+                                                                                                                                                  function of semi-Markov options; termination was modeled
+                       0   0    0.2     0     0    0   0.3     0    0   1.1     0      0     0    0.6    0     0      0      0     0.6
+                                                                                                                                          1 .0    by a logistic distribution over a cumulative measure of the
+                       1   0     0      0     0    0   1.0     0    0   1.1     0      0     0     0     0     0      0     0.3    1.8
+                                                                                                                                                  features observed since initiation. (Levy and Shimkin 2011)
+                                                                                                                                          0 .9
+                       2   0    0.2     0     0    0   0.4     0    0   26.1 7.0 23.7 0.3         1.2    0     0      0     11.7 0.1              also built on policy gradient methods by constructing explic-
+                       3   0     0      0     0    0   1.0     0    0    0      0      0     0    0.6    0     0      0      0     2.0    0 .8    itly the augmented state space and treating stopping events
+                       4   0     0      0     0    0   0.3     0    0   1.1    3.8     0     0    0.6    0     0      0      0     1.0
+                                                                                                                                                  as additional control actions. In contrast, we do not need to
+  Primitive actions
+
+
+
+
+                       5   0     0      0    95.2 100 0.1 82.6 100       0      0      0    61.7 0.6 14.1 2.1         0     0.2    7.7    0 .7
+
+                       6   0     0      0    2.4   0   0.3     0    0   1.1     0      0     0     0     0    1.0    0.5    1.4    0.1
+                                                                                                                                                  construct this (very large) space directly. (Silver and Ciosek
+                       7   0    0.2     0     0    0   0.3     0    0    0      0      0     0    0.6    0     0      0     11.1 0.3
+                                                                                                                                          0 .6    2012) dynamically chained options into longer temporal se-
+                       8   0    97.8    0    2.4   0   0.4    4.3   0    0      0      0    0.3    0     0     0     3.9     0     2.1            quences by relying on compositionality properties. Earlier
+                                                                                                                                          0 .5
+                       9   0     0      0     0    0   0.1     0    0    0      0      0    2.0 12.5     0     0     0.5    0.4    0.1            work on linear options (Sorg and Singh 2010) also used
+                      10   0     0      0     0    0   0.4     0    0   25.0 11.4 74.8       0     0     0    96.9    0     40.7 0.1
+                                                                                                                                          0 .4    compositionality to plan using linear expectation models for
+                      11 16.6    0      0     0    0   0.3     0    0    0      0      0     0    0.6   2.4    0      0
+
+                                                                         0      0      0    1.0    0     0     0      0
+                                                                                                                             0     0.1
+                                                                                                                                                  options. Our approach also relies on the Bellman equations
+                      12   0     0     100    0    0   0.3 13.0     0                                                        0      0
+
+                      13   0     0      0     0    0   0.3     0    0    0      0      0    34.3 1.2 82.4      0      0      0     49.2
+                                                                                                                                          0 .3
+                                                                                                                                                  and compositionality, but in conjunction with policy gradi-
+                      14   0     0      0     0    0   91.9    0    0   42.0    0      0     0    5.4    0     0      0     22.2 0.1      0 .2    ent methods.
+                      15   0     0      0     0    0    0      0    0    0     77.2    0     0     0    1.2    0      0     12.0    0                Several very recent papers also attempt to formulate op-
+                      16 83.4 1.5       0     0    0   1.5     0    0   2.3     0     1.5    0    0.6    0     0     95.1    0     16.3
+                                                                                                                                          0 .1
+                                                                                                                                                  tion discovery as an optimization problem with solutions
+                      17   0     0      0     0    0   1.2     0    0    0     0.6     0    0.3 75.6     0     0      0     0.1 18.6
+                                                                                                                                          0 .0
+                                                                                                                                                  that are compatible with function approximation. (Daniel
+                           1     2      3     4    5    6     7     8    1      2     3      4    5     6      7      8      1      2
+                                                                                                                                                  et al. 2016) learn return-optimizing options by treating the
+                                                                                                                                                  termination functions as hidden variables, and using EM to
+Figure 7: Seaquest: Using a baseline in the gradient estima-                                                                                      learn them. (Vezhnevets et al. 2016) consider the problem
+tors improves the distribution over actions in the intra-option                                                                                   of learning options that have open-loop intra-option poli-
+policies, making them less deterministic. Each column rep-                                                                                        cies, also called macro-actions. As in classical planning, ac-
+resents one of the options learned in Seaquest. The vertical                                                                                      tion sequences that are more frequent are cached. A map-
+axis spans the 18 primitive actions of ALE. The empirical                                                                                         ping from states to action sequences is learned along with a
+action frequencies are coded by intensity.                                                                                                        commitment module, which triggers re-planning when nec-
+                                                                                                                                                  essary. In contrast, we use closed-loop policies throughout,
+   Finally, the baseline QΩ was added to the intra-option pol-                                                                                    which are reactive to state information and can provide bet-
+icy gradient estimator to reduce its variance. This change                                                                                        ter solutions. (Mankowitz, Mann, and Mannor 2016) pro-
+provided substantial improvements (Harb 2016) in the qual-                                                                                        pose a gradient-based option learning algorithm, assuming
+ity of the intra-option policy distributions and the overall                                                                                      a particular structure for the initiation sets and termination
+agent performance as explained in Figure 7.                                                                                                       functions. Under this framework, exactly one option is ac-
+   We evaluated option-critic in Asterisk, Ms. Pacman,                                                                                            tive in any partition of the state space. (Kulkarni et al. 2016)
+                                                       2500
+                                                                                                   Testing                      8000
+               10000                                                                       10000   Moving avg.10
+                                                       2000                                        DQN
+                   8000                                                                    8000                                 6000
+      Avg. Score
+                   6000                                1500                                6000                                 4000
+                   4000                                1000                                4000
+                                                                                                                                2000
+                   2000         Testing                             Testing                2000                                              Testing
+                                Moving avg.10          500          Moving avg.10                                                            Moving avg.10
+                     0          DQN                                 DQN                       0                                   0          DQN
+                      0   50       100     150   200      0   50       100     150   200      0      50      100    150   200      0   50       100     150   200
+                                  Epoch                               Epoch                                 Epoch                              Epoch
+                               (a) Asterix                         (b) Ms. Pacman                     (c) Seaquest                          (d) Zaxxon
+
+Figure 8: Learning curves in the Arcade Learning Environment. The same set of parameters was used across all four games: 8
+options, 0.01 termination regularization, 0.01 entropy regularization, and a baseline for the intra-option policy gradients.
+
+                                                                                     Time
+
+
+
+
+                                           Option 0                                                                        Option 1
+
+Figure 9: Up/down specialization in the solution found by option-critic when learning with 2 options in Seaquest. The top bar
+shows a trajectory in the game, with “white” representing a segment during which option 1 was active and “black” for option 2.
+
+
+use the DQN framework to implement a gradient-based op-                                       theorem, and as discussed in (Thomas 2014), the gradient
+tion learner, which uses intrinsic rewards to learn the internal                              estimators can be biased in the   Qtdiscounted case. By intro-
+policies of options, and extrinsic rewards to learn the pol-                                  ducing factors of the form γ t i=1 (1 − βi ) in our updates
+icy over options. As opposed to our framework, descriptions                                   (Thomas 2014, eq (3)), it would be possible to obtain un-
+of the subgoals are given as inputs to the option learners.                                   biased estimates. However, we do not recommend this ap-
+Option-critic is conceptually general and does not require                                    proach since the sample complexity of the unbiased esti-
+intrinsic motivation for learning the options.                                                mators is generally too high and the biased estimators per-
+                                                                                              formed well in our experiments.
+                                    Discussion                                                   Perhaps the biggest remaining limitation of our work is
+                                                                                              the assumption that all options apply everywhere. In the case
+We developed a general gradient-based approach for learn-
+                                                                                              of function approximation, a natural extension to initiation
+ing simultaneously the intra-option policies and termination
+                                                                                              sets is to use a classifier over features, or some other form of
+functions, as well as the policy over options, in order to opti-
+                                                                                              function approximation. As a result, determining which op-
+mize a performance objective for the task at hand. Our ALE
+                                                                                              tions are allowed may have similar cost to evaluating a pol-
+experiments demonstrate successful end-to-end learning of
+                                                                                              icy over options (unlike in the tabular setting, where options
+options in the presence of nonlinear function approxima-
+                                                                                              with sparse initiation sets lead to faster decisions). This is
+tion. As noted, our approach only requires specifying the
+                                                                                              akin to eligibility traces, which are more expensive than us-
+number of options. However, if one wanted to use additional
+                                                                                              ing no trace in the tabular case, but have the same complex-
+pseudo-rewards, the option-critic framework would easily
+                                                                                              ity with function approximation. If initiation sets are to be
+accommodate it. In this case, the internal policies and ter-
+                                                                                              learned, the main constraint that needs to be added is that the
+mination function gradients would simply need to be taken
+                                                                                              options and the policy over them lead to an ergodic chain in
+with respect to the pseudo-rewards instead of the task re-
+                                                                                              the augmented state-option space. This can be expressed as
+ward. A simple instance of this idea, which we used in some
+                                                                                              a flow condition that links initiation sets with terminations.
+of the experiments, is to use additional rewards to encour-
+                                                                                              The precise description of this condition, as well as sparsity
+age options that are indeed temporally extended by adding
+                                                                                              regularization for initiation sets, is left for future work.
+a penalty whenever a switching event occurs. Our approach
+can work seamlessly with any other heuristic for biasing the
+set of options towards some desirable property (e.g. compo-                                                         Acknowledgements
+sitionality or sparsity), as long as it can be expressed as an                                The authors gratefully acknowledge financial support for
+additive reward structure. However, as seen in the results,                                   this work by the National Science and Engineering Research
+such biasing is not necessary to produce good results.                                        Council of Canada (NSERC) and the Fonds de recherche du
+   The option-critic architecture relies on the policy gradient                               Quebec - Nature et Technologies (FRQNT).
+                          Appendix                                             where (7) follows from the assumption that θ only appears in
+Augmented Process                                                              the intra-option policies. Substituting (7) into (6) yields a re-
+                                                                               cursion which, using the previous remarks about augmented
+If ωt has been initiated or is executing at time t, then the                   process can be transformed into:
+discounted probability of transitioning to (st+1 , ωt+1 ) is:
+                                                                               ∂QΩ (s, ω) X ∂πω,θ (a | s)
+ P(1)
+                               X                                                            =                     QU (s, ω, a)+
+  γ (st+1 , ωt+1 | st , ωt ) =   πωt (a| st ) γ P(st+1 | st , a)                    ∂θ                   ∂θ
+                                                                                                 a
+                                   a                                            X                X                  X
+                                                                                    πω,θ (a | s)    γ P (s0 | s, a)      βω,ϑ (s0 )πΩ (ω 0 | s0 )
+                                                                   
+(1 − βωt (st+1 ))1ωt =ωt+1 + βωt (st+1 )πΩ (ωt+1 | st+1 )              .
+                                                                                a                         s0                              ω0
+When conditioning the process from (st , ωt−1 ), the dis-                                                                                  ∂Q (s0 , ω 0 )
+                                                                                                                                                 Ω
+counted probability of transitioning to st+1 , ωt is:                                          + (1 − βω,ϑ (s0 ))1ω0 =ω
+                                                                                                                                                   ∂θ
+P(1)
+  γ (st+1 , ωt | st , ωt−1 ) = (1 − βωt−1 (st ))1ωt =ωt−1 +                         X ∂πω,θ (a | s)
+                         X                                                    =                                 QU (s, ω, a)+
+βωt−1 (st )πΩ (ωt | st )      πωt (a | st ) γ P (st+1 | st , a) .                    a
+                                                                                                ∂θ
+                               a                                                               XX                                              ∂QΩ (s0 , ω 0 )
+More generally, the k-steps discounted probabilities can be                                                  P(1) 0   0
+                                                                                                              γ (s , ω | s, ω)
+                                                                                                                                                  ∂θ
+expressed recursively as follows:                                                              s0    ω0
+                               XX                                                   ∞ X
+                                                                                    X                                           X ∂πω0 ,θ (a|s0 )
+P(k)
+  γ (st+k , ωt+k | st , ωt ) =                                                 =                  P(k) 0   0
+                                                                                                   γ (s , ω |s, ω)                                        QU (s0 , ω 0 , a).
+                                   st+1 ωt+1
+                                                                                                                                                ∂θ
+                                                                                    k=0 s0 ,ω 0                                   a
+
+P(1)                         (k−1)                                             The gradient of the expected discounted return with respect
+                                                                       
+ γ (st+1 , ωt+1 | st , ωt ) Pγ     (st+k , ωt+k | st+1 , ωt+1 )            ,
+                                            XX                                 to θ is then:
+P(k)
+ γ (st+k , ωt+k−1 | st , ωt−1 ) =                                                ∂QΩ (s0 , ω0 )
+                                            st+1 ωt                                             =
+                                                                                       ∂θ
+                                                                                       ∞
+P(1)                         (k−1)
+                                                                       
+ γ (st+1 , ωt | st , ωt−1 ) Pγ     (st+k , ωt+k−1 | st+1 , ωt )            .     XX                             X ∂πω,θ (a | s)
+                                                                                          P(k)
+                                                                                            γ (s, ω | s0 , ω0 )                 QU (s, ω, a)
+                                                                                                                      ∂θ
+Proof of the Intra-Option Policy Gradient Theorem                                s,ω     k=0                    a
+
+Taking the gradient of the option-value function:                                    X                                 X ∂πω,θ (a | s)
+                                                                                 =          µΩ (s, ω|s0 , ω0 )                                       QU (s, ω, a) .
+ ∂QΩ (s, ω)      ∂ X                                                                  s,ω                                   a
+                                                                                                                                          ∂θ
+             =          πω,θ (a | s) QU (s, ω, a)
+     ∂θ         ∂θ a
+                                                                               Proof of the Termination Gradient Theorem
+      X     ∂πω,θ (a|s)                                                        The expected sum of discounted rewards starting from
+  =                     QU (s, ω, a)+                                          (s1 , ω0 ) is given by:
+      a
+                ∂θ                                                                                           "∞                 #
+                                     !                                                                        X
+                       ∂QU (s, ω, a)                                                        U (ω0 , s1 ) = E    γ t−1 rt s1 , ω0 .
+            πω,θ (a|s)
+                            ∂θ                                                                                              t=1
+                                                                               We start by expanding U as follows:
+      X     ∂πω,θ (a | s)                                                       U (ω, s0 ) = (1 − βω,ϑ (s0 ))QΩ (s0 , ω) + βω,ϑ (s0 )VΩ (s0 )
+  =                       QU (s, ω, a)+
+      a
+                ∂θ                                                                                  X                  
+                                                             !                   = (1 − βω,ϑ (s0 ))     πω,θ (a | s0 )
+                          X
+                                        0 ∂U (ω, s0 )                                                             a
+            πω,θ (a | s)   γ P (s | s, a)                        , (6)                                                                                            
+                                             ∂θ
+                                                                                                                   X
+                         0 s                                                                      r(s0 , a) +               γ P (s00 | s0 , a) U (ω, s00 )
+ ∂U (ω, s0 )                                                                                                          s00
+             =                                                                                      X                             X                           
+    ∂θ                                                                              + βω,ϑ (s0 )               πΩ (ω 0 | s0 )              πω0 ,θ (a | s0 )
+                ∂QΩ (s0 , ω)               ∂VΩ (s0 )                                                 ω0                               a
+ (1 − βω,ϑ (s0 ))             + βω,ϑ (s0 )                                                                                                                        
+                     ∂θ                      ∂θ
+                                                                                                                   X
+                                                                                                     0
+                            0
+                                                                                                  r(s , a) +                γ P (s00 | s0 , a) U (ω 0 , s00 )         .
+                0 ∂QΩ (s , ω)                                                                                         s00
+  = (1 − βω,ϑ (s ))              +
+                         ∂θ                                                    The gradient of U is then:
+                     X                  ∂QΩ (s0 , ω 0 )                        ∂U (ω, s0 )   ∂βω,ϑ (s0 )
+          βω,ϑ (s0 )     πΩ (ω 0 | s0 )                                                    =             (VΩ (s0 ) − QΩ (s0 , ω)) +
+                                            ∂θ                                    ∂ϑ            ∂ϑ
+                     ω0                                                                                  |          {z          }
+    X                                                                                                                             −AΩ (s0 ,ω)
+  =      (1 − βω,ϑ (s0 ))1ω0 =ω +                                                                    X                            X                           ∂U (ω, s00 )
+      ω0                                                                       (1 − βω,ϑ (s0 ))                πω,θ (a|s0 )               γ P (s00 |s0 , a)                .
+                                        ∂QΩ (s0 , ω 0 )                                                                                                         ∂ϑ
+                                                                                                         a                        s00
+            βω,ϑ (s0 )πΩ (ω 0 | s0 )                     .         (7)
+                                            ∂θ
+Using the structure of the augmented process:                                   Mankowitz, D. J.; Mann, T. A.; and Mannor, S. 2016. Adap-
+                                                                                tive skills, adaptive partitions (ASAP). In NIPS 29.
+∂U (ω, s0 )    ∂βω,ϑ (s0 )
+            =−             AΩ (s0 , ω)+                                         Mann, T. A.; Mankowitz, D. J.; and Mannor, S. 2014. Time-
+   ∂ϑ              ∂ϑ
+                                                                                regularized interrupting options (TRIO). In ICML, 1350–
+            XX                          ∂U (ω 0 , s00 )
+                  P(1)   00  0     0
+                   γ (s , ω | s , ω)
+                                                                                1358.
+                                            ∂ϑ
+            ω0 00   s                                                           Mann, T. A.; Mannor, S.; and Precup, D. 2015. Approximate
+        ∞                                                                       value iteration with temporally extended actions. Journal of
+      X X                                    ∂βω0 ,ϑ (s00 )
+=−                  P(k) 00  0   0
+                     γ (s , ω | s , ω)                      AΩ (s00 , ω 0 ) .   Artificial Intelligence Research 53:375–438.
+                                                ∂ϑ
+     ω 0 ,s00 k=0                                                               McGovern, A., and Barto, A. G. 2001. Automatic discovery
+We finally obtain:                                                              of subgoals in reinforcement learning using diverse density.
+                                                                                In ICML, 361–368.
+    ∂U (ω0 , s1 )
+                  =                                                             Menache, I.; Mannor, S.; and Shimkin, N. 2002. Q-cut -
+        ∂ϑ                                                                      dynamic discovery of sub-goals in reinforcement learning.
+            ∞
+      XX                               ∂βω,ϑ (s0 )                              In ECML, 295–306.
+    −           P(k)  0
+                  γ (s , ω | s1 , ω0 )             AΩ (s0 , ω)
+         0
+                                         ∂ϑ                                     Mnih, V.; Kavukcuoglu, K.; Silver, D.; Graves, A.;
+       ω,s k=0
+                                                                                Antonoglou, I.; Wierstra, D.; and Riedmiller, M. A. 2013.
+          X                             ∂βω,ϑ (s0 )
+    =−           µΩ (s0 , ω|s1 , ω0 )               AΩ (s0 , ω) .               Playing atari with deep reinforcement learning. CoRR
+                                          ∂ϑ                                    abs/1312.5602.
+          ω,s0
+                                                                                Mnih, V.; Badia, A. P.; Mirza, M.; Graves, A.; Lillicrap,
+                            References                                          T. P.; Harley, T.; Silver, D.; and Kavukcuoglu, K. 2016.
+Baird, L. C. 1993. Advantage updating. Technical Report                         Asynchronous methods for deep reinforcement learning. In
+WL–TR-93-1146, Wright Laboratory.                                               ICML.
+Bellemare, M. G.; Naddaf, Y.; Veness, J.; and Bowling, M.                       Niekum, S. 2013. Semantically Grounded Learning from
+2013. The arcade learning environment: An evaluation plat-                      Unstructured Demonstrations. Ph.D. Dissertation, Univer-
+form for general agents. Journal of Artificial Intelligence                     sity of Massachusetts, Amherst.
+Research 47:253–279.                                                            Precup, D. 2000. Temporal abstraction in reinforcement
+Comanici, G., and Precup, D. 2010. Optimal policy switch-                       learning. Ph.D. Dissertation, University of Massachusetts,
+ing algorithms for reinforcement learning. In AAMAS, 709–                       Amherst.
+714.                                                                            Puterman, M. L. 1994. Markov Decision Processes: Dis-
+Şimşek, O., and Barto, A. G. 2009. Skill characterization                     crete Stochastic Dynamic Programming. John Wiley &
+based on betweenness. In NIPS 21, 1497–1504.                                    Sons, Inc.
+Daniel, C.; van Hoof, H.; Peters, J.; and Neumann, G.                           Silver, D., and Ciosek, K. 2012. Compositional planning
+2016. Probabilistic inference for determining options in                        using optimal option models. In ICML.
+reinforcement learning. Machine Learning, Special Issue                         Sorg, J., and Singh, S. P. 2010. Linear options. In AAMAS,
+104(2):337–357.                                                                 31–38.
+Harb, J. 2016. Learning options in deep reinforcement learn-                    Stolle, M., and Precup, D. 2002. Learning options in rein-
+ing. Master’s thesis, McGill University.                                        forcement learning. In Abstraction, Reformulation and Ap-
+Konda, V. R., and Tsitsiklis, J. N. 2000. Actor-critic algo-                    proximation, 5th International Symposium, SARA Proceed-
+rithms. In NIPS 12, 1008–1014.                                                  ings, 212–223.
+Konidaris, G., and Barto, A. 2009. Skill discovery in contin-                   Sutton, R. S.; McAllester, D. A.; Singh, S. P.; and Mansour,
+uous reinforcement learning domains using skill chaining.                       Y. 2000. Policy gradient methods for reinforcement learning
+In NIPS 22, 1015–1023.                                                          with function approximation. In NIPS 12. 1057–1063.
+Konidaris, G.; Kuindersma, S.; Grupen, R. A.; and Barto,                        Sutton, R. S.; Precup, D.; and Singh, S. P. 1999. Between
+A. G. 2011. Autonomous skill acquisition on a mobile ma-                        mdps and semi-mdps: A framework for temporal abstrac-
+nipulator. In AAAI.                                                             tion in reinforcement learning. Artificial Intelligence 112(1-
+Krishnamurthy, R.; Lakshminarayanan, A. S.; Kumar, P.;                          2):181–211.
+and Ravindran, B. 2016. Hierarchical reinforcement learn-                       Sutton, R. S. 1984. Temporal Credit Assignment in Rein-
+ing using spatio-temporal abstractions and deep neural net-                     forcement Learning. Ph.D. Dissertation.
+works. CoRR abs/1605.05359.                                                     Thomas, P. 2014. Bias in natural actor-critic algorithms. In
+Kulkarni, T.; Narasimhan, K.; Saeedi, A.; and Tenenbaum, J.                     ICML, 441–448.
+2016. Hierarchical deep reinforcement learning: Integrating                     Vezhnevets, A. S.; Mnih, V.; Agapiou, J.; Osindero, S.;
+temporal abstraction and intrinsic motivation. In NIPS 29.                      Graves, A.; Vinyals, O.; and Kavukcuoglu, K. 2016. Strate-
+Levy, K. Y., and Shimkin, N. 2011. Unified inter and intra                      gic attentive writer for learning macro-actions. In NIPS 29.
+options learning using policy gradient methods. In EWRL,
+153–164.
+

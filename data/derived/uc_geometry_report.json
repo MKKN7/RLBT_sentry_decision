@@ -1,0 +1,33 @@
+{
+  "artifact_type": "mesh_face_features_not_a_traversability_map",
+  "source": "assets/navigation_reference/field/field.stl",
+  "source_sha256": "3aea8445574b08fa2bc3ae571deb50a2d39befd07f3a48e19f694906526c4685",
+  "triangles": 385026,
+  "degenerate_triangles": 32,
+  "bounds_m": [
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      27.9999942779541,
+      16.003131866455078,
+      3.7988295555114746
+    ]
+  ],
+  "selected_slope_threshold_deg": 20.0,
+  "low_slope_candidate_faces": 72439,
+  "low_slope_total_face_area_m2_not_walkable_area": 1407.5789381541344,
+  "xy_bin_size_m": 0.2,
+  "xy_bins_with_height_span_over_015m": 377,
+  "face_cache": "data/derived/uc_low_slope_face_candidates.npz",
+  "face_cache_sha256": "8e42d872306e29b133f00753f151f7880a43947a4e148b0e9a022a728ca02258",
+  "limitations": [
+    "Centroid samples are not a rasterized support surface or complete coverage.",
+    "Low slopes include roofs/ceilings; winding and support/overhead checks not certified.",
+    "Multiple heights retained per XY bin; no single-layer projection used for planning.",
+    "No official semantic zones, robot swept-envelope clearance, tunnel links or slope connectivity yet.",
+    "Source CAD registration and team robot dimensions remain unverified."
+  ]
+}

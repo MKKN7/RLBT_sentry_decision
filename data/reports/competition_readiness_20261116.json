@@ -1,0 +1,143 @@
+{
+  "artifact_type": "source_and_partial_rules_readiness_not_full_match_acceptance",
+  "checked_on": "2026-11-16",
+  "official_UL_files_verified": [
+    {
+      "file": "data/references/official_rmul_2027/rmul_2027_rules_v1.0.0_20261015.pdf",
+      "sha256": "a8fd7b7f6ea5212b9e4dfa590b478827992598d91912ed671653c8bdd9727fd6",
+      "bytes": 13455593
+    },
+    {
+      "file": "assets/rmul_2027/source_cad/RMUL2027_3V3_V1.0.0.stp",
+      "sha256": "7d47c1b6a6a0253a732e46cb122bb84410b11d5134bcb5658104299db4a48ca4",
+      "bytes": 1989786
+    },
+    {
+      "file": "data/references/rmul_2027_community_map/RMUL2027_map_transfer_20261016_STEP_R1.zip",
+      "sha256": "4aee780ed07ad225fece44803cbf8f1cef30fd1528922773bd38e050222e3060",
+      "bytes": 2678890
+    }
+  ],
+  "UL_rule_fact_count": 44,
+  "UL_supply_hp_per_s_at_400max_for_control_gaps_0_200_400": [
+    100.0,
+    132.0,
+    200.0
+  ],
+  "UL_sentry_purchase_mask": {
+    "remote_heal": false,
+    "remote_ammo": false,
+    "local_ammo": false
+  },
+  "UL_control_event_replay": {
+    "first_red_controlled_seconds": [
+      1.0,
+      0.0
+    ],
+    "blue_recapture_interval_controlled_seconds": [
+      5.0,
+      1.0
+    ],
+    "two_interval_control_score_delta": [
+      -1.0,
+      -6.0
+    ]
+  },
+  "UL_tunnel_vertical_sample_check": [
+    {
+      "id": "red_reference_tunnel",
+      "sample_xy_m": [
+        3.5,
+        7.5
+      ],
+      "all_surface_z_m": [
+        -0.10000000149011612,
+        0.0005000000237487257,
+        0.25,
+        0.27000001072883606
+      ],
+      "floor_to_roof_underside_m": 0.24950000643730164,
+      "robot_clearance_passed": false
+    },
+    {
+      "id": "blue_reference_tunnel",
+      "sample_xy_m": [
+        8.5,
+        0.5
+      ],
+      "all_surface_z_m": [
+        -0.10000000149011612,
+        0.0005000000237487257,
+        0.25,
+        0.27000001072883606
+      ],
+      "floor_to_roof_underside_m": 0.24950000643730164,
+      "robot_clearance_passed": false
+    }
+  ],
+  "UC_source_summary_matches_current_container": true,
+  "UC_remote_heal_integration": "data/reports/uc_healing_execution_20261116.json",
+  "mesh_layer_reports": [
+    "data/derived/uc_surface_layers_010m/report.json",
+    "data/derived/ul_surface_layers_005m/report.json",
+    "data/derived/uc_original_surface_layers_010m/report.json"
+  ],
+  "fully_implemented_UL_UC_match_simulator": false,
+  "real_Nav2_MPPI_connected": true,
+  "real_navigation_scope": "actual_PointLIO_Nav2_MPPI_original_UC_local_BT_BC_PPO_and_frozen_evaluations_not_full_match",
+  "UC_original_STL_navigation_execution": "data/reports/uc_nav2_execution_20261116.json",
+  "UC_original_field_preparation": "data/reports/uc_original_field_20261116.json",
+  "UC_observed_support_execution": "data/reports/uc_support_execution_20261116.json",
+  "UC_unknown_support_costmap_connected": true,
+  "UC_dynamic_support_and_dropout_stop_validated": true,
+  "UC_long_route_support_stability_validated": false,
+  "formal_UL_UC_navigation_connected": false,
+  "navigation_integration_document": "docs/17_nav2_mppi_integration.md",
+  "new_RL_training_started": true,
+  "new_training_scope": "UC_actual_PointLIO_Nav2_MPPI_local_PPO_pilot_and_separate_historical_proxy_courses_not_full_match",
+  "new_training_run": "runs/uc_live_actor_validity_train_20261117",
+  "UC_live_actor_validity_report": "data/reports/live_nav2_validity_20261117/report.md",
+  "UC_live_actor_validity_frozen_evaluation": {
+    "BC_successes": 3,
+    "PPO_successes": 2,
+    "episodes_per_policy": 4,
+    "sensor_seeds": [
+      41000,
+      41001,
+      41002,
+      41003
+    ],
+    "identical_physics_pairing": false,
+    "PPO_gain_demonstrated": false,
+    "recorded_observation_comparison_count": 135,
+    "recorded_greedy_action_differences": 0
+  },
+  "UC_live_training_continuation_report": "data/reports/live_nav2_continue_20261117/report.md",
+  "UC_live_frozen_evaluation": {
+    "BC_successes": 4,
+    "PPO_successes": 0,
+    "episodes_per_policy": 4,
+    "identical_physics_pairing": false,
+    "startup_support_cohorts_differ": true,
+    "PPO_gain_demonstrated": false
+  },
+  "UC_live_training_report": "data/reports/live_nav2_training_20261117.json",
+  "UC_live_training_actual_Nav2_rollouts": true,
+  "UC_v2_training_report": "data/reports/uc_support_v2_training_20261117.json",
+  "UC_v2_optimizer_comparison": "data/reports/uc_support_v2_20261117/report.md",
+  "UC_training_report": "data/reports/uc_support_training_20261116.json",
+  "UC_training_actual_Nav2_rollouts": false,
+  "UC_PPO_gain_demonstrated": false,
+  "UL_payload_and_public_cache": "docs/15_ul_observation_protocol.md",
+  "navigation_contract": "docs/navigation_execution_contract.md",
+  "reference_robot_envelope": "configs/reference_robot_envelope.json",
+  "UL_ground_navigation_proxy": "data/derived/ul_navigation_proxy_v1/report.json",
+  "remaining": [
+    "UL live serial coverage, byte order, clocks and coordinate registration; UC actor observation projection.",
+    "UC official frame/zone registration; UL nominal surfaces need RFID/body footprint registration.",
+    "Full robot support, side clearance, tunnel contacts and physical execution validation.",
+    "Referee settlement cadence, neutral partial UL capture idle handling and simultaneous-zero outcomes.",
+    "Whole battle damage, role, revive, economy and policy training integration."
+  ],
+  "status": "PASS_for_reported_scope_only"
+}

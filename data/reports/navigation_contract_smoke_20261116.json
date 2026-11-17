@@ -1,0 +1,264 @@
+{
+  "artifact_type": "offline_navigation_contract_replay",
+  "official_map_or_navigation_validation": false,
+  "timeout_values": "synthetic_engineering_inputs_not_measured_hardware_values",
+  "snapshot": {
+    "profile_id": "synthetic_contract",
+    "map_id": "synthetic_map",
+    "map_hash": "synthetic_not_official_geometry",
+    "frame_id": "map",
+    "version": 1,
+    "generated_at_s": 0.0,
+    "valid_for_s": 10.0,
+    "candidates": [
+      {
+        "candidate_id": 1,
+        "kind": "navigate",
+        "task_type": "synthetic_control",
+        "goal_xyzyaw": [
+          1.0,
+          2.0,
+          0.0,
+          0.0
+        ],
+        "support_layer_id": "synthetic_ground",
+        "route_type": "ground",
+        "legal": true,
+        "reachable": true
+      },
+      {
+        "candidate_id": 2,
+        "kind": "navigate",
+        "task_type": "synthetic_supply",
+        "goal_xyzyaw": [
+          3.0,
+          4.0,
+          0.0,
+          0.0
+        ],
+        "support_layer_id": "synthetic_ground",
+        "route_type": "underpass",
+        "legal": true,
+        "reachable": true
+      }
+    ]
+  },
+  "source_sha256": {
+    "rl_bt/navigation_contract.py": "2fb7e56c7108495d8846dfe10340667c7a306e9ccb5e8b14bad5a7ec151bfcd1",
+    "rl_bt/contracts.py": "1b9bef4da0347bf5c52d62b8dff7c039c84327d19add973a3fd5e9d675c1c95e",
+    "scripts/probe_navigation_contract.py": "d14d58273e378a96fb36213f6012f2fd03fb73c638da0ba85e070d32653eaf8a"
+  },
+  "checks": {
+    "cancel_acceptance_does_not_release_old_action": true,
+    "terminal_result_required_before_replacement": true,
+    "stale_result_does_not_affect_new_action": true,
+    "ack_timeout_retains_uncertain_action_and_requests_stop": true,
+    "late_acceptance_does_not_resume_canceled_action": true
+  },
+  "events": [
+    {
+      "event": "submit_first",
+      "delivered_at_s": 0.0,
+      "decision": {
+        "status": "submitted",
+        "reason": "awaiting_navigation_acceptance",
+        "commands": [
+          {
+            "kind": "send_goal",
+            "task_id": "synthetic-replay:1:1",
+            "reason": "validated_BT_goal",
+            "candidate": {
+              "candidate_id": 1,
+              "kind": "navigate",
+              "task_type": "synthetic_control",
+              "goal_xyzyaw": [
+                1.0,
+                2.0,
+                0.0,
+                0.0
+              ],
+              "support_layer_id": "synthetic_ground",
+              "route_type": "ground",
+              "legal": true,
+              "reachable": true
+            },
+            "frame_id": "map",
+            "candidate_version": 1
+          }
+        ]
+      },
+      "executor_state": "awaiting_acceptance",
+      "active_task_id": "synthetic-replay:1:1",
+      "pending_candidate_id": null
+    },
+    {
+      "event": "accepted_first",
+      "delivered_at_s": 0.1,
+      "decision": {
+        "status": "updated",
+        "reason": "accepted",
+        "commands": []
+      },
+      "executor_state": "active",
+      "active_task_id": "synthetic-replay:1:1",
+      "pending_candidate_id": null
+    },
+    {
+      "event": "request_replacement",
+      "delivered_at_s": 0.2,
+      "decision": {
+        "status": "canceling",
+        "reason": "replace_goal_wait_for_terminal_result",
+        "commands": [
+          {
+            "kind": "cancel_goal",
+            "task_id": "synthetic-replay:1:1",
+            "reason": "replace_goal_wait_for_terminal_result",
+            "candidate": null,
+            "frame_id": null,
+            "candidate_version": null
+          }
+        ]
+      },
+      "executor_state": "canceling",
+      "active_task_id": "synthetic-replay:1:1",
+      "pending_candidate_id": 2
+    },
+    {
+      "event": "cancel_request_accepted_not_terminal",
+      "delivered_at_s": 0.21,
+      "decision": {
+        "status": "updated",
+        "reason": "cancel_accepted",
+        "commands": []
+      },
+      "executor_state": "canceling",
+      "active_task_id": "synthetic-replay:1:1",
+      "pending_candidate_id": 2
+    },
+    {
+      "event": "replacement_still_blocked",
+      "delivered_at_s": 0.22,
+      "decision": {
+        "status": "waiting",
+        "reason": "previous_action_not_terminal",
+        "commands": []
+      },
+      "executor_state": "canceling",
+      "active_task_id": "synthetic-replay:1:1",
+      "pending_candidate_id": 2
+    },
+    {
+      "event": "old_action_terminal",
+      "delivered_at_s": 0.25,
+      "decision": {
+        "status": "terminal",
+        "reason": "canceled",
+        "commands": []
+      },
+      "executor_state": "idle",
+      "active_task_id": null,
+      "pending_candidate_id": 2
+    },
+    {
+      "event": "replacement_submitted",
+      "delivered_at_s": 0.26,
+      "decision": {
+        "status": "submitted",
+        "reason": "awaiting_navigation_acceptance",
+        "commands": [
+          {
+            "kind": "send_goal",
+            "task_id": "synthetic-replay:2:2",
+            "reason": "validated_BT_goal",
+            "candidate": {
+              "candidate_id": 2,
+              "kind": "navigate",
+              "task_type": "synthetic_supply",
+              "goal_xyzyaw": [
+                3.0,
+                4.0,
+                0.0,
+                0.0
+              ],
+              "support_layer_id": "synthetic_ground",
+              "route_type": "underpass",
+              "legal": true,
+              "reachable": true
+            },
+            "frame_id": "map",
+            "candidate_version": 1
+          }
+        ]
+      },
+      "executor_state": "awaiting_acceptance",
+      "active_task_id": "synthetic-replay:2:2",
+      "pending_candidate_id": null
+    },
+    {
+      "event": "late_old_success_ignored",
+      "delivered_at_s": 0.27,
+      "decision": {
+        "status": "ignored",
+        "reason": "stale_or_unknown_task",
+        "commands": []
+      },
+      "executor_state": "awaiting_acceptance",
+      "active_task_id": "synthetic-replay:2:2",
+      "pending_candidate_id": null
+    },
+    {
+      "event": "acceptance_timeout",
+      "delivered_at_s": 0.67,
+      "decision": {
+        "status": "uncertain",
+        "reason": "navigation_acceptance_timeout",
+        "commands": [
+          {
+            "kind": "cancel_goal",
+            "task_id": "synthetic-replay:2:2",
+            "reason": "navigation_acceptance_timeout",
+            "candidate": null,
+            "frame_id": null,
+            "candidate_version": null
+          },
+          {
+            "kind": "require_safety_stop",
+            "task_id": "synthetic-replay:2:2",
+            "reason": "navigation_acceptance_timeout",
+            "candidate": null,
+            "frame_id": null,
+            "candidate_version": null
+          }
+        ]
+      },
+      "executor_state": "uncertain",
+      "active_task_id": "synthetic-replay:2:2",
+      "pending_candidate_id": null
+    },
+    {
+      "event": "late_acceptance_does_not_resume",
+      "delivered_at_s": 0.68,
+      "decision": {
+        "status": "updated",
+        "reason": "accepted",
+        "commands": []
+      },
+      "executor_state": "uncertain",
+      "active_task_id": "synthetic-replay:2:2",
+      "pending_candidate_id": null
+    },
+    {
+      "event": "terminal_after_timeout",
+      "delivered_at_s": 0.7,
+      "decision": {
+        "status": "terminal",
+        "reason": "canceled",
+        "commands": []
+      },
+      "executor_state": "idle",
+      "active_task_id": null,
+      "pending_candidate_id": null
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "source": "/opt/pb2025_nav_ws/src/pb2025_light_sim/meshes/rmuc_2027_driveable.stl",
+  "source_sha256": "97faa279776cc7b00a635dde51b1bc3dcf8ea91cb949fc73e88e28ea7b94905f",
+  "world": "/opt/pb2025_nav_ws/src/pb2025_light_sim/worlds/rmuc_2027_world.sdf",
+  "triangles": 385026,
+  "components": 2955,
+  "collision_pieces": 24325,
+  "skipped_degenerate_area": 1.2122587853283059e-06,
+  "limitations": "1mm centered contact shells; disconnected details under 85cm or elevated details (bottom above 45cm) under 1.3m use local convex hulls. Ray mesh retains source triangles. Contact approximation requires tunnel clearance tests.",
+  "translation": [
+    -0.14910008013248444,
+    -0.06378698348999023,
+    -0.019413471221923828
+  ],
+  "original_piece_count": 24325
+}

@@ -1,0 +1,225 @@
+# Isolated Point-LIO -> Nav2 -> MPPI execution probe, not an official field map.
+# The launcher qualifies all node names and topic placeholders for its namespace.
+# Empty rolling cells are an explicitly declared test-plane prior. Point-LIO's
+# filtered terrain_obstacles, rather than simulator truth, populate obstacles.
+# Humble MPPI's documented limits are velocity limits. The fixture/execution
+# guard must enforce the separate acceleration limit (<= 1 m/s^2).
+bt_navigator:
+  ros__parameters:
+    use_sim_time: true
+    global_frame: odom
+    robot_base_frame: base_footprint
+    odom_topic: __NAMESPACE__/odometry
+    transform_tolerance: 0.3
+    bt_loop_duration: 10
+    default_server_timeout: 100
+    wait_for_service_timeout: 1000
+    default_nav_to_pose_bt_xml: __TO_POSE_BT_XML__
+    default_nav_through_poses_bt_xml: __THROUGH_POSES_BT_XML__
+    # Both Humble navigators initialize. Only NavigateToPose is used by this probe.
+    plugin_lib_names:
+      - nav2_compute_path_to_pose_action_bt_node
+      - nav2_compute_path_through_poses_action_bt_node
+      - nav2_follow_path_action_bt_node
+      - nav2_rate_controller_bt_node
+      - nav2_pipeline_sequence_bt_node
+
+controller_server:
+  ros__parameters:
+    use_sim_time: true
+    odom_topic: __NAMESPACE__/odometry
+    controller_frequency: 20.0
+    min_x_velocity_threshold: 0.001
+    min_y_velocity_threshold: 0.001
+    min_theta_velocity_threshold: 0.001
+    failure_tolerance: 0.3
+    # Humble uses the singular progress_checker_plugin parameter.
+    progress_checker_plugin: progress_checker
+    goal_checker_plugins: [general_goal_checker]
+    controller_plugins: [FollowPath]
+    progress_checker:
+      plugin: nav2_controller::SimpleProgressChecker
+      required_movement_radius: 0.05
+      movement_time_allowance: 15.0
+    general_goal_checker:
+      plugin: nav2_controller::SimpleGoalChecker
+      stateful: true
+      xy_goal_tolerance: 0.15
+      # This task selects XY only. Omni chassis heading is independent of the
+      # aiming group; oriented docking would require another goal checker.
+      yaw_goal_tolerance: 3.141592653589793
+    FollowPath:
+      plugin: nav2_mppi_controller::MPPIController
+      motion_model: Omni
+      time_steps: 30
+      model_dt: 0.05
+      batch_size: 500
+      iteration_count: 1
+      vx_std: 0.15
+      vy_std: 0.12
+      wz_std: 0.25
+      vx_max: 0.5
+      vx_min: -0.5
+      vy_max: 0.4
+      wz_max: 0.8
+      prune_distance: 1.5
+      transform_tolerance: 0.3
+      temperature: 0.3
+      gamma: 0.015
+      visualize: false
+      reset_period: 1.0
+      regenerate_noises: false
+      critics: [ConstraintCritic, CostCritic, GoalCritic, GoalAngleCritic, PathAlignCritic, PathFollowCritic, PathAngleCritic]
+      ConstraintCritic:
+        enabled: true
+        cost_power: 1
+        cost_weight: 4.0
+      CostCritic:
+        enabled: true
+        cost_power: 1
+        cost_weight: 3.81
+        critical_cost: 300.0
+        consider_footprint: false
+        collision_cost: 1000000.0
+        near_goal_distance: 0.5
+      GoalCritic:
+        enabled: true
+        cost_power: 1
+        cost_weight: 5.0
+        threshold_to_consider: 1.4
+      GoalAngleCritic:
+        enabled: false
+        cost_power: 1
+        cost_weight: 3.0
+        threshold_to_consider: 0.5
+      PathAlignCritic:
+        enabled: true
+        cost_power: 1
+        cost_weight: 10.0
+        max_path_occupancy_ratio: 0.05
+        trajectory_point_step: 3
+        threshold_to_consider: 0.5
+        offset_from_furthest: 10
+        use_path_orientations: false
+      PathFollowCritic:
+        enabled: true
+        cost_power: 1
+        cost_weight: 5.0
+        offset_from_furthest: 5
+        threshold_to_consider: 1.0
+      PathAngleCritic:
+        enabled: false
+        cost_power: 1
+        cost_weight: 2.0
+        offset_from_furthest: 4
+        threshold_to_consider: 0.5
+        max_angle_to_furthest: 1.2
+        forward_preference: false
+
+local_costmap:
+  local_costmap:
+    ros__parameters:
+      use_sim_time: true
+      update_frequency: 10.0
+      publish_frequency: 5.0
+      global_frame: odom
+      robot_base_frame: base_footprint
+      transform_tolerance: 0.3
+      rolling_window: true
+      width: 4
+      height: 4
+      resolution: 0.1
+      # Conservative reference envelope + configured 20 mm planar margin.
+      robot_radius: 0.411
+      footprint_padding: 0.0
+      track_unknown_space: false
+      plugins: [obstacle_layer, inflation_layer]
+      obstacle_layer:
+        plugin: nav2_costmap_2d::ObstacleLayer
+        enabled: true
+        observation_sources: terrain
+        terrain:
+          topic: __NAMESPACE__/terrain_obstacles
+          data_type: PointCloud2
+          # The cloud coordinates are already in odom. Ray clearing still needs
+          # the moving sensor origin, rather than the odom frame's fixed origin.
+          sensor_frame: base_footprint
+          marking: true
+          clearing: true
+          # Already classified against local support height, in session odom.
+          # Absolute Z clipping would discard obstacles when LIO's origin shifts.
+          min_obstacle_height: -100.0
+          max_obstacle_height: 100.0
+          obstacle_min_range: 0.0
+          obstacle_max_range: 5.5
+          raytrace_min_range: 0.0
+          raytrace_max_range: 6.0
+          observation_persistence: 0.0
+          expected_update_rate: 0.0
+      inflation_layer:
+        plugin: nav2_costmap_2d::InflationLayer
+        enabled: true
+        cost_scaling_factor: 3.0
+        inflation_radius: 0.7
+      always_send_full_costmap: true
+
+global_costmap:
+  global_costmap:
+    ros__parameters:
+      use_sim_time: true
+      update_frequency: 5.0
+      publish_frequency: 2.0
+      global_frame: odom
+      robot_base_frame: base_footprint
+      transform_tolerance: 0.3
+      rolling_window: true
+      width: 12
+      height: 12
+      resolution: 0.1
+      robot_radius: 0.411
+      footprint_padding: 0.0
+      track_unknown_space: false
+      plugins: [obstacle_layer, inflation_layer]
+      obstacle_layer:
+        plugin: nav2_costmap_2d::ObstacleLayer
+        enabled: true
+        observation_sources: terrain
+        terrain:
+          topic: __NAMESPACE__/terrain_obstacles
+          data_type: PointCloud2
+          sensor_frame: base_footprint
+          marking: true
+          clearing: true
+          min_obstacle_height: -100.0
+          max_obstacle_height: 100.0
+          obstacle_min_range: 0.0
+          obstacle_max_range: 5.5
+          raytrace_min_range: 0.0
+          raytrace_max_range: 6.0
+          observation_persistence: 0.0
+          expected_update_rate: 0.0
+      inflation_layer:
+        plugin: nav2_costmap_2d::InflationLayer
+        enabled: true
+        cost_scaling_factor: 3.0
+        inflation_radius: 0.7
+      always_send_full_costmap: true
+
+planner_server:
+  ros__parameters:
+    use_sim_time: true
+    expected_planner_frequency: 5.0
+    planner_plugins: [GridBased]
+    GridBased:
+      plugin: nav2_navfn_planner/NavfnPlanner
+      tolerance: 0.1
+      use_astar: true
+      allow_unknown: false
+
+lifecycle_manager_navigation:
+  ros__parameters:
+    use_sim_time: true
+    autostart: true
+    bond_timeout: 10.0
+    attempt_respawn_reconnection: false
+    node_names: [controller_server, planner_server, bt_navigator]

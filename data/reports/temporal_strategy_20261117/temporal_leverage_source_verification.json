@@ -1,0 +1,34 @@
+{
+  "scripts/audit_temporal_policy_leverage.py": {
+    "current_unchanged": true,
+    "copied_source_matches": true
+  },
+  "scripts/evaluate_temporal_phase.py": {
+    "current_unchanged": true,
+    "copied_source_matches": true
+  },
+  "rl_bt/alpharm_task_env.py": {
+    "current_unchanged": true,
+    "copied_source_matches": true
+  },
+  "rl_bt/geometry.py": {
+    "current_unchanged": true,
+    "copied_source_matches": true
+  },
+  "rl_bt/contracts.py": {
+    "current_unchanged": true,
+    "copied_source_matches": true
+  },
+  "rl_bt/rewards.py": {
+    "current_unchanged": true,
+    "copied_source_matches": true
+  },
+  "rl_bt/reward_components.py": {
+    "current_unchanged": true,
+    "copied_source_matches": true
+  },
+  "scripts/probe_alpharm_onnx.py": {
+    "current_unchanged": true,
+    "copied_source_matches": true
+  }
+}

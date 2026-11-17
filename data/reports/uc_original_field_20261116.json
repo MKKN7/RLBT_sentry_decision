@@ -1,0 +1,206 @@
+{
+  "status": "PASS_PRIVATE_ORIGINAL_UC_RESOURCE_PREPARATION",
+  "prepared_field_dir": "/tmp/rl_bt_nav_probe/fields/rmuc2027_original",
+  "reused_existing_verified_output": true,
+  "source_mesh": {
+    "path": "/opt/pb2025_nav_ws/src/pb2025_light_sim/meshes/rmuc_2027.stl",
+    "bytes": 18954184,
+    "sha256": "2835c0e755c255f757d810d260283c623fbd4a49a8fd986487c70ad2a89e9d10",
+    "triangles": 379082,
+    "bounds_m": [
+      [
+        0.14910008013248444,
+        0.06378698348999023,
+        0.019413471221923828
+      ],
+      [
+        28.149093627929688,
+        16.066919326782227,
+        3.8182430267333984
+      ]
+    ]
+  },
+  "prepared_mesh": {
+    "path": "/tmp/rl_bt_nav_probe/fields/rmuc2027_original/field.stl",
+    "bytes": 18954184,
+    "sha256": "93ff0118af176f388c171b239acfdcac72c17cbe0b523350d5d916d3236fe10b",
+    "triangles": 379082,
+    "bounds_m": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        27.9999942779541,
+        16.003131866455078,
+        3.7988295555114746
+      ]
+    ]
+  },
+  "source_mesh_resolved_path": "/opt/pb2025_sim_nuc/src/pb2025_light_sim/meshes/rmuc_2027.stl",
+  "source_is_original_unsuffixed_rmuc_stl": true,
+  "source_is_driveable_derivative": false,
+  "translation_applied_once_m": [
+    -0.14910008013248444,
+    -0.06378698348999023,
+    -0.019413471221923828
+  ],
+  "prepared_vs_translated_original_max_vertex_error_m": 7.301568984985352e-07,
+  "source_triangle_order_preserved_within_3um": true,
+  "converter": {
+    "path": "/opt/mid360_mujoco/tools/prepare_field.py",
+    "sha256": "70c72b5cd5b8d148d57a8b0e3b2421e45ab22db7aee684ee70acc46ef4a4bbe6",
+    "interface": "python prepare_field.py private_input.world private_output",
+    "implementation_modified": false,
+    "physical_approximation_parameters_modified": false,
+    "input_world": "/tmp/rl_bt_nav_probe/fields/rmuc2027_original_input.world",
+    "input_world_sha256": "3023f3758e0e3d35687c731363567797d82c4f678a0787ce49d40f39b2cd962a",
+    "input_pose_copied_from": "/opt/pb2025_nav_ws/src/pb2025_light_sim/worlds/rmuc_2027_world.sdf",
+    "log_path": "/tmp/rl_bt_nav_probe/fields/rmuc2027_original.prepare.log",
+    "cpu_affinity": [
+      0,
+      1
+    ],
+    "maximum_native_library_threads": 2,
+    "gpu_enabled": false
+  },
+  "manifest_sha256": "1245a540fa245ac0de531d1772b7035538402a02f18ebf39900fefb100ea8c9f",
+  "collision": {
+    "count": 20649,
+    "obj_bytes": 7992558,
+    "aggregate_sorted_name_and_sha256": "7ba5f57c7f16ca613e057f2170d4802cfc7a48a43894a5365282a50461dd3956",
+    "file_set_matches_manifest": true,
+    "approximation_limitations": "1mm centered contact shells; disconnected details under 85cm or elevated details (bottom above 45cm) under 1.3m use local convex hulls. Ray mesh retains source triangles. Contact approximation requires tunnel clearance tests.",
+    "skipped_degenerate_area_m2": 0.0
+  },
+  "visual_meshes": [
+    {
+      "path": "/tmp/rl_bt_nav_probe/fields/rmuc2027_original/visual/part_000.stl",
+      "bytes": 3790934,
+      "sha256": "14b791cce346065c0f7c77c51eb5129fbd7e35e321bb6e1bd3fe1d2521473f69",
+      "triangles": 75817,
+      "bounds_m": [
+        [
+          2.384185791015625e-07,
+          0.47872304916381836,
+          0.10376144200563431
+        ],
+        [
+          27.9999942779541,
+          15.524408340454102,
+          2.122164726257324
+        ]
+      ]
+    },
+    {
+      "path": "/tmp/rl_bt_nav_probe/fields/rmuc2027_original/visual/part_001.stl",
+      "bytes": 3790934,
+      "sha256": "a17f388945a30457bb6d892b02c4c4fc7cbf446f30578a0a0dde527609378a85",
+      "triangles": 75817,
+      "bounds_m": [
+        [
+          10.759162902832031,
+          3.8560633659362793,
+          0.53600013256073
+        ],
+        [
+          17.39070701599121,
+          12.181846618652344,
+          3.7988288402557373
+        ]
+      ]
+    },
+    {
+      "path": "/tmp/rl_bt_nav_probe/fields/rmuc2027_original/visual/part_002.stl",
+      "bytes": 3790884,
+      "sha256": "8f9dca4de96a29f61dcae5761ed30eec71cea509d9ec0ef1570dd736088d7a8c",
+      "triangles": 75816,
+      "bounds_m": [
+        [
+          12.986358642578125,
+          6.865207672119141,
+          0.5512735247612
+        ],
+        [
+          15.133514404296875,
+          9.015203475952148,
+          3.7988295555114746
+        ]
+      ]
+    },
+    {
+      "path": "/tmp/rl_bt_nav_probe/fields/rmuc2027_original/visual/part_003.stl",
+      "bytes": 3790884,
+      "sha256": "127213774fc58e280f87a0832856c6acfd3d36e57f8ea05d7353a9ce59606c89",
+      "triangles": 75816,
+      "bounds_m": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          27.9999942779541,
+          16.003131866455078,
+          3.786022424697876
+        ]
+      ]
+    },
+    {
+      "path": "/tmp/rl_bt_nav_probe/fields/rmuc2027_original/visual/part_004.stl",
+      "bytes": 3790884,
+      "sha256": "a58d94047a39cecd4cc60d381545c6b046851740f8933fa4e2c91402a8019066",
+      "triangles": 75816,
+      "bounds_m": [
+        [
+          7.450580596923828e-08,
+          0.4970083236694336,
+          0.10376144200563431
+        ],
+        [
+          27.9999942779541,
+          15.506122589111328,
+          1.9410744905471802
+        ]
+      ]
+    }
+  ],
+  "prepared_files": 20656,
+  "prepared_total_file_bytes": 56045608,
+  "elapsed_prepare_and_verification_wall_s": 1.039018214913085,
+  "protected_source_state_before": {
+    "files_sha256": {
+      "/opt/pb2025_nav_ws/src/pb2025_light_sim/meshes/rmuc_2027.stl": "2835c0e755c255f757d810d260283c623fbd4a49a8fd986487c70ad2a89e9d10",
+      "/opt/mid360_mujoco/tools/prepare_field.py": "70c72b5cd5b8d148d57a8b0e3b2421e45ab22db7aee684ee70acc46ef4a4bbe6",
+      "/opt/pb2025_nav_ws/src/pb2025_light_sim/worlds/rmuc_2027_world.sdf": "dcd96c807e0c001e518548600fdc4c3740d72f0819858eb2b47a304d1125d8eb",
+      "/opt/pb2025_nav_ws/src/pb2025_light_sim/meshes/rmuc_2027_driveable.stl": "97faa279776cc7b00a635dde51b1bc3dcf8ea91cb949fc73e88e28ea7b94905f",
+      "/opt/mid360_mujoco/configs/robot.yaml": "602e2d57d9b577ec23d6381ca5a13fb64eaf2e37c04d66be4ed4e50d016fd128",
+      "/opt/mid360_mujoco/generated/rmuc2027-v5/manifest.json": "29b0741c979e4e9e347838a45eead1f577935d3f1260568e2a6393cec591d49b",
+      "/opt/mid360_mujoco/generated/rmuc2027-v5/field.stl": "3aea8445574b08fa2bc3ae571deb50a2d39befd07f3a48e19f694906526c4685"
+    },
+    "field_current_resolved": "/opt/mid360_mujoco/generated/rmuc2027-v5"
+  },
+  "protected_source_state_after": {
+    "files_sha256": {
+      "/opt/pb2025_nav_ws/src/pb2025_light_sim/meshes/rmuc_2027.stl": "2835c0e755c255f757d810d260283c623fbd4a49a8fd986487c70ad2a89e9d10",
+      "/opt/mid360_mujoco/tools/prepare_field.py": "70c72b5cd5b8d148d57a8b0e3b2421e45ab22db7aee684ee70acc46ef4a4bbe6",
+      "/opt/pb2025_nav_ws/src/pb2025_light_sim/worlds/rmuc_2027_world.sdf": "dcd96c807e0c001e518548600fdc4c3740d72f0819858eb2b47a304d1125d8eb",
+      "/opt/pb2025_nav_ws/src/pb2025_light_sim/meshes/rmuc_2027_driveable.stl": "97faa279776cc7b00a635dde51b1bc3dcf8ea91cb949fc73e88e28ea7b94905f",
+      "/opt/mid360_mujoco/configs/robot.yaml": "602e2d57d9b577ec23d6381ca5a13fb64eaf2e37c04d66be4ed4e50d016fd128",
+      "/opt/mid360_mujoco/generated/rmuc2027-v5/manifest.json": "29b0741c979e4e9e347838a45eead1f577935d3f1260568e2a6393cec591d49b",
+      "/opt/mid360_mujoco/generated/rmuc2027-v5/field.stl": "3aea8445574b08fa2bc3ae571deb50a2d39befd07f3a48e19f694906526c4685"
+    },
+    "field_current_resolved": "/opt/mid360_mujoco/generated/rmuc2027-v5"
+  },
+  "protected_source_files_unchanged": true,
+  "field_current_modified": false,
+  "robot_geometry_or_dynamics_modified": false,
+  "ros_or_simulator_started": false,
+  "physical_navigation_or_tunnel_test_passed": false,
+  "official_referee_coordinate_registration_validated": false,
+  "rfid_or_healing_semantics_inferred_from_mesh": false,
+  "container": "Combat_Sentry2026",
+  "recorded_utc": "2026-11-16T08:27:36.097604+00:00",
+  "host_rebuild_script": "/home/kellen/桌面/RL_BT_decision/scripts/prepare_uc_original_field.py"
+}

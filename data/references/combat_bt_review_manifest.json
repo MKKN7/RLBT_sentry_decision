@@ -1,0 +1,96 @@
+{
+  "retrieved_on": "2026-11-15",
+  "repository": "https://github.com/Combat-Algorithm-Team/combat_sentry_behavior",
+  "commit": "1e7041e0b5c943a0ee9bfcf504b3fd09d312e9e1",
+  "scope": "Static source review for candidate selection, task execution and RL/BT boundary; no build, runtime tests or upstream edits",
+  "files": [
+    {
+      "path": "package.xml",
+      "sha256": "66966a8a23514d2cbc534ed5acfb76a8972e002b4ea1c477de111f09a6e1f404",
+      "source_url": "https://github.com/Combat-Algorithm-Team/combat_sentry_behavior/blob/1e7041e0b5c943a0ee9bfcf504b3fd09d312e9e1/package.xml"
+    },
+    {
+      "path": "params/sentry_behavior.yaml",
+      "sha256": "2ca7c71c38a16be2ee124cc7f6e128856b14714e725c6f7b5ff00fc36b9a3c9b",
+      "source_url": "https://github.com/Combat-Algorithm-Team/combat_sentry_behavior/blob/1e7041e0b5c943a0ee9bfcf504b3fd09d312e9e1/params/sentry_behavior.yaml"
+    },
+    {
+      "path": "behavior_trees/rmuc_2026.xml",
+      "sha256": "b6c2a651f2dde8da8be202170fe131408f085c110fbe8977d46ded260b72c8dd",
+      "source_url": "https://github.com/Combat-Algorithm-Team/combat_sentry_behavior/blob/1e7041e0b5c943a0ee9bfcf504b3fd09d312e9e1/behavior_trees/rmuc_2026.xml"
+    },
+    {
+      "path": "behavior_trees/rmuc_2026_common.xml",
+      "sha256": "e2812fb8731435804d6fbd3e270dfa0197381484b92337635d46f7f673bf7fa8",
+      "source_url": "https://github.com/Combat-Algorithm-Team/combat_sentry_behavior/blob/1e7041e0b5c943a0ee9bfcf504b3fd09d312e9e1/behavior_trees/rmuc_2026_common.xml"
+    },
+    {
+      "path": "behavior_trees/rmuc_2026_under_highland.xml",
+      "sha256": "48eb3a1f0dd2714ec30831cea8dd7519bb57590d070ef755a1a4beca6a114dc3",
+      "source_url": "https://github.com/Combat-Algorithm-Team/combat_sentry_behavior/blob/1e7041e0b5c943a0ee9bfcf504b3fd09d312e9e1/behavior_trees/rmuc_2026_under_highland.xml"
+    },
+    {
+      "path": "behavior_trees/rmuc_2026_recovery.xml",
+      "sha256": "d4f1a424b16866bee38f5bd02fcb749d4cf4732e4a1ec77e6136e048bfaef9ab",
+      "source_url": "https://github.com/Combat-Algorithm-Team/combat_sentry_behavior/blob/1e7041e0b5c943a0ee9bfcf504b3fd09d312e9e1/behavior_trees/rmuc_2026_recovery.xml"
+    },
+    {
+      "path": "plugins/action/mission_blackboard.cpp",
+      "sha256": "fdb2282d1ed7ccd248081874d90bf1a1867e5539ccc2f6e3810450f67fd7a604",
+      "source_url": "https://github.com/Combat-Algorithm-Team/combat_sentry_behavior/blob/1e7041e0b5c943a0ee9bfcf504b3fd09d312e9e1/plugins/action/mission_blackboard.cpp"
+    },
+    {
+      "path": "plugins/action/calculate_attack_pose.cpp",
+      "sha256": "3e8196495434925316d60ac1c77b99b832abc1e6887e6f745453d0b0ccb02fd2",
+      "source_url": "https://github.com/Combat-Algorithm-Team/combat_sentry_behavior/blob/1e7041e0b5c943a0ee9bfcf504b3fd09d312e9e1/plugins/action/calculate_attack_pose.cpp"
+    },
+    {
+      "path": "plugins/condition/is_goal_available.cpp",
+      "sha256": "23e8c62118adfc43e200e0420f88ba1cbae2364aa23e47c83b2fa6d0d0bf98fd",
+      "source_url": "https://github.com/Combat-Algorithm-Team/combat_sentry_behavior/blob/1e7041e0b5c943a0ee9bfcf504b3fd09d312e9e1/plugins/condition/is_goal_available.cpp"
+    },
+    {
+      "path": "plugins/action/pub_nav2_goal.cpp",
+      "sha256": "5c447a1443960e80ca73e3360cccafab3adb9e666490906c9bd35454b16a8a50",
+      "source_url": "https://github.com/Combat-Algorithm-Team/combat_sentry_behavior/blob/1e7041e0b5c943a0ee9bfcf504b3fd09d312e9e1/plugins/action/pub_nav2_goal.cpp"
+    },
+    {
+      "path": "plugins/action/wait_until_reached.cpp",
+      "sha256": "b09b1b26acb429dba885a6bd7c914d2e979d9281efb54500b2bff9a7a3bf751b",
+      "source_url": "https://github.com/Combat-Algorithm-Team/combat_sentry_behavior/blob/1e7041e0b5c943a0ee9bfcf504b3fd09d312e9e1/plugins/action/wait_until_reached.cpp"
+    },
+    {
+      "path": "plugins/action/send_nav2_goal.cpp",
+      "sha256": "c9cb052a438b1b5010b158e5f49f9a2f680a01fbc9ea1912352b8696bd3e4934",
+      "source_url": "https://github.com/Combat-Algorithm-Team/combat_sentry_behavior/blob/1e7041e0b5c943a0ee9bfcf504b3fd09d312e9e1/plugins/action/send_nav2_goal.cpp"
+    },
+    {
+      "path": "plugins/action/projectile_refill.cpp",
+      "sha256": "005e7d183211666209629c5901fab558dae80b136001f915df6d5fe10ac5299a",
+      "source_url": "https://github.com/Combat-Algorithm-Team/combat_sentry_behavior/blob/1e7041e0b5c943a0ee9bfcf504b3fd09d312e9e1/plugins/action/projectile_refill.cpp"
+    },
+    {
+      "path": "src/combat_sentry_behavior_server.cpp",
+      "sha256": "66d650d5235ba7318226f4c09163e3e15f99f490c8c478de96c027fb7c160bb1",
+      "source_url": "https://github.com/Combat-Algorithm-Team/combat_sentry_behavior/blob/1e7041e0b5c943a0ee9bfcf504b3fd09d312e9e1/src/combat_sentry_behavior_server.cpp"
+    },
+    {
+      "path": "include/combat_sentry_behavior/combat_sentry_behavior_server.hpp",
+      "sha256": "95eb29ec3c40d7c349c4f37c061f82980d2b9c1a27717987d8c4a6baa58ce9c0",
+      "source_url": "https://github.com/Combat-Algorithm-Team/combat_sentry_behavior/blob/1e7041e0b5c943a0ee9bfcf504b3fd09d312e9e1/include/combat_sentry_behavior/combat_sentry_behavior_server.hpp"
+    }
+  ],
+  "paper_pages_consulted": [
+    "https://arxiv.org/abs/1707.06347",
+    "https://arxiv.org/abs/1703.06114"
+  ],
+  "user_images_reviewed": 7,
+  "arithmetic_checks": {
+    "global_input_excluding_entity_blocks": 99,
+    "all_input_blocks_excluding_candidates": 173,
+    "pictured_entity_linear_parameters_with_bias": 592,
+    "gru_176_to_96_double_bias_parameters": 78912,
+    "pictured_total_parameter_estimate": 145800,
+    "gamma_099_over_840_steps": 0.00021555766074646761
+  }
+}

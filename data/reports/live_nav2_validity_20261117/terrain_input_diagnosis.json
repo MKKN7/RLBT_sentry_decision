@@ -1,0 +1,1981 @@
+{
+  "artifact_type": "measured_prefilter_input_diagnosis_not_navigation_training",
+  "execution": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_terrain_diagnostic_20261117/session/episode_000/execution",
+  "fixture_sha256": "8cd3015e207584987ec442d1603fe25407448da94ddc710e429357124c18dcaa",
+  "script_sha256": "e4f039ba6f3d9520e4c884d84d95eef210f5eba04d755314d65d4a2965b0a534",
+  "capture_count": 71,
+  "capture_limit": 80,
+  "capture_limit_reached": false,
+  "uses_GT_or_mesh_labels": false,
+  "planning_radius_unchanged_m": 0.411,
+  "online_self_filter_unchanged_m": 0.45,
+  "baseline_reproduced": true,
+  "all_compared_occupancy_arrays_identical": true,
+  "startup_before_5s_target_return_counts": [
+    0,
+    0
+  ],
+  "counts": [
+    {
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_terrain_diagnostic_20261117/session/episode_000/execution/fixture/terrain_inputs/scan_0000.npz",
+      "sha256": "6315830b3363c7b51e09387dcfb370a4f84d529a0e55c3d90a2f9c1df119e486",
+      "sampled_at_s": 0.302395,
+      "target_columns": [
+        {
+          "global_column_xy": [
+            -4,
+            -1
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        },
+        {
+          "global_column_xy": [
+            -4,
+            0
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        }
+      ]
+    },
+    {
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_terrain_diagnostic_20261117/session/episode_000/execution/fixture/terrain_inputs/scan_0001.npz",
+      "sha256": "6ab8e0b25c44b49915fd2ee2349bc44865f5db15f32b5c86d0640d77e55bfd6b",
+      "sampled_at_s": 0.401035,
+      "target_columns": [
+        {
+          "global_column_xy": [
+            -4,
+            -1
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        },
+        {
+          "global_column_xy": [
+            -4,
+            0
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        }
+      ]
+    },
+    {
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_terrain_diagnostic_20261117/session/episode_000/execution/fixture/terrain_inputs/scan_0002.npz",
+      "sha256": "856da37fbf8deb1dd1b12df2b21509d7afc0725fe7da2c0feeb654255de4bd85",
+      "sampled_at_s": 0.5,
+      "target_columns": [
+        {
+          "global_column_xy": [
+            -4,
+            -1
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        },
+        {
+          "global_column_xy": [
+            -4,
+            0
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        }
+      ]
+    },
+    {
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_terrain_diagnostic_20261117/session/episode_000/execution/fixture/terrain_inputs/scan_0003.npz",
+      "sha256": "0ecdf8d5cbb3c3f4a35a0147442bb753d249aa15ff8abb528f56fd55d6c87257",
+      "sampled_at_s": 0.603955,
+      "target_columns": [
+        {
+          "global_column_xy": [
+            -4,
+            -1
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        },
+        {
+          "global_column_xy": [
+            -4,
+            0
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        }
+      ]
+    },
+    {
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_terrain_diagnostic_20261117/session/episode_000/execution/fixture/terrain_inputs/scan_0004.npz",
+      "sha256": "1fce108adadf33d6d5f8ca33f98af584f8469ba9f13721813d8b89b0148afae4",
+      "sampled_at_s": 0.702595,
+      "target_columns": [
+        {
+          "global_column_xy": [
+            -4,
+            -1
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        },
+        {
+          "global_column_xy": [
+            -4,
+            0
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        }
+      ]
+    },
+    {
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_terrain_diagnostic_20261117/session/episode_000/execution/fixture/terrain_inputs/scan_0005.npz",
+      "sha256": "9532fc6894c60f15f161c14eb261f67dc8f25f0f963271a979513faa2ca34b04",
+      "sampled_at_s": 0.801215,
+      "target_columns": [
+        {
+          "global_column_xy": [
+            -4,
+            -1
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        },
+        {
+          "global_column_xy": [
+            -4,
+            0
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        }
+      ]
+    },
+    {
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_terrain_diagnostic_20261117/session/episode_000/execution/fixture/terrain_inputs/scan_0006.npz",
+      "sha256": "a903bcd8a42eb9b5ac7a47d6b764775b45ddcd17961cf68c35cd4a480edbca5d",
+      "sampled_at_s": 0.900005,
+      "target_columns": [
+        {
+          "global_column_xy": [
+            -4,
+            -1
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        },
+        {
+          "global_column_xy": [
+            -4,
+            0
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        }
+      ]
+    },
+    {
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_terrain_diagnostic_20261117/session/episode_000/execution/fixture/terrain_inputs/scan_0007.npz",
+      "sha256": "2d039facf0d00a946bd05c60a31b113890f80ba8341c657195bd570b47b64c1f",
+      "sampled_at_s": 1.00006,
+      "target_columns": [
+        {
+          "global_column_xy": [
+            -4,
+            -1
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        },
+        {
+          "global_column_xy": [
+            -4,
+            0
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        }
+      ]
+    },
+    {
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_terrain_diagnostic_20261117/session/episode_000/execution/fixture/terrain_inputs/scan_0008.npz",
+      "sha256": "c5fdeea5e00e7caae4aa5feffa9187843fee656be0cfddf1bbad93b9ecd46e97",
+      "sampled_at_s": 1.102775,
+      "target_columns": [
+        {
+          "global_column_xy": [
+            -4,
+            -1
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        },
+        {
+          "global_column_xy": [
+            -4,
+            0
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        }
+      ]
+    },
+    {
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_terrain_diagnostic_20261117/session/episode_000/execution/fixture/terrain_inputs/scan_0009.npz",
+      "sha256": "a98f714523909edb9cd76623099b2774860d8cdd663959bb782316ca37f074cd",
+      "sampled_at_s": 1.201415,
+      "target_columns": [
+        {
+          "global_column_xy": [
+            -4,
+            -1
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        },
+        {
+          "global_column_xy": [
+            -4,
+            0
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        }
+      ]
+    },
+    {
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_terrain_diagnostic_20261117/session/episode_000/execution/fixture/terrain_inputs/scan_0010.npz",
+      "sha256": "fd35b5377f627e1a5b1b5925aaf5bed921b864f35f52387e9df5069b3620165f",
+      "sampled_at_s": 1.300035,
+      "target_columns": [
+        {
+          "global_column_xy": [
+            -4,
+            -1
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        },
+        {
+          "global_column_xy": [
+            -4,
+            0
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        }
+      ]
+    },
+    {
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_terrain_diagnostic_20261117/session/episode_000/execution/fixture/terrain_inputs/scan_0011.npz",
+      "sha256": "5ec3f6b1da877fa878ed9abc15e8ae00248c870b450fd5ddee95fc898f5eface",
+      "sampled_at_s": 1.40024,
+      "target_columns": [
+        {
+          "global_column_xy": [
+            -4,
+            -1
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        },
+        {
+          "global_column_xy": [
+            -4,
+            0
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        }
+      ]
+    },
+    {
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_terrain_diagnostic_20261117/session/episode_000/execution/fixture/terrain_inputs/scan_0012.npz",
+      "sha256": "0fd6631ee7d59cbdd89ad800026af0ad5c1bdd0d17cc44abd17621bb64b3501a",
+      "sampled_at_s": 1.502955,
+      "target_columns": [
+        {
+          "global_column_xy": [
+            -4,
+            -1
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        },
+        {
+          "global_column_xy": [
+            -4,
+            0
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        }
+      ]
+    },
+    {
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_terrain_diagnostic_20261117/session/episode_000/execution/fixture/terrain_inputs/scan_0013.npz",
+      "sha256": "9a55c05c6aa3a53209592cb747bcb22d08c222804089dbaf8b1f919fb1d73963",
+      "sampled_at_s": 1.601595,
+      "target_columns": [
+        {
+          "global_column_xy": [
+            -4,
+            -1
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        },
+        {
+          "global_column_xy": [
+            -4,
+            0
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        }
+      ]
+    },
+    {
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_terrain_diagnostic_20261117/session/episode_000/execution/fixture/terrain_inputs/scan_0014.npz",
+      "sha256": "ba5816f9d99ba87208be2e802607e35d5d9664619817b06d259bdf46027bf653",
+      "sampled_at_s": 1.700215,
+      "target_columns": [
+        {
+          "global_column_xy": [
+            -4,
+            -1
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        },
+        {
+          "global_column_xy": [
+            -4,
+            0
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        }
+      ]
+    },
+    {
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_terrain_diagnostic_20261117/session/episode_000/execution/fixture/terrain_inputs/scan_0015.npz",
+      "sha256": "4a6624d12c3816589f5fe168860f7b64dd2c74660b3f34ad6b58e75c1c14a2b1",
+      "sampled_at_s": 1.80044,
+      "target_columns": [
+        {
+          "global_column_xy": [
+            -4,
+            -1
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        },
+        {
+          "global_column_xy": [
+            -4,
+            0
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        }
+      ]
+    },
+    {
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_terrain_diagnostic_20261117/session/episode_000/execution/fixture/terrain_inputs/scan_0016.npz",
+      "sha256": "eee5a5387719c978a1422573955488771c9fbdd44ef3695d687d81288243210b",
+      "sampled_at_s": 1.903155,
+      "target_columns": [
+        {
+          "global_column_xy": [
+            -4,
+            -1
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        },
+        {
+          "global_column_xy": [
+            -4,
+            0
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        }
+      ]
+    },
+    {
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_terrain_diagnostic_20261117/session/episode_000/execution/fixture/terrain_inputs/scan_0017.npz",
+      "sha256": "66097a0a97e8973e78fab3edf8569dc7164914fb37dcd5ef506b997c6913a756",
+      "sampled_at_s": 2.001775,
+      "target_columns": [
+        {
+          "global_column_xy": [
+            -4,
+            -1
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        },
+        {
+          "global_column_xy": [
+            -4,
+            0
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        }
+      ]
+    },
+    {
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_terrain_diagnostic_20261117/session/episode_000/execution/fixture/terrain_inputs/scan_0018.npz",
+      "sha256": "71ebf9959981fb4353789ee0cb2e74563d5ef44be0e876ccfa98053b44cbd41f",
+      "sampled_at_s": 2.100415,
+      "target_columns": [
+        {
+          "global_column_xy": [
+            -4,
+            -1
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        },
+        {
+          "global_column_xy": [
+            -4,
+            0
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        }
+      ]
+    },
+    {
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_terrain_diagnostic_20261117/session/episode_000/execution/fixture/terrain_inputs/scan_0019.npz",
+      "sha256": "f3571454e3524bebb5bc983cd7977bba6ecd22df088a99fd16081f353b35e04e",
+      "sampled_at_s": 2.2006,
+      "target_columns": [
+        {
+          "global_column_xy": [
+            -4,
+            -1
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        },
+        {
+          "global_column_xy": [
+            -4,
+            0
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        }
+      ]
+    },
+    {
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_terrain_diagnostic_20261117/session/episode_000/execution/fixture/terrain_inputs/scan_0020.npz",
+      "sha256": "bc29d9fb4a6aa0dfd269a1e04b009060d895d5fe4f236df47f1b66c9f351f483",
+      "sampled_at_s": 2.303335,
+      "target_columns": [
+        {
+          "global_column_xy": [
+            -4,
+            -1
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        },
+        {
+          "global_column_xy": [
+            -4,
+            0
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        }
+      ]
+    },
+    {
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_terrain_diagnostic_20261117/session/episode_000/execution/fixture/terrain_inputs/scan_0021.npz",
+      "sha256": "8e06eaac2ee875558d4d9b13c9a6dfbd01fa932449d981eb03bdf7a4e8640ad5",
+      "sampled_at_s": 2.401975,
+      "target_columns": [
+        {
+          "global_column_xy": [
+            -4,
+            -1
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        },
+        {
+          "global_column_xy": [
+            -4,
+            0
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        }
+      ]
+    },
+    {
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_terrain_diagnostic_20261117/session/episode_000/execution/fixture/terrain_inputs/scan_0022.npz",
+      "sha256": "55444a8f3b5d4cc7bd385dc64521c35c60a7b559a3995d6bf3a72fd511a707d1",
+      "sampled_at_s": 2.500595,
+      "target_columns": [
+        {
+          "global_column_xy": [
+            -4,
+            -1
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        },
+        {
+          "global_column_xy": [
+            -4,
+            0
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        }
+      ]
+    },
+    {
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_terrain_diagnostic_20261117/session/episode_000/execution/fixture/terrain_inputs/scan_0023.npz",
+      "sha256": "ab670796b9370d539751f3b93c1416995556c18361d695bfadaa10649637e832",
+      "sampled_at_s": 2.6008,
+      "target_columns": [
+        {
+          "global_column_xy": [
+            -4,
+            -1
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        },
+        {
+          "global_column_xy": [
+            -4,
+            0
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        }
+      ]
+    },
+    {
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_terrain_diagnostic_20261117/session/episode_000/execution/fixture/terrain_inputs/scan_0024.npz",
+      "sha256": "0a0caba51a41c9a8849d3055f5d2d0bba75c980a6e698d26d217b6ed8ceab4b6",
+      "sampled_at_s": 2.703515,
+      "target_columns": [
+        {
+          "global_column_xy": [
+            -4,
+            -1
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        },
+        {
+          "global_column_xy": [
+            -4,
+            0
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        }
+      ]
+    },
+    {
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_terrain_diagnostic_20261117/session/episode_000/execution/fixture/terrain_inputs/scan_0025.npz",
+      "sha256": "6bed9e49745e267a155f5070a1ec3e538ef7aa38e9039f68aa53b4220886a6be",
+      "sampled_at_s": 2.802155,
+      "target_columns": [
+        {
+          "global_column_xy": [
+            -4,
+            -1
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        },
+        {
+          "global_column_xy": [
+            -4,
+            0
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        }
+      ]
+    },
+    {
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_terrain_diagnostic_20261117/session/episode_000/execution/fixture/terrain_inputs/scan_0026.npz",
+      "sha256": "70224fec16530fb3381e60ed3fe3344f13c486a986deece681a2199f88fc0734",
+      "sampled_at_s": 2.900795,
+      "target_columns": [
+        {
+          "global_column_xy": [
+            -4,
+            -1
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        },
+        {
+          "global_column_xy": [
+            -4,
+            0
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        }
+      ]
+    },
+    {
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_terrain_diagnostic_20261117/session/episode_000/execution/fixture/terrain_inputs/scan_0027.npz",
+      "sha256": "1dd279f3878d4b2e6e748e564a17aebfdff02635e9f2a961f034219b437d0365",
+      "sampled_at_s": 3.0,
+      "target_columns": [
+        {
+          "global_column_xy": [
+            -4,
+            -1
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        },
+        {
+          "global_column_xy": [
+            -4,
+            0
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        }
+      ]
+    },
+    {
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_terrain_diagnostic_20261117/session/episode_000/execution/fixture/terrain_inputs/scan_0028.npz",
+      "sha256": "87e94825183d9f717378e980a8fd8b10763e69238fc663b0721930fa3ccc38e0",
+      "sampled_at_s": 3.103715,
+      "target_columns": [
+        {
+          "global_column_xy": [
+            -4,
+            -1
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        },
+        {
+          "global_column_xy": [
+            -4,
+            0
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        }
+      ]
+    },
+    {
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_terrain_diagnostic_20261117/session/episode_000/execution/fixture/terrain_inputs/scan_0029.npz",
+      "sha256": "b43575f9f1527f42c0834c7986720b2989588bd8884bdadcf484501668798a8b",
+      "sampled_at_s": 3.202355,
+      "target_columns": [
+        {
+          "global_column_xy": [
+            -4,
+            -1
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        },
+        {
+          "global_column_xy": [
+            -4,
+            0
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        }
+      ]
+    },
+    {
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_terrain_diagnostic_20261117/session/episode_000/execution/fixture/terrain_inputs/scan_0030.npz",
+      "sha256": "9386c52fb5e3f5f95bcca8cde6c2ac1e4efac573426a89c1a8a65f4827d680bb",
+      "sampled_at_s": 3.300975,
+      "target_columns": [
+        {
+          "global_column_xy": [
+            -4,
+            -1
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        },
+        {
+          "global_column_xy": [
+            -4,
+            0
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        }
+      ]
+    },
+    {
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_terrain_diagnostic_20261117/session/episode_000/execution/fixture/terrain_inputs/scan_0031.npz",
+      "sha256": "8473357b707ab047638dea185150b2ccc0bdf4de1b2b4e4e2bf7e102b9069eca",
+      "sampled_at_s": 3.4,
+      "target_columns": [
+        {
+          "global_column_xy": [
+            -4,
+            -1
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        },
+        {
+          "global_column_xy": [
+            -4,
+            0
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        }
+      ]
+    },
+    {
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_terrain_diagnostic_20261117/session/episode_000/execution/fixture/terrain_inputs/scan_0032.npz",
+      "sha256": "038f0744eaf866ad070af8cf475e89fecf5ca29803912689b8382d69a2fcc214",
+      "sampled_at_s": 3.503895,
+      "target_columns": [
+        {
+          "global_column_xy": [
+            -4,
+            -1
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        },
+        {
+          "global_column_xy": [
+            -4,
+            0
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        }
+      ]
+    },
+    {
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_terrain_diagnostic_20261117/session/episode_000/execution/fixture/terrain_inputs/scan_0033.npz",
+      "sha256": "4a10d3d0bc8ba3984e43ef744449c2e8396af301e2bb6fba7a906e6e9d9162f0",
+      "sampled_at_s": 3.600635,
+      "target_columns": [
+        {
+          "global_column_xy": [
+            -4,
+            -1
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        },
+        {
+          "global_column_xy": [
+            -4,
+            0
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        }
+      ]
+    },
+    {
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_terrain_diagnostic_20261117/session/episode_000/execution/fixture/terrain_inputs/scan_0034.npz",
+      "sha256": "80c18e4e3d7536e8afb4ff89d44c7985fb51a5ebc8b1b202afaa76cc018f03d1",
+      "sampled_at_s": 3.70266,
+      "target_columns": [
+        {
+          "global_column_xy": [
+            -4,
+            -1
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        },
+        {
+          "global_column_xy": [
+            -4,
+            0
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        }
+      ]
+    },
+    {
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_terrain_diagnostic_20261117/session/episode_000/execution/fixture/terrain_inputs/scan_0035.npz",
+      "sha256": "887aa5df3df6c1e77de7e846b5cf6de46cdfa7c61c2044dc0592fa0ac584bbf5",
+      "sampled_at_s": 3.80134,
+      "target_columns": [
+        {
+          "global_column_xy": [
+            -4,
+            -1
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        },
+        {
+          "global_column_xy": [
+            -4,
+            0
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        }
+      ]
+    },
+    {
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_terrain_diagnostic_20261117/session/episode_000/execution/fixture/terrain_inputs/scan_0036.npz",
+      "sha256": "f49e092ed30b077f134e6355bfccc1edfcd011767d423dd528d137df45d1f731",
+      "sampled_at_s": 3.9,
+      "target_columns": [
+        {
+          "global_column_xy": [
+            -4,
+            -1
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        },
+        {
+          "global_column_xy": [
+            -4,
+            0
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        }
+      ]
+    },
+    {
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_terrain_diagnostic_20261117/session/episode_000/execution/fixture/terrain_inputs/scan_0037.npz",
+      "sha256": "39d0d4004068e5028561d83247843ae0df8e6a84e91b4ccf265326fc16496d70",
+      "sampled_at_s": 4.000835,
+      "target_columns": [
+        {
+          "global_column_xy": [
+            -4,
+            -1
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        },
+        {
+          "global_column_xy": [
+            -4,
+            0
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        }
+      ]
+    },
+    {
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_terrain_diagnostic_20261117/session/episode_000/execution/fixture/terrain_inputs/scan_0038.npz",
+      "sha256": "a4cf8c348e2376625b71f23925fd165e30d1d5d03034ad62900bd6506990bc67",
+      "sampled_at_s": 4.1,
+      "target_columns": [
+        {
+          "global_column_xy": [
+            -4,
+            -1
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        },
+        {
+          "global_column_xy": [
+            -4,
+            0
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        }
+      ]
+    },
+    {
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_terrain_diagnostic_20261117/session/episode_000/execution/fixture/terrain_inputs/scan_0039.npz",
+      "sha256": "cbe3cb27e413b0aee1e28e14ff36d9e3b8bdc67615862f6bb4f75267658a0be7",
+      "sampled_at_s": 4.203755,
+      "target_columns": [
+        {
+          "global_column_xy": [
+            -4,
+            -1
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        },
+        {
+          "global_column_xy": [
+            -4,
+            0
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        }
+      ]
+    },
+    {
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_terrain_diagnostic_20261117/session/episode_000/execution/fixture/terrain_inputs/scan_0040.npz",
+      "sha256": "c42fbae8a23b01cbe73d150b87ffd1c25b77a4a8774a2931bec4351ec366c763",
+      "sampled_at_s": 4.302395,
+      "target_columns": [
+        {
+          "global_column_xy": [
+            -4,
+            -1
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        },
+        {
+          "global_column_xy": [
+            -4,
+            0
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        }
+      ]
+    },
+    {
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_terrain_diagnostic_20261117/session/episode_000/execution/fixture/terrain_inputs/scan_0041.npz",
+      "sha256": "f890a62e09e50c21c15271acaa3ff03360cdeacbea4a32758ad11f4511c37f4d",
+      "sampled_at_s": 4.401015,
+      "target_columns": [
+        {
+          "global_column_xy": [
+            -4,
+            -1
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        },
+        {
+          "global_column_xy": [
+            -4,
+            0
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        }
+      ]
+    },
+    {
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_terrain_diagnostic_20261117/session/episode_000/execution/fixture/terrain_inputs/scan_0042.npz",
+      "sha256": "d9074f04f61a889d78055dc22f8893659656e8f810ad58ae217ea0d55531cc94",
+      "sampled_at_s": 4.5,
+      "target_columns": [
+        {
+          "global_column_xy": [
+            -4,
+            -1
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        },
+        {
+          "global_column_xy": [
+            -4,
+            0
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        }
+      ]
+    },
+    {
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_terrain_diagnostic_20261117/session/episode_000/execution/fixture/terrain_inputs/scan_0043.npz",
+      "sha256": "d6d773999258bff378e74b45963832c3ee095633e910c768dae091410c299872",
+      "sampled_at_s": 4.603935,
+      "target_columns": [
+        {
+          "global_column_xy": [
+            -4,
+            -1
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        },
+        {
+          "global_column_xy": [
+            -4,
+            0
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        }
+      ]
+    },
+    {
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_terrain_diagnostic_20261117/session/episode_000/execution/fixture/terrain_inputs/scan_0044.npz",
+      "sha256": "6c7760a3a5d9836a5cc0aeb891cf0d4e2b6a5d8b8bc83c94658a97b6e1882e68",
+      "sampled_at_s": 4.702575,
+      "target_columns": [
+        {
+          "global_column_xy": [
+            -4,
+            -1
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        },
+        {
+          "global_column_xy": [
+            -4,
+            0
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        }
+      ]
+    },
+    {
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_terrain_diagnostic_20261117/session/episode_000/execution/fixture/terrain_inputs/scan_0045.npz",
+      "sha256": "50d0d054e7517a83a729712406c1ac86286dd63adccec5b4cc5b7bbcc7f6f0c9",
+      "sampled_at_s": 4.801215,
+      "target_columns": [
+        {
+          "global_column_xy": [
+            -4,
+            -1
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        },
+        {
+          "global_column_xy": [
+            -4,
+            0
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        }
+      ]
+    },
+    {
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_terrain_diagnostic_20261117/session/episode_000/execution/fixture/terrain_inputs/scan_0046.npz",
+      "sha256": "3eadded9f621ac3c8edd70ac4a1041cc139e8d579ec693a7947179c825a99d3c",
+      "sampled_at_s": 4.900005,
+      "target_columns": [
+        {
+          "global_column_xy": [
+            -4,
+            -1
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        },
+        {
+          "global_column_xy": [
+            -4,
+            0
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        }
+      ]
+    },
+    {
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_terrain_diagnostic_20261117/session/episode_000/execution/fixture/terrain_inputs/scan_0047.npz",
+      "sha256": "3834cca8ff8902afbb42ffd4b4ca34f5dec97cc190bc10a93e9582e58fc6b0f9",
+      "sampled_at_s": 5.00004,
+      "target_columns": [
+        {
+          "global_column_xy": [
+            -4,
+            -1
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        },
+        {
+          "global_column_xy": [
+            -4,
+            0
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        }
+      ]
+    },
+    {
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_terrain_diagnostic_20261117/session/episode_000/execution/fixture/terrain_inputs/scan_0048.npz",
+      "sha256": "b3a03bba80cf8990a84f0d00ae1c4ceb3f932a666692296d074e140ee8075ef7",
+      "sampled_at_s": 5.102775,
+      "target_columns": [
+        {
+          "global_column_xy": [
+            -4,
+            -1
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        },
+        {
+          "global_column_xy": [
+            -4,
+            0
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        }
+      ]
+    },
+    {
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_terrain_diagnostic_20261117/session/episode_000/execution/fixture/terrain_inputs/scan_0049.npz",
+      "sha256": "3ec0ff1bb9a3ebbd9828c22fa3b223394c1d866eba827dfd95242ce94ff8279c",
+      "sampled_at_s": 5.201395,
+      "target_columns": [
+        {
+          "global_column_xy": [
+            -4,
+            -1
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        },
+        {
+          "global_column_xy": [
+            -4,
+            0
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        }
+      ]
+    },
+    {
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_terrain_diagnostic_20261117/session/episode_000/execution/fixture/terrain_inputs/scan_0050.npz",
+      "sha256": "77657a21e791ad247eaa3d48c4583e54e95712662f3e590a3b20c42e91aee928",
+      "sampled_at_s": 5.300015,
+      "target_columns": [
+        {
+          "global_column_xy": [
+            -4,
+            -1
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        },
+        {
+          "global_column_xy": [
+            -4,
+            0
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        }
+      ]
+    },
+    {
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_terrain_diagnostic_20261117/session/episode_000/execution/fixture/terrain_inputs/scan_0051.npz",
+      "sha256": "6657742ed5175d3161c2deff7375de2509109d5a10537fcfc5000a0a7c5d1b7f",
+      "sampled_at_s": 5.40022,
+      "target_columns": [
+        {
+          "global_column_xy": [
+            -4,
+            -1
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        },
+        {
+          "global_column_xy": [
+            -4,
+            0
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        }
+      ]
+    },
+    {
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_terrain_diagnostic_20261117/session/episode_000/execution/fixture/terrain_inputs/scan_0052.npz",
+      "sha256": "fea9d064bdef6d1a30e3e3814dfa9d26ee22f0e43b27fc8bee814335b7fd1674",
+      "sampled_at_s": 5.502955,
+      "target_columns": [
+        {
+          "global_column_xy": [
+            -4,
+            -1
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        },
+        {
+          "global_column_xy": [
+            -4,
+            0
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        }
+      ]
+    },
+    {
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_terrain_diagnostic_20261117/session/episode_000/execution/fixture/terrain_inputs/scan_0053.npz",
+      "sha256": "4b426517bc73930bb9ac55d098ba64289944ee527b3cc3aa52cf20a04f87fc37",
+      "sampled_at_s": 5.601575,
+      "target_columns": [
+        {
+          "global_column_xy": [
+            -4,
+            -1
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        },
+        {
+          "global_column_xy": [
+            -4,
+            0
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        }
+      ]
+    },
+    {
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_terrain_diagnostic_20261117/session/episode_000/execution/fixture/terrain_inputs/scan_0054.npz",
+      "sha256": "c39f598b247a95dd744145fa42d0a21512a0888afa9c94074cf97b2ac4e31b84",
+      "sampled_at_s": 5.700195,
+      "target_columns": [
+        {
+          "global_column_xy": [
+            -4,
+            -1
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        },
+        {
+          "global_column_xy": [
+            -4,
+            0
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        }
+      ]
+    },
+    {
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_terrain_diagnostic_20261117/session/episode_000/execution/fixture/terrain_inputs/scan_0055.npz",
+      "sha256": "939380bfe7d8d2fc9752d7cce54fea22e0445e1b6a9acf99b72a15c18a59e48a",
+      "sampled_at_s": 5.8004,
+      "target_columns": [
+        {
+          "global_column_xy": [
+            -4,
+            -1
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        },
+        {
+          "global_column_xy": [
+            -4,
+            0
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        }
+      ]
+    },
+    {
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_terrain_diagnostic_20261117/session/episode_000/execution/fixture/terrain_inputs/scan_0056.npz",
+      "sha256": "fb046749044523968f3f2a6292dff3561a29aebf4316f9f78316b05c7a3b2896",
+      "sampled_at_s": 5.903115,
+      "target_columns": [
+        {
+          "global_column_xy": [
+            -4,
+            -1
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        },
+        {
+          "global_column_xy": [
+            -4,
+            0
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        }
+      ]
+    },
+    {
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_terrain_diagnostic_20261117/session/episode_000/execution/fixture/terrain_inputs/scan_0057.npz",
+      "sha256": "5f9fd3debdd711c6f6706e0fbaf0226dfa58d7b2aeaa0850f29e864ecb267067",
+      "sampled_at_s": 6.001735,
+      "target_columns": [
+        {
+          "global_column_xy": [
+            -4,
+            -1
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        },
+        {
+          "global_column_xy": [
+            -4,
+            0
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        }
+      ]
+    },
+    {
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_terrain_diagnostic_20261117/session/episode_000/execution/fixture/terrain_inputs/scan_0058.npz",
+      "sha256": "d0fb7635b4cdbcbd9b572f5b4135ee389b5c8e97298119f1e36a6a82f0dd1102",
+      "sampled_at_s": 6.100355,
+      "target_columns": [
+        {
+          "global_column_xy": [
+            -4,
+            -1
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        },
+        {
+          "global_column_xy": [
+            -4,
+            0
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        }
+      ]
+    },
+    {
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_terrain_diagnostic_20261117/session/episode_000/execution/fixture/terrain_inputs/scan_0059.npz",
+      "sha256": "1ee509e2b4b73f3411b28ae5359f84da5a57d04febb337206edb61c7b6fe69c6",
+      "sampled_at_s": 6.204635,
+      "target_columns": [
+        {
+          "global_column_xy": [
+            -4,
+            -1
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        },
+        {
+          "global_column_xy": [
+            -4,
+            0
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        }
+      ]
+    },
+    {
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_terrain_diagnostic_20261117/session/episode_000/execution/fixture/terrain_inputs/scan_0060.npz",
+      "sha256": "d050989f9bc70071a2a9c5eea5aa40abe2f8d58c418cb7fc259c31fe0cea707d",
+      "sampled_at_s": 6.303275,
+      "target_columns": [
+        {
+          "global_column_xy": [
+            -4,
+            -1
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        },
+        {
+          "global_column_xy": [
+            -4,
+            0
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        }
+      ]
+    },
+    {
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_terrain_diagnostic_20261117/session/episode_000/execution/fixture/terrain_inputs/scan_0061.npz",
+      "sha256": "20e5526dfc883b5acbd644421a9ed3a85b8f40ed2984c45f4e087d5655505772",
+      "sampled_at_s": 6.401895,
+      "target_columns": [
+        {
+          "global_column_xy": [
+            -4,
+            -1
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        },
+        {
+          "global_column_xy": [
+            -4,
+            0
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        }
+      ]
+    },
+    {
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_terrain_diagnostic_20261117/session/episode_000/execution/fixture/terrain_inputs/scan_0062.npz",
+      "sha256": "40be439081db3e8dbd576559c0c503b16e45422622f2a30e063b290e2775e434",
+      "sampled_at_s": 6.500515,
+      "target_columns": [
+        {
+          "global_column_xy": [
+            -4,
+            -1
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        },
+        {
+          "global_column_xy": [
+            -4,
+            0
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        }
+      ]
+    },
+    {
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_terrain_diagnostic_20261117/session/episode_000/execution/fixture/terrain_inputs/scan_0063.npz",
+      "sha256": "5ba8a64c2ed4179a719f234bed05a85355d614595bf9144a74a4e5396bb59f2f",
+      "sampled_at_s": 6.604795,
+      "target_columns": [
+        {
+          "global_column_xy": [
+            -4,
+            -1
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        },
+        {
+          "global_column_xy": [
+            -4,
+            0
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        }
+      ]
+    },
+    {
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_terrain_diagnostic_20261117/session/episode_000/execution/fixture/terrain_inputs/scan_0064.npz",
+      "sha256": "90782b40e279557cf1ac813bb8259a379b8386e81367635a06d7d20eaa5bac8b",
+      "sampled_at_s": 6.703415,
+      "target_columns": [
+        {
+          "global_column_xy": [
+            -4,
+            -1
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        },
+        {
+          "global_column_xy": [
+            -4,
+            0
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        }
+      ]
+    },
+    {
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_terrain_diagnostic_20261117/session/episode_000/execution/fixture/terrain_inputs/scan_0065.npz",
+      "sha256": "af5a4bb8f837e91f29260d8c1a7e178d12949e0e2c83c96a2c5c629d37c2bc03",
+      "sampled_at_s": 6.802035,
+      "target_columns": [
+        {
+          "global_column_xy": [
+            -4,
+            -1
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        },
+        {
+          "global_column_xy": [
+            -4,
+            0
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        }
+      ]
+    },
+    {
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_terrain_diagnostic_20261117/session/episode_000/execution/fixture/terrain_inputs/scan_0066.npz",
+      "sha256": "046b300352117e3c063958c51faa8b2aebf3f5ab716eda420fcb5656a2147b7d",
+      "sampled_at_s": 6.900655,
+      "target_columns": [
+        {
+          "global_column_xy": [
+            -4,
+            -1
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        },
+        {
+          "global_column_xy": [
+            -4,
+            0
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        }
+      ]
+    },
+    {
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_terrain_diagnostic_20261117/session/episode_000/execution/fixture/terrain_inputs/scan_0067.npz",
+      "sha256": "26f8d0b973e0181295daccade29b474827adac82caf3bf542c487d4e6cb6755a",
+      "sampled_at_s": 7.004915,
+      "target_columns": [
+        {
+          "global_column_xy": [
+            -4,
+            -1
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        },
+        {
+          "global_column_xy": [
+            -4,
+            0
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        }
+      ]
+    },
+    {
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_terrain_diagnostic_20261117/session/episode_000/execution/fixture/terrain_inputs/scan_0068.npz",
+      "sha256": "d505b910c2a59f5d7c26576e5b65b4bc7a0711f7a7d038ba13ae7cfa875a0632",
+      "sampled_at_s": 7.103555,
+      "target_columns": [
+        {
+          "global_column_xy": [
+            -4,
+            -1
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        },
+        {
+          "global_column_xy": [
+            -4,
+            0
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        }
+      ]
+    },
+    {
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_terrain_diagnostic_20261117/session/episode_000/execution/fixture/terrain_inputs/scan_0069.npz",
+      "sha256": "cf09763702909c8326079aaa9d613e6f7a84082b96037eebb0ca800bd37e26bf",
+      "sampled_at_s": 7.202175,
+      "target_columns": [
+        {
+          "global_column_xy": [
+            -4,
+            -1
+          ],
+          "prefilter_returns": 3,
+          "retained_045_returns": 3,
+          "retained_0411_returns": 3
+        },
+        {
+          "global_column_xy": [
+            -4,
+            0
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        }
+      ]
+    },
+    {
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_terrain_diagnostic_20261117/session/episode_000/execution/fixture/terrain_inputs/scan_0070.npz",
+      "sha256": "f6355b7ce4c0ce8579dec79f2e20de17b3ba352315ac65b1fd23c0992e31df46",
+      "sampled_at_s": 7.300795,
+      "target_columns": [
+        {
+          "global_column_xy": [
+            -4,
+            -1
+          ],
+          "prefilter_returns": 7,
+          "retained_045_returns": 7,
+          "retained_0411_returns": 7
+        },
+        {
+          "global_column_xy": [
+            -4,
+            0
+          ],
+          "prefilter_returns": 0,
+          "retained_045_returns": 0,
+          "retained_0411_returns": 0
+        }
+      ]
+    }
+  ],
+  "offline_replays": [
+    {
+      "offline_self_filter_radius_m": 0.45,
+      "replays": [
+        {
+          "sampled_at_s": 0.302395,
+          "batch_scan_count": 1,
+          "counts": {
+            "observed_voxels": 1971,
+            "free_cells": 485,
+            "occupied_cells": 255,
+            "unknown_cells": 5821,
+            "reachable_support_layers": 490
+          },
+          "counts_match_recorded_baseline": true
+        },
+        {
+          "sampled_at_s": 1.40024,
+          "batch_scan_count": 8,
+          "counts": {
+            "observed_voxels": 4037,
+            "free_cells": 1127,
+            "occupied_cells": 487,
+            "unknown_cells": 4947,
+            "reachable_support_layers": 1132
+          },
+          "counts_match_recorded_baseline": true
+        },
+        {
+          "sampled_at_s": 2.401975,
+          "batch_scan_count": 8,
+          "counts": {
+            "observed_voxels": 4648,
+            "free_cells": 1235,
+            "occupied_cells": 613,
+            "unknown_cells": 4713,
+            "reachable_support_layers": 1241
+          },
+          "counts_match_recorded_baseline": true
+        },
+        {
+          "sampled_at_s": 3.503895,
+          "batch_scan_count": 8,
+          "counts": {
+            "observed_voxels": 4749,
+            "free_cells": 1337,
+            "occupied_cells": 690,
+            "unknown_cells": 4534,
+            "reachable_support_layers": 1342
+          },
+          "counts_match_recorded_baseline": true
+        },
+        {
+          "sampled_at_s": 4.603935,
+          "batch_scan_count": 8,
+          "counts": {
+            "observed_voxels": 4508,
+            "free_cells": 1344,
+            "occupied_cells": 701,
+            "unknown_cells": 4516,
+            "reachable_support_layers": 1345
+          },
+          "counts_match_recorded_baseline": true
+        },
+        {
+          "sampled_at_s": 5.700195,
+          "batch_scan_count": 8,
+          "counts": {
+            "observed_voxels": 4471,
+            "free_cells": 1344,
+            "occupied_cells": 691,
+            "unknown_cells": 4526,
+            "reachable_support_layers": 1346
+          },
+          "counts_match_recorded_baseline": true
+        },
+        {
+          "sampled_at_s": 6.703415,
+          "batch_scan_count": 8,
+          "counts": {
+            "observed_voxels": 4588,
+            "free_cells": 1399,
+            "occupied_cells": 658,
+            "unknown_cells": 4504,
+            "reachable_support_layers": 1400
+          },
+          "counts_match_recorded_baseline": true
+        }
+      ]
+    },
+    {
+      "offline_self_filter_radius_m": 0.411,
+      "replays": [
+        {
+          "sampled_at_s": 0.302395,
+          "batch_scan_count": 1,
+          "counts": {
+            "observed_voxels": 1971,
+            "free_cells": 485,
+            "occupied_cells": 255,
+            "unknown_cells": 5821,
+            "reachable_support_layers": 490
+          },
+          "counts_match_recorded_baseline": null
+        },
+        {
+          "sampled_at_s": 1.40024,
+          "batch_scan_count": 8,
+          "counts": {
+            "observed_voxels": 4037,
+            "free_cells": 1127,
+            "occupied_cells": 487,
+            "unknown_cells": 4947,
+            "reachable_support_layers": 1132
+          },
+          "counts_match_recorded_baseline": null
+        },
+        {
+          "sampled_at_s": 2.401975,
+          "batch_scan_count": 8,
+          "counts": {
+            "observed_voxels": 4648,
+            "free_cells": 1235,
+            "occupied_cells": 613,
+            "unknown_cells": 4713,
+            "reachable_support_layers": 1241
+          },
+          "counts_match_recorded_baseline": null
+        },
+        {
+          "sampled_at_s": 3.503895,
+          "batch_scan_count": 8,
+          "counts": {
+            "observed_voxels": 4749,
+            "free_cells": 1337,
+            "occupied_cells": 690,
+            "unknown_cells": 4534,
+            "reachable_support_layers": 1342
+          },
+          "counts_match_recorded_baseline": null
+        },
+        {
+          "sampled_at_s": 4.603935,
+          "batch_scan_count": 8,
+          "counts": {
+            "observed_voxels": 4508,
+            "free_cells": 1344,
+            "occupied_cells": 701,
+            "unknown_cells": 4516,
+            "reachable_support_layers": 1345
+          },
+          "counts_match_recorded_baseline": null
+        },
+        {
+          "sampled_at_s": 5.700195,
+          "batch_scan_count": 8,
+          "counts": {
+            "observed_voxels": 4471,
+            "free_cells": 1344,
+            "occupied_cells": 691,
+            "unknown_cells": 4526,
+            "reachable_support_layers": 1346
+          },
+          "counts_match_recorded_baseline": null
+        },
+        {
+          "sampled_at_s": 6.703415,
+          "batch_scan_count": 8,
+          "counts": {
+            "observed_voxels": 4588,
+            "free_cells": 1399,
+            "occupied_cells": 658,
+            "unknown_cells": 4504,
+            "reachable_support_layers": 1400
+          },
+          "counts_match_recorded_baseline": null
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Only bounded captured inputs replayed; no new physical execution.",
+    "Capture is registered XYZ before radial filters, not raw sensor packets.",
+    "Offline reduced exclusion is diagnostic only and was not deployed.",
+    "No observations, support, prior or safety labels were synthesized."
+  ]
+}

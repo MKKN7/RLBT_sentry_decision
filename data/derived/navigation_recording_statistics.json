@@ -1,0 +1,47 @@
+{
+  "source_kind": "MuJoCo simulation recording_not_real_robot_or_match_telemetry",
+  "read_only": true,
+  "records": [
+    {
+      "container_path": "/opt/mid360_mujoco/recordings/20261112-151305-504159/state.csv",
+      "sha256": "6d371a32150841860acfbe9bb24302f1710cf0cef8b6522eccf268a951dc31c2",
+      "rows": 3484,
+      "duration_s": 17.415000000000003,
+      "strictly_increasing_time": true,
+      "median_dt_s": 0.004999999999999893,
+      "speed_mps_median": 0.008856403568214235,
+      "speed_mps_max": 0.14477173203327023,
+      "xy_path_length_m": 0.1560600302871823,
+      "limits": "Simulated self odometry only; no command, opponent, task or detection labels.",
+      "source": "docker://Combat_Sentry2026/opt/mid360_mujoco/recordings/20261112-151305-504159/state.csv"
+    },
+    {
+      "container_path": "/opt/mid360_mujoco/recordings/20261112-151346-227753/state.csv",
+      "sha256": "eec81d77a7cdb7c5f4a9dc9013c8f2666fedaa4f6b3965bb2fdf50b024f25542",
+      "rows": 200,
+      "duration_s": 0.9950000000000001,
+      "strictly_increasing_time": true,
+      "median_dt_s": 0.004999999999999893,
+      "speed_mps_median": 0.01024397824243617,
+      "speed_mps_max": 0.0786011331901023,
+      "xy_path_length_m": 0.016644155006085723,
+      "limits": "Simulated self odometry only; no command, opponent, task or detection labels.",
+      "source": "docker://Combat_Sentry2026/opt/mid360_mujoco/recordings/20261112-151346-227753/state.csv"
+    },
+    {
+      "container_path": "/opt/mid360_mujoco/recordings/20261114-210055-266644/state.csv",
+      "sha256": "52d88d013420bf2efb6c82dc21efe0e2ccf44ac6e634c7f92ed66eeddf843154",
+      "rows": 29540,
+      "duration_s": 147.69500000000002,
+      "strictly_increasing_time": true,
+      "median_dt_s": 0.0049999999999954525,
+      "speed_mps_median": 1.2090657206244824,
+      "speed_mps_max": 2.2296339775099527,
+      "xy_path_length_m": 145.48784221214234,
+      "limits": "Simulated self odometry only; no command, opponent, task or detection labels.",
+      "source": "docker://Combat_Sentry2026/opt/mid360_mujoco/recordings/20261114-210055-266644/state.csv"
+    }
+  ],
+  "used_to_calibrate_detection_or_command_latency": false,
+  "reason": "Missing paired detection/command/ack timestamps and measured robot truth."
+}

@@ -1,0 +1,20 @@
+{
+  "goals": [[0.0, 0.3], [0.0, 0.4]],
+  "registration_date": "2026-11-17",
+  "scope": "actual original UC local Nav2 MPPI sessions, not full match",
+  "BT_demonstration_episodes": 4,
+  "PPO_training_episodes": 8,
+  "PPO_max_decisions": 256,
+  "BC_updates": 200,
+  "auxiliary_CE": 0.05,
+  "auxiliary_forward_KL": 0.05,
+  "greedy_evaluation_episodes_per_policy": 4,
+  "evaluation_policy_checkpoints": ["initial.pt", "final.pt"],
+  "checkpoint_selection": "fixed final after 8 episodes; evaluation does not select a checkpoint",
+  "training_seed": 271,
+  "physical_session_pairing": "same goal order but independent processes and noisy estimator; not identical seeded physics",
+  "observed_support_radius_m": 0.411,
+  "fixed_start_prior_changed": false,
+  "healthy_hold_remains_legal": true,
+  "old_pilot_retained": "runs/uc_live_ppo_pilot_20261117"
+}

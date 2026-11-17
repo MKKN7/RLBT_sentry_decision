@@ -1,0 +1,333 @@
+{
+  "artifact_type": "synthetic_upstream_demo_interface_probe_not_official_match_data",
+  "source_commit": "9f2489ce78e46f0e37a21e90d4b11a0a1a94c4d2",
+  "scenario_id": "alpharm_simplified_3v3_web",
+  "official_competition_profile": null,
+  "seed": 0,
+  "episodes": 1,
+  "environment_steps": 767,
+  "agent_transitions": 4602,
+  "environment_done": true,
+  "collector_truncated": false,
+  "final_score": [
+    95.19966888427734,
+    85.90003204345703
+  ],
+  "final_winner_code": 1,
+  "final_outcome_code": 1,
+  "final_time_remaining_s": 103.39720916748047,
+  "rollout_wall_s": 6.265521913068369,
+  "provider": "CPUExecutionProvider",
+  "onnxruntime_version": "1.18.1",
+  "policy_mode": "deterministic_pretrained_actor_6_agents_shared_weights",
+  "noise": "disabled; follows deterministic exported environment, no JS noise injection",
+  "rules": "upstream web export; collision/push terminal thresholds set to 1e9",
+  "sample_path": "data/demos/alpharm_probe/episode_000.npz",
+  "sample_sha256": "c797b64060019790f8e542b4e0045fc757918dbed31468f221c42933c970e528",
+  "sample_bytes": 1154823,
+  "array_shapes": {
+    "obs": [
+      768,
+      6,
+      140
+    ],
+    "actions": [
+      767,
+      6,
+      6
+    ],
+    "target_mask": [
+      767,
+      6,
+      4
+    ],
+    "fire_mask": [
+      767,
+      6,
+      2
+    ],
+    "reward": [
+      767,
+      6
+    ],
+    "environment_done": [
+      767
+    ],
+    "privileged_state/pos": [
+      768,
+      6,
+      2
+    ],
+    "privileged_state/yaw": [
+      768,
+      6
+    ],
+    "privileged_state/vel": [
+      768,
+      6,
+      2
+    ],
+    "privileged_state/v_pre": [
+      768,
+      6,
+      2
+    ],
+    "privileged_state/yaw_rate": [
+      768,
+      6
+    ],
+    "privileged_state/yaw_cmd": [
+      768,
+      6
+    ],
+    "privileged_state/spin": [
+      768,
+      6
+    ],
+    "privileged_state/spin_cmd": [
+      768,
+      6
+    ],
+    "privileged_state/hp": [
+      768,
+      6
+    ],
+    "privileged_state/heat": [
+      768,
+      6
+    ],
+    "privileged_state/overheated": [
+      768,
+      6
+    ],
+    "privileged_state/alive": [
+      768,
+      6
+    ],
+    "privileged_state/invuln": [
+      768,
+      6
+    ],
+    "privileged_state/invuln_timer": [
+      768,
+      6
+    ],
+    "privileged_state/respawn_timer": [
+      768,
+      6
+    ],
+    "privileged_state/target": [
+      768,
+      6
+    ],
+    "privileged_state/target_cmd": [
+      768,
+      6
+    ],
+    "privileged_state/fire_cmd": [
+      768,
+      6
+    ],
+    "privileged_state/p_t": [
+      768,
+      6
+    ],
+    "privileged_state/tau_eff": [
+      768,
+      6
+    ],
+    "privileged_state/last_fired": [
+      768,
+      6
+    ],
+    "privileged_state/hit_cue": [
+      768,
+      6
+    ],
+    "privileged_state/hit_cue_valid": [
+      768,
+      6
+    ],
+    "privileged_state/score": [
+      768,
+      2
+    ],
+    "privileged_state/time": [
+      768
+    ],
+    "privileged_state/episode_elapsed": [
+      768
+    ],
+    "privileged_state/total_damage": [
+      768,
+      2
+    ],
+    "privileged_state/cum_damage": [
+      768,
+      6,
+      6
+    ],
+    "privileged_state/kill_damage": [
+      768,
+      6,
+      6
+    ],
+    "privileged_state/last_kill_credit": [
+      768,
+      6
+    ],
+    "privileged_state/last_kill_score": [
+      768,
+      2
+    ],
+    "privileged_state/last_p_final": [
+      768,
+      6
+    ],
+    "privileged_state/occ": [
+      768,
+      2
+    ],
+    "privileged_state/outcome": [
+      768
+    ],
+    "privileged_state/winner": [
+      768
+    ],
+    "privileged_state/foul_loser": [
+      768
+    ],
+    "privileged_state/foul_agent": [
+      768,
+      6
+    ],
+    "privileged_state/foul_intensity": [
+      768,
+      6
+    ],
+    "privileged_state/double_foul": [
+      768
+    ],
+    "privileged_state/both_200": [
+      768
+    ],
+    "privileged_state/done": [
+      768
+    ],
+    "privileged_state/just_died": [
+      768,
+      6
+    ],
+    "privileged_state/step": [
+      768
+    ],
+    "privileged_state/reward_dense": [
+      768,
+      6
+    ],
+    "privileged_state/reward_terminal": [
+      768,
+      6
+    ],
+    "privileged_state/center_dist_prev": [
+      768,
+      6
+    ],
+    "privileged_state/last_hit_damage": [
+      768,
+      6
+    ],
+    "privileged_state/last_damage": [
+      768,
+      6,
+      6
+    ],
+    "privileged_state/prev_wall_contact": [
+      768,
+      6
+    ],
+    "privileged_state/prev_pair_contact": [
+      768,
+      6,
+      6
+    ],
+    "privileged_state/wall_contact_time": [
+      768,
+      6
+    ],
+    "privileged_state/body_push_time": [
+      768,
+      6
+    ],
+    "privileged_state/body_push_foul": [
+      768,
+      6
+    ],
+    "privileged_state/proximity_time": [
+      768,
+      6,
+      6
+    ],
+    "privileged_state/episode_start_elapsed": [
+      768
+    ],
+    "privileged_state/stagnation_had_combat": [
+      768
+    ],
+    "privileged_state/stagnation_had_occ": [
+      768
+    ],
+    "privileged_state/stagnation_had_heal": [
+      768
+    ],
+    "privileged_state/stagnation_last_event": [
+      768
+    ],
+    "privileged_state/stagnation_speed": [
+      768,
+      6
+    ],
+    "privileged_state/wall_push_time": [
+      768,
+      6
+    ],
+    "privileged_state/wall_push_foul_intent": [
+      768,
+      6
+    ],
+    "initial_hidden": [
+      6,
+      256
+    ],
+    "collector_truncated": [
+      767
+    ]
+  },
+  "alignment": "obs[t], actions[t], reward[t], obs[t+1]; privileged_state has T+1 entries",
+  "checks": [
+    "fixed source hashes",
+    "legal target/fire actions",
+    "finite arrays",
+    "T+1 observation alignment",
+    "stop at first done"
+  ],
+  "limits": [
+    "One fixed deterministic episode; repeated runs are not independent matches.",
+    "No JAX/ONNX numerical parity comparison performed on this host.",
+    "No BT tasks/candidate labels, behavior log-probabilities or value targets.",
+    "environment_done is not a per-agent PPO terminated/truncated label.",
+    "Useful as interface/replay probe; not direct PPO training or real opponent calibration.",
+    "No official RMUL/RMUC rules, 3D tunnel, Nav2 or MPPI validation."
+  ],
+  "post_export_checks": {
+    "npz_allow_pickle_false_reload": true,
+    "replayed_transition_indices": [
+      0,
+      383,
+      766
+    ],
+    "all_state_and_observation_max_abs_error": 0.0,
+    "reward_dense_plus_terminal_max_abs_error": 0.0,
+    "state_leaves": 62
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "artifact_type": "strict_UC_support_execution_validation_not_RL_training",
+  "full_pytest_passed": 210,
+  "full_pytest_log": ".work/pytest_support_final.log",
+  "last_wiring_change_targeted_tests_passed": 31,
+  "last_targeted_log": ".work/pytest_support_postreview.log",
+  "navigation_execution_report": "data/reports/uc_support_execution_20261116.json",
+  "latest_short_task": "runs/uc_support_active_footprint_short_20261116/verification.json",
+  "unknown_rejection": "runs/uc_support_dual_unknown_reject_20261116/verification.json",
+  "active_support_revocation_stop": "runs/uc_support_active_footprint_lateral_20261116/verification.json",
+  "active_support_dropout_stop": "runs/uc_support_map_dropout_20261116/verification.json",
+  "latest_dropout_attempt_rejected_before_dispatch": "runs/uc_support_map_dropout_final_20261116/verification.json",
+  "domain_79_after_checks": "no residual task ROS nodes",
+  "full_match_training_validated": false,
+  "long_route_stability_validated": false,
+  "start_footprint_prior": "explicit fixed engineering assumption in successful runs",
+  "shared_effective_config_write_fix": "explicit private effective_config path; current dual runs record unchanged shared-file hash",
+  "latest_execution_snapshots_match_current_staged_sources": true
+}

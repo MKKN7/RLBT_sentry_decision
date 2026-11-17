@@ -1,0 +1,99 @@
+{
+  "retrieved_on": "2026-11-15",
+  "github_org_url": "https://github.com/Combat-Algorithm-Team",
+  "public_repo_count": 14,
+  "scan_scope": {
+    "recursive_trees": [
+      "combat_sentry_behavior",
+      "combat_sentry_nav",
+      "sentry_nav_ws",
+      "Combat_vision2026"
+    ],
+    "release_lists": [
+      "combat_sentry_behavior",
+      "combat_sentry_nav",
+      "sentry_nav_ws"
+    ],
+    "readme_pages": [
+      "combat_sentry_nav",
+      "Combat_vision2026",
+      "Combat_radar2026"
+    ]
+  },
+  "finding": "No confirmed Combat match telemetry dataset located within reviewed trees, readme links and release lists; public videos located separately",
+  "browser_verified_video_ids": [
+    "BV1oNXTB2EoE",
+    "BV1bSLt6qEf2",
+    "BV1hYV86uEGP",
+    "BV1nMEBzTEEY"
+  ],
+  "official_team_profile": "https://space.bilibili.com/3546890614344273",
+  "official_team_profile_identity": "南京理工大学江阴校区RoboMaster战队官方账号",
+  "source_snapshots": [
+    {
+      "path": "data/references/combat_demo_search/github_org.json",
+      "sha256": "38d336742a9679d77a3fa7938a593c8671aa2a1536561c601317bd60c80395d3",
+      "bytes": 99220
+    },
+    {
+      "path": "data/references/combat_demo_search/org_profile.json",
+      "sha256": "e35a47399206260a91f88f90ce6bb49ef7a09a5e3152ef6fb2318e4e7a024e33",
+      "bytes": 1236
+    },
+    {
+      "path": "data/references/combat_demo_search/bt_tree.json",
+      "sha256": "526508d34c26aab65a28d4e3d8ed7f92065656a3e700e29eb6f6fabe483c8cec",
+      "bytes": 33926
+    },
+    {
+      "path": "data/references/combat_demo_search/nav_tree.json",
+      "sha256": "c8ad24e9dc60c86b747e9d0ebea6990e12552617910e762d01d05ddc9d9c3ab8",
+      "bytes": 39647
+    },
+    {
+      "path": "data/references/combat_demo_search/ws_tree.json",
+      "sha256": "9c6b8572563a7303a73a71bd52b4d3b6606e5f1d9898bf8299f884d46a1feaa5",
+      "bytes": 8015
+    },
+    {
+      "path": "data/references/combat_demo_search/vision_tree.json",
+      "sha256": "0b78ce3e3b5c6512ba58c81ee5306fa28aa9e28937cd53e97efe94725c5d1240",
+      "bytes": 77980
+    },
+    {
+      "path": "data/references/combat_demo_search/bt_releases.json",
+      "sha256": "2ba33ca0557f1bb5b7ba88d67f9d0093c7185a36ec51fe2b7bd9372d3e001d6d",
+      "bytes": 5
+    },
+    {
+      "path": "data/references/combat_demo_search/nav_releases.json",
+      "sha256": "2ba33ca0557f1bb5b7ba88d67f9d0093c7185a36ec51fe2b7bd9372d3e001d6d",
+      "bytes": 5
+    },
+    {
+      "path": "data/references/combat_demo_search/ws_releases.json",
+      "sha256": "2ba33ca0557f1bb5b7ba88d67f9d0093c7185a36ec51fe2b7bd9372d3e001d6d",
+      "bytes": 5
+    },
+    {
+      "path": "data/references/combat_demo_search/nav_README.md",
+      "sha256": "9ee56e7ff73532b04156e65c62558337fa78986b7bb319006e50ff2faa3739b0",
+      "bytes": 9867,
+      "source_url": "https://github.com/Combat-Algorithm-Team/combat_sentry_nav"
+    },
+    {
+      "path": "data/references/combat_demo_search/vision_README.md",
+      "sha256": "fafe8ebfafcb382b9da5ca661436f0c58465824b1f5ff6fcf282e061e5816f9d",
+      "bytes": 90,
+      "source_url": "https://github.com/Combat-Algorithm-Team/Combat_vision2026"
+    },
+    {
+      "path": "data/references/combat_demo_search/radar_README.md",
+      "sha256": "266b19d33455abf22008435b2021f46caabcb99da23158b6c0505fd052ffce0f",
+      "bytes": 19397,
+      "source_url": "https://github.com/Combat-Algorithm-Team/Combat_radar2026"
+    }
+  ],
+  "video_downloading_performed": false,
+  "private_data_or_contact_performed": false
+}

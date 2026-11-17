@@ -1,0 +1,19 @@
+{
+  "artifact_type": "verified_selected_protocol_facts_not_live_transport_validation",
+  "checked_on": "2026-11-16",
+  "version": "V1.0.0_20261029",
+  "source": "data/references/official_rmu_2027_protocol/rmu_2027_protocol_v1.0.0_20261029.pdf",
+  "source_manifest": "data/references/official_rmu_2027_protocol/manifest.json",
+  "facts": [
+    {"id":"game_status", "command":"0x0001", "bytes":11, "frequency_hz":1, "printed_pages":[7,8], "fields":["game_type_bits_0_3", "game_progress_bits_4_7", "stage_remaining_s_offset_1_uint16", "NTP_conditional_timestamp_offset_3_uint64"], "ul_3v3_game_type":4},
+    {"id":"game_result", "command":"0x0002", "bytes":1, "frequency_hz":null, "printed_pages":[8], "winner_codes":{"0":"draw", "1":"red", "2":"blue"}},
+    {"id":"team_hp", "command":"0x0003", "bytes":24, "frequency_hz":3, "printed_pages":[8,9], "fields":["ally_heavy_hp", "reserved", "ally_3_hp", "ally_4_hp", "signed_damage_difference", "ally_sentry_hp", "outpost_R_HP", "ally_base_HP", "outpost_B_HP", "enemy_base_HP", "ally_control_degree", "enemy_control_degree"], "enemy_robot_hp_present":false, "zero_hp_does_not_distinguish_absent_penalized_dead":true},
+    {"id":"ul_field_events", "command":"0x0101", "bytes":8, "frequency_hz":1, "printed_pages":[9,10,11], "own_supply_active":{"word_index":0,"bit":0}, "ul_zones":{"r_highland":{"word_index":1,"activation_bits":[16,17],"control_bits":[18,19]},"b_highland":{"word_index":1,"activation_bits":[20,21],"control_bits":[22,23]},"center":{"word_index":1,"activation_bits":[24,25],"control_bits":[26,27]}}, "control_codes":{"0":"neutral","1":"own","2":"opponent"}, "activation_codes":{"0":"none","1":"own","2":"opponent","3":"both"}, "precise_capture_progress_present":false},
+    {"id":"own_status", "command":"0x0201", "bytes":17, "frequency_hz":10, "printed_pages":[13,14], "hp_offset":2,"max_hp_offset":4},
+    {"id":"own_ammo_and_gold", "command":"0x0208", "bytes":8, "frequency_hz":10, "printed_pages":[17], "allowance_17mm_offset":0,"allowance_42mm_offset":2,"gold_offset":4,"fortress_reserve_offset":6,"implies_ul_sentry_purchase_permission":false},
+    {"id":"own_rfid", "command":"0x0209", "bytes":6, "frequency_hz":3, "printed_pages":[17,18,19], "first_word_bits":{"own_supply":0,"r_highland_ul":11,"b_highland_ul":12,"center_ul":13},"outside_match_all_bits_zero":true},
+    {"id":"ally_ground_positions", "command":"0x020B", "bytes":40, "frequency_hz":1, "printed_pages":[20,21], "sender":"server", "receiver":"own_sentry", "xy_offsets":{"heavy":[0,4],"infantry_3":[16,20],"infantry_4":[24,28]}, "reserved_float_offsets":[8,12,32,36], "ul_live_broadcast_verified":false,"cad_frame_registration_verified":false},
+    {"id":"enemy_robot_hp_is_radar_wireless", "command":"0x0A02", "bytes":12, "frequency_hz":10, "printed_pages":[7], "sender":"signal_source", "receiver":"radar", "sentry_regular_link":false}
+  ],
+  "unresolved": ["UL live packet coverage and invalid/stale field indication", "payload byte order to be validated with transport captures", "referee coordinate registration against CAD/SLAM", "control_degree raw versus UL remaining score semantics"]
+}

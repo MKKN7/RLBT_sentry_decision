@@ -1,0 +1,33 @@
+{
+  "checked_on": "2026-11-16",
+  "wiki_retry_status": 400,
+  "wiki_url": "https://bbs.robomaster.com/wiki/50179206",
+  "attempts": [
+    {
+      "url": "https://bbs.robomaster.com/article/1969150",
+      "status": 500,
+      "bytes": 1489223,
+      "title": [
+        "RoboMaster 社区"
+      ]
+    },
+    {
+      "url": "https://bbs.robomaster.com/rest/wiki/info/50179206",
+      "status": 404,
+      "bytes": 782098,
+      "title": [
+        "RoboMaster 社区"
+      ]
+    },
+    {
+      "url": "https://www.robomaster.com/zh-CN/resource/pages/announcement/1778",
+      "status": 200,
+      "bytes": 236939,
+      "title": [
+        "Group 3 Copy 7"
+      ]
+    }
+  ],
+  "official_UL_manual_obtained": false,
+  "search_tool_error": "Invalid URL POST /v1/alpha/search; used known official resource entry fallback"
+}

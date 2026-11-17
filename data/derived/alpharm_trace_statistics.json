@@ -1,0 +1,21 @@
+{
+  "source": "data/demos/alpharm_probe/episode_000.npz",
+  "source_sha256": "c797b64060019790f8e542b4e0045fc757918dbed31468f221c42933c970e528",
+  "dataset_kind": "one_fixed_synthetic_3v3_episode_not_real_calibration",
+  "environment_steps": 767,
+  "agents": 6,
+  "speed_mps_percentiles": {
+    "p50": 0.8719212114810944,
+    "p90": 1.8834454655647277,
+    "p99": 2.5500004124641418,
+    "max": 2.999999761581421
+  },
+  "firing_agent_tick_fraction": 0.10321599304650152,
+  "observation_shape": [
+    768,
+    6,
+    140
+  ],
+  "used_as_direct_task_PPO_samples": false,
+  "reason": "Original six-dimensional low-level actions lack our candidate/task labels."
+}

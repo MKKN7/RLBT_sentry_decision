@@ -1,0 +1,15 @@
+{
+  "checked_on": "2026-11-16",
+  "attachment_bytes": 2678890,
+  "attachment_sha256": "4aee780ed07ad225fece44803cbf8f1cef30fd1528922773bd38e050222e3060",
+  "zip_file_count": 70,
+  "manifest_file_count": 69,
+  "manifest_mismatches": [],
+  "bundled_step_matches_official_bytes": true,
+  "article_prose_zip_sha_and_size_match_download": false,
+  "article_prose_zip_sha": "e0ec70419bebadabd9edc33eb4ff0d16458aa65d742f66610454ee47ed5090ee",
+  "article_prose_zip_bytes": 2652298,
+  "external_scripts_executed": false,
+  "navigation_validated": false,
+  "rfid_semantics_verified": false
+}

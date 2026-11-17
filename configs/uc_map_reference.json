@@ -1,0 +1,228 @@
+{
+  "schema": "uc_selected_simulator_map_reference_v1",
+  "user_selected_uc_geometry": true,
+  "prepared_field_container_dir": "/tmp/rl_bt_nav_probe/fields/rmuc2027_original",
+  "prepared_mesh_project_file": "assets/navigation_reference/uc_original/field.stl",
+  "prepared_mesh_sha256": "93ff0118af176f388c171b239acfdcac72c17cbe0b523350d5d916d3236fe10b",
+  "geometry_is_previous_driveable_derivative": false,
+  "source_mesh_already_translated": true,
+  "additional_geometry_translation_or_scaling": false,
+  "static_test_spawn_world_xyz_yaw": [
+    3.4,
+    9.5,
+    0.31,
+    0.0
+  ],
+  "static_test_spawn_is_rule_defined": false,
+  "test_world_from_local_xy_translation_m": [
+    3.4,
+    9.5
+  ],
+  "test_world_from_local_yaw_rad": 0.0,
+  "test_world_from_local_z_offset_m": null,
+  "test_registration_dynamically_updated_from_GT": false,
+  "official_referee_coordinate_registration_verified": false,
+  "recommended_first_goal_local_xy_m": [
+    1.2,
+    0.0
+  ],
+  "local_engineering_routes": [
+    {
+      "id": "forward_1p2m",
+      "start_world_xy_m": [
+        3.4,
+        9.5
+      ],
+      "goal_world_xy_m": [
+        4.6,
+        9.5
+      ],
+      "goal_local_xy_m": [
+        1.2,
+        0.0
+      ],
+      "length_m": 1.2,
+      "support_height_range_m": [
+        0.2607621456555495,
+        0.26076215300269057
+      ],
+      "support_height_change_m": -4.91592627716031e-09,
+      "max_selected_slope_deg": 1.5000011771070056,
+      "sample_count": 25,
+      "support_samples_per_pose": 9,
+      "maximum_translation_sampling_step_m": 0.05,
+      "max_cache_support_error_m": 0.0013093033761494288,
+      "sampled_reference_pass": true,
+      "dynamic_contact_validated": false,
+      "sampled_reference_mesh_sha256": "3aea8445574b08fa2bc3ae571deb50a2d39befd07f3a48e19f694906526c4685",
+      "original_map_contact_run": "runs/uc_rmuc_original_nav2_forward_20261116/verification.json"
+    },
+    {
+      "id": "backward_1m",
+      "start_world_xy_m": [
+        3.4,
+        9.5
+      ],
+      "goal_world_xy_m": [
+        2.4,
+        9.5
+      ],
+      "goal_local_xy_m": [
+        -1.0,
+        0.0
+      ],
+      "length_m": 1.0,
+      "support_height_range_m": [
+        0.2607621355227081,
+        0.26076215665250746
+      ],
+      "support_height_change_m": -1.7479982461487964e-08,
+      "max_selected_slope_deg": 1.5000011771070056,
+      "sample_count": 21,
+      "support_samples_per_pose": 9,
+      "maximum_translation_sampling_step_m": 0.05,
+      "max_cache_support_error_m": 0.001309307025966322,
+      "sampled_reference_pass": true,
+      "dynamic_contact_validated": false,
+      "sampled_reference_mesh_sha256": "3aea8445574b08fa2bc3ae571deb50a2d39befd07f3a48e19f694906526c4685",
+      "original_map_contact_run": null
+    },
+    {
+      "id": "diagonal_0p8_0p4m",
+      "start_world_xy_m": [
+        3.4,
+        9.5
+      ],
+      "goal_world_xy_m": [
+        4.2,
+        9.9
+      ],
+      "goal_local_xy_m": [
+        0.8,
+        0.4
+      ],
+      "length_m": 0.894427190999916,
+      "support_height_range_m": [
+        0.25028778255086503,
+        0.26076215300269057
+      ],
+      "support_height_change_m": -0.010474370451825532,
+      "max_selected_slope_deg": 1.500003981430378,
+      "sample_count": 19,
+      "support_samples_per_pose": 9,
+      "maximum_translation_sampling_step_m": 0.05,
+      "max_cache_support_error_m": 0.0013093033761494288,
+      "sampled_reference_pass": true,
+      "dynamic_contact_validated": false,
+      "sampled_reference_mesh_sha256": "3aea8445574b08fa2bc3ae571deb50a2d39befd07f3a48e19f694906526c4685",
+      "original_map_contact_run": null
+    }
+  ],
+  "zone_semantics": {},
+  "mesh_queries_are_live_actor_observations": false,
+  "dynamic_contact_or_Nav2_result_in_this_config": false,
+  "audit_report": "data/reports/uc_map_reference_20261116.json",
+  "previous_driveable_reference": {
+    "prepared_field_container_dir": "/opt/mid360_mujoco/generated/rmuc2027-v5",
+    "prepared_mesh_project_file": "assets/navigation_reference/field/field.stl",
+    "prepared_mesh_sha256": "3aea8445574b08fa2bc3ae571deb50a2d39befd07f3a48e19f694906526c4685",
+    "geometry_is_previous_driveable_derivative": true,
+    "local_engineering_routes": [
+      {
+        "id": "forward_1p2m",
+        "start_world_xy_m": [
+          3.4,
+          9.5
+        ],
+        "goal_world_xy_m": [
+          4.6,
+          9.5
+        ],
+        "goal_local_xy_m": [
+          1.2,
+          0.0
+        ],
+        "length_m": 1.2,
+        "support_height_range_m": [
+          0.2607621456555495,
+          0.26076215300269057
+        ],
+        "support_height_change_m": -4.91592627716031e-09,
+        "max_selected_slope_deg": 1.5000011771070056,
+        "sample_count": 25,
+        "support_samples_per_pose": 9,
+        "maximum_translation_sampling_step_m": 0.05,
+        "max_cache_support_error_m": 0.0013093033761494288,
+        "sampled_reference_pass": true,
+        "dynamic_contact_validated": false,
+        "sampled_reference_mesh_sha256": "3aea8445574b08fa2bc3ae571deb50a2d39befd07f3a48e19f694906526c4685",
+        "original_map_contact_run": "runs/uc_rmuc_original_nav2_forward_20261116/verification.json"
+      },
+      {
+        "id": "backward_1m",
+        "start_world_xy_m": [
+          3.4,
+          9.5
+        ],
+        "goal_world_xy_m": [
+          2.4,
+          9.5
+        ],
+        "goal_local_xy_m": [
+          -1.0,
+          0.0
+        ],
+        "length_m": 1.0,
+        "support_height_range_m": [
+          0.2607621355227081,
+          0.26076215665250746
+        ],
+        "support_height_change_m": -1.7479982461487964e-08,
+        "max_selected_slope_deg": 1.5000011771070056,
+        "sample_count": 21,
+        "support_samples_per_pose": 9,
+        "maximum_translation_sampling_step_m": 0.05,
+        "max_cache_support_error_m": 0.001309307025966322,
+        "sampled_reference_pass": true,
+        "dynamic_contact_validated": false,
+        "sampled_reference_mesh_sha256": "3aea8445574b08fa2bc3ae571deb50a2d39befd07f3a48e19f694906526c4685",
+        "original_map_contact_run": null
+      },
+      {
+        "id": "diagonal_0p8_0p4m",
+        "start_world_xy_m": [
+          3.4,
+          9.5
+        ],
+        "goal_world_xy_m": [
+          4.2,
+          9.9
+        ],
+        "goal_local_xy_m": [
+          0.8,
+          0.4
+        ],
+        "length_m": 0.894427190999916,
+        "support_height_range_m": [
+          0.25028778255086503,
+          0.26076215300269057
+        ],
+        "support_height_change_m": -0.010474370451825532,
+        "max_selected_slope_deg": 1.500003981430378,
+        "sample_count": 19,
+        "support_samples_per_pose": 9,
+        "maximum_translation_sampling_step_m": 0.05,
+        "max_cache_support_error_m": 0.0013093033761494288,
+        "sampled_reference_pass": true,
+        "dynamic_contact_validated": false,
+        "sampled_reference_mesh_sha256": "3aea8445574b08fa2bc3ae571deb50a2d39befd07f3a48e19f694906526c4685",
+        "original_map_contact_run": null
+      }
+    ]
+  },
+  "source_is_original_unsuffixed_rmuc": true,
+  "original_resource_report": "data/reports/uc_original_field_20261116.json",
+  "original_layer_cache": "data/derived/uc_original_surface_layers_010m/surfaces.npz",
+  "original_Nav2_execution": "runs/uc_rmuc_original_nav2_forward_20261116/verification.json",
+  "local_routes_are_engineering_anchors_not_match_zone_semantics": true
+}

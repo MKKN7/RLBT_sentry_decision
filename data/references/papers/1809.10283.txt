@@ -1,0 +1,536 @@
+                                                             Adding Neural Network Controllers to Behavior Trees
+                                                                 without Destroying Performance Guarantees
+                                                                       Christopher Iliffe Sprague                                      Petter Ögren
+
+
+                                            Abstract— In this paper, we show how Behavior Trees that                                                       Rest of BT
+                                         have performance guarantees, in terms of safety and goal
+                                         convergence, can be extended with components that were                                                            0   →
+                                         designed using machine learning, without destroying those                                                1
+                                                                                                                         Rest of BT
+                                         performance guarantees.
+                                                                                                                                               Safety                   Model-based
+                                            Machine learning approaches such as reinforcement learning                                                         ?                      5
+arXiv:1809.10283v3 [cs.RO] 25 Jul 2022
+
+
+
+
+                                                                                                                         Model-based          controller                 controller
+                                         or learning from demonstration can be very appealing to AI
+                                                                                                                          controller                           2
+                                         designers that want efficient and realistic behaviors in their
+                                         agents. However, those algorithms seldom provide guarantees                                          Running cost         Data-driven
+                                                                                                                                               too high?            controller
+                                         for solving the given task in all different situations while keeping
+                                         the agent safe. Instead, such guarantees are often easier to                                                 3
+                                                                                                                                                                          4
+                                         find for manually designed model-based approaches. In this
+                                         paper we exploit the modularity of behavior trees to extend a            Fig. 1: A Model-based controller (left) is replaced by a
+                                         given design with an efficient, but possibly unreliable, machine         subtree including both the model-based controller and the
+                                         learning component in a way that preserves the guarantees. The
+                                                                                                                  data-driven controller (right).
+                                         approach is illustrated with an inverted pendulum example.
+                                            Index Terms— Autonomous systems, behavior trees, stability
+                                         of hybrid systems, switched systems
+                                                                                                                  is not ok, the previously designed model-based controller is
+                                                                I. I NTRODUCTION                                  invoked. Finally, if both of the conditions above are satisfied,
+                                                                                                                  we allow the data-driven subtree to be executed.
+                                            Over the last decade, Behavior Trees (BTs) have become a
+                                         very important tool in the design of decision structures, and               Note that switching between subtrees like this might
+                                         are widely appreciated for their modularity and reactivity, see          induce undesired behaviors where one subtree counteracts
+                                         [1]–[3], and the over 150 papers cited in [4]. At the same               another one, therefore, the rest of this paper is devoted to
+                                         time, machine learning (ML) approaches have continued to                 finding explicit formal conditions for when the approach
+                                         show remarkable success, [5]–[7]. However, one problem                   outlined above will indeed provide the desired guarantees,
+                                         with ML approaches is that they seldom provide guarantees                building upon the theoretical tools proposed in [2], [3], and
+                                         for ending up at the desired state, or for avoiding some                 illustrating the approach with the commonly known example
+                                         unsafe states that might harm the agent. In this paper, we               of an inverted pendulum swingup problem.
+                                         will show how, and when, the BT design of Figure 1 can                      The main contribution of this paper is that we show how to
+                                         combine the safety guarantees of an safety controller with               add a data-driven controller to an existing BT design, without
+                                         the performance guarantees of a model-based controller and               destroying performance guarantees.
+                                         the efficiency of a data-driven controller.                                 The outline of the paper is as follows. In Section II and III
+                                                                                                                  we present related work and background material. Then, in
+                                            The basic idea is very straightforward and relies on the
+                                                                                                                  Section IV we formulate the main result of the paper, show-
+                                         modularity, BTs where proven to be optimally modular in
+                                                                                                                  ing when performance guarantees can be made. A detailed
+                                         [8], provided by the BT structure. Note that the rest of the
+                                                                                                                  inverted pendulum example is presented in Section V and
+                                         BT can be arbitrarily complex, but we focus on what is going
+                                                                                                                  conclusions are drawn in Section VI.
+                                         on when the given subtree of interest is executed. Looking
+                                         at Fig. 1, the first priority is safety, and whenever the safety                               II. R ELATED WORK
+                                         constraint is at risk of being violated we invoke the Safety
+                                                                                                                     It is well-known that learning algorithms might cause
+                                         controller, this might e.g., correspond to moving away from
+                                                                                                                  unsafe behavior, both during training and possibly even after
+                                         the edge of a cliff. If safety is ok, the BT checks if the
+                                                                                                                  training, as it can be hard to guarantee performance in all
+                                         current running cost, e.g. execution time, is ok, i.e. if there
+                                                                                                                  cases. Therefore, safety of learning approaches is a very
+                                         is reason to believe that the data-driven subtree is not going
+                                                                                                                  active research area, [9]–[13].
+                                         to complete the task in time, or at all. If the execution time
+                                                                                                                     In [11] Constrained Markov Decision Problems (CMDPs)
+                                           This work was supported by SSF through the Swedish Maritime Robotics   were used, and the cumulative cost was replaced by a
+                                         Centre (SMaRC) (IRC15-0046).                                             stepwise one, which was then transferred into the admissible
+                                           C. I. Sprague and P. Ögren are with the Robotics, Perception and      control set leading back to a standard MDP formulation.
+                                         Learning Lab., School of Electrical Engineering and Computer Science,
+                                         Royal Institute of Technology (KTH), SE-100 44 Stockholm, Sweden (e-        There is also a set of approaches using Lyapunov ideas,
+                                         mail: sprague@kth.se).                                                   originating in control theory. In [12] a Lyapunov approach
+was used to guarantee stability of an RL agent. The agent            Definition 1 (Behavior Tree). A function Ti : Rn → Rm ×
+was allowed to switch between a given set of controllers that        {R, S , F }, defined as
+were designed to be safe no matter what switching strategy
+                                                                                         Ti (x) := (ui (x) , ri (x)) ,              (1)
+was used. Then, in [13], Lyapunov concepts were used to
+iteratively estimate the region of attraction of the policy, i.e.,   where x ∈ Rn is the state, i ∈ V is an index, ui : Rn → Rm is a
+the region that the state is guaranteed not to leave, when           controller, and ri : Rn → {R, S , F } is a metadata function,
+applying the controller at hand. At the same time, while             describing the progress of the controller in terms of the
+being in this safe region, the estimate of the region, as well       outputs: running (R), success (S ), and failure (F ). Define
+as performance, was improved. Finally, Chow et al. used              the metadata regions for x ∈ Rn as the running, success, and
+the CMDPs to construct Lyapunov functions using linear               failure regions:
+programming, [10]. The approach is guaranteed to provide
+                                                                                           Ri := {x : ri (x) = R} ,
+feasible, and under certain assumptions, optimal policies.                                                                          (2)
+   Our approach differs from [9]–[13] by not trying to build                Si := {x : ri (x) = S } , Fi := {x : ri (x) = F } ,
+the performance guarantees into the learning controller, but         respectively, which are pairwise disjoint and cover Rn .
+leveraging the reactivity of the surrounding BT structure and
+                                                                        The intuition of the metatdata regions (2) is as follows.
+the existing model-based controller to create a combination
+                                                                     If x ∈ Si , then Ti has either succeeded at achieving its goal
+with the required guarantees.
+                                                                     (e.g. opening a door) or the goal was already achieved (the
+   BTs were invented in the gaming industry [1] and are
+                                                                     door was already open). Either way, it might make sense
+currently spreading throughout the fields of robotics and AI
+                                                                     to execute another BT in sequence to achieve another goal
+[14]. Significant effort to combine BTs with learning from
+                                                                     (perhaps a goal that is intended to be achieved after opening
+experience as well as demonstrations can be found in the
+                                                                     the door).
+literature [15]–[23].
+                                                                        If x ∈ Fi , then Ti has either failed (the door to be opened
+   In [16], a complete sub-tree is learned using a genetic           turned out to be locked), or has no chance at succeeding
+algorithm applied to the Mario AI environment. Similar ideas         (the door is impossible to get to from the current position).
+were explored in [15]. Furthermore, grammatical evolution            Either way, it might make sense to execute another BT as a
+was used in [17], to optimize the structure of a BT playing          fallback (either to open the door in another way or to achieve
+a platform game, while constraining the design to an and-or          a higher-level goal in a way that does not involve opening
+tree structure deemed efficient for the problem at hand.             the door).
+   Classical reinforcement learning was applied to BTs in               If x ∈ Ri , then it is too early to determine if Ti will succeed
+[18], where the idea of replacing a given action (leaf) node         or fail. In most cases, it makes sense to continue executing
+with an RL policy was proposed. Replacing non-leaf nodes             Ti , but it could also be reasonable execute another BT if
+with an RL policy deciding which child to execute was                some other goal is more important (e.g. low battery levels
+explored in [19], and [20].                                          indicate the need to recharge).
+   In [21] the BT for performing pick and place operations              Above, the term “execution” means the use of a BT’s
+were learned from human demonstration, using logic and               controller ui in some underlying system. Such a system can
+decision trees. A related idea was used in [22], where a             be seen as a dynamical system, thus we have the following
+game designer first controlled game characters to create a           definition of a BT execution.
+database of trajectories that are then used to learn controllers.
+Finally, in [23], a framework for end user instruction of a          Definition 2 (BT execution). A dynamical system given for
+robot assistant was proposed.                                        a BT Ti as
+   Our approach differs from [15]–[23] by not focusing on                                 ẋ = f (x, ui (x)) ,             (3)
+how to integrate learning into a BT, but instead providing           where f : Rn × Rm → Rn is a system to be controlled and ui
+safety and performance guarantees when such learning has             is given by (1).
+been integrated. Thus, the proposed approach can be com-
+bined with any of the methods described in [15]–[23].                   As shown in [3], the BT execution (3) can be characterized
+                                                                     by a discontinuous dynamical system (DDS) defined over a
+                      III. BACKGROUND                                finite set of so-called operating regions [3, Theorem 2, p.5],
+                                                                     with corresponding results regarding existence and unique-
+  In this section, we provide background on the formulation          ness of its solutions [3, Theorem 3, p.6]. These operating
+of BTs as discontinuous dynamical systems, following [3].            regions (defined below) arise from the switching among
+                                                                     BTs invoked by BT compositions, of which there exists two
+A. Continuous-time behavior trees                                    fundamental types: Sequences and Fallbacks, which we will
+  We will now provide the continuous-time formulation of             now define.
+BTs, following [3]. Throughout this paper, let Rn be the state          A Sequence is a BT that composes together sub-BTs that
+space, x ∈ Rn be a state, Rm be the control space, and u ∈ Rm        are to be executed in sequence, where each one requires the
+be a control input.                                                  success of the previous. It will succeed only if all sub-BTs
+                                                                     succeed, whereas, if any one sub-BT runs or fails, it will run
+or fail. This behavior is formalized in terms of the sub-BT’s                             IV. M AIN RESULT
+metadata regions in the following definition.                          The general problem that we will address in this paper is
+Definition 3 (Sequence). A function Seq that composes an             as follows.
+arbitrarily finite sequence of M ∈ N BTs into a new BT as            Problem 1. Given a system f : Rn × Rm → Rn to be con-
+                                                                     trolled with a running cost L : Rn × Rm → R such that last
+                                 TM (x) if x ∈ S1 ∩ . . . SM−1
+                               
+                                                                     state is the accumulated running cost with ẋn = L(x, u), and
+                               
+                               
+                               ..      ..
+                               
+                               
+                                                                     controllers uS , uMB , uDD : Rn → Rm , where uS is a safety
+  Seq [T1 , . . . , TM ] (x) := .        .
+                               T (x) else-if x ∈ S                  controller, uMB is a model-based controller with formal
+                                  2                  1
+                                                                     guarantees, and uDD is a data-driven controller without
+                               
+                                 T1 (x) else.
+                               
+                               
+                                                                     formal guarantees (but potentially lower running cost than
+                                                               (4)
+                                                                     uMB ) — how can uS , uMB , and uML be composed together
+   A Fallback, on the other hand, is a BT that composes              with a BT T0 to create a controller u0 that exploits uMB , yet
+together sub-BTs that are to be executed as a fallback to            still formally guarantees that solutions to the execution (3)
+one another, where each one is executed only in case of              of T0 avoids unsafe regions O ⊂ Rn and converges to a goal
+failure of the previous. It will fail only if all sub-BTs fail,      region G ⊂ Rn \ O?
+whereas, if any one sub-BT runs or succeeds, it will run or
+succeed. This behavior is formalized in terms of the sub-BT’s        A. BT structure
+metadata regions in the following definition.                          The BT T0 we propose to solve Problem 1 is shown in
+                                                                     Fig. 1, and is formalized as follows.
+Definition 4 (Fallback). A function Fal that composes an
+arbitrarily finite sequence of M ∈ N BTs into a new BT as            Assumption 1 (BT structure). T0 is given by
+
+                                TM (x) if x ∈ F1 ∩ . . . FM−1              T0 = Seq [T1 , T2 , T5 ]   s.t.   T2 = Fal [T3 , T4 ]   (7)
+                               
+                               
+                               
+                               ..     ..
+                               
+                                                                     where T1 = (uS , rS ) is a safety action, T3 = (uL , rC ) is a
+                               
+  Fal [T1 , . . . , TM ] (x) := .       .
+                                                                     high-cost condition, T4 = (uDD , rG ) is a data-driven action,
+                               T2 (x) else-if x ∈ F1
+                               
+                                                                     T5 = (uMB , rG ) is a model-based action, rS is a safety
+                               
+                                T1 (x) else.
+                               
+                               
+                                                                     metadata function, rG is a goal metadata function, and uL is
+                                                             (5)     an arbitrary controller.
+
+B. BTs as discontinuous dynamical systems                               The BT structure in Assumption 1 is intended to work
+                                                                     as follows. The data-driven action T4 will be executed as
+   As mentioned above, the execution (3) can be character-           long as it does not bring the system too close to the unsafe
+ized by a DDS defined over so-called operating regions. The          region or accumulate too much running cost. If the system
+state’s presence in these operating regions can be viewed as         gets too close to the unsafe region then T1 should execute
+the sufficient conditions for a sub-BT to be executed by the         until the system is sufficiently far away. If too much running
+root BT T0 . We will now formalize this in the following             cost is accumulated then the model-based action T5 should
+theorem from [3].                                                    execute instead of the data-driven one. If the data-driven
+Theorem 1 (Operating regions). Assuming T0 is the root               action brings the system close enough to the goal region,
+BT, there exists a maximum subset of the index set P ⊆ V             then the model-based action should takeover the execution,
+and an operating region Ωi ⊆ Rn for each index such that             as it will be formally guaranteed to stay in the goal region
+{Ωi }i∈P is a partition of Rn and                                    with negligible cost. We formalize the above in the following
+                                                                     assumption on the metadata regions formed by the metadata
+                 x ∈ Ωi =⇒ T0 (x) = Ti (x) .                  (6)    functions: r1 = rS , r3 = rC , and r4 = r5 = rG .
+
+Proof. See [3, Theorem 2, p.5]                                       Assumption 2 (Metadata regions). The metadata regions are
+                                                                     chosen such that the following holds,
+   The maximum subset P ⊆ V in Theorem 1 corresponds                            F1 = O,       R3 = 0,
+                                                                                                   /         S4 = S5 = G,          (8)
+to the set of leaf nodes because it must be a set of nodes
+                                                                                              S3 = C,        F4 = F5 = 0.
+                                                                                                                       /
+such that none of them are a parent to one another [3] — the
+maximum set fulfilling this criteria is the leaf nodes. Further,        That is, there exists an unsafe region O ⊂ Rn that the
+P only includes such leaf nodes whose operating regions are          failure region of the safety action T1 is equal to, the running
+not empty, because {Ωi }i∈P is a partition of Rn . For more          region of the high-cost condition T3 is empty (guaranteeing
+detail on the derivation of the operating regions Ωi , see [3].      that the arbitrary uL never executes), there exists a high-
+   The significance of Theorem 1 is that we can now interpret        cost region C ⊂ Oc that the success region of the high-cost
+the execution (3) of the root BT T0 as a DDS, where x ∈              condition T3 is equal to, there exists a goal region G ⊂ Oc
+Ωi implies ẋ = f (x, u0 (x)) = f (x, ui (x)). We will use this      that the success regions of the data-driven action T4 and
+formalism in the remainder of the paper.                             model-based action T5 are equal to, and the failure regions
+of the data-driven action T4 and model-based action T5 are         without every venturing out of it. “Safe” means that, if the
+empty (they can be executed from any state).                       state starts in Bi then it will never venture into the unsafe
+                                                                   region O. “Safeguarding” means that if the state exits the
+  We will now identify the operating regions of the BT in
+                                                                   success region Si , then it will be redirected back into it in
+Fig. 1, given by Assumptions 1 and 2, following [3].
+                                                                   finite time without venturing into the unsafe region, because
+Lemma 1. If Assumptions 1 and 2 hold, the operating                the region Bi surrounds it, Si ⊂ Bi . One way to guarantee the
+regions of Theorem 1 are given for T0 as                           above properties is through exponential stability, as we show
+                                                                   in the following lemma, in a similar spirit to [2].
+  Ω1 = S1c ,   Ω4 = S1 ∩ (C ∪ G)c ,    Ω5 = S1 ∩ (C ∪ G) . (9)
+                                                                   Lemma 2 (Exponential stability). A BT Ti for which there
+Proof. Following [3, Def. 5, p.4], the so-called influence
+                                                                   exists a locally exponentially stable equilibrium xi ∈ Bi ∩ Si
+regions are
+                                                                   on a region Bi ⊆ Ri ∪ Si for its execution (3) is FTS.
+         I0 = I1 = Rn       I4 = S1 ∩ F3                    (10)   Additionally, if there exists an unsafe region O ⊂ Rn such
+         I2 = I3 = S1       I5 = S1 ∩ [S3 ∪ (F3 ∩ S4 )] .          that Bi ⊆ Rn \ O then Ti is safe w.r.t. O, and if Si ⊂ Bi also
+                                                                   then Ti is safeguarding w.r.t. O.
+Following [3, Def. 6, p.5], the so-called success and failure
+pathways are S = {0, 5} and F = {0, 1, 2, 4, 5} respectively.      Proof. If the execution (3) of Ti is locally exponentially
+Following [3, Def. 7, p.5], the operating regions are              stable about xi ∈ Bi ∩ Si on Bi ⊆ Ri ∪ Si then there exists
+                                                                   αi , βi ∈ (0, ∞] such that, for its solutions, if x(0) ∈ Bi then
+   Ω0 = Ω1 ∪ Ω2 ∪ Ω5        Ω3 = S1 ∩ R3                           kx(t)−xi k ≤ kx(0)−xi kαi e−βi t for all t ∈ [0, ∞). The stability
+   Ω1 = R1 ∪ F1             Ω4 = S1 ∩ F3 ∩ (R4 ∪ F4 )       (11)   of xi ∈ Bi ∩ Si implies that there must exist a maximal
+   Ω2 = Ω3 ∪ Ω4             Ω5 = S1 ∩ [S3 ∪ (F3 ∩ S4 )] .          εi ∈ (0, ∞) and minimal τi ∈ (0, ∞) such that kx(τi ) − xi k ≤
+                                                                   kx(0) − xi kαi e−βi τi < εi and {x ∈ Rn : kx − xi k ≤ εi } ⊆ Bi ∩ Si .
+   Metadata regions are pairwise disjoint and cover Rn , thus,     Thus, we must have that if x(0) ∈ Bi then x(t) ∈ Bi ∩ Si in
+by (8), we have that F1 = O implies R1 = (S1 ∪ O)c , R3 = 0/       finite time t ∈ [0, τi ], and that x(t) ∈ Bi ∩ Si for all t ∈ (τi , ∞).
+and S3 = C imply F3 = Cc , and S4 = S5 = G and F4 = F5 = 0/        If additionally Bi ⊆ Rn \ O then Ti is safe (Def. 6), and if
+imply R4 = R5 = Gc . Thus, with the full application of (8),       Si ⊂ Bi also then Ti is safeguarding (Def. 7).
+including R3 = 0,
+                / on (11), the non-empty operating regions
+of the leaf nodes are given in (9).                                   The stability properties described above allow us to make
+                                                                   formal guarantees on how a sub-BT’s execution will behave.
+   The important thing to note in the operating regions (9) is
+                                                                   But, what can be said about how a sub-BT’s behavior will
+that the high-cost region C and the goal region G are given.
+                                                                   lead to the execution of other sub-BTs?
+Thus the success region S1 of the safety action T1 is the only
+region left to be specified. In the next section we will show         To answer this, we must analyze how the aforementioned
+how the specification of S1 affects the execution of T0 .          region Bi overlaps with other sub-BTs’ operating regions.
+                                                                   Informally speaking, if a sub-BT Ti is FTS and Bi does
+B. Policy-level stability                                          not intersect any other sub-BTs’ operating regions, then
+   As discussed in the previous section, the specification         the state will stay in Ti ’s operating region and converge
+of a BT’s structure and its metadata regions determine its         to success. However, if Bi does intersect other sub-BTs’
+operating regions, which determine where a particular sub-         operating regions, then there is a possibility that the state
+BT will be executed. However, in order to understand where         could venture into those operating regions. Thus, with a
+a sub-BT’s execution will lead to, we must look at the             strategic choice of Bi for each sub-BT, an ordered set of
+stability properties of its execution. To do this, we first have   possible sub-BT executions can be derived in a similar spirit
+the following definitions, in a similar spirit to [2].             to the sequential composition of [24], [25]. We formalize this
+                                                                   in the following theorem.
+Definition 5 (Finite-time successful). A BT Ti is FTS if there
+exists a region Bi ⊆ Ri ∪ Si that is positively invariant under    Theorem 2 (Sequential composition). If a sub-BT Ti is FTS,
+its execution (3), and a finite time τi ∈ [0, ∞) ⊂ R such that     there exists a minimum subset Pi ⊂ P \ {i}, where P is from
+for all of its execution’s solutions we have that x(0) ∈ Bi        Theorem 1, such that
+implies x(t) ∈ Si ∩ Bi in finite time t ∈ [0, τi ].                                                            [
+                                                                                Ωi ∩ Bi 6= 0/      Bi \ Ωi ⊆          Ω j \ Fj ,     (12)
+Definition 6 (Safe). A BT Ti is safe w.r.t. an unsafe region                                                   j∈Pi
+O ⊂ Rn if there exists a region Bi ⊆ Rn \ O that is positively
+                                                                   and, for solutions to its execution (3), if x(0) ∈ Ωi ∩ Bi , then
+invariant under its execution (3).
+                                                                   either x(t) ∈ Ωi ∩ Si or x(t) ∈ Ω j ∩ (R j ∪ S j ) for some j ∈ Pi
+Definition 7 (Safeguarding). A BT Ti is safeguarding w.r.t.        in finite-time t ∈ [0, τi ].
+an unsafe region O ⊂ Rn if it is FTS and safe with Si ⊂ Bi .
+                                                                                   / then we have that Bi \ Ωi ⊆ 0,
+                                                                   Proof. If Pi = 0,                                / which implies
+  “Finite-time success” means that, for the execution of a         that Bi ⊆ Ωi . Since Ti is FTS, it is implied that Bi ∩ Si 6= 0.
+                                                                                                                                 /
+sub-BT, if the state starts in a certain region Bi then it will    Thus, for the execution (3) of T0 , if x(0) ∈ Ωi ∩ Bi then
+be in the success portion of this region Bi ∩ Si in finite time,   x(t) ∈ Ωi ∩ Bi ∩ Si in finite time t ∈ [0, τi ].
+   If Li 6= 0,
+            / then {Ω j \Fj } j∈Li is a partition of Bi \Ωi because    in finite time t ∈ [0, T ], where T ∈ [0, ∞) is a finite time for
+Li is minimum. Thus, for the execution (3) of T0 , if x(0) ∈           which either x(t) ∈ G or x(t) ∈ C by Assumption 3.
+Ωi ∩ Bi then either x(t) ∈ Ωi ∩ Bi ∩ Si or x(t) ∈ Ω j ∩ (R j ∪ S j )      If x(0) ∈ Ω5 then x(t) ∈ Ω5 ∩ G in finite time t ∈ [0, τ5 ]
+in finite time t ∈ [0, τi ].                                           for the following reasons. Since S1 = G ∪ B5 , we have that
+                                                                       Ω5 = G ∪ (B5 ∩C), and since C is positively invariant under
+C. Convergence                                                         the execution (3) of T0 by Assumption 3, we have that B =
+                                                                       B5 ∩C 6= 0/ is also positively invariant under the execution. We
+   We will now make an assumption on the stability proper-
+                                                                       have that Ω5 ∩B 6= 0/ and B\Ω5 = (B5 ∩C)∩Gc ∩(B5 ∩C)c =
+ties of the BT proposed in Assumptions 1 and 2, and then
+                                                                       / Thus, by Lemma 2, we have that if x(0) ∈ Ω5 ∩ B5 then
+                                                                       0.
+use the concept of Theorem 2 to prove convergence.
+                                                                       x(t) ∈ Ω5 ∩ B5 ∩ G in finite time t ∈ [0, τi ].
+   The assumption is motivated by the following. If we are
+                                                                          Thus, for the execution (3) of T0 , we have that if x(0) 6∈ O
+executing the data-driven sub-BT T4 , we want to ensure that
+                                                                       then x(t) ∈ G in finite time t ∈ [0, τ0 ], where τ0 = T + τ1 + τ5 .
+it does not execute forever if the state does not get into the
+                                                                       Thus, B0 = B1 is a region for which T0 is FTS and safe.
+goal region G or close to the unsafe region O. Thus, we
+assume that the accumulated running cost will reach a finite              One limitation of Theorem 3 is that S1 = G ∪ B5 might be
+value in finite time. Further, we assume that the safety sub-          hard to achieve and verify. One way to loosen this require-
+BT T1 is safeguarding on the region outside of the unsafe              ment is by switching the success region of the safety sub-
+area, i.e. B1 = Oc , so that if the data-driven sub-BT T4              BT, thereby affecting where the sub-BTs will be executed
+misbehaves, the system will not go into the unsafe region              according to (9).
+O. Lastly, we assume that the model-based sub-BT T5 is                    If, at first, we have S1 ⊂ G ∪ B5 , where B5 is the region
+FTS. We formalize this assumption as follows.                          with which the model-based sub-BT is FTS, then the safety
+                                                                       sub-BT will bring the state to that region in finite time. If
+Assumption 3 (Stability). There exists a finite cost J ∈ [0, ∞)
+                                                                       we then switch the success region so that S1 ⊃ G ∪ B5 , then
+such that the high cost region is given by C = Rn−1 × [J, ∞)
+                                                                       either data-driven sub-BT T4 or the model-based sub-BT T5
+and we have that C ∩ G 6= 0,   / and a finite time T ∈ [0, ∞) such
+                                                                       will be executed. If T5 is executed, then it will successfully
+that if the state is not in the goal region before that time,
+                                                                       bring the state to the goal region G because the region B5
+x(t) 6∈ G for all t ∈ [0, T ], then the state will stay in the high
+                                                                       for which it is FTS is contained in S1 . However, if T4 is
+cost region after that time, x(t) ∈ C for all t ∈ [T, ∞). The
+                                                                       executed and it misbehaves so that the state ventures out of
+safety action is safeguarding w.r.t. O such that B1 = Oc , the
+                                                                       S1 ⊃ G ∪ B5 , then we can switch to S1 ⊂ G ∪ B5 again, bring
+the model-based action T5 is FTS.
+                                                                       the state back again with T1 , switch back to S1 ⊃ G∪B5 , and
+   Now given Assumption 3 and Theorem 2, we will show                  so on. This behavior is formalized in the following Theorem,
+how a strategic choice of the safety sub-BT’s success region           in a similar spirit to Theorem 3.
+S1 facilitates convergence from all starting states outside of         Theorem 4 (Switching metadata). If Assumptions 1, 2, and
+the unsafe area. In the following Theorem, we show how the             3 hold, and we have that
+overall BT design is convergent if we set S1 equal to the goal                      (
+region and the region for which the model-based sub-BT is                             S10 if x 6∈ S100      S10 ⊂ G ∪ B5
+                                                                               S1 ←                    s.t.                 (13)
+FTS.                                                                                  S100 if x ∈ S10       S100 ⊃ G ∪ B5 ,
+Theorem 3 (Constant metadata). If Assumptions 1, 2, and                then T0 is FTS with τ0 = T +τ1 +τ5 and safe w.r.t. O starting
+3 hold, and we have that S1 = G ∪ B5 , then T0 is FTS with             from x(0) ∈ O.
+τ0 = T + τ1 + τ5 and safe w.r.t. O starting from x(0) 6∈ O.
+                                                                       Proof. If x(0) 6∈ O then either x(0) 6∈ S100 , x(0) ∈ S100 , or x(0) ∈
+Proof. We have that if x(0) 6∈ O then either x(0) ∈ R1 or              S1 , because S10 ⊂ G ∪ B5 ⊂ S100 and F = O.
+x(0) ∈ S1 because F1 = O and metadata regions are pairwise                If x(0) 6∈ S100 then S1 ← S10 by (13), in which case x(0) 6∈ S1
+disjoint.                                                              and hence x(0) ∈ R1 . In the same way as Theorem 3, if
+   If x(0) ∈ R1 then x(0) ∈ Ω1 ∩ B1 because Ω1 = S1c = R1 ∪ O          x(0) ∈ R1 then x(t) ∈ S1 in finite time t ∈ [0, τ1 ].
+and B1 = Oc = R1 ∪ S1 . We have that B1 \ Ω1 = S1 because                 If x(0) ∈ S1 and S1 = S10 then S1 ← S100 and either x(0) ∈ Ω4
+S1 \ O = S1 since metadata regions are pairwise disjoint. We           or x(0) ∈ Ω5 because Ω4 ⊆ S1 and Ω5 ⊆ S1 .
+have that Ω4 \ F4 = Ω4 because F4 = 0/ and Ω5 \ F5 = Ω5                   If x(0) ∈ Ω4 , in the same way as Theorem 3, if x(0) ∈ Ω4 ,
+because F5 = 0. / We then have that Ω4 ∪ Ω5 = S1 ∩ ((C ∪               then either x(t) ∈ Ω5 or x(t) ∈ Ω1 (in which case x(t) ∈
+G)c ∪ (C ∪ G)) = S1 . Thus we have that B1 \ Ω1 ⊆ (Ω4 \ F5 ) ∪         Ω1 ∩ B1 because B1 ⊃ S1 since T1 is safeguarding) in finite
+(Ω5 \F5 ). Thus from Theorem 2, we have that x(0) ∈ Ω1 ∩B1             time t ∈ [0, T ], where T ∈ [0, ∞) is a finite time for which
+implies either x(t) ∈ Ω4 ∩ (R4 ∪ S4 ) = Ω4 or x(t) ∈ Ω5 ∩ (R5 ∪        either x(t) ∈ G or x(t) ∈ C by Assumption 3.
+S5 ) = Ω5 , and hence x(t) ∈ S1 in finite time t ∈ [0, τ1 ].              If x(0) ∈ Ω1 and S1 = S00 then S1 ← S10 because x(0) 6∈ S00 .
+   If x(0) ∈ S1 then either x(0) ∈ Ω4 or x(0) ∈ Ω5 because             Thus, again, x(t) ∈ S1 with S1 = S0 in finite time t ∈ [0, τ1 ).
+Ω4 ⊆ S1 and Ω5 ⊆ S1 .                                                     If x(0) ∈ Ω5 and S1 = S10 then S1 ← S100 and x(0) ∈ G ∪ B5
+   If x(0) ∈ Ω4 , then either x(t) ∈ Ω5 or x(t) ∈ Ω1 (in which         because S10 ⊂ G ∪ B5 . We have that B = B5 ∩C is positively
+case x(t) ∈ Ω1 ∩B1 because B1 ⊃ S1 since T1 is safeguarding)           invariant under the execution (3) of T5 . We have that B \
+Ω5 = 0/ because now S1 ⊃ G ∪ B5 . Thus, by Theorem 2, we              are given in [26] as |y| ≤ ym = π 2 (π +um ) and |v| ≤ vm = πum
+have that if x(0) ∈ Ω5 ∩ B5 with S1 = S100 then x(t) ∈ Ω5 ∩           when starting from the stationary-downright configuration
+B5 ∩ G in finite time t ∈ [0, τi ].                                   x(0) ∈ {0}2 × {θ : cos(θ ) = −1} × {0} × R. Thus, we would
+   Thus, for the execution (3) of T0 , we have that if x(0) 6∈ O      need the track length to be at least 2ym in width. Given
+then x(t) ∈ G in finite time t ∈ [0, τ0 ], where τ0 = T + τ1 + τ5 .   this, what width within these boundaries would we need to
+Thus, B0 = B1 is a region for which T0 is FTS and safe.               set as safe, to ensure that the data-driven controller does
+                                                                      not bring the system to a state where violating the track
+            V. E XAMPLE : I NVERTED PENDULUM                          length is inevitable, i.e., going so fast that braking in time is
+   To illustrate the results above, we will now assume that           impossible?
+the given dynamical system to be controlled is given by the              To answer this, suppose we start at the origin with y(t0 ) =
+inverted pendulum of [26], with the state augmented by the            0 and v(t0 ) = 0, apply the maximum control input um until
+cost function given in [27].                                          some position y(t1 ) and velocity v(t1 ), and thereafter apply
+Implementation 1 (Inverted pendulum). The given system                the minimum control input −um until the cart is brought
+f : Rn × Rn → Rn of Problem 1 is given by                             to a halt at the upper bound of the track length y(t2 ) = ym
+                                                                    with v(t2 ) = 0. Since the cart is a double integrator, basic
+                                   v                                  kinematics tells us that v(t1 )2 = v(t0 )2 + 2um (y(t1 ) − y(t0 ))
+                                  u                                 and v(t2 )2 = v(t1 )2 − 2um (y(t2 ) − y(t1 )), which gives us
+                        
+             f (x, u) = 
+                                              
+                                              ,  (14)                                             √
+                                  ω                                 y(t1 ) = ym /2 and v(t1 ) = uym .
+                        sin (θ ) − u cos (θ )                          We want to ensure that, if the data-driven sub-BT T5 is
+                                L(x, u)                               being used (when x ∈ Ω5 = S1 ∩ (C ∪ G)c ), the safety sub-BT
+                                                                      T1 will be activated if the state ventures outside of these
+where x = [y, v, θ , ω, J] ∈ R5 is the state, u ∈ [−um , um ] is
+                                                                      bounds. However, we also want to ensure that, if the model-
+a control input; y and v are the translational position and
+                                                                      based sub-BT T5 is being used (when x ∈ Ω4 = S1 ∩ (G ∪
+velocity of the cart; θ is the clockwise angle of the pole from
+                                                                      C)), the safety sub-BT T1 will not activate when the state
+the upright orientation and ω is the angular velocity of the
+                                                                      ventures outside of these bounds. Thus we have the following
+pole; and J is accumulated running cost, and L is given by
+                                                                      assumption on the safety sub-BT.
+     L (x, u) = α + (1 − α) u2    s.t.   α ∈ [0, 1] ⊂ R,      (15)
+                                                                      Implementation 3 (Safety BT). The safety metadata region
+where α is a chosen parameter.                                        is given by S1 in (13) with
+   The parameter α for the running cost function (15) will              S10 = {0}2 × {θ : cos(θ ) = −1} × {0} × R
+be used for both training the data-driven sub-BT and for                S100 = [−ym , ym ] × [−vm , vm ] × R3 ∩ (G ∪C)
+                                                                                                                      
+satisfying Assumption 3, as we will describe in the next                         h y y i
+                                                                                       m    m        √      √                  
+section. If α = 0, then (15) is a quadratic running cost on                   ∪ − ,            × [− uym , uym ] × R3 ∩ (G ∪C)c
+                                                                                      2 2
+the control input; if α = 1 then it is a running cost on time.                s.t. ym = π 2 (π + um ), vm = πum .
+A. Controllers                                                        The safety controller is given by
+   In this section we will define the controllers for Problem                               (
+                                                                                              −ky y − kv v if x ∈ S100
+1 under Assumption 1.                                                              uS (x) =
+   The model-based controller umb we will use is the globally                                 −um sgn (y) else.
+asymptotically stable one of Srinivasan et al. [26, Theorem           The obstacle region is given by
+2, p.4]. With the inverted pendulum (14) under the influence                                       √       √
+of this controller, there exists a locally exponentially stable               O = [−ym , ym ]c × [− um ym , um ym ]c × R3 .
+region about the stationary upright configuration x ∈ {0}2 ×            Finally, we implement the data-driven sub-BT T4 =
+{θ : cos(θ ) = 1} × {0} × R and a globally defined finite time        (uDD , rG ) with the same goal metadata function as in Imple-
+at which the state will enter this region. Based on the above,        mentation 2 and a mulitlayer-perceptron (MLP) controller.
+we make the following assumption on the model-based sub-
+BT.                                                                   Implementation 4 (Data-driven BT). The data-driven con-
+                                                                      troller uDD is a MLP with 3 hidden layers, each having 50
+Implementation 2 (Model-based BT). The model-based                    nodes, where the softplus activation function is used. The
+controller u5 = uMB is given by the controller of Srinivasan          output layer is a tanh activation scaled to [−um , um ]. We train
+et al. [26, Theorem 2, p.4]. The goal region G = S5 ⊃                 uDD for 354918 iterations at a learning rate of 0.001 with
+{0}2 × {θ : cos(θ ) = 1} × {0} × R is the region in which             behavioral cloning on 354918 state-control pairs (see Fig. 2)
+the stationary upright configuration is locally exponentially         coming from optimal trajectories w.r.t (15) with α = 0, which
+stable for the execution (3) of T5 with Implementation 1.             are obtained from Pontryagin’s maximum principle in the
+  In reality, the track length of the pendulum (14) would not         way of [27]. On 90% of the data, uDD achieved 2.1445e−3
+be infinitely long, but bounded. Bounds on cart position and          mean-squared error (MSE) loss in training, and 2.2745e−3
+velocity for the inverted pendulum under the control of uMB           MSE loss in on the remaining data in testing.
+                                                                                               R EFERENCES
+                                                                   [1] A. Champandard, M. Dawe, and D. Cerpa, “Behavior trees: Three
+                                                                       ways of cultivating strong ai,” in Game Developers Conference, Audio
+                                                                       Lecture, 2010.
+                                                                   [2] M. Colledanchise and P. Ögren, “How Behavior Trees Modularize
+                                                                       Hybrid Control Systems and Generalize Sequential Behavior Com-
+                                                                       positions, the Subsumption Architecture, and Decision Trees,” IEEE
+                                                                       Transactions on Robotics, vol. 33, no. 2, pp. 372–389, 2017.
+                                                                   [3] C. I. Sprague and P. Ögren, “Continuous-time behavior trees as
+                                                                       discontinuous dynamical systems,” IEEE Control Systems Letters,
+Fig. 2: The database of optimal swingup trajectories used              vol. 6, pp. 1891–1896, 2021.
+to train the data-driven controller uDD , where x and y are        [4] M. Iovino, E. Scukins, J. Styrud, P. Ögren, and C. Smith, “A survey
+horizontal and vertical coordinates, respectively.                     of behavior trees in robotics and ai,” accepted for publication in
+                                                                       Autonomous Robots (and on ArXiv), 2022.
+                                                                   [5] V. Mnih, K. Kavukcuoglu, D. Silver, A. A. Rusu, J. Veness,
+                                                                       M. G. Bellemare, A. Graves, M. A. Riedmiller, A. Fidjeland,
+   Since the data-driven controller uMB is trained from trajec-        G. Ostrovski, S. Petersen, C. Beattie, A. Sadik, I. Antonoglou,
+                                                                       H. King, D. Kumaran, D. Wierstra, S. Legg, and D. Hassabis,
+tories that are optimal w.r.t. a quadratic cost on the control,        “Human-level control through deep reinforcement learning,” Nature,
+i.e. (15) with α = 0, it tries to conserve effort. We want to          vol. 518, no. 7540, pp. 529–533, 2015, Accessed on: Apr 20, 2017.
+use this controller as long as it does not take too long, so           [Online]. Available: http://dx.doi.org/10.1038/nature14236
+                                                                   [6] D. Silver, A. Huang, C. J. Maddison, A. Guez, L. Sifre, G. Van
+we consider the high-cost region C to be where the cost (15)           Den Driessche, J. Schrittwieser, I. Antonoglou, V. Panneershelvam,
+with α = 1 reaches a certain value.                                    M. Lanctot, et al., “Mastering the game of go with deep neural
+                                                                       networks and tree search,” nature, vol. 529, no. 7587, p. 484, 2016.
+Theorem 5. Theorem 4 is satisfied with Assumptions 1 and           [7] N. Justesen, P. Bontrager, J. Togelius, and S. Risi, “Deep learning for
+2, using Implementations 1, 2, 3, and 4 with α = 1 and                 video game playing,” IEEE Transactions on Games, 2019.
+                                                                   [8] O. Biggar, M. Zamani, and I. Shames, “On modularity in reactive
+C = R4 × [T, ∞), where T ∈ [0, ∞) is a finite time.                    control architectures, with an application to formal verification,” to
+                                                                       appear in ACM Transactions on Cyber-Physical Systems, 2022.
+Proof. We need to show that Assumption 3 is fulfilled. First,      [9] W. Saunders, G. Sastry, A. Stuhlmueller, and O. Evans, “Trial without
+the accumulated cost J is monotonically increasing when                error: Towards safe reinforcement learning via human intervention,”
+α = 1 in (15). Thus, for solutions of (3) of T0 , we have              in Proceedings of the 17th International Conference on Autonomous
+                                                                       Agents and MultiAgent Systems. International Foundation for Au-
+x(t) ∈ C for all t ∈ [T, ∞) from all x(0) ∈ Rn if x(t) 6∈ G            tonomous Agents and Multiagent Systems, 2018, pp. 2067–2069.
+for t ∈ [0, T ). Second, the safety controller uS is a standard   [10] Y. Chow, O. Nachum, E. Duenez-Guzman, and M. Ghavamzadeh,
+PD controller, thus there exists a positively invariant set            “A lyapunov-based approach to safe reinforcement learning,” arXiv
+                                                                       preprint arXiv:1805.07708, 2018.
+B1 = Oc upon which x1 ∈ S10 is a locally exponentially stable     [11] M. El Chamie, Y. Yu, and B. Açıkmese, “Convex synthesis of
+equilibrium, and we have S1 ⊂ B1 , thus by Lemma 2, T1 is              randomized policies for controlled markov chains with density safety
+safeguarding and there exists a finite time τ1 for which it is         upper bound constraints,” in American Control Conference, 2016, pp.
+                                                                       6290–6295.
+FTS. Third, by [26], there exists a finite time τ5 for which      [12] T. J. Perkins and A. G. Barto, “Lyapunov design for safe reinforcement
+the execution (3) of T5 enters the goal region G, thus T5 is           learning,” Journal of Machine Learning Research, vol. 3, no. Dec, pp.
+FTS. Thus, Theorem 4 is satisfied.                                     803–832, 2002.
+                                                                  [13] F. Berkenkamp, M. Turchetta, A. Schoellig, and A. Krause, “Safe
+                     VI. C ONCLUSIONS                                  model-based reinforcement learning with stability guarantees,” in
+                                                                       Advances in Neural Information Processing Systems, 2017, pp. 908–
+   Previous works have separately explored different ways              918.
+of adding learning components to a BT, and approaches for         [14] M. Colledanchise and P. Ögren, Behavior Trees in Robotics and AI,
+                                                                       an Introduction. Chapman and Hall/CRC, 2018.
+building safety guarantees into learning controllers.             [15] C. Lim, R. Baumgarten, and S. Colton, “Evolving Behaviour Trees
+   In this paper we have shown how the reactivity and modu-            for the Commercial Game DEFCON,” Applications of Evolutionary
+larity of BTs enable a design where safety and convergence             Computation, pp. 100–110, 2010.
+                                                                  [16] M. Colledanchise, R. Parasuraman, and P. Ögren, “Learning of Be-
+guarantees are provided on top of any learning controller.             havior Trees for Autonomous Agents,” IEEE Transactions on Games,
+This was done using a natural combination of the learning              DOI 10.1109/TG.2018.2816806, 2018.
+controller with a safety controller and a convergent model        [17] M. Nicolau, D. Perez-Liebana, M. O’Neill, and A. Brabazon, “Evo-
+                                                                       lutionary behavior tree approaches for navigating platform games,”
+based controller. Such a design might however introduce                IEEE Transactions on Computational Intelligence and AI in Games,
+deadlocks where the different controllers work against each            vol. 9, no. 3, pp. 227–238, 2016.
+other. The paper presents a set of conditions that guarantee      [18] R. d. P. Pereira and P. M. Engel, “A Framework for Constrained and
+                                                                       Adaptive Behavior-based Agents,” arXiv Preprint arXiv:1506.02312,
+that the proposed design does not suffer from such problems,           2015.
+and instead achieves both safety and convergence to the           [19] R. Dey and C. Child, “Ql-bt: Enhancing behaviour tree design and
+desired goal states. An inverted pendulum example was used             implementation with q-learning,” in 2013 IEEE Conference on Com-
+                                                                       putational Intelligence in Games (CIG). IEEE, 2013, pp. 1–8.
+to illustrate the approach.                                       [20] Y. Fu, L. Qin, and Q. Yin, “A reinforcement learning behavior tree
+                                                                       framework for game ai,” in 2016 International Conference on Eco-
+                   ACKNOWLEDGEMENT                                     nomics, Social Science, Arts, Education and Management Engineering.
+  This work was supported by Stiftelsen for Strategisk-                Atlantis Press, 2016.
+                                                                  [21] French, Wu, Pan, Zhou, and Jenkins, “Learning Behavior Trees From
+Forskning (SSF) through the Swedish Maritime Robotics                  Demonstration,” in Robotics and Automation (ICRA), 2019 IEEE
+Centre (SMaRC) (IRC15-0046).                                           International Conference on. IEEE, 2019.
+[22] I. Sagredo-Olivenza, P. P. Gómez-Martı́n, M. A. Gómez-Martı́n, and          functions for global robot control and navigation,” in IEEE/RSJ
+     P. A. González-Calero, “Trained behavior trees: Programming by               International Conference on Intelligent Robots and Systems, (IROS),
+     demonstration to support ai game designers,” IEEE Transactions on             vol. 4. IEEE, pp. 3546–3551.
+     Games, 2017.
+[23] C. Paxton, A. Hundt, F. Jonathan, K. Guerin, and G. D. Hager,            [26] B. Srinivasan, P. Huguenin, K. Guemghar, and D. Bonvin, “A global
+     “CoSTAR: Instructing Collaborative Robots with Behavior Trees and             stabilization strategy for an inverted pendulum,” IFAC Proceedings
+     Vision,” in Robotics and Automation (ICRA), 2017 IEEE International           Volumes, vol. 35, no. 1, pp. 133 – 138, 2002, 15th IFAC World
+     Conference on. IEEE, 2017, pp. 564–571.                                       Congress. [Online]. Available: http://www.sciencedirect.com/science/
+[24] R. R. Burridge, A. A. Rizzi, and D. E. Koditschek, “Sequential                article/pii/S1474667015386936
+     Composition of Dynamically Dexterous Robot Behaviors,” The In-           [27] C. I. Sprague, D. Izzo, and P. Ögren, “Learning dynamic-objective
+     ternational Journal of Robotics Research, vol. 18, no. 6, pp. 534–555,        policies from a class of optimal trajectories,” in 2020 59th IEEE
+     1999.                                                                         Conference on Decision and Control (CDC). IEEE, 2020, pp. 597–
+[25] D. Conner, A. Rizzi, and H. Choset, “Composition of local potential           602.
+

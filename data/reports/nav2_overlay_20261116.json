@@ -1,0 +1,925 @@
+{
+  "schema": "rl_bt_nav2_private_overlay_v1",
+  "prepared_at_utc": "2026-11-16T03:55:47.319741+00:00",
+  "requested_packages": [
+    "ros-humble-nav2-controller",
+    "ros-humble-nav2-planner",
+    "ros-humble-nav2-navfn-planner",
+    "ros-humble-nav2-mppi-controller",
+    "ros-humble-nav2-bt-navigator",
+    "ros-humble-nav2-behaviors",
+    "ros-humble-nav2-lifecycle-manager",
+    "ros-humble-nav2-map-server"
+  ],
+  "packages": [
+    {
+      "package": "libncurses6",
+      "version": "6.3-2ubuntu0.3",
+      "url": "https://mirrors.ustc.edu.cn/ubuntu/pool/main/n/ncurses/libncurses6_6.3-2ubuntu0.3_amd64.deb",
+      "filename": "libncurses6_6.3-2ubuntu0.3_amd64.deb",
+      "bytes": 111258,
+      "apt_checksum": "MD5Sum:e4f61bf1f28f9f35d7d6a6b8ae8be5f4",
+      "sha256": "38f97a45931ab6f296be017344afc45e5ccbf83f24896f79625318691a9bebf8",
+      "download_attempts": [
+        {
+          "method": "apt-get download",
+          "returncode": 0,
+          "stdout": "Get:1 https://mirrors.ustc.edu.cn/ubuntu jammy-updates/main amd64 libncurses6 amd64 6.3-2ubuntu0.3 [111 kB]\nFetched 111 kB in 1s (91.0 kB/s)\n",
+          "stderr": "W: Download is performed unsandboxed as root as file '/tmp/rl_bt_nav2_overlay/debs/libncurses6_6.3-2ubuntu0.3_amd64.deb' couldn't be accessed by user '_apt'. - pkgAcquire::Run (13: Permission denied)\n"
+        }
+      ],
+      "architecture": "amd64"
+    },
+    {
+      "package": "libncursesw6",
+      "version": "6.3-2ubuntu0.3",
+      "url": "https://mirrors.ustc.edu.cn/ubuntu/pool/main/n/ncurses/libncursesw6_6.3-2ubuntu0.3_amd64.deb",
+      "filename": "libncursesw6_6.3-2ubuntu0.3_amd64.deb",
+      "bytes": 147472,
+      "apt_checksum": "MD5Sum:b120db69d1ac3d7fdacac36e68c84afa",
+      "sha256": "734107c126c2685508e4186f6be65f4edc0d393f1bc1cb4c307a76d1beb09496",
+      "download_attempts": [
+        {
+          "method": "apt-get download",
+          "returncode": 0,
+          "stdout": "Get:1 https://mirrors.ustc.edu.cn/ubuntu jammy-updates/main amd64 libncursesw6 amd64 6.3-2ubuntu0.3 [147 kB]\nFetched 147 kB in 2s (97.4 kB/s)\n",
+          "stderr": "W: Download is performed unsandboxed as root as file '/tmp/rl_bt_nav2_overlay/debs/libncursesw6_6.3-2ubuntu0.3_amd64.deb' couldn't be accessed by user '_apt'. - pkgAcquire::Run (13: Permission denied)\n"
+        }
+      ],
+      "architecture": "amd64"
+    },
+    {
+      "package": "libtinfo6",
+      "version": "6.3-2ubuntu0.3",
+      "url": "https://mirrors.ustc.edu.cn/ubuntu/pool/main/n/ncurses/libtinfo6_6.3-2ubuntu0.3_amd64.deb",
+      "filename": "libtinfo6_6.3-2ubuntu0.3_amd64.deb",
+      "bytes": 104576,
+      "apt_checksum": "MD5Sum:113316fa6f385fbebc77845aba37ea63",
+      "sha256": "3b8dff43a31168f5020928f2ab9a97324c5b47ae708311781f6bd01306c96214",
+      "download_attempts": [
+        {
+          "method": "apt-get download",
+          "returncode": 0,
+          "stdout": "Get:1 https://mirrors.ustc.edu.cn/ubuntu jammy-updates/main amd64 libtinfo6 amd64 6.3-2ubuntu0.3 [105 kB]\nFetched 105 kB in 1s (122 kB/s)\n",
+          "stderr": "W: Download is performed unsandboxed as root as file '/tmp/rl_bt_nav2_overlay/debs/libtinfo6_6.3-2ubuntu0.3_amd64.deb' couldn't be accessed by user '_apt'. - pkgAcquire::Run (13: Permission denied)\n"
+        }
+      ],
+      "architecture": "amd64"
+    },
+    {
+      "package": "libbenchmark1",
+      "version": "1.6.1-1",
+      "url": "https://mirrors.ustc.edu.cn/ubuntu/pool/universe/b/benchmark/libbenchmark1_1.6.1-1_amd64.deb",
+      "filename": "libbenchmark1_1.6.1-1_amd64.deb",
+      "bytes": 135016,
+      "apt_checksum": "MD5Sum:eb3aa02b8893d43a3611c085c9e92f2e",
+      "sha256": "a3459915a49ea8c8dd4a6af02b4e5fd762714ebf513bb0a92eb9e568dce31d6e",
+      "download_attempts": [
+        {
+          "method": "apt-get download",
+          "returncode": 0,
+          "stdout": "Get:1 https://mirrors.ustc.edu.cn/ubuntu jammy/universe amd64 libbenchmark1 amd64 1.6.1-1 [135 kB]\nFetched 135 kB in 0s (421 kB/s)\n",
+          "stderr": "W: Download is performed unsandboxed as root as file '/tmp/rl_bt_nav2_overlay/debs/libbenchmark1_1.6.1-1_amd64.deb' couldn't be accessed by user '_apt'. - pkgAcquire::Run (13: Permission denied)\n"
+        }
+      ],
+      "architecture": "amd64"
+    },
+    {
+      "package": "libbenchmark-dev",
+      "version": "1.6.1-1",
+      "url": "https://mirrors.ustc.edu.cn/ubuntu/pool/universe/b/benchmark/libbenchmark-dev_1.6.1-1_amd64.deb",
+      "filename": "libbenchmark-dev_1.6.1-1_amd64.deb",
+      "bytes": 98732,
+      "apt_checksum": "MD5Sum:4a6580e373064733ef047deb624b63b3",
+      "sha256": "320904d52edce5f4f7bfc4c05a7bc513511ba85dafb0e735f57c58bb86e88246",
+      "download_attempts": [
+        {
+          "method": "apt-get download",
+          "returncode": 0,
+          "stdout": "Get:1 https://mirrors.ustc.edu.cn/ubuntu jammy/universe amd64 libbenchmark-dev amd64 1.6.1-1 [98.7 kB]\nFetched 98.7 kB in 1s (69.1 kB/s)\n",
+          "stderr": "W: Download is performed unsandboxed as root as file '/tmp/rl_bt_nav2_overlay/debs/libbenchmark-dev_1.6.1-1_amd64.deb' couldn't be accessed by user '_apt'. - pkgAcquire::Run (13: Permission denied)\n"
+        }
+      ],
+      "architecture": "amd64"
+    },
+    {
+      "package": "libbz2-dev",
+      "version": "1.0.8-5ubuntu0.1",
+      "url": "https://mirrors.ustc.edu.cn/ubuntu/pool/main/b/bzip2/libbz2-dev_1.0.8-5ubuntu0.1_amd64.deb",
+      "filename": "libbz2-dev_1.0.8-5ubuntu0.1_amd64.deb",
+      "bytes": 32484,
+      "apt_checksum": "MD5Sum:531b74a47404d536f645b06afc4e12ec",
+      "sha256": "7a6d810e55b250945d2dbb5f45d59551b2d50aa7ce140b6eda0928dd76ac9320",
+      "download_attempts": [
+        {
+          "method": "apt-get download",
+          "returncode": 0,
+          "stdout": "Get:1 https://mirrors.ustc.edu.cn/ubuntu jammy-updates/main amd64 libbz2-dev amd64 1.0.8-5ubuntu0.1 [32.5 kB]\nFetched 32.5 kB in 1s (43.2 kB/s)\n",
+          "stderr": "W: Download is performed unsandboxed as root as file '/tmp/rl_bt_nav2_overlay/debs/libbz2-dev_1.0.8-5ubuntu0.1_amd64.deb' couldn't be accessed by user '_apt'. - pkgAcquire::Run (13: Permission denied)\n"
+        }
+      ],
+      "architecture": "amd64"
+    },
+    {
+      "package": "libwmflite-0.2-7",
+      "version": "0.2.12-5ubuntu1",
+      "url": "https://mirrors.ustc.edu.cn/ubuntu/pool/main/libw/libwmf/libwmflite-0.2-7_0.2.12-5ubuntu1_amd64.deb",
+      "filename": "libwmflite-0.2-7_0.2.12-5ubuntu1_amd64.deb",
+      "bytes": 68914,
+      "apt_checksum": "MD5Sum:ae9dc2985664ff2c8c7d9c4d970c6057",
+      "sha256": "48232c7cd470ecdc7a9c9d4b3086b202150a9bbf3a21e5617754ca650c227b07",
+      "download_attempts": [
+        {
+          "method": "apt-get download",
+          "returncode": 0,
+          "stdout": "Get:1 https://mirrors.ustc.edu.cn/ubuntu jammy/main amd64 libwmflite-0.2-7 amd64 0.2.12-5ubuntu1 [68.9 kB]\nFetched 68.9 kB in 0s (392 kB/s)\n",
+          "stderr": "W: Download is performed unsandboxed as root as file '/tmp/rl_bt_nav2_overlay/debs/libwmflite-0.2-7_0.2.12-5ubuntu1_amd64.deb' couldn't be accessed by user '_apt'. - pkgAcquire::Run (13: Permission denied)\n"
+        }
+      ],
+      "architecture": "amd64"
+    },
+    {
+      "package": "libgraphicsmagick-q16-3",
+      "version": "1.4+really1.3.38-1ubuntu0.1",
+      "url": "https://mirrors.ustc.edu.cn/ubuntu/pool/universe/g/graphicsmagick/libgraphicsmagick-q16-3_1.4%2breally1.3.38-1ubuntu0.1_amd64.deb",
+      "filename": "libgraphicsmagick-q16-3_1.4+really1.3.38-1ubuntu0.1_amd64.deb",
+      "bytes": 1238000,
+      "apt_checksum": "MD5Sum:824cb14082b755540fdfecd6a747d132",
+      "sha256": "8480e968b3a4c3c8e328d702bb7b873400a6e340b3355136e3e88ac244f035b8",
+      "download_attempts": [
+        {
+          "method": "apt-get download",
+          "returncode": 0,
+          "stdout": "Get:1 https://mirrors.ustc.edu.cn/ubuntu jammy-updates/universe amd64 libgraphicsmagick-q16-3 amd64 1.4+really1.3.38-1ubuntu0.1 [1238 kB]\nFetched 1238 kB in 1s (913 kB/s)\n",
+          "stderr": "W: Download is performed unsandboxed as root as file '/tmp/rl_bt_nav2_overlay/debs/libgraphicsmagick-q16-3_1.4+really1.3.38-1ubuntu0.1_amd64.deb' couldn't be accessed by user '_apt'. - pkgAcquire::Run (13: Permission denied)\n"
+        }
+      ],
+      "architecture": "amd64"
+    },
+    {
+      "package": "libgraphics-magick-perl",
+      "version": "1.4+really1.3.38-1ubuntu0.1",
+      "url": "https://mirrors.ustc.edu.cn/ubuntu/pool/universe/g/graphicsmagick/libgraphics-magick-perl_1.4%2breally1.3.38-1ubuntu0.1_amd64.deb",
+      "filename": "libgraphics-magick-perl_1.4+really1.3.38-1ubuntu0.1_amd64.deb",
+      "bytes": 58918,
+      "apt_checksum": "MD5Sum:508199a2cba2f217aa7e768039734537",
+      "sha256": "3068de968a9005a2bfb532a1cfa6f0f6f093b690ac2d9ff3825b181c531cd765",
+      "download_attempts": [
+        {
+          "method": "apt-get download",
+          "returncode": 0,
+          "stdout": "Get:1 https://mirrors.ustc.edu.cn/ubuntu jammy-updates/universe amd64 libgraphics-magick-perl amd64 1.4+really1.3.38-1ubuntu0.1 [58.9 kB]\nFetched 58.9 kB in 0s (223 kB/s)\n",
+          "stderr": "W: Download is performed unsandboxed as root as file '/tmp/rl_bt_nav2_overlay/debs/libgraphics-magick-perl_1.4+really1.3.38-1ubuntu0.1_amd64.deb' couldn't be accessed by user '_apt'. - pkgAcquire::Run (13: Permission denied)\n"
+        }
+      ],
+      "architecture": "amd64"
+    },
+    {
+      "package": "libgraphicsmagick++-q16-12",
+      "version": "1.4+really1.3.38-1ubuntu0.1",
+      "url": "https://mirrors.ustc.edu.cn/ubuntu/pool/universe/g/graphicsmagick/libgraphicsmagick%2b%2b-q16-12_1.4%2breally1.3.38-1ubuntu0.1_amd64.deb",
+      "filename": "libgraphicsmagick++-q16-12_1.4+really1.3.38-1ubuntu0.1_amd64.deb",
+      "bytes": 121964,
+      "apt_checksum": "MD5Sum:af1c944b2912028477602b1163227d41",
+      "sha256": "a13779f5cdf838eb02a7ba52fe5fe28150c98db929d4a4b86f88207c10e98603",
+      "download_attempts": [
+        {
+          "method": "apt-get download",
+          "returncode": 0,
+          "stdout": "Get:1 https://mirrors.ustc.edu.cn/ubuntu jammy-updates/universe amd64 libgraphicsmagick++-q16-12 amd64 1.4+really1.3.38-1ubuntu0.1 [122 kB]\nFetched 122 kB in 0s (496 kB/s)\n",
+          "stderr": "W: Download is performed unsandboxed as root as file '/tmp/rl_bt_nav2_overlay/debs/libgraphicsmagick++-q16-12_1.4+really1.3.38-1ubuntu0.1_amd64.deb' couldn't be accessed by user '_apt'. - pkgAcquire::Run (13: Permission denied)\n"
+        }
+      ],
+      "architecture": "amd64"
+    },
+    {
+      "package": "liblcms2-dev",
+      "version": "2.12~rc1-2ubuntu0.1",
+      "url": "https://mirrors.ustc.edu.cn/ubuntu/pool/main/l/lcms2/liblcms2-dev_2.12%7erc1-2ubuntu0.1_amd64.deb",
+      "filename": "liblcms2-dev_2.12~rc1-2ubuntu0.1_amd64.deb",
+      "bytes": 1886760,
+      "apt_checksum": "MD5Sum:ff6f702b0a99737d2d2b7adc6cbbbdc1",
+      "sha256": "6e244222b8618be6f7ba240a0ae2b308e3bad1418b52a7766fc21ae699d9a824",
+      "download_attempts": [
+        {
+          "method": "apt-get download",
+          "returncode": 0,
+          "stdout": "Get:1 https://mirrors.ustc.edu.cn/ubuntu jammy-updates/main amd64 liblcms2-dev amd64 2.12~rc1-2ubuntu0.1 [1887 kB]\nFetched 1887 kB in 1s (1889 kB/s)\n",
+          "stderr": "W: Download is performed unsandboxed as root as file '/tmp/rl_bt_nav2_overlay/debs/liblcms2-dev_2.12~rc1-2ubuntu0.1_amd64.deb' couldn't be accessed by user '_apt'. - pkgAcquire::Run (13: Permission denied)\n"
+        }
+      ],
+      "architecture": "amd64"
+    },
+    {
+      "package": "libwmf-0.2-7",
+      "version": "0.2.12-5ubuntu1",
+      "url": "https://mirrors.ustc.edu.cn/ubuntu/pool/main/libw/libwmf/libwmf-0.2-7_0.2.12-5ubuntu1_amd64.deb",
+      "filename": "libwmf-0.2-7_0.2.12-5ubuntu1_amd64.deb",
+      "bytes": 94250,
+      "apt_checksum": "MD5Sum:e49f8fef59185126146bdce9b3a75841",
+      "sha256": "c7fb6956ae26b94de96f339f837ec8026823c1391e989bed915ef57cf5d015d3",
+      "download_attempts": [
+        {
+          "method": "apt-get download",
+          "returncode": 0,
+          "stdout": "Get:1 https://mirrors.ustc.edu.cn/ubuntu jammy/main amd64 libwmf-0.2-7 amd64 0.2.12-5ubuntu1 [94.2 kB]\nFetched 94.2 kB in 1s (82.1 kB/s)\n",
+          "stderr": "W: Download is performed unsandboxed as root as file '/tmp/rl_bt_nav2_overlay/debs/libwmf-0.2-7_0.2.12-5ubuntu1_amd64.deb' couldn't be accessed by user '_apt'. - pkgAcquire::Run (13: Permission denied)\n"
+        }
+      ],
+      "architecture": "amd64"
+    },
+    {
+      "package": "libwmf-dev",
+      "version": "0.2.12-5ubuntu1",
+      "url": "https://mirrors.ustc.edu.cn/ubuntu/pool/main/libw/libwmf/libwmf-dev_0.2.12-5ubuntu1_amd64.deb",
+      "filename": "libwmf-dev_0.2.12-5ubuntu1_amd64.deb",
+      "bytes": 235654,
+      "apt_checksum": "MD5Sum:bf52d25576e4af15501c005ba92ae3b9",
+      "sha256": "bf3d9761ea56ea22c3e0d13cb471c844330e61d0c4fd20e267b82e92fe1b0c1a",
+      "download_attempts": [
+        {
+          "method": "apt-get download",
+          "returncode": 0,
+          "stdout": "Get:1 https://mirrors.ustc.edu.cn/ubuntu jammy/main amd64 libwmf-dev amd64 0.2.12-5ubuntu1 [236 kB]\nFetched 236 kB in 1s (186 kB/s)\n",
+          "stderr": "W: Download is performed unsandboxed as root as file '/tmp/rl_bt_nav2_overlay/debs/libwmf-dev_0.2.12-5ubuntu1_amd64.deb' couldn't be accessed by user '_apt'. - pkgAcquire::Run (13: Permission denied)\n"
+        }
+      ],
+      "architecture": "amd64"
+    },
+    {
+      "package": "libgraphicsmagick1-dev",
+      "version": "1.4+really1.3.38-1ubuntu0.1",
+      "url": "https://mirrors.ustc.edu.cn/ubuntu/pool/universe/g/graphicsmagick/libgraphicsmagick1-dev_1.4%2breally1.3.38-1ubuntu0.1_amd64.deb",
+      "filename": "libgraphicsmagick1-dev_1.4+really1.3.38-1ubuntu0.1_amd64.deb",
+      "bytes": 1543484,
+      "apt_checksum": "MD5Sum:88cc44be77f2bf357fc4ec98a60d6f41",
+      "sha256": "8a5bf46b896356204adf50be99adee7b84c0d6f1505691645006d29c42a0d4eb",
+      "download_attempts": [
+        {
+          "method": "apt-get download",
+          "returncode": 0,
+          "stdout": "Get:1 https://mirrors.ustc.edu.cn/ubuntu jammy-updates/universe amd64 libgraphicsmagick1-dev amd64 1.4+really1.3.38-1ubuntu0.1 [1543 kB]\nFetched 1543 kB in 2s (770 kB/s)\n",
+          "stderr": "W: Download is performed unsandboxed as root as file '/tmp/rl_bt_nav2_overlay/debs/libgraphicsmagick1-dev_1.4+really1.3.38-1ubuntu0.1_amd64.deb' couldn't be accessed by user '_apt'. - pkgAcquire::Run (13: Permission denied)\n"
+        }
+      ],
+      "architecture": "amd64"
+    },
+    {
+      "package": "libgraphicsmagick++1-dev",
+      "version": "1.4+really1.3.38-1ubuntu0.1",
+      "url": "https://mirrors.ustc.edu.cn/ubuntu/pool/universe/g/graphicsmagick/libgraphicsmagick%2b%2b1-dev_1.4%2breally1.3.38-1ubuntu0.1_amd64.deb",
+      "filename": "libgraphicsmagick++1-dev_1.4+really1.3.38-1ubuntu0.1_amd64.deb",
+      "bytes": 297088,
+      "apt_checksum": "MD5Sum:025593a7506eba039a735df5f8b914c0",
+      "sha256": "1df98e8862a44c032afe2429e9cd4cf9ef7703646f582de528df706aa58fc63e",
+      "download_attempts": [
+        {
+          "method": "apt-get download",
+          "returncode": 0,
+          "stdout": "Get:1 https://mirrors.ustc.edu.cn/ubuntu jammy-updates/universe amd64 libgraphicsmagick++1-dev amd64 1.4+really1.3.38-1ubuntu0.1 [297 kB]\nFetched 297 kB in 0s (679 kB/s)\n",
+          "stderr": "W: Download is performed unsandboxed as root as file '/tmp/rl_bt_nav2_overlay/debs/libgraphicsmagick++1-dev_1.4+really1.3.38-1ubuntu0.1_amd64.deb' couldn't be accessed by user '_apt'. - pkgAcquire::Run (13: Permission denied)\n"
+        }
+      ],
+      "architecture": "amd64"
+    },
+    {
+      "package": "libncurses-dev",
+      "version": "6.3-2ubuntu0.3",
+      "url": "https://mirrors.ustc.edu.cn/ubuntu/pool/main/n/ncurses/libncurses-dev_6.3-2ubuntu0.3_amd64.deb",
+      "filename": "libncurses-dev_6.3-2ubuntu0.3_amd64.deb",
+      "bytes": 380538,
+      "apt_checksum": "MD5Sum:169f82ed984dd28776a59136312a35e6",
+      "sha256": "e51d55c365b957b442a1cef83256e4c3f71a66a743e5ba972a902f2da6b1123e",
+      "download_attempts": [
+        {
+          "method": "apt-get download",
+          "returncode": 0,
+          "stdout": "Get:1 https://mirrors.ustc.edu.cn/ubuntu jammy-updates/main amd64 libncurses-dev amd64 6.3-2ubuntu0.3 [381 kB]\nFetched 381 kB in 0s (1263 kB/s)\n",
+          "stderr": "W: Download is performed unsandboxed as root as file '/tmp/rl_bt_nav2_overlay/debs/libncurses-dev_6.3-2ubuntu0.3_amd64.deb' couldn't be accessed by user '_apt'. - pkgAcquire::Run (13: Permission denied)\n"
+        }
+      ],
+      "architecture": "amd64"
+    },
+    {
+      "package": "libomp5-14",
+      "version": "1:14.0.0-1ubuntu1.1",
+      "url": "https://mirrors.ustc.edu.cn/ubuntu/pool/universe/l/llvm-toolchain-14/libomp5-14_14.0.0-1ubuntu1.1_amd64.deb",
+      "filename": "libomp5-14_1%3a14.0.0-1ubuntu1.1_amd64.deb",
+      "bytes": 388556,
+      "apt_checksum": "MD5Sum:43e99ed785c926bc2dd92553ddbc758b",
+      "sha256": "7b69ec021dd19555c16e250827f57be88381ff2fff9bdbd1b3a2d25d27558cea",
+      "download_attempts": [
+        {
+          "method": "apt-get download",
+          "returncode": 0,
+          "stdout": "Get:1 https://mirrors.ustc.edu.cn/ubuntu jammy-updates/universe amd64 libomp5-14 amd64 1:14.0.0-1ubuntu1.1 [389 kB]\nFetched 389 kB in 0s (1553 kB/s)\n",
+          "stderr": "W: Download is performed unsandboxed as root as file '/tmp/rl_bt_nav2_overlay/debs/libomp5-14_1%3a14.0.0-1ubuntu1.1_amd64.deb' couldn't be accessed by user '_apt'. - pkgAcquire::Run (13: Permission denied)\n"
+        }
+      ],
+      "architecture": "amd64"
+    },
+    {
+      "package": "libomp-14-dev",
+      "version": "1:14.0.0-1ubuntu1.1",
+      "url": "https://mirrors.ustc.edu.cn/ubuntu/pool/universe/l/llvm-toolchain-14/libomp-14-dev_14.0.0-1ubuntu1.1_amd64.deb",
+      "filename": "libomp-14-dev_1%3a14.0.0-1ubuntu1.1_amd64.deb",
+      "bytes": 346780,
+      "apt_checksum": "MD5Sum:151772c05a23abdbfabf36caec2970ed",
+      "sha256": "ce3d72f3d7c1b499b156303c8415e729fe027da7ab2f45653e92e3e64593c402",
+      "download_attempts": [
+        {
+          "method": "apt-get download",
+          "returncode": 0,
+          "stdout": "Get:1 https://mirrors.ustc.edu.cn/ubuntu jammy-updates/universe amd64 libomp-14-dev amd64 1:14.0.0-1ubuntu1.1 [347 kB]\nFetched 347 kB in 1s (688 kB/s)\n",
+          "stderr": "W: Download is performed unsandboxed as root as file '/tmp/rl_bt_nav2_overlay/debs/libomp-14-dev_1%3a14.0.0-1ubuntu1.1_amd64.deb' couldn't be accessed by user '_apt'. - pkgAcquire::Run (13: Permission denied)\n"
+        }
+      ],
+      "architecture": "amd64"
+    },
+    {
+      "package": "xtl-dev",
+      "version": "0.7.2-2",
+      "url": "https://mirrors.ustc.edu.cn/ubuntu/pool/universe/x/xtl/xtl-dev_0.7.2-2_all.deb",
+      "filename": "xtl-dev_0.7.2-2_all.deb",
+      "bytes": 92952,
+      "apt_checksum": "MD5Sum:2be21b62e8b6da4e90b40645401f90cf",
+      "sha256": "4c03cb8f283024af22dd354abeb45f5f5eb247ac39ebfdfcd09d57be7f251189",
+      "download_attempts": [
+        {
+          "method": "apt-get download",
+          "returncode": 0,
+          "stdout": "Get:1 https://mirrors.ustc.edu.cn/ubuntu jammy/universe amd64 xtl-dev all 0.7.2-2 [93.0 kB]\nFetched 93.0 kB in 0s (232 kB/s)\n",
+          "stderr": "W: Download is performed unsandboxed as root as file '/tmp/rl_bt_nav2_overlay/debs/xtl-dev_0.7.2-2_all.deb' couldn't be accessed by user '_apt'. - pkgAcquire::Run (13: Permission denied)\n"
+        }
+      ],
+      "architecture": "all"
+    },
+    {
+      "package": "nlohmann-json3-dev",
+      "version": "3.10.5-2",
+      "url": "https://mirrors.ustc.edu.cn/ubuntu/pool/universe/n/nlohmann-json3/nlohmann-json3-dev_3.10.5-2_all.deb",
+      "filename": "nlohmann-json3-dev_3.10.5-2_all.deb",
+      "bytes": 166536,
+      "apt_checksum": "MD5Sum:4b5f409343d46c57ec9ff17de2beb957",
+      "sha256": "0c0ab9e6baf27a930990729b3ad7123b12dfd353e7bac7bf6c77aa03eab5c639",
+      "download_attempts": [
+        {
+          "method": "apt-get download",
+          "returncode": 0,
+          "stdout": "Get:1 https://mirrors.ustc.edu.cn/ubuntu jammy/universe amd64 nlohmann-json3-dev all 3.10.5-2 [167 kB]\nFetched 167 kB in 1s (162 kB/s)\n",
+          "stderr": "W: Download is performed unsandboxed as root as file '/tmp/rl_bt_nav2_overlay/debs/nlohmann-json3-dev_3.10.5-2_all.deb' couldn't be accessed by user '_apt'. - pkgAcquire::Run (13: Permission denied)\n"
+        }
+      ],
+      "architecture": "all"
+    },
+    {
+      "package": "libxtensor-dev",
+      "version": "0.23.10-15",
+      "url": "https://mirrors.ustc.edu.cn/ubuntu/pool/universe/x/xtensor/libxtensor-dev_0.23.10-15_amd64.deb",
+      "filename": "libxtensor-dev_0.23.10-15_amd64.deb",
+      "bytes": 182858,
+      "apt_checksum": "MD5Sum:529bd88d6eeb03e3f88077b5a794a0ba",
+      "sha256": "6872062869d9e198767898236b79ee7c9596896e18871d8cedf663cf26fdcdbf",
+      "download_attempts": [
+        {
+          "method": "apt-get download",
+          "returncode": 0,
+          "stdout": "Get:1 https://mirrors.ustc.edu.cn/ubuntu jammy/universe amd64 libxtensor-dev amd64 0.23.10-15 [183 kB]\nFetched 183 kB in 2s (102 kB/s)\n",
+          "stderr": "W: Download is performed unsandboxed as root as file '/tmp/rl_bt_nav2_overlay/debs/libxtensor-dev_0.23.10-15_amd64.deb' couldn't be accessed by user '_apt'. - pkgAcquire::Run (13: Permission denied)\n"
+        }
+      ],
+      "architecture": "amd64"
+    },
+    {
+      "package": "ros-humble-angles",
+      "version": "1.15.0-1jammy.20260304.075013",
+      "url": "https://mirrors.ustc.edu.cn/ros2/ubuntu/pool/main/r/ros-humble-angles/ros-humble-angles_1.15.0-1jammy.20260304.075013_amd64.deb",
+      "filename": "ros-humble-angles_1.15.0-1jammy.20260304.075013_amd64.deb",
+      "bytes": 14264,
+      "apt_checksum": "MD5Sum:13738a1fd026779d7ce36151d30cf262",
+      "sha256": "c329fdff1ea9d595f3b24faf37409a798afa86a2c8b84e1bcb082af9268acdc2",
+      "download_attempts": [
+        {
+          "method": "apt-get download",
+          "returncode": 0,
+          "stdout": "Get:1 https://mirrors.ustc.edu.cn/ros2/ubuntu jammy/main amd64 ros-humble-angles amd64 1.15.0-1jammy.20260304.075013 [14.3 kB]\nFetched 14.3 kB in 0s (51.5 kB/s)\n",
+          "stderr": "W: Download is performed unsandboxed as root as file '/tmp/rl_bt_nav2_overlay/debs/ros-humble-angles_1.15.0-1jammy.20260304.075013_amd64.deb' couldn't be accessed by user '_apt'. - pkgAcquire::Run (13: Permission denied)\n"
+        }
+      ],
+      "architecture": "amd64"
+    },
+    {
+      "package": "ros-humble-behaviortree-cpp-v3",
+      "version": "3.8.7-1jammy.20260908.003336",
+      "url": "https://mirrors.ustc.edu.cn/ros2/ubuntu/pool/main/r/ros-humble-behaviortree-cpp-v3/ros-humble-behaviortree-cpp-v3_3.8.7-1jammy.20260908.003336_amd64.deb",
+      "filename": "ros-humble-behaviortree-cpp-v3_3.8.7-1jammy.20260908.003336_amd64.deb",
+      "bytes": 284340,
+      "apt_checksum": "MD5Sum:dcca132c5f39724c56d24e219ce76a30",
+      "sha256": "4c6e13b9d6649fcd75bed803799a99b989df224dc4f01e2a7bf0899482b155ad",
+      "download_attempts": [
+        {
+          "method": "apt-get download",
+          "returncode": 0,
+          "stdout": "Get:1 https://mirrors.ustc.edu.cn/ros2/ubuntu jammy/main amd64 ros-humble-behaviortree-cpp-v3 amd64 3.8.7-1jammy.20260908.003336 [284 kB]\nFetched 284 kB in 0s (823 kB/s)\n",
+          "stderr": "W: Download is performed unsandboxed as root as file '/tmp/rl_bt_nav2_overlay/debs/ros-humble-behaviortree-cpp-v3_3.8.7-1jammy.20260908.003336_amd64.deb' couldn't be accessed by user '_apt'. - pkgAcquire::Run (13: Permission denied)\n"
+        }
+      ],
+      "architecture": "amd64"
+    },
+    {
+      "package": "ros-humble-bond",
+      "version": "4.1.4-1jammy.20260907.213713",
+      "url": "https://mirrors.ustc.edu.cn/ros2/ubuntu/pool/main/r/ros-humble-bond/ros-humble-bond_4.1.4-1jammy.20260907.213713_amd64.deb",
+      "filename": "ros-humble-bond_4.1.4-1jammy.20260907.213713_amd64.deb",
+      "bytes": 49696,
+      "apt_checksum": "MD5Sum:7d865bbdf950f524d04667505d182c0f",
+      "sha256": "22481b36c3e1c29b3a9bd6e2e9f4a987767f8826d7f0ce8bf18827bd916bf2c0",
+      "download_attempts": [
+        {
+          "method": "apt-get download",
+          "returncode": 0,
+          "stdout": "Get:1 https://mirrors.ustc.edu.cn/ros2/ubuntu jammy/main amd64 ros-humble-bond amd64 4.1.4-1jammy.20260907.213713 [49.7 kB]\nFetched 49.7 kB in 1s (75.6 kB/s)\n",
+          "stderr": "W: Download is performed unsandboxed as root as file '/tmp/rl_bt_nav2_overlay/debs/ros-humble-bond_4.1.4-1jammy.20260907.213713_amd64.deb' couldn't be accessed by user '_apt'. - pkgAcquire::Run (13: Permission denied)\n"
+        }
+      ],
+      "architecture": "amd64"
+    },
+    {
+      "package": "ros-humble-smclib",
+      "version": "4.1.4-1jammy.20260317.155122",
+      "url": "https://mirrors.ustc.edu.cn/ros2/ubuntu/pool/main/r/ros-humble-smclib/ros-humble-smclib_4.1.4-1jammy.20260317.155122_amd64.deb",
+      "filename": "ros-humble-smclib_4.1.4-1jammy.20260317.155122_amd64.deb",
+      "bytes": 15020,
+      "apt_checksum": "MD5Sum:8ac21c4b2e145f470309af2cae61bcf8",
+      "sha256": "d316ef072287866f3c82e050568405e48fc6e9e58eb1c143f0e8c96ebac63004",
+      "download_attempts": [
+        {
+          "method": "apt-get download",
+          "returncode": 0,
+          "stdout": "Get:1 https://mirrors.ustc.edu.cn/ros2/ubuntu jammy/main amd64 ros-humble-smclib amd64 4.1.4-1jammy.20260317.155122 [15.0 kB]\nFetched 15.0 kB in 1s (18.3 kB/s)\n",
+          "stderr": "W: Download is performed unsandboxed as root as file '/tmp/rl_bt_nav2_overlay/debs/ros-humble-smclib_4.1.4-1jammy.20260317.155122_amd64.deb' couldn't be accessed by user '_apt'. - pkgAcquire::Run (13: Permission denied)\n"
+        }
+      ],
+      "architecture": "amd64"
+    },
+    {
+      "package": "ros-humble-bondcpp",
+      "version": "4.1.4-1jammy.20260907.235408",
+      "url": "https://mirrors.ustc.edu.cn/ros2/ubuntu/pool/main/r/ros-humble-bondcpp/ros-humble-bondcpp_4.1.4-1jammy.20260907.235408_amd64.deb",
+      "filename": "ros-humble-bondcpp_4.1.4-1jammy.20260907.235408_amd64.deb",
+      "bytes": 126410,
+      "apt_checksum": "MD5Sum:8a7ff91b45ef7510684b1375d70b0e42",
+      "sha256": "c7a44c5d70a4c6b4f0aabc77ad66b6604995c886f2765f20272e4c28d3312075",
+      "download_attempts": [
+        {
+          "method": "apt-get download",
+          "returncode": 0,
+          "stdout": "Get:1 https://mirrors.ustc.edu.cn/ros2/ubuntu jammy/main amd64 ros-humble-bondcpp amd64 4.1.4-1jammy.20260907.235408 [126 kB]\nFetched 126 kB in 1s (147 kB/s)\n",
+          "stderr": "W: Download is performed unsandboxed as root as file '/tmp/rl_bt_nav2_overlay/debs/ros-humble-bondcpp_4.1.4-1jammy.20260907.235408_amd64.deb' couldn't be accessed by user '_apt'. - pkgAcquire::Run (13: Permission denied)\n"
+        }
+      ],
+      "architecture": "amd64"
+    },
+    {
+      "package": "ros-humble-diagnostic-updater",
+      "version": "4.0.7-1jammy.20260907.223805",
+      "url": "https://mirrors.ustc.edu.cn/ros2/ubuntu/pool/main/r/ros-humble-diagnostic-updater/ros-humble-diagnostic-updater_4.0.7-1jammy.20260907.223805_amd64.deb",
+      "filename": "ros-humble-diagnostic-updater_4.0.7-1jammy.20260907.223805_amd64.deb",
+      "bytes": 113700,
+      "apt_checksum": "MD5Sum:709c86438cbbf27936aa4c146df46512",
+      "sha256": "8687b9e56d001d02e622a8c62100e06ae277fe4209f0c32919cc9d3af3ea9ae0",
+      "download_attempts": [
+        {
+          "method": "apt-get download",
+          "returncode": 0,
+          "stdout": "Get:1 https://mirrors.ustc.edu.cn/ros2/ubuntu jammy/main amd64 ros-humble-diagnostic-updater amd64 4.0.7-1jammy.20260907.223805 [114 kB]\nFetched 114 kB in 1s (188 kB/s)\n",
+          "stderr": "W: Download is performed unsandboxed as root as file '/tmp/rl_bt_nav2_overlay/debs/ros-humble-diagnostic-updater_4.0.7-1jammy.20260907.223805_amd64.deb' couldn't be accessed by user '_apt'. - pkgAcquire::Run (13: Permission denied)\n"
+        }
+      ],
+      "architecture": "amd64"
+    },
+    {
+      "package": "ros-humble-nav-2d-msgs",
+      "version": "1.1.20-1jammy.20260907.212326",
+      "url": "https://mirrors.ustc.edu.cn/ros2/ubuntu/pool/main/r/ros-humble-nav-2d-msgs/ros-humble-nav-2d-msgs_1.1.20-1jammy.20260907.212326_amd64.deb",
+      "filename": "ros-humble-nav-2d-msgs_1.1.20-1jammy.20260907.212326_amd64.deb",
+      "bytes": 71550,
+      "apt_checksum": "MD5Sum:e35c9e133b1cfa97efcc52f93b69b45c",
+      "sha256": "dc3415db8e526df626b7139720785e84bb0a2fefa3cd8d2f7e55207128ea0091",
+      "download_attempts": [
+        {
+          "method": "apt-get download",
+          "returncode": 0,
+          "stdout": "Get:1 https://mirrors.ustc.edu.cn/ros2/ubuntu jammy/main amd64 ros-humble-nav-2d-msgs amd64 1.1.20-1jammy.20260907.212326 [71.5 kB]\nFetched 71.5 kB in 1s (52.9 kB/s)\n",
+          "stderr": "W: Download is performed unsandboxed as root as file '/tmp/rl_bt_nav2_overlay/debs/ros-humble-nav-2d-msgs_1.1.20-1jammy.20260907.212326_amd64.deb' couldn't be accessed by user '_apt'. - pkgAcquire::Run (13: Permission denied)\n"
+        }
+      ],
+      "architecture": "amd64"
+    },
+    {
+      "package": "ros-humble-nav2-msgs",
+      "version": "1.1.20-1jammy.20260907.223327",
+      "url": "https://mirrors.ustc.edu.cn/ros2/ubuntu/pool/main/r/ros-humble-nav2-msgs/ros-humble-nav2-msgs_1.1.20-1jammy.20260907.223327_amd64.deb",
+      "filename": "ros-humble-nav2-msgs_1.1.20-1jammy.20260907.223327_amd64.deb",
+      "bytes": 779292,
+      "apt_checksum": "MD5Sum:c14fd322d71fa380864adaa07554f602",
+      "sha256": "7ea288dd8e6718cb46658616eceb667bfda53c0d2b08596e3bc8a70061dc3487",
+      "download_attempts": [
+        {
+          "method": "apt-get download",
+          "returncode": 0,
+          "stdout": "Get:1 https://mirrors.ustc.edu.cn/ros2/ubuntu jammy/main amd64 ros-humble-nav2-msgs amd64 1.1.20-1jammy.20260907.223327 [779 kB]\nFetched 779 kB in 2s (506 kB/s)\n",
+          "stderr": "W: Download is performed unsandboxed as root as file '/tmp/rl_bt_nav2_overlay/debs/ros-humble-nav2-msgs_1.1.20-1jammy.20260907.223327_amd64.deb' couldn't be accessed by user '_apt'. - pkgAcquire::Run (13: Permission denied)\n"
+        }
+      ],
+      "architecture": "amd64"
+    },
+    {
+      "package": "ros-humble-nav2-common",
+      "version": "1.1.20-1jammy.20260907.215155",
+      "url": "https://mirrors.ustc.edu.cn/ros2/ubuntu/pool/main/r/ros-humble-nav2-common/ros-humble-nav2-common_1.1.20-1jammy.20260907.215155_amd64.deb",
+      "filename": "ros-humble-nav2-common_1.1.20-1jammy.20260907.215155_amd64.deb",
+      "bytes": 10192,
+      "apt_checksum": "MD5Sum:4c7ad4360e3e9737ed5e057d16edc3b3",
+      "sha256": "c792b96b0a8d405bea49e9c0b641a8d2ec489d95c4720d671af4792e5a1e191a",
+      "download_attempts": [
+        {
+          "method": "apt-get download",
+          "returncode": 0,
+          "stdout": "Get:1 https://mirrors.ustc.edu.cn/ros2/ubuntu jammy/main amd64 ros-humble-nav2-common amd64 1.1.20-1jammy.20260907.215155 [10.2 kB]\nFetched 10.2 kB in 1s (14.2 kB/s)\n",
+          "stderr": "W: Download is performed unsandboxed as root as file '/tmp/rl_bt_nav2_overlay/debs/ros-humble-nav2-common_1.1.20-1jammy.20260907.215155_amd64.deb' couldn't be accessed by user '_apt'. - pkgAcquire::Run (13: Permission denied)\n"
+        }
+      ],
+      "architecture": "amd64"
+    },
+    {
+      "package": "ros-humble-nav2-util",
+      "version": "1.1.20-1jammy.20260915.211149",
+      "url": "https://mirrors.ustc.edu.cn/ros2/ubuntu/pool/main/r/ros-humble-nav2-util/ros-humble-nav2-util_1.1.20-1jammy.20260915.211149_amd64.deb",
+      "filename": "ros-humble-nav2-util_1.1.20-1jammy.20260915.211149_amd64.deb",
+      "bytes": 159452,
+      "apt_checksum": "MD5Sum:cdc9c467ec9e1a00e23c47acc284bf52",
+      "sha256": "b03394fe1291563b9f7d143046dd66c48326718b9687e8c2b4fcf2962cf7eb25",
+      "download_attempts": [
+        {
+          "method": "apt-get download",
+          "returncode": 0,
+          "stdout": "Get:1 https://mirrors.ustc.edu.cn/ros2/ubuntu jammy/main amd64 ros-humble-nav2-util amd64 1.1.20-1jammy.20260915.211149 [159 kB]\nFetched 159 kB in 2s (98.3 kB/s)\n",
+          "stderr": "W: Download is performed unsandboxed as root as file '/tmp/rl_bt_nav2_overlay/debs/ros-humble-nav2-util_1.1.20-1jammy.20260915.211149_amd64.deb' couldn't be accessed by user '_apt'. - pkgAcquire::Run (13: Permission denied)\n"
+        }
+      ],
+      "architecture": "amd64"
+    },
+    {
+      "package": "ros-humble-nav-2d-utils",
+      "version": "1.1.20-1jammy.20260915.212130",
+      "url": "https://mirrors.ustc.edu.cn/ros2/ubuntu/pool/main/r/ros-humble-nav-2d-utils/ros-humble-nav-2d-utils_1.1.20-1jammy.20260915.212130_amd64.deb",
+      "filename": "ros-humble-nav-2d-utils_1.1.20-1jammy.20260915.212130_amd64.deb",
+      "bytes": 24136,
+      "apt_checksum": "MD5Sum:ce10a49453905051fe55e587c10aa2ab",
+      "sha256": "4f9c4fb0c267ba66f0e4da00177f6e72bacf6f742e27d672de63b784dbb38db5",
+      "download_attempts": [
+        {
+          "method": "apt-get download",
+          "returncode": 0,
+          "stdout": "Get:1 https://mirrors.ustc.edu.cn/ros2/ubuntu jammy/main amd64 ros-humble-nav-2d-utils amd64 1.1.20-1jammy.20260915.212130 [24.1 kB]\nFetched 24.1 kB in 1s (35.1 kB/s)\n",
+          "stderr": "W: Download is performed unsandboxed as root as file '/tmp/rl_bt_nav2_overlay/debs/ros-humble-nav-2d-utils_1.1.20-1jammy.20260915.212130_amd64.deb' couldn't be accessed by user '_apt'. - pkgAcquire::Run (13: Permission denied)\n"
+        }
+      ],
+      "architecture": "amd64"
+    },
+    {
+      "package": "ros-humble-nav2-behavior-tree",
+      "version": "1.1.20-1jammy.20260915.212118",
+      "url": "https://mirrors.ustc.edu.cn/ros2/ubuntu/pool/main/r/ros-humble-nav2-behavior-tree/ros-humble-nav2-behavior-tree_1.1.20-1jammy.20260915.212118_amd64.deb",
+      "filename": "ros-humble-nav2-behavior-tree_1.1.20-1jammy.20260915.212118_amd64.deb",
+      "bytes": 1215958,
+      "apt_checksum": "MD5Sum:10a14b18fe2a7d41d6cb3deb4f47f231",
+      "sha256": "278e72d3dc17cdefe56e193447d3b885f8eaef5eb3ace04da6187c5e2bfd611a",
+      "download_attempts": [
+        {
+          "method": "apt-get download",
+          "returncode": 0,
+          "stdout": "Get:1 https://mirrors.ustc.edu.cn/ros2/ubuntu jammy/main amd64 ros-humble-nav2-behavior-tree amd64 1.1.20-1jammy.20260915.212118 [1216 kB]\nFetched 1216 kB in 1s (909 kB/s)\n",
+          "stderr": "W: Download is performed unsandboxed as root as file '/tmp/rl_bt_nav2_overlay/debs/ros-humble-nav2-behavior-tree_1.1.20-1jammy.20260915.212118_amd64.deb' couldn't be accessed by user '_apt'. - pkgAcquire::Run (13: Permission denied)\n"
+        }
+      ],
+      "architecture": "amd64"
+    },
+    {
+      "package": "ros-humble-nav2-voxel-grid",
+      "version": "1.1.20-1jammy.20260908.002526",
+      "url": "https://mirrors.ustc.edu.cn/ros2/ubuntu/pool/main/r/ros-humble-nav2-voxel-grid/ros-humble-nav2-voxel-grid_1.1.20-1jammy.20260908.002526_amd64.deb",
+      "filename": "ros-humble-nav2-voxel-grid_1.1.20-1jammy.20260908.002526_amd64.deb",
+      "bytes": 19448,
+      "apt_checksum": "MD5Sum:f2450bcb10b4d15afc3602b8925d3bdb",
+      "sha256": "bcb6b7a3b2096ce3b71e8a7b56ae4ce2cbe7381c81d2d64cc350e1ad7dd5b108",
+      "download_attempts": [
+        {
+          "method": "apt-get download",
+          "returncode": 0,
+          "stdout": "Get:1 https://mirrors.ustc.edu.cn/ros2/ubuntu jammy/main amd64 ros-humble-nav2-voxel-grid amd64 1.1.20-1jammy.20260908.002526 [19.4 kB]\nFetched 19.4 kB in 0s (55.1 kB/s)\n",
+          "stderr": "W: Download is performed unsandboxed as root as file '/tmp/rl_bt_nav2_overlay/debs/ros-humble-nav2-voxel-grid_1.1.20-1jammy.20260908.002526_amd64.deb' couldn't be accessed by user '_apt'. - pkgAcquire::Run (13: Permission denied)\n"
+        }
+      ],
+      "architecture": "amd64"
+    },
+    {
+      "package": "ros-humble-nav2-costmap-2d",
+      "version": "1.1.20-1jammy.20260915.225814",
+      "url": "https://mirrors.ustc.edu.cn/ros2/ubuntu/pool/main/r/ros-humble-nav2-costmap-2d/ros-humble-nav2-costmap-2d_1.1.20-1jammy.20260915.225814_amd64.deb",
+      "filename": "ros-humble-nav2-costmap-2d_1.1.20-1jammy.20260915.225814_amd64.deb",
+      "bytes": 927284,
+      "apt_checksum": "MD5Sum:86d7a72c14bc897adb581951b2f7e087",
+      "sha256": "59ade7c2192f3cd2fd563728bd461cc967d9964f99c546e0a1249346a8829a7a",
+      "download_attempts": [
+        {
+          "method": "apt-get download",
+          "returncode": 0,
+          "stdout": "Get:1 https://mirrors.ustc.edu.cn/ros2/ubuntu jammy/main amd64 ros-humble-nav2-costmap-2d amd64 1.1.20-1jammy.20260915.225814 [927 kB]\nFetched 927 kB in 1s (1589 kB/s)\n",
+          "stderr": "W: Download is performed unsandboxed as root as file '/tmp/rl_bt_nav2_overlay/debs/ros-humble-nav2-costmap-2d_1.1.20-1jammy.20260915.225814_amd64.deb' couldn't be accessed by user '_apt'. - pkgAcquire::Run (13: Permission denied)\n"
+        }
+      ],
+      "architecture": "amd64"
+    },
+    {
+      "package": "ros-humble-nav2-core",
+      "version": "1.1.20-1jammy.20260915.231847",
+      "url": "https://mirrors.ustc.edu.cn/ros2/ubuntu/pool/main/r/ros-humble-nav2-core/ros-humble-nav2-core_1.1.20-1jammy.20260915.231847_amd64.deb",
+      "filename": "ros-humble-nav2-core_1.1.20-1jammy.20260915.231847_amd64.deb",
+      "bytes": 11228,
+      "apt_checksum": "MD5Sum:b5f0b6d69713ba96e9779ad1bc762253",
+      "sha256": "de1e44425bd9c6f6c4822da8c58078e2eb9e428fb587579256749abd0d3f5e50",
+      "download_attempts": [
+        {
+          "method": "apt-get download",
+          "returncode": 0,
+          "stdout": "Get:1 https://mirrors.ustc.edu.cn/ros2/ubuntu jammy/main amd64 ros-humble-nav2-core amd64 1.1.20-1jammy.20260915.231847 [11.2 kB]\nFetched 11.2 kB in 0s (24.0 kB/s)\n",
+          "stderr": "W: Download is performed unsandboxed as root as file '/tmp/rl_bt_nav2_overlay/debs/ros-humble-nav2-core_1.1.20-1jammy.20260915.231847_amd64.deb' couldn't be accessed by user '_apt'. - pkgAcquire::Run (13: Permission denied)\n"
+        }
+      ],
+      "architecture": "amd64"
+    },
+    {
+      "package": "ros-humble-nav2-behaviors",
+      "version": "1.1.20-1jammy.20260915.232147",
+      "url": "https://mirrors.ustc.edu.cn/ros2/ubuntu/pool/main/r/ros-humble-nav2-behaviors/ros-humble-nav2-behaviors_1.1.20-1jammy.20260915.232147_amd64.deb",
+      "filename": "ros-humble-nav2-behaviors_1.1.20-1jammy.20260915.232147_amd64.deb",
+      "bytes": 402094,
+      "apt_checksum": "MD5Sum:206b496b1e99e0f81c387c3c466b0472",
+      "sha256": "b7f3af931690158d496c604bfa409309f1b425f92f2a28f5d80fb7764b5164fe",
+      "download_attempts": [
+        {
+          "method": "apt-get download",
+          "returncode": 0,
+          "stdout": "Get:1 https://mirrors.ustc.edu.cn/ros2/ubuntu jammy/main amd64 ros-humble-nav2-behaviors amd64 1.1.20-1jammy.20260915.232147 [402 kB]\nFetched 402 kB in 1s (607 kB/s)\n",
+          "stderr": "W: Download is performed unsandboxed as root as file '/tmp/rl_bt_nav2_overlay/debs/ros-humble-nav2-behaviors_1.1.20-1jammy.20260915.232147_amd64.deb' couldn't be accessed by user '_apt'. - pkgAcquire::Run (13: Permission denied)\n"
+        }
+      ],
+      "architecture": "amd64"
+    },
+    {
+      "package": "ros-humble-nav2-bt-navigator",
+      "version": "1.1.20-1jammy.20260915.232207",
+      "url": "https://mirrors.ustc.edu.cn/ros2/ubuntu/pool/main/r/ros-humble-nav2-bt-navigator/ros-humble-nav2-bt-navigator_1.1.20-1jammy.20260915.232207_amd64.deb",
+      "filename": "ros-humble-nav2-bt-navigator_1.1.20-1jammy.20260915.232207_amd64.deb",
+      "bytes": 257180,
+      "apt_checksum": "MD5Sum:bd7d310a58a06c60a92ff4c326d0b9ae",
+      "sha256": "714b514d91e511ed231533000c221a3442a2ab4c195b670c7fe043a532168adc",
+      "download_attempts": [
+        {
+          "method": "apt-get download",
+          "returncode": 0,
+          "stdout": "Get:1 https://mirrors.ustc.edu.cn/ros2/ubuntu jammy/main amd64 ros-humble-nav2-bt-navigator amd64 1.1.20-1jammy.20260915.232207 [257 kB]\nFetched 257 kB in 2s (151 kB/s)\n",
+          "stderr": "W: Download is performed unsandboxed as root as file '/tmp/rl_bt_nav2_overlay/debs/ros-humble-nav2-bt-navigator_1.1.20-1jammy.20260915.232207_amd64.deb' couldn't be accessed by user '_apt'. - pkgAcquire::Run (13: Permission denied)\n"
+        }
+      ],
+      "architecture": "amd64"
+    },
+    {
+      "package": "ros-humble-nav2-controller",
+      "version": "1.1.20-1jammy.20260915.232401",
+      "url": "https://mirrors.ustc.edu.cn/ros2/ubuntu/pool/main/r/ros-humble-nav2-controller/ros-humble-nav2-controller_1.1.20-1jammy.20260915.232401_amd64.deb",
+      "filename": "ros-humble-nav2-controller_1.1.20-1jammy.20260915.232401_amd64.deb",
+      "bytes": 311454,
+      "apt_checksum": "MD5Sum:456e47ae5a68e8ada7fd2b4d7abe31bd",
+      "sha256": "591816deb0bb2bce24f47d1171b27e794486938142c22068eaceabd5243faa53",
+      "download_attempts": [
+        {
+          "method": "apt-get download",
+          "returncode": 0,
+          "stdout": "Get:1 https://mirrors.ustc.edu.cn/ros2/ubuntu jammy/main amd64 ros-humble-nav2-controller amd64 1.1.20-1jammy.20260915.232401 [311 kB]\nFetched 311 kB in 0s (924 kB/s)\n",
+          "stderr": "W: Download is performed unsandboxed as root as file '/tmp/rl_bt_nav2_overlay/debs/ros-humble-nav2-controller_1.1.20-1jammy.20260915.232401_amd64.deb' couldn't be accessed by user '_apt'. - pkgAcquire::Run (13: Permission denied)\n"
+        }
+      ],
+      "architecture": "amd64"
+    },
+    {
+      "package": "ros-humble-nav2-lifecycle-manager",
+      "version": "1.1.20-1jammy.20260915.225403",
+      "url": "https://mirrors.ustc.edu.cn/ros2/ubuntu/pool/main/r/ros-humble-nav2-lifecycle-manager/ros-humble-nav2-lifecycle-manager_1.1.20-1jammy.20260915.225403_amd64.deb",
+      "filename": "ros-humble-nav2-lifecycle-manager_1.1.20-1jammy.20260915.225403_amd64.deb",
+      "bytes": 90360,
+      "apt_checksum": "MD5Sum:2dcacba5dc29f4839550d1b892674f18",
+      "sha256": "6e1ed4f78de0718afdb11bd859a010261c00c1185503ddbfbad3830e7ec77eaf",
+      "download_attempts": [
+        {
+          "method": "apt-get download",
+          "returncode": 0,
+          "stdout": "Get:1 https://mirrors.ustc.edu.cn/ros2/ubuntu jammy/main amd64 ros-humble-nav2-lifecycle-manager amd64 1.1.20-1jammy.20260915.225403 [90.4 kB]\nFetched 90.4 kB in 0s (202 kB/s)\n",
+          "stderr": "W: Download is performed unsandboxed as root as file '/tmp/rl_bt_nav2_overlay/debs/ros-humble-nav2-lifecycle-manager_1.1.20-1jammy.20260915.225403_amd64.deb' couldn't be accessed by user '_apt'. - pkgAcquire::Run (13: Permission denied)\n"
+        }
+      ],
+      "architecture": "amd64"
+    },
+    {
+      "package": "graphicsmagick-libmagick-dev-compat",
+      "version": "1.4+really1.3.38-1ubuntu0.1",
+      "url": "https://mirrors.ustc.edu.cn/ubuntu/pool/universe/g/graphicsmagick/graphicsmagick-libmagick-dev-compat_1.4%2breally1.3.38-1ubuntu0.1_all.deb",
+      "filename": "graphicsmagick-libmagick-dev-compat_1.4+really1.3.38-1ubuntu0.1_all.deb",
+      "bytes": 9606,
+      "apt_checksum": "MD5Sum:5f98f3a7a38bb124a1f4919f56138a05",
+      "sha256": "b1852179df80a9ad73cd2a6af5852427781174ed238fdd1d121687ea4b95988b",
+      "download_attempts": [
+        {
+          "method": "apt-get download",
+          "returncode": 0,
+          "stdout": "Get:1 https://mirrors.ustc.edu.cn/ubuntu jammy-updates/universe amd64 graphicsmagick-libmagick-dev-compat all 1.4+really1.3.38-1ubuntu0.1 [9606 B]\nFetched 9606 B in 0s (36.1 kB/s)\n",
+          "stderr": "W: Download is performed unsandboxed as root as file '/tmp/rl_bt_nav2_overlay/debs/graphicsmagick-libmagick-dev-compat_1.4+really1.3.38-1ubuntu0.1_all.deb' couldn't be accessed by user '_apt'. - pkgAcquire::Run (13: Permission denied)\n"
+        }
+      ],
+      "architecture": "all"
+    },
+    {
+      "package": "ros-humble-nav2-map-server",
+      "version": "1.1.20-1jammy.20260915.212154",
+      "url": "https://mirrors.ustc.edu.cn/ros2/ubuntu/pool/main/r/ros-humble-nav2-map-server/ros-humble-nav2-map-server_1.1.20-1jammy.20260915.212154_amd64.deb",
+      "filename": "ros-humble-nav2-map-server_1.1.20-1jammy.20260915.212154_amd64.deb",
+      "bytes": 212810,
+      "apt_checksum": "MD5Sum:89d0b57a3a8b1cb0476db33773f0cb24",
+      "sha256": "808f3de67751b3e98c0ae4b8ae8f64573a33cf6d7c09231dbd111d6bd5b846f7",
+      "download_attempts": [
+        {
+          "method": "apt-get download",
+          "returncode": 0,
+          "stdout": "Get:1 https://mirrors.ustc.edu.cn/ros2/ubuntu jammy/main amd64 ros-humble-nav2-map-server amd64 1.1.20-1jammy.20260915.212154 [213 kB]\nFetched 213 kB in 0s (700 kB/s)\n",
+          "stderr": "W: Download is performed unsandboxed as root as file '/tmp/rl_bt_nav2_overlay/debs/ros-humble-nav2-map-server_1.1.20-1jammy.20260915.212154_amd64.deb' couldn't be accessed by user '_apt'. - pkgAcquire::Run (13: Permission denied)\n"
+        }
+      ],
+      "architecture": "amd64"
+    },
+    {
+      "package": "libomp-dev",
+      "version": "1:14.0-55~exp2",
+      "url": "https://mirrors.ustc.edu.cn/ubuntu/pool/universe/l/llvm-defaults/libomp-dev_14.0-55%7eexp2_amd64.deb",
+      "filename": "libomp-dev_1%3a14.0-55~exp2_amd64.deb",
+      "bytes": 3074,
+      "apt_checksum": "MD5Sum:e36568cabd91924b5158979ddc670e12",
+      "sha256": "445f75e6fd75fe5606e7a2855b8bf13ddb4301ae4ed6d364d30b5e403f86e634",
+      "download_attempts": [
+        {
+          "method": "apt-get download",
+          "returncode": 0,
+          "stdout": "Get:1 https://mirrors.ustc.edu.cn/ubuntu jammy/universe amd64 libomp-dev amd64 1:14.0-55~exp2 [3074 B]\nFetched 3074 B in 0s (20.3 kB/s)\n",
+          "stderr": "W: Download is performed unsandboxed as root as file '/tmp/rl_bt_nav2_overlay/debs/libomp-dev_1%3a14.0-55~exp2_amd64.deb' couldn't be accessed by user '_apt'. - pkgAcquire::Run (13: Permission denied)\n"
+        }
+      ],
+      "architecture": "amd64"
+    },
+    {
+      "package": "ros-humble-nav2-mppi-controller",
+      "version": "1.1.20-1jammy.20260915.232158",
+      "url": "https://mirrors.ustc.edu.cn/ros2/ubuntu/pool/main/r/ros-humble-nav2-mppi-controller/ros-humble-nav2-mppi-controller_1.1.20-1jammy.20260915.232158_amd64.deb",
+      "filename": "ros-humble-nav2-mppi-controller_1.1.20-1jammy.20260915.232158_amd64.deb",
+      "bytes": 408564,
+      "apt_checksum": "MD5Sum:d820db37db172fc9107ec07636beced7",
+      "sha256": "a7f77992108cb09a6917ed81602637925fa43548f682a026faf46c618ff5a150",
+      "download_attempts": [
+        {
+          "method": "apt-get download",
+          "returncode": 0,
+          "stdout": "Get:1 https://mirrors.ustc.edu.cn/ros2/ubuntu jammy/main amd64 ros-humble-nav2-mppi-controller amd64 1.1.20-1jammy.20260915.232158 [409 kB]\nFetched 409 kB in 2s (209 kB/s)\n",
+          "stderr": "W: Download is performed unsandboxed as root as file '/tmp/rl_bt_nav2_overlay/debs/ros-humble-nav2-mppi-controller_1.1.20-1jammy.20260915.232158_amd64.deb' couldn't be accessed by user '_apt'. - pkgAcquire::Run (13: Permission denied)\n"
+        }
+      ],
+      "architecture": "amd64"
+    },
+    {
+      "package": "ros-humble-nav2-navfn-planner",
+      "version": "1.1.20-1jammy.20260915.232217",
+      "url": "https://mirrors.ustc.edu.cn/ros2/ubuntu/pool/main/r/ros-humble-nav2-navfn-planner/ros-humble-nav2-navfn-planner_1.1.20-1jammy.20260915.232217_amd64.deb",
+      "filename": "ros-humble-nav2-navfn-planner_1.1.20-1jammy.20260915.232217_amd64.deb",
+      "bytes": 47998,
+      "apt_checksum": "MD5Sum:17e37dd7c438f04669346b0dd92aecf8",
+      "sha256": "5937f96d146e98c78421268b3ad2d0714d0156a10133cfccd0785e81e7f753f5",
+      "download_attempts": [
+        {
+          "method": "apt-get download",
+          "returncode": 0,
+          "stdout": "Get:1 https://mirrors.ustc.edu.cn/ros2/ubuntu jammy/main amd64 ros-humble-nav2-navfn-planner amd64 1.1.20-1jammy.20260915.232217 [48.0 kB]\nFetched 48.0 kB in 2s (23.2 kB/s)\n",
+          "stderr": "W: Download is performed unsandboxed as root as file '/tmp/rl_bt_nav2_overlay/debs/ros-humble-nav2-navfn-planner_1.1.20-1jammy.20260915.232217_amd64.deb' couldn't be accessed by user '_apt'. - pkgAcquire::Run (13: Permission denied)\n"
+        }
+      ],
+      "architecture": "amd64"
+    },
+    {
+      "package": "ros-humble-nav2-planner",
+      "version": "1.1.20-1jammy.20260915.232217",
+      "url": "https://mirrors.ustc.edu.cn/ros2/ubuntu/pool/main/r/ros-humble-nav2-planner/ros-humble-nav2-planner_1.1.20-1jammy.20260915.232217_amd64.deb",
+      "filename": "ros-humble-nav2-planner_1.1.20-1jammy.20260915.232217_amd64.deb",
+      "bytes": 200034,
+      "apt_checksum": "MD5Sum:6d78789cf167236133af66cf3700cfea",
+      "sha256": "9c83ec6086ac5507bebb4b629ab2f308eba93687e2cd0da2108f22593949ca3f",
+      "download_attempts": [
+        {
+          "method": "apt-get download",
+          "returncode": 0,
+          "stdout": "Get:1 https://mirrors.ustc.edu.cn/ros2/ubuntu jammy/main amd64 ros-humble-nav2-planner amd64 1.1.20-1jammy.20260915.232217 [200 kB]\nFetched 200 kB in 0s (560 kB/s)\n",
+          "stderr": "W: Download is performed unsandboxed as root as file '/tmp/rl_bt_nav2_overlay/debs/ros-humble-nav2-planner_1.1.20-1jammy.20260915.232217_amd64.deb' couldn't be accessed by user '_apt'. - pkgAcquire::Run (13: Permission denied)\n"
+        }
+      ],
+      "architecture": "amd64"
+    }
+  ],
+  "private_container_root": "/tmp/rl_bt_nav2_overlay",
+  "private_container_prefix": "/tmp/rl_bt_nav2_overlay/prefix",
+  "apt_install_executed": false,
+  "maintainer_scripts_executed": false,
+  "apt_sources_changed": false,
+  "nodes_started": false,
+  "shared_dpkg_status_sha256_before": "292b30b6073473b53170765768ea2b02315cabb9c348959e982589cb80589566",
+  "shared_dpkg_status_sha256_after": "292b30b6073473b53170765768ea2b02315cabb9c348959e982589cb80589566",
+  "download_bytes": 13497934,
+  "extracted_regular_file_bytes": 77332490,
+  "runtime_requires": "Ubuntu 22.04 amd64 and the existing /opt/ros/humble base",
+  "verification": {
+    "mppi_package_prefix": {
+      "argv": [
+        "ros2",
+        "pkg",
+        "prefix",
+        "nav2_mppi_controller"
+      ],
+      "returncode": 0,
+      "stdout": "/tmp/rl_bt_nav2_overlay/prefix/opt/ros/humble\n",
+      "stderr": ""
+    },
+    "nav2_msgs_import": {
+      "argv": [
+        "/usr/bin/python3",
+        "-c",
+        "import nav2_msgs; from nav2_msgs.action import NavigateToPose; print(nav2_msgs.__file__); print(NavigateToPose.Goal())"
+      ],
+      "returncode": 0,
+      "stdout": "/tmp/rl_bt_nav2_overlay/prefix/opt/ros/humble/local/lib/python3.10/dist-packages/nav2_msgs/__init__.py\nnav2_msgs.action.NavigateToPose_Goal(pose=geometry_msgs.msg.PoseStamped(header=std_msgs.msg.Header(stamp=builtin_interfaces.msg.Time(sec=0, nanosec=0), frame_id=''), pose=geometry_msgs.msg.Pose(position=geometry_msgs.msg.Point(x=0.0, y=0.0, z=0.0), orientation=geometry_msgs.msg.Quaternion(x=0.0, y=0.0, z=0.0, w=1.0))), behavior_tree='')\n",
+      "stderr": ""
+    },
+    "controller_server_ldd": {
+      "argv": [
+        "ldd",
+        "/tmp/rl_bt_nav2_overlay/prefix/opt/ros/humble/lib/nav2_controller/controller_server"
+      ],
+      "returncode": 0,
+      "stdout": "\tlinux-vdso.so.1 (0x0000753a70f38000)\n\tlibrcl.so => /opt/ros/humble/lib/librcl.so (0x0000753a70eec000)\n\tlibtracetools.so => /opt/ros/humble/lib/libtracetools.so (0x0000753a70ee7000)\n\tlibrcutils.so => /opt/ros/humble/lib/librcutils.so (0x0000753a70ecf000)\n\tlibrclcpp_lifecycle.so => /opt/ros/humble/lib/librclcpp_lifecycle.so (0x0000753a70e8c000)\n\tlibrclcpp.so => /opt/ros/humble/lib/librclcpp.so (0x0000753a70c93000)\n\tlibcontroller_server_core.so => /tmp/rl_bt_nav2_overlay/prefix/opt/ros/humble/lib/libcontroller_server_core.so (0x0000753a70b6c000)\n\tlibstdc++.so.6 => /usr/lib/x86_64-linux-gnu/libstdc++.so.6 (0x0000753a70920000)\n\tlibgcc_s.so.1 => /usr/lib/x86_64-linux-gnu/libgcc_s.so.1 (0x0000753a70900000)\n\tlibc.so.6 => /usr/lib/x86_64-linux-gnu/libc.so.6 (0x0000753a706d7000)\n\tlibrcl_yaml_param_parser.so => /opt/ros/humble/lib/librcl_yaml_param_parser.so (0x0000753a706cb000)\n\tlibrmw_implementation.so => /opt/ros/humble/lib/librmw_implementation.so (0x0000753a706bc000)\n\tlibrcl_logging_spdlog.so => /opt/ros/humble/lib/librcl_logging_spdlog.so (0x0000753a706b4000)\n\tlibrcl_interfaces__rosidl_typesupport_c.so => /opt/ros/humble/lib/librcl_interfaces__rosidl_typesupport_c.so (0x0000753a706ab000)\n\tlibrcl_interfaces__rosidl_generator_c.so => /opt/ros/humble/lib/librcl_interfaces__rosidl_generator_c.so (0x0000753a7068f000)\n\tlibrmw.so => /opt/ros/humble/lib/librmw.so (0x0000753a70683000)\n\tlibrosidl_runtime_c.so => /opt/ros/humble/lib/librosidl_runtime_c.so (0x0000753a70678000)\n\t/lib64/ld-linux-x86-64.so.2 (0x0000753a70f3a000)\n\tlibrcl_lifecycle.so => /opt/ros/humble/lib/librcl_lifecycle.so (0x0000753a7066c000)\n\tliblifecycle_msgs__rosidl_typesupport_cpp.so => /opt/ros/humble/lib/liblifecycle_msgs__rosidl_typesupport_cpp.so (0x0000753a70664000)\n\tliblifecycle_msgs__rosidl_typesupport_c.so => /opt/ros/humble/lib/liblifecycle_msgs__rosidl_typesupport_c.so (0x0000753a7065d000)\n\tliblibstatistics_collector.so => /opt/ros/humble/lib/liblibstatistics_collector.so (0x0000753a70656000)\n\tlibrosgraph_msgs__rosidl_typesupport_cpp.so => /opt/ros/humble/lib/librosgraph_msgs__rosidl_typesupport_cpp.so (0x0000753a70650000)\n\tlibstatistics_msgs__rosidl_typesupport_cpp.so => /opt/ros/humble/lib/libstatistics_msgs__rosidl_typesupport_cpp.so (0x0000753a70649000)\n\tlibament_index_cpp.so => /opt/ros/humble/lib/libament_index_cpp.so (0x0000753a7063e000)\n\tlibrcl_logging_interface.so => /opt/ros/humble/lib/librcl_logging_interface.so (0x0000753a70639000)\n\tlibrcl_interfaces__rosidl_typesupport_cpp.so => /opt/ros/humble/lib/librcl_interfaces__rosidl_typesupport_cpp.so (0x0000753a7062e000)\n\tlibrcpputils.so => /opt/ros/humble/lib/librcpputils.so (0x0000753a70620000)\n\tlibm.so.6 => /usr/lib/x86_64-linux-gnu/libm.so.6 (0x0000753a70539000)\n\tlibconversions.so => /tmp/rl_bt_nav2_overlay/prefix/opt/ros/humble/lib/libconversions.so (0x0000753a70530000)\n\tlibtf_help.so => /tmp/rl_bt_nav2_overlay/prefix/opt/ros/humble/lib/libtf_help.so (0x0000753a70529000)\n\tlibnav2_costmap_2d_core.so => /tmp/rl_bt_nav2_overlay/prefix/opt/ros/humble/lib/libnav2_costmap_2d_core.so (0x0000753a70406000)\n\tlibnav2_util_core.so => /tmp/rl_bt_nav2_overlay/prefix/opt/ros/humble/lib/libnav2_util_core.so (0x0000753a70375000)\n\tlibnav2_msgs__rosidl_typesupport_cpp.so => /tmp/rl_bt_nav2_overlay/prefix/opt/ros/humble/lib/libnav2_msgs__rosidl_typesupport_cpp.so (0x0000753a7033c000)\n\tlibrclcpp_action.so => /opt/ros/humble/lib/librclcpp_action.so (0x0000753a70317000)\n\tlibgeometry_msgs__rosidl_typesupport_cpp.so => /opt/ros/humble/lib/libgeometry_msgs__rosidl_typesupport_cpp.so (0x0000753a7030b000)\n\tlibtinyxml2.so.9 => /usr/lib/x86_64-linux-gnu/libtinyxml2.so.9 (0x0000753a702f3000)\n\tlibnav_msgs__rosidl_typesupport_cpp.so => /opt/ros/humble/lib/libnav_msgs__rosidl_typesupport_cpp.so (0x0000753a702eb000)\n\tlibclass_loader.so => /opt/ros/humble/lib/libclass_loader.so (0x0000753a702d8000)\n\tlibrcl_action.so => /opt/ros/humble/lib/librcl_action.so (0x0000753a702c5000)\n\tlibconsole_bridge.so.1.0 => /usr/lib/x86_64-linux-gnu/libconsole_bridge.so.1.0 (0x0000753a702bd000)\n\tlibyaml.so => /opt/ros/humble/lib/libyaml.so (0x0000753a7029b000)\n\tlibspdlog.so.1 => /usr/lib/x86_64-linux-gnu/libspdlog.so.1 (0x0000753a70220000)\n\tlibrosidl_typesupport_c.so => /opt/ros/humble/lib/librosidl_typesupport_c.so (0x0000753a7021a000)\n\tlibbuiltin_interfaces__rosidl_generator_c.so => /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_generator_c.so (0x0000753a70215000)\n\tliblifecycle_msgs__rosidl_generator_c.so => /opt/ros/humble/lib/liblifecycle_msgs__rosidl_generator_c.so (0x0000753a70203000)\n\tlibrosidl_typesupport_cpp.so => /opt/ros/humble/lib/librosidl_typesupport_cpp.so (0x0000753a701fd000)\n\tlibtf2.so => /opt/ros/humble/lib/libtf2.so (0x0000753a701db000)\n\tliborocos-kdl.so.1.5 => /usr/lib/x86_64-linux-gnu/liborocos-kdl.so.1.5 (0x0000753a7011f000)\n\tlibmap_msgs__rosidl_typesupport_cpp.so => /opt/ros/humble/lib/libmap_msgs__rosidl_typesupport_cpp.so (0x0000753a70115000)\n\tlibstd_srvs__rosidl_typesupport_cpp.so => /opt/ros/humble/lib/libstd_srvs__rosidl_typesupport_cpp.so (0x0000753a7010d000)\n\tlibtf2_ros.so => /opt/ros/humble/lib/libtf2_ros.so (0x0000753a70075000)\n\tlibbondcpp.so => /tmp/rl_bt_nav2_overlay/prefix/opt/ros/humble/lib/libbondcpp.so (0x0000753a6fff6000)\n\tlibaction_msgs__rosidl_typesupport_cpp.so => /opt/ros/humble/lib/libaction_msgs__rosidl_typesupport_cpp.so (0x0000753a6fff0000)\n\tlibfmt.so.8 => /usr/lib/x86_64-linux-gnu/libfmt.so.8 (0x0000753a6ffcf000)\n\tlibtf2_msgs__rosidl_typesupport_cpp.so => /opt/ros/humble/lib/libtf2_msgs__rosidl_typesupport_cpp.so (0x0000753a6ffc5000)\n\tlibbond__rosidl_typesupport_cpp.so => /tmp/rl_bt_nav2_overlay/prefix/opt/ros/humble/lib/libbond__rosidl_typesupport_cpp.so (0x0000753a6ffc0000)\n\tlibuuid.so.1 => /usr/lib/x86_64-linux-gnu/libuuid.so.1 (0x0000753a6ffb7000)\n",
+      "stderr": ""
+    },
+    "planner_server_ldd": {
+      "argv": [
+        "ldd",
+        "/tmp/rl_bt_nav2_overlay/prefix/opt/ros/humble/lib/nav2_planner/planner_server"
+      ],
+      "returncode": 0,
+      "stdout": "\tlinux-vdso.so.1 (0x00007e6939922000)\n\tlibplanner_server_core.so => /tmp/rl_bt_nav2_overlay/prefix/opt/ros/humble/lib/libplanner_server_core.so (0x00007e6939876000)\n\tlibrcutils.so => /opt/ros/humble/lib/librcutils.so (0x00007e693985e000)\n\tlibrclcpp_lifecycle.so => /opt/ros/humble/lib/librclcpp_lifecycle.so (0x00007e693981b000)\n\tlibrclcpp.so => /opt/ros/humble/lib/librclcpp.so (0x00007e6939624000)\n\tlibstdc++.so.6 => /usr/lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007e69393d6000)\n\tlibgcc_s.so.1 => /usr/lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007e69393b6000)\n\tlibc.so.6 => /usr/lib/x86_64-linux-gnu/libc.so.6 (0x00007e693918d000)\n\tlibnav2_costmap_2d_core.so => /tmp/rl_bt_nav2_overlay/prefix/opt/ros/humble/lib/libnav2_costmap_2d_core.so (0x00007e693906a000)\n\tlibnav2_util_core.so => /tmp/rl_bt_nav2_overlay/prefix/opt/ros/humble/lib/libnav2_util_core.so (0x00007e6938fd9000)\n\tlibnav2_msgs__rosidl_typesupport_cpp.so => /tmp/rl_bt_nav2_overlay/prefix/opt/ros/humble/lib/libnav2_msgs__rosidl_typesupport_cpp.so (0x00007e6938fa0000)\n\tlibrclcpp_action.so => /opt/ros/humble/lib/librclcpp_action.so (0x00007e6938f7b000)\n\tlibrcl.so => /opt/ros/humble/lib/librcl.so (0x00007e6938f3d000)\n\tlibtracetools.so => /opt/ros/humble/lib/libtracetools.so (0x00007e6938f38000)\n\tlibrmw.so => /opt/ros/humble/lib/librmw.so (0x00007e6938f2c000)\n\tlibrcpputils.so => /opt/ros/humble/lib/librcpputils.so (0x00007e6938f1e000)\n\tlibtinyxml2.so.9 => /usr/lib/x86_64-linux-gnu/libtinyxml2.so.9 (0x00007e6938f06000)\n\tlibnav_msgs__rosidl_typesupport_cpp.so => /opt/ros/humble/lib/libnav_msgs__rosidl_typesupport_cpp.so (0x00007e6938efc000)\n\tlibclass_loader.so => /opt/ros/humble/lib/libclass_loader.so (0x00007e6938ee9000)\n\tlibrcl_action.so => /opt/ros/humble/lib/librcl_action.so (0x00007e6938ed6000)\n\tlibament_index_cpp.so => /opt/ros/humble/lib/libament_index_cpp.so (0x00007e6938ecb000)\n\tlibconsole_bridge.so.1.0 => /usr/lib/x86_64-linux-gnu/libconsole_bridge.so.1.0 (0x00007e6938ec5000)\n\tlibm.so.6 => /usr/lib/x86_64-linux-gnu/libm.so.6 (0x00007e6938dde000)\n\t/lib64/ld-linux-x86-64.so.2 (0x00007e6939924000)\n\tlibrcl_lifecycle.so => /opt/ros/humble/lib/librcl_lifecycle.so (0x00007e6938dd2000)\n\tliblifecycle_msgs__rosidl_typesupport_cpp.so => /opt/ros/humble/lib/liblifecycle_msgs__rosidl_typesupport_cpp.so (0x00007e6938dca000)\n\tliblifecycle_msgs__rosidl_typesupport_c.so => /opt/ros/humble/lib/liblifecycle_msgs__rosidl_typesupport_c.so (0x00007e6938dc3000)\n\tliblibstatistics_collector.so => /opt/ros/humble/lib/liblibstatistics_collector.so (0x00007e6938dbc000)\n\tlibrcl_yaml_param_parser.so => /opt/ros/humble/lib/librcl_yaml_param_parser.so (0x00007e6938db0000)\n\tlibrosgraph_msgs__rosidl_typesupport_cpp.so => /opt/ros/humble/lib/librosgraph_msgs__rosidl_typesupport_cpp.so (0x00007e6938da8000)\n\tlibstatistics_msgs__rosidl_typesupport_cpp.so => /opt/ros/humble/lib/libstatistics_msgs__rosidl_typesupport_cpp.so (0x00007e6938da3000)\n\tlibrmw_implementation.so => /opt/ros/humble/lib/librmw_implementation.so (0x00007e6938d96000)\n\tlibrcl_logging_interface.so => /opt/ros/humble/lib/librcl_logging_interface.so (0x00007e6938d91000)\n\tlibrcl_interfaces__rosidl_typesupport_cpp.so => /opt/ros/humble/lib/librcl_interfaces__rosidl_typesupport_cpp.so (0x00007e6938d86000)\n\tlibmap_msgs__rosidl_typesupport_cpp.so => /opt/ros/humble/lib/libmap_msgs__rosidl_typesupport_cpp.so (0x00007e6938d7a000)\n\tlibstd_srvs__rosidl_typesupport_cpp.so => /opt/ros/humble/lib/libstd_srvs__rosidl_typesupport_cpp.so (0x00007e6938d74000)\n\tliborocos-kdl.so.1.5 => /usr/lib/x86_64-linux-gnu/liborocos-kdl.so.1.5 (0x00007e6938cb8000)\n\tlibgeometry_msgs__rosidl_typesupport_cpp.so => /opt/ros/humble/lib/libgeometry_msgs__rosidl_typesupport_cpp.so (0x00007e6938cac000)\n\tlibtf2.so => /opt/ros/humble/lib/libtf2.so (0x00007e6938c8a000)\n\tlibtf2_ros.so => /opt/ros/humble/lib/libtf2_ros.so (0x00007e6938bf2000)\n\tlibbondcpp.so => /tmp/rl_bt_nav2_overlay/prefix/opt/ros/humble/lib/libbondcpp.so (0x00007e6938b71000)\n\tlibaction_msgs__rosidl_typesupport_cpp.so => /opt/ros/humble/lib/libaction_msgs__rosidl_typesupport_cpp.so (0x00007e6938b6b000)\n\tlibrosidl_typesupport_cpp.so => /opt/ros/humble/lib/librosidl_typesupport_cpp.so (0x00007e6938b65000)\n\tlibrcl_logging_spdlog.so => /opt/ros/humble/lib/librcl_logging_spdlog.so (0x00007e6938b5d000)\n\tlibrcl_interfaces__rosidl_typesupport_c.so => /opt/ros/humble/lib/librcl_interfaces__rosidl_typesupport_c.so (0x00007e6938b54000)\n\tlibrcl_interfaces__rosidl_generator_c.so => /opt/ros/humble/lib/librcl_interfaces__rosidl_generator_c.so (0x00007e6938b36000)\n\tlibrosidl_runtime_c.so => /opt/ros/humble/lib/librosidl_runtime_c.so (0x00007e6938b2b000)\n\tliblifecycle_msgs__rosidl_generator_c.so => /opt/ros/humble/lib/liblifecycle_msgs__rosidl_generator_c.so (0x00007e6938b1b000)\n\tlibrosidl_typesupport_c.so => /opt/ros/humble/lib/librosidl_typesupport_c.so (0x00007e6938b15000)\n\tlibyaml.so => /opt/ros/humble/lib/libyaml.so (0x00007e6938af3000)\n\tlibtf2_msgs__rosidl_typesupport_cpp.so => /opt/ros/humble/lib/libtf2_msgs__rosidl_typesupport_cpp.so (0x00007e6938ae9000)\n\tlibbond__rosidl_typesupport_cpp.so => /tmp/rl_bt_nav2_overlay/prefix/opt/ros/humble/lib/libbond__rosidl_typesupport_cpp.so (0x00007e6938ae4000)\n\tlibuuid.so.1 => /usr/lib/x86_64-linux-gnu/libuuid.so.1 (0x00007e6938adb000)\n\tlibspdlog.so.1 => /usr/lib/x86_64-linux-gnu/libspdlog.so.1 (0x00007e6938a60000)\n\tlibbuiltin_interfaces__rosidl_generator_c.so => /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_generator_c.so (0x00007e6938a5b000)\n\tlibfmt.so.8 => /usr/lib/x86_64-linux-gnu/libfmt.so.8 (0x00007e6938a38000)\n",
+      "stderr": ""
+    },
+    "mppi_plugin_ldd": {
+      "argv": [
+        "ldd",
+        "/tmp/rl_bt_nav2_overlay/prefix/opt/ros/humble/lib/libmppi_controller.so"
+      ],
+      "returncode": 0,
+      "stdout": "\tlinux-vdso.so.1 (0x00007b6e96a76000)\n\tlibnav2_costmap_2d_core.so => /tmp/rl_bt_nav2_overlay/prefix/opt/ros/humble/lib/libnav2_costmap_2d_core.so (0x00007b6e96888000)\n\tlibrcl.so => /opt/ros/humble/lib/librcl.so (0x00007b6e9684a000)\n\tlibtracetools.so => /opt/ros/humble/lib/libtracetools.so (0x00007b6e96845000)\n\tlibtinyxml2.so.9 => /usr/lib/x86_64-linux-gnu/libtinyxml2.so.9 (0x00007b6e9680d000)\n\tlibvisualization_msgs__rosidl_typesupport_cpp.so => /opt/ros/humble/lib/libvisualization_msgs__rosidl_typesupport_cpp.so (0x00007b6e96803000)\n\tlibtf2.so => /opt/ros/humble/lib/libtf2.so (0x00007b6e967e1000)\n\tlibnav_msgs__rosidl_typesupport_cpp.so => /opt/ros/humble/lib/libnav_msgs__rosidl_typesupport_cpp.so (0x00007b6e967d9000)\n\tlibrmw.so => /opt/ros/humble/lib/librmw.so (0x00007b6e967cd000)\n\tlibrcutils.so => /opt/ros/humble/lib/librcutils.so (0x00007b6e967b5000)\n\tlibrcpputils.so => /opt/ros/humble/lib/librcpputils.so (0x00007b6e967a7000)\n\tlibrclcpp.so => /opt/ros/humble/lib/librclcpp.so (0x00007b6e965ae000)\n\tlibrclcpp_lifecycle.so => /opt/ros/humble/lib/librclcpp_lifecycle.so (0x00007b6e9656b000)\n\tlibclass_loader.so => /opt/ros/humble/lib/libclass_loader.so (0x00007b6e96558000)\n\tliborocos-kdl.so.1.5 => /usr/lib/x86_64-linux-gnu/liborocos-kdl.so.1.5 (0x00007b6e9649c000)\n\tlibconsole_bridge.so.1.0 => /usr/lib/x86_64-linux-gnu/libconsole_bridge.so.1.0 (0x00007b6e96496000)\n\tlibament_index_cpp.so => /opt/ros/humble/lib/libament_index_cpp.so (0x00007b6e9648b000)\n\tlibstdc++.so.6 => /usr/lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007b6e9625d000)\n\tlibm.so.6 => /usr/lib/x86_64-linux-gnu/libm.so.6 (0x00007b6e96176000)\n\tlibmvec.so.1 => /usr/lib/x86_64-linux-gnu/libmvec.so.1 (0x00007b6e96079000)\n\tlibgcc_s.so.1 => /usr/lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007b6e96059000)\n\tlibc.so.6 => /usr/lib/x86_64-linux-gnu/libc.so.6 (0x00007b6e95e30000)\n\tlibmap_msgs__rosidl_typesupport_cpp.so => /opt/ros/humble/lib/libmap_msgs__rosidl_typesupport_cpp.so (0x00007b6e95e26000)\n\tlibnav2_msgs__rosidl_typesupport_cpp.so => /tmp/rl_bt_nav2_overlay/prefix/opt/ros/humble/lib/libnav2_msgs__rosidl_typesupport_cpp.so (0x00007b6e95deb000)\n\tlibstd_srvs__rosidl_typesupport_cpp.so => /opt/ros/humble/lib/libstd_srvs__rosidl_typesupport_cpp.so (0x00007b6e95de5000)\n\tlibnav2_util_core.so => /tmp/rl_bt_nav2_overlay/prefix/opt/ros/humble/lib/libnav2_util_core.so (0x00007b6e95d54000)\n\tlibgeometry_msgs__rosidl_typesupport_cpp.so => /opt/ros/humble/lib/libgeometry_msgs__rosidl_typesupport_cpp.so (0x00007b6e95d48000)\n\tlibtf2_ros.so => /opt/ros/humble/lib/libtf2_ros.so (0x00007b6e95cb0000)\n\tliblibstatistics_collector.so => /opt/ros/humble/lib/liblibstatistics_collector.so (0x00007b6e95ca9000)\n\tlibstatistics_msgs__rosidl_typesupport_cpp.so => /opt/ros/humble/lib/libstatistics_msgs__rosidl_typesupport_cpp.so (0x00007b6e95ca2000)\n\tlibrcl_yaml_param_parser.so => /opt/ros/humble/lib/librcl_yaml_param_parser.so (0x00007b6e95c96000)\n\tlibrmw_implementation.so => /opt/ros/humble/lib/librmw_implementation.so (0x00007b6e95c89000)\n\tlibrcl_logging_spdlog.so => /opt/ros/humble/lib/librcl_logging_spdlog.so (0x00007b6e95c81000)\n\tlibrcl_interfaces__rosidl_typesupport_c.so => /opt/ros/humble/lib/librcl_interfaces__rosidl_typesupport_c.so (0x00007b6e95c78000)\n\tlibrcl_interfaces__rosidl_generator_c.so => /opt/ros/humble/lib/librcl_interfaces__rosidl_generator_c.so (0x00007b6e95c5a000)\n\tlibrosidl_runtime_c.so => /opt/ros/humble/lib/librosidl_runtime_c.so (0x00007b6e95c4f000)\n\tlibrosidl_typesupport_cpp.so => /opt/ros/humble/lib/librosidl_typesupport_cpp.so (0x00007b6e95c49000)\n\t/lib64/ld-linux-x86-64.so.2 (0x00007b6e96a78000)\n\tlibrosgraph_msgs__rosidl_typesupport_cpp.so => /opt/ros/humble/lib/librosgraph_msgs__rosidl_typesupport_cpp.so (0x00007b6e95c43000)\n\tlibrcl_logging_interface.so => /opt/ros/humble/lib/librcl_logging_interface.so (0x00007b6e95c3e000)\n\tlibrcl_interfaces__rosidl_typesupport_cpp.so => /opt/ros/humble/lib/librcl_interfaces__rosidl_typesupport_cpp.so (0x00007b6e95c31000)\n\tlibrcl_lifecycle.so => /opt/ros/humble/lib/librcl_lifecycle.so (0x00007b6e95c27000)\n\tliblifecycle_msgs__rosidl_typesupport_cpp.so => /opt/ros/humble/lib/liblifecycle_msgs__rosidl_typesupport_cpp.so (0x00007b6e95c1f000)\n\tliblifecycle_msgs__rosidl_typesupport_c.so => /opt/ros/humble/lib/liblifecycle_msgs__rosidl_typesupport_c.so (0x00007b6e95c18000)\n\tlibaction_msgs__rosidl_typesupport_cpp.so => /opt/ros/humble/lib/libaction_msgs__rosidl_typesupport_cpp.so (0x00007b6e95c12000)\n\tlibbondcpp.so => /tmp/rl_bt_nav2_overlay/prefix/opt/ros/humble/lib/libbondcpp.so (0x00007b6e95b91000)\n\tlibrclcpp_action.so => /opt/ros/humble/lib/librclcpp_action.so (0x00007b6e95b6e000)\n\tlibtf2_msgs__rosidl_typesupport_cpp.so => /opt/ros/humble/lib/libtf2_msgs__rosidl_typesupport_cpp.so (0x00007b6e95b66000)\n\tlibyaml.so => /opt/ros/humble/lib/libyaml.so (0x00007b6e95b44000)\n\tlibspdlog.so.1 => /usr/lib/x86_64-linux-gnu/libspdlog.so.1 (0x00007b6e95ac9000)\n\tlibrosidl_typesupport_c.so => /opt/ros/humble/lib/librosidl_typesupport_c.so (0x00007b6e95ac1000)\n\tlibbuiltin_interfaces__rosidl_generator_c.so => /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_generator_c.so (0x00007b6e95abc000)\n\tliblifecycle_msgs__rosidl_generator_c.so => /opt/ros/humble/lib/liblifecycle_msgs__rosidl_generator_c.so (0x00007b6e95aac000)\n\tlibbond__rosidl_typesupport_cpp.so => /tmp/rl_bt_nav2_overlay/prefix/opt/ros/humble/lib/libbond__rosidl_typesupport_cpp.so (0x00007b6e95aa7000)\n\tlibuuid.so.1 => /usr/lib/x86_64-linux-gnu/libuuid.so.1 (0x00007b6e95a9e000)\n\tlibrcl_action.so => /opt/ros/humble/lib/librcl_action.so (0x00007b6e95a89000)\n\tlibfmt.so.8 => /usr/lib/x86_64-linux-gnu/libfmt.so.8 (0x00007b6e95a68000)\n",
+      "stderr": ""
+    },
+    "bt_navigator_ldd": {
+      "argv": [
+        "ldd",
+        "/tmp/rl_bt_nav2_overlay/prefix/opt/ros/humble/lib/nav2_bt_navigator/bt_navigator"
+      ],
+      "returncode": 0,
+      "stdout": "\tlinux-vdso.so.1 (0x000077b019bf3000)\n\tlibbehaviortree_cpp_v3.so => /tmp/rl_bt_nav2_overlay/prefix/opt/ros/humble/lib/libbehaviortree_cpp_v3.so (0x000077b019b51000)\n\tlibrcl.so => /opt/ros/humble/lib/librcl.so (0x000077b019b13000)\n\tlibrcutils.so => /opt/ros/humble/lib/librcutils.so (0x000077b019afb000)\n\tlibrclcpp_lifecycle.so => /opt/ros/humble/lib/librclcpp_lifecycle.so (0x000077b019ab8000)\n\tlibrclcpp.so => /opt/ros/humble/lib/librclcpp.so (0x000077b0198bf000)\n\tlibbt_navigator_core.so => /tmp/rl_bt_nav2_overlay/prefix/opt/ros/humble/lib/libbt_navigator_core.so (0x000077b0197a0000)\n\tlibstdc++.so.6 => /usr/lib/x86_64-linux-gnu/libstdc++.so.6 (0x000077b019554000)\n\tlibgcc_s.so.1 => /usr/lib/x86_64-linux-gnu/libgcc_s.so.1 (0x000077b019534000)\n\tlibc.so.6 => /usr/lib/x86_64-linux-gnu/libc.so.6 (0x000077b01930b000)\n\tlibzmq.so.5 => /usr/lib/x86_64-linux-gnu/libzmq.so.5 (0x000077b01926f000)\n\tlibncurses.so.6 => /usr/lib/x86_64-linux-gnu/libncurses.so.6 (0x000077b019245000)\n\tlibtinfo.so.6 => /usr/lib/x86_64-linux-gnu/libtinfo.so.6 (0x000077b019213000)\n\tlibament_index_cpp.so => /opt/ros/humble/lib/libament_index_cpp.so (0x000077b019208000)\n\tlibboost_context.so.1.74.0 => /usr/lib/x86_64-linux-gnu/libboost_context.so.1.74.0 (0x000077b019203000)\n\t/lib64/ld-linux-x86-64.so.2 (0x000077b019bf5000)\n\tlibrcl_yaml_param_parser.so => /opt/ros/humble/lib/librcl_yaml_param_parser.so (0x000077b0191f7000)\n\tlibrmw_implementation.so => /opt/ros/humble/lib/librmw_implementation.so (0x000077b0191ea000)\n\tlibrcl_logging_spdlog.so => /opt/ros/humble/lib/librcl_logging_spdlog.so (0x000077b0191e0000)\n\tlibtracetools.so => /opt/ros/humble/lib/libtracetools.so (0x000077b0191db000)\n\tlibrcl_interfaces__rosidl_typesupport_c.so => /opt/ros/humble/lib/librcl_interfaces__rosidl_typesupport_c.so (0x000077b0191d2000)\n\tlibrcl_interfaces__rosidl_generator_c.so => /opt/ros/humble/lib/librcl_interfaces__rosidl_generator_c.so (0x000077b0191b6000)\n\tlibrmw.so => /opt/ros/humble/lib/librmw.so (0x000077b0191aa000)\n\tlibrosidl_runtime_c.so => /opt/ros/humble/lib/librosidl_runtime_c.so (0x000077b01919f000)\n\tlibrcl_lifecycle.so => /opt/ros/humble/lib/librcl_lifecycle.so (0x000077b019193000)\n\tliblifecycle_msgs__rosidl_typesupport_cpp.so => /opt/ros/humble/lib/liblifecycle_msgs__rosidl_typesupport_cpp.so (0x000077b01918b000)\n\tliblifecycle_msgs__rosidl_typesupport_c.so => /opt/ros/humble/lib/liblifecycle_msgs__rosidl_typesupport_c.so (0x000077b019184000)\n\tliblibstatistics_collector.so => /opt/ros/humble/lib/liblibstatistics_collector.so (0x000077b01917d000)\n\tlibrosgraph_msgs__rosidl_typesupport_cpp.so => /opt/ros/humble/lib/librosgraph_msgs__rosidl_typesupport_cpp.so (0x000077b019177000)\n\tlibstatistics_msgs__rosidl_typesupport_cpp.so => /opt/ros/humble/lib/libstatistics_msgs__rosidl_typesupport_cpp.so (0x000077b019170000)\n\tlibrcl_logging_interface.so => /opt/ros/humble/lib/librcl_logging_interface.so (0x000077b01916b000)\n\tlibrcl_interfaces__rosidl_typesupport_cpp.so => /opt/ros/humble/lib/librcl_interfaces__rosidl_typesupport_cpp.so (0x000077b019160000)\n\tlibrcpputils.so => /opt/ros/humble/lib/librcpputils.so (0x000077b019152000)\n\tlibm.so.6 => /usr/lib/x86_64-linux-gnu/libm.so.6 (0x000077b01906b000)\n\tlibnav2_behavior_tree.so => /tmp/rl_bt_nav2_overlay/prefix/opt/ros/humble/lib/libnav2_behavior_tree.so (0x000077b01905f000)\n\tlibconsole_bridge.so.1.0 => /usr/lib/x86_64-linux-gnu/libconsole_bridge.so.1.0 (0x000077b019059000)\n\tlibnav2_util_core.so => /tmp/rl_bt_nav2_overlay/prefix/opt/ros/humble/lib/libnav2_util_core.so (0x000077b018fc8000)\n\tlibnav2_msgs__rosidl_typesupport_cpp.so => /tmp/rl_bt_nav2_overlay/prefix/opt/ros/humble/lib/libnav2_msgs__rosidl_typesupport_cpp.so (0x000077b018f8f000)\n\tlibtf2_msgs__rosidl_typesupport_cpp.so => /opt/ros/humble/lib/libtf2_msgs__rosidl_typesupport_cpp.so (0x000077b018f87000)\n\tlibrclcpp_action.so => /opt/ros/humble/lib/librclcpp_action.so (0x000077b018f64000)\n\tlibgeometry_msgs__rosidl_typesupport_cpp.so => /opt/ros/humble/lib/libgeometry_msgs__rosidl_typesupport_cpp.so (0x000077b018f56000)\n\tlibtf2.so => /opt/ros/humble/lib/libtf2.so (0x000077b018f34000)\n\tlibtf2_ros.so => /opt/ros/humble/lib/libtf2_ros.so (0x000077b018e9c000)\n\tlibclass_loader.so => /opt/ros/humble/lib/libclass_loader.so (0x000077b018e89000)\n\tlibrcl_action.so => /opt/ros/humble/lib/librcl_action.so (0x000077b018e76000)\n\tlibbsd.so.0 => /usr/lib/x86_64-linux-gnu/libbsd.so.0 (0x000077b018e5c000)\n\tlibsodium.so.23 => /usr/lib/x86_64-linux-gnu/libsodium.so.23 (0x000077b018e05000)\n\tlibpgm-5.3.so.0 => /usr/lib/x86_64-linux-gnu/libpgm-5.3.so.0 (0x000077b018db4000)\n\tlibnorm.so.1 => /usr/lib/x86_64-linux-gnu/libnorm.so.1 (0x000077b018c89000)\n\tlibgssapi_krb5.so.2 => /usr/lib/x86_64-linux-gnu/libgssapi_krb5.so.2 (0x000077b018c35000)\n\tlibyaml.so => /opt/ros/humble/lib/libyaml.so (0x000077b018c11000)\n\tlibspdlog.so.1 => /usr/lib/x86_64-linux-gnu/libspdlog.so.1 (0x000077b018b96000)\n\tlibrosidl_typesupport_c.so => /opt/ros/humble/lib/librosidl_typesupport_c.so (0x000077b018b90000)\n\tlibbuiltin_interfaces__rosidl_generator_c.so => /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_generator_c.so (0x000077b018b8b000)\n\tliblifecycle_msgs__rosidl_generator_c.so => /opt/ros/humble/lib/liblifecycle_msgs__rosidl_generator_c.so (0x000077b018b7b000)\n\tlibrosidl_typesupport_cpp.so => /opt/ros/humble/lib/librosidl_typesupport_cpp.so (0x000077b018b75000)\n\tlibnav_msgs__rosidl_typesupport_cpp.so => /opt/ros/humble/lib/libnav_msgs__rosidl_typesupport_cpp.so (0x000077b018b6b000)\n\tlibbondcpp.so => /tmp/rl_bt_nav2_overlay/prefix/opt/ros/humble/lib/libbondcpp.so (0x000077b018aec000)\n\tliborocos-kdl.so.1.5 => /usr/lib/x86_64-linux-gnu/liborocos-kdl.so.1.5 (0x000077b018a30000)\n\tlibaction_msgs__rosidl_typesupport_cpp.so => /opt/ros/humble/lib/libaction_msgs__rosidl_typesupport_cpp.so (0x000077b018a2a000)\n\tlibmd.so.0 => /usr/lib/x86_64-linux-gnu/libmd.so.0 (0x000077b018a1d000)\n\tlibpthread.so.0 => /usr/lib/x86_64-linux-gnu/libpthread.so.0 (0x000077b018a16000)\n\tlibkrb5.so.3 => /usr/lib/x86_64-linux-gnu/libkrb5.so.3 (0x000077b01894b000)\n\tlibk5crypto.so.3 => /usr/lib/x86_64-linux-gnu/libk5crypto.so.3 (0x000077b01891c000)\n\tlibcom_err.so.2 => /usr/lib/x86_64-linux-gnu/libcom_err.so.2 (0x000077b018916000)\n\tlibkrb5support.so.0 => /usr/lib/x86_64-linux-gnu/libkrb5support.so.0 (0x000077b018908000)\n\tlibfmt.so.8 => /usr/lib/x86_64-linux-gnu/libfmt.so.8 (0x000077b0188e5000)\n\tlibbond__rosidl_typesupport_cpp.so => /tmp/rl_bt_nav2_overlay/prefix/opt/ros/humble/lib/libbond__rosidl_typesupport_cpp.so (0x000077b0188e0000)\n\tlibuuid.so.1 => /usr/lib/x86_64-linux-gnu/libuuid.so.1 (0x000077b0188d7000)\n\tlibkeyutils.so.1 => /usr/lib/x86_64-linux-gnu/libkeyutils.so.1 (0x000077b0188d0000)\n\tlibresolv.so.2 => /usr/lib/x86_64-linux-gnu/libresolv.so.2 (0x000077b0188bd000)\n",
+      "stderr": ""
+    },
+    "map_server_ldd": {
+      "argv": [
+        "ldd",
+        "/tmp/rl_bt_nav2_overlay/prefix/opt/ros/humble/lib/nav2_map_server/map_server"
+      ],
+      "returncode": 0,
+      "stdout": "\tlinux-vdso.so.1 (0x00007bb37c4c2000)\n\tlibrcutils.so => /opt/ros/humble/lib/librcutils.so (0x00007bb37c49c000)\n\tlibrclcpp.so => /opt/ros/humble/lib/librclcpp.so (0x00007bb37c2a5000)\n\tlibrclcpp_lifecycle.so => /opt/ros/humble/lib/librclcpp_lifecycle.so (0x00007bb37c262000)\n\tlibmap_server_core.so => /tmp/rl_bt_nav2_overlay/prefix/opt/ros/humble/lib/libmap_server_core.so (0x00007bb37c1b8000)\n\tlibstdc++.so.6 => /usr/lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007bb37bf6a000)\n\tlibgcc_s.so.1 => /usr/lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007bb37bf4a000)\n\tlibc.so.6 => /usr/lib/x86_64-linux-gnu/libc.so.6 (0x00007bb37bd21000)\n\t/lib64/ld-linux-x86-64.so.2 (0x00007bb37c4c4000)\n\tliblibstatistics_collector.so => /opt/ros/humble/lib/liblibstatistics_collector.so (0x00007bb37bd1a000)\n\tlibrcl.so => /opt/ros/humble/lib/librcl.so (0x00007bb37bcdc000)\n\tlibrcl_yaml_param_parser.so => /opt/ros/humble/lib/librcl_yaml_param_parser.so (0x00007bb37bcd0000)\n\tlibrosgraph_msgs__rosidl_typesupport_cpp.so => /opt/ros/humble/lib/librosgraph_msgs__rosidl_typesupport_cpp.so (0x00007bb37bcc8000)\n\tlibstatistics_msgs__rosidl_typesupport_cpp.so => /opt/ros/humble/lib/libstatistics_msgs__rosidl_typesupport_cpp.so (0x00007bb37bcc3000)\n\tlibtracetools.so => /opt/ros/humble/lib/libtracetools.so (0x00007bb37bcbe000)\n\tlibrmw_implementation.so => /opt/ros/humble/lib/librmw_implementation.so (0x00007bb37bcb1000)\n\tlibament_index_cpp.so => /opt/ros/humble/lib/libament_index_cpp.so (0x00007bb37bca6000)\n\tlibrcl_logging_interface.so => /opt/ros/humble/lib/librcl_logging_interface.so (0x00007bb37bca1000)\n\tlibrmw.so => /opt/ros/humble/lib/librmw.so (0x00007bb37bc93000)\n\tlibrcl_interfaces__rosidl_typesupport_cpp.so => /opt/ros/humble/lib/librcl_interfaces__rosidl_typesupport_cpp.so (0x00007bb37bc88000)\n\tlibrcpputils.so => /opt/ros/humble/lib/librcpputils.so (0x00007bb37bc7a000)\n\tlibm.so.6 => /usr/lib/x86_64-linux-gnu/libm.so.6 (0x00007bb37bb93000)\n\tlibrcl_lifecycle.so => /opt/ros/humble/lib/librcl_lifecycle.so (0x00007bb37bb89000)\n\tliblifecycle_msgs__rosidl_typesupport_cpp.so => /opt/ros/humble/lib/liblifecycle_msgs__rosidl_typesupport_cpp.so (0x00007bb37bb7f000)\n\tliblifecycle_msgs__rosidl_typesupport_c.so => /opt/ros/humble/lib/liblifecycle_msgs__rosidl_typesupport_c.so (0x00007bb37bb78000)\n\tlibnav2_msgs__rosidl_typesupport_cpp.so => /tmp/rl_bt_nav2_overlay/prefix/opt/ros/humble/lib/libnav2_msgs__rosidl_typesupport_cpp.so (0x00007bb37bb3f000)\n\tlibnav2_util_core.so => /tmp/rl_bt_nav2_overlay/prefix/opt/ros/humble/lib/libnav2_util_core.so (0x00007bb37baae000)\n\tlibnav_msgs__rosidl_typesupport_cpp.so => /opt/ros/humble/lib/libnav_msgs__rosidl_typesupport_cpp.so (0x00007bb37baa6000)\n\tlibmap_io.so => /tmp/rl_bt_nav2_overlay/prefix/opt/ros/humble/lib/libmap_io.so (0x00007bb37ba83000)\n\tlibclass_loader.so => /opt/ros/humble/lib/libclass_loader.so (0x00007bb37ba70000)\n\tlibconsole_bridge.so.1.0 => /usr/lib/x86_64-linux-gnu/libconsole_bridge.so.1.0 (0x00007bb37ba6a000)\n\tlibrcl_logging_spdlog.so => /opt/ros/humble/lib/librcl_logging_spdlog.so (0x00007bb37ba62000)\n\tlibrcl_interfaces__rosidl_typesupport_c.so => /opt/ros/humble/lib/librcl_interfaces__rosidl_typesupport_c.so (0x00007bb37ba59000)\n\tlibrcl_interfaces__rosidl_generator_c.so => /opt/ros/humble/lib/librcl_interfaces__rosidl_generator_c.so (0x00007bb37ba3b000)\n\tlibrosidl_runtime_c.so => /opt/ros/humble/lib/librosidl_runtime_c.so (0x00007bb37ba30000)\n\tlibyaml.so => /opt/ros/humble/lib/libyaml.so (0x00007bb37ba0e000)\n\tlibrosidl_typesupport_cpp.so => /opt/ros/humble/lib/librosidl_typesupport_cpp.so (0x00007bb37ba08000)\n\tliblifecycle_msgs__rosidl_generator_c.so => /opt/ros/humble/lib/liblifecycle_msgs__rosidl_generator_c.so (0x00007bb37b9f8000)\n\tlibrosidl_typesupport_c.so => /opt/ros/humble/lib/librosidl_typesupport_c.so (0x00007bb37b9f0000)\n\tlibaction_msgs__rosidl_typesupport_cpp.so => /opt/ros/humble/lib/libaction_msgs__rosidl_typesupport_cpp.so (0x00007bb37b9ea000)\n\tlibbondcpp.so => /tmp/rl_bt_nav2_overlay/prefix/opt/ros/humble/lib/libbondcpp.so (0x00007bb37b96b000)\n\tlibtf2.so => /opt/ros/humble/lib/libtf2.so (0x00007bb37b949000)\n\tliborocos-kdl.so.1.5 => /usr/lib/x86_64-linux-gnu/liborocos-kdl.so.1.5 (0x00007bb37b88d000)\n\tlibyaml-cpp.so.0.7 => /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.7 (0x00007bb37b84c000)\n\tlibGraphicsMagick++-Q16.so.12 => /tmp/rl_bt_nav2_overlay/prefix/usr/lib/libGraphicsMagick++-Q16.so.12 (0x00007bb37b7d8000)\n\tlibspdlog.so.1 => /usr/lib/x86_64-linux-gnu/libspdlog.so.1 (0x00007bb37b75d000)\n\tlibbuiltin_interfaces__rosidl_generator_c.so => /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_generator_c.so (0x00007bb37b758000)\n\tlibbond__rosidl_typesupport_cpp.so => /tmp/rl_bt_nav2_overlay/prefix/opt/ros/humble/lib/libbond__rosidl_typesupport_cpp.so (0x00007bb37b753000)\n\tlibuuid.so.1 => /usr/lib/x86_64-linux-gnu/libuuid.so.1 (0x00007bb37b748000)\n\tlibGraphicsMagick-Q16.so.3 => /tmp/rl_bt_nav2_overlay/prefix/usr/lib/libGraphicsMagick-Q16.so.3 (0x00007bb37b457000)\n\tlibfmt.so.8 => /usr/lib/x86_64-linux-gnu/libfmt.so.8 (0x00007bb37b436000)\n\tlibjbig.so.0 => /usr/lib/x86_64-linux-gnu/libjbig.so.0 (0x00007bb37b425000)\n\tlibwebp.so.7 => /usr/lib/x86_64-linux-gnu/libwebp.so.7 (0x00007bb37b3b8000)\n\tlibwebpmux.so.3 => /usr/lib/x86_64-linux-gnu/libwebpmux.so.3 (0x00007bb37b3a9000)\n\tlibheif.so.1 => /usr/lib/x86_64-linux-gnu/libheif.so.1 (0x00007bb37b326000)\n\tliblcms2.so.2 => /usr/lib/x86_64-linux-gnu/liblcms2.so.2 (0x00007bb37b2c4000)\n\tlibtiff.so.5 => /usr/lib/x86_64-linux-gnu/libtiff.so.5 (0x00007bb37b23b000)\n\tlibfreetype.so.6 => /usr/lib/x86_64-linux-gnu/libfreetype.so.6 (0x00007bb37b173000)\n\tlibjpeg.so.8 => /usr/lib/x86_64-linux-gnu/libjpeg.so.8 (0x00007bb37b0f2000)\n\tlibpng16.so.16 => /usr/lib/x86_64-linux-gnu/libpng16.so.16 (0x00007bb37b0b5000)\n\tlibwmflite-0.2.so.7 => /tmp/rl_bt_nav2_overlay/prefix/usr/lib/x86_64-linux-gnu/libwmflite-0.2.so.7 (0x00007bb37b094000)\n\tlibXext.so.6 => /usr/lib/x86_64-linux-gnu/libXext.so.6 (0x00007bb37b07f000)\n\tlibX11.so.6 => /usr/lib/x86_64-linux-gnu/libX11.so.6 (0x00007bb37af3f000)\n\tlibbz2.so.1.0 => /usr/lib/x86_64-linux-gnu/libbz2.so.1.0 (0x00007bb37af2c000)\n\tlibxml2.so.2 => /usr/lib/x86_64-linux-gnu/libxml2.so.2 (0x00007bb37ad4a000)\n\tlibz.so.1 => /usr/lib/x86_64-linux-gnu/libz.so.1 (0x00007bb37ad2c000)\n\tlibzstd.so.1 => /usr/lib/x86_64-linux-gnu/libzstd.so.1 (0x00007bb37ac5d000)\n\tlibgomp.so.1 => /usr/lib/x86_64-linux-gnu/libgomp.so.1 (0x00007bb37ac13000)\n\tlibaom.so.3 => /usr/lib/x86_64-linux-gnu/libaom.so.3 (0x00007bb37a6a2000)\n\tlibde265.so.0 => /usr/lib/x86_64-linux-gnu/libde265.so.0 (0x00007bb37a5ee000)\n\tlibx265.so.199 => /usr/lib/x86_64-linux-gnu/libx265.so.199 (0x00007bb379687000)\n\tlibdav1d.so.5 => /usr/lib/x86_64-linux-gnu/libdav1d.so.5 (0x00007bb379501000)\n\tliblzma.so.5 => /usr/lib/x86_64-linux-gnu/liblzma.so.5 (0x00007bb3794d6000)\n\tlibdeflate.so.0 => /usr/lib/x86_64-linux-gnu/libdeflate.so.0 (0x00007bb3794b2000)\n\tlibbrotlidec.so.1 => /usr/lib/x86_64-linux-gnu/libbrotlidec.so.1 (0x00007bb3794a4000)\n\tlibxcb.so.1 => /usr/lib/x86_64-linux-gnu/libxcb.so.1 (0x00007bb379478000)\n\tlibicuuc.so.70 => /usr/lib/x86_64-linux-gnu/libicuuc.so.70 (0x00007bb37927d000)\n\tlibnuma.so.1 => /usr/lib/x86_64-linux-gnu/libnuma.so.1 (0x00007bb379270000)\n\tlibbrotlicommon.so.1 => /usr/lib/x86_64-linux-gnu/libbrotlicommon.so.1 (0x00007bb37924d000)\n\tlibXau.so.6 => /usr/lib/x86_64-linux-gnu/libXau.so.6 (0x00007bb379247000)\n\tlibXdmcp.so.6 => /usr/lib/x86_64-linux-gnu/libXdmcp.so.6 (0x00007bb37923d000)\n\tlibicudata.so.70 => /usr/lib/x86_64-linux-gnu/libicudata.so.70 (0x00007bb37761f000)\n\tlibbsd.so.0 => /usr/lib/x86_64-linux-gnu/libbsd.so.0 (0x00007bb377607000)\n\tlibmd.so.0 => /usr/lib/x86_64-linux-gnu/libmd.so.0 (0x00007bb3775fa000)\n",
+      "stderr": ""
+    }
+  },
+  "verified": true,
+  "setup_sha256": "6aa404cb26ee619b2a7104edb4f92309844cce03062e7478867c3a7f361322d3"
+}

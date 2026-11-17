@@ -1,0 +1,1433 @@
+{
+  "schema_version": "0.1",
+  "prepared_date": "2026-11-15",
+  "basis": "User supplied RoboMaster 2027 V1.0.0 2026-10-15",
+  "purpose": "Research facts with provenance; not an executable referee emulator",
+  "latest_amendments_verified": false,
+  "facts": [
+    {
+      "id": "match_duration",
+      "value": 420,
+      "unit": "s",
+      "condition": "七分钟比赛阶段",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        122
+      ],
+      "printed_pages": [
+        121
+      ],
+      "section": "6.6",
+      "note": "",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "victory_priority",
+      "value": [
+        "base_destruction",
+        "control_score",
+        "team_attack_damage",
+        "team_remaining_hp",
+        "draw"
+      ],
+      "unit": "ordered_criteria",
+      "condition": "时间耗尽且双方基地未毁时先比控制度；基地摧毁单独优先",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        115,
+        116
+      ],
+      "printed_pages": [
+        114,
+        115
+      ],
+      "section": "5.8",
+      "note": "不是按时间耗尽时基地血量排序",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "out_of_combat_quiet_period",
+      "value": 6,
+      "unit": "s",
+      "condition": "存活且未发射弹丸、未被扣血；开局默认脱战",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        17
+      ],
+      "printed_pages": [
+        16
+      ],
+      "section": "2 表2-1",
+      "note": "",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "automatic_initial_and_max_hp",
+      "value": 400,
+      "unit": "HP",
+      "condition": "基础属性；姿态与增益另行结算",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        27
+      ],
+      "printed_pages": [
+        26
+      ],
+      "section": "3.1.3 表3-6",
+      "note": "",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "automatic_heat_limit",
+      "value": 260,
+      "unit": "heat",
+      "condition": "基础属性；姿态与增益另行结算",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        27
+      ],
+      "printed_pages": [
+        26
+      ],
+      "section": "3.1.3 表3-6",
+      "note": "",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "automatic_base_cooling",
+      "value": 30,
+      "unit": "heat/s",
+      "condition": "基础属性；姿态与增益另行结算",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        27
+      ],
+      "printed_pages": [
+        26
+      ],
+      "section": "3.1.3 表3-6",
+      "note": "",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "automatic_base_power_limit",
+      "value": 100,
+      "unit": "W",
+      "condition": "基础属性；姿态与增益另行结算",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        27
+      ],
+      "printed_pages": [
+        26
+      ],
+      "section": "3.1.3 表3-6",
+      "note": "",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "semi_automatic_initial_and_max_hp",
+      "value": 200,
+      "unit": "HP",
+      "condition": "基础属性；姿态与增益另行结算",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        27
+      ],
+      "printed_pages": [
+        26
+      ],
+      "section": "3.1.3 表3-6",
+      "note": "",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "semi_automatic_heat_limit",
+      "value": 100,
+      "unit": "heat",
+      "condition": "基础属性；姿态与增益另行结算",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        27
+      ],
+      "printed_pages": [
+        26
+      ],
+      "section": "3.1.3 表3-6",
+      "note": "",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "semi_automatic_base_cooling",
+      "value": 10,
+      "unit": "heat/s",
+      "condition": "基础属性；姿态与增益另行结算",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        27
+      ],
+      "printed_pages": [
+        26
+      ],
+      "section": "3.1.3 表3-6",
+      "note": "",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "semi_automatic_base_power_limit",
+      "value": 60,
+      "unit": "W",
+      "condition": "基础属性；姿态与增益另行结算",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        27
+      ],
+      "printed_pages": [
+        26
+      ],
+      "section": "3.1.3 表3-6",
+      "note": "",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "sentry_projectile_speed_limit",
+      "value": 25,
+      "unit": "m/s",
+      "condition": "17mm发射机构",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        26
+      ],
+      "printed_pages": [
+        25
+      ],
+      "section": "3.1.3 表3-6",
+      "note": "",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "sentry_initial_ammo_allowance",
+      "value": 300,
+      "unit": "projectiles",
+      "condition": "初始允许发弹量，不等于物理装弹数",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        26
+      ],
+      "printed_pages": [
+        25
+      ],
+      "section": "3.1.3 表3-6",
+      "note": "",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "sentry_multirobot_receive_sources",
+      "value": [
+        "radar"
+      ],
+      "unit": "source_types",
+      "condition": "仅多机通信范畴；不否定本机裁判系统状态或规定的指挥手链路",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        26
+      ],
+      "printed_pages": [
+        25
+      ],
+      "section": "3.1.3 表3-6",
+      "note": "",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "stance_switch_cooldown",
+      "value": 5,
+      "unit": "s",
+      "condition": "姿态切换",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        110
+      ],
+      "printed_pages": [
+        109
+      ],
+      "section": "5.7.2 表5-28",
+      "note": "",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "stance_degradation_cumulative_time",
+      "value": 180,
+      "unit": "s",
+      "condition": "每局同一种姿态累计超过该时间效果下降",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        110,
+        111
+      ],
+      "printed_pages": [
+        109,
+        110
+      ],
+      "section": "5.7.2 表5-28",
+      "note": "不是每次进入姿态重新计时；强化时间示例计入该姿态",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "enhanced_stance_budget_each",
+      "value": 15,
+      "unit": "s",
+      "condition": "每种强化姿态各自累计，不同种类相互独立",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        110
+      ],
+      "printed_pages": [
+        109
+      ],
+      "section": "5.7.2 表5-28",
+      "note": "",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "initial_stance",
+      "value": "movement",
+      "unit": "stance",
+      "condition": "开局默认",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        110
+      ],
+      "printed_pages": [
+        109
+      ],
+      "section": "5.7.2",
+      "note": "",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "stance_attack_default",
+      "value": {
+        "cooling_gain_multiplier": 3,
+        "power_reduction_multiplier": 0.5,
+        "vulnerability": 0.25
+      },
+      "unit": "mixed",
+      "condition": "热量/功率下降在其他增益完成后乘算；结果取整数",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        110,
+        111
+      ],
+      "printed_pages": [
+        109,
+        110
+      ],
+      "section": "5.7.2 表5-28",
+      "note": "",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "stance_attack_degraded",
+      "value": {
+        "cooling_gain_multiplier": 2,
+        "power_reduction_multiplier": 0.5,
+        "vulnerability": 0.25
+      },
+      "unit": "mixed",
+      "condition": "热量/功率下降在其他增益完成后乘算；结果取整数",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        110,
+        111
+      ],
+      "printed_pages": [
+        109,
+        110
+      ],
+      "section": "5.7.2 表5-28",
+      "note": "",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "stance_attack_enhanced",
+      "value": {
+        "always_zero_heat": true,
+        "shots_add_heat": false,
+        "power_reduction_multiplier": 0.5,
+        "vulnerability": 0.25
+      },
+      "unit": "mixed",
+      "condition": "热量/功率下降在其他增益完成后乘算；结果取整数",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        110,
+        111
+      ],
+      "printed_pages": [
+        109,
+        110
+      ],
+      "section": "5.7.2 表5-28",
+      "note": "",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "stance_defense_default",
+      "value": {
+        "defense": 0.5,
+        "power_reduction_multiplier": 0.5,
+        "cooling_reduction_fraction": "1/3"
+      },
+      "unit": "mixed",
+      "condition": "热量/功率下降在其他增益完成后乘算；结果取整数",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        110,
+        111
+      ],
+      "printed_pages": [
+        109,
+        110
+      ],
+      "section": "5.7.2 表5-28",
+      "note": "",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "stance_defense_degraded",
+      "value": {
+        "defense": 0.25,
+        "power_reduction_multiplier": 0.5,
+        "cooling_reduction_fraction": "1/3"
+      },
+      "unit": "mixed",
+      "condition": "热量/功率下降在其他增益完成后乘算；结果取整数",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        110,
+        111
+      ],
+      "printed_pages": [
+        109,
+        110
+      ],
+      "section": "5.7.2 表5-28",
+      "note": "",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "stance_defense_enhanced",
+      "value": {
+        "defense": 0.99,
+        "power_reduction_multiplier": 0.5,
+        "cooling_reduction_fraction": "1/3"
+      },
+      "unit": "mixed",
+      "condition": "热量/功率下降在其他增益完成后乘算；结果取整数",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        110,
+        111
+      ],
+      "printed_pages": [
+        109,
+        110
+      ],
+      "section": "5.7.2 表5-28",
+      "note": "",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "stance_movement_default",
+      "value": {
+        "power_gain_multiplier": 1.5,
+        "vulnerability": 0.25,
+        "cooling_reduction_fraction": "1/3"
+      },
+      "unit": "mixed",
+      "condition": "热量/功率下降在其他增益完成后乘算；结果取整数",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        110,
+        111
+      ],
+      "printed_pages": [
+        109,
+        110
+      ],
+      "section": "5.7.2 表5-28",
+      "note": "",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "stance_movement_degraded",
+      "value": {
+        "power_gain_multiplier": 1.2,
+        "vulnerability": 0.25,
+        "cooling_reduction_fraction": "1/3"
+      },
+      "unit": "mixed",
+      "condition": "热量/功率下降在其他增益完成后乘算；结果取整数",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        110,
+        111
+      ],
+      "printed_pages": [
+        109,
+        110
+      ],
+      "section": "5.7.2 表5-28",
+      "note": "",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "stance_movement_enhanced",
+      "value": {
+        "power_limit_W": 200,
+        "vulnerability": 0.25,
+        "cooling_reduction_fraction": "1/3"
+      },
+      "unit": "mixed",
+      "condition": "热量/功率下降在其他增益完成后乘算；结果取整数",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        110,
+        111
+      ],
+      "printed_pages": [
+        109,
+        110
+      ],
+      "section": "5.7.2 表5-28",
+      "note": "",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "terrain_trigger_window_road_tunnel",
+      "value": 3,
+      "unit": "s",
+      "condition": "同一处所需同类型卡按序检完，中途不得检测到其他交互卡",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        106,
+        107
+      ],
+      "printed_pages": [
+        105,
+        106
+      ],
+      "section": "5.6.4.5",
+      "note": "",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "terrain_trigger_window_highland",
+      "value": 5,
+      "unit": "s",
+      "condition": "低处至高处，中途不得检测到其他交互卡",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        106,
+        107
+      ],
+      "printed_pages": [
+        105,
+        106
+      ],
+      "section": "5.6.4.5",
+      "note": "",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "tunnel_underpass_sequence",
+      "value": [
+        "end_a",
+        "inside",
+        "end_b"
+      ],
+      "unit": "ordered_card_types",
+      "condition": "穿越隧道；反向起终端对应交换",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        107
+      ],
+      "printed_pages": [
+        106
+      ],
+      "section": "表5-27",
+      "note": "",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "tunnel_underpass_cooling_multiplier",
+      "value": 1.5,
+      "unit": "multiplier",
+      "condition": "成功按序穿越触发",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        107
+      ],
+      "printed_pages": [
+        106
+      ],
+      "section": "表5-27",
+      "note": "",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "tunnel_underpass_buff_duration",
+      "value": 120,
+      "unit": "s",
+      "condition": "穿越隧道增益，战亡清除",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        107
+      ],
+      "printed_pages": [
+        106
+      ],
+      "section": "表5-27",
+      "note": "",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "tunnel_overpass_sequence",
+      "value": [
+        "end_a",
+        "end_b"
+      ],
+      "unit": "ordered_card_types",
+      "condition": "跨越隧道，仅检测到两端卡",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        107
+      ],
+      "printed_pages": [
+        106
+      ],
+      "section": "表5-27",
+      "note": "",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "tunnel_overpass_defense",
+      "value": 0.25,
+      "unit": "fraction",
+      "condition": "跨越隧道",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        107
+      ],
+      "printed_pages": [
+        106
+      ],
+      "section": "表5-27",
+      "note": "",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "tunnel_overpass_buff_duration",
+      "value": 30,
+      "unit": "s",
+      "condition": "跨越隧道增益，战亡清除",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        107
+      ],
+      "printed_pages": [
+        106
+      ],
+      "section": "表5-27",
+      "note": "",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "highland_defense",
+      "value": 0.25,
+      "unit": "fraction",
+      "condition": "成功触发高地地形跨越",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        107
+      ],
+      "printed_pages": [
+        106
+      ],
+      "section": "5.6.4.5",
+      "note": "",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "highland_buff_duration",
+      "value": 30,
+      "unit": "s",
+      "condition": "高地跨越增益",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        107
+      ],
+      "printed_pages": [
+        106
+      ],
+      "section": "5.6.4.5",
+      "note": "",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "road_defense",
+      "value": 0.25,
+      "unit": "fraction",
+      "condition": "成功触发公路地形跨越",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        107
+      ],
+      "printed_pages": [
+        106
+      ],
+      "section": "5.6.4.5",
+      "note": "",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "road_buff_duration",
+      "value": 5,
+      "unit": "s",
+      "condition": "公路跨越增益",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        107
+      ],
+      "printed_pages": [
+        106
+      ],
+      "section": "5.6.4.5",
+      "note": "",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "road_retrigger_lockout",
+      "value": 15,
+      "unit": "s",
+      "condition": "同一机器人获得公路增益后",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        107
+      ],
+      "printed_pages": [
+        106
+      ],
+      "section": "5.6.4.5",
+      "note": "",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "different_terrain_combo_defense",
+      "value": 0.5,
+      "unit": "fraction",
+      "condition": "持有一类地形增益时再获得另一不同类型；剩余时长取已有剩余与新增初始时长较大值",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        107
+      ],
+      "printed_pages": [
+        106
+      ],
+      "section": "5.6.4.5",
+      "note": "",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "rfid_activation_expiry_delay",
+      "value": 2,
+      "unit": "s",
+      "condition": "激活状态失效延迟；检测还可能另有延迟、死区",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        103
+      ],
+      "printed_pages": [
+        102
+      ],
+      "section": "5.6.4.1",
+      "note": "",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "position_capture_transition_time",
+      "value": 5,
+      "unit": "s",
+      "condition": "完整条件、争夺暂停及进度倒退见表5-21；不是所有控制转移统一简化为5秒",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        97
+      ],
+      "printed_pages": [
+        96
+      ],
+      "section": "5.6.2 表5-21",
+      "note": "",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "both_outpost_positions_control_rate",
+      "value": 1,
+      "unit": "control/s",
+      "condition": "控制全部两个前哨阵地",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        98
+      ],
+      "printed_pages": [
+        97
+      ],
+      "section": "5.6.2",
+      "note": "",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "both_base_positions_control_rate",
+      "value": 3,
+      "unit": "control/s",
+      "condition": "控制全部两个基地阵地",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        98
+      ],
+      "printed_pages": [
+        97
+      ],
+      "section": "5.6.2",
+      "note": "",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "base_initial_hp",
+      "value": 10000,
+      "unit": "HP",
+      "condition": "初始基地血量",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        95
+      ],
+      "printed_pages": [
+        94
+      ],
+      "section": "5.6.1",
+      "note": "",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "outpost_initial_hp",
+      "value": 1000,
+      "unit": "HP",
+      "condition": "初始前哨站血量",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        95
+      ],
+      "printed_pages": [
+        94
+      ],
+      "section": "5.6.1",
+      "note": "",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "supply_heal_fraction_per_second",
+      "value": 0.1,
+      "unit": "max_HP/s",
+      "condition": "激活己方补给区；后勤系数另乘",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        74,
+        95,
+        96
+      ],
+      "printed_pages": [
+        73,
+        94,
+        95
+      ],
+      "section": "5.3.1,5.6.1",
+      "note": "",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "supply_late_out_of_combat_heal_fraction",
+      "value": 0.25,
+      "unit": "max_HP/s",
+      "condition": "比赛开始4分钟后且脱战；后勤系数另乘",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        74,
+        95,
+        96
+      ],
+      "printed_pages": [
+        73,
+        94,
+        95
+      ],
+      "section": "5.3.1,5.6.1",
+      "note": "",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "remote_heal_delay",
+      "value": 6,
+      "unit": "s",
+      "condition": "脱战下确认；期间死亡无效、不返金币",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        74
+      ],
+      "printed_pages": [
+        73
+      ],
+      "section": "5.3.1",
+      "note": "",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "remote_heal_fraction",
+      "value": 0.6,
+      "unit": "max_HP",
+      "condition": "到账时上限血量，受后勤系数且不超上限",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        74,
+        95,
+        96
+      ],
+      "printed_pages": [
+        73,
+        94,
+        95
+      ],
+      "section": "5.3.1,5.6.1",
+      "note": "",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "remote_ammo_delay",
+      "value": 6,
+      "unit": "s",
+      "condition": "脱战远程兑换成功后生效",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        78
+      ],
+      "printed_pages": [
+        77
+      ],
+      "section": "5.4.2",
+      "note": "",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "remote_17mm_exchange",
+      "value": {
+        "coins": 150,
+        "projectiles": 100
+      },
+      "unit": "coin/projectile_bundle",
+      "condition": "脱战远程兑换；团队金币额度另限",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        77,
+        78
+      ],
+      "printed_pages": [
+        76,
+        77
+      ],
+      "section": "表5-7/9",
+      "note": "",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "local_17mm_exchange",
+      "value": {
+        "coins": 10,
+        "projectiles": 10
+      },
+      "unit": "coin/projectile_bundle",
+      "condition": "允许的增益点兑换",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        77,
+        78
+      ],
+      "printed_pages": [
+        76,
+        77
+      ],
+      "section": "表5-7/8",
+      "note": "",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "team_purchased_17mm_limit",
+      "value": 1000,
+      "unit": "projectiles/team",
+      "condition": "通过金币兑换的允许发弹量总上限，不含补给赠送等独立来源",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        77
+      ],
+      "printed_pages": [
+        76
+      ],
+      "section": "表5-7",
+      "note": "",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "sentry_supply_ammo_each_minute",
+      "value": 100,
+      "unit": "projectiles",
+      "condition": "每经过1分钟在己方补给区可领取，未领取可累计",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        78
+      ],
+      "printed_pages": [
+        77
+      ],
+      "section": "5.4.2",
+      "note": "",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "automatic_sentry_human_intervention_fee",
+      "value": 50,
+      "unit": "coins/operation",
+      "condition": "指挥手执行§5.7.2所列干预；不等同自主操作统一收费",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        109,
+        110
+      ],
+      "printed_pages": [
+        108,
+        109
+      ],
+      "section": "5.7.2",
+      "note": "",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "logistics_coefficient",
+      "value": "1 - own_base_hp_lost / 20000",
+      "unit": "formula",
+      "condition": "作用项目见表5-19",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        95,
+        96
+      ],
+      "printed_pages": [
+        94,
+        95
+      ],
+      "section": "5.6.1 表5-19",
+      "note": "",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "revive_required_progress",
+      "value": "round_half_up(10 + (420 - remaining_s)/10 + 20 * purchased_instant_revive_count)",
+      "unit": "progress",
+      "condition": "还需结合后勤系数；不是实际等待秒数",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        75,
+        96
+      ],
+      "printed_pages": [
+        74,
+        95
+      ],
+      "section": "5.3.2,5.6.1",
+      "note": "",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "revive_default_progress_rate",
+      "value": 1,
+      "unit": "progress/s",
+      "condition": "战亡立即开始读条",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        75
+      ],
+      "printed_pages": [
+        74
+      ],
+      "section": "5.3.2",
+      "note": "",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "revive_accelerated_progress_rate",
+      "value": 4,
+      "unit": "progress/s",
+      "condition": "位于补给区或己方基地血量<4000",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        75
+      ],
+      "printed_pages": [
+        74
+      ],
+      "section": "5.3.2",
+      "note": "",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "normal_revive_hp_fraction",
+      "value": 0.1,
+      "unit": "max_HP",
+      "condition": "读条复活；虚弱/无敌另有解除条件",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        76
+      ],
+      "printed_pages": [
+        75
+      ],
+      "section": "5.3.2",
+      "note": "",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "normal_revive_invincibility_duration",
+      "value": 30,
+      "unit": "s",
+      "condition": "读条复活；检测允许增益点卡后的解除规则另见正文",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        76
+      ],
+      "printed_pages": [
+        75
+      ],
+      "section": "5.3.2",
+      "note": "",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "instant_revive_hp_fraction",
+      "value": 1.0,
+      "unit": "max_HP",
+      "condition": "金币立即复活",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        76
+      ],
+      "printed_pages": [
+        75
+      ],
+      "section": "5.3.2",
+      "note": "",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "instant_revive_weak_invincible_duration",
+      "value": 3,
+      "unit": "s",
+      "condition": "立即复活的虚弱与无敌；其他状态交互见正文",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        76
+      ],
+      "printed_pages": [
+        75
+      ],
+      "section": "5.3.2",
+      "note": "",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "instant_revive_power_duration",
+      "value": 4,
+      "unit": "s",
+      "condition": "功率翻倍但不超过200W",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        76
+      ],
+      "printed_pages": [
+        75
+      ],
+      "section": "5.3.2",
+      "note": "",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "enemy_fortress_open_base_hold",
+      "value": 10,
+      "unit": "s",
+      "condition": "比赛进行3分钟且对方前哨阵地被己方控制后，激活对方堡垒；打开前100%易伤",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        108
+      ],
+      "printed_pages": [
+        107
+      ],
+      "section": "5.6.4.9",
+      "note": "",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "enemy_fortress_hold_retention",
+      "value": 3,
+      "unit": "s",
+      "condition": "死亡/激活失效后保留计时，保留期间暂停",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        108
+      ],
+      "printed_pages": [
+        107
+      ],
+      "section": "5.6.4.9",
+      "note": "",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "heat_per_17mm_shot",
+      "value": 10,
+      "unit": "heat/projectile",
+      "condition": "裁判系统检测发射；强化进攻例外",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        67,
+        110
+      ],
+      "printed_pages": [
+        66,
+        109
+      ],
+      "section": "5.1.3,5.7.2",
+      "note": "",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "heat_settlement_frequency",
+      "value": 10,
+      "unit": "Hz",
+      "condition": "裁判系统冷却结算频率，不等于策略更新频率",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        67
+      ],
+      "printed_pages": [
+        66
+      ],
+      "section": "5.1.3",
+      "note": "",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "chassis_power_buffer",
+      "value": 60,
+      "unit": "J",
+      "condition": "基础缓冲能量上限",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        68
+      ],
+      "printed_pages": [
+        67
+      ],
+      "section": "5.1.4",
+      "note": "",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "power_exceed_cutoff_duration",
+      "value": 5,
+      "unit": "s",
+      "condition": "缓冲耗尽且功率超限",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        68,
+        69
+      ],
+      "printed_pages": [
+        67,
+        68
+      ],
+      "section": "5.1.4",
+      "note": "",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "sentry_max_weight",
+      "value": 28,
+      "unit": "kg",
+      "condition": "重量含电池/裁判系统；尺寸分别为需存在的收纳状态及任意时刻伸展限制",
+      "source_document": "robot_specification",
+      "pdf_pages": [
+        32
+      ],
+      "printed_pages": [
+        31
+      ],
+      "section": "S74 表2-8",
+      "note": "",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "sentry_max_energy",
+      "value": 300,
+      "unit": "Wh",
+      "condition": "重量含电池/裁判系统；尺寸分别为需存在的收纳状态及任意时刻伸展限制",
+      "source_document": "robot_specification",
+      "pdf_pages": [
+        31
+      ],
+      "printed_pages": [
+        30
+      ],
+      "section": "S74 表2-8",
+      "note": "",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "sentry_max_voltage",
+      "value": 30,
+      "unit": "V",
+      "condition": "重量含电池/裁判系统；尺寸分别为需存在的收纳状态及任意时刻伸展限制",
+      "source_document": "robot_specification",
+      "pdf_pages": [
+        32
+      ],
+      "printed_pages": [
+        31
+      ],
+      "section": "S74 表2-8",
+      "note": "",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "sentry_stowed_dimensions",
+      "value": [
+        600,
+        600,
+        600
+      ],
+      "unit": "mm",
+      "condition": "重量含电池/裁判系统；尺寸分别为需存在的收纳状态及任意时刻伸展限制",
+      "source_document": "robot_specification",
+      "pdf_pages": [
+        32
+      ],
+      "printed_pages": [
+        31
+      ],
+      "section": "S74 表2-8",
+      "note": "",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "sentry_max_extended_dimensions",
+      "value": [
+        800,
+        800,
+        800
+      ],
+      "unit": "mm",
+      "condition": "重量含电池/裁判系统；尺寸分别为需存在的收纳状态及任意时刻伸展限制",
+      "source_document": "robot_specification",
+      "pdf_pages": [
+        32
+      ],
+      "printed_pages": [
+        31
+      ],
+      "section": "S74 表2-8",
+      "note": "",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "remote_heal_coin_price",
+      "value": "50 + ceil(((420 - remaining_s) / 60) * 20)",
+      "unit": "coins/purchase",
+      "condition": "UC V1.0.0 表5-7；先乘20再整体向上取整；剩余时长单位秒",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        77
+      ],
+      "printed_pages": [
+        76
+      ],
+      "section": "5.4.1 表5-7",
+      "note": "2026-11-16重新渲染PDF第77页目视核对；0/60/360/420秒已过时长分别为50/70/170/190金币",
+      "status": "extracted_from_user_supplied_v1.0.0_visual_verified"
+    },
+    {
+      "id": "outpost_heal_rate_relative_to_supply",
+      "value": 0.5,
+      "unit": "supply_heal_rate_multiplier",
+      "condition": "激活己方完全控制的对应前哨阵地的前哨站增益点",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        74,
+        107
+      ],
+      "printed_pages": [
+        73,
+        106
+      ],
+      "section": "5.3.1,5.6.4.6",
+      "note": "不是任意前哨站位置或临时控制即能回血；同类回血取最大值",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    },
+    {
+      "id": "base_buff_listed_effects",
+      "value": [
+        "50_percent_defense_buff",
+        "ammo_exchange",
+        "remove_weak_state"
+      ],
+      "unit": "effects",
+      "condition": "七分钟阶段激活己方基地增益点",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        106
+      ],
+      "printed_pages": [
+        105
+      ],
+      "section": "5.6.4.2",
+      "note": "该点不等同于补给区增益点；不能单凭基地增益点激活推断回血",
+      "status": "extracted_from_user_supplied_v1.0.0"
+    }
+  ],
+  "open_ambiguities": [
+    {
+      "id": "heat_q2_equality",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        67,
+        68
+      ],
+      "issue": "正文永久锁定条件Q1>Q2，流程图Q1>=Q2，需官方确认"
+    },
+    {
+      "id": "all_tunnel_clearance",
+      "source_document": "competition_rules",
+      "pdf_pages": [
+        60
+      ],
+      "issue": "图4-38是远高地隧道示意，不足以认定所有隧道统一净空或实机可通过"
+    }
+  ],
+  "last_updated": "2026-11-16"
+}

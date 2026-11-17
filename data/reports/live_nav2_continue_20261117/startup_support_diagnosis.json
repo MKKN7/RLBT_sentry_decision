@@ -1,0 +1,652 @@
+{
+  "artifact_type": "read_only_live_startup_support_diagnosis",
+  "source_run": "/home/kellen/桌面/RL_BT_decision/runs/uc_live_bt_demonstrations_r2_20261117",
+  "scenario_id": "uc_original_live_pointlio_nav2_mppi_task_v1",
+  "recorded_run_status": "complete",
+  "radius_m": 0.411,
+  "completed_episode_count": 4,
+  "copied_physical_session_count": 4,
+  "actual_observed_support_used": true,
+  "GT_used_for_support_or_policy": false,
+  "current_pose_unknown_filling": false,
+  "ROS_or_simulator_launched": false,
+  "ready_footprint_supported_count": 1,
+  "consistent_translation_preserved_all_checks": true,
+  "episodes": [
+    {
+      "execution_dir": "/home/kellen/桌面/RL_BT_decision/runs/uc_live_bt_demonstrations_r2_20261117/sessions/episode_000/episode_000/execution",
+      "ready_sim_s": 5.0,
+      "estimated_pose_xy_m": [
+        -0.061409053571593875,
+        0.0005777422005303068
+      ],
+      "estimated_speed_mps": 0.075463423609522,
+      "raw_health_without_current_footprint": true,
+      "legal_action_count": 1,
+      "legal_navigation_candidate_count": 0,
+      "grid": {
+        "origin_xy_m": [
+          -8.25,
+          -8.25
+        ],
+        "resolution_m": 0.15000000596046448,
+        "shape_xy": [
+          109,
+          109
+        ],
+        "sampled_at_s": 3.503895
+      },
+      "fixed_start_prior": {
+        "center_xy_m": [
+          0.0,
+          0.0
+        ],
+        "radius_m": 0.411,
+        "fixed_in_session_frame": true,
+        "intersected_cells": 32,
+        "unknown_cells_assumed_supported": 27,
+        "occupied_cells_preserved": 0,
+        "geometry_assumption": "Full raster cells intersecting the fixed initial disk are supported; occupied observations override the assumption.",
+        "scan_observation": false
+      },
+      "fixed_prior_matches_known_settled_base_center": false,
+      "check_at_estimated_pose": {
+        "accepted": false,
+        "reason": "unknown_support",
+        "failure_segment_index": 0,
+        "failure_segment_fraction": 0.0,
+        "failure_position_xy_m": [
+          -0.061409053571593875,
+          0.0005777422005303068
+        ],
+        "failure_cell_xy": [
+          51,
+          54
+        ],
+        "radius_m": 0.411,
+        "checked_nonfree_cells": 2
+      },
+      "check_at_fixed_prior_center": {
+        "accepted": true,
+        "reason": "supported",
+        "radius_m": 0.411,
+        "failure_segment_index": null,
+        "failure_segment_fraction": null,
+        "failure_position_xy_m": null,
+        "failure_cell_xy": null,
+        "checked_nonfree_cells": 0
+      },
+      "intersecting_nonfree_cells": [
+        {
+          "cell_xy": [
+            51,
+            54
+          ],
+          "value": -1,
+          "label": "unknown",
+          "lower_xy_m": [
+            -0.5999996960163116,
+            -0.1499996781349182
+          ],
+          "upper_xy_m": [
+            -0.44999969005584717,
+            3.2782554626464844e-07
+          ],
+          "distance_to_estimated_pose_m": 0.3885910654796344,
+          "distance_to_fixed_prior_center_m": 0.44999969005584717
+        },
+        {
+          "cell_xy": [
+            51,
+            55
+          ],
+          "value": -1,
+          "label": "unknown",
+          "lower_xy_m": [
+            -0.5999996960163116,
+            3.2782554626464844e-07
+          ],
+          "upper_xy_m": [
+            -0.44999969005584717,
+            0.15000033378601074
+          ],
+          "distance_to_estimated_pose_m": 0.3885906364842533,
+          "distance_to_fixed_prior_center_m": 0.4499996900559666
+        }
+      ],
+      "unknown_cell_count": 2,
+      "occupied_cell_count": 0,
+      "same_map_and_pose_after_consistent_translation": {
+        "accepted": false,
+        "reason": "unknown_support",
+        "failure_segment_index": 0,
+        "failure_segment_fraction": 0.0,
+        "failure_position_xy_m": [
+          0.0,
+          0.0
+        ],
+        "failure_cell_xy": [
+          51,
+          54
+        ],
+        "radius_m": 0.411,
+        "checked_nonfree_cells": 2
+      },
+      "translation_preserves_acceptance": true,
+      "MPPI_command_samples": 0,
+      "nonzero_MPPI_command_samples": 0,
+      "GT_displacement_diagnostic_only": {
+        "available": true,
+        "source": "GT_trajectory_diagnostic_only",
+        "used_as_policy_or_support_input": false,
+        "world_frame_registered_to_session_odom": false,
+        "configured_spawn_world_xy_m": [
+          3.4,
+          9.5
+        ],
+        "nearest_ready_sample_s": 5.0,
+        "nearest_ready_world_xy_m": [
+          3.3999419878280284,
+          9.541811333439822
+        ],
+        "nearest_ready_displacement_from_spawn_m": 0.04181137368501677,
+        "final_sample_s": 25.15,
+        "final_world_xy_m": [
+          3.400418637869687,
+          9.672044110093124
+        ],
+        "final_displacement_from_spawn_m": 0.17204461943170662
+      },
+      "original_robot_and_physics_preserved": true,
+      "source_sha256": {
+        "responses_jsonl": "096cde1c4972e8d5fda51f544ff0817e98f81c323cb9d1abf2017b36ffd6c797",
+        "support_grid_npz": "2f8db151aeb8fbe1f1241c72acad437b0986e552ad6adc38c5eb26f576568a0e",
+        "fixture_result_json": "b3fb0677e47447065a6fe7eb3cae9903ca6ce989011a455394dd84e2bcf4bfae",
+        "copied_implementation": {
+          "scripts/nav2_mujoco_fixture.py": "137aaf546f57b3fd144149866d3ddca4cee4a2ca6126b312ec219e61e050bbe8",
+          "scripts/nav2_rl_session.py": "6e60a09f70baa01ab258afdbd8dd88dd88670cd593beb079bf6260e69f9d9b84",
+          "rl_bt/support_costmap.py": "aa4f4c89049968f87092baf8a5807f48fc7891911b75b28b9a964e71045481db",
+          "rl_bt/live_nav_observation.py": "5902844699b885f8b2ab6a74e1cf1fbedf8754982515cbec91ffab796691b927"
+        }
+      }
+    },
+    {
+      "execution_dir": "/home/kellen/桌面/RL_BT_decision/runs/uc_live_bt_demonstrations_r2_20261117/sessions/episode_001/episode_000/execution",
+      "ready_sim_s": 5.0,
+      "estimated_pose_xy_m": [
+        -0.061409053571593875,
+        0.0005777422005303068
+      ],
+      "estimated_speed_mps": 0.075463423609522,
+      "raw_health_without_current_footprint": true,
+      "legal_action_count": 1,
+      "legal_navigation_candidate_count": 0,
+      "grid": {
+        "origin_xy_m": [
+          -8.25,
+          -8.25
+        ],
+        "resolution_m": 0.15000000596046448,
+        "shape_xy": [
+          109,
+          109
+        ],
+        "sampled_at_s": 4.000835
+      },
+      "fixed_start_prior": {
+        "center_xy_m": [
+          0.0,
+          0.0
+        ],
+        "radius_m": 0.411,
+        "fixed_in_session_frame": true,
+        "intersected_cells": 32,
+        "unknown_cells_assumed_supported": 27,
+        "occupied_cells_preserved": 0,
+        "geometry_assumption": "Full raster cells intersecting the fixed initial disk are supported; occupied observations override the assumption.",
+        "scan_observation": false
+      },
+      "fixed_prior_matches_known_settled_base_center": false,
+      "check_at_estimated_pose": {
+        "accepted": false,
+        "reason": "unknown_support",
+        "failure_segment_index": 0,
+        "failure_segment_fraction": 0.0,
+        "failure_position_xy_m": [
+          -0.061409053571593875,
+          0.0005777422005303068
+        ],
+        "failure_cell_xy": [
+          51,
+          54
+        ],
+        "radius_m": 0.411,
+        "checked_nonfree_cells": 2
+      },
+      "check_at_fixed_prior_center": {
+        "accepted": true,
+        "reason": "supported",
+        "radius_m": 0.411,
+        "failure_segment_index": null,
+        "failure_segment_fraction": null,
+        "failure_position_xy_m": null,
+        "failure_cell_xy": null,
+        "checked_nonfree_cells": 0
+      },
+      "intersecting_nonfree_cells": [
+        {
+          "cell_xy": [
+            51,
+            54
+          ],
+          "value": -1,
+          "label": "unknown",
+          "lower_xy_m": [
+            -0.5999996960163116,
+            -0.1499996781349182
+          ],
+          "upper_xy_m": [
+            -0.44999969005584717,
+            3.2782554626464844e-07
+          ],
+          "distance_to_estimated_pose_m": 0.3885910654796344,
+          "distance_to_fixed_prior_center_m": 0.44999969005584717
+        },
+        {
+          "cell_xy": [
+            51,
+            55
+          ],
+          "value": -1,
+          "label": "unknown",
+          "lower_xy_m": [
+            -0.5999996960163116,
+            3.2782554626464844e-07
+          ],
+          "upper_xy_m": [
+            -0.44999969005584717,
+            0.15000033378601074
+          ],
+          "distance_to_estimated_pose_m": 0.3885906364842533,
+          "distance_to_fixed_prior_center_m": 0.4499996900559666
+        }
+      ],
+      "unknown_cell_count": 2,
+      "occupied_cell_count": 0,
+      "same_map_and_pose_after_consistent_translation": {
+        "accepted": false,
+        "reason": "unknown_support",
+        "failure_segment_index": 0,
+        "failure_segment_fraction": 0.0,
+        "failure_position_xy_m": [
+          0.0,
+          0.0
+        ],
+        "failure_cell_xy": [
+          51,
+          54
+        ],
+        "radius_m": 0.411,
+        "checked_nonfree_cells": 2
+      },
+      "translation_preserves_acceptance": true,
+      "MPPI_command_samples": 0,
+      "nonzero_MPPI_command_samples": 0,
+      "GT_displacement_diagnostic_only": {
+        "available": true,
+        "source": "GT_trajectory_diagnostic_only",
+        "used_as_policy_or_support_input": false,
+        "world_frame_registered_to_session_odom": false,
+        "configured_spawn_world_xy_m": [
+          3.4,
+          9.5
+        ],
+        "nearest_ready_sample_s": 5.0,
+        "nearest_ready_world_xy_m": [
+          3.3999419878280284,
+          9.541811333439822
+        ],
+        "nearest_ready_displacement_from_spawn_m": 0.04181137368501677,
+        "final_sample_s": 25.1,
+        "final_world_xy_m": [
+          3.4004188413784777,
+          9.672038540207295
+        ],
+        "final_displacement_from_spawn_m": 0.17203905005770417
+      },
+      "original_robot_and_physics_preserved": true,
+      "source_sha256": {
+        "responses_jsonl": "05d118d4b6e66818caf46cdb3c165597c6ff9c6cdadbf2447349bf60ec526427",
+        "support_grid_npz": "ce3e78be8dda2d62865bf35437754e815c71b5dcfc2b10dbcbf2a3cc9626ab66",
+        "fixture_result_json": "e67ab39c3d49ff797bf138e852c27a7b607d5e49823fa4b7a4d7553724af1a75",
+        "copied_implementation": {
+          "scripts/nav2_mujoco_fixture.py": "137aaf546f57b3fd144149866d3ddca4cee4a2ca6126b312ec219e61e050bbe8",
+          "scripts/nav2_rl_session.py": "6e60a09f70baa01ab258afdbd8dd88dd88670cd593beb079bf6260e69f9d9b84",
+          "rl_bt/support_costmap.py": "aa4f4c89049968f87092baf8a5807f48fc7891911b75b28b9a964e71045481db",
+          "rl_bt/live_nav_observation.py": "5902844699b885f8b2ab6a74e1cf1fbedf8754982515cbec91ffab796691b927"
+        }
+      }
+    },
+    {
+      "execution_dir": "/home/kellen/桌面/RL_BT_decision/runs/uc_live_bt_demonstrations_r2_20261117/sessions/episode_002/episode_000/execution",
+      "ready_sim_s": 5.0,
+      "estimated_pose_xy_m": [
+        -0.061409053571593875,
+        0.0005777422005303068
+      ],
+      "estimated_speed_mps": 0.075463423609522,
+      "raw_health_without_current_footprint": true,
+      "legal_action_count": 1,
+      "legal_navigation_candidate_count": 0,
+      "grid": {
+        "origin_xy_m": [
+          -8.25,
+          -8.25
+        ],
+        "resolution_m": 0.15000000596046448,
+        "shape_xy": [
+          109,
+          109
+        ],
+        "sampled_at_s": 3.70266
+      },
+      "fixed_start_prior": {
+        "center_xy_m": [
+          0.0,
+          0.0
+        ],
+        "radius_m": 0.411,
+        "fixed_in_session_frame": true,
+        "intersected_cells": 32,
+        "unknown_cells_assumed_supported": 27,
+        "occupied_cells_preserved": 0,
+        "geometry_assumption": "Full raster cells intersecting the fixed initial disk are supported; occupied observations override the assumption.",
+        "scan_observation": false
+      },
+      "fixed_prior_matches_known_settled_base_center": false,
+      "check_at_estimated_pose": {
+        "accepted": false,
+        "reason": "unknown_support",
+        "failure_segment_index": 0,
+        "failure_segment_fraction": 0.0,
+        "failure_position_xy_m": [
+          -0.061409053571593875,
+          0.0005777422005303068
+        ],
+        "failure_cell_xy": [
+          51,
+          54
+        ],
+        "radius_m": 0.411,
+        "checked_nonfree_cells": 2
+      },
+      "check_at_fixed_prior_center": {
+        "accepted": true,
+        "reason": "supported",
+        "radius_m": 0.411,
+        "failure_segment_index": null,
+        "failure_segment_fraction": null,
+        "failure_position_xy_m": null,
+        "failure_cell_xy": null,
+        "checked_nonfree_cells": 0
+      },
+      "intersecting_nonfree_cells": [
+        {
+          "cell_xy": [
+            51,
+            54
+          ],
+          "value": -1,
+          "label": "unknown",
+          "lower_xy_m": [
+            -0.5999996960163116,
+            -0.1499996781349182
+          ],
+          "upper_xy_m": [
+            -0.44999969005584717,
+            3.2782554626464844e-07
+          ],
+          "distance_to_estimated_pose_m": 0.3885910654796344,
+          "distance_to_fixed_prior_center_m": 0.44999969005584717
+        },
+        {
+          "cell_xy": [
+            51,
+            55
+          ],
+          "value": -1,
+          "label": "unknown",
+          "lower_xy_m": [
+            -0.5999996960163116,
+            3.2782554626464844e-07
+          ],
+          "upper_xy_m": [
+            -0.44999969005584717,
+            0.15000033378601074
+          ],
+          "distance_to_estimated_pose_m": 0.3885906364842533,
+          "distance_to_fixed_prior_center_m": 0.4499996900559666
+        }
+      ],
+      "unknown_cell_count": 2,
+      "occupied_cell_count": 0,
+      "same_map_and_pose_after_consistent_translation": {
+        "accepted": false,
+        "reason": "unknown_support",
+        "failure_segment_index": 0,
+        "failure_segment_fraction": 0.0,
+        "failure_position_xy_m": [
+          0.0,
+          0.0
+        ],
+        "failure_cell_xy": [
+          51,
+          54
+        ],
+        "radius_m": 0.411,
+        "checked_nonfree_cells": 2
+      },
+      "translation_preserves_acceptance": true,
+      "MPPI_command_samples": 0,
+      "nonzero_MPPI_command_samples": 0,
+      "GT_displacement_diagnostic_only": {
+        "available": true,
+        "source": "GT_trajectory_diagnostic_only",
+        "used_as_policy_or_support_input": false,
+        "world_frame_registered_to_session_odom": false,
+        "configured_spawn_world_xy_m": [
+          3.4,
+          9.5
+        ],
+        "nearest_ready_sample_s": 5.0,
+        "nearest_ready_world_xy_m": [
+          3.3999419878280284,
+          9.541811333439822
+        ],
+        "nearest_ready_displacement_from_spawn_m": 0.04181137368501677,
+        "final_sample_s": 25.15,
+        "final_world_xy_m": [
+          3.400418637869687,
+          9.672044110093124
+        ],
+        "final_displacement_from_spawn_m": 0.17204461943170662
+      },
+      "original_robot_and_physics_preserved": true,
+      "source_sha256": {
+        "responses_jsonl": "b958689c25308232cf880bf49f807d5e9e5742bbd9f2e500856fa7821a25cd54",
+        "support_grid_npz": "a41d5e5f5d80c76e0842c875fa6f05bc89503ccb604793cbed2531475d50a1df",
+        "fixture_result_json": "bc83a3a65d04f2b7ce5e84fda3cb220c8f90cfdfb55a3fc0c3a411828e9ff6ed",
+        "copied_implementation": {
+          "scripts/nav2_mujoco_fixture.py": "137aaf546f57b3fd144149866d3ddca4cee4a2ca6126b312ec219e61e050bbe8",
+          "scripts/nav2_rl_session.py": "6e60a09f70baa01ab258afdbd8dd88dd88670cd593beb079bf6260e69f9d9b84",
+          "rl_bt/support_costmap.py": "aa4f4c89049968f87092baf8a5807f48fc7891911b75b28b9a964e71045481db",
+          "rl_bt/live_nav_observation.py": "5902844699b885f8b2ab6a74e1cf1fbedf8754982515cbec91ffab796691b927"
+        }
+      }
+    },
+    {
+      "execution_dir": "/home/kellen/桌面/RL_BT_decision/runs/uc_live_bt_demonstrations_r2_20261117/sessions/episode_003/episode_000/execution",
+      "ready_sim_s": 5.0,
+      "estimated_pose_xy_m": [
+        -0.02104143174915854,
+        0.01735500330001824
+      ],
+      "estimated_speed_mps": 0.0359469755406182,
+      "raw_health_without_current_footprint": true,
+      "legal_action_count": 7,
+      "legal_navigation_candidate_count": 6,
+      "grid": {
+        "origin_xy_m": [
+          -8.25,
+          -8.1
+        ],
+        "resolution_m": 0.15000000596046448,
+        "shape_xy": [
+          109,
+          109
+        ],
+        "sampled_at_s": 3.70266
+      },
+      "fixed_start_prior": {
+        "center_xy_m": [
+          0.0,
+          0.0
+        ],
+        "radius_m": 0.411,
+        "fixed_in_session_frame": true,
+        "intersected_cells": 32,
+        "unknown_cells_assumed_supported": 24,
+        "occupied_cells_preserved": 0,
+        "geometry_assumption": "Full raster cells intersecting the fixed initial disk are supported; occupied observations override the assumption.",
+        "scan_observation": false
+      },
+      "fixed_prior_matches_known_settled_base_center": false,
+      "check_at_estimated_pose": {
+        "accepted": true,
+        "reason": "supported",
+        "radius_m": 0.411,
+        "failure_segment_index": null,
+        "failure_segment_fraction": null,
+        "failure_position_xy_m": null,
+        "failure_cell_xy": null,
+        "checked_nonfree_cells": 0
+      },
+      "check_at_fixed_prior_center": {
+        "accepted": true,
+        "reason": "supported",
+        "radius_m": 0.411,
+        "failure_segment_index": null,
+        "failure_segment_fraction": null,
+        "failure_position_xy_m": null,
+        "failure_cell_xy": null,
+        "checked_nonfree_cells": 0
+      },
+      "intersecting_nonfree_cells": [],
+      "unknown_cell_count": 0,
+      "occupied_cell_count": 0,
+      "same_map_and_pose_after_consistent_translation": {
+        "accepted": true,
+        "reason": "supported",
+        "radius_m": 0.411,
+        "failure_segment_index": null,
+        "failure_segment_fraction": null,
+        "failure_position_xy_m": null,
+        "failure_cell_xy": null,
+        "checked_nonfree_cells": 0
+      },
+      "translation_preserves_acceptance": true,
+      "MPPI_command_samples": 67,
+      "nonzero_MPPI_command_samples": 66,
+      "GT_displacement_diagnostic_only": {
+        "available": true,
+        "source": "GT_trajectory_diagnostic_only",
+        "used_as_policy_or_support_input": false,
+        "world_frame_registered_to_session_odom": false,
+        "configured_spawn_world_xy_m": [
+          3.4,
+          9.5
+        ],
+        "nearest_ready_sample_s": 5.0,
+        "nearest_ready_world_xy_m": [
+          3.3999419878280284,
+          9.541811333439822
+        ],
+        "nearest_ready_displacement_from_spawn_m": 0.04181137368501677,
+        "final_sample_s": 7.65,
+        "final_world_xy_m": [
+          3.4186332629729215,
+          9.80452102073918
+        ],
+        "final_displacement_from_spawn_m": 0.30509056124542827
+      },
+      "original_robot_and_physics_preserved": true,
+      "source_sha256": {
+        "responses_jsonl": "a50a9b0620bc9c1bcb0365be05ff9a5d52d99fa3a497aead999a68939acd455f",
+        "support_grid_npz": "3b71e801a0da923944ef718319810423f5dca2bf89d398b09f62d2ffd789a2d3",
+        "fixture_result_json": "e2c74e78edee44bc7ed8512626d321b02978eb25a7575b868d92ff45f9668679",
+        "copied_implementation": {
+          "scripts/nav2_mujoco_fixture.py": "137aaf546f57b3fd144149866d3ddca4cee4a2ca6126b312ec219e61e050bbe8",
+          "scripts/nav2_rl_session.py": "6e60a09f70baa01ab258afdbd8dd88dd88670cd593beb079bf6260e69f9d9b84",
+          "rl_bt/support_costmap.py": "aa4f4c89049968f87092baf8a5807f48fc7891911b75b28b9a964e71045481db",
+          "rl_bt/live_nav_observation.py": "5902844699b885f8b2ab6a74e1cf1fbedf8754982515cbec91ffab796691b927"
+        }
+      }
+    }
+  ],
+  "source_sha256": {
+    "summary_json": "687eb106ad956e8b83ac6e9158c87095d119e1cd4237c0dbe36048e1eb06a815",
+    "config_json": "6367f96844aa9071a48d0db761361f2a30cd2137389a8b11d2a83eed6e6ddd84",
+    "diagnostic_script": "1fe553e9dbb692b58747b81d817adc67119294121467de60f45ac726741c19f8"
+  },
+  "declared_implementation_sha256": {
+    "rl_bt/__init__.py": "01ab044bd576e4dc10d85e5f67b41b38d419e5f1aec6611d86ed201f33f55cb8",
+    "rl_bt/alpharm_task_env.py": "ed77f2f432388593f6eefd914338f887823e317773d85ba5b17c93aaf9ae3221",
+    "rl_bt/contracts.py": "1b9bef4da0347bf5c52d62b8dff7c039c84327d19add973a3fd5e9d675c1c95e",
+    "rl_bt/economy.py": "3c3218d49d50ab3150744c2e9eedc1ce5bc7e7f85962e3b259c5454bd8a69890",
+    "rl_bt/estimated_twist.py": "618db35cfcc411926d4dc465282f4fda1306f9e221c29b972d164b30cf6fd8b2",
+    "rl_bt/geometry.py": "8ba0448a8ef43235c79653e6c5a58f17cded6a9b089107284c90d5b7bde0bfbb",
+    "rl_bt/healing.py": "f7e3e5c9b1d11acea18b2323e6aa2647e89d18444185e03e38140d4a6f69d3d2",
+    "rl_bt/layered_geometry.py": "9259301340f9a68c4f237977b6860c20a6c8c138bd67ca6136fa53c2fcaf16fc",
+    "rl_bt/live_nav_env.py": "dd125457a7e7fd8e5b86a7117e470e45a143c009e3d75c1642ac94c226480eb4",
+    "rl_bt/live_nav_observation.py": "5902844699b885f8b2ab6a74e1cf1fbedf8754982515cbec91ffab796691b927",
+    "rl_bt/mesh_navigation.py": "aba31e38e1900e88312311e837a9f476f6cce6b3fb96cde9791512a493067bb1",
+    "rl_bt/nav2_mujoco.py": "ae3a622d394bc182445d05ee4c8e41fe1ffe1c05669e4a19bc36f7cd89bf8033",
+    "rl_bt/nav2_transport.py": "55520c30280efff19eb3152e5e87cc20eccbfc1946de33d29be3b34a77dfaa00",
+    "rl_bt/navigation_contract.py": "2fb7e56c7108495d8846dfe10340667c7a306e9ccb5e8b14bad5a7ec151bfcd1",
+    "rl_bt/policy.py": "20879e34e8753dbb4b04a5cb1a425a9c564c3e500fbd599ed8038ebdc2462d08",
+    "rl_bt/referee_protocol.py": "7f1ed6265f9c3e7051cf97396f3930694f2d9938d055da3d1a9e58e7d434e344",
+    "rl_bt/resource_executor.py": "68b5ac43d1022b4f1ea936e915302779c9cbfa2fe535ca381cf046771f04bbd2",
+    "rl_bt/reward_components.py": "0c949af5b0102fc87901060577286bc62e75877e328f6ce4d9b34be0570ec882",
+    "rl_bt/rewards.py": "a7ab15578289ae450cf1c41ecff422d1af5ccd0c14015aa3a640cdbe0c71dbe4",
+    "rl_bt/scan_registration.py": "a36fa9d04f59e26e7087cdfe77e8659decf744fc92eeb1af65d8fcb5881adf52",
+    "rl_bt/support_costmap.py": "aa4f4c89049968f87092baf8a5807f48fc7891911b75b28b9a964e71045481db",
+    "rl_bt/terrain_worker.py": "33d0ab46544051bb9f4581f93536f3eeeba4aea44b99b22768be8fefba4078eb",
+    "rl_bt/uc_field_reference.py": "8a81ba01a1b60afff0db82ffbadc80a9cdaf724150cc25ffcbffe4f336ab914b",
+    "rl_bt/uc_rules.py": "8da3710913dedc66c1e55d5f1b43b1191bd27ce5bb4d09f33f247169e97e8c31",
+    "rl_bt/uc_support_env.py": "fe4edb522a3dc4195c76a41b6970595c0986e67b3d0c1c2a7a0439e993dec8cd",
+    "rl_bt/uc_support_env_v2.py": "283f1108d36624c28973cf166cea1744be286eecfdb5a1382b81ca753a4cc91f",
+    "rl_bt/uc_support_policy.py": "aeaa9fbf0124953ed7b25e50e9c8c7be1b482749e8493e56a4ea87c51d706e60",
+    "rl_bt/uc_support_policy_v2.py": "fcfab3d988ed984ff105908929c7c19fca3ea7f8c00dcaeb9eb41c82c000df5d",
+    "rl_bt/ul_curriculum_policy.py": "91ddfdecfee3867b980dec207276ec6e79db384a2fa278f3ce91d8ac9eea6cbf",
+    "rl_bt/ul_navigation.py": "6c8155bd5582fda600620df492619a17dc7f96b93235be609dcdeb1bdb0c5de9",
+    "rl_bt/ul_observation.py": "a7cb3b7f7a1097c1a06f29fac21fcb0bbc82ae9c3041141fcdda626ede6d178d",
+    "rl_bt/ul_rules.py": "5c8127066bc862c47c3c8593914fb5849fec700ac205809ee32e1ac18016b9b7",
+    "rl_bt/ul_task_env.py": "a3691e68519435d85020af229138893a34946958dc635d5968819d42fd69ddce",
+    "rl_bt/voxel_terrain.py": "7e30160046bd491b483f35d088867d340f919376e27ab3bdb30b0850741fd343",
+    "scripts/train_live_nav2.py": "687022edab7388eb2f06e7bfc9873fbd036e28dad947686474ca837cb1e5b852",
+    "scripts/train_uc_support_v2.py": "8a16fc27f2d6e325c7ea2a6ab21e7d4ec1085010d641ceb45a222e9c5443be73",
+    "scripts/nav2_rl_session.py": "6e60a09f70baa01ab258afdbd8dd88dd88670cd593beb079bf6260e69f9d9b84",
+    "scripts/run_nav2_rl_session.py": "c7d923c2f78aaf1f6838d4976dc143ca544d41894328db5161a2f20d9b0a38e8",
+    "scripts/nav2_mujoco_fixture.py": "137aaf546f57b3fd144149866d3ddca4cee4a2ca6126b312ec219e61e050bbe8",
+    "scripts/launch_nav2_probe.py": "929afadc6bcfa876167a2632f22ab5f831224d58d0f1cc6e7d42628671ab5231",
+    "configs/nav2_probe.yaml": "44f8175997da8a317fcf9bc0eeda4e5e64a0adf059904b988095b71f3f9a1023",
+    "configs/nav2_probe_bt.xml": "649d63d49ec17e65e568688da1538fb6ca0a85e44b2d0741da9bd7203d9132f1",
+    "scripts/evaluate_live_nav2.py": "4ddf01356ecd654793796e6d753d732a1121c346ef1521fe59ac1dff46a36c17"
+  },
+  "limits": [
+    "Fixed prior center is an explicit engineering assumption, not observed support.",
+    "Consistent coordinate translation cannot create support.",
+    "GT world displacement is offline diagnostic only; no map/odom registration is inferred.",
+    "All copied sessions are reported, including startup failures."
+  ]
+}

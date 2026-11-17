@@ -1,0 +1,151 @@
+{
+  "code": 0,
+  "message": "success",
+  "success": true,
+  "data": {
+    "id": 1969150,
+    "category": "WIKI",
+    "state": "PASS",
+    "stateDesc": "审核通过",
+    "auditRejectReason": "1",
+    "official": false,
+    "top": false,
+    "marrow": false,
+    "title": "RMUL 2027 比赛规则文件 Competition Rules",
+    "contentType": "HTML",
+    "htmlContent": "<h1>比赛规则手册 Rule Manual</h1><h2>中文版</h2><table data-new-ship=\"yes\" data-font-node=\"\" data-topic=\"\" style=\"width: auto; table-layout: fixed; height: 0px; border-width: 0px; border-style: solid; border-color: inherit;\"><colgroup contenteditable=\"false\"><col width=\"88\"><col width=\"169\"><col width=\"701\"></colgroup><tbody><tr style=\"text-align: start;\"><th colspan=\"1\" rowspan=\"1\" width=\"auto\" style=\"text-align: left; line-height: 1.5;\"><p style=\"text-align: left;\">版本</p></th><th colspan=\"1\" rowspan=\"1\" width=\"auto\" style=\"text-align: left; line-height: 1.5;\"><p style=\"text-align: left;\">发布日期</p></th><th colspan=\"1\" rowspan=\"1\" width=\"auto\" style=\"text-align: left; line-height: 1.5;\"><p style=\"text-align: left;\">文档</p></th></tr><tr style=\"text-align: start;\"><td colspan=\"1\" rowspan=\"1\" width=\"auto\" style=\"line-height: 1.5; border-width: 1px; border-style: solid; border-color: rgb(241, 241, 241);\"><p>V1.0.0</p></td><td colspan=\"1\" rowspan=\"1\" width=\"auto\" style=\"line-height: 1.5; border-width: 1px; border-style: solid; border-color: rgb(241, 241, 241);\"><p>2026年10月15日</p></td><td colspan=\"1\" rowspan=\"1\" width=\"auto\" style=\"line-height: 1.5; border-width: 1px; border-style: solid; border-color: rgb(241, 241, 241);\"><a data-w-e-type=\"attachment\" data-w-e-is-void=\"\" data-w-e-is-inline=\"\" href=\"https://hz-rm-bbs-web-prod.oss-cn-hangzhou.aliyuncs.com/7d9d3af15fb94e9a9b29589a40dba80c1792049408959/RoboMaster 2027 机甲大师高校联盟赛比赛规则手册 V1.0.0（20261015）.pdf\" data-file-name=\"RoboMaster 2027 机甲大师高校联盟赛比赛规则手册 V1.0.0（20261015）.pdf\" data-file-md5=\"d75e932a7d69dd2fa53906dfc67512be\" data-file-len=\"13455593\" data-file-key=\"1792049309680-13455593-RoboMaster 2027 机甲大师高校联盟赛比赛规则手册 V1.0.0（20261015）.pdf-GV28RioDJKo0Z28UAjr80\" data-file-state=\"uploadSuccess\">RoboMaster 2027 机甲大师高校联盟赛比赛规则手册 V1.0.0（20261015）.pdf</a><p><br></p></td></tr><tr style=\"text-align: start;\"></tr></tbody></table><h2 style=\"text-align: start;\">English Edition</h2><table data-new-ship=\"yes\" data-font-node=\"\" data-topic=\"\" style=\"width: auto; table-layout: fixed; height: 0px; border-width: 0px; border-style: solid; border-color: inherit;\"><colgroup contenteditable=\"false\"><col width=\"90\"><col width=\"195\"><col width=\"701\"></colgroup><tbody><tr><th colspan=\"1\" rowspan=\"1\" width=\"auto\" style=\"text-align: left; line-height: 1.5;\"><p style=\"text-align: left;\">Version</p></th><th colspan=\"1\" rowspan=\"1\" width=\"auto\" style=\"text-align: left; line-height: 1.5;\"><p style=\"text-align: left;\">Release Date</p></th><th colspan=\"1\" rowspan=\"1\" width=\"auto\" style=\"text-align: left; line-height: 1.5;\"><p style=\"text-align: left;\">Docs</p></th></tr><tr><td colspan=\"1\" rowspan=\"1\" width=\"auto\" style=\"text-align: left; line-height: 1.5; border-width: 1px; border-style: solid; border-color: rgb(241, 241, 241);\"><p style=\"text-align: left;\">V1.0.0</p></td><td colspan=\"1\" rowspan=\"1\" width=\"auto\" style=\"text-align: left; line-height: 1.5; border-width: 1px; border-style: solid; border-color: rgb(241, 241, 241);\"><p style=\"text-align: left;\">October 28, 2026</p></td><td colspan=\"1\" rowspan=\"1\" width=\"auto\" style=\"text-align: left; line-height: 1.5; border-width: 1px; border-style: solid; border-color: rgb(241, 241, 241);\"><p><a data-w-e-type=\"attachment\" data-w-e-is-void=\"\" data-w-e-is-inline=\"\" href=\"https://hz-rm-bbs-web-prod.oss-cn-hangzhou.aliyuncs.com/02affc0688544a36809f1f92b965ee531793168284712/RoboMaster 2027 University League Rule Manual V1.0.0（20261028）.pdf\" data-file-name=\"RoboMaster 2027 University League Rule Manual V1.0.0（20261028）.pdf\" data-file-md5=\"ae83eb9a2bfb6a7c427622b2a44f89f7\" data-file-len=\"13261426\" data-file-key=\"1793158606152-13261426-RoboMaster 2027 University League Rule Manual V1.0.0（20261028）.pdf-lsuak8B45eWfez_a5iYV2\" data-file-state=\"uploadSuccess\">RoboMaster 2027 University League Rule Manual V1.0.0（20261028）.pdf</a></p></td></tr></tbody></table><h1>机器人制作规范 Robot Specification Manual</h1><h2>中文版</h2><table data-new-ship=\"yes\" data-font-node=\"\" data-topic=\"\" style=\"width: auto; table-layout: fixed; height: 0px; border-width: 0px; border-style: solid; border-color: inherit;\"><colgroup contenteditable=\"false\"><col width=\"87\"><col width=\"182\"><col width=\"717\"></colgroup><tbody><tr style=\"text-align: start;\"><th colspan=\"1\" rowspan=\"1\" width=\"auto\" style=\"text-align: left; line-height: 1.5;\"><p style=\"text-align: left;\">版本</p></th><th colspan=\"1\" rowspan=\"1\" width=\"auto\" style=\"text-align: left; line-height: 1.5;\"><p style=\"text-align: left;\">发布日期</p></th><th colspan=\"1\" rowspan=\"1\" width=\"auto\" style=\"text-align: left; line-height: 1.5;\"><p style=\"text-align: left;\">文档</p></th></tr><tr style=\"text-align: start;\"><td colspan=\"1\" rowspan=\"1\" width=\"auto\" style=\"line-height: 1.5; border-width: 1px; border-style: solid; border-color: rgb(241, 241, 241);\"><p>V1.0.0</p></td><td colspan=\"1\" rowspan=\"1\" width=\"auto\" style=\"line-height: 1.5; border-width: 1px; border-style: solid; border-color: rgb(241, 241, 241);\"><p>2026年10月15日</p></td><td colspan=\"1\" rowspan=\"1\" width=\"auto\" style=\"line-height: 1.5; border-width: 1px; border-style: solid; border-color: rgb(241, 241, 241);\"><a data-w-e-type=\"attachment\" data-w-e-is-void=\"\" data-w-e-is-inline=\"\" href=\"https://hz-rm-bbs-web-prod.oss-cn-hangzhou.aliyuncs.com/c1f57b4d96314489a4fa005666cef83e1792048614811/RoboMaster 2027 机甲大师高校系列赛机器人制作规范手册V1.0.0（20261015）.pdf\" data-file-name=\"RoboMaster 2027 机甲大师高校系列赛机器人制作规范手册V1.0.0（20261015）.pdf\" data-file-md5=\"39175fdc1c263b10ec44727c5689c329\" data-file-len=\"18240763\" data-file-key=\"1792047737485-18240763-RoboMaster 2027 机甲大师高校系列赛机器人制作规范手册V1.0.0（20261015）.pdf-8L6HKODXRio_iapJrdaUm\" data-file-state=\"uploadSuccess\">RoboMaster 2027 机甲大师高校系列赛机器人制作规范手册V1.0.0（20261015）.pdf</a><p><br></p></td></tr><tr style=\"text-align: start;\"></tr></tbody></table><h2 style=\"text-align: start;\">English Edition</h2><table data-new-ship=\"yes\" data-font-node=\"\" data-topic=\"\" style=\"width: auto; table-layout: fixed; height: 0px; border-width: 0px; border-style: solid; border-color: inherit;\"><colgroup contenteditable=\"false\"><col width=\"90\"><col width=\"195\"><col width=\"701\"></colgroup><tbody><tr><th colspan=\"1\" rowspan=\"1\" width=\"auto\" style=\"text-align: left; line-height: 1.5;\"><p style=\"text-align: left;\">Version</p></th><th colspan=\"1\" rowspan=\"1\" width=\"auto\" style=\"text-align: left; line-height: 1.5;\"><p style=\"text-align: left;\">Release Date</p></th><th colspan=\"1\" rowspan=\"1\" width=\"auto\" style=\"text-align: left; line-height: 1.5;\"><p style=\"text-align: left;\">Docs</p></th></tr><tr><td colspan=\"1\" rowspan=\"1\" width=\"auto\" style=\"text-align: left; line-height: 1.5; border-width: 1px; border-style: solid; border-color: rgb(241, 241, 241);\"><p style=\"text-align: left;\">V1.0.0</p></td><td colspan=\"1\" rowspan=\"1\" width=\"auto\" style=\"text-align: left; line-height: 1.5; border-width: 1px; border-style: solid; border-color: rgb(241, 241, 241);\"><p style=\"text-align: left;\">October 28, 2026</p></td><td colspan=\"1\" rowspan=\"1\" width=\"auto\" style=\"text-align: left; line-height: 1.5; border-width: 1px; border-style: solid; border-color: rgb(241, 241, 241);\"><p><a data-w-e-type=\"attachment\" data-w-e-is-void=\"\" data-w-e-is-inline=\"\" href=\"https://hz-rm-bbs-web-prod.oss-cn-hangzhou.aliyuncs.com/5a3aab722e6444a4baaaa5d4d3eb87cb1793168309354/RoboMaster 2027 University Series Robot Specification Manual V1.0.0（20261028）.pdf\" data-file-name=\"RoboMaster 2027 University Series Robot Specification Manual V1.0.0（20261028）.pdf\" data-file-md5=\"bceb63d00035258ee6e99607281a3e2b\" data-file-len=\"18713270\" data-file-key=\"1793158792839-18713270-RoboMaster 2027 University Series Robot Specification Manual V1.0.0（20261028）.pdf-vEPAvEkrxJ_Uho0Gys-RU\" data-file-state=\"uploadSuccess\">RoboMaster 2027 University Series Robot Specification Manual V1.0.0（20261028）.pdf</a></p></td></tr></tbody></table><h1>参赛手册 Participant Manual</h1><h2>中文版</h2><table data-new-ship=\"yes\" data-font-node=\"\" data-topic=\"\" style=\"width: auto; table-layout: fixed; height: 0px; border-width: 0px; border-style: solid; border-color: inherit;\"><colgroup contenteditable=\"false\"><col width=\"91\"><col width=\"192\"><col width=\"713\"></colgroup><tbody><tr style=\"text-align: start;\"><th colspan=\"1\" rowspan=\"1\" width=\"auto\" style=\"text-align: left; line-height: 1.5;\"><p style=\"text-align: left;\">版本</p></th><th colspan=\"1\" rowspan=\"1\" width=\"auto\" style=\"text-align: left; line-height: 1.5;\"><p style=\"text-align: left;\">发布日期</p></th><th colspan=\"1\" rowspan=\"1\" width=\"auto\" style=\"text-align: left; line-height: 1.5;\"><p style=\"text-align: left;\">文档</p></th></tr><tr style=\"text-align: start;\"><td colspan=\"1\" rowspan=\"1\" width=\"auto\" style=\"line-height: 1.5; border-width: 1px; border-style: solid; border-color: rgb(241, 241, 241);\"><p>V1.0.0</p></td><td colspan=\"1\" rowspan=\"1\" width=\"auto\" style=\"line-height: 1.5; border-width: 1px; border-style: solid; border-color: rgb(241, 241, 241);\"><p>2026年10月15日</p></td><td colspan=\"1\" rowspan=\"1\" width=\"auto\" style=\"line-height: 1.5; border-width: 1px; border-style: solid; border-color: rgb(241, 241, 241);\"><a data-w-e-type=\"attachment\" data-w-e-is-void=\"\" data-w-e-is-inline=\"\" href=\"https://hz-rm-bbs-web-prod.oss-cn-hangzhou.aliyuncs.com/4b00d5379a0c43bc8903f30fe58b9a2e1792049443405/RoboMaster 2027 机甲大师高校联盟赛参赛手册V1.0.0（20261015）.pdf\" data-file-name=\"RoboMaster 2027 机甲大师高校联盟赛参赛手册V1.0.0（20261015）.pdf\" data-file-md5=\"b51b4a5839401dbc334531d0409b3d15\" data-file-len=\"1130880\" data-file-key=\"1792040806929-1130880-RoboMaster 2027 机甲大师高校联盟赛参赛手册V1.0.0（20261015）.pdf-Ks0-lqWn2NToFYygNpzIe\" data-file-state=\"uploadSuccess\">RoboMaster 2027 机甲大师高校联盟赛参赛手册V1.0.0（20261015）.pdf</a><p><br></p></td></tr><tr style=\"text-align: start;\"></tr></tbody></table><h2 style=\"text-align: start;\">English Edition</h2><table data-new-ship=\"yes\" data-font-node=\"\" data-topic=\"\" style=\"width: auto; table-layout: fixed; height: 0px; border-width: 0px; border-style: solid; border-color: inherit;\"><colgroup contenteditable=\"false\"><col width=\"90\"><col width=\"195\"><col width=\"701\"></colgroup><tbody><tr><th colspan=\"1\" rowspan=\"1\" width=\"auto\" style=\"text-align: left; line-height: 1.5;\"><p style=\"text-align: left;\">Version</p></th><th colspan=\"1\" rowspan=\"1\" width=\"auto\" style=\"text-align: left; line-height: 1.5;\"><p style=\"text-align: left;\">Release Date</p></th><th colspan=\"1\" rowspan=\"1\" width=\"auto\" style=\"text-align: left; line-height: 1.5;\"><p style=\"text-align: left;\">Docs</p></th></tr><tr><td colspan=\"1\" rowspan=\"1\" width=\"auto\" style=\"text-align: left; line-height: 1.5; border-width: 1px; border-style: solid; border-color: rgb(241, 241, 241);\"><p style=\"text-align: left;\">V1.0.0</p></td><td colspan=\"1\" rowspan=\"1\" width=\"auto\" style=\"text-align: left; line-height: 1.5; border-width: 1px; border-style: solid; border-color: rgb(241, 241, 241);\"><p style=\"text-align: left;\">October 20, 2026</p></td><td colspan=\"1\" rowspan=\"1\" width=\"auto\" style=\"text-align: left; line-height: 1.5; border-width: 1px; border-style: solid; border-color: rgb(241, 241, 241);\"><a data-w-e-type=\"attachment\" data-w-e-is-void=\"\" data-w-e-is-inline=\"\" href=\"https://hz-rm-bbs-web-prod.oss-cn-hangzhou.aliyuncs.com/7965b847a6964da0bc598d284919b2981792490168748/RoboMaster 2027 University League Participant Manual V1.0.0（20261020）.pdf\" data-file-name=\"RoboMaster 2027 University League Participant Manual V1.0.0（20261020）.pdf\" data-file-md5=\"2341e61059d436b3c68d2d318cbbbb7b\" data-file-len=\"4601399\" data-file-key=\"1792489671407-4601399-RoboMaster 2027 University League Participant Manual V1.0.0（20261020）.pdf-RRQiftQv8Vs9175HPP5Uy\" data-file-state=\"uploadSuccess\">RoboMaster 2027 University League Participant Manual V1.0.0（20261020）.pdf</a><p style=\"text-align: left;\"><br></p></td></tr></tbody></table><p><br></p>",
+    "markdownContent": "",
+    "headImg": "[]",
+    "authorId": 39696,
+    "authorNickname": "RoboMaster 高校赛务",
+    "authorAvatar": "https://terra-cn-oss-cdn-public-pro.oss-cn-hangzhou.aliyuncs.com/b2a076471c6c4b72b574a977334d3e05/659ff4b3-304c-43dc-9653-0dbb5fed87e1",
+    "createAt": "2026-09-04T08:56:16.000+00:00",
+    "updateAt": "2026-10-28T06:20:00.000+00:00",
+    "views": 48188,
+    "approvals": 13,
+    "comments": 68,
+    "originalAuthor": null,
+    "originalTitle": null,
+    "originalUrl": null,
+    "directory": "[]",
+    "difficultyScore": 250,
+    "tags": [],
+    "solutionId": null,
+    "solution": null,
+    "belongWikis": [
+      {
+        "wikiId": 20204847,
+        "wikiName": "规则/资料中心 Rules/Resources Hub",
+        "wikiHeadImg": "https://rm-static.djicdn.com/documents/68659/9eb66bab6cafb1723811240976291454.png",
+        "nodeId": 50179206,
+        "type": "SHOW",
+        "wikiLiteraturePostId": 804049,
+        "childs": null
+      }
+    ],
+    "dynamicCategory": null,
+    "draft": null,
+    "jobCategoryId": null,
+    "canComment": 0,
+    "timesCited": 0,
+    "timesCiting": 0,
+    "history": false,
+    "contactText": "",
+    "contactPic": "",
+    "attachments": [
+      {
+        "id": 463194,
+        "src": "https://hz-rm-bbs-web-prod.oss-cn-hangzhou.aliyuncs.com/7d9d3af15fb94e9a9b29589a40dba80c1792049408959/RoboMaster 2027 机甲大师高校联盟赛比赛规则手册 V1.0.0（20261015）.pdf",
+        "name": "RoboMaster 2027 机甲大师高校联盟赛比赛规则手册 V1.0.0（20261015）.pdf",
+        "downloads": 1048
+      },
+      {
+        "id": 463195,
+        "src": "https://hz-rm-bbs-web-prod.oss-cn-hangzhou.aliyuncs.com/02affc0688544a36809f1f92b965ee531793168284712/RoboMaster 2027 University League Rule Manual V1.0.0（20261028）.pdf",
+        "name": "RoboMaster 2027 University League Rule Manual V1.0.0（20261028）.pdf",
+        "downloads": 28
+      },
+      {
+        "id": 463196,
+        "src": "https://hz-rm-bbs-web-prod.oss-cn-hangzhou.aliyuncs.com/c1f57b4d96314489a4fa005666cef83e1792048614811/RoboMaster 2027 机甲大师高校系列赛机器人制作规范手册V1.0.0（20261015）.pdf",
+        "name": "RoboMaster 2027 机甲大师高校系列赛机器人制作规范手册V1.0.0（20261015）.pdf",
+        "downloads": 615
+      },
+      {
+        "id": 463197,
+        "src": "https://hz-rm-bbs-web-prod.oss-cn-hangzhou.aliyuncs.com/5a3aab722e6444a4baaaa5d4d3eb87cb1793168309354/RoboMaster 2027 University Series Robot Specification Manual V1.0.0（20261028）.pdf",
+        "name": "RoboMaster 2027 University Series Robot Specification Manual V1.0.0（20261028）.pdf",
+        "downloads": 18
+      },
+      {
+        "id": 463198,
+        "src": "https://hz-rm-bbs-web-prod.oss-cn-hangzhou.aliyuncs.com/4b00d5379a0c43bc8903f30fe58b9a2e1792049443405/RoboMaster 2027 机甲大师高校联盟赛参赛手册V1.0.0（20261015）.pdf",
+        "name": "RoboMaster 2027 机甲大师高校联盟赛参赛手册V1.0.0（20261015）.pdf",
+        "downloads": 347
+      },
+      {
+        "id": 463199,
+        "src": "https://hz-rm-bbs-web-prod.oss-cn-hangzhou.aliyuncs.com/7965b847a6964da0bc598d284919b2981792490168748/RoboMaster 2027 University League Participant Manual V1.0.0（20261020）.pdf",
+        "name": "RoboMaster 2027 University League Participant Manual V1.0.0（20261020）.pdf",
+        "downloads": 5
+      }
+    ],
+    "fileItems": [
+      {
+        "id": 14867050,
+        "src": "https://hz-rm-bbs-web-prod.oss-cn-hangzhou.aliyuncs.com/7d9d3af15fb94e9a9b29589a40dba80c1792049408959/RoboMaster 2027 机甲大师高校联盟赛比赛规则手册 V1.0.0（20261015）.pdf",
+        "name": "RoboMaster 2027 机甲大师高校联盟赛比赛规则手册 V1.0.0（20261015）.pdf",
+        "downloads": 0,
+        "md5": "d75e932a7d69dd2fa53906dfc67512be",
+        "len": 13455593
+      },
+      {
+        "id": 14867051,
+        "src": "https://hz-rm-bbs-web-prod.oss-cn-hangzhou.aliyuncs.com/02affc0688544a36809f1f92b965ee531793168284712/RoboMaster 2027 University League Rule Manual V1.0.0（20261028）.pdf",
+        "name": "RoboMaster 2027 University League Rule Manual V1.0.0（20261028）.pdf",
+        "downloads": 0,
+        "md5": "ae83eb9a2bfb6a7c427622b2a44f89f7",
+        "len": 13261426
+      },
+      {
+        "id": 14867052,
+        "src": "https://hz-rm-bbs-web-prod.oss-cn-hangzhou.aliyuncs.com/c1f57b4d96314489a4fa005666cef83e1792048614811/RoboMaster 2027 机甲大师高校系列赛机器人制作规范手册V1.0.0（20261015）.pdf",
+        "name": "RoboMaster 2027 机甲大师高校系列赛机器人制作规范手册V1.0.0（20261015）.pdf",
+        "downloads": 0,
+        "md5": "39175fdc1c263b10ec44727c5689c329",
+        "len": 18240763
+      },
+      {
+        "id": 14867053,
+        "src": "https://hz-rm-bbs-web-prod.oss-cn-hangzhou.aliyuncs.com/5a3aab722e6444a4baaaa5d4d3eb87cb1793168309354/RoboMaster 2027 University Series Robot Specification Manual V1.0.0（20261028）.pdf",
+        "name": "RoboMaster 2027 University Series Robot Specification Manual V1.0.0（20261028）.pdf",
+        "downloads": 0,
+        "md5": "bceb63d00035258ee6e99607281a3e2b",
+        "len": 18713270
+      },
+      {
+        "id": 14867054,
+        "src": "https://hz-rm-bbs-web-prod.oss-cn-hangzhou.aliyuncs.com/4b00d5379a0c43bc8903f30fe58b9a2e1792049443405/RoboMaster 2027 机甲大师高校联盟赛参赛手册V1.0.0（20261015）.pdf",
+        "name": "RoboMaster 2027 机甲大师高校联盟赛参赛手册V1.0.0（20261015）.pdf",
+        "downloads": 0,
+        "md5": "b51b4a5839401dbc334531d0409b3d15",
+        "len": 1130880
+      },
+      {
+        "id": 14867055,
+        "src": "https://hz-rm-bbs-web-prod.oss-cn-hangzhou.aliyuncs.com/7965b847a6964da0bc598d284919b2981792490168748/RoboMaster 2027 University League Participant Manual V1.0.0（20261020）.pdf",
+        "name": "RoboMaster 2027 University League Participant Manual V1.0.0（20261020）.pdf",
+        "downloads": 0,
+        "md5": "2341e61059d436b3c68d2d318cbbbb7b",
+        "len": 4601399
+      }
+    ],
+    "references": null,
+    "belongTeamContent": false,
+    "teamInfo": null,
+    "isWikiLiteratureNode": false,
+    "license": false,
+    "licenseId": "",
+    "linkedTeam": false
+  }
+}

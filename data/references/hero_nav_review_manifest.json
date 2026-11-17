@@ -1,0 +1,122 @@
+{
+  "retrieved_on": "2026-11-15",
+  "repository": "https://github.com/LiuJinbo1027/HERO_2026_Sentry_NAV",
+  "branch": "main",
+  "commit": "d96408c3de28311585756b8d55f96549010c7285",
+  "commit_tree_sha": "0ee4d17dc425a0af19b9f7ccd5817d27860002c3",
+  "retrieval": "GitHub API; git transport failed; source blobs matched recursive API tree entries",
+  "scope": "readme, selected Nav2 configuration, dog_map and fast_layer sources; no build or runtime validation",
+  "files": [
+    {
+      "repository_path": "perception/hero_lidar_scan/README.md",
+      "local_path": "data/references/hero_nav_review/perception/hero_lidar_scan/README.md",
+      "sha256": "56ee4d82966862d1b51217968dc799e09fc1b02047d32f5a1d3ab448ee6e2576",
+      "git_blob_sha1": "a288c187f1088aadd51670a9e2ce9d71de81d70b",
+      "bytes": 936,
+      "url": "https://github.com/LiuJinbo1027/HERO_2026_Sentry_NAV/blob/d96408c3de28311585756b8d55f96549010c7285/perception/hero_lidar_scan/README.md"
+    },
+    {
+      "repository_path": "planning/dog_map/config/cfg.yaml",
+      "local_path": "data/references/hero_nav_review/planning/dog_map/config/cfg.yaml",
+      "sha256": "c86ddef07a614b805d20db9cb6912f0a386387516254052bf1cf17476913674f",
+      "git_blob_sha1": "729365b6f91ab0133e0abb31ec025f973618c090",
+      "bytes": 622,
+      "url": "https://github.com/LiuJinbo1027/HERO_2026_Sentry_NAV/blob/d96408c3de28311585756b8d55f96549010c7285/planning/dog_map/config/cfg.yaml"
+    },
+    {
+      "repository_path": "planning/dog_map/include/dog_map/occ_map.hpp",
+      "local_path": "data/references/hero_nav_review/planning/dog_map/include/dog_map/occ_map.hpp",
+      "sha256": "9fd2067aeab9c7e32c0563aa3fb9361ef8e09f730199b6371048a329606d0b39",
+      "git_blob_sha1": "157b8de3c6829aef8f9b99207e2f81e03aabfb48",
+      "bytes": 6198,
+      "url": "https://github.com/LiuJinbo1027/HERO_2026_Sentry_NAV/blob/d96408c3de28311585756b8d55f96549010c7285/planning/dog_map/include/dog_map/occ_map.hpp"
+    },
+    {
+      "repository_path": "planning/dog_map/params_load.hpp",
+      "local_path": "data/references/hero_nav_review/planning/dog_map/params_load.hpp",
+      "sha256": "e70107a86a69c133e6382ce027c690b47cb6219398bc3f6784769c5b8f1469eb",
+      "git_blob_sha1": "0495a6b51ee9ea3a2543025cee31c2493bbf68a1",
+      "bytes": 884,
+      "url": "https://github.com/LiuJinbo1027/HERO_2026_Sentry_NAV/blob/d96408c3de28311585756b8d55f96549010c7285/planning/dog_map/params_load.hpp"
+    },
+    {
+      "repository_path": "planning/dog_map/src/node.cpp",
+      "local_path": "data/references/hero_nav_review/planning/dog_map/src/node.cpp",
+      "sha256": "885e1eaae50cbf99379cae32a440ac62c8634f9b7d5dbc0aeaf92503698e9357",
+      "git_blob_sha1": "2775e06a214382064b9711848c5a3b24d1207c95",
+      "bytes": 18177,
+      "url": "https://github.com/LiuJinbo1027/HERO_2026_Sentry_NAV/blob/d96408c3de28311585756b8d55f96549010c7285/planning/dog_map/src/node.cpp"
+    },
+    {
+      "repository_path": "planning/dog_map/src/occ_map.cpp",
+      "local_path": "data/references/hero_nav_review/planning/dog_map/src/occ_map.cpp",
+      "sha256": "ce4b59bb4201ff6cd1c200b93d0957092923984825df7400e6dc00b73c152632",
+      "git_blob_sha1": "32f5d97e15a0b1d1bac341ba268e9394ca1f79cd",
+      "bytes": 14651,
+      "url": "https://github.com/LiuJinbo1027/HERO_2026_Sentry_NAV/blob/d96408c3de28311585756b8d55f96549010c7285/planning/dog_map/src/occ_map.cpp"
+    },
+    {
+      "repository_path": "planning/dog_map/src/static_fix_map.cpp",
+      "local_path": "data/references/hero_nav_review/planning/dog_map/src/static_fix_map.cpp",
+      "sha256": "c69e54182f5b1a03a5ec79774b100dc3257ed0166b1f80b9e76a9da449efa782",
+      "git_blob_sha1": "f231fc7f03384ebd8955751c3249b2c79529fd1c",
+      "bytes": 7655,
+      "url": "https://github.com/LiuJinbo1027/HERO_2026_Sentry_NAV/blob/d96408c3de28311585756b8d55f96549010c7285/planning/dog_map/src/static_fix_map.cpp"
+    },
+    {
+      "repository_path": "planning/fast_layer/src/fast_Layer.cpp",
+      "local_path": "data/references/hero_nav_review/planning/fast_layer/src/fast_Layer.cpp",
+      "sha256": "621c40523c40b9bb3a89bfe962482ba3979c57ed7a6b1472985c5a9b1dd82e95",
+      "git_blob_sha1": "32bc223100075afb74ed7cb613b565cfd09e5a7c",
+      "bytes": 4426,
+      "url": "https://github.com/LiuJinbo1027/HERO_2026_Sentry_NAV/blob/d96408c3de28311585756b8d55f96549010c7285/planning/fast_layer/src/fast_Layer.cpp"
+    },
+    {
+      "repository_path": "planning/hero2025_nav_bringup/config/nav2_params.yaml",
+      "local_path": "data/references/hero_nav_review/planning/hero2025_nav_bringup/config/nav2_params.yaml",
+      "sha256": "f20aa78e59fe6fd222adcfd162e7f794031e1a15aa98e6cab98a161fa3a6d76a",
+      "git_blob_sha1": "772189023e3560f4593b583f3578008b4f62ecb3",
+      "bytes": 14906,
+      "url": "https://github.com/LiuJinbo1027/HERO_2026_Sentry_NAV/blob/d96408c3de28311585756b8d55f96549010c7285/planning/hero2025_nav_bringup/config/nav2_params.yaml"
+    },
+    {
+      "repository_path": "planning/hero2025_nav_bringup/launch/bringup_launch.py",
+      "local_path": "data/references/hero_nav_review/planning/hero2025_nav_bringup/launch/bringup_launch.py",
+      "sha256": "719a2d7313b65ce14dfc080c2a43953690f126005ef16d092b7f5f96aa339353",
+      "git_blob_sha1": "a6e7add6281087db8d3bf2fe0919bf8cfadab3cb",
+      "bytes": 8768,
+      "url": "https://github.com/LiuJinbo1027/HERO_2026_Sentry_NAV/blob/d96408c3de28311585756b8d55f96549010c7285/planning/hero2025_nav_bringup/launch/bringup_launch.py"
+    },
+    {
+      "repository_path": "planning/pb_nav2_plugins/src/layers/intensity_voxel_layer.cpp",
+      "local_path": "data/references/hero_nav_review/planning/pb_nav2_plugins/src/layers/intensity_voxel_layer.cpp",
+      "sha256": "cf278385af84028d9dc3125cf2a6158acba178579bf927acc869dcfae185c90f",
+      "git_blob_sha1": "6421db53343e3c45d7a59e6adca155f6a94165be",
+      "bytes": 7506,
+      "url": "https://github.com/LiuJinbo1027/HERO_2026_Sentry_NAV/blob/d96408c3de28311585756b8d55f96549010c7285/planning/pb_nav2_plugins/src/layers/intensity_voxel_layer.cpp"
+    },
+    {
+      "repository_path": "readme.md",
+      "local_path": "data/references/hero_nav_review/readme.md",
+      "sha256": "facac665a2c2c7f6a4f823bc9ff5e8df7b794b0953c07a4be75a0d113f610c95",
+      "git_blob_sha1": "cb979569a67573f4599c476df9aa5eb70d8fcb5d",
+      "bytes": 3548,
+      "url": "https://github.com/LiuJinbo1027/HERO_2026_Sentry_NAV/blob/d96408c3de28311585756b8d55f96549010c7285/readme.md"
+    }
+  ],
+  "official_mppi_reference": {
+    "url": "https://github.com/ros-navigation/navigation2/blob/humble/nav2_mppi_controller/README.md",
+    "local_path": "data/references/nav2_humble_mppi_readme.md",
+    "git_blob_sha": "daf9b5effc1e5233d1f8be5e46d6274360eae20a",
+    "sha256": "eef9236370b295f64c23df5313a0c92b29f7315c149e662681abb2b331665fb8",
+    "scope": "Humble branch README; runtime version not verified"
+  },
+  "user_selected_navigation": {
+    "localization": "Point-LIO",
+    "mapping": "voxel terrain analysis following HERO structure",
+    "controller": "Nav2 MPPI",
+    "initial_slope_limit_deg": 20,
+    "policy_scope": "RL task/candidate selection; BT monitoring/recovery; no fire/aiming policy"
+  },
+  "runtime_modified": false
+}

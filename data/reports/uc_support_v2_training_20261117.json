@@ -1,0 +1,385 @@
+{
+  "status": "PASS_for_local_task_proxy_scope",
+  "date": "2026-11-17",
+  "formal_runs": [
+    {
+      "run": "runs/uc_support_v2_vanilla_s271_20261116",
+      "algorithm": "vanilla",
+      "seed": 271,
+      "decisions": 32768,
+      "training_episodes": 1090,
+      "bc_labels_sha256": "eea12a79f8a4134a33b952153be151e0d583bc2fddc7f88d50fd0a1bd440939f",
+      "validation": {
+        "random": {
+          "episodes": 32,
+          "successes": 0,
+          "task_success_rate": 0.0,
+          "mean_return": -8.745132535167222,
+          "mean_steps": 120.0,
+          "mean_score_100": 10.0,
+          "mean_BT_veto_count": 0.0,
+          "mean_recoveries": 6.46875
+        },
+        "BC": {
+          "episodes": 32,
+          "successes": 31,
+          "task_success_rate": 0.96875,
+          "mean_return": 8.378995144681866,
+          "mean_steps": 37.625,
+          "mean_score_100": 93.41069847651436,
+          "mean_BT_veto_count": 0.0,
+          "mean_recoveries": 0.09375
+        },
+        "PPO": {
+          "episodes": 32,
+          "successes": 31,
+          "task_success_rate": 0.96875,
+          "mean_return": 8.378995144681866,
+          "mean_steps": 37.625,
+          "mean_score_100": 93.41069847651436,
+          "mean_BT_veto_count": 0.0,
+          "mean_recoveries": 0.09375
+        },
+        "BT": {
+          "episodes": 32,
+          "successes": 31,
+          "task_success_rate": 0.96875,
+          "mean_return": 8.378995144681866,
+          "mean_steps": 37.625,
+          "mean_score_100": 93.41069847651436,
+          "mean_BT_veto_count": 0.0,
+          "mean_recoveries": 0.09375
+        }
+      },
+      "test": {
+        "random": {
+          "episodes": 64,
+          "successes": 0,
+          "task_success_rate": 0.0,
+          "mean_return": -9.33384136860878,
+          "mean_steps": 120.0,
+          "mean_score_100": 10.0,
+          "mean_BT_veto_count": 0.0,
+          "mean_recoveries": 6.453125
+        },
+        "BC": {
+          "episodes": 64,
+          "successes": 64,
+          "task_success_rate": 1.0,
+          "mean_return": 8.419561081413672,
+          "mean_steps": 31.890625,
+          "mean_score_100": 93.38362738293495,
+          "mean_BT_veto_count": 0.0,
+          "mean_recoveries": 0.125
+        },
+        "PPO": {
+          "episodes": 64,
+          "successes": 64,
+          "task_success_rate": 1.0,
+          "mean_return": 8.419561081413672,
+          "mean_steps": 31.890625,
+          "mean_score_100": 93.38362738293495,
+          "mean_BT_veto_count": 0.0,
+          "mean_recoveries": 0.125
+        },
+        "BT": {
+          "episodes": 64,
+          "successes": 64,
+          "task_success_rate": 1.0,
+          "mean_return": 8.419561081413672,
+          "mean_steps": 31.890625,
+          "mean_score_100": 93.38362738293495,
+          "mean_BT_veto_count": 0.0,
+          "mean_recoveries": 0.125
+        }
+      }
+    },
+    {
+      "run": "runs/uc_support_v2_vanilla_s809_20261116",
+      "algorithm": "vanilla",
+      "seed": 809,
+      "decisions": 32768,
+      "training_episodes": 1097,
+      "bc_labels_sha256": "5f5ddc7044b0db4337072e547b245bed0c2972aeff0f6b0e6416972a5c151694",
+      "validation": {
+        "random": {
+          "episodes": 32,
+          "successes": 0,
+          "task_success_rate": 0.0,
+          "mean_return": -8.745132535167222,
+          "mean_steps": 120.0,
+          "mean_score_100": 10.0,
+          "mean_BT_veto_count": 0.0,
+          "mean_recoveries": 6.46875
+        },
+        "BC": {
+          "episodes": 32,
+          "successes": 31,
+          "task_success_rate": 0.96875,
+          "mean_return": 8.326902357715689,
+          "mean_steps": 38.25,
+          "mean_score_100": 92.46287844368817,
+          "mean_BT_veto_count": 0.0,
+          "mean_recoveries": 0.3125
+        },
+        "PPO": {
+          "episodes": 32,
+          "successes": 31,
+          "task_success_rate": 0.96875,
+          "mean_return": 8.362387893800946,
+          "mean_steps": 37.84375,
+          "mean_score_100": 93.07072965838182,
+          "mean_BT_veto_count": 0.0,
+          "mean_recoveries": 0.15625
+        },
+        "BT": {
+          "episodes": 32,
+          "successes": 31,
+          "task_success_rate": 0.96875,
+          "mean_return": 8.378995144681866,
+          "mean_steps": 37.625,
+          "mean_score_100": 93.41069847651436,
+          "mean_BT_veto_count": 0.0,
+          "mean_recoveries": 0.09375
+        }
+      },
+      "test": {
+        "random": {
+          "episodes": 64,
+          "successes": 0,
+          "task_success_rate": 0.0,
+          "mean_return": -9.33384136860878,
+          "mean_steps": 120.0,
+          "mean_score_100": 10.0,
+          "mean_BT_veto_count": 0.0,
+          "mean_recoveries": 6.453125
+        },
+        "BC": {
+          "episodes": 64,
+          "successes": 64,
+          "task_success_rate": 1.0,
+          "mean_return": 8.376560656348172,
+          "mean_steps": 32.390625,
+          "mean_score_100": 92.41636367601679,
+          "mean_BT_veto_count": 0.0,
+          "mean_recoveries": 0.296875
+        },
+        "PPO": {
+          "episodes": 64,
+          "successes": 64,
+          "task_success_rate": 1.0,
+          "mean_return": 8.41448943475735,
+          "mean_steps": 31.9375,
+          "mean_score_100": 93.25716101086903,
+          "mean_BT_veto_count": 0.0,
+          "mean_recoveries": 0.140625
+        },
+        "BT": {
+          "episodes": 64,
+          "successes": 64,
+          "task_success_rate": 1.0,
+          "mean_return": 8.419561081413672,
+          "mean_steps": 31.890625,
+          "mean_score_100": 93.38362738293495,
+          "mean_BT_veto_count": 0.0,
+          "mean_recoveries": 0.125
+        }
+      }
+    },
+    {
+      "run": "runs/uc_support_v2_anchored_s271_20261116",
+      "algorithm": "anchored",
+      "seed": 271,
+      "decisions": 32768,
+      "training_episodes": 1090,
+      "bc_labels_sha256": "eea12a79f8a4134a33b952153be151e0d583bc2fddc7f88d50fd0a1bd440939f",
+      "validation": {
+        "random": {
+          "episodes": 32,
+          "successes": 0,
+          "task_success_rate": 0.0,
+          "mean_return": -8.745132535167222,
+          "mean_steps": 120.0,
+          "mean_score_100": 10.0,
+          "mean_BT_veto_count": 0.0,
+          "mean_recoveries": 6.46875
+        },
+        "BC": {
+          "episodes": 32,
+          "successes": 31,
+          "task_success_rate": 0.96875,
+          "mean_return": 8.378995144681866,
+          "mean_steps": 37.625,
+          "mean_score_100": 93.41069847651436,
+          "mean_BT_veto_count": 0.0,
+          "mean_recoveries": 0.09375
+        },
+        "PPO": {
+          "episodes": 32,
+          "successes": 31,
+          "task_success_rate": 0.96875,
+          "mean_return": 8.378995144681866,
+          "mean_steps": 37.625,
+          "mean_score_100": 93.41069847651436,
+          "mean_BT_veto_count": 0.0,
+          "mean_recoveries": 0.09375
+        },
+        "BT": {
+          "episodes": 32,
+          "successes": 31,
+          "task_success_rate": 0.96875,
+          "mean_return": 8.378995144681866,
+          "mean_steps": 37.625,
+          "mean_score_100": 93.41069847651436,
+          "mean_BT_veto_count": 0.0,
+          "mean_recoveries": 0.09375
+        }
+      },
+      "test": {
+        "random": {
+          "episodes": 64,
+          "successes": 0,
+          "task_success_rate": 0.0,
+          "mean_return": -9.33384136860878,
+          "mean_steps": 120.0,
+          "mean_score_100": 10.0,
+          "mean_BT_veto_count": 0.0,
+          "mean_recoveries": 6.453125
+        },
+        "BC": {
+          "episodes": 64,
+          "successes": 64,
+          "task_success_rate": 1.0,
+          "mean_return": 8.419561081413672,
+          "mean_steps": 31.890625,
+          "mean_score_100": 93.38362738293495,
+          "mean_BT_veto_count": 0.0,
+          "mean_recoveries": 0.125
+        },
+        "PPO": {
+          "episodes": 64,
+          "successes": 64,
+          "task_success_rate": 1.0,
+          "mean_return": 8.419561081413672,
+          "mean_steps": 31.890625,
+          "mean_score_100": 93.38362738293495,
+          "mean_BT_veto_count": 0.0,
+          "mean_recoveries": 0.125
+        },
+        "BT": {
+          "episodes": 64,
+          "successes": 64,
+          "task_success_rate": 1.0,
+          "mean_return": 8.419561081413672,
+          "mean_steps": 31.890625,
+          "mean_score_100": 93.38362738293495,
+          "mean_BT_veto_count": 0.0,
+          "mean_recoveries": 0.125
+        }
+      }
+    },
+    {
+      "run": "runs/uc_support_v2_anchored_s809_20261116",
+      "algorithm": "anchored",
+      "seed": 809,
+      "decisions": 32768,
+      "training_episodes": 1096,
+      "bc_labels_sha256": "5f5ddc7044b0db4337072e547b245bed0c2972aeff0f6b0e6416972a5c151694",
+      "validation": {
+        "random": {
+          "episodes": 32,
+          "successes": 0,
+          "task_success_rate": 0.0,
+          "mean_return": -8.745132535167222,
+          "mean_steps": 120.0,
+          "mean_score_100": 10.0,
+          "mean_BT_veto_count": 0.0,
+          "mean_recoveries": 6.46875
+        },
+        "BC": {
+          "episodes": 32,
+          "successes": 31,
+          "task_success_rate": 0.96875,
+          "mean_return": 8.326902357715689,
+          "mean_steps": 38.25,
+          "mean_score_100": 92.46287844368817,
+          "mean_BT_veto_count": 0.0,
+          "mean_recoveries": 0.3125
+        },
+        "PPO": {
+          "episodes": 32,
+          "successes": 31,
+          "task_success_rate": 0.96875,
+          "mean_return": 8.378995144681866,
+          "mean_steps": 37.625,
+          "mean_score_100": 93.41069847651436,
+          "mean_BT_veto_count": 0.0,
+          "mean_recoveries": 0.09375
+        },
+        "BT": {
+          "episodes": 32,
+          "successes": 31,
+          "task_success_rate": 0.96875,
+          "mean_return": 8.378995144681866,
+          "mean_steps": 37.625,
+          "mean_score_100": 93.41069847651436,
+          "mean_BT_veto_count": 0.0,
+          "mean_recoveries": 0.09375
+        }
+      },
+      "test": {
+        "random": {
+          "episodes": 64,
+          "successes": 0,
+          "task_success_rate": 0.0,
+          "mean_return": -9.33384136860878,
+          "mean_steps": 120.0,
+          "mean_score_100": 10.0,
+          "mean_BT_veto_count": 0.0,
+          "mean_recoveries": 6.453125
+        },
+        "BC": {
+          "episodes": 64,
+          "successes": 64,
+          "task_success_rate": 1.0,
+          "mean_return": 8.376560656348172,
+          "mean_steps": 32.390625,
+          "mean_score_100": 92.41636367601679,
+          "mean_BT_veto_count": 0.0,
+          "mean_recoveries": 0.296875
+        },
+        "PPO": {
+          "episodes": 64,
+          "successes": 64,
+          "task_success_rate": 1.0,
+          "mean_return": 8.419561081413672,
+          "mean_steps": 31.890625,
+          "mean_score_100": 93.38362738293495,
+          "mean_BT_veto_count": 0.0,
+          "mean_recoveries": 0.125
+        },
+        "BT": {
+          "episodes": 64,
+          "successes": 64,
+          "task_success_rate": 1.0,
+          "mean_return": 8.419561081413672,
+          "mean_steps": 31.890625,
+          "mean_score_100": 93.38362738293495,
+          "mean_BT_veto_count": 0.0,
+          "mean_recoveries": 0.125
+        }
+      }
+    }
+  ],
+  "PPO_decisions_total": 131072,
+  "complete_training_episodes": 4373,
+  "regression_test_count": 247,
+  "source_snapshot_current_verified": true,
+  "data_hashes_current_verified": true,
+  "PPO_gain_over_BT_demonstrated": false,
+  "live_Nav2_MPPI_training": false,
+  "formal_match": false,
+  "NUC_hardware_benchmarked": false,
+  "report": "data/reports/uc_support_v2_20261117/report.md",
+  "document": "docs/21_uc_support_optimization_v2.md"
+}

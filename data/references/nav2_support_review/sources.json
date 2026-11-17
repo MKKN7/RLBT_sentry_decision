@@ -1,0 +1,74 @@
+{
+  "artifact_type": "official_navigation2_fixed_tag_read_only_source_review",
+  "tag": "1.1.20",
+  "downloaded_utc": "2026-11-16T08:47:37.663790+00:00",
+  "executed_external_code": false,
+  "sources": [
+    {
+      "file": "data/references/nav2_support_review/static_layer.cpp",
+      "official_url": "https://raw.githubusercontent.com/ros-navigation/navigation2/1.1.20/nav2_costmap_2d/plugins/static_layer.cpp",
+      "sha256": "1b5c71dfb20309ba473a9c12a5c176a159a6df3c02c187cee08130880c4e6fb1",
+      "bytes": 16185
+    },
+    {
+      "file": "data/references/nav2_support_review/costmap_layer.cpp",
+      "official_url": "https://raw.githubusercontent.com/ros-navigation/navigation2/1.1.20/nav2_costmap_2d/src/costmap_layer.cpp",
+      "sha256": "9254a0f7bee62acce6df879ad5a4243693954864b54f18f7db6a05ae27b10159",
+      "bytes": 6481
+    },
+    {
+      "file": "data/references/nav2_support_review/cost_critic.cpp",
+      "official_url": "https://raw.githubusercontent.com/ros-navigation/navigation2/1.1.20/nav2_mppi_controller/src/critics/cost_critic.cpp",
+      "sha256": "0630dc3f8302d146d7f5317ee2c3fc940cc6f6ad63f26b19bf0aa630accc7fa4",
+      "bytes": 8219
+    },
+    {
+      "file": "data/references/nav2_support_review/obstacle_layer.cpp",
+      "official_url": "https://raw.githubusercontent.com/ros-navigation/navigation2/1.1.20/nav2_costmap_2d/plugins/obstacle_layer.cpp",
+      "sha256": "82c4d55f28f4a564a42697c5b54300c47730bcec79f5fd09c37b62c39e8225b2",
+      "bytes": 26312
+    },
+    {
+      "file": "data/references/nav2_support_review/layered_costmap.cpp",
+      "official_url": "https://raw.githubusercontent.com/ros-navigation/navigation2/1.1.20/nav2_costmap_2d/src/layered_costmap.cpp",
+      "sha256": "d76a9be3054d841eb74db0cbbd31a8a8b0a09ea466fe74162e8f6889fad1c1c2",
+      "bytes": 9924
+    },
+    {
+      "file": "data/references/nav2_support_review/costmap_2d.cpp",
+      "official_url": "https://raw.githubusercontent.com/ros-navigation/navigation2/1.1.20/nav2_costmap_2d/src/costmap_2d.cpp",
+      "sha256": "2890457f44d146899cc6478763646ef8aa83c2e2455792845c6c0f8f1ba8ac67",
+      "bytes": 15794
+    },
+    {
+      "file": "data/references/nav2_support_review/inflation_layer.cpp",
+      "official_url": "https://raw.githubusercontent.com/ros-navigation/navigation2/1.1.20/nav2_costmap_2d/plugins/inflation_layer.cpp",
+      "sha256": "0d1cdb9a0c1717e95a0d2ac75790384e4bb86f54d59963f0042c8d648cc78f11",
+      "bytes": 16658
+    },
+    {
+      "file": "data/references/nav2_support_review/navfn_planner.cpp",
+      "official_url": "https://raw.githubusercontent.com/ros-navigation/navigation2/1.1.20/nav2_navfn_planner/src/navfn_planner.cpp",
+      "sha256": "d8fb84a3b4323676e128c1ca8e8c91f14de3f98116b2bb09235ce50942e1c995",
+      "bytes": 16558
+    },
+    {
+      "file": "data/references/nav2_support_review/navfn.cpp",
+      "official_url": "https://raw.githubusercontent.com/ros-navigation/navigation2/1.1.20/nav2_navfn_planner/src/navfn.cpp",
+      "sha256": "863446230ae83fb19b1543228c2791b2ff7dec3a997ea57e67322a02bee2d266",
+      "bytes": 26220
+    },
+    {
+      "file": "data/references/nav2_support_review/footprint.cpp",
+      "official_url": "https://raw.githubusercontent.com/ros-navigation/navigation2/1.1.20/nav2_costmap_2d/src/footprint.cpp",
+      "sha256": "963c902da9f4ad2ea76c3da3547db6d9dfbea122ea83b5578535c59ea0406370",
+      "bytes": 7434
+    },
+    {
+      "file": "data/references/nav2_support_review/costmap_2d_ros.cpp",
+      "official_url": "https://raw.githubusercontent.com/ros-navigation/navigation2/1.1.20/nav2_costmap_2d/src/costmap_2d_ros.cpp",
+      "sha256": "4ab6513bd73b88dc23e8e31de72dac14eccab67c1c574e89e412cbfc7a3fcc4d",
+      "bytes": 27873
+    }
+  ]
+}

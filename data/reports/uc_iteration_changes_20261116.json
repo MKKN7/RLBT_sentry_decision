@@ -1,0 +1,1193 @@
+{
+  "artifact_type": "UC_iteration_exact_files",
+  "source_config_and_document_files": [
+    {
+      "path": "README.md",
+      "bytes": 9169,
+      "sha256": "45d35d01f505162e85e7c15474280f5f53b1c27b248afdb548a09a51678a9603"
+    },
+    {
+      "path": "docs/17_nav2_mppi_integration.md",
+      "bytes": 8093,
+      "sha256": "c4196ed1b0844479a0085719c19feb565c012bad355b374bb18c33f1154b4b98"
+    },
+    {
+      "path": "docs/18_uc_rmucstl_execution.md",
+      "bytes": 6252,
+      "sha256": "701222e1e143e37ffbfab53c13efbc5b12048461aebc3c7457a7f0da2231ec86"
+    },
+    {
+      "path": "assets/navigation_reference/README.md",
+      "bytes": 2549,
+      "sha256": "07fdffccde46e1f81c2967813baa0ac6de47ba4f859e178f7392deaddfc78650"
+    },
+    {
+      "path": "configs/nav2_probe.yaml",
+      "bytes": 7320,
+      "sha256": "44f8175997da8a317fcf9bc0eeda4e5e64a0adf059904b988095b71f3f9a1023"
+    },
+    {
+      "path": "configs/uc_map_reference.json",
+      "bytes": 7430,
+      "sha256": "a134684b7506b2ea78a0e35785c951c2e5915f1f64043c8ad6a0d7346f91cc38"
+    },
+    {
+      "path": "configs/training_design.json",
+      "bytes": 17342,
+      "sha256": "e200ba0ebb217f8bf5b2a5080afe513752515a0682c6e6c083c582c7ac4e8e24"
+    },
+    {
+      "path": "rl_bt/voxel_terrain.py",
+      "bytes": 14948,
+      "sha256": "7e30160046bd491b483f35d088867d340f919376e27ab3bdb30b0850741fd343"
+    },
+    {
+      "path": "rl_bt/terrain_worker.py",
+      "bytes": 12935,
+      "sha256": "bf802c85bfefce90de7a9db19dc7facac237f46dc974b87265062b28fabefbf0"
+    },
+    {
+      "path": "rl_bt/uc_field_reference.py",
+      "bytes": 1885,
+      "sha256": "8a81ba01a1b60afff0db82ffbadc80a9cdaf724150cc25ffcbffe4f336ab914b"
+    },
+    {
+      "path": "scripts/nav2_mujoco_fixture.py",
+      "bytes": 16506,
+      "sha256": "b772725a67edf607b5370417355ade52441d57ddda1a88eb4030c513a47df0c5"
+    },
+    {
+      "path": "scripts/nav2_action_probe.py",
+      "bytes": 15620,
+      "sha256": "851a9965118bb7ee84e33af4639ba7a2f74aa99b95783c9fd9fc4e6fb1143a49"
+    },
+    {
+      "path": "scripts/run_nav2_closed_loop.py",
+      "bytes": 9951,
+      "sha256": "8c0b874cbfff80946caf2dcfe96dfd3b55bdf5d22df3849aad9342fd035c7479"
+    },
+    {
+      "path": "scripts/probe_voxel_terrain.py",
+      "bytes": 6606,
+      "sha256": "d728297a68de1350d2fa1b8577ab3aa072da3632cf24cb8f983245b346bdbddc"
+    },
+    {
+      "path": "scripts/probe_uc_map_reference.py",
+      "bytes": 17433,
+      "sha256": "3c55d6eeb668b872102df629e7a7884d35ffe87e4ec07ff1feb0a457851c96e6"
+    },
+    {
+      "path": "scripts/prepare_uc_original_field.py",
+      "bytes": 11604,
+      "sha256": "ff264a753e79612ee765bb627ad6afe3d3053fb4f27952a2ead9ea5327129d40"
+    },
+    {
+      "path": "scripts/report_uc_navigation.py",
+      "bytes": 4653,
+      "sha256": "f4951dc9ae07d301f037f3cdb8acd8170c96c8cc7d7abf0b7cd6a7f35bdcb008"
+    },
+    {
+      "path": "scripts/report_competition_readiness.py",
+      "bytes": 6153,
+      "sha256": "5f74000158fe80bd800a9f28186ae9d73e23c25f3a093f21c64463184bb03d04"
+    },
+    {
+      "path": "tests/test_voxel_terrain.py",
+      "bytes": 5939,
+      "sha256": "dd9f9063e19eeecac4c3313a11dbbff1861bb8a4e5d74d9d909bd4e65ade7888"
+    },
+    {
+      "path": "tests/test_terrain_worker.py",
+      "bytes": 5376,
+      "sha256": "e8c821f832c9572789eca6af8e979cac10a6995252ca018a3d75b707d08a1120"
+    },
+    {
+      "path": "tests/test_uc_field_reference.py",
+      "bytes": 3569,
+      "sha256": "db5e9e82ee3b9649718f33b02dcd51ebc971c5b5b9da5357bc4d35367aeec1ba"
+    }
+  ],
+  "generated_files": [
+    {
+      "path": "assets/navigation_reference/uc_original/field.stl",
+      "bytes": 18954184,
+      "sha256": "93ff0118af176f388c171b239acfdcac72c17cbe0b523350d5d916d3236fe10b"
+    },
+    {
+      "path": "data/derived/uc_original_surface_layers_010m/preview.png",
+      "bytes": 92994,
+      "sha256": "164571bbb5a06ce63669b948efbb5b304a55079606cde277e2a28ac905a787d8"
+    },
+    {
+      "path": "data/derived/uc_original_surface_layers_010m/report.json",
+      "bytes": 1777,
+      "sha256": "bf4f3229250b60cbfc0490d99bec08ea888783b1189b9091cdeed3fdc407f7eb"
+    },
+    {
+      "path": "data/derived/uc_original_surface_layers_010m/surfaces.npz",
+      "bytes": 610897,
+      "sha256": "a6e0f5ec5900139d111c63322fdbefe6ec790168870749521bf83059ed0f3ba1"
+    },
+    {
+      "path": "data/derived/uc_voxel_terrain_checks_v2_20261116/report.json",
+      "bytes": 10690,
+      "sha256": "4bc2e5cc062e747f38bd037496c728d8eb33b0dcce3defb257b73510d0f2bf2f"
+    },
+    {
+      "path": "data/derived/uc_voxel_terrain_checks_v2_20261116/terrain_checks.png",
+      "bytes": 103100,
+      "sha256": "be5379beaf2a0354c1b5304c9ef7bde593aed70f1286f2e78b9e0e94d29918c3"
+    },
+    {
+      "path": "data/reports/competition_readiness_20261116.json",
+      "bytes": 3881,
+      "sha256": "65b32af6b7e1a3a2e070b97975d4447b94d465de07c51271f8c3cb462d4ea92f"
+    },
+    {
+      "path": "data/reports/uc_map_reference_20261116.json",
+      "bytes": 73524,
+      "sha256": "8350498bf473cb7e536686b14677e9b5dfd04cda6137386d206e901bcbf0e433"
+    },
+    {
+      "path": "data/reports/uc_nav2_execution_20261116.json",
+      "bytes": 7892,
+      "sha256": "d1798c618f11d2c227bdfb4a74cb271803ca1a60848c7de6397a661b94819e60"
+    },
+    {
+      "path": "data/reports/uc_original_field_20261116.json",
+      "bytes": 8032,
+      "sha256": "838511b32a877b8f53228b043f8876f8e8ab5e7fba94803844f8cdf4b41e1ddb"
+    },
+    {
+      "path": "data/reports/uc_validation_20261116.json",
+      "bytes": 598,
+      "sha256": "a2ec2d219896f3efaadd5cd103567ff7faed37cac8ee03b11fc01800ca3c8de0"
+    },
+    {
+      "path": "runs/uc_rmuc_driveable_nav2_forward_20261116/action.log",
+      "bytes": 13825,
+      "sha256": "3b4dba7092a2448364c83ca008564e6bcd238058a4d0aa4f6c6403849b22f6e3"
+    },
+    {
+      "path": "runs/uc_rmuc_driveable_nav2_forward_20261116/action/result.json",
+      "bytes": 20714,
+      "sha256": "d3917661f4c887ccdf1a94bb0cef799428378a66c4b9b8735b4e7e43fedca10b"
+    },
+    {
+      "path": "runs/uc_rmuc_driveable_nav2_forward_20261116/fixture.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/uc_rmuc_driveable_nav2_forward_20261116/fixture/field_source.json",
+      "bytes": 669,
+      "sha256": "5c34d73599b323d8b6e734eb9d2e583dac0a1d012cf7eefc804ccef9f55e7b87"
+    },
+    {
+      "path": "runs/uc_rmuc_driveable_nav2_forward_20261116/fixture/lio_display.log",
+      "bytes": 71,
+      "sha256": "1e0746a6b00ad920c1495de9801e6a6d6f2ce00b021d2394b7e41283f63d3cc3"
+    },
+    {
+      "path": "runs/uc_rmuc_driveable_nav2_forward_20261116/fixture/model.xml",
+      "bytes": 7810113,
+      "sha256": "2ed4018edfdd9f16f3808c008dd850bd480b06109ccd96f2f6fce07cdf9c1d04"
+    },
+    {
+      "path": "runs/uc_rmuc_driveable_nav2_forward_20261116/fixture/pointlio-direct.yaml",
+      "bytes": 3112,
+      "sha256": "e8dfc93ad91f6213a3dc8cb754b8258e3ab7f30ac21eb3fe93dc7442d28637dc"
+    },
+    {
+      "path": "runs/uc_rmuc_driveable_nav2_forward_20261116/fixture/pointlio.log",
+      "bytes": 71,
+      "sha256": "59fabc377900c12906b36f249063f5dd40f757ec15e59e2b2446635aa9e7bdde"
+    },
+    {
+      "path": "runs/uc_rmuc_driveable_nav2_forward_20261116/fixture/private_ros_bridge.py",
+      "bytes": 14057,
+      "sha256": "fa44e60ae677d5824be219706215ce5c49b2828c42ba4895bc5e6dc37575210b"
+    },
+    {
+      "path": "runs/uc_rmuc_driveable_nav2_forward_20261116/fixture/result.json",
+      "bytes": 714511,
+      "sha256": "526625ff5f62e55d84c99549168ba0c87a9fc8ccec538a8809a91397f1fe687e"
+    },
+    {
+      "path": "runs/uc_rmuc_driveable_nav2_forward_20261116/fixture/robot.yaml",
+      "bytes": 907,
+      "sha256": "5a59819498e64b2e19260c3980d2b84ba4183bc80cafcb59c6f5ba212f6e5380"
+    },
+    {
+      "path": "runs/uc_rmuc_driveable_nav2_forward_20261116/fixture/simulation.yaml",
+      "bytes": 1456,
+      "sha256": "2316a24dcba674bfe4266f618d647f9bef452458b8eb70cdca0a0a469af48002"
+    },
+    {
+      "path": "runs/uc_rmuc_driveable_nav2_forward_20261116/fixture/terrain_sample_0001.npz",
+      "bytes": 4482,
+      "sha256": "eec07f8f62598c0a520328ed2f87510103176a58a0c0afeaf5127721ac948ab8"
+    },
+    {
+      "path": "runs/uc_rmuc_driveable_nav2_forward_20261116/fixture/terrain_sample_0010.npz",
+      "bytes": 7737,
+      "sha256": "32f05aa72a6cff1b8b2e12538527b94392ead71626c83861627cf248ea081638"
+    },
+    {
+      "path": "runs/uc_rmuc_driveable_nav2_forward_20261116/fixture/terrain_sample_0050.npz",
+      "bytes": 10470,
+      "sha256": "7133a75155d2d3f9e2d1823fa7e7b8f5bf8e3e32a25e82b5015409c9300401c2"
+    },
+    {
+      "path": "runs/uc_rmuc_driveable_nav2_forward_20261116/nav2.log",
+      "bytes": 171,
+      "sha256": "be17d52bcc917e6c58d2a7100201a281105e97d0ab0fe8b9e5a7427212edc09c"
+    },
+    {
+      "path": "runs/uc_rmuc_driveable_nav2_forward_20261116/nav2/bt_navigator.log",
+      "bytes": 1990,
+      "sha256": "80b50148843150e0c81b21ac6f017f6ff8585e7350caf9221f9556c7333ee443"
+    },
+    {
+      "path": "runs/uc_rmuc_driveable_nav2_forward_20261116/nav2/controller_server.log",
+      "bytes": 25126,
+      "sha256": "56fa82f1ccf1cad3fc2512b0e3f81ee87cecc09b15fade97f61e269ed5f4e84f"
+    },
+    {
+      "path": "runs/uc_rmuc_driveable_nav2_forward_20261116/nav2/launcher_report.json",
+      "bytes": 2140,
+      "sha256": "fa4fa394f33da7ff44d41618b73cc4a7b58d3acfe4e31156dbf85d8bb8ea4a31"
+    },
+    {
+      "path": "runs/uc_rmuc_driveable_nav2_forward_20261116/nav2/lifecycle_manager.log",
+      "bytes": 2161,
+      "sha256": "a7476dc5a07101b7c9b87432544b4e6fd8e9b04d82931a73691acae337ada500"
+    },
+    {
+      "path": "runs/uc_rmuc_driveable_nav2_forward_20261116/nav2/nav2_params.generated.yaml",
+      "bytes": 6276,
+      "sha256": "da684a0a4dcd41316cd7f268d90c7c4afb06361e7e81c7cf5c28bd4eaae0165b"
+    },
+    {
+      "path": "runs/uc_rmuc_driveable_nav2_forward_20261116/nav2/navigate_through_poses.xml",
+      "bytes": 450,
+      "sha256": "be3e58f586bfe905704fb7c8f51b0a2f0d5818174b17f9f2f543d12a253d3a5e"
+    },
+    {
+      "path": "runs/uc_rmuc_driveable_nav2_forward_20261116/nav2/navigate_to_pose.xml",
+      "bytes": 511,
+      "sha256": "649d63d49ec17e65e568688da1538fb6ca0a85e44b2d0741da9bd7203d9132f1"
+    },
+    {
+      "path": "runs/uc_rmuc_driveable_nav2_forward_20261116/nav2/planner_server.log",
+      "bytes": 3620,
+      "sha256": "62620e8db1cd077f0b60c94850eee82e19aa3ac4d467145983f59e10a885dd90"
+    },
+    {
+      "path": "runs/uc_rmuc_driveable_nav2_forward_20261116/nav2/ros_logs/bt_navigator_30628_1794817432880.log",
+      "bytes": 1917,
+      "sha256": "9c1d03e9c2ab2434364a07d7dbe594e6b0be0db9478888fe6d79de6ff0e1eade"
+    },
+    {
+      "path": "runs/uc_rmuc_driveable_nav2_forward_20261116/nav2/ros_logs/controller_server_30626_1794817432878.log",
+      "bytes": 24960,
+      "sha256": "75cc66b8ac9fc6112bcb423e807ceeac3867173a04682307c4cd830b880ced06"
+    },
+    {
+      "path": "runs/uc_rmuc_driveable_nav2_forward_20261116/nav2/ros_logs/lifecycle_manager_30629_1794817432965.log",
+      "bytes": 2043,
+      "sha256": "8f36ed589abf11957c4ce17d47fa7c1eb1e74e503568023f7a8e800e4be78dee"
+    },
+    {
+      "path": "runs/uc_rmuc_driveable_nav2_forward_20261116/nav2/ros_logs/planner_server_30627_1794817432895.log",
+      "bytes": 3455,
+      "sha256": "aedcdfa78ffd19e635625b46447c911749a3856205a90fa5544ffa3755d25296"
+    },
+    {
+      "path": "runs/uc_rmuc_driveable_nav2_forward_20261116/processes.json",
+      "bytes": 128,
+      "sha256": "6960ee73fe08dd667d4eac9963bc3ce30606993b122d4f271809d5a0c2251164"
+    },
+    {
+      "path": "runs/uc_rmuc_driveable_nav2_forward_20261116/roslogs/lio_display_30738_1794817442606.log",
+      "bytes": 71,
+      "sha256": "1e0746a6b00ad920c1495de9801e6a6d6f2ce00b021d2394b7e41283f63d3cc3"
+    },
+    {
+      "path": "runs/uc_rmuc_driveable_nav2_forward_20261116/roslogs/pointlio_direct_30737_1794817442596.log",
+      "bytes": 71,
+      "sha256": "59fabc377900c12906b36f249063f5dd40f757ec15e59e2b2446635aa9e7bdde"
+    },
+    {
+      "path": "runs/uc_rmuc_driveable_nav2_forward_20261116/roslogs/python3_30624_1794817433026.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/uc_rmuc_driveable_nav2_forward_20261116/roslogs/python_30623_1794817442380.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/uc_rmuc_driveable_nav2_forward_20261116/source/configs/nav2_probe.yaml",
+      "bytes": 7320,
+      "sha256": "44f8175997da8a317fcf9bc0eeda4e5e64a0adf059904b988095b71f3f9a1023"
+    },
+    {
+      "path": "runs/uc_rmuc_driveable_nav2_forward_20261116/source/configs/nav2_probe_bt.xml",
+      "bytes": 511,
+      "sha256": "649d63d49ec17e65e568688da1538fb6ca0a85e44b2d0741da9bd7203d9132f1"
+    },
+    {
+      "path": "runs/uc_rmuc_driveable_nav2_forward_20261116/source/rl_bt/__init__.py",
+      "bytes": 81,
+      "sha256": "01ab044bd576e4dc10d85e5f67b41b38d419e5f1aec6611d86ed201f33f55cb8"
+    },
+    {
+      "path": "runs/uc_rmuc_driveable_nav2_forward_20261116/source/rl_bt/contracts.py",
+      "bytes": 1040,
+      "sha256": "1b9bef4da0347bf5c52d62b8dff7c039c84327d19add973a3fd5e9d675c1c95e"
+    },
+    {
+      "path": "runs/uc_rmuc_driveable_nav2_forward_20261116/source/rl_bt/estimated_twist.py",
+      "bytes": 4540,
+      "sha256": "618db35cfcc411926d4dc465282f4fda1306f9e221c29b972d164b30cf6fd8b2"
+    },
+    {
+      "path": "runs/uc_rmuc_driveable_nav2_forward_20261116/source/rl_bt/nav2_transport.py",
+      "bytes": 2035,
+      "sha256": "55520c30280efff19eb3152e5e87cc20eccbfc1946de33d29be3b34a77dfaa00"
+    },
+    {
+      "path": "runs/uc_rmuc_driveable_nav2_forward_20261116/source/rl_bt/navigation_contract.py",
+      "bytes": 15904,
+      "sha256": "2fb7e56c7108495d8846dfe10340667c7a306e9ccb5e8b14bad5a7ec151bfcd1"
+    },
+    {
+      "path": "runs/uc_rmuc_driveable_nav2_forward_20261116/source/rl_bt/voxel_terrain.py",
+      "bytes": 14448,
+      "sha256": "5bdfaeea647aa6f4aa9a808a7c12cc2582ab09da2fecc46e455b58144cc446a5"
+    },
+    {
+      "path": "runs/uc_rmuc_driveable_nav2_forward_20261116/source/scripts/launch_nav2_probe.py",
+      "bytes": 7927,
+      "sha256": "f2de3b86b41afb5052a7b74f71b0e99a33df1db418314fd91fceb4399d4c40c4"
+    },
+    {
+      "path": "runs/uc_rmuc_driveable_nav2_forward_20261116/source/scripts/nav2_action_probe.py",
+      "bytes": 14953,
+      "sha256": "716d3bd0d86fbc368cb904a89f767e3d72148c5b749089c33b60a2cf7e61582e"
+    },
+    {
+      "path": "runs/uc_rmuc_driveable_nav2_forward_20261116/source/scripts/nav2_mujoco_fixture.py",
+      "bytes": 14309,
+      "sha256": "ef53feb085d8e47ea22e136a694b9c72cc54d80c196a5b8f6a10856448f5b83a"
+    },
+    {
+      "path": "runs/uc_rmuc_driveable_nav2_forward_20261116/source/scripts/run_nav2_closed_loop.py",
+      "bytes": 9572,
+      "sha256": "5c784bc3ea45116e3a1ae6cfe1a4457ecd6b5e1ace9f7b7e9afb1d556bb9ea4c"
+    },
+    {
+      "path": "runs/uc_rmuc_driveable_nav2_forward_20261116/source_sha256.json",
+      "bytes": 1188,
+      "sha256": "7ea37f9e0cc4995d347d4ec065178d182f538e58a74c2a4cec2f01b7fa7e2e04"
+    },
+    {
+      "path": "runs/uc_rmuc_driveable_nav2_forward_20261116/trajectory.png",
+      "bytes": 114049,
+      "sha256": "4ea0e29fa20995d7059001b5b6e5740d16b5e01cd136e3d1dfb3297e15264a92"
+    },
+    {
+      "path": "runs/uc_rmuc_driveable_nav2_forward_20261116/verification.json",
+      "bytes": 2463,
+      "sha256": "00d77e7f9aa73e62d988e1d1cec8ff5496c1fc5a0d3d47bb028dd1415772a270"
+    },
+    {
+      "path": "runs/uc_rmuc_driveable_sensor_20261116/field_source.json",
+      "bytes": 669,
+      "sha256": "5c34d73599b323d8b6e734eb9d2e583dac0a1d012cf7eefc804ccef9f55e7b87"
+    },
+    {
+      "path": "runs/uc_rmuc_driveable_sensor_20261116/lio_display.log",
+      "bytes": 71,
+      "sha256": "77bb1d9005de2bca8750a43e96c7ad07cc664d21a3b749ee71c6ed96b7145272"
+    },
+    {
+      "path": "runs/uc_rmuc_driveable_sensor_20261116/model.xml",
+      "bytes": 7810113,
+      "sha256": "2ed4018edfdd9f16f3808c008dd850bd480b06109ccd96f2f6fce07cdf9c1d04"
+    },
+    {
+      "path": "runs/uc_rmuc_driveable_sensor_20261116/pointlio-direct.yaml",
+      "bytes": 3112,
+      "sha256": "e8dfc93ad91f6213a3dc8cb754b8258e3ab7f30ac21eb3fe93dc7442d28637dc"
+    },
+    {
+      "path": "runs/uc_rmuc_driveable_sensor_20261116/pointlio.log",
+      "bytes": 71,
+      "sha256": "70364a82c0fd7d61ddc0f419cb76cf13bf63c952743659e93893469324db066b"
+    },
+    {
+      "path": "runs/uc_rmuc_driveable_sensor_20261116/private_ros_bridge.py",
+      "bytes": 14057,
+      "sha256": "fa44e60ae677d5824be219706215ce5c49b2828c42ba4895bc5e6dc37575210b"
+    },
+    {
+      "path": "runs/uc_rmuc_driveable_sensor_20261116/result.json",
+      "bytes": 35452,
+      "sha256": "ac893059f8b228c393144e0c63973dce3e113f0d0237fc113c0b8adca9eaee2a"
+    },
+    {
+      "path": "runs/uc_rmuc_driveable_sensor_20261116/robot.yaml",
+      "bytes": 907,
+      "sha256": "5a59819498e64b2e19260c3980d2b84ba4183bc80cafcb59c6f5ba212f6e5380"
+    },
+    {
+      "path": "runs/uc_rmuc_driveable_sensor_20261116/simulation.yaml",
+      "bytes": 1456,
+      "sha256": "2316a24dcba674bfe4266f618d647f9bef452458b8eb70cdca0a0a469af48002"
+    },
+    {
+      "path": "runs/uc_rmuc_driveable_sensor_20261116/terrain_sample_0001.npz",
+      "bytes": 4482,
+      "sha256": "eec07f8f62598c0a520328ed2f87510103176a58a0c0afeaf5127721ac948ab8"
+    },
+    {
+      "path": "runs/uc_rmuc_driveable_sensor_20261116/terrain_sample_0010.npz",
+      "bytes": 7839,
+      "sha256": "dcb443bf1e7b4487089988e1703461c7ac1ed88aedf5afe0aa2a11068538ac97"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_forward_20261116/action.log",
+      "bytes": 6097,
+      "sha256": "eb5808c6b10537f10873bbeae2a206d1564993fcc3228175109007d9ddee8265"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_forward_20261116/action/result.json",
+      "bytes": 10135,
+      "sha256": "ce26b1fde3ef291963c539165da63de8fabdcb3303db782ce3d2196a7d0e5c4b"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_forward_20261116/fixture.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_forward_20261116/fixture/field_source.json",
+      "bytes": 829,
+      "sha256": "b316d6a8cfa767080f649c05e34d6161253c6105ae18ed57113d052d0f70fd0f"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_forward_20261116/fixture/lio_display.log",
+      "bytes": 71,
+      "sha256": "2cbba04a01075aa07f636095bdab6c9966471fdb764a5d75cfcae73d7628313d"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_forward_20261116/fixture/model.xml",
+      "bytes": 6727331,
+      "sha256": "e11d8393fdd60b6ed38a8e7843dd139240ff397896d3378e23f54ee23a6f8523"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_forward_20261116/fixture/pointlio-direct.yaml",
+      "bytes": 3112,
+      "sha256": "e8dfc93ad91f6213a3dc8cb754b8258e3ab7f30ac21eb3fe93dc7442d28637dc"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_forward_20261116/fixture/pointlio.log",
+      "bytes": 71,
+      "sha256": "c8f8d4d3992b1b79ee13c8339f0ef339e9cda6ee5d69dc66de813e28ded4ab79"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_forward_20261116/fixture/private_ros_bridge.py",
+      "bytes": 14057,
+      "sha256": "fa44e60ae677d5824be219706215ce5c49b2828c42ba4895bc5e6dc37575210b"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_forward_20261116/fixture/result.json",
+      "bytes": 183021,
+      "sha256": "65ac54d750a7f3097fcfaf35ca95132f00a7109d17371c448668450c362a524b"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_forward_20261116/fixture/robot.yaml",
+      "bytes": 907,
+      "sha256": "5a59819498e64b2e19260c3980d2b84ba4183bc80cafcb59c6f5ba212f6e5380"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_forward_20261116/fixture/simulation.yaml",
+      "bytes": 1456,
+      "sha256": "2316a24dcba674bfe4266f618d647f9bef452458b8eb70cdca0a0a469af48002"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_forward_20261116/fixture/terrain_sample_0001.npz",
+      "bytes": 4215,
+      "sha256": "9b87217d2f54219e8a6fc2c2b88404584a454970f8d642a2867bf869c499bd9a"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_forward_20261116/fixture/terrain_sample_0010.npz",
+      "bytes": 8409,
+      "sha256": "1af8fffcf2a8847f4e13f57ff8828850ca94c2aef2cfa249538ca68a9edf50f2"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_forward_20261116/fixture/terrain_sample_0050.npz",
+      "bytes": 12282,
+      "sha256": "f7149d9fc6cb63765eeacd98b23bbd5f43764d257029373e65aa69b3f5a27ced"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_forward_20261116/nav2.log",
+      "bytes": 171,
+      "sha256": "e6426cd132547ea4a3135214ce17bbfc0a521040bf4d2a864429eed35d972a3a"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_forward_20261116/nav2/bt_navigator.log",
+      "bytes": 1505,
+      "sha256": "aa8eacc343b836b5ae7dc3e87ef835e9f3b4300b107e388c710d3a30350f2a79"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_forward_20261116/nav2/controller_server.log",
+      "bytes": 10698,
+      "sha256": "3cd66056752999f71461fc4a45c4a6f056bac5f3c667853a40388fe092d24be0"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_forward_20261116/nav2/launcher_report.json",
+      "bytes": 2140,
+      "sha256": "2674da293e739985bed34ef337cfd4f65245d54b47c5b4c7461e00ec460d9ed4"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_forward_20261116/nav2/lifecycle_manager.log",
+      "bytes": 2161,
+      "sha256": "2a403f967863695dee950e9c724a7d32d6fcd155047ac9082c1072d796910478"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_forward_20261116/nav2/nav2_params.generated.yaml",
+      "bytes": 6276,
+      "sha256": "1263a19b3cda7970bc840642bac392d9a069f9e1c0441ab7cb20868326008793"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_forward_20261116/nav2/navigate_through_poses.xml",
+      "bytes": 450,
+      "sha256": "be3e58f586bfe905704fb7c8f51b0a2f0d5818174b17f9f2f543d12a253d3a5e"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_forward_20261116/nav2/navigate_to_pose.xml",
+      "bytes": 511,
+      "sha256": "649d63d49ec17e65e568688da1538fb6ca0a85e44b2d0741da9bd7203d9132f1"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_forward_20261116/nav2/planner_server.log",
+      "bytes": 3620,
+      "sha256": "ec3b173563313f44d1d119faecbf5208615c1855656a2d7d29116324a9c0da26"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_forward_20261116/nav2/ros_logs/bt_navigator_31054_1794817653581.log",
+      "bytes": 1432,
+      "sha256": "8dff7ac40ccf39b300ee70a8129011f534d353b2fe3d8ab15c67b978d46147d2"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_forward_20261116/nav2/ros_logs/controller_server_31052_1794817653581.log",
+      "bytes": 10532,
+      "sha256": "36f6a4333b2424cc62fe639b27516b76ee14f7bd027cbf24e9a66fc97ba4f8fd"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_forward_20261116/nav2/ros_logs/lifecycle_manager_31055_1794817653579.log",
+      "bytes": 2043,
+      "sha256": "e1b67ba3171e40ced296151de3920306bd5f9eb309886e3fea336fc90aecefe9"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_forward_20261116/nav2/ros_logs/planner_server_31053_1794817653577.log",
+      "bytes": 3455,
+      "sha256": "546d7c75485ab66ea00b699b72893a38d4b729e3a61fa57a2e16196ca76d7ba8"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_forward_20261116/processes.json",
+      "bytes": 128,
+      "sha256": "207491b71cc7cc1dd45043791fcdedd0ab65c0b39bafdb5431aafcd5d8af518a"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_forward_20261116/roslogs/lio_display_31172_1794817657288.log",
+      "bytes": 71,
+      "sha256": "2cbba04a01075aa07f636095bdab6c9966471fdb764a5d75cfcae73d7628313d"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_forward_20261116/roslogs/pointlio_direct_31171_1794817657288.log",
+      "bytes": 71,
+      "sha256": "c8f8d4d3992b1b79ee13c8339f0ef339e9cda6ee5d69dc66de813e28ded4ab79"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_forward_20261116/roslogs/python3_31050_1794817653752.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_forward_20261116/roslogs/python_31049_1794817657172.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_forward_20261116/source/configs/nav2_probe.yaml",
+      "bytes": 7320,
+      "sha256": "44f8175997da8a317fcf9bc0eeda4e5e64a0adf059904b988095b71f3f9a1023"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_forward_20261116/source/configs/nav2_probe_bt.xml",
+      "bytes": 511,
+      "sha256": "649d63d49ec17e65e568688da1538fb6ca0a85e44b2d0741da9bd7203d9132f1"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_forward_20261116/source/rl_bt/__init__.py",
+      "bytes": 81,
+      "sha256": "01ab044bd576e4dc10d85e5f67b41b38d419e5f1aec6611d86ed201f33f55cb8"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_forward_20261116/source/rl_bt/contracts.py",
+      "bytes": 1040,
+      "sha256": "1b9bef4da0347bf5c52d62b8dff7c039c84327d19add973a3fd5e9d675c1c95e"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_forward_20261116/source/rl_bt/estimated_twist.py",
+      "bytes": 4540,
+      "sha256": "618db35cfcc411926d4dc465282f4fda1306f9e221c29b972d164b30cf6fd8b2"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_forward_20261116/source/rl_bt/nav2_transport.py",
+      "bytes": 2035,
+      "sha256": "55520c30280efff19eb3152e5e87cc20eccbfc1946de33d29be3b34a77dfaa00"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_forward_20261116/source/rl_bt/navigation_contract.py",
+      "bytes": 15904,
+      "sha256": "2fb7e56c7108495d8846dfe10340667c7a306e9ccb5e8b14bad5a7ec151bfcd1"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_forward_20261116/source/rl_bt/uc_field_reference.py",
+      "bytes": 1880,
+      "sha256": "5bbb22b02f6e017fb796784e45ed3c9a4e920a4f3a80fbcc9ca6665d1b249f9f"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_forward_20261116/source/rl_bt/voxel_terrain.py",
+      "bytes": 14948,
+      "sha256": "7e30160046bd491b483f35d088867d340f919376e27ab3bdb30b0850741fd343"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_forward_20261116/source/scripts/launch_nav2_probe.py",
+      "bytes": 7927,
+      "sha256": "f2de3b86b41afb5052a7b74f71b0e99a33df1db418314fd91fceb4399d4c40c4"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_forward_20261116/source/scripts/nav2_action_probe.py",
+      "bytes": 15043,
+      "sha256": "425193ef17e8d7374bf29b04bcf43d03d745fb89597f85b815bda4dc69990570"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_forward_20261116/source/scripts/nav2_mujoco_fixture.py",
+      "bytes": 13855,
+      "sha256": "323a84be2245c19c5f1dd7edb48054315d4a2f6800f7d57235dd17f008158949"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_forward_20261116/source/scripts/run_nav2_closed_loop.py",
+      "bytes": 9793,
+      "sha256": "c0975103d36a479e48dcab9c066a58864781fe0020eebc2f712e323aa0d062ac"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_forward_20261116/source_sha256.json",
+      "bytes": 1289,
+      "sha256": "fc7904b07d873b879fbcbe136bdf7f5ef2e522b0b71c04e547120f3847a9eb48"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_forward_20261116/trajectory.png",
+      "bytes": 109446,
+      "sha256": "2e211de263907d9cc2aaa7ff66a93861b20fe034d57d411dbeb0881701f6b50a"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_forward_20261116/verification.json",
+      "bytes": 2616,
+      "sha256": "ee651f2aea14caa54de72adbdec79e600067c68c4b77600ed343ce25bbc6d2a7"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_cancel_20261116/action.log",
+      "bytes": 5587,
+      "sha256": "aea66ba8a93cf9841297c1a86e0c161f779247e984c483103491efa1a13159ba"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_cancel_20261116/action/result.json",
+      "bytes": 9925,
+      "sha256": "70da0aa9f604efc37d5d53a5fe97eb3d7041a858a19141dee8f9a2994c40a6d7"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_cancel_20261116/fixture.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_cancel_20261116/fixture/field_source.json",
+      "bytes": 829,
+      "sha256": "b316d6a8cfa767080f649c05e34d6161253c6105ae18ed57113d052d0f70fd0f"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_cancel_20261116/fixture/lio_display.log",
+      "bytes": 71,
+      "sha256": "72defd08514282c128dea1eca6015eb3b4270fbcecaee5b4c6a709d671653fe1"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_cancel_20261116/fixture/model.xml",
+      "bytes": 6727331,
+      "sha256": "e11d8393fdd60b6ed38a8e7843dd139240ff397896d3378e23f54ee23a6f8523"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_cancel_20261116/fixture/pointlio-direct.yaml",
+      "bytes": 3112,
+      "sha256": "e8dfc93ad91f6213a3dc8cb754b8258e3ab7f30ac21eb3fe93dc7442d28637dc"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_cancel_20261116/fixture/pointlio.log",
+      "bytes": 71,
+      "sha256": "f1afeed62b8a9b2c69726035755546265435fb4320280aa366afc971c096707a"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_cancel_20261116/fixture/private_ros_bridge.py",
+      "bytes": 14057,
+      "sha256": "fa44e60ae677d5824be219706215ce5c49b2828c42ba4895bc5e6dc37575210b"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_cancel_20261116/fixture/result.json",
+      "bytes": 45138,
+      "sha256": "14767ad1ff413297c5f0c7622ee0cc42960df859e0eaf6ca3a56c03f45d475e4"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_cancel_20261116/fixture/robot.yaml",
+      "bytes": 907,
+      "sha256": "5a59819498e64b2e19260c3980d2b84ba4183bc80cafcb59c6f5ba212f6e5380"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_cancel_20261116/fixture/simulation.yaml",
+      "bytes": 1456,
+      "sha256": "2316a24dcba674bfe4266f618d647f9bef452458b8eb70cdca0a0a469af48002"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_cancel_20261116/fixture/terrain_sample_0001.npz",
+      "bytes": 4614,
+      "sha256": "2c93e1b8a81d3372289e23c8fefdf23823c77cb4a34e689b27006ad5b28b472e"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_cancel_20261116/nav2.log",
+      "bytes": 171,
+      "sha256": "59a9d901769299f589b557430d69eb7746ea6c073e147f585dc505d242cc9bdf"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_cancel_20261116/nav2/bt_navigator.log",
+      "bytes": 1649,
+      "sha256": "21492b1e293f569c0f1156ed218c4516fe8037e75c91fa8abc4e806f8bd893a7"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_cancel_20261116/nav2/controller_server.log",
+      "bytes": 9218,
+      "sha256": "44501d4b96d25cf6ceccbcafeadf5e0a683a7762e67f8d72043091285ce589df"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_cancel_20261116/nav2/launcher_report.json",
+      "bytes": 2140,
+      "sha256": "af7fc722a7f9fc9b82243f5e911b62ecf2afce32f9eaa9b72efa4ec30f8611a9"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_cancel_20261116/nav2/lifecycle_manager.log",
+      "bytes": 2161,
+      "sha256": "153c3e6d5051543a66050724d50abc34e924014531733fb47ea49acb174bed19"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_cancel_20261116/nav2/nav2_params.generated.yaml",
+      "bytes": 6276,
+      "sha256": "68b1f3e91ed161ce98787846277cad6b8ed13b19d61b05c8e72c5483bce78e19"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_cancel_20261116/nav2/navigate_through_poses.xml",
+      "bytes": 450,
+      "sha256": "be3e58f586bfe905704fb7c8f51b0a2f0d5818174b17f9f2f543d12a253d3a5e"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_cancel_20261116/nav2/navigate_to_pose.xml",
+      "bytes": 511,
+      "sha256": "649d63d49ec17e65e568688da1538fb6ca0a85e44b2d0741da9bd7203d9132f1"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_cancel_20261116/nav2/planner_server.log",
+      "bytes": 4668,
+      "sha256": "994d64559b2ab75a4a286560fc67d736bd8cb19eacf9a6ec561cc299e2c57f45"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_cancel_20261116/nav2/ros_logs/bt_navigator_31541_1794818089592.log",
+      "bytes": 1576,
+      "sha256": "f94fb9781eae4a13a54dbb0082efd85125d77f8d6bbf8074dfbf8dfedfa5d109"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_cancel_20261116/nav2/ros_logs/controller_server_31539_1794818089590.log",
+      "bytes": 9052,
+      "sha256": "c310d1a47651f4a2ac23434c08978aa929fc5b2ea48eac210b04d1fb62fbb744"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_cancel_20261116/nav2/ros_logs/lifecycle_manager_31542_1794818089585.log",
+      "bytes": 2043,
+      "sha256": "3d7fb058464ff5a28a4188ea35515cd1e2a8246cfcf1202a068ddfb2ef987db4"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_cancel_20261116/nav2/ros_logs/planner_server_31540_1794818089585.log",
+      "bytes": 4503,
+      "sha256": "09d2cd6278ef994a676723f3779c5084f133161f4bf1a23b4cc6515e3b113d04"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_cancel_20261116/processes.json",
+      "bytes": 128,
+      "sha256": "0733076c28161eb3f4c534e823a9ee69b64bf7db00359d8cdcd4195155a4b939"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_cancel_20261116/roslogs/lio_display_31655_1794818093231.log",
+      "bytes": 71,
+      "sha256": "72defd08514282c128dea1eca6015eb3b4270fbcecaee5b4c6a709d671653fe1"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_cancel_20261116/roslogs/pointlio_direct_31654_1794818093231.log",
+      "bytes": 71,
+      "sha256": "f1afeed62b8a9b2c69726035755546265435fb4320280aa366afc971c096707a"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_cancel_20261116/roslogs/python3_31537_1794818089765.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_cancel_20261116/roslogs/python_31536_1794818092828.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_cancel_20261116/source/configs/nav2_probe.yaml",
+      "bytes": 7320,
+      "sha256": "44f8175997da8a317fcf9bc0eeda4e5e64a0adf059904b988095b71f3f9a1023"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_cancel_20261116/source/configs/nav2_probe_bt.xml",
+      "bytes": 511,
+      "sha256": "649d63d49ec17e65e568688da1538fb6ca0a85e44b2d0741da9bd7203d9132f1"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_cancel_20261116/source/rl_bt/__init__.py",
+      "bytes": 81,
+      "sha256": "01ab044bd576e4dc10d85e5f67b41b38d419e5f1aec6611d86ed201f33f55cb8"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_cancel_20261116/source/rl_bt/contracts.py",
+      "bytes": 1040,
+      "sha256": "1b9bef4da0347bf5c52d62b8dff7c039c84327d19add973a3fd5e9d675c1c95e"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_cancel_20261116/source/rl_bt/estimated_twist.py",
+      "bytes": 4540,
+      "sha256": "618db35cfcc411926d4dc465282f4fda1306f9e221c29b972d164b30cf6fd8b2"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_cancel_20261116/source/rl_bt/nav2_transport.py",
+      "bytes": 2035,
+      "sha256": "55520c30280efff19eb3152e5e87cc20eccbfc1946de33d29be3b34a77dfaa00"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_cancel_20261116/source/rl_bt/navigation_contract.py",
+      "bytes": 15904,
+      "sha256": "2fb7e56c7108495d8846dfe10340667c7a306e9ccb5e8b14bad5a7ec151bfcd1"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_cancel_20261116/source/rl_bt/terrain_worker.py",
+      "bytes": 12935,
+      "sha256": "bf802c85bfefce90de7a9db19dc7facac237f46dc974b87265062b28fabefbf0"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_cancel_20261116/source/rl_bt/uc_field_reference.py",
+      "bytes": 1885,
+      "sha256": "8a81ba01a1b60afff0db82ffbadc80a9cdaf724150cc25ffcbffe4f336ab914b"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_cancel_20261116/source/rl_bt/voxel_terrain.py",
+      "bytes": 14948,
+      "sha256": "7e30160046bd491b483f35d088867d340f919376e27ab3bdb30b0850741fd343"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_cancel_20261116/source/scripts/launch_nav2_probe.py",
+      "bytes": 7927,
+      "sha256": "f2de3b86b41afb5052a7b74f71b0e99a33df1db418314fd91fceb4399d4c40c4"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_cancel_20261116/source/scripts/nav2_action_probe.py",
+      "bytes": 15620,
+      "sha256": "851a9965118bb7ee84e33af4639ba7a2f74aa99b95783c9fd9fc4e6fb1143a49"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_cancel_20261116/source/scripts/nav2_mujoco_fixture.py",
+      "bytes": 16506,
+      "sha256": "b772725a67edf607b5370417355ade52441d57ddda1a88eb4030c513a47df0c5"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_cancel_20261116/source/scripts/run_nav2_closed_loop.py",
+      "bytes": 9951,
+      "sha256": "8c0b874cbfff80946caf2dcfe96dfd3b55bdf5d22df3849aad9342fd035c7479"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_cancel_20261116/source_sha256.json",
+      "bytes": 1386,
+      "sha256": "865b763ecdb6c84a05dd025e4f85e4a769a98c3bb14d4ced27dca0696e8edbdd"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_cancel_20261116/trajectory.png",
+      "bytes": 93946,
+      "sha256": "572a78b73374469915e71f079d04a4bae8379d9acb6f3a1f2c6b58fd41aafee4"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_cancel_20261116/verification.json",
+      "bytes": 3433,
+      "sha256": "d400e71a9694f22dde719ef9a01c84970d69d8b5d951ebc293f6ce3b4639079e"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_forward_20261116/action.log",
+      "bytes": 4301,
+      "sha256": "ad057a9175291bc7ff63a698ca82ab832c8db320952ee89431f77a7e47edb4b4"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_forward_20261116/action/result.json",
+      "bytes": 7669,
+      "sha256": "574e74ebbc1de0356cbb85d351d272c14a6b7333c992807e180c65cb8874e723"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_forward_20261116/fixture.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_forward_20261116/fixture/field_source.json",
+      "bytes": 829,
+      "sha256": "b316d6a8cfa767080f649c05e34d6161253c6105ae18ed57113d052d0f70fd0f"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_forward_20261116/fixture/lio_display.log",
+      "bytes": 71,
+      "sha256": "f4f1e5f2fb845b87d8a064b9a5cc5e48ffb5da438ed2c1065d64a8a53a1168db"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_forward_20261116/fixture/model.xml",
+      "bytes": 6727331,
+      "sha256": "e11d8393fdd60b6ed38a8e7843dd139240ff397896d3378e23f54ee23a6f8523"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_forward_20261116/fixture/pointlio-direct.yaml",
+      "bytes": 3112,
+      "sha256": "e8dfc93ad91f6213a3dc8cb754b8258e3ab7f30ac21eb3fe93dc7442d28637dc"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_forward_20261116/fixture/pointlio.log",
+      "bytes": 71,
+      "sha256": "44aaac3b65bcfe60ff14dc05da45b83a59535408c87f948e3e802787040c4d79"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_forward_20261116/fixture/private_ros_bridge.py",
+      "bytes": 14057,
+      "sha256": "fa44e60ae677d5824be219706215ce5c49b2828c42ba4895bc5e6dc37575210b"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_forward_20261116/fixture/result.json",
+      "bytes": 88366,
+      "sha256": "3766a039ad744482feb18369935ff9b2280a7c7da820df16032f2e7a78d85c60"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_forward_20261116/fixture/robot.yaml",
+      "bytes": 907,
+      "sha256": "5a59819498e64b2e19260c3980d2b84ba4183bc80cafcb59c6f5ba212f6e5380"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_forward_20261116/fixture/simulation.yaml",
+      "bytes": 1456,
+      "sha256": "2316a24dcba674bfe4266f618d647f9bef452458b8eb70cdca0a0a469af48002"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_forward_20261116/fixture/terrain_sample_0001.npz",
+      "bytes": 4500,
+      "sha256": "5b66aa989af49859c47533aced1364bd8f64d27c3061f2c5c2573970b61826d6"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_forward_20261116/fixture/terrain_sample_0010.npz",
+      "bytes": 6704,
+      "sha256": "7732d8837b50aa52dd0a459e1b67efd32055b10ad3509e4800c71842d55d730f"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_forward_20261116/nav2.log",
+      "bytes": 171,
+      "sha256": "c4d042c74db2e9c7e874de50956c00a20e0ff6fdbab0c56409e3b9c4c0429661"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_forward_20261116/nav2/bt_navigator.log",
+      "bytes": 1505,
+      "sha256": "07d2535ac1d8ebe7075f801937bf47f75cb099a5d48439baf6683fdfb4637c72"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_forward_20261116/nav2/controller_server.log",
+      "bytes": 10847,
+      "sha256": "c010e7dbd7aaa2c10025597e8ba9228ce0b9399849da07557f119939014a6117"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_forward_20261116/nav2/launcher_report.json",
+      "bytes": 2139,
+      "sha256": "3d93a2a24ec2ef0a25bd3858e4f82181438f53916ec91439afaaeb03fc6a11c8"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_forward_20261116/nav2/lifecycle_manager.log",
+      "bytes": 2161,
+      "sha256": "08cfade4589d283c6fc6e856dd7792952b2dcdcc6fd115312b09846841ca347b"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_forward_20261116/nav2/nav2_params.generated.yaml",
+      "bytes": 6276,
+      "sha256": "25d52d2b7b1dac1de7e11b7fb727c6d3a5ac4b89c9ec16867ad0364bd9d86ae3"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_forward_20261116/nav2/navigate_through_poses.xml",
+      "bytes": 450,
+      "sha256": "be3e58f586bfe905704fb7c8f51b0a2f0d5818174b17f9f2f543d12a253d3a5e"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_forward_20261116/nav2/navigate_to_pose.xml",
+      "bytes": 511,
+      "sha256": "649d63d49ec17e65e568688da1538fb6ca0a85e44b2d0741da9bd7203d9132f1"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_forward_20261116/nav2/planner_server.log",
+      "bytes": 3620,
+      "sha256": "8bab75562afb0961880e1d993ffaf107a6bfa07ce63c948be91fabe8458a04dd"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_forward_20261116/nav2/ros_logs/bt_navigator_31300_1794818027292.log",
+      "bytes": 1432,
+      "sha256": "7ad1135549a229d2d3d6da188c857ec9c9147585a29e706d678106175b58fd4c"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_forward_20261116/nav2/ros_logs/controller_server_31298_1794818027290.log",
+      "bytes": 10681,
+      "sha256": "760aaadbb00af9ae88cafca11929112e96564e0ec05cfc79bf0e14249956e0b8"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_forward_20261116/nav2/ros_logs/lifecycle_manager_31301_1794818027285.log",
+      "bytes": 2043,
+      "sha256": "18a7da6ae9c61da275c02fd445bb7f78e8552aebf98fd09f31afe867ba160060"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_forward_20261116/nav2/ros_logs/planner_server_31299_1794818027285.log",
+      "bytes": 3455,
+      "sha256": "c7986908aa9a51b94478c2c427ff675ef885a6908a99a3e20801013f0139c19c"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_forward_20261116/processes.json",
+      "bytes": 128,
+      "sha256": "9b8fb8b9a354281a0f0e0ecff156b1639fed7c002d630be3d83c89adf72d8d66"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_forward_20261116/roslogs/lio_display_31414_1794818030815.log",
+      "bytes": 71,
+      "sha256": "f4f1e5f2fb845b87d8a064b9a5cc5e48ffb5da438ed2c1065d64a8a53a1168db"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_forward_20261116/roslogs/pointlio_direct_31413_1794818030812.log",
+      "bytes": 71,
+      "sha256": "44aaac3b65bcfe60ff14dc05da45b83a59535408c87f948e3e802787040c4d79"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_forward_20261116/roslogs/python3_31296_1794818027468.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_forward_20261116/roslogs/python_31295_1794818030710.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_forward_20261116/source/configs/nav2_probe.yaml",
+      "bytes": 7320,
+      "sha256": "44f8175997da8a317fcf9bc0eeda4e5e64a0adf059904b988095b71f3f9a1023"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_forward_20261116/source/configs/nav2_probe_bt.xml",
+      "bytes": 511,
+      "sha256": "649d63d49ec17e65e568688da1538fb6ca0a85e44b2d0741da9bd7203d9132f1"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_forward_20261116/source/rl_bt/__init__.py",
+      "bytes": 81,
+      "sha256": "01ab044bd576e4dc10d85e5f67b41b38d419e5f1aec6611d86ed201f33f55cb8"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_forward_20261116/source/rl_bt/contracts.py",
+      "bytes": 1040,
+      "sha256": "1b9bef4da0347bf5c52d62b8dff7c039c84327d19add973a3fd5e9d675c1c95e"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_forward_20261116/source/rl_bt/estimated_twist.py",
+      "bytes": 4540,
+      "sha256": "618db35cfcc411926d4dc465282f4fda1306f9e221c29b972d164b30cf6fd8b2"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_forward_20261116/source/rl_bt/nav2_transport.py",
+      "bytes": 2035,
+      "sha256": "55520c30280efff19eb3152e5e87cc20eccbfc1946de33d29be3b34a77dfaa00"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_forward_20261116/source/rl_bt/navigation_contract.py",
+      "bytes": 15904,
+      "sha256": "2fb7e56c7108495d8846dfe10340667c7a306e9ccb5e8b14bad5a7ec151bfcd1"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_forward_20261116/source/rl_bt/terrain_worker.py",
+      "bytes": 12935,
+      "sha256": "bf802c85bfefce90de7a9db19dc7facac237f46dc974b87265062b28fabefbf0"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_forward_20261116/source/rl_bt/uc_field_reference.py",
+      "bytes": 1885,
+      "sha256": "8a81ba01a1b60afff0db82ffbadc80a9cdaf724150cc25ffcbffe4f336ab914b"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_forward_20261116/source/rl_bt/voxel_terrain.py",
+      "bytes": 14948,
+      "sha256": "7e30160046bd491b483f35d088867d340f919376e27ab3bdb30b0850741fd343"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_forward_20261116/source/scripts/launch_nav2_probe.py",
+      "bytes": 7927,
+      "sha256": "f2de3b86b41afb5052a7b74f71b0e99a33df1db418314fd91fceb4399d4c40c4"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_forward_20261116/source/scripts/nav2_action_probe.py",
+      "bytes": 15620,
+      "sha256": "851a9965118bb7ee84e33af4639ba7a2f74aa99b95783c9fd9fc4e6fb1143a49"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_forward_20261116/source/scripts/nav2_mujoco_fixture.py",
+      "bytes": 16506,
+      "sha256": "b772725a67edf607b5370417355ade52441d57ddda1a88eb4030c513a47df0c5"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_forward_20261116/source/scripts/run_nav2_closed_loop.py",
+      "bytes": 9951,
+      "sha256": "8c0b874cbfff80946caf2dcfe96dfd3b55bdf5d22df3849aad9342fd035c7479"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_forward_20261116/source_sha256.json",
+      "bytes": 1386,
+      "sha256": "865b763ecdb6c84a05dd025e4f85e4a769a98c3bb14d4ced27dca0696e8edbdd"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_forward_20261116/trajectory.png",
+      "bytes": 106659,
+      "sha256": "c92c1634161f3dfc347170c394893b76880f989ab54027d502d71818c1234313"
+    },
+    {
+      "path": "runs/uc_rmuc_original_nav2_worker_forward_20261116/verification.json",
+      "bytes": 3439,
+      "sha256": "cda7c81e541a4c2401ee5ace5b477924fa6c52882c77a0023586252ef6cc3ade"
+    }
+  ],
+  "inventory_updated_separately": "data/artifact_inventory.json"
+}

@@ -1,0 +1,44 @@
+{
+  "checked_on": "2026-11-16",
+  "official_rule_priority_over_cad": true,
+  "files": [
+    {
+      "official_source": true,
+      "page": "https://bbs.robomaster.com/article/1970956",
+      "attachment": {
+        "id": 14836958,
+        "src": "https://hz-rm-bbs-web-prod.oss-cn-hangzhou.aliyuncs.com/12d6225c83984f00a0cc27628ecea74b1791994867597/RMUL2027_3V3_V1.0.0.stp",
+        "name": "RMUL2027_3V3_V1.0.0.stp",
+        "downloads": 0,
+        "md5": "d00a4553faea81c49ba1598a75eccec0",
+        "len": 1989786
+      },
+      "local_path": "assets/rmul_2027/source_cad/RMUL2027_3V3_V1.0.0.stp",
+      "sha256": "7d47c1b6a6a0253a732e46cb122bb84410b11d5134bcb5658104299db4a48ca4",
+      "md5_verified": true
+    },
+    {
+      "official_source": false,
+      "page": "https://bbs.robomaster.com/article/1971078",
+      "attachment": {
+        "id": 14837225,
+        "src": "https://hz-rm-bbs-web-prod.oss-cn-hangzhou.aliyuncs.com/8f122836ca394aedb77dbb1c9ad2c1be1792116113879/RMUL2027_map_transfer_20261016_STEP_R1.zip",
+        "name": "RMUL2027_map_transfer_20261016_STEP_R1.zip",
+        "downloads": 0,
+        "md5": "ce9f5804c0951aa45b78f9d6017a8d89",
+        "len": 2678890
+      },
+      "local_path": "data/references/rmul_2027_community_map/RMUL2027_map_transfer_20261016_STEP_R1.zip",
+      "sha256": "4aee780ed07ad225fece44803cbf8f1cef30fd1528922773bd38e050222e3060",
+      "md5_verified": true
+    }
+  ],
+  "uc_step_url_record_only": {
+    "id": 14836957,
+    "src": "https://hz-rm-bbs-web-prod.oss-cn-hangzhou.aliyuncs.com/080ae7230f6c469c9bec9d2c892797b61791994813953/RMUC2027_V1.0.0.stp",
+    "name": "RMUC2027_V1.0.0.stp",
+    "downloads": 0,
+    "md5": "3d3d6a411f44e9a4983794261b3f0bf7",
+    "len": 653443279
+  }
+}

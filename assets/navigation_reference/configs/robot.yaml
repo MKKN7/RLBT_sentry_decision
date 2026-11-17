@@ -1,0 +1,55 @@
+# Coordinates: x forward, y left, z up; metres and degrees.
+namespace: red_standard_robot1
+# RMUC2027 open test position; local terrain is z=0.253..0.270 m.
+# Not a rule-defined competition spawn. Clearance lets the chassis settle.
+spawn: [3.4, 9.5, 0.31, 0.0]
+chassis:
+  length: 0.48
+  width: 0.36
+  height: 0.10
+  center_z: 0.11
+  mass: 15.0
+  center_of_mass_z: 0.09
+  wheel_radius: 0.076
+  wheel_width: 0.0452
+  wheel_mass: 0.4
+  suspension_travel_down: 0.010
+  # 18 mm bottomed out on the 23-degree trapezoid ramps, producing rigid
+  # limit impulses. Keep 10 mm nominal belly clearance at full compression.
+  # Simulation suspension parameters; not measured hardware calibration.
+  suspension_travel_up: 0.050
+  suspension_stiffness: 9000.0
+  suspension_damping: 180.0
+  wheel_half_length: 0.19
+  wheel_half_width: 0.20
+mount:
+  front_x: 0.16
+  half_spacing: 0.18
+  # Nominal optical centre 218 mm; housing top 234.25 mm before load.
+  # 10 mm full suspension extension keeps the nominal top below 250 mm.
+  optical_height: 0.218
+  outward_tilt_deg: 30.0
+lidar:
+  rate: 10.0
+  horizontal_samples: 720
+  vertical_samples: 32
+  min_elevation_deg: -7.0
+  max_elevation_deg: 52.0
+  min_range: 0.1
+  max_range: 40.0
+  noise_stddev: 0.01
+imu_rate: 200.0
+view:
+  mode: third_person
+  distance_m: 2.5
+  elevation_deg: -25.0
+  target_height_m: 0.18
+fpv:
+  # Virtual driving eye inside the collision hull. Only its enclosing chassis
+  # is hidden in FPV; physical collisions and LiDAR self-occlusion are unchanged.
+  position: [0.19, 0.0, 0.13]
+  near_clip_m: 0.002
+  width: 640
+  height: 360
+  rate: 30.0
+  horizontal_fov_deg: 100.0

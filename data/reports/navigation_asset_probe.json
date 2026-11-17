@@ -1,0 +1,56 @@
+{
+  "status": "PASS",
+  "scope": "Snapshot hashes, STL structure and finite vertices, copied robot builder, 1000 CPU physics steps on upstream small plane scene, qpos reset",
+  "not_validated": [
+    "full-field contact model",
+    "tunnel traversal",
+    "sensor simulation",
+    "ROS/Nav2",
+    "multi-robot",
+    "GPU physics",
+    "RL training"
+  ],
+  "interpreter": "/home/kellen/anaconda3/envs/robot/bin/python",
+  "versions": {
+    "mujoco": "3.11.0",
+    "mujoco-warp": "3.11.0",
+    "warp-lang": "1.14.0",
+    "torch": "2.6.0+cu118",
+    "gymnasium": "1.2.3",
+    "stable-baselines3": "2.7.1"
+  },
+  "field": {
+    "triangle_count": 385026,
+    "bytes": 19251384,
+    "bounds_m": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        27.9999942779541,
+        16.003131866455078,
+        3.7988295555114746
+      ]
+    ],
+    "coordinates": "Prepared simulation world; registration to official competition coordinates is unverified"
+  },
+  "test_plane_robot": {
+    "nq": 16,
+    "nv": 15,
+    "nu": 1,
+    "nbody": 13,
+    "ngeom": 113,
+    "physics_steps": 1000,
+    "simulated_seconds": 1.0000000000000007,
+    "wall_seconds": 0.040241802111268044,
+    "final_base_position_m": [
+      -2.9427720452115283e-07,
+      -1.7387924510156337e-13,
+      -0.00011956180286709689
+    ],
+    "qpos_reset_equal": true,
+    "performance_scope": "Small test plane only; not full-field training throughput"
+  }
+}

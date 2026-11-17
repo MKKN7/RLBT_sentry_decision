@@ -1,0 +1,12 @@
+{
+  "artifact_type": "UC_iteration_actual_validation",
+  "pytest_command": "/home/kellen/anaconda3/envs/robot/bin/python -m pytest -q",
+  "pytest_passed": 146,
+  "pytest_wall_s": 33.78,
+  "pytest_log_sha256": "15feb1ba43d34e3c1661f2517f58a395fc118eca17ae8328488e25faf5d655ba",
+  "actual_navigation_report": "data/reports/uc_nav2_execution_20261116.json",
+  "review": ".work/uc_worker_integration_review_result.md",
+  "domain_79_after_checks": "only temporary inventory node; no residual task ROS nodes",
+  "original_engineering_resources_modified": false,
+  "formal_RL_training_validated": false
+}

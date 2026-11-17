@@ -1,0 +1,102 @@
+{
+  "artifact_type": "UL_ground_course_validation_not_live_match_acceptance",
+  "current_scenario_id": "ul2027_ground_task_curriculum_v4",
+  "previous_v2_interruption_bug_fixed": true,
+  "regression_tests": [
+    "tests/test_ul_task_env.py::test_atomic_capture_cannot_be_abandoned_by_RL_hold_masked_or_new_goal",
+    "tests/test_ul_rules.py::test_capture_threshold_is_invariant_to_float_interval_subdivision"
+  ],
+  "full_pytest": {
+    "passed": 108,
+    "output": ".work/pytest_v4.log"
+  },
+  "evidence": "runs/ul_ground_curriculum_v4_16384_20261116/verification.json",
+  "summary": {
+    "status": "completed",
+    "run": "/home/kellen/桌面/RL_BT_decision/runs/ul_ground_curriculum_v4_16384_20261116",
+    "scenario_id": "ul2027_ground_task_curriculum_v4",
+    "ppo_decisions": 16384,
+    "bt_imitation_decisions": 4096,
+    "completed_training_episodes": 433,
+    "updates": 64,
+    "wall_s": 58.954684225143865,
+    "evaluation": {
+      "initialRL": {
+        "successes": 24,
+        "episodes": 24,
+        "task_success_rate": 1.0,
+        "mean_return": 5.617406358258644,
+        "mean_steps": 30.625,
+        "by_objective": {
+          "capture": {
+            "successes": 6,
+            "episodes": 6
+          },
+          "recover_then_capture": {
+            "successes": 9,
+            "episodes": 9
+          },
+          "resupply": {
+            "successes": 9,
+            "episodes": 9
+          }
+        }
+      },
+      "finalRL": {
+        "successes": 24,
+        "episodes": 24,
+        "task_success_rate": 1.0,
+        "mean_return": 5.624906358258644,
+        "mean_steps": 29.125,
+        "by_objective": {
+          "capture": {
+            "successes": 6,
+            "episodes": 6
+          },
+          "recover_then_capture": {
+            "successes": 9,
+            "episodes": 9
+          },
+          "resupply": {
+            "successes": 9,
+            "episodes": 9
+          }
+        }
+      },
+      "BT": {
+        "successes": 24,
+        "episodes": 24,
+        "task_success_rate": 1.0,
+        "mean_return": 5.616694448169436,
+        "mean_steps": 30.375,
+        "by_objective": {
+          "capture": {
+            "successes": 6,
+            "episodes": 6
+          },
+          "recover_then_capture": {
+            "successes": 9,
+            "episodes": 9
+          },
+          "resupply": {
+            "successes": 9,
+            "episodes": 9
+          }
+        }
+      }
+    },
+    "metric": "ground_course_task_success_rate_not_match_win_rate",
+    "resume_supported": false
+  },
+  "limitations": [
+    "atomic_capture_is_explicit_course_skill_not_full_official_referee_activation",
+    "no_opponents_no_combat_no_Nav2_or_live_referee",
+    "evaluation_success_not_evidence_of_PPO_success_rate_gain"
+  ],
+  "source_sha256": {
+    "rl_bt/ul_task_env.py": "a3691e68519435d85020af229138893a34946958dc635d5968819d42fd69ddce",
+    "rl_bt/ul_rules.py": "5c8127066bc862c47c3c8593914fb5849fec700ac205809ee32e1ac18016b9b7",
+    "tests/test_ul_task_env.py": "3a36055b8e9e49e3e560d5c0604415c265bec8edcfe6b14879b8545c8e0412d4",
+    "tests/test_ul_rules.py": "657616bf8a1ab35e6b565197a3e8f2337534e4235e172c52af7068494283da90"
+  }
+}

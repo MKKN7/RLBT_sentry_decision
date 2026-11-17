@@ -1,0 +1,238 @@
+{
+  "retrieved_on": "2026-11-15",
+  "repository": "https://github.com/CaptainKAZ/alphaRM-JAX",
+  "site": "https://captainkaz.github.io/alphaRM-JAX/",
+  "commit": "9f2489ce78e46f0e37a21e90d4b11a0a1a94c4d2",
+  "tree_truncated": false,
+  "license_file": "data/references/alpharm_jax_review/upstream/LICENSE",
+  "retrieval": "GitHub API metadata and blobs, then pinned codeload archive after public API rate limit; every retained upstream file verified against tree Git blob SHA1",
+  "site_bytes": 31304587,
+  "site_sha256": "7be2ac838b7c4802b8bd6958a735384fcea4a49b8d9a8d6965103af2f5bb563e",
+  "site_snapshot_stored": false,
+  "archive_bytes": 63621886,
+  "archive_sha256": "09414296b6668ac33fe6af2010ffa3f2ea10de538b9710ac06a1bcffb3c8fcd3",
+  "archive_stored_in_project": false,
+  "scope": "Selected static source/config/docs, published ONNX actor and deterministic environment, fixture. Unmodified review snapshot; not integrated training environment.",
+  "public_data_search": {
+    "recursive_tree_entries": 508,
+    "extensions_searched": [
+      ".npz",
+      ".npy",
+      ".pkl",
+      ".pickle",
+      ".h5",
+      ".hdf5",
+      ".parquet",
+      ".mcap",
+      ".db3",
+      ".bag",
+      ".jsonl"
+    ],
+    "filename_keywords": [
+      "dataset",
+      "trajectory",
+      "replay"
+    ],
+    "matches": [],
+    "releases_count": 0,
+    "limits": "Current commit tree and Releases only; no claim about private or unlinked external data."
+  },
+  "files": [
+    {
+      "repository_path": ".gitignore",
+      "local_path": "data/references/alpharm_jax_review/upstream/.gitignore",
+      "git_blob_sha1": "c6578460b2581cc0ad8a1d975e9063f043bb1a95",
+      "sha256": "b07e5ea027fb95714dd8bc868cedf7cae63491f736ca2913cb64b9c439543270",
+      "bytes": 307
+    },
+    {
+      "repository_path": "LICENSE",
+      "local_path": "data/references/alpharm_jax_review/upstream/LICENSE",
+      "git_blob_sha1": "86f0f8d248ce42621ac0995f0e68c13e7217dab9",
+      "sha256": "194e94abef030f092fde5f16e9966ba07f1c83455467a7f2cf9f9282335288c4",
+      "bytes": 10232
+    },
+    {
+      "repository_path": "README.md",
+      "local_path": "data/references/alpharm_jax_review/upstream/README.md",
+      "git_blob_sha1": "e487c0e8d7df2fa9ee79be320051c5460567962d",
+      "sha256": "faadbbf029aff72f3ab88c3c4cb784f87373d6d82caf9cd6ada084562b07911f",
+      "bytes": 18609
+    },
+    {
+      "repository_path": "baselines/MAPPO/eval_rm_jax.py",
+      "local_path": "data/references/alpharm_jax_review/upstream/baselines/MAPPO/eval_rm_jax.py",
+      "git_blob_sha1": "b5a95ce3b80711f43ceaa551ab1a4a044473422f",
+      "sha256": "367cbe1b62bd784188ce3f9c0b3e6f2154146c78732de8ba09590cb7c32c0967",
+      "bytes": 6687
+    },
+    {
+      "repository_path": "baselines/MAPPO/league.py",
+      "local_path": "data/references/alpharm_jax_review/upstream/baselines/MAPPO/league.py",
+      "git_blob_sha1": "eef801c5ba64dd88447d148102c963b339f6b4b2",
+      "sha256": "e1aa17c9e3967ed3703f9a74b0bedc91cf7cd5e52bd236128a44de613778ea4d",
+      "bytes": 8871
+    },
+    {
+      "repository_path": "baselines/MAPPO/train_rm_jax.py",
+      "local_path": "data/references/alpharm_jax_review/upstream/baselines/MAPPO/train_rm_jax.py",
+      "git_blob_sha1": "c706b07b832daaf0a7847be90d008e0e083aca77",
+      "sha256": "4fde359f673943ac5d883a99199aa9076a79fdfc5857b02318c2667b990e0e0c",
+      "bytes": 64665
+    },
+    {
+      "repository_path": "demo/README.md",
+      "local_path": "data/references/alpharm_jax_review/upstream/demo/README.md",
+      "git_blob_sha1": "a698441233aa7663f0ae8a5abff3053609a3206e",
+      "sha256": "c0e3a021ca1fe45e31bc986278b0026008a01471d194e138642ed6e3ad459810",
+      "bytes": 4718
+    },
+    {
+      "repository_path": "demo/web/actor.onnx",
+      "local_path": "data/references/alpharm_jax_review/upstream/demo/web/actor.onnx",
+      "git_blob_sha1": "70fe46746deb68ffdfd9dde43446e1a340575b5f",
+      "sha256": "9ce30cfbe0cf3e83de90f9126200e3a9c173d8281a8835a3038d4b8656e06382",
+      "bytes": 4793279
+    },
+    {
+      "repository_path": "demo/web/engine.js",
+      "local_path": "data/references/alpharm_jax_review/upstream/demo/web/engine.js",
+      "git_blob_sha1": "a62e8b424413bffd58eaa98158810a219e53cee7",
+      "sha256": "4d2c09806bf9b2e7967da1d000f7dcaa26941da222bd0bcfda57d13c8ce563fd",
+      "bytes": 20263
+    },
+    {
+      "repository_path": "demo/web/env_step.onnx",
+      "local_path": "data/references/alpharm_jax_review/upstream/demo/web/env_step.onnx",
+      "git_blob_sha1": "e9122ec78c08d367e35d70d1af84c4a147e3fce7",
+      "sha256": "78d23fcaaef285d0fd8c2de0d66a29dde33c552656925a9b21d6da621cc7fd8c",
+      "bytes": 3666794
+    },
+    {
+      "repository_path": "demo/web/export_actor_onnx_spike.py",
+      "local_path": "data/references/alpharm_jax_review/upstream/demo/web/export_actor_onnx_spike.py",
+      "git_blob_sha1": "9c71156ca8135c84cba1e6f7bb93d68c040c389c",
+      "sha256": "c3f62aae58c82c18147982fa93d7a867c3e0dfd2bd72d8a7eb11fefa959e8349",
+      "bytes": 2345
+    },
+    {
+      "repository_path": "demo/web/export_env_onnx_spike.py",
+      "local_path": "data/references/alpharm_jax_review/upstream/demo/web/export_env_onnx_spike.py",
+      "git_blob_sha1": "dd95eedb20fb2fa77a164d152a0cdf8deae90c68",
+      "sha256": "9b7aafb110476cc1672b0da46519b48b669bdb8370785f69a78b416546ba98a1",
+      "bytes": 8365
+    },
+    {
+      "repository_path": "demo/web/export_web_fixture.py",
+      "local_path": "data/references/alpharm_jax_review/upstream/demo/web/export_web_fixture.py",
+      "git_blob_sha1": "a16b8ef821f27209f13bcfb1870cbdd82315f992",
+      "sha256": "cf4bc430837b4ca24fa379ed0090117d3b508b3b063a9486cb8d2d43235c6d56",
+      "bytes": 3283
+    },
+    {
+      "repository_path": "demo/web/fixture.json",
+      "local_path": "data/references/alpharm_jax_review/upstream/demo/web/fixture.json",
+      "git_blob_sha1": "679a3aacd6b20374e4024591fba9708ff5349acb",
+      "sha256": "b4882aacbbd72991077c7203ceeca6d3e89f25b486fdacde9241b3e7afed454f",
+      "bytes": 19837
+    },
+    {
+      "repository_path": "demo/web/requirements.txt",
+      "local_path": "data/references/alpharm_jax_review/upstream/demo/web/requirements.txt",
+      "git_blob_sha1": "78fee02eb952a12b88436612098e12410550a192",
+      "sha256": "1b9a9435cb0b688a09b1b9af0502847aa7b45d540a135e7c7fc79f3128322a30",
+      "bytes": 46
+    },
+    {
+      "repository_path": "demo/web/web_engine_parity_ref.py",
+      "local_path": "data/references/alpharm_jax_review/upstream/demo/web/web_engine_parity_ref.py",
+      "git_blob_sha1": "80a25da4b082d66e07a1e79302943ec03cb052e2",
+      "sha256": "1fd6a6417a4eb52c0bdd89d3f3692d4e733d3c964402fdf1e6543263f4d50d35",
+      "bytes": 3902
+    },
+    {
+      "repository_path": "docs/ARCHITECTURE.md",
+      "local_path": "data/references/alpharm_jax_review/upstream/docs/ARCHITECTURE.md",
+      "git_blob_sha1": "b00cc1af0c30b7e716094033d5902568ccc0ebe9",
+      "sha256": "9f57d7b1502ce5d26853762bce145d4edcbd19fe5c47dddc71f1c15db3fcf5f9",
+      "bytes": 6522
+    },
+    {
+      "repository_path": "docs/AUX_LOSS.md",
+      "local_path": "data/references/alpharm_jax_review/upstream/docs/AUX_LOSS.md",
+      "git_blob_sha1": "43c738d7751b195e9a0d1711325c6e43f91b2f5a",
+      "sha256": "001393e013b3175c352dd8bccbe9a7d0f1cc06ecf48d1f9619efdbbb56fa4fbf",
+      "bytes": 5491
+    },
+    {
+      "repository_path": "docs/RULES.md",
+      "local_path": "data/references/alpharm_jax_review/upstream/docs/RULES.md",
+      "git_blob_sha1": "e0742cbcbe8a8d4e98f025e27d3dc14d1127b961",
+      "sha256": "c9e45460b0c7ac49bbfd59d2fa68542d7e2bb476446f02d3aa7ce9162a62b405",
+      "bytes": 133909
+    },
+    {
+      "repository_path": "docs/TRAINING_AND_EVALUATION.md",
+      "local_path": "data/references/alpharm_jax_review/upstream/docs/TRAINING_AND_EVALUATION.md",
+      "git_blob_sha1": "0d11a5fcfaa12f0e09d14111add88aff4c073646",
+      "sha256": "568194ec63ff685dfb03c2f087460bac987f17cbaa8c0baa108d268e7c67454f",
+      "bytes": 5345
+    },
+    {
+      "repository_path": "human_jax_server.py",
+      "local_path": "data/references/alpharm_jax_review/upstream/human_jax_server.py",
+      "git_blob_sha1": "e3fb3d8dd9f3da93034ae068560ce934f8f907c2",
+      "sha256": "7ae1692d4dfc1c67cad9416207328ad3de7ffe7722bb447cfd6754243956e2bd",
+      "bytes": 19202
+    },
+    {
+      "repository_path": "jaxmarl/environments/rm/actor.py",
+      "local_path": "data/references/alpharm_jax_review/upstream/jaxmarl/environments/rm/actor.py",
+      "git_blob_sha1": "e1782365f7a29a60c8c2d731a49b4b9f789952a2",
+      "sha256": "9fcaf019a3a716cc647e5c392f606b36fd28df5cb34e5daef9469e15bd77abd3",
+      "bytes": 14520
+    },
+    {
+      "repository_path": "jaxmarl/environments/rm/auxiliary.py",
+      "local_path": "data/references/alpharm_jax_review/upstream/jaxmarl/environments/rm/auxiliary.py",
+      "git_blob_sha1": "bb90ea154eed9b51ebe180d4bc0f4ccda131bf03",
+      "sha256": "a0cdd697a89d97d90620763dc9e6f9844ae91fce64cd93eb5e6f04bc14df2aa9",
+      "bytes": 24385
+    },
+    {
+      "repository_path": "jaxmarl/environments/rm/config.py",
+      "local_path": "data/references/alpharm_jax_review/upstream/jaxmarl/environments/rm/config.py",
+      "git_blob_sha1": "b53dc4efee18cddef01a242db653c93e619584b9",
+      "sha256": "3fedcd44e5cec0d3429b7ebfb367e2acab9c5b18abcec978eaae559ebfbf8fe6",
+      "bytes": 7449
+    },
+    {
+      "repository_path": "jaxmarl/environments/rm/critic.py",
+      "local_path": "data/references/alpharm_jax_review/upstream/jaxmarl/environments/rm/critic.py",
+      "git_blob_sha1": "9250ea26bee2da49b8130e737b703696c8faf6a8",
+      "sha256": "c6279691efc0d7e6cfe9fa043a9c788910484b1f4af39131595ec1bedbfae513",
+      "bytes": 4710
+    },
+    {
+      "repository_path": "jaxmarl/environments/rm/env.py",
+      "local_path": "data/references/alpharm_jax_review/upstream/jaxmarl/environments/rm/env.py",
+      "git_blob_sha1": "206ca02b18bbfe2d48d1bb2327ccf1bad25024d6",
+      "sha256": "dd80cc785cd1f60b97f2e0d11268bcfc9cf06088ea9ab878ba52e9c4f7cfac09",
+      "bytes": 92951
+    },
+    {
+      "repository_path": "liveview/README.md",
+      "local_path": "data/references/alpharm_jax_review/upstream/liveview/README.md",
+      "git_blob_sha1": "c11fb0d048840c831f9667603335bd3e60521589",
+      "sha256": "1fb2b60f22e29dda96318ed161959647e919c296312ad891a5b867faad5a241b",
+      "bytes": 1573
+    },
+    {
+      "repository_path": "pyproject.toml",
+      "local_path": "data/references/alpharm_jax_review/upstream/pyproject.toml",
+      "git_blob_sha1": "99f39c417fa5242926c264e0393d2b605e9db410",
+      "sha256": "e64f8df11344851cef540d8bdbc7688b39a459646046b187c4d59c301f3c884a",
+      "bytes": 3186
+    }
+  ]
+}

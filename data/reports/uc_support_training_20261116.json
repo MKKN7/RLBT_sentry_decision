@@ -1,0 +1,725 @@
+{
+  "artifact_type": "UC_local_observed_support_multistage_training_not_match",
+  "date": "2026-11-16",
+  "run": "runs/uc_support_multistage_32768_20261116",
+  "scenario_id": "uc2027_observed_support_multistage_v1",
+  "dataset": "data/derived/uc_support_training_v1/manifest.json",
+  "schedule": "configs/uc_support_training_schedule_v1.json",
+  "training": {
+    "ppo_decisions": 65536,
+    "bt_imitation_decisions": 2048,
+    "completed_training_episodes": 2110,
+    "updates": 256,
+    "training_wall_s": 146.03049409179948
+  },
+  "round1_validation": {
+    "untrainedRL": {
+      "successes": 0,
+      "episodes": 32,
+      "task_success_rate": 0.0,
+      "mean_return": -5.334654472108788,
+      "mean_steps": 120.0,
+      "mean_time_s": 60.0,
+      "mean_BT_veto_count": 0.0,
+      "mean_recoveries": 0.0,
+      "mean_score_100": 10.0,
+      "score_100_p10_p50_p90": [
+        10.0,
+        10.0,
+        10.0
+      ],
+      "mean_score_components": {
+        "task_progress": 0.0,
+        "time_efficiency": 0.0,
+        "recovery_discipline": 0.0,
+        "safety": 10.0
+      },
+      "by_scenario": {
+        "delayed_acceptance": {
+          "n": 8,
+          "successes": 0,
+          "mean_score_100": 10.0
+        },
+        "executor_stall": {
+          "n": 7,
+          "successes": 0,
+          "mean_score_100": 10.0
+        },
+        "nominal": {
+          "n": 9,
+          "successes": 0,
+          "mean_score_100": 10.0
+        },
+        "support_gap": {
+          "n": 8,
+          "successes": 0,
+          "mean_score_100": 10.0
+        }
+      },
+      "navigation_only": {
+        "episodes": 32,
+        "successes": 0
+      },
+      "wait_only": {
+        "episodes": 0,
+        "successes": 0
+      }
+    },
+    "postBC_RL": {
+      "successes": 32,
+      "episodes": 32,
+      "task_success_rate": 1.0,
+      "mean_return": 9.463966510398059,
+      "mean_steps": 48.5,
+      "mean_time_s": 24.25,
+      "mean_BT_veto_count": 0.0,
+      "mean_recoveries": 0.0,
+      "mean_score_100": 93.08517605846242,
+      "score_100_p10_p50_p90": [
+        90.02636115910994,
+        93.00579466406029,
+        96.92224784874443
+      ],
+      "mean_score_components": {
+        "task_progress": 60.0,
+        "time_efficiency": 13.085176058462416,
+        "recovery_discipline": 10.0,
+        "safety": 10.0
+      },
+      "by_scenario": {
+        "delayed_acceptance": {
+          "n": 8,
+          "successes": 8,
+          "mean_score_100": 92.7264390662306
+        },
+        "executor_stall": {
+          "n": 7,
+          "successes": 7,
+          "mean_score_100": 92.25419625406225
+        },
+        "nominal": {
+          "n": 9,
+          "successes": 9,
+          "mean_score_100": 94.79844735120008
+        },
+        "support_gap": {
+          "n": 8,
+          "successes": 8,
+          "mean_score_100": 92.24359017521452
+        }
+      },
+      "navigation_only": {
+        "episodes": 32,
+        "successes": 32
+      },
+      "wait_only": {
+        "episodes": 0,
+        "successes": 0
+      }
+    },
+    "finalPPO_RL": {
+      "successes": 32,
+      "episodes": 32,
+      "task_success_rate": 1.0,
+      "mean_return": 9.463966510398059,
+      "mean_steps": 48.5,
+      "mean_time_s": 24.25,
+      "mean_BT_veto_count": 0.0,
+      "mean_recoveries": 0.0,
+      "mean_score_100": 93.08517605846242,
+      "score_100_p10_p50_p90": [
+        90.02636115910994,
+        93.00579466406029,
+        96.92224784874443
+      ],
+      "mean_score_components": {
+        "task_progress": 60.0,
+        "time_efficiency": 13.085176058462416,
+        "recovery_discipline": 10.0,
+        "safety": 10.0
+      },
+      "by_scenario": {
+        "delayed_acceptance": {
+          "n": 8,
+          "successes": 8,
+          "mean_score_100": 92.7264390662306
+        },
+        "executor_stall": {
+          "n": 7,
+          "successes": 7,
+          "mean_score_100": 92.25419625406225
+        },
+        "nominal": {
+          "n": 9,
+          "successes": 9,
+          "mean_score_100": 94.79844735120008
+        },
+        "support_gap": {
+          "n": 8,
+          "successes": 8,
+          "mean_score_100": 92.24359017521452
+        }
+      },
+      "navigation_only": {
+        "episodes": 32,
+        "successes": 32
+      },
+      "wait_only": {
+        "episodes": 0,
+        "successes": 0
+      }
+    },
+    "BT": {
+      "successes": 32,
+      "episodes": 32,
+      "task_success_rate": 1.0,
+      "mean_return": 9.463068934241994,
+      "mean_steps": 48.1875,
+      "mean_time_s": 24.09375,
+      "mean_BT_veto_count": 0.0,
+      "mean_recoveries": 0.21875,
+      "mean_score_100": 93.20000301472804,
+      "score_100_p10_p50_p90": [
+        90.59526180919222,
+        92.91965723662626,
+        96.97173807563087
+      ],
+      "mean_score_components": {
+        "task_progress": 60.0,
+        "time_efficiency": 13.200003014728033,
+        "recovery_discipline": 10.0,
+        "safety": 10.0
+      },
+      "by_scenario": {
+        "delayed_acceptance": {
+          "n": 8,
+          "successes": 8,
+          "mean_score_100": 92.7264390662306
+        },
+        "executor_stall": {
+          "n": 7,
+          "successes": 7,
+          "mean_score_100": 92.77911948270507
+        },
+        "nominal": {
+          "n": 9,
+          "successes": 9,
+          "mean_score_100": 94.79844735120008
+        },
+        "support_gap": {
+          "n": 8,
+          "successes": 8,
+          "mean_score_100": 92.24359017521452
+        }
+      },
+      "navigation_only": {
+        "episodes": 32,
+        "successes": 32
+      },
+      "wait_only": {
+        "episodes": 0,
+        "successes": 0
+      }
+    }
+  },
+  "round2_validation": {
+    "untrainedRL": {
+      "successes": 0,
+      "episodes": 32,
+      "task_success_rate": 0.0,
+      "mean_return": -5.334654472108788,
+      "mean_steps": 120.0,
+      "mean_time_s": 60.0,
+      "mean_BT_veto_count": 0.0,
+      "mean_recoveries": 0.0,
+      "mean_score_100": 10.0,
+      "score_100_p10_p50_p90": [
+        10.0,
+        10.0,
+        10.0
+      ],
+      "mean_score_components": {
+        "task_progress": 0.0,
+        "time_efficiency": 0.0,
+        "recovery_discipline": 0.0,
+        "safety": 10.0
+      },
+      "by_scenario": {
+        "delayed_acceptance": {
+          "n": 8,
+          "successes": 0,
+          "mean_score_100": 10.0
+        },
+        "executor_stall": {
+          "n": 7,
+          "successes": 0,
+          "mean_score_100": 10.0
+        },
+        "nominal": {
+          "n": 9,
+          "successes": 0,
+          "mean_score_100": 10.0
+        },
+        "support_gap": {
+          "n": 8,
+          "successes": 0,
+          "mean_score_100": 10.0
+        }
+      },
+      "navigation_only": {
+        "episodes": 32,
+        "successes": 0
+      },
+      "wait_only": {
+        "episodes": 0,
+        "successes": 0
+      }
+    },
+    "postBC_RL": {
+      "successes": 32,
+      "episodes": 32,
+      "task_success_rate": 1.0,
+      "mean_return": 9.463966510398059,
+      "mean_steps": 48.5,
+      "mean_time_s": 24.25,
+      "mean_BT_veto_count": 0.0,
+      "mean_recoveries": 0.0,
+      "mean_score_100": 93.08517605846242,
+      "score_100_p10_p50_p90": [
+        90.02636115910994,
+        93.00579466406029,
+        96.92224784874443
+      ],
+      "mean_score_components": {
+        "task_progress": 60.0,
+        "time_efficiency": 13.085176058462416,
+        "recovery_discipline": 10.0,
+        "safety": 10.0
+      },
+      "by_scenario": {
+        "delayed_acceptance": {
+          "n": 8,
+          "successes": 8,
+          "mean_score_100": 92.7264390662306
+        },
+        "executor_stall": {
+          "n": 7,
+          "successes": 7,
+          "mean_score_100": 92.25419625406225
+        },
+        "nominal": {
+          "n": 9,
+          "successes": 9,
+          "mean_score_100": 94.79844735120008
+        },
+        "support_gap": {
+          "n": 8,
+          "successes": 8,
+          "mean_score_100": 92.24359017521452
+        }
+      },
+      "navigation_only": {
+        "episodes": 32,
+        "successes": 32
+      },
+      "wait_only": {
+        "episodes": 0,
+        "successes": 0
+      }
+    },
+    "finalPPO_RL": {
+      "successes": 30,
+      "episodes": 32,
+      "task_success_rate": 0.9375,
+      "mean_return": 9.05570099179052,
+      "mean_steps": 50.03125,
+      "mean_time_s": 25.015625,
+      "mean_BT_veto_count": 0.0,
+      "mean_recoveries": 0.0,
+      "mean_score_100": 91.41088865292386,
+      "score_100_p10_p50_p90": [
+        89.72675464080493,
+        92.66119059821747,
+        96.92224784874443
+      ],
+      "mean_score_components": {
+        "task_progress": 58.875,
+        "time_efficiency": 12.723388652923859,
+        "recovery_discipline": 9.8125,
+        "safety": 10.0
+      },
+      "by_scenario": {
+        "delayed_acceptance": {
+          "n": 8,
+          "successes": 8,
+          "mean_score_100": 92.7264390662306
+        },
+        "executor_stall": {
+          "n": 7,
+          "successes": 7,
+          "mean_score_100": 92.25419625406225
+        },
+        "nominal": {
+          "n": 9,
+          "successes": 8,
+          "mean_score_100": 90.98878630034523
+        },
+        "support_gap": {
+          "n": 8,
+          "successes": 7,
+          "mean_score_100": 89.83230923527199
+        }
+      },
+      "navigation_only": {
+        "episodes": 32,
+        "successes": 30
+      },
+      "wait_only": {
+        "episodes": 0,
+        "successes": 0
+      }
+    },
+    "BT": {
+      "successes": 32,
+      "episodes": 32,
+      "task_success_rate": 1.0,
+      "mean_return": 9.463068934241994,
+      "mean_steps": 48.1875,
+      "mean_time_s": 24.09375,
+      "mean_BT_veto_count": 0.0,
+      "mean_recoveries": 0.21875,
+      "mean_score_100": 93.20000301472804,
+      "score_100_p10_p50_p90": [
+        90.59526180919222,
+        92.91965723662626,
+        96.97173807563087
+      ],
+      "mean_score_components": {
+        "task_progress": 60.0,
+        "time_efficiency": 13.200003014728033,
+        "recovery_discipline": 10.0,
+        "safety": 10.0
+      },
+      "by_scenario": {
+        "delayed_acceptance": {
+          "n": 8,
+          "successes": 8,
+          "mean_score_100": 92.7264390662306
+        },
+        "executor_stall": {
+          "n": 7,
+          "successes": 7,
+          "mean_score_100": 92.77911948270507
+        },
+        "nominal": {
+          "n": 9,
+          "successes": 9,
+          "mean_score_100": 94.79844735120008
+        },
+        "support_gap": {
+          "n": 8,
+          "successes": 8,
+          "mean_score_100": 92.24359017521452
+        }
+      },
+      "navigation_only": {
+        "episodes": 32,
+        "successes": 32
+      },
+      "wait_only": {
+        "episodes": 0,
+        "successes": 0
+      }
+    }
+  },
+  "heldout_test": {
+    "untrainedRL": {
+      "successes": 0,
+      "episodes": 64,
+      "task_success_rate": 0.0,
+      "mean_return": -4.8103472741271265,
+      "mean_steps": 120.0,
+      "mean_time_s": 60.0,
+      "mean_BT_veto_count": 0.0,
+      "mean_recoveries": 0.0,
+      "mean_score_100": 10.0,
+      "score_100_p10_p50_p90": [
+        10.0,
+        10.0,
+        10.0
+      ],
+      "mean_score_components": {
+        "task_progress": 0.0,
+        "time_efficiency": 0.0,
+        "recovery_discipline": 0.0,
+        "safety": 10.0
+      },
+      "by_scenario": {
+        "delayed_acceptance": {
+          "n": 18,
+          "successes": 0,
+          "mean_score_100": 10.0
+        },
+        "executor_stall": {
+          "n": 16,
+          "successes": 0,
+          "mean_score_100": 10.0
+        },
+        "nominal": {
+          "n": 20,
+          "successes": 0,
+          "mean_score_100": 10.0
+        },
+        "support_gap": {
+          "n": 10,
+          "successes": 0,
+          "mean_score_100": 10.0
+        }
+      },
+      "navigation_only": {
+        "episodes": 64,
+        "successes": 0
+      },
+      "wait_only": {
+        "episodes": 0,
+        "successes": 0
+      }
+    },
+    "postBC_RL": {
+      "successes": 64,
+      "episodes": 64,
+      "task_success_rate": 1.0,
+      "mean_return": 8.624412825970106,
+      "mean_steps": 34.09375,
+      "mean_time_s": 17.046875,
+      "mean_BT_veto_count": 0.0,
+      "mean_recoveries": 0.0,
+      "mean_score_100": 93.34024413850868,
+      "score_100_p10_p50_p90": [
+        89.76754724693522,
+        92.8008001177891,
+        97.23007284539804
+      ],
+      "mean_score_components": {
+        "task_progress": 60.0,
+        "time_efficiency": 13.340244138508684,
+        "recovery_discipline": 10.0,
+        "safety": 10.0
+      },
+      "by_scenario": {
+        "delayed_acceptance": {
+          "n": 18,
+          "successes": 18,
+          "mean_score_100": 93.23641237679725
+        },
+        "executor_stall": {
+          "n": 16,
+          "successes": 16,
+          "mean_score_100": 91.18916023174194
+        },
+        "nominal": {
+          "n": 20,
+          "successes": 20,
+          "mean_score_100": 95.97039898389156
+        },
+        "support_gap": {
+          "n": 10,
+          "successes": 10,
+          "mean_score_100": 91.7085658696503
+        }
+      },
+      "navigation_only": {
+        "episodes": 64,
+        "successes": 64
+      },
+      "wait_only": {
+        "episodes": 0,
+        "successes": 0
+      }
+    },
+    "finalPPO_RL": {
+      "successes": 64,
+      "episodes": 64,
+      "task_success_rate": 1.0,
+      "mean_return": 8.624412825970106,
+      "mean_steps": 34.09375,
+      "mean_time_s": 17.046875,
+      "mean_BT_veto_count": 0.0,
+      "mean_recoveries": 0.0,
+      "mean_score_100": 93.34024413850868,
+      "score_100_p10_p50_p90": [
+        89.76754724693522,
+        92.8008001177891,
+        97.23007284539804
+      ],
+      "mean_score_components": {
+        "task_progress": 60.0,
+        "time_efficiency": 13.340244138508684,
+        "recovery_discipline": 10.0,
+        "safety": 10.0
+      },
+      "by_scenario": {
+        "delayed_acceptance": {
+          "n": 18,
+          "successes": 18,
+          "mean_score_100": 93.23641237679725
+        },
+        "executor_stall": {
+          "n": 16,
+          "successes": 16,
+          "mean_score_100": 91.18916023174194
+        },
+        "nominal": {
+          "n": 20,
+          "successes": 20,
+          "mean_score_100": 95.97039898389156
+        },
+        "support_gap": {
+          "n": 10,
+          "successes": 10,
+          "mean_score_100": 91.7085658696503
+        }
+      },
+      "navigation_only": {
+        "episodes": 64,
+        "successes": 64
+      },
+      "wait_only": {
+        "episodes": 0,
+        "successes": 0
+      }
+    },
+    "BT": {
+      "successes": 64,
+      "episodes": 64,
+      "task_success_rate": 1.0,
+      "mean_return": 8.626093648571018,
+      "mean_steps": 33.5,
+      "mean_time_s": 16.75,
+      "mean_BT_veto_count": 0.0,
+      "mean_recoveries": 0.25,
+      "mean_score_100": 93.63439183458924,
+      "score_100_p10_p50_p90": [
+        89.83794721606603,
+        93.09651323140054,
+        97.23007284539804
+      ],
+      "mean_score_components": {
+        "task_progress": 60.0,
+        "time_efficiency": 13.634391834589238,
+        "recovery_discipline": 10.0,
+        "safety": 10.0
+      },
+      "by_scenario": {
+        "delayed_acceptance": {
+          "n": 18,
+          "successes": 18,
+          "mean_score_100": 93.23641237679725
+        },
+        "executor_stall": {
+          "n": 16,
+          "successes": 16,
+          "mean_score_100": 92.36575101606417
+        },
+        "nominal": {
+          "n": 20,
+          "successes": 20,
+          "mean_score_100": 95.97039898389156
+        },
+        "support_gap": {
+          "n": 10,
+          "successes": 10,
+          "mean_score_100": 91.7085658696503
+        }
+      },
+      "navigation_only": {
+        "episodes": 64,
+        "successes": 64
+      },
+      "wait_only": {
+        "episodes": 0,
+        "successes": 0
+      }
+    }
+  },
+  "paired_round_difference": {
+    "available": true,
+    "method": "Pair final PPO episodes by seed and source run, with identical recorded scenario and parameter values; do not infer pairing from aggregate means.",
+    "episodes": 32,
+    "mean_score_delta": -1.6742874055385575,
+    "mean_time_delta_s": 0.765625,
+    "success_count_delta": -2,
+    "positive": 0,
+    "negative": 2,
+    "tied": 30
+  },
+  "test_paired_score_differences": {
+    "finalPPO_minus_postBC_RL": {
+      "mean_score_delta": 0.0,
+      "positive": 0,
+      "negative": 0,
+      "tied": 64
+    },
+    "finalPPO_minus_BT": {
+      "mean_score_delta": -0.29414769608055513,
+      "positive": 3,
+      "negative": 13,
+      "tied": 48
+    }
+  },
+  "export": {
+    "scenario_id": "uc2027_observed_support_multistage_v1",
+    "artifact_type": "UC_support_course_actor_CPU_export_check",
+    "checkpoint_sha256": "f1b095e1e947db74314e83c12d234be9ca4d7f52502902729503ba302b0c0da7",
+    "onnx_sha256": "260dc96b9694e9893ee5267b41a3c0803202fae41f37a73e942784aa4abff0f5",
+    "onnx_bytes": 53598,
+    "actor_parameters": 12449,
+    "critic_exported": false,
+    "random_batches_checked": 100,
+    "max_abs_logit_error": 5.7220458984375e-06,
+    "argmax_and_masks_match": true,
+    "CPU_provider": [
+      "CPUExecutionProvider"
+    ],
+    "warm_latency_samples": 500,
+    "workstation_latency_ms_p50_p95_p99": [
+      0.011797,
+      0.0189894,
+      0.020367049999999998
+    ],
+    "NUC_hardware_benchmarked": false,
+    "live_BT_ROS_adapter_connected": false,
+    "metric_is_match_win_rate": false
+  },
+  "verification": {
+    "status": "PASS_for_recorded_local_course_scope",
+    "regression_tests": {
+      "passed": 229,
+      "log": ".work/pytest_uc_training_full.log"
+    },
+    "source_snapshot_matches_current": true,
+    "dataset_hashes_match": true,
+    "round1_and_round2_preserved": true,
+    "checkpoint_exact_resume_unit_test": true,
+    "actual_environment_snapshot_stream_test": true,
+    "PPO_gain_demonstrated": false,
+    "formal_match_training": false,
+    "Nav2_MPPI_in_training_loop": false,
+    "NUC_hardware_benchmarked": false,
+    "final_checkpoint_sha256": "f1b095e1e947db74314e83c12d234be9ca4d7f52502902729503ba302b0c0da7",
+    "test_evaluation_sha256": "8aeaf25b7a7d4833eed086cb7c2ba12e234aee958c58a1e56cf54a6d6bdfac6a",
+    "export_verification_sha256": "8170cafbdb8bfd3fde64923c448238b29cf1783a8e8a54f23dc0006375c9eb0d"
+  },
+  "failure_traces": "runs/uc_support_multistage_32768_20261116/validation_failure_traces.json",
+  "document": "docs/20_uc_support_training.md",
+  "PPO_gain_demonstrated": false,
+  "permission_expansion": false,
+  "actual_training_navigation": "calibrated_execution_proxy_not_PointLIO_Nav2_MPPI",
+  "limits": [
+    "Only local observations around one engineering spawn; no geometric or match generalization claim.",
+    "Maps are frozen replay snapshots; executor timing proxy is calibrated from separate actual events.",
+    "Matched estimated current poses may be unsupported. Such conditions are retained; explicit fixed-start resets are labeled.",
+    "No base healing, money, ammo, posture, target shooting, or opponent policy is modeled by this dataset.",
+    "Held-out families and seeds reduce snapshot leakage but share the same local geometry."
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "scenario_id": "uc2027_observed_support_multistage_v1",
+  "declared_before_first_validation": true,
+  "rounds_cumulative_ppo_decisions": [32768, 65536],
+  "bt_imitation_decisions_once": 2048,
+  "training_seed": 271,
+  "validation_seed_range_inclusive": [85001, 85032],
+  "final_test_seed_range_inclusive": [95001, 95064],
+  "checkpoint_selection": "fixed_final_65536_no_selection_using_test",
+  "round_comparison": "same source split, same seeds, same exogenous schedules, same BT gate and execution proxy",
+  "score_100": {
+    "task_progress": 60,
+    "time_efficiency": 20,
+    "recovery_discipline": 10,
+    "proxy_safety": 10
+  },
+  "scope": "2 to 5 ordered local navigation stages, frozen observed UC maps and calibrated execution proxy; not complete RMUC matches or live Nav2 training",
+  "limits": [
+    "Source snapshots share one engineering spawn neighborhood.",
+    "No economy, posture, combat, aiming, firing, opponents or official region registration.",
+    "Support/latency/stall randomization ranges are engineering assumptions, not measured probability estimates.",
+    "Successful safe waiting is reported separately from navigation success."
+  ]
+}

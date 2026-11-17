@@ -1,0 +1,511 @@
+{
+  "scope": "Read-only saved registered-return/geometry audit, no ROS or simulation launch. Raw prefilter returns unavailable.",
+  "failed_global_voxel_columns": [
+    [
+      -4,
+      -1
+    ],
+    [
+      -4,
+      0
+    ]
+  ],
+  "saved_samples": [
+    {
+      "episode": 0,
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_bt_demonstrations_r2_20261117/sessions/episode_000/episode_000/execution/fixture/terrain_sample_0001.npz",
+      "sha256": "a7b0aa2ade26ab9e6cbb61082ed872b47fa11d31061f655ca0a05b2fb645d85f",
+      "note": "observed_xyz is ALREADY fixture-filtered registered input; per-point timestamps and source IDs not retained",
+      "point_count": 11419,
+      "estimated_pose_xyzyaw": [
+        -0.051259586613840086,
+        -0.04563078619164246,
+        -0.07263644571812239,
+        -0.013697803855765769
+      ],
+      "minimum_retained_range_from_last_batch_pose_m": 0.4500624495610754,
+      "posterior_central_strip_points": 13,
+      "posterior_strip_min_x_m": -2.6758916725989144,
+      "failed_column_counts": [
+        {
+          "global_voxel_xy": [
+            -4,
+            -1
+          ],
+          "post_fixture_observation_count": 0,
+          "observed_support_layer_count": 0
+        },
+        {
+          "global_voxel_xy": [
+            -4,
+            0
+          ],
+          "post_fixture_observation_count": 0,
+          "observed_support_layer_count": 0
+        }
+      ]
+    },
+    {
+      "episode": 0,
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_bt_demonstrations_r2_20261117/sessions/episode_000/episode_000/execution/fixture/terrain_sample_0010.npz",
+      "sha256": "f3e032de2448d6d244b94f5673060e80e3f88505f1c925764e047194ed20c983",
+      "note": "observed_xyz is ALREADY fixture-filtered registered input; per-point timestamps and source IDs not retained",
+      "point_count": 91331,
+      "estimated_pose_xyzyaw": [
+        -0.04857675132666463,
+        0.040208553399085634,
+        -0.06418426691819565,
+        0.00525610875490158
+      ],
+      "minimum_retained_range_from_last_batch_pose_m": 0.4519515110667037,
+      "posterior_central_strip_points": 91,
+      "posterior_strip_min_x_m": -2.426890990143844,
+      "failed_column_counts": [
+        {
+          "global_voxel_xy": [
+            -4,
+            -1
+          ],
+          "post_fixture_observation_count": 0,
+          "observed_support_layer_count": 0
+        },
+        {
+          "global_voxel_xy": [
+            -4,
+            0
+          ],
+          "post_fixture_observation_count": 0,
+          "observed_support_layer_count": 0
+        }
+      ]
+    },
+    {
+      "episode": 1,
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_bt_demonstrations_r2_20261117/sessions/episode_001/episode_000/execution/fixture/terrain_sample_0001.npz",
+      "sha256": "d56ed6588596a950dbae0139506a5001f0f2cb3f7f944ef600129eb165e27833",
+      "note": "observed_xyz is ALREADY fixture-filtered registered input; per-point timestamps and source IDs not retained",
+      "point_count": 11474,
+      "estimated_pose_xyzyaw": [
+        -0.04669821017539444,
+        -0.02307925452135151,
+        -0.06675695357140654,
+        -0.005712802592162108
+      ],
+      "minimum_retained_range_from_last_batch_pose_m": 0.4527395061398038,
+      "posterior_central_strip_points": 14,
+      "posterior_strip_min_x_m": -2.7088106527930003,
+      "failed_column_counts": [
+        {
+          "global_voxel_xy": [
+            -4,
+            -1
+          ],
+          "post_fixture_observation_count": 0,
+          "observed_support_layer_count": 0
+        },
+        {
+          "global_voxel_xy": [
+            -4,
+            0
+          ],
+          "post_fixture_observation_count": 0,
+          "observed_support_layer_count": 0
+        }
+      ]
+    },
+    {
+      "episode": 1,
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_bt_demonstrations_r2_20261117/sessions/episode_001/episode_000/execution/fixture/terrain_sample_0010.npz",
+      "sha256": "313e5f76cdbd5b29a6793ef1ed598f8316ba5e1c1c55eaf71e8eecafea2a05cf",
+      "note": "observed_xyz is ALREADY fixture-filtered registered input; per-point timestamps and source IDs not retained",
+      "point_count": 91358,
+      "estimated_pose_xyzyaw": [
+        -0.042932452636430585,
+        0.037112091139728215,
+        -0.0639149450344576,
+        0.006429006352332194
+      ],
+      "minimum_retained_range_from_last_batch_pose_m": 0.4506765542947467,
+      "posterior_central_strip_points": 88,
+      "posterior_strip_min_x_m": -2.347107548036255,
+      "failed_column_counts": [
+        {
+          "global_voxel_xy": [
+            -4,
+            -1
+          ],
+          "post_fixture_observation_count": 0,
+          "observed_support_layer_count": 0
+        },
+        {
+          "global_voxel_xy": [
+            -4,
+            0
+          ],
+          "post_fixture_observation_count": 0,
+          "observed_support_layer_count": 0
+        }
+      ]
+    },
+    {
+      "episode": 2,
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_bt_demonstrations_r2_20261117/sessions/episode_002/episode_000/execution/fixture/terrain_sample_0001.npz",
+      "sha256": "63028f1cddd918d36bc0489ba9096c261289d7666d319a658d42cf5c137dfd3c",
+      "note": "observed_xyz is ALREADY fixture-filtered registered input; per-point timestamps and source IDs not retained",
+      "point_count": 11454,
+      "estimated_pose_xyzyaw": [
+        -0.06054229488348467,
+        -0.028133001529356605,
+        -0.06474365285670272,
+        -0.006209484929021566
+      ],
+      "minimum_retained_range_from_last_batch_pose_m": 0.45394102651499185,
+      "posterior_central_strip_points": 12,
+      "posterior_strip_min_x_m": -2.768803517092301,
+      "failed_column_counts": [
+        {
+          "global_voxel_xy": [
+            -4,
+            -1
+          ],
+          "post_fixture_observation_count": 0,
+          "observed_support_layer_count": 0
+        },
+        {
+          "global_voxel_xy": [
+            -4,
+            0
+          ],
+          "post_fixture_observation_count": 0,
+          "observed_support_layer_count": 0
+        }
+      ]
+    },
+    {
+      "episode": 2,
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_bt_demonstrations_r2_20261117/sessions/episode_002/episode_000/execution/fixture/terrain_sample_0010.npz",
+      "sha256": "d8bfccba101161f5623b84b3b4d7fe00e2681f3e4a03ddef5fc51394737ae5bd",
+      "note": "observed_xyz is ALREADY fixture-filtered registered input; per-point timestamps and source IDs not retained",
+      "point_count": 91352,
+      "estimated_pose_xyzyaw": [
+        -0.04468128897670963,
+        0.03729591186733916,
+        -0.06462498141464265,
+        0.00621962967687546
+      ],
+      "minimum_retained_range_from_last_batch_pose_m": 0.45109782460996595,
+      "posterior_central_strip_points": 87,
+      "posterior_strip_min_x_m": -2.347107548036255,
+      "failed_column_counts": [
+        {
+          "global_voxel_xy": [
+            -4,
+            -1
+          ],
+          "post_fixture_observation_count": 0,
+          "observed_support_layer_count": 0
+        },
+        {
+          "global_voxel_xy": [
+            -4,
+            0
+          ],
+          "post_fixture_observation_count": 0,
+          "observed_support_layer_count": 0
+        }
+      ]
+    },
+    {
+      "episode": 3,
+      "path": "/home/kellen/\u684c\u9762/RL_BT_decision/runs/uc_live_bt_demonstrations_r2_20261117/sessions/episode_003/episode_000/execution/fixture/terrain_sample_0001.npz",
+      "sha256": "bd1a63931c3a7384354a214d49f92d7c7c5bd69fdd1ed6f8bbdcbae83a98bf73",
+      "note": "observed_xyz is ALREADY fixture-filtered registered input; per-point timestamps and source IDs not retained",
+      "point_count": 11450,
+      "estimated_pose_xyzyaw": [
+        -0.05520012544377821,
+        -0.012579731549354267,
+        -0.03551718087462327,
+        -0.005854045964576799
+      ],
+      "minimum_retained_range_from_last_batch_pose_m": 0.45102972721146056,
+      "posterior_central_strip_points": 14,
+      "posterior_strip_min_x_m": -2.7052410729322935,
+      "failed_column_counts": [
+        {
+          "global_voxel_xy": [
+            -4,
+            -1
+          ],
+          "post_fixture_observation_count": 0,
+          "observed_support_layer_count": 0
+        },
+        {
+          "global_voxel_xy": [
+            -4,
+            0
+          ],
+          "post_fixture_observation_count": 0,
+          "observed_support_layer_count": 0
+        }
+      ]
+    }
+  ],
+  "original_robot_xy_envelope_derived": {
+    "outer_x_m": 0.266,
+    "outer_y_m": 0.22260000000000002,
+    "outer_corner_radius_m": 0.3468526488294417,
+    "self_exclusion_radius_m": 0.45,
+    "note": "Model local XY envelope; no hardware margin or perception-mask certification implied."
+  },
+  "sources_sha256": {
+    "rl_bt/voxel_terrain.py": "7e30160046bd491b483f35d088867d340f919376e27ab3bdb30b0850741fd343",
+    "rl_bt/scan_registration.py": "a36fa9d04f59e26e7087cdfe77e8659decf744fc92eeb1af65d8fcb5881adf52",
+    "scripts/nav2_mujoco_fixture.py": "dbd49b43e2d0005ceda895b9eaa5b13d7d4d052eaf4c6cad64541489d464549a",
+    "rl_bt/terrain_worker.py": "33d0ab46544051bb9f4581f93536f3eeeba4aea44b99b22768be8fefba4078eb"
+  },
+  "unavailable": [
+    "Pre-.45m-filter raw registered point clouds",
+    "Per-point source and timestamp within saved observed_xyz",
+    "Exact voxel-map memory/layer walkable rejection diagnostics at ready sample",
+    "Attitude history complete quaternions in the fixture result (saved estimate only has XYZ/yaw)"
+  ],
+  "exact_first_scan_replays": [
+    {
+      "episode": 0,
+      "replay_scope": "exact saved first post-fixture scan and pose; use original consumed time, which remains inside acceptance TTL",
+      "update_status": "accepted",
+      "cells": [
+        {
+          "global_column_xy": [
+            -4,
+            -1
+          ],
+          "retained_voxel_count": 0,
+          "output_value": -1
+        },
+        {
+          "global_column_xy": [
+            -4,
+            0
+          ],
+          "retained_voxel_count": 0,
+          "output_value": -1
+        }
+      ],
+      "recomputed_counts": {
+        "observed_voxels": 1956,
+        "free_cells": 212,
+        "occupied_cells": 256,
+        "unknown_cells": 6093,
+        "reachable_support_layers": 213
+      },
+      "recorded_counts": {
+        "observed_voxels": 1956,
+        "free_cells": 212,
+        "occupied_cells": 256,
+        "unknown_cells": 6093,
+        "reachable_support_layers": 213
+      },
+      "counts_match": true
+    },
+    {
+      "episode": 1,
+      "replay_scope": "exact saved first post-fixture scan and pose; use original consumed time, which remains inside acceptance TTL",
+      "update_status": "accepted",
+      "cells": [
+        {
+          "global_column_xy": [
+            -4,
+            -1
+          ],
+          "retained_voxel_count": 0,
+          "output_value": -1
+        },
+        {
+          "global_column_xy": [
+            -4,
+            0
+          ],
+          "retained_voxel_count": 0,
+          "output_value": -1
+        }
+      ],
+      "recomputed_counts": {
+        "observed_voxels": 1956,
+        "free_cells": 489,
+        "occupied_cells": 265,
+        "unknown_cells": 5807,
+        "reachable_support_layers": 489
+      },
+      "recorded_counts": {
+        "observed_voxels": 1956,
+        "free_cells": 489,
+        "occupied_cells": 265,
+        "unknown_cells": 5807,
+        "reachable_support_layers": 489
+      },
+      "counts_match": true
+    },
+    {
+      "episode": 2,
+      "replay_scope": "exact saved first post-fixture scan and pose; use original consumed time, which remains inside acceptance TTL",
+      "update_status": "accepted",
+      "cells": [
+        {
+          "global_column_xy": [
+            -4,
+            -1
+          ],
+          "retained_voxel_count": 0,
+          "output_value": -1
+        },
+        {
+          "global_column_xy": [
+            -4,
+            0
+          ],
+          "retained_voxel_count": 0,
+          "output_value": -1
+        }
+      ],
+      "recomputed_counts": {
+        "observed_voxels": 1973,
+        "free_cells": 271,
+        "occupied_cells": 247,
+        "unknown_cells": 6043,
+        "reachable_support_layers": 271
+      },
+      "recorded_counts": {
+        "observed_voxels": 1973,
+        "free_cells": 271,
+        "occupied_cells": 247,
+        "unknown_cells": 6043,
+        "reachable_support_layers": 271
+      },
+      "counts_match": true
+    },
+    {
+      "episode": 3,
+      "replay_scope": "exact saved first post-fixture scan and pose; use original consumed time, which remains inside acceptance TTL",
+      "update_status": "accepted",
+      "cells": [
+        {
+          "global_column_xy": [
+            -4,
+            -1
+          ],
+          "retained_voxel_count": 0,
+          "output_value": -1
+        },
+        {
+          "global_column_xy": [
+            -4,
+            0
+          ],
+          "retained_voxel_count": 0,
+          "output_value": -1
+        }
+      ],
+      "recomputed_counts": {
+        "observed_voxels": 1912,
+        "free_cells": 529,
+        "occupied_cells": 232,
+        "unknown_cells": 5800,
+        "reachable_support_layers": 530
+      },
+      "recorded_counts": {
+        "observed_voxels": 1912,
+        "free_cells": 529,
+        "occupied_cells": 232,
+        "unknown_cells": 5800,
+        "reachable_support_layers": 530
+      },
+      "counts_match": true
+    }
+  ],
+  "original_sensor_pattern": {
+    "path": "/opt/mid360_mujoco/assets/mid360.npy",
+    "sha256": "9fa0165576f0060488254f04bd647a891004d4f4faa6e9b03b69d830c117c9a3",
+    "angles_shape": [
+      800000,
+      2
+    ],
+    "elevation_range_deg": [
+      -7.212296962738037,
+      52.16400146484375
+    ],
+    "code_sha256": {
+      "/opt/mid360_mujoco/src/mid360_mujoco/lidar.py": "f23cd909745badffb919b4a6af1e97d8aac4a970d24e7622a661c7ad208c74af",
+      "/opt/mid360_mujoco/src/mid360_mujoco/rays.py": "3b91a9b462c68ff9a42bd07470beb2a452ff50e2382d6b9232f447549571c99f"
+    }
+  },
+  "analytic_visibility_inference": {
+    "assumptions": [
+      "Original configured rigid mounts x=.16 y=+-.18 z=.218 and roll=+-30deg",
+      "Locally level ground at chassis contact reference",
+      "Estimated ready XY/yaw, no roll/pitch",
+      "This is a visibility bound inference, not an exact reconstruction of unsaved raw LiDAR hits"
+    ],
+    "cell_results": [
+      {
+        "global_column_xy": [
+          -4,
+          -1
+        ],
+        "samples_in_cell": 3721,
+        "sensors": [
+          {
+            "name": "front_mid360",
+            "required_elevation_min_deg": -31.596783679169143,
+            "required_elevation_max_deg": -21.777107307247718,
+            "fraction_in_actual_elevation_envelope": 0.0
+          },
+          {
+            "name": "right_mid360",
+            "required_elevation_min_deg": -26.79564218491488,
+            "required_elevation_max_deg": -16.086273437499766,
+            "fraction_in_actual_elevation_envelope": 0.0
+          }
+        ]
+      },
+      {
+        "global_column_xy": [
+          -4,
+          0
+        ],
+        "samples_in_cell": 3721,
+        "sensors": [
+          {
+            "name": "front_mid360",
+            "required_elevation_min_deg": -26.915420731050073,
+            "required_elevation_max_deg": -16.224482377471535,
+            "fraction_in_actual_elevation_envelope": 0.0
+          },
+          {
+            "name": "right_mid360",
+            "required_elevation_min_deg": -31.488657596319488,
+            "required_elevation_max_deg": -21.646196617126137,
+            "fraction_in_actual_elevation_envelope": 0.0
+          }
+        ]
+      }
+    ],
+    "conclusion": "Both cells lie below actual sensor downward elevation envelope in this level-ground approximation; reducing filtering radius alone is not a validated source of new observations."
+  },
+  "new_prefilter_capture_followup": {
+    "source_run": "runs/uc_live_terrain_diagnostic_20261117",
+    "counts_file": ".work/live_next_raw_terrain_counts.json",
+    "replay_file": ".work/live_next_raw_filter_replay.json",
+    "scan_count": 71,
+    "pre_5s_target_raw_points": 0,
+    "all_target_raw_points_by_column": {
+      "-4,-1": 10,
+      "-4,0": 0
+    },
+    "target_points_removed_by_45_filter": 0,
+    "baseline_all_seven_updates_exact": true,
+    "self_filter_411_outputs_identical_to_450": true,
+    "planning_radius_m": 0.411,
+    "source_scope": "New actual session only; original failed-start r2 raw still unavailable"
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "purpose": "same-seed restart reproducibility, not policy performance",
+  "archived_interrupted_run": "/home/kellen/桌面/RL_BT_decision/runs/temporal_mlp_s271_4096_20261117_interrupted_1881",
+  "fresh_run": "/home/kellen/桌面/RL_BT_decision/runs/temporal_mlp_s271_4096_20261117",
+  "rollout_sequences_compared": 26,
+  "rollout_arrays_exact": true,
+  "completed_updates_compared": 6,
+  "update_metrics_exact_except_wall_time": true,
+  "sequences": [
+    {
+      "sequence": "sequence_00001.npz",
+      "all_arrays_exactly_equal": true
+    },
+    {
+      "sequence": "sequence_00002.npz",
+      "all_arrays_exactly_equal": true
+    },
+    {
+      "sequence": "sequence_00003.npz",
+      "all_arrays_exactly_equal": true
+    },
+    {
+      "sequence": "sequence_00004.npz",
+      "all_arrays_exactly_equal": true
+    },
+    {
+      "sequence": "sequence_00005.npz",
+      "all_arrays_exactly_equal": true
+    },
+    {
+      "sequence": "sequence_00006.npz",
+      "all_arrays_exactly_equal": true
+    },
+    {
+      "sequence": "sequence_00007.npz",
+      "all_arrays_exactly_equal": true
+    },
+    {
+      "sequence": "sequence_00008.npz",
+      "all_arrays_exactly_equal": true
+    },
+    {
+      "sequence": "sequence_00009.npz",
+      "all_arrays_exactly_equal": true
+    },
+    {
+      "sequence": "sequence_00010.npz",
+      "all_arrays_exactly_equal": true
+    },
+    {
+      "sequence": "sequence_00011.npz",
+      "all_arrays_exactly_equal": true
+    },
+    {
+      "sequence": "sequence_00012.npz",
+      "all_arrays_exactly_equal": true
+    },
+    {
+      "sequence": "sequence_00013.npz",
+      "all_arrays_exactly_equal": true
+    },
+    {
+      "sequence": "sequence_00014.npz",
+      "all_arrays_exactly_equal": true
+    },
+    {
+      "sequence": "sequence_00015.npz",
+      "all_arrays_exactly_equal": true
+    },
+    {
+      "sequence": "sequence_00016.npz",
+      "all_arrays_exactly_equal": true
+    },
+    {
+      "sequence": "sequence_00017.npz",
+      "all_arrays_exactly_equal": true
+    },
+    {
+      "sequence": "sequence_00018.npz",
+      "all_arrays_exactly_equal": true
+    },
+    {
+      "sequence": "sequence_00019.npz",
+      "all_arrays_exactly_equal": true
+    },
+    {
+      "sequence": "sequence_00020.npz",
+      "all_arrays_exactly_equal": true
+    },
+    {
+      "sequence": "sequence_00021.npz",
+      "all_arrays_exactly_equal": true
+    },
+    {
+      "sequence": "sequence_00022.npz",
+      "all_arrays_exactly_equal": true
+    },
+    {
+      "sequence": "sequence_00023.npz",
+      "all_arrays_exactly_equal": true
+    },
+    {
+      "sequence": "sequence_00024.npz",
+      "all_arrays_exactly_equal": true
+    },
+    {
+      "sequence": "sequence_00025.npz",
+      "all_arrays_exactly_equal": true
+    },
+    {
+      "sequence": "sequence_00026.npz",
+      "all_arrays_exactly_equal": true
+    }
+  ]
+}

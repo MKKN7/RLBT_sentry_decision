@@ -1,0 +1,30 @@
+{
+  "probe": "128 decisions, 4 seeded envs, 32 iterations; CPU timings exclude initialization",
+  "results": [
+    {
+      "workers": 1,
+      "mode": "sequential",
+      "decisions": 128,
+      "wall_s": 7.000793758081272,
+      "decisions_per_s": 18.283641030311017
+    },
+    {
+      "workers": 2,
+      "mode": "threaded",
+      "decisions": 128,
+      "wall_s": 4.4297964330762625,
+      "decisions_per_s": 28.895232982774036,
+      "trajectory_exact_match": true,
+      "speedup": 1.5803872398758483
+    },
+    {
+      "workers": 4,
+      "mode": "threaded",
+      "decisions": 128,
+      "wall_s": 3.274070536950603,
+      "decisions_per_s": 39.09506486051958,
+      "trajectory_exact_match": true,
+      "speedup": 2.1382537972445936
+    }
+  ]
+}

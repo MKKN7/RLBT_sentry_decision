@@ -1,0 +1,64 @@
+{
+  "snapshot_date": "2026-11-15",
+  "purpose": "Local research reuse of geometry and robot builder; no training or full navigation stack copied",
+  "originals_modified": false,
+  "full_collision_decomposition_copied": false,
+  "official_field_registration_verified": false,
+  "robot_is_measured_team_hardware": false,
+  "files": [
+    {
+      "source": "/home/kellen/mid360_mujoco/src/mid360_mujoco/__init__.py",
+      "local": "assets/navigation_reference/source/mid360_mujoco/__init__.py",
+      "sha256": "dd0e5df304fafb7eb653b8b30885e465cf5759bcf29974479fbe6a392f8e9d8f",
+      "bytes": 90
+    },
+    {
+      "source": "/home/kellen/mid360_mujoco/src/mid360_mujoco/config.py",
+      "local": "assets/navigation_reference/source/mid360_mujoco/config.py",
+      "sha256": "8b579c0b8186b7ddc0733bac3025cb7a50cdca8b1e06c76f8a03226da2e0fea2",
+      "bytes": 2022
+    },
+    {
+      "source": "/home/kellen/mid360_mujoco/src/mid360_mujoco/model.py",
+      "local": "assets/navigation_reference/source/mid360_mujoco/model.py",
+      "sha256": "37904b4c7f644ebb1eeef73e76c644da2fd2d3fc0ae84b6e367728672cd3cc7f",
+      "bytes": 6671
+    },
+    {
+      "source": "/home/kellen/mid360_mujoco/configs/simulation.yaml",
+      "local": "assets/navigation_reference/configs/simulation.yaml",
+      "sha256": "a6c99161c2825b83f16de04ea7ec1b075aca27e4e89c01979c895e5126c96355",
+      "bytes": 2511
+    },
+    {
+      "source": "/home/kellen/mid360_mujoco/configs/robot.yaml",
+      "local": "assets/navigation_reference/configs/robot.yaml",
+      "sha256": "602e2d57d9b577ec23d6381ca5a13fb64eaf2e37c04d66be4ed4e50d016fd128",
+      "bytes": 1629
+    },
+    {
+      "source": "/home/kellen/mid360_mujoco/THIRD_PARTY.md",
+      "local": "assets/navigation_reference/THIRD_PARTY.md",
+      "sha256": "8a46a049293a2c24cfcd47211f7af6ba8b4a69689f12e1cdd5d21f4e49fe71e4",
+      "bytes": 1660
+    },
+    {
+      "source": "/home/kellen/mid360_mujoco/README.md",
+      "local": "assets/navigation_reference/source_notes/README.upstream.md",
+      "sha256": "5a105ba3c32f5d3009843466259f6422d1b65dd4ab5c33989de7c8e6ab8e7d12",
+      "bytes": 18361
+    },
+    {
+      "source": "/home/kellen/mid360_mujoco/pyproject.toml",
+      "local": "assets/navigation_reference/source_notes/pyproject.upstream.toml",
+      "sha256": "0b963b4100b59f75e84ced5831e66930bf8cf1a804ed98a5b355d2f430c1ca6b",
+      "bytes": 737
+    },
+    {
+      "source": "docker://Combat_Sentry2026/opt/mid360_mujoco/generated/rmuc2027-v5/field.stl",
+      "local": "assets/navigation_reference/field/field.stl",
+      "sha256": "3aea8445574b08fa2bc3ae571deb50a2d39befd07f3a48e19f694906526c4685",
+      "bytes": 19251384
+    }
+  ]
+}

@@ -1,0 +1,123 @@
+{
+  "schema": "nav2_runtime_audit_v1",
+  "checked_at_utc": "2026-11-16T03:49:19.570664+00:00",
+  "read_only": true,
+  "nodes_started": false,
+  "packages_installed": false,
+  "host_ros_present": false,
+  "project_disk_available_bytes": 2947432448,
+  "container": "Combat_Sentry2026",
+  "nav2_packages_visible": [],
+  "nav2_runtime_ready": false,
+  "commands": {
+    "container_state": {
+      "argv": [
+        "docker",
+        "inspect",
+        "Combat_Sentry2026",
+        "--format",
+        "{{json .State}}"
+      ],
+      "returncode": 0,
+      "stdout": "{\"Status\":\"running\",\"Running\":true,\"Paused\":false,\"Restarting\":false,\"OOMKilled\":false,\"Dead\":false,\"Pid\":3496058,\"ExitCode\":0,\"Error\":\"\",\"StartedAt\":\"2026-11-13T12:17:15.753907988Z\",\"FinishedAt\":\"2026-11-13T12:17:15.6646546Z\"}\n",
+      "stderr": ""
+    },
+    "ros_packages": {
+      "argv": [
+        "docker",
+        "exec",
+        "Combat_Sentry2026",
+        "bash",
+        "-lc",
+        "source /opt/ros/humble/setup.bash; source /opt/pb2025_nav_ws/install/setup.bash; ros2 pkg list"
+      ],
+      "returncode": 0,
+      "stdout": "action_msgs\nactionlib_msgs\nactuator_msgs\nament_cmake\nament_cmake_auto\nament_cmake_copyright\nament_cmake_core\nament_cmake_cppcheck\nament_cmake_cpplint\nament_cmake_export_definitions\nament_cmake_export_dependencies\nament_cmake_export_include_directories\nament_cmake_export_interfaces\nament_cmake_export_libraries\nament_cmake_export_link_flags\nament_cmake_export_targets\nament_cmake_flake8\nament_cmake_gen_version_h\nament_cmake_gmock\nament_cmake_gtest\nament_cmake_include_directories\nament_cmake_libraries\nament_cmake_lint_cmake\nament_cmake_pep257\nament_cmake_pytest\nament_cmake_python\nament_cmake_ros\nament_cmake_target_dependencies\nament_cmake_test\nament_cmake_uncrustify\nament_cmake_version\nament_cmake_xmllint\nament_copyright\nament_cppcheck\nament_cpplint\nament_flake8\nament_index_cpp\nament_index_python\nament_lint\nament_lint_auto\nament_lint_cmake\nament_lint_common\nament_package\nament_pep257\nament_uncrustify\nament_xmllint\nbuiltin_interfaces\nclass_loader\ncommon_interfaces\ncomposition_interfaces\ncompressed_depth_image_transport\ncompressed_image_transport\nconsole_bridge_vendor\ncv_bridge\ndiagnostic_msgs\ndomain_coordinator\neigen3_cmake_module\nfastrtps_cmake_module\ngeometry2\ngeometry_msgs\ngps_msgs\nimage_transport\nimage_transport_plugins\ninteractive_markers\nkdl_parser\nkeyboard_handler\nlaser_geometry\nlaunch\nlaunch_ros\nlaunch_testing\nlaunch_testing_ament_cmake\nlaunch_testing_ros\nlaunch_xml\nlaunch_yaml\nlibcurl_vendor\nlibstatistics_collector\nlibyaml_vendor\nlifecycle_msgs\nlivox_ros_driver2\nmap_msgs\nmessage_filters\nnav_msgs\norocos_kdl_vendor\nosrf_pycommon\npb2025_light_sim\npb2025_lio_backends\npcl_conversions\npcl_msgs\npluginlib\npybind11_vendor\npython_cmake_module\npython_orocos_kdl_vendor\npython_qt_binding\nqt_gui\nqt_gui_cpp\nqt_gui_py_common\nrcl\nrcl_action\nrcl_interfaces\nrcl_lifecycle\nrcl_logging_interface\nrcl_logging_spdlog\nrcl_yaml_param_parser\nrclcpp\nrclcpp_action\nrclcpp_components\nrclcpp_lifecycle\nrclpy\nrcpputils\nrcutils\nresource_retriever\nrmu_gazebo_simulator\nrmw\nrmw_dds_common\nrmw_fastrtps_cpp\nrmw_fastrtps_shared_cpp\nrmw_implementation\nrmw_implementation_cmake\nrobot_state_publisher\nros2action\nros2bag\nros2cli\nros2cli_common_extensions\nros2component\nros2doctor\nros2interface\nros2launch\nros2lifecycle\nros2multicast\nros2node\nros2param\nros2pkg\nros2plugin\nros2run\nros2service\nros2topic\nros_base\nros_core\nros_environment\nros_gz\nros_gz_bridge\nros_gz_image\nros_gz_interfaces\nros_gz_sim\nros_gz_sim_demos\nros_workspace\nrosbag2\nrosbag2_compression\nrosbag2_compression_zstd\nrosbag2_cpp\nrosbag2_interfaces\nrosbag2_py\nrosbag2_storage\nrosbag2_storage_default_plugins\nrosbag2_transport\nrosgraph_msgs\nrosidl_adapter\nrosidl_cli\nrosidl_cmake\nrosidl_default_generators\nrosidl_default_runtime\nrosidl_generator_c\nrosidl_generator_cpp\nrosidl_generator_py\nrosidl_generator_rs\nrosidl_parser\nrosidl_runtime_c\nrosidl_runtime_cpp\nrosidl_runtime_py\nrosidl_typesupport_c\nrosidl_typesupport_cpp\nrosidl_typesupport_fastrtps_c\nrosidl_typesupport_fastrtps_cpp\nrosidl_typesupport_interface\nrosidl_typesupport_introspection_c\nrosidl_typesupport_introspection_cpp\nrpyutils\nrqt_gui\nrqt_gui_cpp\nrqt_gui_py\nrqt_image_view\nrqt_plot\nrqt_py_common\nrqt_topic\nrviz2\nrviz_assimp_vendor\nrviz_common\nrviz_default_plugins\nrviz_ogre_vendor\nrviz_rendering\nsdformat_urdf\nsensor_msgs\nsensor_msgs_py\nshape_msgs\nshared_queues_vendor\nspdlog_vendor\nsqlite3_vendor\nsros2\nsros2_cmake\nstatistics_msgs\nstd_msgs\nstd_srvs\nstereo_msgs\ntango_icons_vendor\ntf2\ntf2_bullet\ntf2_eigen\ntf2_eigen_kdl\ntf2_geometry_msgs\ntf2_kdl\ntf2_msgs\ntf2_py\ntf2_ros\ntf2_ros_py\ntf2_sensor_msgs\ntf2_tools\ntheora_image_transport\ntinyxml2_vendor\ntinyxml_vendor\ntracetools\ntrajectory_msgs\nuncrustify_vendor\nunique_identifier_msgs\nurdf\nurdf_parser_plugin\nvision_msgs\nvisualization_msgs\nxacro\nyaml_cpp_vendor\nzstd_vendor\n",
+      "stderr": ""
+    },
+    "container_processes": {
+      "argv": [
+        "docker",
+        "exec",
+        "Combat_Sentry2026",
+        "ps",
+        "-eo",
+        "pid,args"
+      ],
+      "returncode": 0,
+      "stdout": "    PID COMMAND\n      1 sleep infinity\n  10600 [python] <defunct>\n  10843 [python3] <defunct>\n  11386 [python] <defunct>\n  11680 [python] <defunct>\n  21357 [python] <defunct>\n  21658 [python3] <defunct>\n  21941 [python] <defunct>\n  23036 [python] <defunct>\n  23365 [python] <defunct>\n  24302 [python] <defunct>\n  25019 [python] <defunct>\n  25132 [python] <defunct>\n  25876 [python] <defunct>\n  26578 ps -eo pid,args\n",
+      "stderr": ""
+    },
+    "apt_candidates": {
+      "argv": [
+        "docker",
+        "exec",
+        "Combat_Sentry2026",
+        "apt-cache",
+        "policy",
+        "ros-humble-nav2-controller",
+        "ros-humble-nav2-mppi-controller",
+        "ros-humble-nav2-msgs",
+        "ros-humble-nav2-bringup"
+      ],
+      "returncode": 0,
+      "stdout": "ros-humble-nav2-controller:\n  Installed: (none)\n  Candidate: 1.1.20-1jammy.20260915.232401\n  Version table:\n     1.1.20-1jammy.20260915.232401 500\n        500 https://mirrors.ustc.edu.cn/ros2/ubuntu jammy/main amd64 Packages\nros-humble-nav2-mppi-controller:\n  Installed: (none)\n  Candidate: 1.1.20-1jammy.20260915.232158\n  Version table:\n     1.1.20-1jammy.20260915.232158 500\n        500 https://mirrors.ustc.edu.cn/ros2/ubuntu jammy/main amd64 Packages\nros-humble-nav2-msgs:\n  Installed: (none)\n  Candidate: 1.1.20-1jammy.20260907.223327\n  Version table:\n     1.1.20-1jammy.20260907.223327 500\n        500 https://mirrors.ustc.edu.cn/ros2/ubuntu jammy/main amd64 Packages\nros-humble-nav2-bringup:\n  Installed: (none)\n  Candidate: 1.1.20-1jammy.20260916.005516\n  Version table:\n     1.1.20-1jammy.20260916.005516 500\n        500 https://mirrors.ustc.edu.cn/ros2/ubuntu jammy/main amd64 Packages\n",
+      "stderr": ""
+    },
+    "python_ros": {
+      "argv": [
+        "docker",
+        "exec",
+        "Combat_Sentry2026",
+        "bash",
+        "-lc",
+        "source /opt/ros/humble/setup.bash; source /opt/pb2025_nav_ws/install/setup.bash; python3 -c \"import sys,rclpy; print(sys.version); print(rclpy.__file__)\""
+      ],
+      "returncode": 0,
+      "stdout": "3.10.12 (main, Aug 31 2026, 10:18:17) [GCC 11.4.0]\n/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/__init__.py\n",
+      "stderr": ""
+    }
+  },
+  "source_files": [
+    {
+      "path": "/home/kellen/mid360_mujoco/ros2/nav.launch.py",
+      "present": true,
+      "sha256": "4d28c22878c14abdb792e04af39df6bc90826d6ce118e9b44d84a3167c549a39"
+    },
+    {
+      "path": "/home/kellen/mid360_mujoco/src/mid360_mujoco/ros_bridge.py",
+      "present": true,
+      "sha256": "2a60076a063565f59f8d27a26ee614d3721244ead541b7038848069ff77ef9c3"
+    },
+    {
+      "path": "/home/kellen/pb2025_sim_nuc/configs/nav2_params.yaml",
+      "present": true,
+      "sha256": "8cffce321660462ff08b20231cd2f03bcaaca16f51725070a393c66ddd695443"
+    },
+    {
+      "path": "/home/kellen/pb2025_sim_nuc/src/pb2025_lio_backends/src/lio_display.cpp",
+      "present": true,
+      "sha256": "3ac6ced1319c1283ad9fd1941280bcdfbf5ee9958aafc69d45773ea8f7583c62"
+    }
+  ],
+  "source_review": {
+    "simulator_ros_domain_id": 65,
+    "simulator_namespace": "red_standard_robot1",
+    "simulator_velocity_topic": "/red_standard_robot1/cmd_vel",
+    "simulator_clock_topic": "/clock",
+    "estimated_odometry_topic": "/red_standard_robot1/odometry",
+    "estimated_odometry_frame": "odom",
+    "estimated_odometry_child_frame": "base_footprint",
+    "registered_cloud_topic": "/red_standard_robot1/registered_scan",
+    "existing_launch_scope": "LIO and display only",
+    "existing_configured_controller": "pb_omni_pid_pursuit_controller::OmniPidPursuitController",
+    "existing_lio_odometry_twist": "not assigned; default zero",
+    "map_to_odom_registration": "not provided by this LIO launch",
+    "notes": [
+      "Source review describes the listed hashes; it is not an active ROS topic measurement.",
+      "GT odometry is for evaluation and must not be wired as actor or production navigation feedback.",
+      "Derive body velocity from estimated poses or a legal wheel-odometry source before MPPI execution.",
+      "Formal map coordinates need explicit map-to-odom registration; initial LIO origin is not the CAD map origin."
+    ]
+  }
+}

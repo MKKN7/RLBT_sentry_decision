@@ -1,0 +1,95 @@
+{
+  "code": 0,
+  "message": "success",
+  "success": true,
+  "data": {
+    "id": 1969151,
+    "category": "WIKI",
+    "state": "PASS",
+    "stateDesc": "审核通过",
+    "auditRejectReason": "本周末队伍集中写报告,专栏跟报告的发帖先跳过审核",
+    "official": false,
+    "top": false,
+    "marrow": false,
+    "title": "RMU 2027 通信协议 Communication Protocol",
+    "contentType": "HTML",
+    "htmlContent": "<h1 style=\"text-align: start;\">通信协议 Communication Protocol</h1><h2 style=\"text-align: start;\">中文版</h2><table data-new-ship=\"yes\" data-font-node=\"\" data-topic=\"\" style=\"width: auto; table-layout: fixed; border-width: 0px; border-style: solid; border-color: inherit;\"><colgroup contenteditable=\"false\"><col width=\"113\"><col width=\"268\"><col width=\"484\"></colgroup><tbody><tr><th colspan=\"1\" rowspan=\"1\" width=\"auto\" style=\"text-align: center; line-height: 1.5; background-color: rgb(248, 248, 248); border-width: 1px;\"><p style=\"text-align: left; line-height: 1.5;\">版本</p></th><th colspan=\"1\" rowspan=\"1\" width=\"auto\" style=\"text-align: center; line-height: 1.5; background-color: rgb(248, 248, 248); border-width: 1px;\"><p style=\"text-align: left; line-height: 1.5;\">发布日期</p></th><th colspan=\"1\" rowspan=\"1\" width=\"auto\" style=\"text-align: center; line-height: 1.5; background-color: rgb(248, 248, 248); border-width: 1px;\"><p style=\"text-align: left; line-height: 1.5;\">文档</p></th></tr><tr><td colspan=\"1\" rowspan=\"1\" width=\"auto\" style=\"line-height: 1.5; border-width: 1px; border-style: solid; border-color: rgb(241, 241, 241);\"><p style=\"line-height: 1.5;\">V1.0.0</p></td><td colspan=\"1\" rowspan=\"1\" width=\"auto\" style=\"line-height: 1.5; border-width: 1px; border-style: solid; border-color: rgb(241, 241, 241);\"><p style=\"line-height: 1.5;\">2026年10月29日</p></td><td colspan=\"1\" rowspan=\"1\" width=\"auto\" style=\"line-height: 1.5; border-width: 1px; border-style: solid; border-color: rgb(241, 241, 241);\"><p><a data-w-e-type=\"attachment\" data-w-e-is-void=\"\" data-w-e-is-inline=\"\" href=\"https://hz-rm-bbs-web-prod.oss-cn-hangzhou.aliyuncs.com/3db568c5796b494190475a694f001e841793263540152/RoboMaster 2027 机甲大师高校系列赛通信协议 V1.0.0（20261029）.pdf\" data-file-name=\"RoboMaster 2027 机甲大师高校系列赛通信协议 V1.0.0（20261029）.pdf\" data-file-md5=\"1ce2ec4322d6eb989122f6b651ef96a1\" data-file-len=\"3435583\" data-file-key=\"1793263353805-3435583-RoboMaster 2027 机甲大师高校系列赛通信协议 V1.0.0（20261029）.pdf-uVNhCxC1p4Si6MxqBnQf_\" data-file-state=\"uploadSuccess\">RoboMaster 2027 机甲大师高校系列赛通信协议 V1.0.0（20261029）.pdf</a></p></td></tr></tbody></table><h2 style=\"text-align: start;\">English Edition</h2><table data-new-ship=\"yes\" data-font-node=\"\" data-topic=\"\" style=\"width: auto; table-layout: fixed; text-align: start; background-color: rgb(255, 255, 255); border-width: 0px; border-style: solid; border-color: inherit;\"><colgroup contenteditable=\"false\"><col width=\"110\"><col width=\"270\"><col width=\"731\"></colgroup><tbody><tr><th colspan=\"1\" rowspan=\"1\" width=\"auto\" style=\"text-align: left; line-height: 1.5; background-color: rgb(248, 248, 248); border-width: 1px; border-style: solid;\"><p style=\"text-align: left; line-height: 1.5;\">Version</p></th><th colspan=\"1\" rowspan=\"1\" width=\"auto\" style=\"text-align: left; line-height: 1.5; background-color: rgb(248, 248, 248); border-width: 1px; border-style: solid;\"><p style=\"text-align: left; line-height: 1.5;\">Release Date</p></th><th colspan=\"1\" rowspan=\"1\" width=\"auto\" style=\"text-align: left; line-height: 1.5; background-color: rgb(248, 248, 248); border-width: 1px; border-style: solid;\"><p style=\"text-align: left; line-height: 1.5;\">Docs</p></th></tr><tr><td colspan=\"1\" rowspan=\"1\" width=\"auto\" style=\"text-align: left; line-height: 1.5; border-width: 1px; border-style: solid; border-color: rgb(241, 241, 241);\"><p style=\"text-align: left; line-height: 1.5;\">V1.0.0</p></td><td colspan=\"1\" rowspan=\"1\" width=\"auto\" style=\"text-align: left; line-height: 1.5; border-width: 1px; border-style: solid; border-color: rgb(241, 241, 241);\"><p style=\"text-align: left; line-height: 1.5;\">November 28, 2026</p></td><td colspan=\"1\" rowspan=\"1\" width=\"auto\" style=\"text-align: left; line-height: 1.5; border-width: 1px; border-style: solid; border-color: rgb(241, 241, 241);\"><p style=\"text-align: left;\"><a data-w-e-type=\"attachment\" data-w-e-is-void=\"\" data-w-e-is-inline=\"\" href=\"https://hz-rm-bbs-web-prod.oss-cn-hangzhou.aliyuncs.com/60544ed6ffbc4334b19458a6c5a6ee421793586540916/RoboMaster 2027 University Series Communication Protocol V1.0.0（20261102）.pdf\" data-file-name=\"RoboMaster 2027 University Series Communication Protocol V1.0.0（20261102）.pdf\" data-file-md5=\"68ae9ba74257c618de8e1c1a58743838\" data-file-len=\"3412081\" data-file-key=\"1793352169106-3412081-RoboMaster 2027 University Series Communication Protocol V1.0.0（20261102）.pdf-LjQalr7Wlq0hIYJXNqojG\" data-file-state=\"uploadSuccess\">RoboMaster 2027 University Series Communication Protocol V1.0.0（20261102）.pdf</a></p></td></tr></tbody></table><p><br></p>",
+    "markdownContent": "",
+    "headImg": "[]",
+    "authorId": 39696,
+    "authorNickname": "RoboMaster 高校赛务",
+    "authorAvatar": "https://terra-cn-oss-cdn-public-pro.oss-cn-hangzhou.aliyuncs.com/b2a076471c6c4b72b574a977334d3e05/659ff4b3-304c-43dc-9653-0dbb5fed87e1",
+    "createAt": "2026-09-04T08:57:36.000+00:00",
+    "updateAt": "2026-11-02T02:35:00.000+00:00",
+    "views": 28589,
+    "approvals": 5,
+    "comments": 8,
+    "originalAuthor": null,
+    "originalTitle": null,
+    "originalUrl": null,
+    "directory": "[]",
+    "difficultyScore": 250,
+    "tags": [],
+    "solutionId": null,
+    "solution": null,
+    "belongWikis": [
+      {
+        "wikiId": 20204847,
+        "wikiName": "规则/资料中心 Rules/Resources Hub",
+        "wikiHeadImg": "https://rm-static.djicdn.com/documents/68659/9eb66bab6cafb1723811240976291454.png",
+        "nodeId": 50179263,
+        "type": "SHOW",
+        "wikiLiteraturePostId": 804049,
+        "childs": null
+      }
+    ],
+    "dynamicCategory": null,
+    "draft": null,
+    "jobCategoryId": null,
+    "canComment": 0,
+    "timesCited": 0,
+    "timesCiting": 0,
+    "history": false,
+    "contactText": "",
+    "contactPic": "",
+    "attachments": [
+      {
+        "id": 463413,
+        "src": "https://hz-rm-bbs-web-prod.oss-cn-hangzhou.aliyuncs.com/3db568c5796b494190475a694f001e841793263540152/RoboMaster 2027 机甲大师高校系列赛通信协议 V1.0.0（20261029）.pdf",
+        "name": "RoboMaster 2027 机甲大师高校系列赛通信协议 V1.0.0（20261029）.pdf",
+        "downloads": 816
+      },
+      {
+        "id": 463414,
+        "src": "https://hz-rm-bbs-web-prod.oss-cn-hangzhou.aliyuncs.com/60544ed6ffbc4334b19458a6c5a6ee421793586540916/RoboMaster 2027 University Series Communication Protocol V1.0.0（20261102）.pdf",
+        "name": "RoboMaster 2027 University Series Communication Protocol V1.0.0（20261102）.pdf",
+        "downloads": 26
+      }
+    ],
+    "fileItems": [
+      {
+        "id": 14892680,
+        "src": "https://hz-rm-bbs-web-prod.oss-cn-hangzhou.aliyuncs.com/3db568c5796b494190475a694f001e841793263540152/RoboMaster 2027 机甲大师高校系列赛通信协议 V1.0.0（20261029）.pdf",
+        "name": "RoboMaster 2027 机甲大师高校系列赛通信协议 V1.0.0（20261029）.pdf",
+        "downloads": 0,
+        "md5": "1ce2ec4322d6eb989122f6b651ef96a1",
+        "len": 3435583
+      },
+      {
+        "id": 14892681,
+        "src": "https://hz-rm-bbs-web-prod.oss-cn-hangzhou.aliyuncs.com/60544ed6ffbc4334b19458a6c5a6ee421793586540916/RoboMaster 2027 University Series Communication Protocol V1.0.0（20261102）.pdf",
+        "name": "RoboMaster 2027 University Series Communication Protocol V1.0.0（20261102）.pdf",
+        "downloads": 0,
+        "md5": "68ae9ba74257c618de8e1c1a58743838",
+        "len": 3412081
+      }
+    ],
+    "references": null,
+    "belongTeamContent": false,
+    "teamInfo": null,
+    "isWikiLiteratureNode": false,
+    "license": false,
+    "licenseId": "",
+    "linkedTeam": false
+  }
+}

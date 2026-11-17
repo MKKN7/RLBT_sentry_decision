@@ -1,0 +1,87 @@
+{
+  "scope": "read_only_existing_simulator_sources_not_official_registration",
+  "files": [
+    {
+      "container_path": "/opt/mid360_mujoco/tools/check_tunnels.py",
+      "bytes": 1434,
+      "sha256": "f88017e0617ede12472a13eafda462d68ebd0d9ea250e16d8f75baefc5fd02a2"
+    },
+    {
+      "container_path": "/opt/mid360_mujoco/generated/rmuc2027-v5/manifest.json",
+      "bytes": 11998283,
+      "sha256": "29b0741c979e4e9e347838a45eead1f577935d3f1260568e2a6393cec591d49b",
+      "summary": {
+        "source": "/opt/pb2025_nav_ws/src/pb2025_light_sim/meshes/rmuc_2027_driveable.stl",
+        "source_sha256": "97faa279776cc7b00a635dde51b1bc3dcf8ea91cb949fc73e88e28ea7b94905f",
+        "world": "/opt/pb2025_nav_ws/src/pb2025_light_sim/worlds/rmuc_2027_world.sdf",
+        "translation": [
+          -0.14910008013248444,
+          -0.06378698348999023,
+          -0.019413471221923828
+        ],
+        "triangles": 385026,
+        "collision_pieces": 24325,
+        "limitations": "1mm centered contact shells; disconnected details under 85cm or elevated details (bottom above 45cm) under 1.3m use local convex hulls. Ray mesh retains source triangles. Contact approximation requires tunnel clearance tests."
+      }
+    },
+    {
+      "container_path": "/opt/pb2025_nav_ws/src/pb2025_light_sim/worlds/rmuc_2027_world.sdf",
+      "bytes": 25797,
+      "sha256": "dcd96c807e0c001e518548600fdc4c3740d72f0819858eb2b47a304d1125d8eb",
+      "models": [
+        {
+          "name": "rmuc_2027",
+          "model_pose": null,
+          "link_count": 1,
+          "uri_count": 45,
+          "named_links": [
+            "field"
+          ]
+        }
+      ]
+    }
+  ],
+  "route_anchors_from_check_tunnels_py": [
+    {
+      "id": "south_outer",
+      "start_xyz_m": [
+        12.9,
+        1.05,
+        0.34
+      ],
+      "yaw_rad": 0.0
+    },
+    {
+      "id": "south_inner",
+      "start_xyz_m": [
+        16.0,
+        2.0,
+        0.165
+      ],
+      "yaw_rad": 3.141592653589793
+    },
+    {
+      "id": "north_inner",
+      "start_xyz_m": [
+        12.0,
+        14.0,
+        0.165
+      ],
+      "yaw_rad": 0.0
+    },
+    {
+      "id": "north_outer",
+      "start_xyz_m": [
+        15.1,
+        14.95,
+        0.34
+      ],
+      "yaw_rad": 3.141592653589793
+    }
+  ],
+  "route_limits": [
+    "Coordinates copied from existing simulator check_tunnels.py, not inferred official semantics.",
+    "Existing source acceptance criterion is forward displacement greater than 2m.",
+    "No new physical trial performed and no buff/card activation inferred."
+  ]
+}

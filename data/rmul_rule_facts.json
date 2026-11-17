@@ -1,0 +1,803 @@
+{
+  "schema_version": "0.1",
+  "prepared_date": "2026-11-16",
+  "competition_profile": "rmul_2027_3v3",
+  "basis": "Official Chinese RMUL 2027 V1.0.0 dated 2026-10-15, downloaded from official public wiki API",
+  "purpose": "Source-traceable selected rule facts, not a complete executable referee emulator",
+  "source_manifest": "data/references/official_rmul_2027/manifest.json",
+  "full_manual_obtained": true,
+  "complete_rule_engine_implemented": false,
+  "latest_amendments_verified": false,
+  "facts": [
+    {
+      "id": "match_duration",
+      "value": 300,
+      "unit": "s",
+      "condition": "",
+      "source_document": "rmul_2027_rules_v1.0.0_20261015",
+      "pdf_pages": [
+        17
+      ],
+      "printed_pages": [
+        16
+      ],
+      "section": "3",
+      "note": "",
+      "status": "extracted_from_official_2027_v1.0.0"
+    },
+    {
+      "id": "team_lineup",
+      "value": [
+        {
+          "role": "heavy",
+          "id": 1,
+          "count": 1
+        },
+        {
+          "role": "infantry",
+          "id": 3,
+          "count": 1
+        },
+        {
+          "role": "sentry",
+          "id": 7,
+          "count": 1
+        }
+      ],
+      "unit": "robots",
+      "condition": "",
+      "source_document": "rmul_2027_rules_v1.0.0_20261015",
+      "pdf_pages": [
+        17
+      ],
+      "printed_pages": [
+        16
+      ],
+      "section": "3.1",
+      "note": "",
+      "status": "extracted_from_official_2027_v1.0.0"
+    },
+    {
+      "id": "sentry_operation",
+      "value": "fully_automatic",
+      "unit": "mode",
+      "condition": "",
+      "source_document": "rmul_2027_rules_v1.0.0_20261015",
+      "pdf_pages": [
+        21
+      ],
+      "printed_pages": [
+        20
+      ],
+      "section": "3.1.3",
+      "note": "",
+      "status": "extracted_from_official_2027_v1.0.0"
+    },
+    {
+      "id": "sentry_multi_robot_communication_allowed",
+      "value": false,
+      "unit": "bool",
+      "condition": "",
+      "source_document": "rmul_2027_rules_v1.0.0_20261015",
+      "pdf_pages": [
+        21
+      ],
+      "printed_pages": [
+        20
+      ],
+      "section": "3.1.3",
+      "note": "Do not infer that all teammate private state is observable. Official referee telemetry requires separate protocol verification.",
+      "status": "extracted_from_official_2027_v1.0.0"
+    },
+    {
+      "id": "sentry_hp_initial_and_max",
+      "value": 400,
+      "unit": "HP",
+      "condition": "",
+      "source_document": "rmul_2027_rules_v1.0.0_20261015",
+      "pdf_pages": [
+        21
+      ],
+      "printed_pages": [
+        20
+      ],
+      "section": "3.1.3",
+      "note": "",
+      "status": "extracted_from_official_2027_v1.0.0"
+    },
+    {
+      "id": "sentry_chassis_power_max",
+      "value": 100,
+      "unit": "W",
+      "condition": "",
+      "source_document": "rmul_2027_rules_v1.0.0_20261015",
+      "pdf_pages": [
+        21
+      ],
+      "printed_pages": [
+        20
+      ],
+      "section": "3.1.3",
+      "note": "",
+      "status": "extracted_from_official_2027_v1.0.0"
+    },
+    {
+      "id": "sentry_shooter_count",
+      "value": 1,
+      "unit": "17mm_shooter",
+      "condition": "",
+      "source_document": "rmul_2027_rules_v1.0.0_20261015",
+      "pdf_pages": [
+        21
+      ],
+      "printed_pages": [
+        20
+      ],
+      "section": "3.1.3",
+      "note": "",
+      "status": "extracted_from_official_2027_v1.0.0"
+    },
+    {
+      "id": "sentry_projectile_speed_max",
+      "value": 25,
+      "unit": "m/s",
+      "condition": "",
+      "source_document": "rmul_2027_rules_v1.0.0_20261015",
+      "pdf_pages": [
+        21
+      ],
+      "printed_pages": [
+        20
+      ],
+      "section": "3.1.3",
+      "note": "",
+      "status": "extracted_from_official_2027_v1.0.0"
+    },
+    {
+      "id": "sentry_heat_max",
+      "value": 260,
+      "unit": "heat",
+      "condition": "",
+      "source_document": "rmul_2027_rules_v1.0.0_20261015",
+      "pdf_pages": [
+        21
+      ],
+      "printed_pages": [
+        20
+      ],
+      "section": "3.1.3",
+      "note": "",
+      "status": "extracted_from_official_2027_v1.0.0"
+    },
+    {
+      "id": "sentry_cooling_rate",
+      "value": 30,
+      "unit": "heat/s",
+      "condition": "",
+      "source_document": "rmul_2027_rules_v1.0.0_20261015",
+      "pdf_pages": [
+        21
+      ],
+      "printed_pages": [
+        20
+      ],
+      "section": "3.1.3",
+      "note": "",
+      "status": "extracted_from_official_2027_v1.0.0"
+    },
+    {
+      "id": "sentry_ammo_allowance_initial",
+      "value": 750,
+      "unit": "17mm_projectiles",
+      "condition": "",
+      "source_document": "rmul_2027_rules_v1.0.0_20261015",
+      "pdf_pages": [
+        22
+      ],
+      "printed_pages": [
+        21
+      ],
+      "section": "3.1.3",
+      "note": "",
+      "status": "extracted_from_official_2027_v1.0.0"
+    },
+    {
+      "id": "sentry_ammo_allowance_can_increase_in_match",
+      "value": false,
+      "unit": "bool",
+      "condition": "",
+      "source_document": "rmul_2027_rules_v1.0.0_20261015",
+      "pdf_pages": [
+        22
+      ],
+      "printed_pages": [
+        21
+      ],
+      "section": "3.1.3",
+      "note": "",
+      "status": "extracted_from_official_2027_v1.0.0"
+    },
+    {
+      "id": "field_inner_size",
+      "value": [
+        12,
+        8
+      ],
+      "unit": "m",
+      "condition": "",
+      "source_document": "rmul_2027_rules_v1.0.0_20261015",
+      "pdf_pages": [
+        23
+      ],
+      "printed_pages": [
+        22
+      ],
+      "section": "3.2.1",
+      "note": "",
+      "status": "extracted_from_official_2027_v1.0.0"
+    },
+    {
+      "id": "supply_is_start_area",
+      "value": true,
+      "unit": "bool",
+      "condition": "",
+      "source_document": "rmul_2027_rules_v1.0.0_20261015",
+      "pdf_pages": [
+        25
+      ],
+      "printed_pages": [
+        24
+      ],
+      "section": "3.2.2",
+      "note": "",
+      "status": "extracted_from_official_2027_v1.0.0"
+    },
+    {
+      "id": "opponent_supply_zone_forbidden",
+      "value": true,
+      "unit": "bool",
+      "condition": "",
+      "source_document": "rmul_2027_rules_v1.0.0_20261015",
+      "pdf_pages": [
+        26
+      ],
+      "printed_pages": [
+        25
+      ],
+      "section": "3.2.2",
+      "note": "",
+      "status": "extracted_from_official_2027_v1.0.0"
+    },
+    {
+      "id": "healing_location",
+      "value": "own_supply_zone",
+      "unit": "semantic_region",
+      "condition": "Activated own supply zone; alive, not abnormally offline, not sent off",
+      "source_document": "rmul_2027_rules_v1.0.0_20261015",
+      "pdf_pages": [
+        36
+      ],
+      "printed_pages": [
+        35
+      ],
+      "section": "3.3.2.1",
+      "note": "No UC outpost or remote paid-heal mechanism is described in the UL 3v3 healing/economy sections.",
+      "status": "extracted_from_official_2027_v1.0.0"
+    },
+    {
+      "id": "supply_healing_rate",
+      "value": 0.25,
+      "unit": "max_hp_fraction/s",
+      "condition": "",
+      "source_document": "rmul_2027_rules_v1.0.0_20261015",
+      "pdf_pages": [
+        36
+      ],
+      "printed_pages": [
+        35
+      ],
+      "section": "3.3.2.1",
+      "note": "",
+      "status": "extracted_from_official_2027_v1.0.0"
+    },
+    {
+      "id": "revive_progress_rate",
+      "value": 1,
+      "unit": "progress/s",
+      "condition": "",
+      "source_document": "rmul_2027_rules_v1.0.0_20261015",
+      "pdf_pages": [
+        36
+      ],
+      "printed_pages": [
+        35
+      ],
+      "section": "3.3.2.2",
+      "note": "",
+      "status": "extracted_from_official_2027_v1.0.0"
+    },
+    {
+      "id": "first_death_revive_progress_required",
+      "value": 5,
+      "unit": "progress",
+      "condition": "",
+      "source_document": "rmul_2027_rules_v1.0.0_20261015",
+      "pdf_pages": [
+        36
+      ],
+      "printed_pages": [
+        35
+      ],
+      "section": "3.3.2.2",
+      "note": "",
+      "status": "extracted_from_official_2027_v1.0.0"
+    },
+    {
+      "id": "revive_progress_increment_per_death",
+      "value": 5,
+      "unit": "progress",
+      "condition": "",
+      "source_document": "rmul_2027_rules_v1.0.0_20261015",
+      "pdf_pages": [
+        36
+      ],
+      "printed_pages": [
+        35
+      ],
+      "section": "3.3.2.2",
+      "note": "",
+      "status": "extracted_from_official_2027_v1.0.0"
+    },
+    {
+      "id": "revive_hp_fraction",
+      "value": 0.2,
+      "unit": "max_hp_fraction",
+      "condition": "",
+      "source_document": "rmul_2027_rules_v1.0.0_20261015",
+      "pdf_pages": [
+        36
+      ],
+      "printed_pages": [
+        35
+      ],
+      "section": "3.3.2.2",
+      "note": "",
+      "status": "extracted_from_official_2027_v1.0.0"
+    },
+    {
+      "id": "revive_invulnerability_duration",
+      "value": 30,
+      "unit": "s",
+      "condition": "",
+      "source_document": "rmul_2027_rules_v1.0.0_20261015",
+      "pdf_pages": [
+        36
+      ],
+      "printed_pages": [
+        35
+      ],
+      "section": "3.3.2.2",
+      "note": "",
+      "status": "extracted_from_official_2027_v1.0.0"
+    },
+    {
+      "id": "weak_state_effects",
+      "value": [
+        "shooter_locked",
+        "cannot_activate_control_zone"
+      ],
+      "unit": "effects",
+      "condition": "",
+      "source_document": "rmul_2027_rules_v1.0.0_20261015",
+      "pdf_pages": [
+        36
+      ],
+      "printed_pages": [
+        35
+      ],
+      "section": "3.3.2.2",
+      "note": "",
+      "status": "extracted_from_official_2027_v1.0.0"
+    },
+    {
+      "id": "weak_and_invulnerable_removed_on_own_supply_card",
+      "value": true,
+      "unit": "bool",
+      "condition": "",
+      "source_document": "rmul_2027_rules_v1.0.0_20261015",
+      "pdf_pages": [
+        36
+      ],
+      "printed_pages": [
+        35
+      ],
+      "section": "3.3.2.2",
+      "note": "",
+      "status": "extracted_from_official_2027_v1.0.0"
+    },
+    {
+      "id": "coin_spending_scope",
+      "value": "ammo_allowance_only",
+      "unit": "scope",
+      "condition": "",
+      "source_document": "rmul_2027_rules_v1.0.0_20261015",
+      "pdf_pages": [
+        36
+      ],
+      "printed_pages": [
+        35
+      ],
+      "section": "3.3.3",
+      "note": "",
+      "status": "extracted_from_official_2027_v1.0.0"
+    },
+    {
+      "id": "periodic_coin_grants",
+      "value": [
+        {
+          "remaining_s": 299,
+          "coins": 200
+        },
+        {
+          "remaining_s": 239,
+          "coins": 200
+        },
+        {
+          "remaining_s": 179,
+          "coins": 200
+        },
+        {
+          "remaining_s": 119,
+          "coins": 300
+        },
+        {
+          "remaining_s": 59,
+          "coins": 300
+        }
+      ],
+      "unit": "schedule",
+      "condition": "",
+      "source_document": "rmul_2027_rules_v1.0.0_20261015",
+      "pdf_pages": [
+        36
+      ],
+      "printed_pages": [
+        35
+      ],
+      "section": "3.3.3",
+      "note": "Manual labels 04:59 entry as initial. Do not silently shift grants to reset or minute boundaries.",
+      "status": "extracted_from_official_2027_v1.0.0"
+    },
+    {
+      "id": "comeback_coin_grants",
+      "value": {
+        "first_gap_thresholds": [
+          200,
+          400
+        ],
+        "coins_each": 200,
+        "max_coins_per_team_per_match": 400
+      },
+      "unit": "rules",
+      "condition": "Control-score lower side on first reaching each listed gap",
+      "source_document": "rmul_2027_rules_v1.0.0_20261015",
+      "pdf_pages": [
+        36
+      ],
+      "printed_pages": [
+        35
+      ],
+      "section": "3.3.3",
+      "note": "",
+      "status": "extracted_from_official_2027_v1.0.0"
+    },
+    {
+      "id": "ammo_exchange_rates",
+      "value": {
+        "17mm": {
+          "coins": 10,
+          "projectiles": 10
+        },
+        "42mm": {
+          "coins": 10,
+          "projectiles": 1
+        }
+      },
+      "unit": "exchange_rate",
+      "condition": "",
+      "source_document": "rmul_2027_rules_v1.0.0_20261015",
+      "pdf_pages": [
+        37
+      ],
+      "printed_pages": [
+        36
+      ],
+      "section": "3.3.3",
+      "note": "",
+      "status": "extracted_from_official_2027_v1.0.0"
+    },
+    {
+      "id": "allowed_ammo_purchasers",
+      "value": [
+        "heavy",
+        "infantry"
+      ],
+      "unit": "roles",
+      "condition": "Activated own supply zone; operator requests",
+      "source_document": "rmul_2027_rules_v1.0.0_20261015",
+      "pdf_pages": [
+        37
+      ],
+      "printed_pages": [
+        36
+      ],
+      "section": "3.3.3",
+      "note": "",
+      "status": "extracted_from_official_2027_v1.0.0"
+    },
+    {
+      "id": "control_zone_names",
+      "value": [
+        "red_highland",
+        "center",
+        "blue_highland"
+      ],
+      "unit": "semantic_regions",
+      "condition": "",
+      "source_document": "rmul_2027_rules_v1.0.0_20261015",
+      "pdf_pages": [
+        37
+      ],
+      "printed_pages": [
+        36
+      ],
+      "section": "3.3.4",
+      "note": "",
+      "status": "extracted_from_official_2027_v1.0.0"
+    },
+    {
+      "id": "control_progress_bounds",
+      "value": [
+        0,
+        5
+      ],
+      "unit": "progress",
+      "condition": "",
+      "source_document": "rmul_2027_rules_v1.0.0_20261015",
+      "pdf_pages": [
+        37
+      ],
+      "printed_pages": [
+        36
+      ],
+      "section": "3.3.4.1",
+      "note": "",
+      "status": "extracted_from_official_2027_v1.0.0"
+    },
+    {
+      "id": "control_progress_rate",
+      "value": 1,
+      "unit": "progress/s",
+      "condition": "Only one team activates; remove enemy progress first if nonzero, otherwise increase own",
+      "source_document": "rmul_2027_rules_v1.0.0_20261015",
+      "pdf_pages": [
+        37
+      ],
+      "printed_pages": [
+        36
+      ],
+      "section": "3.3.4.1",
+      "note": "",
+      "status": "extracted_from_official_2027_v1.0.0"
+    },
+    {
+      "id": "control_both_teams_activate",
+      "value": "pause_progress",
+      "unit": "rule",
+      "condition": "",
+      "source_document": "rmul_2027_rules_v1.0.0_20261015",
+      "pdf_pages": [
+        37
+      ],
+      "printed_pages": [
+        36
+      ],
+      "section": "3.3.4.1",
+      "note": "",
+      "status": "extracted_from_official_2027_v1.0.0"
+    },
+    {
+      "id": "control_no_team_activates",
+      "value": "both_progress_decay_at_1_per_s_if_non_neutral",
+      "unit": "rule",
+      "condition": "",
+      "source_document": "rmul_2027_rules_v1.0.0_20261015",
+      "pdf_pages": [
+        37
+      ],
+      "printed_pages": [
+        36
+      ],
+      "section": "3.3.4.1",
+      "note": "",
+      "status": "extracted_from_official_2027_v1.0.0"
+    },
+    {
+      "id": "initial_control_score",
+      "value": 600,
+      "unit": "score/team",
+      "condition": "",
+      "source_document": "rmul_2027_rules_v1.0.0_20261015",
+      "pdf_pages": [
+        38
+      ],
+      "printed_pages": [
+        37
+      ],
+      "section": "3.3.4.2",
+      "note": "",
+      "status": "extracted_from_official_2027_v1.0.0"
+    },
+    {
+      "id": "enemy_control_score_drain_per_controlled_zone",
+      "value": 1,
+      "unit": "score/s",
+      "condition": "",
+      "source_document": "rmul_2027_rules_v1.0.0_20261015",
+      "pdf_pages": [
+        38
+      ],
+      "printed_pages": [
+        37
+      ],
+      "section": "3.3.4.2",
+      "note": "",
+      "status": "extracted_from_official_2027_v1.0.0"
+    },
+    {
+      "id": "own_control_score_death_loss",
+      "value": 10,
+      "unit": "score/death",
+      "condition": "",
+      "source_document": "rmul_2027_rules_v1.0.0_20261015",
+      "pdf_pages": [
+        38
+      ],
+      "printed_pages": [
+        37
+      ],
+      "section": "3.3.4.2",
+      "note": "",
+      "status": "extracted_from_official_2027_v1.0.0"
+    },
+    {
+      "id": "comeback_healing_and_revive",
+      "value": [
+        {
+          "control_gap_at_least": 200,
+          "supply_heal_fraction_max_hp_per_s": 0.33,
+          "revive_progress_reduction_fraction": 0.33
+        },
+        {
+          "control_gap_at_least": 400,
+          "supply_heal_fraction_max_hp_per_s": 0.5,
+          "revive_progress_reduction_fraction": 0.5
+        }
+      ],
+      "unit": "threshold_rules",
+      "condition": "Applies to lower control-score team",
+      "source_document": "rmul_2027_rules_v1.0.0_20261015",
+      "pdf_pages": [
+        38
+      ],
+      "printed_pages": [
+        37
+      ],
+      "section": "3.3.4.2",
+      "note": "",
+      "status": "extracted_from_official_2027_v1.0.0"
+    },
+    {
+      "id": "highland_defense_buff",
+      "value": 0.25,
+      "unit": "defense_fraction",
+      "condition": "Activated either highland buff",
+      "source_document": "rmul_2027_rules_v1.0.0_20261015",
+      "pdf_pages": [
+        38
+      ],
+      "printed_pages": [
+        37
+      ],
+      "section": "3.3.5.1",
+      "note": "",
+      "status": "extracted_from_official_2027_v1.0.0"
+    },
+    {
+      "id": "tunnel_sequence_window",
+      "value": 3,
+      "unit": "s",
+      "condition": "Detect both own-side tunnel cards with no other field card between detections",
+      "source_document": "rmul_2027_rules_v1.0.0_20261015",
+      "pdf_pages": [
+        38
+      ],
+      "printed_pages": [
+        37
+      ],
+      "section": "3.3.5.2",
+      "note": "",
+      "status": "extracted_from_official_2027_v1.0.0"
+    },
+    {
+      "id": "tunnel_cooling_multiplier",
+      "value": 1.5,
+      "unit": "multiplier",
+      "condition": "",
+      "source_document": "rmul_2027_rules_v1.0.0_20261015",
+      "pdf_pages": [
+        38
+      ],
+      "printed_pages": [
+        37
+      ],
+      "section": "3.3.5.2",
+      "note": "",
+      "status": "extracted_from_official_2027_v1.0.0"
+    },
+    {
+      "id": "tunnel_cooling_duration",
+      "value": 60,
+      "unit": "s",
+      "condition": "",
+      "source_document": "rmul_2027_rules_v1.0.0_20261015",
+      "pdf_pages": [
+        38
+      ],
+      "printed_pages": [
+        37
+      ],
+      "section": "3.3.5.2",
+      "note": "",
+      "status": "extracted_from_official_2027_v1.0.0"
+    },
+    {
+      "id": "buff_activation_drop_delay",
+      "value": 2,
+      "unit": "s",
+      "condition": "After robot no longer detects the buff RFID card",
+      "source_document": "rmul_2027_rules_v1.0.0_20261015",
+      "pdf_pages": [
+        38
+      ],
+      "printed_pages": [
+        37
+      ],
+      "section": "3.3.5.3",
+      "note": "",
+      "status": "extracted_from_official_2027_v1.0.0"
+    },
+    {
+      "id": "victory_priority",
+      "value": [
+        "opponent_control_zero",
+        "higher_control_at_timeout",
+        "higher_team_attack_damage",
+        "higher_team_remaining_hp",
+        "draw"
+      ],
+      "unit": "ordered_criteria",
+      "condition": "",
+      "source_document": "rmul_2027_rules_v1.0.0_20261015",
+      "pdf_pages": [
+        39
+      ],
+      "printed_pages": [
+        38
+      ],
+      "section": "3.3.7",
+      "note": "",
+      "status": "extracted_from_official_2027_v1.0.0"
+    }
+  ]
+}

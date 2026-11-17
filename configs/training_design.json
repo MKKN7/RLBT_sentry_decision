@@ -1,0 +1,816 @@
+{
+  "artifact_type": "design_specification_not_runtime_configuration",
+  "version": "0.8",
+  "prepared_on": "2026-11-15",
+  "implementation_status": "independent_UL_and_UC_local_courses_completed_full_match_pending",
+  "scope": {
+    "policy": [
+      "task_candidate_selection",
+      "rule_stance_selection"
+    ],
+    "execution": "BT_monitored_Nav2_MPPI",
+    "localization": "Point-LIO",
+    "terrain": "voxel_support_surface_and_clearance_analysis",
+    "excluded_policy_outputs": [
+      "cmd_vel",
+      "aiming",
+      "fire_control",
+      "thermal_control"
+    ],
+    "sentry_control_mode": "fully_automatic_AI_user_confirmed"
+  },
+  "terrain_design": {
+    "max_traversable_slope_deg": 20.0,
+    "inclusive": true,
+    "value_source": "user_selected_initial_navigation_threshold_not_verified_hardware_limit",
+    "estimate_support_surface_in_gravity_aligned_frame": true,
+    "slope_neighborhood_m": null,
+    "max_step_height_m": null,
+    "robot_envelope_and_swept_clearance_m": "configs/reference_robot_envelope.json; user-selected sim shape; static approx only",
+    "unknown_is_automatically_free": false,
+    "remove_traversable_slopes_from_raw_lidar_or_physics": false,
+    "retain_support_layer_and_overhead_clearance": true
+  },
+  "randomization_design": {
+    "parameter_status": "distributions_and_ranges_require_explicit_initial_assumptions_or_log_calibration",
+    "observation": {
+      "visibility_model": "geometry_and_sensing_limits_before_residual_misses",
+      "residual_detection_miss": {
+        "models": [
+          "distance_occlusion_conditioned",
+          "correlated_dropout_and_reacquisition"
+        ],
+        "probabilities": null,
+        "burst_duration_s": null
+      },
+      "position_and_heading_error": {
+        "models": [
+          "measurement_noise",
+          "temporally_correlated_bias",
+          "bounded_drift"
+        ],
+        "position_std_m": null,
+        "heading_std_rad": null,
+        "bias_correlation_s": null,
+        "alter_physical_truth": false
+      },
+      "optional_false_tracks_or_id_errors": {
+        "enabled_initially": false,
+        "rates": null
+      },
+      "expose_validity_source_age_and_available_covariance": true,
+      "actor_receives_injected_error_truth": false
+    },
+    "latency": {
+      "channels": [
+        "detection",
+        "radar_delivery",
+        "policy_inference_queue",
+        "BT_to_navigation_acceptance",
+        "execution_start",
+        "result_delivery"
+      ],
+      "units": "seconds",
+      "distributions_by_channel": null,
+      "simulate_queues_and_original_sample_time": true,
+      "validate_sequence_candidate_version_task_and_expiry": true,
+      "canceled_tasks_can_be_resurrected_by_late_messages": false,
+      "safety_stop_or_velocity_watchdog_can_be_bypassed": false
+    },
+    "execution": {
+      "variables": [
+        "tracking_error",
+        "response_lag",
+        "speed_and_braking_within_limits",
+        "temporary_route_blockage",
+        "task_completion_tolerance"
+      ],
+      "ranges": null,
+      "hold_related_parameters_over_episode_or_route_segment": true,
+      "derive_proxy_parameters_from_navigation_logs": true
+    },
+    "opponent_population": {
+      "styles": [
+        "defense",
+        "capture_and_recapture",
+        "pursuit_and_search",
+        "survival_and_resupply",
+        "route_and_ambush_preference",
+        "cooperation_or_split_roles"
+      ],
+      "policy_sources": [
+        "scripted",
+        "adapted_frozen_BT",
+        "historical_RL_checkpoint",
+        "targeted_challenge_policy"
+      ],
+      "sample_at": "episode_start",
+      "conditional_behavior_switching": true,
+      "resample_whole_style_every_policy_tick": false,
+      "mixture_weights": null,
+      "style_parameter_ranges": null,
+      "capability_parameter_ranges": null,
+      "separate_style_from_capability": true,
+      "randomize_scripted_teammates": true,
+      "default_opponent_has_legal_observations_only": true,
+      "actor_receives_true_opponent_style_id": false,
+      "reserve_held_out_policies_and_style_parameter_combinations": true
+    }
+  },
+  "fixed_contracts": [
+    "competition_rules",
+    "stance_cooldown_and_budgets",
+    "out_of_combat_definition",
+    "zone_access",
+    "BT_hard_safety_constraints",
+    "actor_observation_access"
+  ],
+  "curriculum": [
+    "deterministic_baseline",
+    "individual_perturbation_groups",
+    "mixed_normal_and_difficult_episodes",
+    "held_out_opponents_and_joint_stress_tests"
+  ],
+  "record_per_episode": [
+    "seed",
+    "rules_and_map_version",
+    "policy_and_BT_version",
+    "opponent_policy_id",
+    "sampled_style_and_capability_parameters",
+    "noise_and_latency_parameters",
+    "observation_timestamps",
+    "proposed_and_applied_actions",
+    "override_reason",
+    "match_outcome_criterion",
+    "competition_profile",
+    "map_id",
+    "map_hash",
+    "candidate_schema_version"
+  ],
+  "validation": {
+    "baselines": [
+      "pure_BT",
+      "RL_without_randomization",
+      "RL_with_randomization"
+    ],
+    "metrics": [
+      "win_rate_and_sample_count",
+      "control_score",
+      "base_survival",
+      "collision_and_zone_violation",
+      "tunnel_physical_and_buff_success",
+      "task_timeout_and_switching",
+      "BT_override",
+      "out_of_combat_time",
+      "latency_p95_p99",
+      "observation_age"
+    ],
+    "hold_out_by": [
+      "complete_match",
+      "opponent_policy_source",
+      "style_parameter_combination",
+      "seed",
+      "joint_perturbation_scenario",
+      "competition_profile_report_separately"
+    ]
+  },
+  "competition_profiles": {
+    "status": "separate_partial_rule_modules_and_UL_ground_curriculum_v4_full_matches_pending",
+    "shared": [
+      "actor_observation_contract",
+      "candidate_scoring_MLP_architecture",
+      "conditional_stance_head",
+      "BT_validation_and_feedback_contract",
+      "randomization_tools",
+      "logging_schema"
+    ],
+    "initial_weight_sharing": "separate_checkpoints_per_profile_same_architecture",
+    "optional_later_experiments": [
+      "shared_encoder",
+      "profile_conditioned_mixed_training"
+    ],
+    "profiles": {
+      "rmul_2027": {
+        "rules_status": "official_2027_V1.0.0_full_manual_obtained_44_selected_facts_partial_modules",
+        "official_rule_facts_path": "data/rmul_rule_facts.json",
+        "map_status": "official_STEP_provenance_checked_ground_course_graph_derived_not_real_nav_validation",
+        "map_id": "rmul2027_3v3_V1.0.0",
+        "map_hash": "sha256:7d47c1b6a6a0253a732e46cb122bb84410b11d5134bcb5658104299db4a48ca4",
+        "roster_status": "heavy_1_infantry_3_sentry_7_confirmed_distinct_role_implementation_pending",
+        "rule_stances": "not_inherited_from_UC_no_UL_sentry_stance_head_enabled",
+        "reward_and_terminal": "UL_ground_curriculum_v4_separate_task_reward_official_match_reward_pending",
+        "inherit_RMUC_rule_constants": false,
+        "opponent_pool": "separate_UL_adapted_scripted_BT_and_historical_RL",
+        "checkpoint": "runs/ul_ground_curriculum_v4_16384_20261116/final.pt",
+        "sentry_control_mode": "automatic",
+        "automatic_rule_baseline": {
+          "hp": 400,
+          "heat_limit": 260,
+          "base_cooling_heat_per_s": 30,
+          "base_power_W": 100,
+          "ammo_allowance_initial": 750,
+          "ammo_allowance_can_increase_in_match": false,
+          "match_duration_s": 300,
+          "sentry_multi_robot_communication_allowed": false,
+          "source": "data/rmul_rule_facts.json",
+          "affects_phase1_simplified_environment": false
+        },
+        "sentry_purchase_mask": {
+          "remote_heal": false,
+          "remote_ammo": false,
+          "local_ammo": false
+        },
+        "geometry_manifest": "assets/rmul_2027/derived/manifest.json",
+        "surface_layers": "data/derived/ul_surface_layers_005m/report.json"
+      },
+      "rmuc_2027": {
+        "rules_status": "user_V1.0.0_20261015_extracted_not_complete_rule_engine",
+        "official_rule_facts_path": "data/rule_facts.json",
+        "map_status": "user_selected_original_STL_local_strict_execution_validated_full_match_registration_pending",
+        "map_id": "rmuc2027_original_unsuffixed",
+        "map_hash": "sha256:93ff0118af176f388c171b239acfdcac72c17cbe0b523350d5d916d3236fe10b",
+        "roster_status": "configure_per_role_and_verified_UC_rules",
+        "rule_stances": "user_provided_UC_rule_baseline",
+        "reward_and_terminal": "independent_UC_implementation_pending",
+        "opponent_pool": "separate_UC_adapted_scripted_BT_and_historical_RL",
+        "checkpoint": null,
+        "sentry_control_mode": "automatic",
+        "automatic_rule_baseline": {
+          "hp": 400,
+          "heat_limit": 260,
+          "base_cooling_heat_per_s": 30,
+          "base_power_W": 100,
+          "source": "data/rule_facts.json",
+          "affects_phase1_simplified_environment": false
+        },
+        "surface_layers": "data/derived/uc_surface_layers_010m/report.json",
+        "map_reference": "configs/uc_map_reference.json"
+      }
+    },
+    "actor_entities": [
+      "role",
+      "exists_mask",
+      "observed_mask",
+      "observation_age"
+    ],
+    "candidate_contract": [
+      "task_type",
+      "point_semantics",
+      "route_type",
+      "path_cost",
+      "legal_mask",
+      "candidate_version",
+      "continue_current_task_option"
+    ],
+    "jax_shape_options": [
+      "compile_fixed_shapes_per_profile",
+      "bounded_padding_with_masks"
+    ],
+    "evaluation": [
+      "separate_complete_match_metrics_per_profile",
+      "red_blue_swapped",
+      "held_out_opponent_policies",
+      "never_use_combined_win_rate_as_only_acceptance"
+    ],
+    "trainable_agents_initially": "own_sentry_only_other_roles_scripted_or_frozen",
+    "reference_source": {
+      "name": "alphaRM-JAX",
+      "commit": "9f2489ce78e46f0e37a21e90d4b11a0a1a94c4d2",
+      "use": "fast_environment_rollout_and_league_reference_not_official_rules_or_direct_actor_reuse",
+      "runtime_status": "CPU_ONNX_demo_probe_passed_no_JAX_trainer_run",
+      "report": "data/demos/alpharm_probe/report.json"
+    }
+  },
+  "phase1_implementation": {
+    "scenario_id": "alpharm_task_prototype_v1",
+    "environment": "rl_bt/alpharm_task_env.py",
+    "train_entry": "scripts/train_phase1.py",
+    "official_competition_profile": null,
+    "candidate_count": 16,
+    "decision_period_s": 0.5,
+    "trainable_output": "candidate_selection_only",
+    "stance_head_active": false,
+    "navigation": "fixed_planar_proxy_not_Nav2_MPPI",
+    "BT": "Python_validation_monitor_not_actual_XML_runtime",
+    "full_latency_queue_implemented": false,
+    "records": "runs/phase1_candidate_20261115, runs/phase1_bt_warmstart_20261115, runs/phase1_continue_65536_20261116",
+    "readiness_document": "docs/10_continued_training_and_evaluation.md",
+    "training_status": "additional_65536_decisions_completed_cumulative_69632_validation_and_160_episode_test_completed_convergence_not_established",
+    "permission_expansion_supported_by_evidence": false,
+    "continued_run_summary": {
+      "initial_decisions": 4096,
+      "additional_decisions": 65536,
+      "cumulative_decisions": 69632,
+      "additional_complete_episodes": 817,
+      "validation_complete_episodes": 160,
+      "final_test_episodes_per_policy": 80,
+      "final_test_RL_wins": 52,
+      "final_test_BT_wins": 63,
+      "report": "data/reports/phase1_continued_training_20261116.json"
+    },
+    "reward": {
+      "implementation": "upstream_team_mean_sum_minus_0.002_per_changed_goal",
+      "documentation": "docs/11_reward_design.md",
+      "official_UL_UC_reward_implemented": false,
+      "economy_in_reward": false,
+      "changed_during_continued_run": false
+    },
+    "reward_diagnostics": {
+      "module": "rl_bt/rewards.py",
+      "components_module": "rl_bt/reward_components.py",
+      "profiles_available": [
+        "upstream",
+        "no_home",
+        "no_fire",
+        "no_home_no_fire",
+        "own_damage"
+      ],
+      "long_ablation_training_started": false,
+      "new_recording_smoke_decisions": 128,
+      "parity_report": "data/reports/reward_baseline_parity_20261116.json",
+      "privileged_diagnostics_are_actor_inputs": false
+    }
+  },
+  "economy_design": {
+    "preference": "conservative_team_shared_currency_user_confirmed",
+    "status": "offline_UC_healing_effect_and_budget_transaction_integration_tested_not_RL_or_live_referee",
+    "policy_decision": "whether_and_when_to_request_rule_legal_heal_or_ammo",
+    "execution": "BT_quote_validation_reservation_idempotent_transaction_and_effect_ack",
+    "team_reserve_floor_coins": null,
+    "sentry_match_cap_coins": null,
+    "spend_penalty_weight": null,
+    "inflight_purchase_limit": 1,
+    "refund_on_timeout": false,
+    "distinguish_free_supply_gift_ammo_and_paid_purchase": true,
+    "rules_separate_for_UL_UC": true,
+    "actor_inputs_required": [
+      "available_team_coins",
+      "sentry_spent_and_remaining_budget",
+      "pending_purchase_and_effect_time",
+      "free_supply_route_cost",
+      "free_ammo_unclaimed",
+      "team_resource_needs_when_legally_available"
+    ],
+    "metrics": [
+      "sentry_coins_spent",
+      "paid_heal_count",
+      "paid_ammo_count",
+      "free_supply_used",
+      "pending_failed_or_duplicate_transactions",
+      "team_reserve_violations",
+      "teammate_resource_shortages",
+      "match_outcome"
+    ],
+    "prototype_environment_has_economy": false,
+    "profile_restrictions": {
+      "rmul_2027": "sentry cannot buy HP or increase allowance; 750 initial, fixed",
+      "rmuc_2027": "allowed purchases require verified eligibility/budgets/ACK; offline adapter only"
+    }
+  },
+  "last_updated": "2026-11-16",
+  "healing_semantics": {
+    "reference": "configs/healing_semantics.json",
+    "documentation": "docs/12_healing_and_map_semantics.md",
+    "UC_reviewed_pdf_page": 74,
+    "UL_full_rules_verified": true,
+    "formal_geometry_registered": false,
+    "team_base_supply_only_restriction": "pending_user_clarification"
+  },
+  "ul_ground_curriculum": {
+    "scenario_id": "ul2027_ground_task_curriculum_v4",
+    "environment": "rl_bt/ul_task_env.py",
+    "policy": "rl_bt/ul_curriculum_policy.py",
+    "train_entry": "scripts/train_ul_curriculum.py",
+    "navigation_proxy": "rl_bt/ul_navigation.py",
+    "navigation_contract": "rl_bt/navigation_contract.py",
+    "legal_public_observations": "rl_bt/ul_observation.py",
+    "source_protocol": "docs/15_ul_observation_protocol.md",
+    "run": "runs/ul_ground_curriculum_v4_16384_20261116",
+    "PPO_decisions": 16384,
+    "BT_imitation_decisions": 4096,
+    "actor_parameters": 12449,
+    "state_dim": 24,
+    "candidate_dim": 12,
+    "decision_period_s": 0.5,
+    "course_duration_s": 60.0,
+    "official_UL_match_duration_s": 300,
+    "candidate_count": 16,
+    "highland_and_tunnel_enabled": false,
+    "full_combat": false,
+    "opponents_or_visual_detection_in_course": false,
+    "actual_Nav2_MPPI_connected": false,
+    "checkpoint_import_or_resume_supported": false,
+    "document": "docs/16_ul_ground_curriculum.md",
+    "evaluation_seed_range": [
+      55001,
+      55024
+    ],
+    "metric": "task_success_not_match_win",
+    "permissions_expanded": false,
+    "complete_training_episodes": 433,
+    "evaluation_per_policy": 24,
+    "initial_after_BC_successes": 24,
+    "final_RL_successes": 24,
+    "BT_successes": 24,
+    "formal_match_acceptance": false,
+    "ONNX": "runs/ul_ground_curriculum_v4_16384_20261116/actor.onnx",
+    "verification": "runs/ul_ground_curriculum_v4_16384_20261116/verification.json"
+  },
+  "nav2_execution_integration": {
+    "status": "actual_UC_strict_observed_support_short_execution_and_stop_checks_not_formal_training",
+    "runtime_version": "Nav2_Humble_1.1.20",
+    "private_runtime": "runtime/nav2",
+    "shared_system_packages_modified": false,
+    "domain_id": 79,
+    "namespace": "rl_bt_nav_probe",
+    "entrypoint": "scripts/run_nav2_closed_loop.py",
+    "navigation_action_adapter": "scripts/nav2_action_probe.py",
+    "sensor_fixture": "scripts/nav2_mujoco_fixture.py",
+    "parameters": "configs/nav2_probe.yaml",
+    "BT": "configs/nav2_probe_bt.xml",
+    "controller": "nav2_mppi_controller::MPPIController",
+    "motion_model": "Omni",
+    "GT_navigation_input": false,
+    "training_env_navigation_replaced": false,
+    "formal_UL_UC_map_validated": false,
+    "full_voxel_20deg_terrain_connected": false,
+    "position_goal_success": "runs/nav2_pointlio_position_goal_obstacle_20261116/verification.json",
+    "document": "docs/17_nav2_mppi_integration.md",
+    "UC_original_map_execution": "runs/uc_rmuc_original_nav2_forward_20261116/verification.json",
+    "UC_map_reference": "configs/uc_map_reference.json",
+    "UC_preparation": "scripts/prepare_uc_original_field.py",
+    "voxel_module": "rl_bt/voxel_terrain.py",
+    "local_observed_voxel_obstacles_connected": true,
+    "unknown_support_enforced_in_costmap": true,
+    "UC_document": "docs/19_observed_support_costmap.md",
+    "terrain_worker": "rl_bt/terrain_worker.py",
+    "terrain_max_submission_hz_simulation_time": 1.0,
+    "terrain_result_max_age_s": 2.5,
+    "UC_final_async_execution": "runs/uc_rmuc_original_nav2_worker_forward_20261116/verification.json",
+    "UC_final_async_cancellation": "runs/uc_rmuc_original_nav2_worker_cancel_20261116/verification.json",
+    "UC_support_projection": "rl_bt/support_costmap.py",
+    "UC_dual_lidar_registration": "rl_bt/scan_registration.py",
+    "UC_default_terrain_prior": "observed",
+    "UC_terrain_input": "two_real_simulated_scans_registered_with_PointLIO_estimated_pose_history_and_encoder_TF",
+    "UC_lidar_mount_motion_compensation": "approximately_fixed_mount_only",
+    "UC_full_path_circle_radius_m": 0.411,
+    "UC_execution_current_footprint_monitor": true,
+    "UC_fixed_initial_footprint_prior": "explicit_opt_in_engineering_assumption_not_scan_observation",
+    "UC_latest_success": "runs/uc_support_active_footprint_short_20261116/verification.json",
+    "UC_support_dropout": "runs/uc_support_map_dropout_20261116/verification.json",
+    "UC_long_route_support_stable": false,
+    "UC_support_report": "data/reports/uc_support_execution_20261116.json",
+    "UC_latest_dropout_attempt": "runs/uc_support_map_dropout_final_20261116/verification.json",
+    "UC_latest_dropout_attempt_scope": "rejected_unsupported_initial_footprint_before_dispatch_not_active_dropout_revalidation",
+    "live_training_env_navigation_replaced": true,
+    "live_training_scope": "original_UC_local_live_BT_BC_PPO_and_frozen_evaluations_not_formal_match"
+  },
+  "uc_observed_support_course": {
+    "scenario_id": "uc2027_observed_support_multistage_v1",
+    "run": "runs/uc_support_multistage_32768_20261116",
+    "PPO_decisions": 65536,
+    "BT_imitation_decisions": 2048,
+    "complete_training_episodes": 2110,
+    "rounds_cumulative_decisions": [
+      32768,
+      65536
+    ],
+    "score_max": 100,
+    "final_validation": {
+      "PPO_successes": 30,
+      "episodes": 32,
+      "mean_score_100": 91.41088865292386,
+      "BC_successes": 32,
+      "BT_successes": 32
+    },
+    "final_test": {
+      "PPO_successes": 64,
+      "BC_successes": 64,
+      "BT_successes": 64,
+      "episodes_per_policy": 64,
+      "PPO_mean_score_100": 93.34024413850868,
+      "BT_mean_score_100": 93.63439183458924
+    },
+    "PPO_gain_demonstrated": false,
+    "permissions_expanded": false,
+    "actual_Nav2_MPPI_in_training": false,
+    "full_match_training": false,
+    "economy_or_posture_or_combat_included": false,
+    "exact_resume_supported": true,
+    "report": "data/reports/uc_support_training_20261116.json",
+    "document": "docs/20_uc_support_training.md"
+  },
+  "uc_observed_support_course_v2": {
+    "scenario_id": "uc2027_observed_support_finite_task_v2",
+    "experiments": [
+      {
+        "algorithm": "vanilla",
+        "seed": 271,
+        "run": "runs/uc_support_v2_vanilla_s271_20261116"
+      },
+      {
+        "algorithm": "vanilla",
+        "seed": 809,
+        "run": "runs/uc_support_v2_vanilla_s809_20261116"
+      },
+      {
+        "algorithm": "anchored",
+        "seed": 271,
+        "run": "runs/uc_support_v2_anchored_s271_20261116"
+      },
+      {
+        "algorithm": "anchored",
+        "seed": 809,
+        "run": "runs/uc_support_v2_anchored_s809_20261116"
+      }
+    ],
+    "per_run_PPO_decisions": 32768,
+    "PPO_decisions_total": 131072,
+    "BC_labels_per_run": 2048,
+    "score_max_unchanged": 100,
+    "test_episodes_per_run": 64,
+    "all_PPO_test_completed": true,
+    "anchored_test_mean_score": 93.38362738293495,
+    "anchored_test_matches_BT": true,
+    "PPO_gain_over_BT_demonstrated": false,
+    "permissions_expanded": false,
+    "live_Nav2_MPPI_in_training": false,
+    "full_match_training": false,
+    "report": "data/reports/uc_support_v2_training_20261117.json",
+    "document": "docs/21_uc_support_optimization_v2.md"
+  },
+  "live_navigation_training": {
+    "scenario_id": "uc_original_live_pointlio_nav2_mppi_task_v1",
+    "actual_Nav2_MPPI_in_training_loop": true,
+    "run": "runs/uc_live_ppo_pilot_20261117",
+    "BT_commission_run": "runs/uc_live_bt_commission_20261117",
+    "decisions": 49,
+    "PPO_updates": 7,
+    "MPPI_commands": 139,
+    "nonzero_MPPI_commands": 131,
+    "completed_episodes": 3,
+    "successes": 0,
+    "actor_weight_change_l2": 0.04542695027386739,
+    "runtime_verified_session_count": 3,
+    "real_simulation_timing": true,
+    "fresh_initialization": true,
+    "physics_exact_resume_supported": false,
+    "full_match_training": false,
+    "document": "docs/22_live_nav2_training.md",
+    "report": "data/reports/live_nav2_training_20261117.json",
+    "continuation": {
+      "registration": "configs/live_nav2_continue_20261117.json",
+      "observation_contract_revision": 2,
+      "demonstration_run": "runs/uc_live_bt_demonstrations_r2_20261117",
+      "PPO_run": "runs/uc_live_ppo_bc_continue_20261117",
+      "BC_evaluation_run": "runs/uc_live_bc_evaluation_20261117",
+      "PPO_evaluation_run": "runs/uc_live_ppo_evaluation_20261117",
+      "PPO_decisions": 248,
+      "PPO_updates": 31,
+      "PPO_episodes": 8,
+      "PPO_successes": 1,
+      "PPO_forced_only_hold_transitions": 240,
+      "PPO_multiple_action_transitions": 8,
+      "BC_actor_only_updates": 200,
+      "BC_evaluation_successes": 4,
+      "PPO_evaluation_successes": 0,
+      "evaluation_episodes_per_policy": 4,
+      "evaluation_weights_unchanged": true,
+      "physics_identically_seeded_or_paired": false,
+      "PPO_gain_demonstrated": false,
+      "permissions_expanded": false,
+      "full_match_training": false,
+      "document": "docs/23_live_nav2_continuation.md",
+      "report": "data/reports/live_nav2_continue_20261117/report.md"
+    },
+    "actor_validity_revision": {
+      "registration": "configs/live_nav2_validity_20261117.json",
+      "run": "runs/uc_live_actor_validity_train_20261117",
+      "actor_learning_revision": 1,
+      "on_policy_actor_sample_count": 26,
+      "critic_sample_count": 108,
+      "forced_applied_single_choice_count": 82,
+      "rollout_updates": 14,
+      "actor_optimizer_steps": 28,
+      "anchor_only_actor_optimizer_steps": 16,
+      "episodes": 8,
+      "successes": 5,
+      "PPO_sensor_seed_schedule": [
+        31000,
+        31001,
+        31002,
+        31003,
+        31004,
+        31005,
+        31006,
+        31007
+      ],
+      "eval_sensor_seed_schedule": [
+        41000,
+        41001,
+        41002,
+        41003
+      ],
+      "physics_identically_seeded_or_paired": false,
+      "near_field_prefilter_capture_frames": 71,
+      "unknown_columns_prefilter_startup_returns": [
+        0,
+        0
+      ],
+      "self_filter_unchanged": true,
+      "PPO_gain_demonstrated": false,
+      "document": "docs/24_live_actor_validity_and_terrain.md",
+      "report": "data/reports/live_nav2_validity_20261117/report.md",
+      "BC_frozen_successes": 3,
+      "PPO_frozen_successes": 2,
+      "evaluation_episodes_per_policy": 4,
+      "recorded_observation_comparison_count": 135,
+      "recorded_greedy_action_differences": 0
+    }
+  },
+  "temporal_global_strategy_pilot": {
+    "registration": "configs/temporal_strategy_experiment_20261117.json",
+    "implementation": "docs/25_temporal_global_strategy_pilot.md",
+    "scenario_id": "alpharm_temporal_global_phase_v1",
+    "reused_environment": "alpharm_task_prototype_v1",
+    "training": [
+      {
+        "run": "temporal_mlp_s271_4096_20261117",
+        "decisions": 4116,
+        "episodes": 56,
+        "updates": 14,
+        "actor_decisions": 2920,
+        "forced": 1196,
+        "min_actor_batch": 177,
+        "duration_min": 25.0,
+        "duration_max": 65.4
+      },
+      {
+        "run": "temporal_mlp_s809_4096_20261117",
+        "decisions": 4124,
+        "episodes": 51,
+        "updates": 13,
+        "actor_decisions": 2828,
+        "forced": 1296,
+        "min_actor_batch": 149,
+        "duration_min": 22.7,
+        "duration_max": 68.0
+      },
+      {
+        "run": "temporal_gru_s271_4096_20261117",
+        "decisions": 4133,
+        "episodes": 55,
+        "updates": 14,
+        "actor_decisions": 2859,
+        "forced": 1274,
+        "min_actor_batch": 136,
+        "duration_min": 23.4,
+        "duration_max": 83.2
+      },
+      {
+        "run": "temporal_gru_s809_4096_20261117",
+        "decisions": 4177,
+        "episodes": 50,
+        "updates": 13,
+        "actor_decisions": 2951,
+        "forced": 1226,
+        "min_actor_batch": 129,
+        "duration_min": 22.5,
+        "duration_max": 69.6
+      }
+    ],
+    "total_decisions": 16550,
+    "total_completed_episodes": 212,
+    "total_updates": 54,
+    "effective_actor_decisions": 11558,
+    "real_nav2_in_loop": false,
+    "official_UL_UC_training": false,
+    "PPO_superiority_demonstrated": false,
+    "RL_permissions_expanded": false,
+    "evaluation_status": "complete_frozen_64_episodes",
+    "training_device": "cpu",
+    "BC_updates": 0,
+    "formal_shared_economy_implemented": false,
+    "tests_passed": 342,
+    "evaluation_run": "runs/temporal_frozen_evaluation_20261117",
+    "report": "data/reports/temporal_strategy_20261117/report.md",
+    "fixed_test_per_policy": 8,
+    "policy_test_summary": {
+      "bt_reactive": {
+        "episodes": 8,
+        "completed": 8,
+        "truncated": 0,
+        "wins": 8,
+        "draws": 0,
+        "win_rate": 1.0,
+        "mean_return": 11.374653428677917,
+        "mean_switches": 3.75
+      },
+      "bt_memory": {
+        "episodes": 8,
+        "completed": 8,
+        "truncated": 0,
+        "wins": 8,
+        "draws": 0,
+        "win_rate": 1.0,
+        "mean_return": 11.05982474934856,
+        "mean_switches": 5.625
+      },
+      "mlp_s271": {
+        "episodes": 8,
+        "completed": 8,
+        "truncated": 0,
+        "wins": 8,
+        "draws": 0,
+        "win_rate": 1.0,
+        "mean_return": 10.655885710504377,
+        "mean_switches": 1.125
+      },
+      "mlp_s809": {
+        "episodes": 8,
+        "completed": 8,
+        "truncated": 0,
+        "wins": 8,
+        "draws": 0,
+        "win_rate": 1.0,
+        "mean_return": 11.012103971765306,
+        "mean_switches": 1.125
+      },
+      "gru_s271": {
+        "episodes": 8,
+        "completed": 8,
+        "truncated": 0,
+        "wins": 8,
+        "draws": 0,
+        "win_rate": 1.0,
+        "mean_return": 11.072885883757294,
+        "mean_switches": 0.0
+      },
+      "gru_s271_reset": {
+        "episodes": 8,
+        "completed": 8,
+        "truncated": 0,
+        "wins": 8,
+        "draws": 0,
+        "win_rate": 1.0,
+        "mean_return": 11.072885883757294,
+        "mean_switches": 0.0
+      },
+      "gru_s809": {
+        "episodes": 8,
+        "completed": 8,
+        "truncated": 0,
+        "wins": 8,
+        "draws": 0,
+        "win_rate": 1.0,
+        "mean_return": 10.655885710504377,
+        "mean_switches": 1.125
+      },
+      "gru_s809_reset": {
+        "episodes": 8,
+        "completed": 8,
+        "truncated": 0,
+        "wins": 8,
+        "draws": 0,
+        "win_rate": 1.0,
+        "mean_return": 10.655885710504377,
+        "mean_switches": 1.125
+      }
+    },
+    "GRU_memory_ablation_return_difference_s271": 0.0,
+    "GRU_memory_ablation_return_difference_s809": 0.0,
+    "all_test_policies_win_ceiling": true,
+    "recorded_observation_memory_dependence": [
+      {
+        "policy": "gru_s271",
+        "trace": "/home/kellen/桌面/RL_BT_decision/runs/temporal_frozen_evaluation_20261117/gru_s271_seed51001_capture_side0.npz",
+        "trace_sha256": "428de5849178b5062c273d865f9f93d9eddcff609eda6d02a7baa589226efdb2",
+        "observations": 71,
+        "multiple_legal_choices": 71,
+        "carried_vs_cleared_greedy_differences": 0,
+        "carried_replay_mismatches": 0,
+        "maximum_legal_normalized_logit_difference": 0.0007607936859130859,
+        "scope": "same recorded observations; no environment rerun or performance attribution"
+      },
+      {
+        "policy": "gru_s809",
+        "trace": "/home/kellen/桌面/RL_BT_decision/runs/temporal_frozen_evaluation_20261117/gru_s809_seed51001_capture_side0.npz",
+        "trace_sha256": "0ff94da1fa6a9f1a9eeb0e050d429dcfe16b90a93cc4a2a9daf89b07b5ae998d",
+        "observations": 73,
+        "multiple_legal_choices": 52,
+        "carried_vs_cleared_greedy_differences": 0,
+        "carried_replay_mismatches": 0,
+        "maximum_legal_normalized_logit_difference": 0.0026581287384033203,
+        "scope": "same recorded observations; no environment rerun or performance attribution"
+      }
+    ],
+    "maximum_actual_training_episode_s": 83.2,
+    "convergence_established": false,
+    "posthoc_control_audit": "data/reports/temporal_strategy_20261117/control_audit.md",
+    "posthoc_control_episodes": 16,
+    "fixed_HOLD_wins": 8,
+    "fixed_center_wins": 8,
+    "control_episodes_per_policy": 8,
+    "conclusion": "no measured useful recurrent dependence; selected test outcome saturated even for fixed policies"
+  }
+}

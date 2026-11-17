@@ -1,0 +1,3119 @@
+{
+  "artifact_type": "UC_observed_support_iteration_exact_files",
+  "source_config_and_document_files": [
+    {
+      "path": "README.md",
+      "bytes": 9844,
+      "sha256": "aac98f8f3e2802d3622ffd9d840d8208d03b7b0e4577480e94aa50f3305e5861"
+    },
+    {
+      "path": "docs/18_uc_rmucstl_execution.md",
+      "bytes": 6594,
+      "sha256": "775fbad5036998f785c2726089d7cbf293c05924111d060b1d414421b8b2980e"
+    },
+    {
+      "path": "docs/19_observed_support_costmap.md",
+      "bytes": 8014,
+      "sha256": "5f5e5669fc7c6069f584fb70156333df2f932231b49429d73fe56192eb7710c4"
+    },
+    {
+      "path": "configs/training_design.json",
+      "bytes": 18421,
+      "sha256": "5230b0a249d44da3291efacff4c4cb51035ef3dfcc6478e6e5e955e243bfd356"
+    },
+    {
+      "path": "rl_bt/support_costmap.py",
+      "bytes": 11948,
+      "sha256": "aa4f4c89049968f87092baf8a5807f48fc7891911b75b28b9a964e71045481db"
+    },
+    {
+      "path": "rl_bt/terrain_worker.py",
+      "bytes": 16126,
+      "sha256": "33d0ab46544051bb9f4581f93536f3eeeba4aea44b99b22768be8fefba4078eb"
+    },
+    {
+      "path": "rl_bt/scan_registration.py",
+      "bytes": 11553,
+      "sha256": "a36fa9d04f59e26e7087cdfe77e8659decf744fc92eeb1af65d8fcb5881adf52"
+    },
+    {
+      "path": "scripts/launch_nav2_probe.py",
+      "bytes": 9906,
+      "sha256": "929afadc6bcfa876167a2632f22ab5f831224d58d0f1cc6e7d42628671ab5231"
+    },
+    {
+      "path": "scripts/nav2_mujoco_fixture.py",
+      "bytes": 28230,
+      "sha256": "137aaf546f57b3fd144149866d3ddca4cee4a2ca6126b312ec219e61e050bbe8"
+    },
+    {
+      "path": "scripts/nav2_action_probe.py",
+      "bytes": 20171,
+      "sha256": "e7b59550afa5ffb2131d871d63cec88ffd9bc11df878b15c73fe84d745da0cbc"
+    },
+    {
+      "path": "scripts/run_nav2_closed_loop.py",
+      "bytes": 12986,
+      "sha256": "8451836e938a76996aa2aec5ba2656e78a4d2bf56a95c633e80432af74aa8bcf"
+    },
+    {
+      "path": "scripts/report_uc_navigation.py",
+      "bytes": 4942,
+      "sha256": "55abf780f8fb28e3fa33cb4d98620e1ee098a9c014c26db3466eada91278b984"
+    },
+    {
+      "path": "scripts/report_competition_readiness.py",
+      "bytes": 6422,
+      "sha256": "52864dc3931760af96cd2834a35d6e16347cd79341011785bd2ca24b9a949a64"
+    },
+    {
+      "path": "tests/test_support_costmap.py",
+      "bytes": 6087,
+      "sha256": "f1a2428384b8e5f2641bd32ffe55308acd6865b7a87f29b28c9a2751619cac53"
+    },
+    {
+      "path": "tests/test_terrain_worker.py",
+      "bytes": 10206,
+      "sha256": "fb71eacfbaf6ac75151ed7daa2146e33db14ffeb62e54b993368d461d5938bd3"
+    },
+    {
+      "path": "tests/test_scan_registration.py",
+      "bytes": 7743,
+      "sha256": "befedea22d2198de01d0c1ad527ff4e695a74df60979b396e63ac979dafae744"
+    },
+    {
+      "path": "tests/test_nav2_support_config.py",
+      "bytes": 5054,
+      "sha256": "69f43dbcd46483884023df5b280b51e575f30a966ec448e41de4a38c807a5ac0"
+    }
+  ],
+  "generated_and_reference_files": [
+    {
+      "path": "data/references/nav2_support_review/cost_critic.cpp",
+      "bytes": 8219,
+      "sha256": "0630dc3f8302d146d7f5317ee2c3fc940cc6f6ad63f26b19bf0aa630accc7fa4"
+    },
+    {
+      "path": "data/references/nav2_support_review/costmap_2d.cpp",
+      "bytes": 15794,
+      "sha256": "2890457f44d146899cc6478763646ef8aa83c2e2455792845c6c0f8f1ba8ac67"
+    },
+    {
+      "path": "data/references/nav2_support_review/costmap_2d_ros.cpp",
+      "bytes": 27873,
+      "sha256": "4ab6513bd73b88dc23e8e31de72dac14eccab67c1c574e89e412cbfc7a3fcc4d"
+    },
+    {
+      "path": "data/references/nav2_support_review/costmap_layer.cpp",
+      "bytes": 6481,
+      "sha256": "9254a0f7bee62acce6df879ad5a4243693954864b54f18f7db6a05ae27b10159"
+    },
+    {
+      "path": "data/references/nav2_support_review/footprint.cpp",
+      "bytes": 7434,
+      "sha256": "963c902da9f4ad2ea76c3da3547db6d9dfbea122ea83b5578535c59ea0406370"
+    },
+    {
+      "path": "data/references/nav2_support_review/inflation_layer.cpp",
+      "bytes": 16658,
+      "sha256": "0d1cdb9a0c1717e95a0d2ac75790384e4bb86f54d59963f0042c8d648cc78f11"
+    },
+    {
+      "path": "data/references/nav2_support_review/layered_costmap.cpp",
+      "bytes": 9924,
+      "sha256": "d76a9be3054d841eb74db0cbbd31a8a8b0a09ea466fe74162e8f6889fad1c1c2"
+    },
+    {
+      "path": "data/references/nav2_support_review/navfn.cpp",
+      "bytes": 26220,
+      "sha256": "863446230ae83fb19b1543228c2791b2ff7dec3a997ea57e67322a02bee2d266"
+    },
+    {
+      "path": "data/references/nav2_support_review/navfn_planner.cpp",
+      "bytes": 16558,
+      "sha256": "d8fb84a3b4323676e128c1ca8e8c91f14de3f98116b2bb09235ce50942e1c995"
+    },
+    {
+      "path": "data/references/nav2_support_review/obstacle_layer.cpp",
+      "bytes": 26312,
+      "sha256": "82c4d55f28f4a564a42697c5b54300c47730bcec79f5fd09c37b62c39e8225b2"
+    },
+    {
+      "path": "data/references/nav2_support_review/sources.json",
+      "bytes": 3732,
+      "sha256": "5be9333f887341552dc18c2f47825959def41cb59c5a3ae89e6ae9113f62f786"
+    },
+    {
+      "path": "data/references/nav2_support_review/static_layer.cpp",
+      "bytes": 16185,
+      "sha256": "1b5c71dfb20309ba473a9c12a5c176a159a6df3c02c187cee08130880c4e6fb1"
+    },
+    {
+      "path": "data/reports/competition_readiness_20261116.json",
+      "bytes": 4126,
+      "sha256": "79e1755271c503d2aa5cf3c9073eff0817920ed566ec380fa85ea12083400eb3"
+    },
+    {
+      "path": "data/reports/uc_support_execution_20261116.json",
+      "bytes": 22851,
+      "sha256": "3e73519ffd96a1015047fd7a497327148231c1d11e6df83a75b1bc3b0a9787ef"
+    },
+    {
+      "path": "data/reports/uc_support_validation_20261116.json",
+      "bytes": 1287,
+      "sha256": "13a526e77c1366477cb138c2a9c442f8bc955cdced3baa2098e7dfe2a9fdde8c"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_lateral_20261116/action.log",
+      "bytes": 5781,
+      "sha256": "cd53117468cf66317e341f296c30f154c1000839419ed0a56392527df126dd50"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_lateral_20261116/action/global_costmap_at_plan.json",
+      "bytes": 30699,
+      "sha256": "d25c240b14e1f1fdd0fa84bb2a83df0a3f8228c5c5f94796dacfeec19161dbe7"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_lateral_20261116/action/local_costmap_at_plan.json",
+      "bytes": 3125,
+      "sha256": "3576d980e9a3c1dd67aee62519efcc261c2ad0c403452c2a5628a672753ae53f"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_lateral_20261116/action/result.json",
+      "bytes": 9225,
+      "sha256": "a7f2203e608033a9383613653cabf93cec0399ee8314e6a8786949c99ffd1f4e"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_lateral_20261116/action/semantic_support_at_plan.npz",
+      "bytes": 1416,
+      "sha256": "d6908cc89eb3aeeb1fef61e0c490a1d684fd741e2138810f9cc89912bc40bdf4"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_lateral_20261116/fixture.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_lateral_20261116/fixture/field_source.json",
+      "bytes": 829,
+      "sha256": "b316d6a8cfa767080f649c05e34d6161253c6105ae18ed57113d052d0f70fd0f"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_lateral_20261116/fixture/lio_display.log",
+      "bytes": 71,
+      "sha256": "b7e500de6ddef537b49f0e0b4a1a5a6de82c79fb8533d3a99af3409239e1e82a"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_lateral_20261116/fixture/model.xml",
+      "bytes": 6727331,
+      "sha256": "e11d8393fdd60b6ed38a8e7843dd139240ff397896d3378e23f54ee23a6f8523"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_lateral_20261116/fixture/pointlio-direct.yaml",
+      "bytes": 3112,
+      "sha256": "e8dfc93ad91f6213a3dc8cb754b8258e3ab7f30ac21eb3fe93dc7442d28637dc"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_lateral_20261116/fixture/pointlio-effective.yaml",
+      "bytes": 3898,
+      "sha256": "2252a38c5ccc59d1192c624ae6b44fd23da5503e83ba6bc43fe597ced00127d9"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_lateral_20261116/fixture/pointlio.log",
+      "bytes": 71,
+      "sha256": "f8eab78f6a9d28736a927c44000f64f2235b64899bb8802b333de2e34ff59b86"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_lateral_20261116/fixture/private_ros_bridge.py",
+      "bytes": 14057,
+      "sha256": "fa44e60ae677d5824be219706215ce5c49b2828c42ba4895bc5e6dc37575210b"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_lateral_20261116/fixture/result.json",
+      "bytes": 128307,
+      "sha256": "5ffe6eb72582431a71c6b5cf53df71f3d1212be9b14927036362708da1753aea"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_lateral_20261116/fixture/robot.yaml",
+      "bytes": 907,
+      "sha256": "5a59819498e64b2e19260c3980d2b84ba4183bc80cafcb59c6f5ba212f6e5380"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_lateral_20261116/fixture/simulation.yaml",
+      "bytes": 1456,
+      "sha256": "2316a24dcba674bfe4266f618d647f9bef452458b8eb70cdca0a0a469af48002"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_lateral_20261116/fixture/support_latest.npz",
+      "bytes": 8290,
+      "sha256": "b58d091c09b886c54915b6185c8ac6725bf462dcfae25800ab4abae4cf6deaac"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_lateral_20261116/fixture/terrain_sample_0001.npz",
+      "bytes": 271748,
+      "sha256": "ce31dbd4e1ff951a3d24d8101607d3ac8816e3384cc55054b76ce1cb82df3b60"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_lateral_20261116/nav2.log",
+      "bytes": 171,
+      "sha256": "0fa943473bab624fff772c3d88fdde43535cacb1a9ae5b5350aa3189d872174a"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_lateral_20261116/nav2/bt_navigator.log",
+      "bytes": 1648,
+      "sha256": "d6cde4a4401c837bf271969d9876d06956a25924385c0daa7a9cfd8332e650f5"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_lateral_20261116/nav2/controller_server.log",
+      "bytes": 10138,
+      "sha256": "40abca52e14f35e89dfdcef5f670a72040537d5fb57c873d12bd497c0956dae1"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_lateral_20261116/nav2/launcher_report.json",
+      "bytes": 2172,
+      "sha256": "b2bb1a21c9454adf3c55e3c2065d97a884b142fd1ca9ad3992975bcb0ae92b02"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_lateral_20261116/nav2/lifecycle_manager.log",
+      "bytes": 2161,
+      "sha256": "1d957cc63d08c612eb46257eb6568795154d0a104f89f16aa39f4ec73ed6ab07"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_lateral_20261116/nav2/nav2_params.generated.yaml",
+      "bytes": 8677,
+      "sha256": "440df995f6dd8b74b17fd1e46e4fc23c5bd3f6933657c35580a7580f9fc9a9ab"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_lateral_20261116/nav2/navigate_through_poses.xml",
+      "bytes": 450,
+      "sha256": "be3e58f586bfe905704fb7c8f51b0a2f0d5818174b17f9f2f543d12a253d3a5e"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_lateral_20261116/nav2/navigate_to_pose.xml",
+      "bytes": 511,
+      "sha256": "649d63d49ec17e65e568688da1538fb6ca0a85e44b2d0741da9bd7203d9132f1"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_lateral_20261116/nav2/planner_server.log",
+      "bytes": 4452,
+      "sha256": "0c4b811ada1fb79ea6212fc44c305a20b6c2e1cc969ef65f3c97fd8f3a5cb5f6"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_lateral_20261116/nav2/ros_logs/bt_navigator_33664_1794820208138.log",
+      "bytes": 1575,
+      "sha256": "df55ad16c82438c715ab387ee745c92817d283957d3592f6271b0fc91b5c4c43"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_lateral_20261116/nav2/ros_logs/controller_server_33662_1794820208139.log",
+      "bytes": 9972,
+      "sha256": "7550ec77e342b60856629f7498335bad5a6264832cd50015861d581f9c58bb48"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_lateral_20261116/nav2/ros_logs/lifecycle_manager_33665_1794820208137.log",
+      "bytes": 2043,
+      "sha256": "bdc791a7da3c62712f514854a99b385b4e66bc239916e3660e1f5a66f1200322"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_lateral_20261116/nav2/ros_logs/planner_server_33663_1794820208137.log",
+      "bytes": 4287,
+      "sha256": "6a2cebabc7f0c0e5eaa0a03e2d25372ffd25e4d7a1524f66e95199dbb49b7bf5"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_lateral_20261116/processes.json",
+      "bytes": 128,
+      "sha256": "092035348fb17ef6be1805bd2481923dc18c929e3e6cc8e6c0fcb86e5e6490d6"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_lateral_20261116/roslogs/lio_display_33777_1794820211247.log",
+      "bytes": 71,
+      "sha256": "b7e500de6ddef537b49f0e0b4a1a5a6de82c79fb8533d3a99af3409239e1e82a"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_lateral_20261116/roslogs/pointlio_direct_33776_1794820211247.log",
+      "bytes": 71,
+      "sha256": "f8eab78f6a9d28736a927c44000f64f2235b64899bb8802b333de2e34ff59b86"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_lateral_20261116/roslogs/python3_33660_1794820208304.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_lateral_20261116/roslogs/python_33659_1794820211148.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_lateral_20261116/source/configs/nav2_probe.yaml",
+      "bytes": 7320,
+      "sha256": "44f8175997da8a317fcf9bc0eeda4e5e64a0adf059904b988095b71f3f9a1023"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_lateral_20261116/source/configs/nav2_probe_bt.xml",
+      "bytes": 511,
+      "sha256": "649d63d49ec17e65e568688da1538fb6ca0a85e44b2d0741da9bd7203d9132f1"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_lateral_20261116/source/rl_bt/__init__.py",
+      "bytes": 81,
+      "sha256": "01ab044bd576e4dc10d85e5f67b41b38d419e5f1aec6611d86ed201f33f55cb8"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_lateral_20261116/source/rl_bt/contracts.py",
+      "bytes": 1040,
+      "sha256": "1b9bef4da0347bf5c52d62b8dff7c039c84327d19add973a3fd5e9d675c1c95e"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_lateral_20261116/source/rl_bt/estimated_twist.py",
+      "bytes": 4540,
+      "sha256": "618db35cfcc411926d4dc465282f4fda1306f9e221c29b972d164b30cf6fd8b2"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_lateral_20261116/source/rl_bt/nav2_transport.py",
+      "bytes": 2035,
+      "sha256": "55520c30280efff19eb3152e5e87cc20eccbfc1946de33d29be3b34a77dfaa00"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_lateral_20261116/source/rl_bt/navigation_contract.py",
+      "bytes": 15904,
+      "sha256": "2fb7e56c7108495d8846dfe10340667c7a306e9ccb5e8b14bad5a7ec151bfcd1"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_lateral_20261116/source/rl_bt/scan_registration.py",
+      "bytes": 11553,
+      "sha256": "a36fa9d04f59e26e7087cdfe77e8659decf744fc92eeb1af65d8fcb5881adf52"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_lateral_20261116/source/rl_bt/support_costmap.py",
+      "bytes": 11948,
+      "sha256": "aa4f4c89049968f87092baf8a5807f48fc7891911b75b28b9a964e71045481db"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_lateral_20261116/source/rl_bt/terrain_worker.py",
+      "bytes": 16126,
+      "sha256": "33d0ab46544051bb9f4581f93536f3eeeba4aea44b99b22768be8fefba4078eb"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_lateral_20261116/source/rl_bt/uc_field_reference.py",
+      "bytes": 1885,
+      "sha256": "8a81ba01a1b60afff0db82ffbadc80a9cdaf724150cc25ffcbffe4f336ab914b"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_lateral_20261116/source/rl_bt/voxel_terrain.py",
+      "bytes": 14948,
+      "sha256": "7e30160046bd491b483f35d088867d340f919376e27ab3bdb30b0850741fd343"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_lateral_20261116/source/scripts/launch_nav2_probe.py",
+      "bytes": 9906,
+      "sha256": "929afadc6bcfa876167a2632f22ab5f831224d58d0f1cc6e7d42628671ab5231"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_lateral_20261116/source/scripts/nav2_action_probe.py",
+      "bytes": 20171,
+      "sha256": "e7b59550afa5ffb2131d871d63cec88ffd9bc11df878b15c73fe84d745da0cbc"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_lateral_20261116/source/scripts/nav2_mujoco_fixture.py",
+      "bytes": 28230,
+      "sha256": "137aaf546f57b3fd144149866d3ddca4cee4a2ca6126b312ec219e61e050bbe8"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_lateral_20261116/source/scripts/run_nav2_closed_loop.py",
+      "bytes": 12986,
+      "sha256": "8451836e938a76996aa2aec5ba2656e78a4d2bf56a95c633e80432af74aa8bcf"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_lateral_20261116/source_sha256.json",
+      "bytes": 1584,
+      "sha256": "b3ce860b658c0be65b3c3dd55320a710e952fb6e8c1d1bce76751882a7216e0d"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_lateral_20261116/trajectory.png",
+      "bytes": 110497,
+      "sha256": "3416dfc08274aa1e415cdd78f8f2e299cd1a7f13bfc645c44affdd1c35d352a5"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_lateral_20261116/verification.json",
+      "bytes": 3944,
+      "sha256": "2ab7b97a0ec4432c978a168ffb39157193f0f9a3bccdb1a58c1ae934fa759a62"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_short_20261116/action.log",
+      "bytes": 4210,
+      "sha256": "25a485602ec5ef8746642da396348059230105f4c75d0629d9b634b3d0bfc958"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_short_20261116/action/global_costmap_at_plan.json",
+      "bytes": 30707,
+      "sha256": "3594258939d08d653228409eb3b8beda1bfe9cece25a5bcfc961b3a90181e067"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_short_20261116/action/local_costmap_at_plan.json",
+      "bytes": 3137,
+      "sha256": "25777229f86e951f1c2c84e9dcdcb2ca9e6083921781a9092a2835b8ccb99e9f"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_short_20261116/action/result.json",
+      "bytes": 7038,
+      "sha256": "bfff9c8f58d3532a8ad7fd2d345a4764f38b39d1a8dfc4a17c1f90a4920dc575"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_short_20261116/action/semantic_support_at_plan.npz",
+      "bytes": 1397,
+      "sha256": "614445c8a9d82821b8090ecfaebb96200608d67f280a818d38b1e84a9a5e85bf"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_short_20261116/fixture.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_short_20261116/fixture/field_source.json",
+      "bytes": 829,
+      "sha256": "b316d6a8cfa767080f649c05e34d6161253c6105ae18ed57113d052d0f70fd0f"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_short_20261116/fixture/lio_display.log",
+      "bytes": 71,
+      "sha256": "5304f8c177db60441a58db4df714d156142db823c6f04e548677428ad49fb6b9"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_short_20261116/fixture/model.xml",
+      "bytes": 6727331,
+      "sha256": "e11d8393fdd60b6ed38a8e7843dd139240ff397896d3378e23f54ee23a6f8523"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_short_20261116/fixture/pointlio-direct.yaml",
+      "bytes": 3112,
+      "sha256": "e8dfc93ad91f6213a3dc8cb754b8258e3ab7f30ac21eb3fe93dc7442d28637dc"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_short_20261116/fixture/pointlio-effective.yaml",
+      "bytes": 3898,
+      "sha256": "2252a38c5ccc59d1192c624ae6b44fd23da5503e83ba6bc43fe597ced00127d9"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_short_20261116/fixture/pointlio.log",
+      "bytes": 71,
+      "sha256": "e75802e058e02873cb7751b295b99fc120cf2459029b4e85fb5d8e7d7baaa61b"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_short_20261116/fixture/private_ros_bridge.py",
+      "bytes": 14057,
+      "sha256": "fa44e60ae677d5824be219706215ce5c49b2828c42ba4895bc5e6dc37575210b"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_short_20261116/fixture/result.json",
+      "bytes": 130651,
+      "sha256": "4e25b67ec033d3001a6743fee6056dc19aee47ea5d305a37e36ecbafdb7bdbc3"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_short_20261116/fixture/robot.yaml",
+      "bytes": 907,
+      "sha256": "5a59819498e64b2e19260c3980d2b84ba4183bc80cafcb59c6f5ba212f6e5380"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_short_20261116/fixture/simulation.yaml",
+      "bytes": 1456,
+      "sha256": "2316a24dcba674bfe4266f618d647f9bef452458b8eb70cdca0a0a469af48002"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_short_20261116/fixture/support_latest.npz",
+      "bytes": 8146,
+      "sha256": "2415cf4e1d0dc1613354722b079d894f4963285cdc376577c07d91aab1b1e620"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_short_20261116/fixture/terrain_sample_0001.npz",
+      "bytes": 271298,
+      "sha256": "fd1c4593ee0b6402dc0a80feaadbdce8b46ed9497ed8a099c592191c276e7d00"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_short_20261116/nav2.log",
+      "bytes": 171,
+      "sha256": "a748f5731861fe4fa7c7ca04f74a539d57e09c659aded21cca6f2cd3fbe2d804"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_short_20261116/nav2/bt_navigator.log",
+      "bytes": 1504,
+      "sha256": "9d874150ab47b4853136a28acaa8cc55db5168213736867ac02da23c8b042d59"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_short_20261116/nav2/controller_server.log",
+      "bytes": 9855,
+      "sha256": "ac2b928546baf63e344fc53a7388b8173cdc27578358f3778d004e775ed6efcb"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_short_20261116/nav2/launcher_report.json",
+      "bytes": 2172,
+      "sha256": "2df8f448a90d80522214b6e522a505b1f51f7278af28cfb89c88022791b286f6"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_short_20261116/nav2/lifecycle_manager.log",
+      "bytes": 2161,
+      "sha256": "4d0e16f57ad7df4d4f6d3af7e8b1992cdb011f26851c980f5771531a659d7e33"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_short_20261116/nav2/nav2_params.generated.yaml",
+      "bytes": 8677,
+      "sha256": "a43f9973ec32d0b8bd7c3896b65c994eda19c2f64f6d266fb707e27ecd1a6dd4"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_short_20261116/nav2/navigate_through_poses.xml",
+      "bytes": 450,
+      "sha256": "be3e58f586bfe905704fb7c8f51b0a2f0d5818174b17f9f2f543d12a253d3a5e"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_short_20261116/nav2/navigate_to_pose.xml",
+      "bytes": 511,
+      "sha256": "649d63d49ec17e65e568688da1538fb6ca0a85e44b2d0741da9bd7203d9132f1"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_short_20261116/nav2/planner_server.log",
+      "bytes": 4597,
+      "sha256": "a6627184abf2db1f31b98ef0f12db4854902d5dffe98e717dfb6cdc73ed34180"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_short_20261116/nav2/ros_logs/bt_navigator_33889_1794820260761.log",
+      "bytes": 1431,
+      "sha256": "6dba09e96dcdac2f34e4ec383d02fa78225253c17a2109f07d85c53565122bca"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_short_20261116/nav2/ros_logs/controller_server_33887_1794820260762.log",
+      "bytes": 9689,
+      "sha256": "9617b9e19a72b89f91a2a09ad9b462f36b34adecb9ae47f8524d9e8900d9aa8f"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_short_20261116/nav2/ros_logs/lifecycle_manager_33890_1794820260760.log",
+      "bytes": 2043,
+      "sha256": "7ede74e0d83ea9a030d52c0dbc4a15aec5f96654476919a06e82684a2c20268f"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_short_20261116/nav2/ros_logs/planner_server_33888_1794820260761.log",
+      "bytes": 4432,
+      "sha256": "35ab5de345a2bf4d8306dfd0caea757275e85ca1e820a3f032853d7361e728f7"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_short_20261116/processes.json",
+      "bytes": 128,
+      "sha256": "70a99f1295aba29f2107e2a20c394ddd5953f14d68baea2fc79ac6ab62f42997"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_short_20261116/roslogs/lio_display_34003_1794820264218.log",
+      "bytes": 71,
+      "sha256": "5304f8c177db60441a58db4df714d156142db823c6f04e548677428ad49fb6b9"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_short_20261116/roslogs/pointlio_direct_34002_1794820264216.log",
+      "bytes": 71,
+      "sha256": "e75802e058e02873cb7751b295b99fc120cf2459029b4e85fb5d8e7d7baaa61b"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_short_20261116/roslogs/python3_33885_1794820260929.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_short_20261116/roslogs/python_33884_1794820263820.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_short_20261116/source/configs/nav2_probe.yaml",
+      "bytes": 7320,
+      "sha256": "44f8175997da8a317fcf9bc0eeda4e5e64a0adf059904b988095b71f3f9a1023"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_short_20261116/source/configs/nav2_probe_bt.xml",
+      "bytes": 511,
+      "sha256": "649d63d49ec17e65e568688da1538fb6ca0a85e44b2d0741da9bd7203d9132f1"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_short_20261116/source/rl_bt/__init__.py",
+      "bytes": 81,
+      "sha256": "01ab044bd576e4dc10d85e5f67b41b38d419e5f1aec6611d86ed201f33f55cb8"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_short_20261116/source/rl_bt/contracts.py",
+      "bytes": 1040,
+      "sha256": "1b9bef4da0347bf5c52d62b8dff7c039c84327d19add973a3fd5e9d675c1c95e"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_short_20261116/source/rl_bt/estimated_twist.py",
+      "bytes": 4540,
+      "sha256": "618db35cfcc411926d4dc465282f4fda1306f9e221c29b972d164b30cf6fd8b2"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_short_20261116/source/rl_bt/nav2_transport.py",
+      "bytes": 2035,
+      "sha256": "55520c30280efff19eb3152e5e87cc20eccbfc1946de33d29be3b34a77dfaa00"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_short_20261116/source/rl_bt/navigation_contract.py",
+      "bytes": 15904,
+      "sha256": "2fb7e56c7108495d8846dfe10340667c7a306e9ccb5e8b14bad5a7ec151bfcd1"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_short_20261116/source/rl_bt/scan_registration.py",
+      "bytes": 11553,
+      "sha256": "a36fa9d04f59e26e7087cdfe77e8659decf744fc92eeb1af65d8fcb5881adf52"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_short_20261116/source/rl_bt/support_costmap.py",
+      "bytes": 11948,
+      "sha256": "aa4f4c89049968f87092baf8a5807f48fc7891911b75b28b9a964e71045481db"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_short_20261116/source/rl_bt/terrain_worker.py",
+      "bytes": 16126,
+      "sha256": "33d0ab46544051bb9f4581f93536f3eeeba4aea44b99b22768be8fefba4078eb"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_short_20261116/source/rl_bt/uc_field_reference.py",
+      "bytes": 1885,
+      "sha256": "8a81ba01a1b60afff0db82ffbadc80a9cdaf724150cc25ffcbffe4f336ab914b"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_short_20261116/source/rl_bt/voxel_terrain.py",
+      "bytes": 14948,
+      "sha256": "7e30160046bd491b483f35d088867d340f919376e27ab3bdb30b0850741fd343"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_short_20261116/source/scripts/launch_nav2_probe.py",
+      "bytes": 9906,
+      "sha256": "929afadc6bcfa876167a2632f22ab5f831224d58d0f1cc6e7d42628671ab5231"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_short_20261116/source/scripts/nav2_action_probe.py",
+      "bytes": 20171,
+      "sha256": "e7b59550afa5ffb2131d871d63cec88ffd9bc11df878b15c73fe84d745da0cbc"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_short_20261116/source/scripts/nav2_mujoco_fixture.py",
+      "bytes": 28230,
+      "sha256": "137aaf546f57b3fd144149866d3ddca4cee4a2ca6126b312ec219e61e050bbe8"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_short_20261116/source/scripts/run_nav2_closed_loop.py",
+      "bytes": 12986,
+      "sha256": "8451836e938a76996aa2aec5ba2656e78a4d2bf56a95c633e80432af74aa8bcf"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_short_20261116/source_sha256.json",
+      "bytes": 1584,
+      "sha256": "b3ce860b658c0be65b3c3dd55320a710e952fb6e8c1d1bce76751882a7216e0d"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_short_20261116/trajectory.png",
+      "bytes": 109902,
+      "sha256": "e351cb65286b927712a69f5bb4bdb62a6585284df34661f7b8e2c4293d03d14c"
+    },
+    {
+      "path": "runs/uc_support_active_footprint_short_20261116/verification.json",
+      "bytes": 3945,
+      "sha256": "68eb6b1c357193db750c1dc1f73adcffcb23c420e9976cfe5224be538ddb24db"
+    },
+    {
+      "path": "runs/uc_support_dual_forward_20261116/action.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/uc_support_dual_forward_20261116/action/result.json",
+      "bytes": 929,
+      "sha256": "7f1f7f8a61f1a29858db3e95a14e14aec373bf682f3dd6b37f38604f95a9d8f1"
+    },
+    {
+      "path": "runs/uc_support_dual_forward_20261116/fixture.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/uc_support_dual_forward_20261116/fixture/field_source.json",
+      "bytes": 829,
+      "sha256": "b316d6a8cfa767080f649c05e34d6161253c6105ae18ed57113d052d0f70fd0f"
+    },
+    {
+      "path": "runs/uc_support_dual_forward_20261116/fixture/lio_display.log",
+      "bytes": 71,
+      "sha256": "3224cf47aa8a7b185edc292f50c405165d7b76fdbf661b0dfcb9073885a83484"
+    },
+    {
+      "path": "runs/uc_support_dual_forward_20261116/fixture/model.xml",
+      "bytes": 6727331,
+      "sha256": "e11d8393fdd60b6ed38a8e7843dd139240ff397896d3378e23f54ee23a6f8523"
+    },
+    {
+      "path": "runs/uc_support_dual_forward_20261116/fixture/pointlio-direct.yaml",
+      "bytes": 3112,
+      "sha256": "e8dfc93ad91f6213a3dc8cb754b8258e3ab7f30ac21eb3fe93dc7442d28637dc"
+    },
+    {
+      "path": "runs/uc_support_dual_forward_20261116/fixture/pointlio-effective.yaml",
+      "bytes": 3898,
+      "sha256": "2252a38c5ccc59d1192c624ae6b44fd23da5503e83ba6bc43fe597ced00127d9"
+    },
+    {
+      "path": "runs/uc_support_dual_forward_20261116/fixture/pointlio.log",
+      "bytes": 71,
+      "sha256": "05c8d58435dd8a43a8084d942b2f07e9110b2a07733d7f55987eb0dd235beb9e"
+    },
+    {
+      "path": "runs/uc_support_dual_forward_20261116/fixture/private_ros_bridge.py",
+      "bytes": 14057,
+      "sha256": "fa44e60ae677d5824be219706215ce5c49b2828c42ba4895bc5e6dc37575210b"
+    },
+    {
+      "path": "runs/uc_support_dual_forward_20261116/fixture/result.json",
+      "bytes": 645900,
+      "sha256": "3132b528bcae588cdde8a3c887fdc24bdf810f142f2ced5892438571d7a9a6c0"
+    },
+    {
+      "path": "runs/uc_support_dual_forward_20261116/fixture/robot.yaml",
+      "bytes": 907,
+      "sha256": "5a59819498e64b2e19260c3980d2b84ba4183bc80cafcb59c6f5ba212f6e5380"
+    },
+    {
+      "path": "runs/uc_support_dual_forward_20261116/fixture/simulation.yaml",
+      "bytes": 1456,
+      "sha256": "2316a24dcba674bfe4266f618d647f9bef452458b8eb70cdca0a0a469af48002"
+    },
+    {
+      "path": "runs/uc_support_dual_forward_20261116/nav2.log",
+      "bytes": 171,
+      "sha256": "5a755caf13fbc5453c041465ee06e6e82ad2a70dcdc1d7c68d1a736e71bc35fd"
+    },
+    {
+      "path": "runs/uc_support_dual_forward_20261116/nav2/bt_navigator.log",
+      "bytes": 1296,
+      "sha256": "b133f8569b06ba4b6facf3059849795e8eda8cf6de9fd81f5b2d9970c8294a38"
+    },
+    {
+      "path": "runs/uc_support_dual_forward_20261116/nav2/controller_server.log",
+      "bytes": 8962,
+      "sha256": "fb76b00926a065dfc6ec1189046afd483e2abe758dcc4e4da14facafe507f9bd"
+    },
+    {
+      "path": "runs/uc_support_dual_forward_20261116/nav2/launcher_report.json",
+      "bytes": 2172,
+      "sha256": "649f118b30be4d86648b0968dd0d58af62b3f4764dbb8a7c8436e52b2f2fe983"
+    },
+    {
+      "path": "runs/uc_support_dual_forward_20261116/nav2/lifecycle_manager.log",
+      "bytes": 2161,
+      "sha256": "5e066478574a56eda992c95ccfd25aa5051744917047fe66cc6f5658f5dd22f6"
+    },
+    {
+      "path": "runs/uc_support_dual_forward_20261116/nav2/nav2_params.generated.yaml",
+      "bytes": 8677,
+      "sha256": "add634d12427429c192560fa68c5ef69e6253973997b59d2ac354f7281e56c2b"
+    },
+    {
+      "path": "runs/uc_support_dual_forward_20261116/nav2/navigate_through_poses.xml",
+      "bytes": 450,
+      "sha256": "be3e58f586bfe905704fb7c8f51b0a2f0d5818174b17f9f2f543d12a253d3a5e"
+    },
+    {
+      "path": "runs/uc_support_dual_forward_20261116/nav2/navigate_to_pose.xml",
+      "bytes": 511,
+      "sha256": "649d63d49ec17e65e568688da1538fb6ca0a85e44b2d0741da9bd7203d9132f1"
+    },
+    {
+      "path": "runs/uc_support_dual_forward_20261116/nav2/planner_server.log",
+      "bytes": 4017,
+      "sha256": "84bf3d8e7d170e8b12357a763e3801ecdd99d6ae33acc812b9441c5793d26c5a"
+    },
+    {
+      "path": "runs/uc_support_dual_forward_20261116/nav2/ros_logs/bt_navigator_32269_1794819542957.log",
+      "bytes": 1223,
+      "sha256": "f1e3f4a47bff854e9ae6868d351191b6bc7d948b332de2e4efbf7bef63a10af5"
+    },
+    {
+      "path": "runs/uc_support_dual_forward_20261116/nav2/ros_logs/controller_server_32267_1794819542961.log",
+      "bytes": 8796,
+      "sha256": "1f4b7cc505fae256686e061b1da59fd63a47b7244bcf0fc3a3c16d2e6be5e93d"
+    },
+    {
+      "path": "runs/uc_support_dual_forward_20261116/nav2/ros_logs/lifecycle_manager_32270_1794819542957.log",
+      "bytes": 2043,
+      "sha256": "036944c0b981b86d11533482c348ed0be78dcd6bf4172929d513ed0c34fa62a2"
+    },
+    {
+      "path": "runs/uc_support_dual_forward_20261116/nav2/ros_logs/planner_server_32268_1794819542957.log",
+      "bytes": 3852,
+      "sha256": "b795aab084295288cadd0144f16dae82ac32dbd6d33d1f710626d60735a36514"
+    },
+    {
+      "path": "runs/uc_support_dual_forward_20261116/processes.json",
+      "bytes": 128,
+      "sha256": "992f0f239371afd12f770bf7f2d0d396ea658bb6c61864564496815df63dbec0"
+    },
+    {
+      "path": "runs/uc_support_dual_forward_20261116/roslogs/lio_display_32383_1794819546177.log",
+      "bytes": 71,
+      "sha256": "3224cf47aa8a7b185edc292f50c405165d7b76fdbf661b0dfcb9073885a83484"
+    },
+    {
+      "path": "runs/uc_support_dual_forward_20261116/roslogs/pointlio_direct_32382_1794819546177.log",
+      "bytes": 71,
+      "sha256": "05c8d58435dd8a43a8084d942b2f07e9110b2a07733d7f55987eb0dd235beb9e"
+    },
+    {
+      "path": "runs/uc_support_dual_forward_20261116/roslogs/python3_32265_1794819543153.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/uc_support_dual_forward_20261116/roslogs/python_32264_1794819546076.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/uc_support_dual_forward_20261116/source/configs/nav2_probe.yaml",
+      "bytes": 7320,
+      "sha256": "44f8175997da8a317fcf9bc0eeda4e5e64a0adf059904b988095b71f3f9a1023"
+    },
+    {
+      "path": "runs/uc_support_dual_forward_20261116/source/configs/nav2_probe_bt.xml",
+      "bytes": 511,
+      "sha256": "649d63d49ec17e65e568688da1538fb6ca0a85e44b2d0741da9bd7203d9132f1"
+    },
+    {
+      "path": "runs/uc_support_dual_forward_20261116/source/rl_bt/__init__.py",
+      "bytes": 81,
+      "sha256": "01ab044bd576e4dc10d85e5f67b41b38d419e5f1aec6611d86ed201f33f55cb8"
+    },
+    {
+      "path": "runs/uc_support_dual_forward_20261116/source/rl_bt/contracts.py",
+      "bytes": 1040,
+      "sha256": "1b9bef4da0347bf5c52d62b8dff7c039c84327d19add973a3fd5e9d675c1c95e"
+    },
+    {
+      "path": "runs/uc_support_dual_forward_20261116/source/rl_bt/estimated_twist.py",
+      "bytes": 4540,
+      "sha256": "618db35cfcc411926d4dc465282f4fda1306f9e221c29b972d164b30cf6fd8b2"
+    },
+    {
+      "path": "runs/uc_support_dual_forward_20261116/source/rl_bt/nav2_transport.py",
+      "bytes": 2035,
+      "sha256": "55520c30280efff19eb3152e5e87cc20eccbfc1946de33d29be3b34a77dfaa00"
+    },
+    {
+      "path": "runs/uc_support_dual_forward_20261116/source/rl_bt/navigation_contract.py",
+      "bytes": 15904,
+      "sha256": "2fb7e56c7108495d8846dfe10340667c7a306e9ccb5e8b14bad5a7ec151bfcd1"
+    },
+    {
+      "path": "runs/uc_support_dual_forward_20261116/source/rl_bt/scan_registration.py",
+      "bytes": 11553,
+      "sha256": "a36fa9d04f59e26e7087cdfe77e8659decf744fc92eeb1af65d8fcb5881adf52"
+    },
+    {
+      "path": "runs/uc_support_dual_forward_20261116/source/rl_bt/support_costmap.py",
+      "bytes": 11948,
+      "sha256": "aa4f4c89049968f87092baf8a5807f48fc7891911b75b28b9a964e71045481db"
+    },
+    {
+      "path": "runs/uc_support_dual_forward_20261116/source/rl_bt/terrain_worker.py",
+      "bytes": 16126,
+      "sha256": "33d0ab46544051bb9f4581f93536f3eeeba4aea44b99b22768be8fefba4078eb"
+    },
+    {
+      "path": "runs/uc_support_dual_forward_20261116/source/rl_bt/uc_field_reference.py",
+      "bytes": 1885,
+      "sha256": "8a81ba01a1b60afff0db82ffbadc80a9cdaf724150cc25ffcbffe4f336ab914b"
+    },
+    {
+      "path": "runs/uc_support_dual_forward_20261116/source/rl_bt/voxel_terrain.py",
+      "bytes": 14948,
+      "sha256": "7e30160046bd491b483f35d088867d340f919376e27ab3bdb30b0850741fd343"
+    },
+    {
+      "path": "runs/uc_support_dual_forward_20261116/source/scripts/launch_nav2_probe.py",
+      "bytes": 9906,
+      "sha256": "929afadc6bcfa876167a2632f22ab5f831224d58d0f1cc6e7d42628671ab5231"
+    },
+    {
+      "path": "runs/uc_support_dual_forward_20261116/source/scripts/nav2_action_probe.py",
+      "bytes": 18326,
+      "sha256": "fb15478e1e480dd57101917a04492fb84383a029c05e3c5238fa1c67bcd3c899"
+    },
+    {
+      "path": "runs/uc_support_dual_forward_20261116/source/scripts/nav2_mujoco_fixture.py",
+      "bytes": 27417,
+      "sha256": "d5df5a3b0a72bea2b017a2042769b0eb05c0780e24a8834cba180f04876d3ccb"
+    },
+    {
+      "path": "runs/uc_support_dual_forward_20261116/source/scripts/run_nav2_closed_loop.py",
+      "bytes": 12267,
+      "sha256": "cdcbe253c99ec4b60fe45bd298717588c44c4c2305b8446072ff9e0f0c06071d"
+    },
+    {
+      "path": "runs/uc_support_dual_forward_20261116/source_sha256.json",
+      "bytes": 1584,
+      "sha256": "0c19fb11f1e8e367237e34544c1912580dbbe9d474d627d8ce53daff9a6b3c75"
+    },
+    {
+      "path": "runs/uc_support_dual_forward_20261116/trajectory.png",
+      "bytes": 96849,
+      "sha256": "161b0b5efb3ef4c09f31a2e7cdbb88688e522ca4f22e4b5a3011167715e1c328"
+    },
+    {
+      "path": "runs/uc_support_dual_forward_20261116/verification.json",
+      "bytes": 3882,
+      "sha256": "02caf0a080813b8f6c56227cc19962cf41563c0f587c5f32eea16d0936f5a047"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_20261116/action.log",
+      "bytes": 4401,
+      "sha256": "3512065c1a653d60ccbbed2d8c628d6fd1497c3ff4dd0e3cdf9088b3841cb9c5"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_20261116/action/global_costmap_at_plan.json",
+      "bytes": 30677,
+      "sha256": "bd553a8cc877a5e3bdd17dd8fe6f934f479fc2998f0a7244f536a9042887d107"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_20261116/action/local_costmap_at_plan.json",
+      "bytes": 3165,
+      "sha256": "0ad0f1600dc807caf29fb9eccff594ec259e60a32bf355950e1e4535c5c42ac9"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_20261116/action/result.json",
+      "bytes": 7333,
+      "sha256": "810b9cb4bfe8af43a57394ca986e18d2619fefa5705e65e2874c2cc62433b5d8"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_20261116/fixture.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_20261116/fixture/field_source.json",
+      "bytes": 829,
+      "sha256": "b316d6a8cfa767080f649c05e34d6161253c6105ae18ed57113d052d0f70fd0f"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_20261116/fixture/lio_display.log",
+      "bytes": 71,
+      "sha256": "8ae2d51ef27e70a011ed51d37eeb25540b21034784ad77c4b48769e4afd0fc22"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_20261116/fixture/model.xml",
+      "bytes": 6727331,
+      "sha256": "e11d8393fdd60b6ed38a8e7843dd139240ff397896d3378e23f54ee23a6f8523"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_20261116/fixture/pointlio-direct.yaml",
+      "bytes": 3112,
+      "sha256": "e8dfc93ad91f6213a3dc8cb754b8258e3ab7f30ac21eb3fe93dc7442d28637dc"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_20261116/fixture/pointlio-effective.yaml",
+      "bytes": 3898,
+      "sha256": "2252a38c5ccc59d1192c624ae6b44fd23da5503e83ba6bc43fe597ced00127d9"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_20261116/fixture/pointlio.log",
+      "bytes": 71,
+      "sha256": "816827698de24ccea6b40f521c3fef49d5a81c52803cc9717f240293685e362f"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_20261116/fixture/private_ros_bridge.py",
+      "bytes": 14057,
+      "sha256": "fa44e60ae677d5824be219706215ce5c49b2828c42ba4895bc5e6dc37575210b"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_20261116/fixture/result.json",
+      "bytes": 142589,
+      "sha256": "a028bc4df7887b594f7c86de25247fee45e19de9f6c2828f0ab87d87895d4a81"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_20261116/fixture/robot.yaml",
+      "bytes": 907,
+      "sha256": "5a59819498e64b2e19260c3980d2b84ba4183bc80cafcb59c6f5ba212f6e5380"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_20261116/fixture/simulation.yaml",
+      "bytes": 1456,
+      "sha256": "2316a24dcba674bfe4266f618d647f9bef452458b8eb70cdca0a0a469af48002"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_20261116/fixture/support_latest.npz",
+      "bytes": 8231,
+      "sha256": "2c35401c6556561b5caf289d0e1234122bb495cf1e4042191fdbed9459b34536"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_20261116/fixture/terrain_sample_0001.npz",
+      "bytes": 271117,
+      "sha256": "63028f1cddd918d36bc0489ba9096c261289d7666d319a658d42cf5c137dfd3c"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_20261116/nav2.log",
+      "bytes": 171,
+      "sha256": "ff67ed6a40f6ace087f0ed3a0bcca3178135ef9aba2152818ad0dea64a832990"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_20261116/nav2/bt_navigator.log",
+      "bytes": 1505,
+      "sha256": "0f2039ee3cd80b44521c5cff672cea7514eaecc503fe1c194a3fbe606c7dcf9d"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_20261116/nav2/controller_server.log",
+      "bytes": 10214,
+      "sha256": "323023a4c41d7a57d30948dfee75e2fbe9b88072683664e268d36ef68d6f0885"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_20261116/nav2/launcher_report.json",
+      "bytes": 2172,
+      "sha256": "bb5055a8c275a210d6dd7284d1c73b4715beb449c36689f44156261bb67fcb30"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_20261116/nav2/lifecycle_manager.log",
+      "bytes": 2161,
+      "sha256": "da61b6b8740e982cc7c1cd2eb035c844b0071fa6df5809c3f0e65895bb15d096"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_20261116/nav2/nav2_params.generated.yaml",
+      "bytes": 8677,
+      "sha256": "c53865b2e22681861316e450aa244d3a3aedf22771986cbfdc8ea6322b642c13"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_20261116/nav2/navigate_through_poses.xml",
+      "bytes": 450,
+      "sha256": "be3e58f586bfe905704fb7c8f51b0a2f0d5818174b17f9f2f543d12a253d3a5e"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_20261116/nav2/navigate_to_pose.xml",
+      "bytes": 511,
+      "sha256": "649d63d49ec17e65e568688da1538fb6ca0a85e44b2d0741da9bd7203d9132f1"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_20261116/nav2/planner_server.log",
+      "bytes": 4597,
+      "sha256": "30ed518c15743e68b935601f10d77cb0718ab554970ba2062d1eef2998ca1bb2"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_20261116/nav2/ros_logs/bt_navigator_32758_1794819865724.log",
+      "bytes": 1432,
+      "sha256": "e07e071c1096f026492b63bcdec7e77b548f2e734ce19f4e76b0163a36992975"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_20261116/nav2/ros_logs/controller_server_32756_1794819865723.log",
+      "bytes": 10048,
+      "sha256": "eb9e559cd7a3868aa594f8cccf01b67be16c09f079138bfdbaba870950f11add"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_20261116/nav2/ros_logs/lifecycle_manager_32759_1794819865726.log",
+      "bytes": 2043,
+      "sha256": "d621848afc424050f3e96f9e5d11a11b069055d20eceff69ea326975e6908a6a"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_20261116/nav2/ros_logs/planner_server_32757_1794819865723.log",
+      "bytes": 4432,
+      "sha256": "ad356a9cdd225c07dba586900eb2f490be259b2a458619775f7d472c2b6f3621"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_20261116/processes.json",
+      "bytes": 128,
+      "sha256": "d5839eeb37e140cfddf9f93fc48ef690e0e861b07d9ce7b3982b1d6e3e1912f9"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_20261116/roslogs/lio_display_32871_1794819868947.log",
+      "bytes": 71,
+      "sha256": "8ae2d51ef27e70a011ed51d37eeb25540b21034784ad77c4b48769e4afd0fc22"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_20261116/roslogs/pointlio_direct_32870_1794819868945.log",
+      "bytes": 71,
+      "sha256": "816827698de24ccea6b40f521c3fef49d5a81c52803cc9717f240293685e362f"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_20261116/roslogs/python3_32754_1794819865905.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_20261116/roslogs/python_32753_1794819868853.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_20261116/source/configs/nav2_probe.yaml",
+      "bytes": 7320,
+      "sha256": "44f8175997da8a317fcf9bc0eeda4e5e64a0adf059904b988095b71f3f9a1023"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_20261116/source/configs/nav2_probe_bt.xml",
+      "bytes": 511,
+      "sha256": "649d63d49ec17e65e568688da1538fb6ca0a85e44b2d0741da9bd7203d9132f1"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_20261116/source/rl_bt/__init__.py",
+      "bytes": 81,
+      "sha256": "01ab044bd576e4dc10d85e5f67b41b38d419e5f1aec6611d86ed201f33f55cb8"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_20261116/source/rl_bt/contracts.py",
+      "bytes": 1040,
+      "sha256": "1b9bef4da0347bf5c52d62b8dff7c039c84327d19add973a3fd5e9d675c1c95e"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_20261116/source/rl_bt/estimated_twist.py",
+      "bytes": 4540,
+      "sha256": "618db35cfcc411926d4dc465282f4fda1306f9e221c29b972d164b30cf6fd8b2"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_20261116/source/rl_bt/nav2_transport.py",
+      "bytes": 2035,
+      "sha256": "55520c30280efff19eb3152e5e87cc20eccbfc1946de33d29be3b34a77dfaa00"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_20261116/source/rl_bt/navigation_contract.py",
+      "bytes": 15904,
+      "sha256": "2fb7e56c7108495d8846dfe10340667c7a306e9ccb5e8b14bad5a7ec151bfcd1"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_20261116/source/rl_bt/scan_registration.py",
+      "bytes": 11553,
+      "sha256": "a36fa9d04f59e26e7087cdfe77e8659decf744fc92eeb1af65d8fcb5881adf52"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_20261116/source/rl_bt/support_costmap.py",
+      "bytes": 11948,
+      "sha256": "aa4f4c89049968f87092baf8a5807f48fc7891911b75b28b9a964e71045481db"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_20261116/source/rl_bt/terrain_worker.py",
+      "bytes": 16126,
+      "sha256": "33d0ab46544051bb9f4581f93536f3eeeba4aea44b99b22768be8fefba4078eb"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_20261116/source/rl_bt/uc_field_reference.py",
+      "bytes": 1885,
+      "sha256": "8a81ba01a1b60afff0db82ffbadc80a9cdaf724150cc25ffcbffe4f336ab914b"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_20261116/source/rl_bt/voxel_terrain.py",
+      "bytes": 14948,
+      "sha256": "7e30160046bd491b483f35d088867d340f919376e27ab3bdb30b0850741fd343"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_20261116/source/scripts/launch_nav2_probe.py",
+      "bytes": 9906,
+      "sha256": "929afadc6bcfa876167a2632f22ab5f831224d58d0f1cc6e7d42628671ab5231"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_20261116/source/scripts/nav2_action_probe.py",
+      "bytes": 18326,
+      "sha256": "fb15478e1e480dd57101917a04492fb84383a029c05e3c5238fa1c67bcd3c899"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_20261116/source/scripts/nav2_mujoco_fixture.py",
+      "bytes": 27759,
+      "sha256": "b3c757205c3d8220d7fc1ea7083d6673f01b812c518bbe695d7c9da8be53ef5b"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_20261116/source/scripts/run_nav2_closed_loop.py",
+      "bytes": 12267,
+      "sha256": "cdcbe253c99ec4b60fe45bd298717588c44c4c2305b8446072ff9e0f0c06071d"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_20261116/source_sha256.json",
+      "bytes": 1584,
+      "sha256": "2f2899ba1615a337e72bbc985ad2f2fefe76b2292ac4f80687b5ac62a04bd3b1"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_20261116/trajectory.png",
+      "bytes": 107655,
+      "sha256": "5202f80b059787353cbf59abe2cb96794a0e5f0e5cc91727b36d17d3fb85feab"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_20261116/verification.json",
+      "bytes": 3896,
+      "sha256": "d69c4ee70d1e2506e337319965a1f13a4a15d2f16e854772e09ae5071e13694a"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_final_20261116/action.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_final_20261116/action/result.json",
+      "bytes": 928,
+      "sha256": "b709514d3d63d0bf6068a864f743b858a46529248b1426e6a88cd388902cb181"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_final_20261116/fixture.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_final_20261116/fixture/field_source.json",
+      "bytes": 829,
+      "sha256": "b316d6a8cfa767080f649c05e34d6161253c6105ae18ed57113d052d0f70fd0f"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_final_20261116/fixture/lio_display.log",
+      "bytes": 71,
+      "sha256": "70f328beeeec1b9e8edb0797c73fcbf1376861f14e697ad20d56a73c64103403"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_final_20261116/fixture/model.xml",
+      "bytes": 6727331,
+      "sha256": "e11d8393fdd60b6ed38a8e7843dd139240ff397896d3378e23f54ee23a6f8523"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_final_20261116/fixture/pointlio-direct.yaml",
+      "bytes": 3112,
+      "sha256": "e8dfc93ad91f6213a3dc8cb754b8258e3ab7f30ac21eb3fe93dc7442d28637dc"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_final_20261116/fixture/pointlio-effective.yaml",
+      "bytes": 3898,
+      "sha256": "2252a38c5ccc59d1192c624ae6b44fd23da5503e83ba6bc43fe597ced00127d9"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_final_20261116/fixture/pointlio.log",
+      "bytes": 71,
+      "sha256": "cc36487f0f8cd2876ca89fb7bee255c8d61cc4029253f491e90a256001f1bf3f"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_final_20261116/fixture/private_ros_bridge.py",
+      "bytes": 14057,
+      "sha256": "fa44e60ae677d5824be219706215ce5c49b2828c42ba4895bc5e6dc37575210b"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_final_20261116/fixture/result.json",
+      "bytes": 887040,
+      "sha256": "f649675cf7e400d87a9a0354a65e689e3a5f790bf67f05e36fd11690be90f62e"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_final_20261116/fixture/robot.yaml",
+      "bytes": 907,
+      "sha256": "5a59819498e64b2e19260c3980d2b84ba4183bc80cafcb59c6f5ba212f6e5380"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_final_20261116/fixture/simulation.yaml",
+      "bytes": 1456,
+      "sha256": "2316a24dcba674bfe4266f618d647f9bef452458b8eb70cdca0a0a469af48002"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_final_20261116/fixture/support_latest.npz",
+      "bytes": 8115,
+      "sha256": "b3ae10b9f339dec09bfa7e07554bf60d8512f273f66df143273e239fe4ca93be"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_final_20261116/fixture/terrain_sample_0001.npz",
+      "bytes": 272969,
+      "sha256": "d56ed6588596a950dbae0139506a5001f0f2cb3f7f944ef600129eb165e27833"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_final_20261116/fixture/terrain_sample_0010.npz",
+      "bytes": 2119087,
+      "sha256": "313e5f76cdbd5b29a6793ef1ed598f8316ba5e1c1c55eaf71e8eecafea2a05cf"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_final_20261116/fixture/terrain_sample_0050.npz",
+      "bytes": 2113530,
+      "sha256": "412f5fb0007574947bc25bec2ba0e5e3e3c9ef589bc4272bcdef9ab451abc0a4"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_final_20261116/nav2.log",
+      "bytes": 171,
+      "sha256": "e19751e745683c94ab68267cf7247ab897a79089345d65336b0980080c571b83"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_final_20261116/nav2/bt_navigator.log",
+      "bytes": 1296,
+      "sha256": "53d9542c9b38a462418c7e6b85a4aefb86659f4beae1f9fae528a66502a8f67f"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_final_20261116/nav2/controller_server.log",
+      "bytes": 9534,
+      "sha256": "98bd6f6baf470fe6b433b0b827908aaf8bad76938b85f5a0d4db84defd459908"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_final_20261116/nav2/launcher_report.json",
+      "bytes": 2171,
+      "sha256": "3fb955c6a0769558e02e852822779623ec458aba5beac77afafafd8dd9fdb6f0"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_final_20261116/nav2/lifecycle_manager.log",
+      "bytes": 2161,
+      "sha256": "7f54e50634220160b846243b7c3931406f82638b64a5a5bdf6ba115a3079ec4c"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_final_20261116/nav2/nav2_params.generated.yaml",
+      "bytes": 8677,
+      "sha256": "e40056cdc894b6f392ebb22049dff2ea5a822e093e575cb3c4768e57bcea8644"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_final_20261116/nav2/navigate_through_poses.xml",
+      "bytes": 450,
+      "sha256": "be3e58f586bfe905704fb7c8f51b0a2f0d5818174b17f9f2f543d12a253d3a5e"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_final_20261116/nav2/navigate_to_pose.xml",
+      "bytes": 511,
+      "sha256": "649d63d49ec17e65e568688da1538fb6ca0a85e44b2d0741da9bd7203d9132f1"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_final_20261116/nav2/planner_server.log",
+      "bytes": 4597,
+      "sha256": "394f5fab54f11accd730e9310cb538a7afb2de77ec0cf2df831bf4ce29c56dd2"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_final_20261116/nav2/ros_logs/bt_navigator_33416_1794820078736.log",
+      "bytes": 1223,
+      "sha256": "ab36d80cdfa84ad91e4267eaaf8d0e35c4500c4009bdcf89425f55df74696642"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_final_20261116/nav2/ros_logs/controller_server_33414_1794820078739.log",
+      "bytes": 9368,
+      "sha256": "e6cac3fcdf5940f5eb542327852c185303ba6a2cfdbe4e017796a4c8eb63ca34"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_final_20261116/nav2/ros_logs/lifecycle_manager_33417_1794820078735.log",
+      "bytes": 2043,
+      "sha256": "fd5c480cb80d35bbebc9a89d83a7471b20fb8382554fe884e2107881868cc324"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_final_20261116/nav2/ros_logs/planner_server_33415_1794820078739.log",
+      "bytes": 4432,
+      "sha256": "12faad897a97f756c950ad3befeeef94056d6b35c5214812e15aaadc81e99d18"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_final_20261116/processes.json",
+      "bytes": 128,
+      "sha256": "c5c88519c40406a4975d32d1140ddad5001120dfc98f64538ea5571483d934b0"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_final_20261116/roslogs/lio_display_33530_1794820082086.log",
+      "bytes": 71,
+      "sha256": "70f328beeeec1b9e8edb0797c73fcbf1376861f14e697ad20d56a73c64103403"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_final_20261116/roslogs/pointlio_direct_33529_1794820082086.log",
+      "bytes": 71,
+      "sha256": "cc36487f0f8cd2876ca89fb7bee255c8d61cc4029253f491e90a256001f1bf3f"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_final_20261116/roslogs/python3_33412_1794820078933.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_final_20261116/roslogs/python_33411_1794820081974.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_final_20261116/source/configs/nav2_probe.yaml",
+      "bytes": 7320,
+      "sha256": "44f8175997da8a317fcf9bc0eeda4e5e64a0adf059904b988095b71f3f9a1023"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_final_20261116/source/configs/nav2_probe_bt.xml",
+      "bytes": 511,
+      "sha256": "649d63d49ec17e65e568688da1538fb6ca0a85e44b2d0741da9bd7203d9132f1"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_final_20261116/source/rl_bt/__init__.py",
+      "bytes": 81,
+      "sha256": "01ab044bd576e4dc10d85e5f67b41b38d419e5f1aec6611d86ed201f33f55cb8"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_final_20261116/source/rl_bt/contracts.py",
+      "bytes": 1040,
+      "sha256": "1b9bef4da0347bf5c52d62b8dff7c039c84327d19add973a3fd5e9d675c1c95e"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_final_20261116/source/rl_bt/estimated_twist.py",
+      "bytes": 4540,
+      "sha256": "618db35cfcc411926d4dc465282f4fda1306f9e221c29b972d164b30cf6fd8b2"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_final_20261116/source/rl_bt/nav2_transport.py",
+      "bytes": 2035,
+      "sha256": "55520c30280efff19eb3152e5e87cc20eccbfc1946de33d29be3b34a77dfaa00"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_final_20261116/source/rl_bt/navigation_contract.py",
+      "bytes": 15904,
+      "sha256": "2fb7e56c7108495d8846dfe10340667c7a306e9ccb5e8b14bad5a7ec151bfcd1"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_final_20261116/source/rl_bt/scan_registration.py",
+      "bytes": 11553,
+      "sha256": "a36fa9d04f59e26e7087cdfe77e8659decf744fc92eeb1af65d8fcb5881adf52"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_final_20261116/source/rl_bt/support_costmap.py",
+      "bytes": 11948,
+      "sha256": "aa4f4c89049968f87092baf8a5807f48fc7891911b75b28b9a964e71045481db"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_final_20261116/source/rl_bt/terrain_worker.py",
+      "bytes": 16126,
+      "sha256": "33d0ab46544051bb9f4581f93536f3eeeba4aea44b99b22768be8fefba4078eb"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_final_20261116/source/rl_bt/uc_field_reference.py",
+      "bytes": 1885,
+      "sha256": "8a81ba01a1b60afff0db82ffbadc80a9cdaf724150cc25ffcbffe4f336ab914b"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_final_20261116/source/rl_bt/voxel_terrain.py",
+      "bytes": 14948,
+      "sha256": "7e30160046bd491b483f35d088867d340f919376e27ab3bdb30b0850741fd343"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_final_20261116/source/scripts/launch_nav2_probe.py",
+      "bytes": 9906,
+      "sha256": "929afadc6bcfa876167a2632f22ab5f831224d58d0f1cc6e7d42628671ab5231"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_final_20261116/source/scripts/nav2_action_probe.py",
+      "bytes": 19949,
+      "sha256": "bd5753946f25b41fcb13903ae9315074eab88868830a9427cb5f373bbb179f71"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_final_20261116/source/scripts/nav2_mujoco_fixture.py",
+      "bytes": 28230,
+      "sha256": "137aaf546f57b3fd144149866d3ddca4cee4a2ca6126b312ec219e61e050bbe8"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_final_20261116/source/scripts/run_nav2_closed_loop.py",
+      "bytes": 12986,
+      "sha256": "8451836e938a76996aa2aec5ba2656e78a4d2bf56a95c633e80432af74aa8bcf"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_final_20261116/source_sha256.json",
+      "bytes": 1584,
+      "sha256": "4d771f63b9d6e5b63793762677b0cbe2302098334a0d517265958c6148f380c9"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_final_20261116/trajectory.png",
+      "bytes": 119044,
+      "sha256": "86f50da65b3228245636049491ad409c71dda03eb0cd0fa5b5ff380aa80e1293"
+    },
+    {
+      "path": "runs/uc_support_dual_lateral_final_20261116/verification.json",
+      "bytes": 3951,
+      "sha256": "f7183e80d4eaa24e65ceb4f527e4c1d667cfcdb5a483445c971883d33c2e95ac"
+    },
+    {
+      "path": "runs/uc_support_dual_namespaced_forward_20261116/action.log",
+      "bytes": 293,
+      "sha256": "2f930173ffa9de0d9350103640cd38fe5d08ed19478d99c43073d311478a2037"
+    },
+    {
+      "path": "runs/uc_support_dual_namespaced_forward_20261116/action/global_costmap_at_plan.json",
+      "bytes": 30687,
+      "sha256": "6b82a3a3ecaee1c4d9ef231747276734e913f58ee904b0cdffc1799ebb77ffc1"
+    },
+    {
+      "path": "runs/uc_support_dual_namespaced_forward_20261116/action/local_costmap_at_plan.json",
+      "bytes": 3163,
+      "sha256": "08e794f026cf6f0f4ddd97c157091e96a49d97b4fcf4bb97ae47b9e9f7d3ea17"
+    },
+    {
+      "path": "runs/uc_support_dual_namespaced_forward_20261116/action/result.json",
+      "bytes": 1352,
+      "sha256": "00a155a27938b0162ce095f0f0212c5132883bef7941f368991a00ced6b4e53a"
+    },
+    {
+      "path": "runs/uc_support_dual_namespaced_forward_20261116/fixture.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/uc_support_dual_namespaced_forward_20261116/fixture/field_source.json",
+      "bytes": 829,
+      "sha256": "b316d6a8cfa767080f649c05e34d6161253c6105ae18ed57113d052d0f70fd0f"
+    },
+    {
+      "path": "runs/uc_support_dual_namespaced_forward_20261116/fixture/lio_display.log",
+      "bytes": 71,
+      "sha256": "c3f9e34f76ad4e7a4e33a41d55622c23db9be513a71df31cb4308db374f0bcec"
+    },
+    {
+      "path": "runs/uc_support_dual_namespaced_forward_20261116/fixture/model.xml",
+      "bytes": 6727331,
+      "sha256": "e11d8393fdd60b6ed38a8e7843dd139240ff397896d3378e23f54ee23a6f8523"
+    },
+    {
+      "path": "runs/uc_support_dual_namespaced_forward_20261116/fixture/pointlio-direct.yaml",
+      "bytes": 3112,
+      "sha256": "e8dfc93ad91f6213a3dc8cb754b8258e3ab7f30ac21eb3fe93dc7442d28637dc"
+    },
+    {
+      "path": "runs/uc_support_dual_namespaced_forward_20261116/fixture/pointlio-effective.yaml",
+      "bytes": 3898,
+      "sha256": "2252a38c5ccc59d1192c624ae6b44fd23da5503e83ba6bc43fe597ced00127d9"
+    },
+    {
+      "path": "runs/uc_support_dual_namespaced_forward_20261116/fixture/pointlio.log",
+      "bytes": 71,
+      "sha256": "d73da4040b06fb6068dcbc6911e5325ee45ab119a94874eeacebd47811240120"
+    },
+    {
+      "path": "runs/uc_support_dual_namespaced_forward_20261116/fixture/private_ros_bridge.py",
+      "bytes": 14057,
+      "sha256": "fa44e60ae677d5824be219706215ce5c49b2828c42ba4895bc5e6dc37575210b"
+    },
+    {
+      "path": "runs/uc_support_dual_namespaced_forward_20261116/fixture/result.json",
+      "bytes": 75683,
+      "sha256": "6bf87210c2953d4bddfa0b1eb13c1ca3d17fa5cfcf3329d3de4d40d3c616cdf6"
+    },
+    {
+      "path": "runs/uc_support_dual_namespaced_forward_20261116/fixture/robot.yaml",
+      "bytes": 907,
+      "sha256": "5a59819498e64b2e19260c3980d2b84ba4183bc80cafcb59c6f5ba212f6e5380"
+    },
+    {
+      "path": "runs/uc_support_dual_namespaced_forward_20261116/fixture/simulation.yaml",
+      "bytes": 1456,
+      "sha256": "2316a24dcba674bfe4266f618d647f9bef452458b8eb70cdca0a0a469af48002"
+    },
+    {
+      "path": "runs/uc_support_dual_namespaced_forward_20261116/fixture/support_latest.npz",
+      "bytes": 8527,
+      "sha256": "97ebbfbef7e10357ed513d7909a87e892f73c7d8301069d21514858d71510391"
+    },
+    {
+      "path": "runs/uc_support_dual_namespaced_forward_20261116/fixture/terrain_sample_0001.npz",
+      "bytes": 270971,
+      "sha256": "f7083967027a144f9f7fd11d3021546555ac84751a8c393fef964fceb03ca46a"
+    },
+    {
+      "path": "runs/uc_support_dual_namespaced_forward_20261116/nav2.log",
+      "bytes": 171,
+      "sha256": "2699fac21f88429d9c3fab4a4867c3fe84af50f81f4b74c835c3b4bdc94ef5ff"
+    },
+    {
+      "path": "runs/uc_support_dual_namespaced_forward_20261116/nav2/bt_navigator.log",
+      "bytes": 1296,
+      "sha256": "dcba413af65feac39291a5f0f4758ba506ffbb06f1d134ee5c6afde6a45bec4f"
+    },
+    {
+      "path": "runs/uc_support_dual_namespaced_forward_20261116/nav2/controller_server.log",
+      "bytes": 9248,
+      "sha256": "ecc69f1f2066c916831a41065225fbf2d2f14a3d9fef9e1969e667994fddee90"
+    },
+    {
+      "path": "runs/uc_support_dual_namespaced_forward_20261116/nav2/launcher_report.json",
+      "bytes": 2172,
+      "sha256": "63cf75488bbc3ee11c1c2ae8a682f7c82ceeb99c74f633d55a1994dfc238806b"
+    },
+    {
+      "path": "runs/uc_support_dual_namespaced_forward_20261116/nav2/lifecycle_manager.log",
+      "bytes": 2161,
+      "sha256": "e363310b1fee33cfde07319b0097b00131b87b21805e7246e40ac2220e6bef0a"
+    },
+    {
+      "path": "runs/uc_support_dual_namespaced_forward_20261116/nav2/nav2_params.generated.yaml",
+      "bytes": 8677,
+      "sha256": "e75b8125165257137716a0d252efce7537973bacbcd93d223d55b8d59315af81"
+    },
+    {
+      "path": "runs/uc_support_dual_namespaced_forward_20261116/nav2/navigate_through_poses.xml",
+      "bytes": 450,
+      "sha256": "be3e58f586bfe905704fb7c8f51b0a2f0d5818174b17f9f2f543d12a253d3a5e"
+    },
+    {
+      "path": "runs/uc_support_dual_namespaced_forward_20261116/nav2/navigate_to_pose.xml",
+      "bytes": 511,
+      "sha256": "649d63d49ec17e65e568688da1538fb6ca0a85e44b2d0741da9bd7203d9132f1"
+    },
+    {
+      "path": "runs/uc_support_dual_namespaced_forward_20261116/nav2/planner_server.log",
+      "bytes": 4685,
+      "sha256": "fd30ffa4613cd2d888fcb05173877afaa914d6f60217240605534ec5301fade1"
+    },
+    {
+      "path": "runs/uc_support_dual_namespaced_forward_20261116/nav2/ros_logs/bt_navigator_32539_1794819715810.log",
+      "bytes": 1223,
+      "sha256": "58851241c2ec68c239fc8ce82acf0e6051e261483254fff36a79b726c9d3f00f"
+    },
+    {
+      "path": "runs/uc_support_dual_namespaced_forward_20261116/nav2/ros_logs/controller_server_32537_1794819715808.log",
+      "bytes": 9082,
+      "sha256": "a5fc743f5289265be3a43fd5a8ef1b86532440696b6e4d8a90e871bc7f5c0d59"
+    },
+    {
+      "path": "runs/uc_support_dual_namespaced_forward_20261116/nav2/ros_logs/lifecycle_manager_32540_1794819715806.log",
+      "bytes": 2043,
+      "sha256": "2c379fd3925d303667a2ab73207a459a4811ae31bbb0f2ee3efdf88fd9ba85d3"
+    },
+    {
+      "path": "runs/uc_support_dual_namespaced_forward_20261116/nav2/ros_logs/planner_server_32538_1794819715803.log",
+      "bytes": 4520,
+      "sha256": "2b4bee23a546315408924b4b180b3bdc7b8e0286459a77c28fa3ff93abf610cb"
+    },
+    {
+      "path": "runs/uc_support_dual_namespaced_forward_20261116/processes.json",
+      "bytes": 128,
+      "sha256": "982222f1e1586f5ebdc252c8b93de4e5893bd2409450366545243349dee6394f"
+    },
+    {
+      "path": "runs/uc_support_dual_namespaced_forward_20261116/roslogs/lio_display_32652_1794819719011.log",
+      "bytes": 71,
+      "sha256": "c3f9e34f76ad4e7a4e33a41d55622c23db9be513a71df31cb4308db374f0bcec"
+    },
+    {
+      "path": "runs/uc_support_dual_namespaced_forward_20261116/roslogs/pointlio_direct_32651_1794819719012.log",
+      "bytes": 71,
+      "sha256": "d73da4040b06fb6068dcbc6911e5325ee45ab119a94874eeacebd47811240120"
+    },
+    {
+      "path": "runs/uc_support_dual_namespaced_forward_20261116/roslogs/python3_32535_1794819715972.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/uc_support_dual_namespaced_forward_20261116/roslogs/python_32534_1794819718911.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/uc_support_dual_namespaced_forward_20261116/source/configs/nav2_probe.yaml",
+      "bytes": 7320,
+      "sha256": "44f8175997da8a317fcf9bc0eeda4e5e64a0adf059904b988095b71f3f9a1023"
+    },
+    {
+      "path": "runs/uc_support_dual_namespaced_forward_20261116/source/configs/nav2_probe_bt.xml",
+      "bytes": 511,
+      "sha256": "649d63d49ec17e65e568688da1538fb6ca0a85e44b2d0741da9bd7203d9132f1"
+    },
+    {
+      "path": "runs/uc_support_dual_namespaced_forward_20261116/source/rl_bt/__init__.py",
+      "bytes": 81,
+      "sha256": "01ab044bd576e4dc10d85e5f67b41b38d419e5f1aec6611d86ed201f33f55cb8"
+    },
+    {
+      "path": "runs/uc_support_dual_namespaced_forward_20261116/source/rl_bt/contracts.py",
+      "bytes": 1040,
+      "sha256": "1b9bef4da0347bf5c52d62b8dff7c039c84327d19add973a3fd5e9d675c1c95e"
+    },
+    {
+      "path": "runs/uc_support_dual_namespaced_forward_20261116/source/rl_bt/estimated_twist.py",
+      "bytes": 4540,
+      "sha256": "618db35cfcc411926d4dc465282f4fda1306f9e221c29b972d164b30cf6fd8b2"
+    },
+    {
+      "path": "runs/uc_support_dual_namespaced_forward_20261116/source/rl_bt/nav2_transport.py",
+      "bytes": 2035,
+      "sha256": "55520c30280efff19eb3152e5e87cc20eccbfc1946de33d29be3b34a77dfaa00"
+    },
+    {
+      "path": "runs/uc_support_dual_namespaced_forward_20261116/source/rl_bt/navigation_contract.py",
+      "bytes": 15904,
+      "sha256": "2fb7e56c7108495d8846dfe10340667c7a306e9ccb5e8b14bad5a7ec151bfcd1"
+    },
+    {
+      "path": "runs/uc_support_dual_namespaced_forward_20261116/source/rl_bt/scan_registration.py",
+      "bytes": 11553,
+      "sha256": "a36fa9d04f59e26e7087cdfe77e8659decf744fc92eeb1af65d8fcb5881adf52"
+    },
+    {
+      "path": "runs/uc_support_dual_namespaced_forward_20261116/source/rl_bt/support_costmap.py",
+      "bytes": 11948,
+      "sha256": "aa4f4c89049968f87092baf8a5807f48fc7891911b75b28b9a964e71045481db"
+    },
+    {
+      "path": "runs/uc_support_dual_namespaced_forward_20261116/source/rl_bt/terrain_worker.py",
+      "bytes": 16126,
+      "sha256": "33d0ab46544051bb9f4581f93536f3eeeba4aea44b99b22768be8fefba4078eb"
+    },
+    {
+      "path": "runs/uc_support_dual_namespaced_forward_20261116/source/rl_bt/uc_field_reference.py",
+      "bytes": 1885,
+      "sha256": "8a81ba01a1b60afff0db82ffbadc80a9cdaf724150cc25ffcbffe4f336ab914b"
+    },
+    {
+      "path": "runs/uc_support_dual_namespaced_forward_20261116/source/rl_bt/voxel_terrain.py",
+      "bytes": 14948,
+      "sha256": "7e30160046bd491b483f35d088867d340f919376e27ab3bdb30b0850741fd343"
+    },
+    {
+      "path": "runs/uc_support_dual_namespaced_forward_20261116/source/scripts/launch_nav2_probe.py",
+      "bytes": 9906,
+      "sha256": "929afadc6bcfa876167a2632f22ab5f831224d58d0f1cc6e7d42628671ab5231"
+    },
+    {
+      "path": "runs/uc_support_dual_namespaced_forward_20261116/source/scripts/nav2_action_probe.py",
+      "bytes": 18326,
+      "sha256": "fb15478e1e480dd57101917a04492fb84383a029c05e3c5238fa1c67bcd3c899"
+    },
+    {
+      "path": "runs/uc_support_dual_namespaced_forward_20261116/source/scripts/nav2_mujoco_fixture.py",
+      "bytes": 27759,
+      "sha256": "b3c757205c3d8220d7fc1ea7083d6673f01b812c518bbe695d7c9da8be53ef5b"
+    },
+    {
+      "path": "runs/uc_support_dual_namespaced_forward_20261116/source/scripts/run_nav2_closed_loop.py",
+      "bytes": 12267,
+      "sha256": "cdcbe253c99ec4b60fe45bd298717588c44c4c2305b8446072ff9e0f0c06071d"
+    },
+    {
+      "path": "runs/uc_support_dual_namespaced_forward_20261116/source_sha256.json",
+      "bytes": 1584,
+      "sha256": "2f2899ba1615a337e72bbc985ad2f2fefe76b2292ac4f80687b5ac62a04bd3b1"
+    },
+    {
+      "path": "runs/uc_support_dual_namespaced_forward_20261116/support_diagnostic.png",
+      "bytes": 56217,
+      "sha256": "bfd50d9de9b788fa8ec5480cab3d619a7ae14f9a091943232e467c341f9e95ec"
+    },
+    {
+      "path": "runs/uc_support_dual_namespaced_forward_20261116/trajectory.png",
+      "bytes": 93503,
+      "sha256": "19352e5257ad444475fb807a6c9764cb45dd46400c45e415964660c89f5e7484"
+    },
+    {
+      "path": "runs/uc_support_dual_namespaced_forward_20261116/verification.json",
+      "bytes": 3886,
+      "sha256": "f1621b91563c3e02330ce4884a2106398ce9cd008e79a0b6763e4bd2df10bc7b"
+    },
+    {
+      "path": "runs/uc_support_dual_unknown_reject_20261116/action.log",
+      "bytes": 293,
+      "sha256": "6bbc647f80e34e50368ac0be91c8d7b1837245917bcaf72931bd96fbb35bc25c"
+    },
+    {
+      "path": "runs/uc_support_dual_unknown_reject_20261116/action/global_costmap_at_plan.json",
+      "bytes": 30638,
+      "sha256": "3cc361fb6f1a7210f852e4e23353983114a579a051c8fd6f5ba5ae30b6e1202a"
+    },
+    {
+      "path": "runs/uc_support_dual_unknown_reject_20261116/action/local_costmap_at_plan.json",
+      "bytes": 3131,
+      "sha256": "c06ac209cdf2606c2e39d899a449b72eb5129349cb1b90292a6e2f7524dd2fa1"
+    },
+    {
+      "path": "runs/uc_support_dual_unknown_reject_20261116/action/result.json",
+      "bytes": 1351,
+      "sha256": "2742e3497e869374729d0b59feba853697d2040af4cffcb9b3d27e370836fcc1"
+    },
+    {
+      "path": "runs/uc_support_dual_unknown_reject_20261116/fixture.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/uc_support_dual_unknown_reject_20261116/fixture/field_source.json",
+      "bytes": 829,
+      "sha256": "b316d6a8cfa767080f649c05e34d6161253c6105ae18ed57113d052d0f70fd0f"
+    },
+    {
+      "path": "runs/uc_support_dual_unknown_reject_20261116/fixture/lio_display.log",
+      "bytes": 71,
+      "sha256": "2c828c9ef623ee6b3023d314bd4a072802cf32e4e1afdc5f1fa4d7ca12734184"
+    },
+    {
+      "path": "runs/uc_support_dual_unknown_reject_20261116/fixture/model.xml",
+      "bytes": 6727331,
+      "sha256": "e11d8393fdd60b6ed38a8e7843dd139240ff397896d3378e23f54ee23a6f8523"
+    },
+    {
+      "path": "runs/uc_support_dual_unknown_reject_20261116/fixture/pointlio-direct.yaml",
+      "bytes": 3112,
+      "sha256": "e8dfc93ad91f6213a3dc8cb754b8258e3ab7f30ac21eb3fe93dc7442d28637dc"
+    },
+    {
+      "path": "runs/uc_support_dual_unknown_reject_20261116/fixture/pointlio-effective.yaml",
+      "bytes": 3898,
+      "sha256": "2252a38c5ccc59d1192c624ae6b44fd23da5503e83ba6bc43fe597ced00127d9"
+    },
+    {
+      "path": "runs/uc_support_dual_unknown_reject_20261116/fixture/pointlio.log",
+      "bytes": 71,
+      "sha256": "8e795e7d1fb6d8d0ab829215e8696731ecc998f13e8e4db987f5f58d8536bc9f"
+    },
+    {
+      "path": "runs/uc_support_dual_unknown_reject_20261116/fixture/private_ros_bridge.py",
+      "bytes": 14057,
+      "sha256": "fa44e60ae677d5824be219706215ce5c49b2828c42ba4895bc5e6dc37575210b"
+    },
+    {
+      "path": "runs/uc_support_dual_unknown_reject_20261116/fixture/result.json",
+      "bytes": 66266,
+      "sha256": "79c8e420d12ad3150dca197dda20a9080be0fca710fcce447d07915bf061ed8c"
+    },
+    {
+      "path": "runs/uc_support_dual_unknown_reject_20261116/fixture/robot.yaml",
+      "bytes": 907,
+      "sha256": "5a59819498e64b2e19260c3980d2b84ba4183bc80cafcb59c6f5ba212f6e5380"
+    },
+    {
+      "path": "runs/uc_support_dual_unknown_reject_20261116/fixture/simulation.yaml",
+      "bytes": 1456,
+      "sha256": "2316a24dcba674bfe4266f618d647f9bef452458b8eb70cdca0a0a469af48002"
+    },
+    {
+      "path": "runs/uc_support_dual_unknown_reject_20261116/fixture/support_latest.npz",
+      "bytes": 8638,
+      "sha256": "bb15f8b9a1dc681da1a01d99a0d1c93e6c4c4173879692e3cc3ff5e6bcd38c51"
+    },
+    {
+      "path": "runs/uc_support_dual_unknown_reject_20261116/fixture/terrain_sample_0001.npz",
+      "bytes": 271158,
+      "sha256": "e1731f5c7cf63f8a94a125000ae8f35361d71b8cae7e9183cabefc875ffcc9d9"
+    },
+    {
+      "path": "runs/uc_support_dual_unknown_reject_20261116/nav2.log",
+      "bytes": 171,
+      "sha256": "266e18ed44a8f7dbf51626f39b63601bd9f640db4e3704e5111da00118b9b62c"
+    },
+    {
+      "path": "runs/uc_support_dual_unknown_reject_20261116/nav2/bt_navigator.log",
+      "bytes": 1296,
+      "sha256": "28365da62d0a127e8d52bdc7975f02807ae6a3776773c300d7730c5375e5de80"
+    },
+    {
+      "path": "runs/uc_support_dual_unknown_reject_20261116/nav2/controller_server.log",
+      "bytes": 9105,
+      "sha256": "43b41b2ab81e728c48ca534f43bda68cf7f044199eaa8682e06e04cdadd16102"
+    },
+    {
+      "path": "runs/uc_support_dual_unknown_reject_20261116/nav2/launcher_report.json",
+      "bytes": 2172,
+      "sha256": "dbe0ea51cab4789e51899984f32e7c2a38570166b40abd0dee0368b6cd8541df"
+    },
+    {
+      "path": "runs/uc_support_dual_unknown_reject_20261116/nav2/lifecycle_manager.log",
+      "bytes": 2161,
+      "sha256": "7504c1fbb067e4271d8ca18b46d35779888566954da75874380f40a1ce507af8"
+    },
+    {
+      "path": "runs/uc_support_dual_unknown_reject_20261116/nav2/nav2_params.generated.yaml",
+      "bytes": 8677,
+      "sha256": "53897820ea99b393a1b70258155de7588e20c0d9b2fbf249fd536ec5d00ad344"
+    },
+    {
+      "path": "runs/uc_support_dual_unknown_reject_20261116/nav2/navigate_through_poses.xml",
+      "bytes": 450,
+      "sha256": "be3e58f586bfe905704fb7c8f51b0a2f0d5818174b17f9f2f543d12a253d3a5e"
+    },
+    {
+      "path": "runs/uc_support_dual_unknown_reject_20261116/nav2/navigate_to_pose.xml",
+      "bytes": 511,
+      "sha256": "649d63d49ec17e65e568688da1538fb6ca0a85e44b2d0741da9bd7203d9132f1"
+    },
+    {
+      "path": "runs/uc_support_dual_unknown_reject_20261116/nav2/planner_server.log",
+      "bytes": 4540,
+      "sha256": "0cdf3a752bce139a4caf647a86c79ec345604081a8bf126f13974db583b72464"
+    },
+    {
+      "path": "runs/uc_support_dual_unknown_reject_20261116/nav2/ros_logs/bt_navigator_32984_1794819960908.log",
+      "bytes": 1223,
+      "sha256": "42d89f1e0c4152d15915908876ea6ab68433d3f183aeb784ff3484ac3462933c"
+    },
+    {
+      "path": "runs/uc_support_dual_unknown_reject_20261116/nav2/ros_logs/controller_server_32982_1794819960908.log",
+      "bytes": 8939,
+      "sha256": "808c53590b162e42064532e8f6bd76556e45133fcf51906bdd3ef99050ff54f8"
+    },
+    {
+      "path": "runs/uc_support_dual_unknown_reject_20261116/nav2/ros_logs/lifecycle_manager_32985_1794819960905.log",
+      "bytes": 2043,
+      "sha256": "288bdb4692eb87803786af9f51f787dedf7307572edbe588c276da5701bf63a9"
+    },
+    {
+      "path": "runs/uc_support_dual_unknown_reject_20261116/nav2/ros_logs/planner_server_32983_1794819960909.log",
+      "bytes": 4375,
+      "sha256": "516f955701d03804c55f25f143e7ea8637e188d745541586aa63e62244cfee4e"
+    },
+    {
+      "path": "runs/uc_support_dual_unknown_reject_20261116/processes.json",
+      "bytes": 128,
+      "sha256": "fded8536217f2c924b900b243613ffc540ecdb5e12149a803a1425246600f99a"
+    },
+    {
+      "path": "runs/uc_support_dual_unknown_reject_20261116/roslogs/lio_display_33098_1794819964176.log",
+      "bytes": 71,
+      "sha256": "2c828c9ef623ee6b3023d314bd4a072802cf32e4e1afdc5f1fa4d7ca12734184"
+    },
+    {
+      "path": "runs/uc_support_dual_unknown_reject_20261116/roslogs/pointlio_direct_33097_1794819964176.log",
+      "bytes": 71,
+      "sha256": "8e795e7d1fb6d8d0ab829215e8696731ecc998f13e8e4db987f5f58d8536bc9f"
+    },
+    {
+      "path": "runs/uc_support_dual_unknown_reject_20261116/roslogs/python3_32980_1794819961089.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/uc_support_dual_unknown_reject_20261116/roslogs/python_32979_1794819964071.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/uc_support_dual_unknown_reject_20261116/source/configs/nav2_probe.yaml",
+      "bytes": 7320,
+      "sha256": "44f8175997da8a317fcf9bc0eeda4e5e64a0adf059904b988095b71f3f9a1023"
+    },
+    {
+      "path": "runs/uc_support_dual_unknown_reject_20261116/source/configs/nav2_probe_bt.xml",
+      "bytes": 511,
+      "sha256": "649d63d49ec17e65e568688da1538fb6ca0a85e44b2d0741da9bd7203d9132f1"
+    },
+    {
+      "path": "runs/uc_support_dual_unknown_reject_20261116/source/rl_bt/__init__.py",
+      "bytes": 81,
+      "sha256": "01ab044bd576e4dc10d85e5f67b41b38d419e5f1aec6611d86ed201f33f55cb8"
+    },
+    {
+      "path": "runs/uc_support_dual_unknown_reject_20261116/source/rl_bt/contracts.py",
+      "bytes": 1040,
+      "sha256": "1b9bef4da0347bf5c52d62b8dff7c039c84327d19add973a3fd5e9d675c1c95e"
+    },
+    {
+      "path": "runs/uc_support_dual_unknown_reject_20261116/source/rl_bt/estimated_twist.py",
+      "bytes": 4540,
+      "sha256": "618db35cfcc411926d4dc465282f4fda1306f9e221c29b972d164b30cf6fd8b2"
+    },
+    {
+      "path": "runs/uc_support_dual_unknown_reject_20261116/source/rl_bt/nav2_transport.py",
+      "bytes": 2035,
+      "sha256": "55520c30280efff19eb3152e5e87cc20eccbfc1946de33d29be3b34a77dfaa00"
+    },
+    {
+      "path": "runs/uc_support_dual_unknown_reject_20261116/source/rl_bt/navigation_contract.py",
+      "bytes": 15904,
+      "sha256": "2fb7e56c7108495d8846dfe10340667c7a306e9ccb5e8b14bad5a7ec151bfcd1"
+    },
+    {
+      "path": "runs/uc_support_dual_unknown_reject_20261116/source/rl_bt/scan_registration.py",
+      "bytes": 11553,
+      "sha256": "a36fa9d04f59e26e7087cdfe77e8659decf744fc92eeb1af65d8fcb5881adf52"
+    },
+    {
+      "path": "runs/uc_support_dual_unknown_reject_20261116/source/rl_bt/support_costmap.py",
+      "bytes": 11948,
+      "sha256": "aa4f4c89049968f87092baf8a5807f48fc7891911b75b28b9a964e71045481db"
+    },
+    {
+      "path": "runs/uc_support_dual_unknown_reject_20261116/source/rl_bt/terrain_worker.py",
+      "bytes": 16126,
+      "sha256": "33d0ab46544051bb9f4581f93536f3eeeba4aea44b99b22768be8fefba4078eb"
+    },
+    {
+      "path": "runs/uc_support_dual_unknown_reject_20261116/source/rl_bt/uc_field_reference.py",
+      "bytes": 1885,
+      "sha256": "8a81ba01a1b60afff0db82ffbadc80a9cdaf724150cc25ffcbffe4f336ab914b"
+    },
+    {
+      "path": "runs/uc_support_dual_unknown_reject_20261116/source/rl_bt/voxel_terrain.py",
+      "bytes": 14948,
+      "sha256": "7e30160046bd491b483f35d088867d340f919376e27ab3bdb30b0850741fd343"
+    },
+    {
+      "path": "runs/uc_support_dual_unknown_reject_20261116/source/scripts/launch_nav2_probe.py",
+      "bytes": 9906,
+      "sha256": "929afadc6bcfa876167a2632f22ab5f831224d58d0f1cc6e7d42628671ab5231"
+    },
+    {
+      "path": "runs/uc_support_dual_unknown_reject_20261116/source/scripts/nav2_action_probe.py",
+      "bytes": 19114,
+      "sha256": "e216b4d6f3786afbce4adfa4174de4f4c864fac2a8e5b486b5915ee00b796b03"
+    },
+    {
+      "path": "runs/uc_support_dual_unknown_reject_20261116/source/scripts/nav2_mujoco_fixture.py",
+      "bytes": 28230,
+      "sha256": "137aaf546f57b3fd144149866d3ddca4cee4a2ca6126b312ec219e61e050bbe8"
+    },
+    {
+      "path": "runs/uc_support_dual_unknown_reject_20261116/source/scripts/run_nav2_closed_loop.py",
+      "bytes": 12986,
+      "sha256": "8451836e938a76996aa2aec5ba2656e78a4d2bf56a95c633e80432af74aa8bcf"
+    },
+    {
+      "path": "runs/uc_support_dual_unknown_reject_20261116/source_sha256.json",
+      "bytes": 1584,
+      "sha256": "193dcdf29f90f7525f6faca270a9873652b7cbf456a3d0a8e4165e372a2b92ef"
+    },
+    {
+      "path": "runs/uc_support_dual_unknown_reject_20261116/trajectory.png",
+      "bytes": 89075,
+      "sha256": "1f6f7455bf6f4b7a5841dce20ce53553126d5343a9e6c40dfe1128214dd7eb6f"
+    },
+    {
+      "path": "runs/uc_support_dual_unknown_reject_20261116/verification.json",
+      "bytes": 4010,
+      "sha256": "7f5a4b6b6764490de896a8925d6e55045bd5fd40ddf627ffd2c4a541c465ca36"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_20261116/action.log",
+      "bytes": 5682,
+      "sha256": "43d9b29d015faac7d10f03734ea8f9333ffe100f94c07bc95a2b4a9a1880ad2b"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_20261116/action/global_costmap_at_plan.json",
+      "bytes": 30732,
+      "sha256": "525a44b8ca3f10589e0b0b6464d2d896e1771ed12ed71730ba7f083ce78b7641"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_20261116/action/local_costmap_at_plan.json",
+      "bytes": 3162,
+      "sha256": "7cdad43af1140a98c707ecc1a31fb65e92a12814e0d32c8e74f30d85fd7d3491"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_20261116/action/result.json",
+      "bytes": 9054,
+      "sha256": "135e2d096543e2f931fd31a239812adfa98e06e6ab0fa33fe9d587c0a806e8bd"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_20261116/fixture.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_20261116/fixture/field_source.json",
+      "bytes": 829,
+      "sha256": "b316d6a8cfa767080f649c05e34d6161253c6105ae18ed57113d052d0f70fd0f"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_20261116/fixture/lio_display.log",
+      "bytes": 71,
+      "sha256": "2cf43555c32d877e5883aaa50f49ae65f93670c0938751f9d0f33d846fff58a9"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_20261116/fixture/model.xml",
+      "bytes": 6727331,
+      "sha256": "e11d8393fdd60b6ed38a8e7843dd139240ff397896d3378e23f54ee23a6f8523"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_20261116/fixture/pointlio-direct.yaml",
+      "bytes": 3112,
+      "sha256": "e8dfc93ad91f6213a3dc8cb754b8258e3ab7f30ac21eb3fe93dc7442d28637dc"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_20261116/fixture/pointlio-effective.yaml",
+      "bytes": 3898,
+      "sha256": "2252a38c5ccc59d1192c624ae6b44fd23da5503e83ba6bc43fe597ced00127d9"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_20261116/fixture/pointlio.log",
+      "bytes": 71,
+      "sha256": "dbb42e6f8e697f21eb01732ab7d724c764cea22ccbe34f9735378052f58a8613"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_20261116/fixture/private_ros_bridge.py",
+      "bytes": 14057,
+      "sha256": "fa44e60ae677d5824be219706215ce5c49b2828c42ba4895bc5e6dc37575210b"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_20261116/fixture/result.json",
+      "bytes": 102771,
+      "sha256": "f7a15bbd7a50684da63471193f80f74b3dc25e9c892d549805f5ce7e441eed27"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_20261116/fixture/robot.yaml",
+      "bytes": 907,
+      "sha256": "5a59819498e64b2e19260c3980d2b84ba4183bc80cafcb59c6f5ba212f6e5380"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_20261116/fixture/simulation.yaml",
+      "bytes": 1456,
+      "sha256": "2316a24dcba674bfe4266f618d647f9bef452458b8eb70cdca0a0a469af48002"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_20261116/fixture/support_latest.npz",
+      "bytes": 7994,
+      "sha256": "144f7f5e15f81e03b86dd0e42801fcae57d602331b640f25353aa55044113c5b"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_20261116/fixture/terrain_sample_0001.npz",
+      "bytes": 272969,
+      "sha256": "d56ed6588596a950dbae0139506a5001f0f2cb3f7f944ef600129eb165e27833"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_20261116/nav2.log",
+      "bytes": 171,
+      "sha256": "8bd56c739db446508eb06a3ab2a8ebd2544c76331c29597af7b548c6688d1301"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_20261116/nav2/bt_navigator.log",
+      "bytes": 1649,
+      "sha256": "009f9d8a05b69c8c8cfc3966e6993c86b2cd63907f5b4b5b82f22f451c3a83b7"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_20261116/nav2/controller_server.log",
+      "bytes": 9654,
+      "sha256": "28033e2e26322092dd8e29108dc458d4f7ec7ff55e1bfda321d8a08b068c0eb0"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_20261116/nav2/launcher_report.json",
+      "bytes": 2172,
+      "sha256": "50d858dc5e99199b0e5209fb07724e594e9f1372cce248d0b434254bbeb96979"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_20261116/nav2/lifecycle_manager.log",
+      "bytes": 2161,
+      "sha256": "3cf7e6e1846bc7dc763f3f14ecd1614ae9a88c19afe8387b864dca2e2f92eb2f"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_20261116/nav2/nav2_params.generated.yaml",
+      "bytes": 8677,
+      "sha256": "8944a54b4195b97e65b65d30a22dbfcb7fc72c07290b684089272285e358a107"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_20261116/nav2/navigate_through_poses.xml",
+      "bytes": 450,
+      "sha256": "be3e58f586bfe905704fb7c8f51b0a2f0d5818174b17f9f2f543d12a253d3a5e"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_20261116/nav2/navigate_to_pose.xml",
+      "bytes": 511,
+      "sha256": "649d63d49ec17e65e568688da1538fb6ca0a85e44b2d0741da9bd7203d9132f1"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_20261116/nav2/planner_server.log",
+      "bytes": 4162,
+      "sha256": "aae024e319447eef40ba1adacb0fd6bf07ad8ca118cd049a39c477298804ab63"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_20261116/nav2/ros_logs/bt_navigator_33198_1794819998968.log",
+      "bytes": 1576,
+      "sha256": "773af901c5114fdf24a9715ae22ee917a6768d5567d8575db7e8dec893cfd2fb"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_20261116/nav2/ros_logs/controller_server_33196_1794819998972.log",
+      "bytes": 9488,
+      "sha256": "2b9370dd151d5c812ed38d4dceda786e1d8e4e02775fade5217f783bdc05baa2"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_20261116/nav2/ros_logs/lifecycle_manager_33199_1794819998967.log",
+      "bytes": 2043,
+      "sha256": "a9baca9a6166e8c808667949c9dc7cfb72c0485dccf12b10524bf64287ac5d56"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_20261116/nav2/ros_logs/planner_server_33197_1794819998967.log",
+      "bytes": 3997,
+      "sha256": "a9a0f48760ca14d7876a4328c2c2cbe552a38a33b4b3d889381c3f794983d3f8"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_20261116/processes.json",
+      "bytes": 128,
+      "sha256": "ba1119179cd21b8c465ce77044b7783c5f506add74f082ddfdbd30a512488293"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_20261116/roslogs/lio_display_33312_1794820002178.log",
+      "bytes": 71,
+      "sha256": "2cf43555c32d877e5883aaa50f49ae65f93670c0938751f9d0f33d846fff58a9"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_20261116/roslogs/pointlio_direct_33311_1794820002179.log",
+      "bytes": 71,
+      "sha256": "dbb42e6f8e697f21eb01732ab7d724c764cea22ccbe34f9735378052f58a8613"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_20261116/roslogs/python3_33194_1794819999149.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_20261116/roslogs/python_33193_1794820002082.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_20261116/source/configs/nav2_probe.yaml",
+      "bytes": 7320,
+      "sha256": "44f8175997da8a317fcf9bc0eeda4e5e64a0adf059904b988095b71f3f9a1023"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_20261116/source/configs/nav2_probe_bt.xml",
+      "bytes": 511,
+      "sha256": "649d63d49ec17e65e568688da1538fb6ca0a85e44b2d0741da9bd7203d9132f1"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_20261116/source/rl_bt/__init__.py",
+      "bytes": 81,
+      "sha256": "01ab044bd576e4dc10d85e5f67b41b38d419e5f1aec6611d86ed201f33f55cb8"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_20261116/source/rl_bt/contracts.py",
+      "bytes": 1040,
+      "sha256": "1b9bef4da0347bf5c52d62b8dff7c039c84327d19add973a3fd5e9d675c1c95e"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_20261116/source/rl_bt/estimated_twist.py",
+      "bytes": 4540,
+      "sha256": "618db35cfcc411926d4dc465282f4fda1306f9e221c29b972d164b30cf6fd8b2"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_20261116/source/rl_bt/nav2_transport.py",
+      "bytes": 2035,
+      "sha256": "55520c30280efff19eb3152e5e87cc20eccbfc1946de33d29be3b34a77dfaa00"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_20261116/source/rl_bt/navigation_contract.py",
+      "bytes": 15904,
+      "sha256": "2fb7e56c7108495d8846dfe10340667c7a306e9ccb5e8b14bad5a7ec151bfcd1"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_20261116/source/rl_bt/scan_registration.py",
+      "bytes": 11553,
+      "sha256": "a36fa9d04f59e26e7087cdfe77e8659decf744fc92eeb1af65d8fcb5881adf52"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_20261116/source/rl_bt/support_costmap.py",
+      "bytes": 11948,
+      "sha256": "aa4f4c89049968f87092baf8a5807f48fc7891911b75b28b9a964e71045481db"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_20261116/source/rl_bt/terrain_worker.py",
+      "bytes": 16126,
+      "sha256": "33d0ab46544051bb9f4581f93536f3eeeba4aea44b99b22768be8fefba4078eb"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_20261116/source/rl_bt/uc_field_reference.py",
+      "bytes": 1885,
+      "sha256": "8a81ba01a1b60afff0db82ffbadc80a9cdaf724150cc25ffcbffe4f336ab914b"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_20261116/source/rl_bt/voxel_terrain.py",
+      "bytes": 14948,
+      "sha256": "7e30160046bd491b483f35d088867d340f919376e27ab3bdb30b0850741fd343"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_20261116/source/scripts/launch_nav2_probe.py",
+      "bytes": 9906,
+      "sha256": "929afadc6bcfa876167a2632f22ab5f831224d58d0f1cc6e7d42628671ab5231"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_20261116/source/scripts/nav2_action_probe.py",
+      "bytes": 19114,
+      "sha256": "e216b4d6f3786afbce4adfa4174de4f4c864fac2a8e5b486b5915ee00b796b03"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_20261116/source/scripts/nav2_mujoco_fixture.py",
+      "bytes": 28230,
+      "sha256": "137aaf546f57b3fd144149866d3ddca4cee4a2ca6126b312ec219e61e050bbe8"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_20261116/source/scripts/run_nav2_closed_loop.py",
+      "bytes": 12986,
+      "sha256": "8451836e938a76996aa2aec5ba2656e78a4d2bf56a95c633e80432af74aa8bcf"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_20261116/source_sha256.json",
+      "bytes": 1584,
+      "sha256": "193dcdf29f90f7525f6faca270a9873652b7cbf456a3d0a8e4165e372a2b92ef"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_20261116/trajectory.png",
+      "bytes": 107466,
+      "sha256": "854cf0562b9292eefb53d5842737873eb1837f3f8b4220cb27fa91d8916c1acb"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_20261116/verification.json",
+      "bytes": 3949,
+      "sha256": "0dc049a64e2eff032dd1b0ecb8fb1ef34b72ba77b17e2e513769e3bf3a1d73e3"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_final_20261116/action.log",
+      "bytes": 782,
+      "sha256": "8a3c75c5627e15835632ec66f0f6b43ee6169079ef05e255fbf6e45fb1289e8b"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_final_20261116/action/global_costmap_at_plan.json",
+      "bytes": 30859,
+      "sha256": "ed40780af99009a432fbc50ab651e99f4f1c5c4aa4a5017f09c42b700e14dd7f"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_final_20261116/action/local_costmap_at_plan.json",
+      "bytes": 3165,
+      "sha256": "002fa9fe79c8e4e055ff14d415de8260e04d4822e927971c67450f324a6ca864"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_final_20261116/action/result.json",
+      "bytes": 2163,
+      "sha256": "8700672e8231a2d063bc92adfea74756f0cab3ba304b8b46b4258586f70939d5"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_final_20261116/action/semantic_support_at_plan.npz",
+      "bytes": 1406,
+      "sha256": "a6bfe45d73652cb097216ba98e13a24cfee33c52c7502540cd173f8d93fb7315"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_final_20261116/fixture.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_final_20261116/fixture/field_source.json",
+      "bytes": 829,
+      "sha256": "b316d6a8cfa767080f649c05e34d6161253c6105ae18ed57113d052d0f70fd0f"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_final_20261116/fixture/lio_display.log",
+      "bytes": 71,
+      "sha256": "a11d4cba36ba289bda3e24acf39a956e8d5173f1895419bc5dd67327c31114c6"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_final_20261116/fixture/model.xml",
+      "bytes": 6727331,
+      "sha256": "e11d8393fdd60b6ed38a8e7843dd139240ff397896d3378e23f54ee23a6f8523"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_final_20261116/fixture/pointlio-direct.yaml",
+      "bytes": 3112,
+      "sha256": "e8dfc93ad91f6213a3dc8cb754b8258e3ab7f30ac21eb3fe93dc7442d28637dc"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_final_20261116/fixture/pointlio-effective.yaml",
+      "bytes": 3898,
+      "sha256": "2252a38c5ccc59d1192c624ae6b44fd23da5503e83ba6bc43fe597ced00127d9"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_final_20261116/fixture/pointlio.log",
+      "bytes": 71,
+      "sha256": "a99cd86a1e98e6921474b20286966fa42d5ffeaf545ad54ce8b53341695ad9e6"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_final_20261116/fixture/private_ros_bridge.py",
+      "bytes": 14057,
+      "sha256": "fa44e60ae677d5824be219706215ce5c49b2828c42ba4895bc5e6dc37575210b"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_final_20261116/fixture/result.json",
+      "bytes": 68072,
+      "sha256": "bb463ef17b4e0c6fa5ab1b1102adf2c7b7fce53957adaef85c7a01b4c210df38"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_final_20261116/fixture/robot.yaml",
+      "bytes": 907,
+      "sha256": "5a59819498e64b2e19260c3980d2b84ba4183bc80cafcb59c6f5ba212f6e5380"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_final_20261116/fixture/simulation.yaml",
+      "bytes": 1456,
+      "sha256": "2316a24dcba674bfe4266f618d647f9bef452458b8eb70cdca0a0a469af48002"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_final_20261116/fixture/support_latest.npz",
+      "bytes": 7722,
+      "sha256": "74d7aee29b33326dc5ee203ddad5feea7702c8032c64d644baf55a67644074af"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_final_20261116/fixture/terrain_sample_0001.npz",
+      "bytes": 271872,
+      "sha256": "3a59bd5889fe16eb118b1fcabc91c6fd052295b4869cc87c2bc91f530e1f0bfd"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_final_20261116/nav2.log",
+      "bytes": 171,
+      "sha256": "8028f6729bec58293049e91e3ad4e809a27b713ddd993cde9d272efb8d18d056"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_final_20261116/nav2/bt_navigator.log",
+      "bytes": 1296,
+      "sha256": "a71a93505fbbdc5b43e6302c28368be43cf34184199ea21ca9e08ccbc9950903"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_final_20261116/nav2/controller_server.log",
+      "bytes": 9105,
+      "sha256": "67efb15d9351753b4ce2cc1b39b08184a1c40e8a18c68f10b080b3b388b2c1fa"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_final_20261116/nav2/launcher_report.json",
+      "bytes": 2172,
+      "sha256": "3f17cf6f9a1144006e04e316cd1df4c5cd8273c9c3f374a4fa36a933f7a29393"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_final_20261116/nav2/lifecycle_manager.log",
+      "bytes": 2161,
+      "sha256": "b985052ffc50cd30334934ee3340efdb1e8b50922ef709fdd47ce0fcea35eb49"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_final_20261116/nav2/nav2_params.generated.yaml",
+      "bytes": 8677,
+      "sha256": "a41b86921b5599057618581ea369319eb5d6c912f8e122c85cf0f9f6cecd7e24"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_final_20261116/nav2/navigate_through_poses.xml",
+      "bytes": 450,
+      "sha256": "be3e58f586bfe905704fb7c8f51b0a2f0d5818174b17f9f2f543d12a253d3a5e"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_final_20261116/nav2/navigate_to_pose.xml",
+      "bytes": 511,
+      "sha256": "649d63d49ec17e65e568688da1538fb6ca0a85e44b2d0741da9bd7203d9132f1"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_final_20261116/nav2/planner_server.log",
+      "bytes": 4162,
+      "sha256": "d0a25e499dbb649eb2affaa6b17a423025442e5f420c87fbe1822308129ce6ea"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_final_20261116/nav2/ros_logs/bt_navigator_34109_1794820307436.log",
+      "bytes": 1223,
+      "sha256": "6686bc669ead510f9ac58435a092d3974644d1d3041d0065ab61ef7d5d2057c9"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_final_20261116/nav2/ros_logs/controller_server_34107_1794820307436.log",
+      "bytes": 8939,
+      "sha256": "c2fcdfff425cfc1382b2013af63bb12d12e7de9ba174cf76d04aea9e0c0b95bb"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_final_20261116/nav2/ros_logs/lifecycle_manager_34110_1794820307435.log",
+      "bytes": 2043,
+      "sha256": "15b316a581b217dc8fd2c04800e1070ed0ab63629861137141cde4cb8ad04975"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_final_20261116/nav2/ros_logs/planner_server_34108_1794820307439.log",
+      "bytes": 3997,
+      "sha256": "18f380a4e258b6fb68da439ad1e83b5cf5c05c03e2e96bec84ea24b0972e3051"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_final_20261116/processes.json",
+      "bytes": 128,
+      "sha256": "60009d99506e0be03d32f685dd2ad0b8b4cca0b8345616f9537a473375cb362c"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_final_20261116/roslogs/lio_display_34223_1794820310901.log",
+      "bytes": 71,
+      "sha256": "a11d4cba36ba289bda3e24acf39a956e8d5173f1895419bc5dd67327c31114c6"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_final_20261116/roslogs/pointlio_direct_34222_1794820310901.log",
+      "bytes": 71,
+      "sha256": "a99cd86a1e98e6921474b20286966fa42d5ffeaf545ad54ce8b53341695ad9e6"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_final_20261116/roslogs/python3_34105_1794820307613.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_final_20261116/roslogs/python_34104_1794820310497.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_final_20261116/source/configs/nav2_probe.yaml",
+      "bytes": 7320,
+      "sha256": "44f8175997da8a317fcf9bc0eeda4e5e64a0adf059904b988095b71f3f9a1023"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_final_20261116/source/configs/nav2_probe_bt.xml",
+      "bytes": 511,
+      "sha256": "649d63d49ec17e65e568688da1538fb6ca0a85e44b2d0741da9bd7203d9132f1"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_final_20261116/source/rl_bt/__init__.py",
+      "bytes": 81,
+      "sha256": "01ab044bd576e4dc10d85e5f67b41b38d419e5f1aec6611d86ed201f33f55cb8"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_final_20261116/source/rl_bt/contracts.py",
+      "bytes": 1040,
+      "sha256": "1b9bef4da0347bf5c52d62b8dff7c039c84327d19add973a3fd5e9d675c1c95e"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_final_20261116/source/rl_bt/estimated_twist.py",
+      "bytes": 4540,
+      "sha256": "618db35cfcc411926d4dc465282f4fda1306f9e221c29b972d164b30cf6fd8b2"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_final_20261116/source/rl_bt/nav2_transport.py",
+      "bytes": 2035,
+      "sha256": "55520c30280efff19eb3152e5e87cc20eccbfc1946de33d29be3b34a77dfaa00"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_final_20261116/source/rl_bt/navigation_contract.py",
+      "bytes": 15904,
+      "sha256": "2fb7e56c7108495d8846dfe10340667c7a306e9ccb5e8b14bad5a7ec151bfcd1"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_final_20261116/source/rl_bt/scan_registration.py",
+      "bytes": 11553,
+      "sha256": "a36fa9d04f59e26e7087cdfe77e8659decf744fc92eeb1af65d8fcb5881adf52"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_final_20261116/source/rl_bt/support_costmap.py",
+      "bytes": 11948,
+      "sha256": "aa4f4c89049968f87092baf8a5807f48fc7891911b75b28b9a964e71045481db"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_final_20261116/source/rl_bt/terrain_worker.py",
+      "bytes": 16126,
+      "sha256": "33d0ab46544051bb9f4581f93536f3eeeba4aea44b99b22768be8fefba4078eb"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_final_20261116/source/rl_bt/uc_field_reference.py",
+      "bytes": 1885,
+      "sha256": "8a81ba01a1b60afff0db82ffbadc80a9cdaf724150cc25ffcbffe4f336ab914b"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_final_20261116/source/rl_bt/voxel_terrain.py",
+      "bytes": 14948,
+      "sha256": "7e30160046bd491b483f35d088867d340f919376e27ab3bdb30b0850741fd343"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_final_20261116/source/scripts/launch_nav2_probe.py",
+      "bytes": 9906,
+      "sha256": "929afadc6bcfa876167a2632f22ab5f831224d58d0f1cc6e7d42628671ab5231"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_final_20261116/source/scripts/nav2_action_probe.py",
+      "bytes": 20171,
+      "sha256": "e7b59550afa5ffb2131d871d63cec88ffd9bc11df878b15c73fe84d745da0cbc"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_final_20261116/source/scripts/nav2_mujoco_fixture.py",
+      "bytes": 28230,
+      "sha256": "137aaf546f57b3fd144149866d3ddca4cee4a2ca6126b312ec219e61e050bbe8"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_final_20261116/source/scripts/run_nav2_closed_loop.py",
+      "bytes": 12986,
+      "sha256": "8451836e938a76996aa2aec5ba2656e78a4d2bf56a95c633e80432af74aa8bcf"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_final_20261116/source_sha256.json",
+      "bytes": 1584,
+      "sha256": "b3ce860b658c0be65b3c3dd55320a710e952fb6e8c1d1bce76751882a7216e0d"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_final_20261116/trajectory.png",
+      "bytes": 101947,
+      "sha256": "4415c4242dc919befcd431bd5b05b086754e5edf25e7cf6fc23be93531e288bc"
+    },
+    {
+      "path": "runs/uc_support_map_dropout_final_20261116/verification.json",
+      "bytes": 3938,
+      "sha256": "be5e59cf30fdc876aa2ac26bcf6119d07134c862895b1c7fd9981871824531cc"
+    },
+    {
+      "path": "runs/uc_support_observed_forward_20261116/action.log",
+      "bytes": 292,
+      "sha256": "c17748a0d6ba0cd8ea311bf9144b3f8761f42b45526a412b178faa219ed90542"
+    },
+    {
+      "path": "runs/uc_support_observed_forward_20261116/action/global_costmap_at_plan.json",
+      "bytes": 71313,
+      "sha256": "9af86d2407fd318175a35d3aab2d3432dd802fd392f11f17227e4cf9f91ff306"
+    },
+    {
+      "path": "runs/uc_support_observed_forward_20261116/action/local_costmap_at_plan.json",
+      "bytes": 7740,
+      "sha256": "ea260cb18390e8b3c8ab53a9c80bf9bd54ba65baeba68d6507eb6a535f6bc5e2"
+    },
+    {
+      "path": "runs/uc_support_observed_forward_20261116/action/result.json",
+      "bytes": 1350,
+      "sha256": "a40c9130f102515e9ae3c93230c0a55d105b05c6f8b5c8abd29ef496769e09b9"
+    },
+    {
+      "path": "runs/uc_support_observed_forward_20261116/fixture.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/uc_support_observed_forward_20261116/fixture/field_source.json",
+      "bytes": 829,
+      "sha256": "b316d6a8cfa767080f649c05e34d6161253c6105ae18ed57113d052d0f70fd0f"
+    },
+    {
+      "path": "runs/uc_support_observed_forward_20261116/fixture/lio_display.log",
+      "bytes": 71,
+      "sha256": "271d46bb9c955b8f8df860a257a3829aea9ec5397eea8c73cc213bd8f25363a4"
+    },
+    {
+      "path": "runs/uc_support_observed_forward_20261116/fixture/model.xml",
+      "bytes": 6727331,
+      "sha256": "e11d8393fdd60b6ed38a8e7843dd139240ff397896d3378e23f54ee23a6f8523"
+    },
+    {
+      "path": "runs/uc_support_observed_forward_20261116/fixture/pointlio-direct.yaml",
+      "bytes": 3112,
+      "sha256": "e8dfc93ad91f6213a3dc8cb754b8258e3ab7f30ac21eb3fe93dc7442d28637dc"
+    },
+    {
+      "path": "runs/uc_support_observed_forward_20261116/fixture/pointlio.log",
+      "bytes": 71,
+      "sha256": "91226fd6c5db075430b70a06b9a7d7a488c7283fe8c994abb66a0f0c76a37ba5"
+    },
+    {
+      "path": "runs/uc_support_observed_forward_20261116/fixture/private_ros_bridge.py",
+      "bytes": 14057,
+      "sha256": "fa44e60ae677d5824be219706215ce5c49b2828c42ba4895bc5e6dc37575210b"
+    },
+    {
+      "path": "runs/uc_support_observed_forward_20261116/fixture/result.json",
+      "bytes": 43276,
+      "sha256": "af48ecd08dc9d391b92fded0d870a7cb10c7a1e32eec930b9e18d2b725672b1c"
+    },
+    {
+      "path": "runs/uc_support_observed_forward_20261116/fixture/robot.yaml",
+      "bytes": 907,
+      "sha256": "5a59819498e64b2e19260c3980d2b84ba4183bc80cafcb59c6f5ba212f6e5380"
+    },
+    {
+      "path": "runs/uc_support_observed_forward_20261116/fixture/simulation.yaml",
+      "bytes": 1456,
+      "sha256": "2316a24dcba674bfe4266f618d647f9bef452458b8eb70cdca0a0a469af48002"
+    },
+    {
+      "path": "runs/uc_support_observed_forward_20261116/fixture/support_latest.npz",
+      "bytes": 3958,
+      "sha256": "7927ec69d66b8139e2be9cd8518ac2ace90fa2c63318cd43a480a7ae31d32ff3"
+    },
+    {
+      "path": "runs/uc_support_observed_forward_20261116/fixture/terrain_sample_0001.npz",
+      "bytes": 4469,
+      "sha256": "5ff9e8238faa950187196d14503cbb33eb2911d14aeacab24f58da6f88e5556d"
+    },
+    {
+      "path": "runs/uc_support_observed_forward_20261116/nav2.log",
+      "bytes": 171,
+      "sha256": "f1bf5a0fa9b1e689111bd7161a638dda798ed49c925478c7ef87f05a3cf7c47b"
+    },
+    {
+      "path": "runs/uc_support_observed_forward_20261116/nav2/bt_navigator.log",
+      "bytes": 1296,
+      "sha256": "988dfe9e666b7876f35e97aca7a32e43e2681e6909f6f6ba9ffc5b08ec092791"
+    },
+    {
+      "path": "runs/uc_support_observed_forward_20261116/nav2/controller_server.log",
+      "bytes": 11991,
+      "sha256": "7d22465df6f59a72e1da1afc42501f4ca58e81810f7d9c6a8da015e3ad124842"
+    },
+    {
+      "path": "runs/uc_support_observed_forward_20261116/nav2/launcher_report.json",
+      "bytes": 2172,
+      "sha256": "4e26f7e6997f14416d7a2e6d7495cf74f3a52c5389191123b9bc3728cfa53e24"
+    },
+    {
+      "path": "runs/uc_support_observed_forward_20261116/nav2/lifecycle_manager.log",
+      "bytes": 2161,
+      "sha256": "4d7c5dbead3cb8d3c50f40d3e7a34877973bfc0929ac4cc269f52fbdce6b57ce"
+    },
+    {
+      "path": "runs/uc_support_observed_forward_20261116/nav2/nav2_params.generated.yaml",
+      "bytes": 8675,
+      "sha256": "3cdb03fe93443fbad1d89a657ec240291195fc8ae8c8107dcbab3a79e0377eee"
+    },
+    {
+      "path": "runs/uc_support_observed_forward_20261116/nav2/navigate_through_poses.xml",
+      "bytes": 450,
+      "sha256": "be3e58f586bfe905704fb7c8f51b0a2f0d5818174b17f9f2f543d12a253d3a5e"
+    },
+    {
+      "path": "runs/uc_support_observed_forward_20261116/nav2/navigate_to_pose.xml",
+      "bytes": 511,
+      "sha256": "649d63d49ec17e65e568688da1538fb6ca0a85e44b2d0741da9bd7203d9132f1"
+    },
+    {
+      "path": "runs/uc_support_observed_forward_20261116/nav2/planner_server.log",
+      "bytes": 4830,
+      "sha256": "25245abd79b8f45697827a7f72f5edd8aff57b80a8b039fb8d1c6dfc9b28b117"
+    },
+    {
+      "path": "runs/uc_support_observed_forward_20261116/nav2/ros_logs/bt_navigator_32021_1794819059697.log",
+      "bytes": 1223,
+      "sha256": "bb8c33fa662ceb43d3e6eb68fb65e05f26e9017c0a11fb831fa8de8852d71c3c"
+    },
+    {
+      "path": "runs/uc_support_observed_forward_20261116/nav2/ros_logs/controller_server_32019_1794819059687.log",
+      "bytes": 11825,
+      "sha256": "17ae45162546b6e177d6d6b002464039c34dcdc6b54086137ef613568a87311d"
+    },
+    {
+      "path": "runs/uc_support_observed_forward_20261116/nav2/ros_logs/lifecycle_manager_32022_1794819059725.log",
+      "bytes": 2043,
+      "sha256": "d720068d192af78c0f3670d57ccdf2d2b30c4b68dcd36e0283790d3eee3500ba"
+    },
+    {
+      "path": "runs/uc_support_observed_forward_20261116/nav2/ros_logs/planner_server_32020_1794819059687.log",
+      "bytes": 4665,
+      "sha256": "a3a506fc35581c0368b837972ae6bc9e147289e555ffdb576952901b680bfef3"
+    },
+    {
+      "path": "runs/uc_support_observed_forward_20261116/processes.json",
+      "bytes": 128,
+      "sha256": "b481063e2703ed5594e0601bdf91bd61a90156be54eed3c588b49174fcbd4976"
+    },
+    {
+      "path": "runs/uc_support_observed_forward_20261116/roslogs/lio_display_32135_1794819068571.log",
+      "bytes": 71,
+      "sha256": "271d46bb9c955b8f8df860a257a3829aea9ec5397eea8c73cc213bd8f25363a4"
+    },
+    {
+      "path": "runs/uc_support_observed_forward_20261116/roslogs/pointlio_direct_32134_1794819068562.log",
+      "bytes": 71,
+      "sha256": "91226fd6c5db075430b70a06b9a7d7a488c7283fe8c994abb66a0f0c76a37ba5"
+    },
+    {
+      "path": "runs/uc_support_observed_forward_20261116/roslogs/python3_32017_1794819060054.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/uc_support_observed_forward_20261116/roslogs/python_32016_1794819068335.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/uc_support_observed_forward_20261116/source/configs/nav2_probe.yaml",
+      "bytes": 7320,
+      "sha256": "44f8175997da8a317fcf9bc0eeda4e5e64a0adf059904b988095b71f3f9a1023"
+    },
+    {
+      "path": "runs/uc_support_observed_forward_20261116/source/configs/nav2_probe_bt.xml",
+      "bytes": 511,
+      "sha256": "649d63d49ec17e65e568688da1538fb6ca0a85e44b2d0741da9bd7203d9132f1"
+    },
+    {
+      "path": "runs/uc_support_observed_forward_20261116/source/rl_bt/__init__.py",
+      "bytes": 81,
+      "sha256": "01ab044bd576e4dc10d85e5f67b41b38d419e5f1aec6611d86ed201f33f55cb8"
+    },
+    {
+      "path": "runs/uc_support_observed_forward_20261116/source/rl_bt/contracts.py",
+      "bytes": 1040,
+      "sha256": "1b9bef4da0347bf5c52d62b8dff7c039c84327d19add973a3fd5e9d675c1c95e"
+    },
+    {
+      "path": "runs/uc_support_observed_forward_20261116/source/rl_bt/estimated_twist.py",
+      "bytes": 4540,
+      "sha256": "618db35cfcc411926d4dc465282f4fda1306f9e221c29b972d164b30cf6fd8b2"
+    },
+    {
+      "path": "runs/uc_support_observed_forward_20261116/source/rl_bt/nav2_transport.py",
+      "bytes": 2035,
+      "sha256": "55520c30280efff19eb3152e5e87cc20eccbfc1946de33d29be3b34a77dfaa00"
+    },
+    {
+      "path": "runs/uc_support_observed_forward_20261116/source/rl_bt/navigation_contract.py",
+      "bytes": 15904,
+      "sha256": "2fb7e56c7108495d8846dfe10340667c7a306e9ccb5e8b14bad5a7ec151bfcd1"
+    },
+    {
+      "path": "runs/uc_support_observed_forward_20261116/source/rl_bt/support_costmap.py",
+      "bytes": 11948,
+      "sha256": "aa4f4c89049968f87092baf8a5807f48fc7891911b75b28b9a964e71045481db"
+    },
+    {
+      "path": "runs/uc_support_observed_forward_20261116/source/rl_bt/terrain_worker.py",
+      "bytes": 16126,
+      "sha256": "33d0ab46544051bb9f4581f93536f3eeeba4aea44b99b22768be8fefba4078eb"
+    },
+    {
+      "path": "runs/uc_support_observed_forward_20261116/source/rl_bt/uc_field_reference.py",
+      "bytes": 1885,
+      "sha256": "8a81ba01a1b60afff0db82ffbadc80a9cdaf724150cc25ffcbffe4f336ab914b"
+    },
+    {
+      "path": "runs/uc_support_observed_forward_20261116/source/rl_bt/voxel_terrain.py",
+      "bytes": 14948,
+      "sha256": "7e30160046bd491b483f35d088867d340f919376e27ab3bdb30b0850741fd343"
+    },
+    {
+      "path": "runs/uc_support_observed_forward_20261116/source/scripts/launch_nav2_probe.py",
+      "bytes": 9871,
+      "sha256": "e1cbfb9f9b999789948a06bd44459a66f181edde74ce56b1b7b2ee2f215ae76e"
+    },
+    {
+      "path": "runs/uc_support_observed_forward_20261116/source/scripts/nav2_action_probe.py",
+      "bytes": 18326,
+      "sha256": "fb15478e1e480dd57101917a04492fb84383a029c05e3c5238fa1c67bcd3c899"
+    },
+    {
+      "path": "runs/uc_support_observed_forward_20261116/source/scripts/nav2_mujoco_fixture.py",
+      "bytes": 20985,
+      "sha256": "2b8f0264a8bd5771ce3db690ecf5ccf9f4ecb505faed92b467840fb62e027231"
+    },
+    {
+      "path": "runs/uc_support_observed_forward_20261116/source/scripts/run_nav2_closed_loop.py",
+      "bytes": 11762,
+      "sha256": "8c95953fe9e99a343f8418522bc7c43c4c030a0da30b6f27896fe9cff3bcf5cf"
+    },
+    {
+      "path": "runs/uc_support_observed_forward_20261116/source_sha256.json",
+      "bytes": 1484,
+      "sha256": "458fe5b3002edc29905d9a0408978828b453bd1b65a1fe3cd73ac9ce20d9a5c0"
+    },
+    {
+      "path": "runs/uc_support_observed_forward_20261116/trajectory.png",
+      "bytes": 90060,
+      "sha256": "1133b8e7e19f66f23274fb37c3e970a24c9d94ed54d84da22baac224160f7d04"
+    },
+    {
+      "path": "runs/uc_support_observed_forward_20261116/verification.json",
+      "bytes": 3813,
+      "sha256": "0c030f132abb198e41cc2c15475300be9a1b8509921e7a36b1f1d74f0af35b2f"
+    },
+    {
+      "path": "runs/uc_support_unknown_reject_20261116/action.log",
+      "bytes": 293,
+      "sha256": "ed56a8cf45c661152cda44270fca8f1db78ee3791b72d4b7b100e57fd8e2c033"
+    },
+    {
+      "path": "runs/uc_support_unknown_reject_20261116/action/global_costmap_at_plan.json",
+      "bytes": 71868,
+      "sha256": "3e25f072170613f6cc3837f325ceaf3be94b30d68500cfb5bbf0b7ec88c29454"
+    },
+    {
+      "path": "runs/uc_support_unknown_reject_20261116/action/local_costmap_at_plan.json",
+      "bytes": 7899,
+      "sha256": "51376f4bb997e46658382fb3a378f4d1b3a1579e08f07c511705ce93a363fd6d"
+    },
+    {
+      "path": "runs/uc_support_unknown_reject_20261116/action/result.json",
+      "bytes": 1352,
+      "sha256": "792e214fdb0594ac2f7493c7288014d65b1f09f245799f7856da712421cf22b9"
+    },
+    {
+      "path": "runs/uc_support_unknown_reject_20261116/fixture.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/uc_support_unknown_reject_20261116/fixture/field_source.json",
+      "bytes": 829,
+      "sha256": "b316d6a8cfa767080f649c05e34d6161253c6105ae18ed57113d052d0f70fd0f"
+    },
+    {
+      "path": "runs/uc_support_unknown_reject_20261116/fixture/lio_display.log",
+      "bytes": 71,
+      "sha256": "cc8b980b4f5f1fbd75d142044b44b035a9d91411f29d4f38d6cfa8794f97dec4"
+    },
+    {
+      "path": "runs/uc_support_unknown_reject_20261116/fixture/model.xml",
+      "bytes": 6727331,
+      "sha256": "e11d8393fdd60b6ed38a8e7843dd139240ff397896d3378e23f54ee23a6f8523"
+    },
+    {
+      "path": "runs/uc_support_unknown_reject_20261116/fixture/pointlio-direct.yaml",
+      "bytes": 3112,
+      "sha256": "e8dfc93ad91f6213a3dc8cb754b8258e3ab7f30ac21eb3fe93dc7442d28637dc"
+    },
+    {
+      "path": "runs/uc_support_unknown_reject_20261116/fixture/pointlio.log",
+      "bytes": 71,
+      "sha256": "82d0348840c02b605ed8a62e6afd24692e351e6e5bdfd4e61a797bd93503bde0"
+    },
+    {
+      "path": "runs/uc_support_unknown_reject_20261116/fixture/private_ros_bridge.py",
+      "bytes": 14057,
+      "sha256": "fa44e60ae677d5824be219706215ce5c49b2828c42ba4895bc5e6dc37575210b"
+    },
+    {
+      "path": "runs/uc_support_unknown_reject_20261116/fixture/result.json",
+      "bytes": 33718,
+      "sha256": "60d0c59527a43598a8b3c17d92b6b53c7be241722a2f4d8021bdc5455ad2bbb0"
+    },
+    {
+      "path": "runs/uc_support_unknown_reject_20261116/fixture/robot.yaml",
+      "bytes": 907,
+      "sha256": "5a59819498e64b2e19260c3980d2b84ba4183bc80cafcb59c6f5ba212f6e5380"
+    },
+    {
+      "path": "runs/uc_support_unknown_reject_20261116/fixture/simulation.yaml",
+      "bytes": 1456,
+      "sha256": "2316a24dcba674bfe4266f618d647f9bef452458b8eb70cdca0a0a469af48002"
+    },
+    {
+      "path": "runs/uc_support_unknown_reject_20261116/fixture/support_latest.npz",
+      "bytes": 2898,
+      "sha256": "b6d6287f69b694797564e9049c70f004fc40cdc2af66b6fc6493d46a096bb5c9"
+    },
+    {
+      "path": "runs/uc_support_unknown_reject_20261116/fixture/terrain_sample_0001.npz",
+      "bytes": 4500,
+      "sha256": "5b66aa989af49859c47533aced1364bd8f64d27c3061f2c5c2573970b61826d6"
+    },
+    {
+      "path": "runs/uc_support_unknown_reject_20261116/nav2.log",
+      "bytes": 171,
+      "sha256": "eade52b33142e2bc1733c907052b2bf9efcfbbdbc7d3a838dec2556d24b96f3e"
+    },
+    {
+      "path": "runs/uc_support_unknown_reject_20261116/nav2/bt_navigator.log",
+      "bytes": 1296,
+      "sha256": "962ce1c6ea6c4cbf44934277db4de8a155697000a60eb5fb43c7c5e27ae75a94"
+    },
+    {
+      "path": "runs/uc_support_unknown_reject_20261116/nav2/controller_server.log",
+      "bytes": 11848,
+      "sha256": "06551024d2aea7ca5af6a40333ed6f6d53e0ee6f97f36e0a0583964a88f0806f"
+    },
+    {
+      "path": "runs/uc_support_unknown_reject_20261116/nav2/launcher_report.json",
+      "bytes": 2172,
+      "sha256": "9af8c05290bb3db0c3f50ab7860d99acc06c062ab304ce50ad4a5dbefec99326"
+    },
+    {
+      "path": "runs/uc_support_unknown_reject_20261116/nav2/lifecycle_manager.log",
+      "bytes": 2161,
+      "sha256": "a4cecbb03c8ebec426185fda88be51f149cb0dfdc898d2916baa2601eb5d40f9"
+    },
+    {
+      "path": "runs/uc_support_unknown_reject_20261116/nav2/nav2_params.generated.yaml",
+      "bytes": 8675,
+      "sha256": "df8439f271fd0bbd589ac1c0680c281327c1677edd7cf37b3ecb640c2bb679bd"
+    },
+    {
+      "path": "runs/uc_support_unknown_reject_20261116/nav2/navigate_through_poses.xml",
+      "bytes": 450,
+      "sha256": "be3e58f586bfe905704fb7c8f51b0a2f0d5818174b17f9f2f543d12a253d3a5e"
+    },
+    {
+      "path": "runs/uc_support_unknown_reject_20261116/nav2/navigate_to_pose.xml",
+      "bytes": 511,
+      "sha256": "649d63d49ec17e65e568688da1538fb6ca0a85e44b2d0741da9bd7203d9132f1"
+    },
+    {
+      "path": "runs/uc_support_unknown_reject_20261116/nav2/planner_server.log",
+      "bytes": 4685,
+      "sha256": "c2ed3fe5fc35ead132a143f5a8b8b8fcb6bf0e23b5e0ee57d23a00e09f5ded4c"
+    },
+    {
+      "path": "runs/uc_support_unknown_reject_20261116/nav2/ros_logs/bt_navigator_31801_1794818986982.log",
+      "bytes": 1223,
+      "sha256": "6c1061c485db9a316ee363ad84c4339621821362601081855e6d1e9be223c380"
+    },
+    {
+      "path": "runs/uc_support_unknown_reject_20261116/nav2/ros_logs/controller_server_31799_1794818986952.log",
+      "bytes": 11682,
+      "sha256": "bfdd0c7325aa07c00f171472ddaf820aad8b11d4c376bf9b0f6f3bed2062512e"
+    },
+    {
+      "path": "runs/uc_support_unknown_reject_20261116/nav2/ros_logs/lifecycle_manager_31802_1794818986941.log",
+      "bytes": 2043,
+      "sha256": "7403cdf4b41a2a8fa9932d2e2963cb7285c50e5b5fa3e6a76a8eaaea0897caae"
+    },
+    {
+      "path": "runs/uc_support_unknown_reject_20261116/nav2/ros_logs/planner_server_31800_1794818986947.log",
+      "bytes": 4520,
+      "sha256": "220720f4220b361451c717b28d88140ba9d3acbf658f42f0284ade9760b62f36"
+    },
+    {
+      "path": "runs/uc_support_unknown_reject_20261116/processes.json",
+      "bytes": 128,
+      "sha256": "bc2dc112316e7d0fab00410c8e3cb801648618506a23040ddd1d767753c3c01d"
+    },
+    {
+      "path": "runs/uc_support_unknown_reject_20261116/roslogs/lio_display_31915_1794818995927.log",
+      "bytes": 71,
+      "sha256": "cc8b980b4f5f1fbd75d142044b44b035a9d91411f29d4f38d6cfa8794f97dec4"
+    },
+    {
+      "path": "runs/uc_support_unknown_reject_20261116/roslogs/pointlio_direct_31914_1794818995934.log",
+      "bytes": 71,
+      "sha256": "82d0348840c02b605ed8a62e6afd24692e351e6e5bdfd4e61a797bd93503bde0"
+    },
+    {
+      "path": "runs/uc_support_unknown_reject_20261116/roslogs/python3_31797_1794818987396.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/uc_support_unknown_reject_20261116/roslogs/python_31796_1794818995655.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/uc_support_unknown_reject_20261116/source/configs/nav2_probe.yaml",
+      "bytes": 7320,
+      "sha256": "44f8175997da8a317fcf9bc0eeda4e5e64a0adf059904b988095b71f3f9a1023"
+    },
+    {
+      "path": "runs/uc_support_unknown_reject_20261116/source/configs/nav2_probe_bt.xml",
+      "bytes": 511,
+      "sha256": "649d63d49ec17e65e568688da1538fb6ca0a85e44b2d0741da9bd7203d9132f1"
+    },
+    {
+      "path": "runs/uc_support_unknown_reject_20261116/source/rl_bt/__init__.py",
+      "bytes": 81,
+      "sha256": "01ab044bd576e4dc10d85e5f67b41b38d419e5f1aec6611d86ed201f33f55cb8"
+    },
+    {
+      "path": "runs/uc_support_unknown_reject_20261116/source/rl_bt/contracts.py",
+      "bytes": 1040,
+      "sha256": "1b9bef4da0347bf5c52d62b8dff7c039c84327d19add973a3fd5e9d675c1c95e"
+    },
+    {
+      "path": "runs/uc_support_unknown_reject_20261116/source/rl_bt/estimated_twist.py",
+      "bytes": 4540,
+      "sha256": "618db35cfcc411926d4dc465282f4fda1306f9e221c29b972d164b30cf6fd8b2"
+    },
+    {
+      "path": "runs/uc_support_unknown_reject_20261116/source/rl_bt/nav2_transport.py",
+      "bytes": 2035,
+      "sha256": "55520c30280efff19eb3152e5e87cc20eccbfc1946de33d29be3b34a77dfaa00"
+    },
+    {
+      "path": "runs/uc_support_unknown_reject_20261116/source/rl_bt/navigation_contract.py",
+      "bytes": 15904,
+      "sha256": "2fb7e56c7108495d8846dfe10340667c7a306e9ccb5e8b14bad5a7ec151bfcd1"
+    },
+    {
+      "path": "runs/uc_support_unknown_reject_20261116/source/rl_bt/support_costmap.py",
+      "bytes": 11948,
+      "sha256": "aa4f4c89049968f87092baf8a5807f48fc7891911b75b28b9a964e71045481db"
+    },
+    {
+      "path": "runs/uc_support_unknown_reject_20261116/source/rl_bt/terrain_worker.py",
+      "bytes": 16126,
+      "sha256": "33d0ab46544051bb9f4581f93536f3eeeba4aea44b99b22768be8fefba4078eb"
+    },
+    {
+      "path": "runs/uc_support_unknown_reject_20261116/source/rl_bt/uc_field_reference.py",
+      "bytes": 1885,
+      "sha256": "8a81ba01a1b60afff0db82ffbadc80a9cdaf724150cc25ffcbffe4f336ab914b"
+    },
+    {
+      "path": "runs/uc_support_unknown_reject_20261116/source/rl_bt/voxel_terrain.py",
+      "bytes": 14948,
+      "sha256": "7e30160046bd491b483f35d088867d340f919376e27ab3bdb30b0850741fd343"
+    },
+    {
+      "path": "runs/uc_support_unknown_reject_20261116/source/scripts/launch_nav2_probe.py",
+      "bytes": 9871,
+      "sha256": "e1cbfb9f9b999789948a06bd44459a66f181edde74ce56b1b7b2ee2f215ae76e"
+    },
+    {
+      "path": "runs/uc_support_unknown_reject_20261116/source/scripts/nav2_action_probe.py",
+      "bytes": 18326,
+      "sha256": "fb15478e1e480dd57101917a04492fb84383a029c05e3c5238fa1c67bcd3c899"
+    },
+    {
+      "path": "runs/uc_support_unknown_reject_20261116/source/scripts/nav2_mujoco_fixture.py",
+      "bytes": 19709,
+      "sha256": "1c53395c34637f4d17991d3110fad545dabd8c6a382b705cb9e65b47a1f8c471"
+    },
+    {
+      "path": "runs/uc_support_unknown_reject_20261116/source/scripts/run_nav2_closed_loop.py",
+      "bytes": 11762,
+      "sha256": "8c95953fe9e99a343f8418522bc7c43c4c030a0da30b6f27896fe9cff3bcf5cf"
+    },
+    {
+      "path": "runs/uc_support_unknown_reject_20261116/source_sha256.json",
+      "bytes": 1484,
+      "sha256": "9e8b12b53759de7f45558140b5cf8c512ab76e2af9afad012bfbb0179d17ad63"
+    },
+    {
+      "path": "runs/uc_support_unknown_reject_20261116/trajectory.png",
+      "bytes": 86498,
+      "sha256": "7fa899192f5eb4bcc2b2dd99bd6cb07d73ad60564579cb4f2edc615f9fca0c77"
+    },
+    {
+      "path": "runs/uc_support_unknown_reject_20261116/verification.json",
+      "bytes": 3826,
+      "sha256": "81f4c5e4e9692d5e7522e5088d3ab8d0dcf5019d503c48dfa3fdcf8152b37723"
+    }
+  ],
+  "private_shared_effective_fix_documentation": "docs/19_observed_support_costmap.md",
+  "inventory_updated_separately": "data/artifact_inventory.json"
+}

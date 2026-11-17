@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!-- Task recovery belongs to the outer BT monitor. This probe only plans/follows. -->
+<root main_tree_to_execute="MainTree">
+  <BehaviorTree ID="MainTree">
+    <PipelineSequence name="ReplanAndFollow">
+      <RateController hz="1.0">
+        <ComputePathToPose goal="{goal}" path="{path}" planner_id="GridBased"/>
+      </RateController>
+      <FollowPath path="{path}" controller_id="FollowPath" goal_checker_id="general_goal_checker"/>
+    </PipelineSequence>
+  </BehaviorTree>
+</root>

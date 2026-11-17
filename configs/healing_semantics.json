@@ -1,0 +1,104 @@
+{
+  "artifact_type": "reviewed_rule_semantics_not_runtime_map_or_healing_simulator",
+  "checked_on": "2026-11-16",
+  "basis": "2027 RMUC user PDF and RMUL official PDF, both V1.0.0 20261015; latest amendments not verified",
+  "team_restriction": "pending_clarification_whether_base_supply_only_is_team_policy",
+  "profiles": {
+    "rmuc_2027": {
+      "official_geometry_registered": false,
+      "sources": {
+        "healing": {
+          "pdf_page": 74,
+          "printed_page": 73,
+          "section": "5.3.1"
+        },
+        "base_buff": {
+          "pdf_page": 106,
+          "printed_page": 105,
+          "section": "5.6.4.2"
+        },
+        "outpost_buff": {
+          "pdf_page": 107,
+          "printed_page": 106,
+          "section": "5.6.4.6"
+        },
+        "supply_buff": {
+          "pdf_page": 108,
+          "printed_page": 107,
+          "section": "5.6.4.8"
+        }
+      },
+      "own_supply_zone": {
+        "semantics": "The specified own supply area inside the base region; not the whole base region",
+        "activation_required": true,
+        "nominal_heal_fraction_max_hp_per_s": 0.1,
+        "late_out_of_combat_fraction_max_hp_per_s": 0.25,
+        "late_condition": "after_240_elapsed_seconds_and_out_of_combat",
+        "logistics_coefficient_applies": true,
+        "polygon_in_navigation_frame": null
+      },
+      "own_outpost_buff": {
+        "activation_required": true,
+        "corresponding_outpost_position_fully_controlled_by_own_team": true,
+        "fraction_of_current_supply_heal_rate": 0.5,
+        "polygon_in_navigation_frame": null
+      },
+      "base_buff": {
+        "listed_effects": [
+          "50_percent_defense_buff",
+          "ammo_exchange",
+          "remove_weak_state"
+        ],
+        "infer_healing_from_base_buff_activation_alone": false,
+        "polygon_in_navigation_frame": null
+      },
+      "remote_paid_heal": {
+        "out_of_combat_required_for_request": true,
+        "requires_location_in_base": false,
+        "delay_after_confirmation_s": 6,
+        "nominal_fraction_max_hp": 0.6,
+        "logistics_coefficient_applies": true,
+        "death_before_effect": "invalid_no_refund",
+        "budget_guard_required": true,
+        "implemented_in_phase1_environment": false,
+        "offline_effect_and_budget_adapter": "rl_bt/resource_executor.py"
+      },
+      "other_safe_cover_point": {
+        "infer_passive_healing_from_safety_or_distance": false
+      },
+      "passive_healing_calculation_implemented": "rl_bt/healing.py"
+    },
+    "rmul_2027": {
+      "full_rules_verified": true,
+      "basis": "Official 2027 RMUL 3v3 V1.0.0 20261015",
+      "full_rule_engine_implemented": false,
+      "official_geometry_registered": false,
+      "inherit_uc_healing_parameters": false,
+      "official_rule_facts": "data/rmul_rule_facts.json",
+      "source_manifest": "data/references/official_rmul_2027/manifest.json",
+      "healing_locations": [
+        "own_supply_zone"
+      ],
+      "own_supply_zone": {
+        "activation_required": true,
+        "nominal_heal_fraction_max_hp_per_s": 0.25,
+        "comeback_control_gap_at_least_200_fraction": 0.33,
+        "comeback_control_gap_at_least_400_fraction": 0.5,
+        "out_of_combat_required": false,
+        "reference_surface_bounds": "assets/rmul_2027/derived/manifest.json",
+        "polygon_in_navigation_frame": null
+      },
+      "sentry_remote_heal_allowed": false,
+      "sentry_ammo_increase_allowed": false,
+      "sentry_initial_ammo_allowance": 750,
+      "implementation": "rl_bt/ul_rules.py"
+    }
+  },
+  "phase1_proxy": {
+    "map": "alphaRM_fixed_flat_map_not_official_UL_UC",
+    "home_candidate": "own_spawn_center_in_alphaRM_geometry",
+    "healing_implementation": "upstream_spawn_rectangle_healing_8.125_HP_per_0.1s",
+    "distant_low_hp_home_shaping_is_physical_healing": false,
+    "formal_profile_acceptance": false
+  }
+}

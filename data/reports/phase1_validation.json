@@ -1,0 +1,191 @@
+{
+  "checked_on": "2026-11-16",
+  "scenario_id": "alpharm_task_prototype_v1",
+  "sentry_mode_target": "fully_automatic_AI",
+  "official_competition_environment_ready": false,
+  "pytest": {
+    "passed": 11,
+    "command": "/home/kellen/anaconda3/envs/robot/bin/python -m pytest -q"
+  },
+  "train_decisions_two_main_runs": 8192,
+  "complete_training_episodes_two_main_runs": 99,
+  "extra_BT_training_examples": 384,
+  "complete_evaluation_episodes": 40,
+  "sampled_invalid_actions": 0,
+  "checks": [
+    "finite rollout tensors",
+    "legal sampled candidate masks",
+    "explicit next-observation alignment in second run",
+    "archived source hash match",
+    "28 upstream snapshot files unchanged",
+    "PyTorch/ONNX parity with dynamic batch/candidate counts"
+  ],
+  "runs": [
+    {
+      "path": "runs/phase1_candidate_20261115",
+      "task_decisions": 4096,
+      "training_episodes": 47,
+      "evaluation_episodes": 20,
+      "rollouts_include_explicit_next_observations": false,
+      "source_snapshots_match_recorded_hashes": true,
+      "evaluation_groups": {
+        "bt_baseline/seen_styles": {
+          "episodes": 8,
+          "wins": 7,
+          "win_rate": 0.875,
+          "win_rate_wilson_95": [
+            0.5291118177871563,
+            0.9775825085499423
+          ],
+          "draws": 0,
+          "mean_return": 8.321008756057132
+        },
+        "bt_baseline/held_out_style": {
+          "episodes": 2,
+          "wins": 2,
+          "win_rate": 1.0,
+          "win_rate_wilson_95": [
+            0.34238022750666547,
+            1.0
+          ],
+          "draws": 0,
+          "mean_return": 10.090559408397795
+        },
+        "learned/seen_styles": {
+          "episodes": 8,
+          "wins": 4,
+          "win_rate": 0.5,
+          "win_rate_wilson_95": [
+            0.2152160622138829,
+            0.7847839377861171
+          ],
+          "draws": 0,
+          "mean_return": 1.937913798293176
+        },
+        "learned/held_out_style": {
+          "episodes": 2,
+          "wins": 2,
+          "win_rate": 1.0,
+          "win_rate_wilson_95": [
+            0.34238022750666547,
+            1.0
+          ],
+          "draws": 0,
+          "mean_return": 11.286967193636679
+        }
+      },
+      "actor_export": {
+        "status": "PASS",
+        "artifact_type": "phase1_actor_export_not_hardware_acceptance",
+        "checkpoint": "runs/phase1_candidate_20261115/latest.pt",
+        "onnx_path": "runs/phase1_candidate_20261115/export/actor.onnx",
+        "actor_sha256": "d070e5dcbc2bf6037e099aa2ad95cda16ea191cec29b422b247d5d2c3fe98d68",
+        "bytes": 102207,
+        "actor_parameters": 23815,
+        "max_abs_error": 1.4901161193847656e-07,
+        "verified_batch_and_candidate_shapes": [
+          [
+            1,
+            16
+          ],
+          [
+            3,
+            9
+          ]
+        ],
+        "latency_ms_host_CPU_single_thread_warm": {
+          "p50": 0.01741794403642416,
+          "p95": 0.0237549771554768,
+          "p99": 0.02642329083755612
+        },
+        "critic_exported": false,
+        "stance_head": "untrained; phase-I must mask all except stance 0",
+        "limits": "Measured on this workstation, not NUC. Inputs still belong to simplified prototype."
+      }
+    },
+    {
+      "path": "runs/phase1_bt_warmstart_20261115",
+      "task_decisions": 4096,
+      "training_episodes": 52,
+      "evaluation_episodes": 20,
+      "rollouts_include_explicit_next_observations": true,
+      "source_snapshots_match_recorded_hashes": true,
+      "evaluation_groups": {
+        "bt_baseline/seen_styles": {
+          "episodes": 8,
+          "wins": 5,
+          "win_rate": 0.625,
+          "win_rate_wilson_95": [
+            0.3057423946026341,
+            0.8631557141763988
+          ],
+          "draws": 0,
+          "mean_return": 4.16422129630409
+        },
+        "bt_baseline/held_out_style": {
+          "episodes": 2,
+          "wins": 2,
+          "win_rate": 1.0,
+          "win_rate_wilson_95": [
+            0.34238022750666547,
+            1.0
+          ],
+          "draws": 0,
+          "mean_return": 11.114743348126183
+        },
+        "learned/seen_styles": {
+          "episodes": 8,
+          "wins": 5,
+          "win_rate": 0.625,
+          "win_rate_wilson_95": [
+            0.3057423946026341,
+            0.8631557141763988
+          ],
+          "draws": 0,
+          "mean_return": 3.2645868298507565
+        },
+        "learned/held_out_style": {
+          "episodes": 2,
+          "wins": 2,
+          "win_rate": 1.0,
+          "win_rate_wilson_95": [
+            0.34238022750666547,
+            1.0
+          ],
+          "draws": 0,
+          "mean_return": 10.666032169188853
+        }
+      },
+      "actor_export": {
+        "status": "PASS",
+        "artifact_type": "phase1_actor_export_not_hardware_acceptance",
+        "checkpoint": "runs/phase1_bt_warmstart_20261115/latest.pt",
+        "onnx_path": "runs/phase1_bt_warmstart_20261115/export/actor.onnx",
+        "actor_sha256": "48113278c42049962073432d55300c3e33c76792de7ac1abcc49c652ae34ec91",
+        "bytes": 102207,
+        "actor_parameters": 23815,
+        "max_abs_error": 2.86102294921875e-06,
+        "verified_batch_and_candidate_shapes": [
+          [
+            1,
+            16
+          ],
+          [
+            3,
+            9
+          ]
+        ],
+        "latency_ms_host_CPU_single_thread_warm": {
+          "p50": 0.023527070879936218,
+          "p95": 0.02392163733020425,
+          "p99": 0.02668730914592735
+        },
+        "critic_exported": false,
+        "stance_head": "untrained; phase-I must mask all except stance 0",
+        "limits": "Measured on this workstation, not NUC. Inputs still belong to simplified prototype."
+      }
+    }
+  ],
+  "economy_module": "quote_and_budget_reference_unit_tested_not_in_training_or_live_referee",
+  "authority_expansion_recommended": false
+}

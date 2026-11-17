@@ -1,0 +1,331 @@
+{
+  "artifact_type": "Nav2_PointLIO_MPPI_execution_checks_not_official_training_acceptance",
+  "checked_on": "2026-11-16",
+  "documentation": "docs/17_nav2_mppi_integration.md",
+  "runtime": "data/reports/nav2_overlay_20261116.json",
+  "shared_container_system_modified": false,
+  "actual_control_chain": [
+    "original_robot_MuJoCo_sensors",
+    "PointLIO",
+    "estimated_body_twist",
+    "Nav2_costmap_Navfn",
+    "BT_TaskIntent_gate",
+    "Nav2_NavigateToPose",
+    "Omni_MPPI",
+    "original_robot_wrench_drive",
+    "action_feedback_terminal"
+  ],
+  "formal_UL_UC_map_or_RL_env_replaced": false,
+  "full_pytest_passed": 126,
+  "checks": [
+    {
+      "run": "runs/nav2_pointlio_final_lateral_20261116",
+      "artifact_type": "actual_PointLIO_Nav2_MPPI_MuJoCo_fixture_result",
+      "expected_action_status": "succeeded",
+      "actual_action_status": "succeeded",
+      "success_for_reported_scope": true,
+      "domain_id": 79,
+      "goal_xy": [
+        1.0,
+        1.0
+      ],
+      "controller_plugin_loaded": true,
+      "motion_model": "Omni",
+      "estimated_odometry_twist_samples": 104,
+      "registered_obstacle_clouds": 105,
+      "MPPI_cmd_vel_samples": 168,
+      "max_command_xy_speed_m_per_s": 0.3692646962154467,
+      "final_estimated_pose": [
+        11.49998,
+        0.9504157962250531,
+        0.8855902029048008,
+        -0.030381051677129373,
+        -0.021472093786422283,
+        true,
+        "estimated_pose_difference"
+      ],
+      "final_GT_diagnostic": [
+        11.5,
+        0.9682995985513579,
+        0.897052144377463,
+        -0.00011951980234945828
+      ],
+      "post_terminal_observation_s": 1.0,
+      "final_estimated_twist": [
+        11.49998,
+        -0.018948514480066136,
+        -0.0013727095981026789,
+        -0.00032941070310645
+      ],
+      "estimated_goal_xy_error_m": 0.1246924012735343,
+      "GT_used_as_navigation_odometry_or_TF": false,
+      "safety_stop_latched": false,
+      "original_simulation_and_shared_system_modified": false,
+      "formal_UL_UC_map_or_RL_training_validated": false,
+      "limitations": [
+        "Declared plane fixture free-space prior, not official competition map registration.",
+        "Obstacle cloud uses plane-specific height filtering, not full HERO voxelmap/slope/clearance implementation.",
+        "TaskIntent is a test candidate, not a learned official-map strategy validation.",
+        "This is a bounded execution integration test, not navigation reliability or NUC performance acceptance."
+      ]
+    },
+    {
+      "run": "runs/nav2_pointlio_final_cancel_20261116",
+      "artifact_type": "actual_PointLIO_Nav2_MPPI_MuJoCo_fixture_result",
+      "expected_action_status": "canceled",
+      "actual_action_status": "canceled",
+      "success_for_reported_scope": true,
+      "domain_id": 79,
+      "goal_xy": [
+        2.0,
+        0.0
+      ],
+      "controller_plugin_loaded": true,
+      "motion_model": "Omni",
+      "estimated_odometry_twist_samples": 30,
+      "registered_obstacle_clouds": 31,
+      "MPPI_cmd_vel_samples": 21,
+      "max_command_xy_speed_m_per_s": 0.2601317424115524,
+      "final_estimated_pose": [
+        4.0961,
+        0.11284448508657499,
+        -0.002041308114143464,
+        -0.033037245155669276,
+        -0.02614849366031872,
+        true,
+        "estimated_pose_difference"
+      ],
+      "final_GT_diagnostic": [
+        4.15,
+        0.11978409040585324,
+        0.006686227000368785,
+        -0.00011954529199548635
+      ],
+      "post_terminal_observation_s": 1.0,
+      "final_estimated_twist": [
+        4.0961,
+        0.002216563980707157,
+        0.009124543883811946,
+        -0.0020703329801273207
+      ],
+      "estimated_goal_xy_error_m": 1.8871566189394484,
+      "GT_used_as_navigation_odometry_or_TF": false,
+      "safety_stop_latched": true,
+      "original_simulation_and_shared_system_modified": false,
+      "formal_UL_UC_map_or_RL_training_validated": false,
+      "limitations": [
+        "Declared plane fixture free-space prior, not official competition map registration.",
+        "Obstacle cloud uses plane-specific height filtering, not full HERO voxelmap/slope/clearance implementation.",
+        "TaskIntent is a test candidate, not a learned official-map strategy validation.",
+        "This is a bounded execution integration test, not navigation reliability or NUC performance acceptance."
+      ]
+    },
+    {
+      "run": "runs/nav2_pointlio_position_goal_obstacle_20261116",
+      "artifact_type": "actual_PointLIO_Nav2_MPPI_MuJoCo_fixture_result",
+      "expected_action_status": "succeeded",
+      "actual_action_status": "succeeded",
+      "success_for_reported_scope": true,
+      "domain_id": 79,
+      "goal_xy": [
+        5.0,
+        -3.0
+      ],
+      "controller_plugin_loaded": true,
+      "motion_model": "Omni",
+      "estimated_odometry_twist_samples": 302,
+      "registered_obstacle_clouds": 303,
+      "MPPI_cmd_vel_samples": 566,
+      "max_command_xy_speed_m_per_s": 0.33794504852862495,
+      "final_estimated_pose": [
+        31.29798,
+        4.949943944178151,
+        -2.8824135363877974,
+        -0.057205787632792604,
+        -3.133520658946738,
+        true,
+        "estimated_pose_difference"
+      ],
+      "final_GT_diagnostic": [
+        31.3,
+        4.985389465127113,
+        -2.8668054598996635,
+        -0.00011950762311799895
+      ],
+      "post_terminal_observation_s": 1.0,
+      "final_estimated_twist": [
+        31.29798,
+        0.009405351420645382,
+        0.0044944856509361916,
+        -0.010126303375386086
+      ],
+      "estimated_goal_xy_error_m": 0.1277974379604846,
+      "GT_used_as_navigation_odometry_or_TF": false,
+      "safety_stop_latched": false,
+      "original_simulation_and_shared_system_modified": false,
+      "formal_UL_UC_map_or_RL_training_validated": false,
+      "limitations": [
+        "Declared plane fixture free-space prior, not official competition map registration.",
+        "Obstacle cloud uses plane-specific height filtering, not full HERO voxelmap/slope/clearance implementation.",
+        "TaskIntent is a test candidate, not a learned official-map strategy validation.",
+        "This is a bounded execution integration test, not navigation reliability or NUC performance acceptance."
+      ]
+    },
+    {
+      "run": "runs/nav2_pointlio_obstacle_20261116",
+      "artifact_type": "actual_PointLIO_Nav2_MPPI_MuJoCo_fixture_result",
+      "expected_action_status": "succeeded",
+      "actual_action_status": "canceled",
+      "success_for_reported_scope": false,
+      "domain_id": 79,
+      "goal_xy": [
+        4.0,
+        -3.0
+      ],
+      "controller_plugin_loaded": true,
+      "motion_model": "Omni",
+      "estimated_odometry_twist_samples": 615,
+      "registered_obstacle_clouds": 617,
+      "MPPI_cmd_vel_samples": 1200,
+      "max_command_xy_speed_m_per_s": 0.3372143089977717,
+      "final_estimated_pose": [
+        62.19594,
+        4.449127938998682,
+        -1.6630116703333455,
+        -0.056857685684990084,
+        -3.054134618943946,
+        true,
+        "estimated_pose_difference"
+      ],
+      "final_GT_diagnostic": [
+        62.25,
+        4.488670003171122,
+        -1.6464094886879574,
+        -0.00011599929188429165
+      ],
+      "estimated_goal_xy_error_m": 1.4104090538755183,
+      "GT_used_as_navigation_odometry_or_TF": false,
+      "safety_stop_latched": true,
+      "original_simulation_and_shared_system_modified": false,
+      "formal_UL_UC_map_or_RL_training_validated": false,
+      "limitations": [
+        "Declared plane fixture free-space prior, not official competition map registration.",
+        "Obstacle cloud uses plane-specific height filtering, not full HERO voxelmap/slope/clearance implementation.",
+        "TaskIntent is a test candidate, not a learned official-map strategy validation.",
+        "This is a bounded execution integration test, not navigation reliability or NUC performance acceptance."
+      ]
+    },
+    {
+      "run": "runs/nav2_pointlio_replan_obstacle_20261116",
+      "artifact_type": "actual_PointLIO_Nav2_MPPI_MuJoCo_fixture_result",
+      "expected_action_status": "succeeded",
+      "actual_action_status": "failed",
+      "success_for_reported_scope": false,
+      "domain_id": 79,
+      "goal_xy": [
+        4.0,
+        -3.0
+      ],
+      "controller_plugin_loaded": true,
+      "motion_model": "Omni",
+      "estimated_odometry_twist_samples": 227,
+      "registered_obstacle_clouds": 228,
+      "MPPI_cmd_vel_samples": 434,
+      "max_command_xy_speed_m_per_s": 0.38357696402349306,
+      "final_estimated_pose": [
+        23.79694,
+        4.083553916311776,
+        -1.471153856461718,
+        -0.04575151979923908,
+        -2.750251460776356,
+        true,
+        "estimated_pose_difference"
+      ],
+      "final_GT_diagnostic": [
+        23.8,
+        4.115176231601983,
+        -1.4555460934959847,
+        -2.7353387117741655e-05
+      ],
+      "post_terminal_observation_s": 1.0,
+      "final_estimated_twist": [
+        23.79694,
+        -0.2393610240497871,
+        0.20301605260396963,
+        -0.16080490960548344
+      ],
+      "estimated_goal_xy_error_m": 1.5311276196133725,
+      "GT_used_as_navigation_odometry_or_TF": false,
+      "safety_stop_latched": false,
+      "original_simulation_and_shared_system_modified": false,
+      "formal_UL_UC_map_or_RL_training_validated": false,
+      "limitations": [
+        "Declared plane fixture free-space prior, not official competition map registration.",
+        "Obstacle cloud uses plane-specific height filtering, not full HERO voxelmap/slope/clearance implementation.",
+        "TaskIntent is a test candidate, not a learned official-map strategy validation.",
+        "This is a bounded execution integration test, not navigation reliability or NUC performance acceptance."
+      ]
+    },
+    {
+      "run": "runs/nav2_pointlio_replan_clear_goal_20261116",
+      "artifact_type": "actual_PointLIO_Nav2_MPPI_MuJoCo_fixture_result",
+      "expected_action_status": "succeeded",
+      "actual_action_status": "failed",
+      "success_for_reported_scope": false,
+      "domain_id": 79,
+      "goal_xy": [
+        5.0,
+        -3.0
+      ],
+      "controller_plugin_loaded": true,
+      "motion_model": "Omni",
+      "estimated_odometry_twist_samples": 459,
+      "registered_obstacle_clouds": 461,
+      "MPPI_cmd_vel_samples": 892,
+      "max_command_xy_speed_m_per_s": 0.3560656339466247,
+      "final_estimated_pose": [
+        46.599995,
+        4.9768827443110135,
+        -2.9911017821598027,
+        -0.0560983497485284,
+        -1.951293558084,
+        true,
+        "estimated_pose_difference"
+      ],
+      "final_GT_diagnostic": [
+        46.65,
+        5.013032820274445,
+        -2.9723111763155514,
+        -0.00011798159471646765
+      ],
+      "post_terminal_observation_s": 1.0,
+      "final_estimated_twist": [
+        46.599995,
+        0.004941535387537252,
+        0.014581602150509455,
+        0.0032265495162074626
+      ],
+      "estimated_goal_xy_error_m": 0.024770663925732454,
+      "GT_used_as_navigation_odometry_or_TF": false,
+      "safety_stop_latched": true,
+      "original_simulation_and_shared_system_modified": false,
+      "formal_UL_UC_map_or_RL_training_validated": false,
+      "limitations": [
+        "Declared plane fixture free-space prior, not official competition map registration.",
+        "Obstacle cloud uses plane-specific height filtering, not full HERO voxelmap/slope/clearance implementation.",
+        "TaskIntent is a test candidate, not a learned official-map strategy validation.",
+        "This is a bounded execution integration test, not navigation reliability or NUC performance acceptance."
+      ]
+    }
+  ],
+  "implementation_sha256": {
+    "scripts/nav2_action_probe.py": "3aaa56c23f737d7dc2c8bbb3383cf4809862942a7b05e93b435ae5f89becb4fd",
+    "scripts/nav2_mujoco_fixture.py": "e5a429bad64604f54ca3544edd97318570720c4b1c30ac9b181d1640ef389ef2",
+    "scripts/run_nav2_closed_loop.py": "868f64f0db871ef2e06bb32ba1d4f2a350508fdf8056e57c8b38d3324915fe46",
+    "scripts/launch_nav2_probe.py": "f2de3b86b41afb5052a7b74f71b0e99a33df1db418314fd91fceb4399d4c40c4",
+    "configs/nav2_probe.yaml": "d82c12e6ce9c95825a2e3fdf1eb76f99d2df57cdaa2ea3b619696e8af05a12a0",
+    "configs/nav2_probe_bt.xml": "649d63d49ec17e65e568688da1538fb6ca0a85e44b2d0741da9bd7203d9132f1",
+    "rl_bt/nav2_transport.py": "55520c30280efff19eb3152e5e87cc20eccbfc1946de33d29be3b34a77dfaa00",
+    "rl_bt/estimated_twist.py": "618db35cfcc411926d4dc465282f4fda1306f9e221c29b972d164b30cf6fd8b2"
+  }
+}

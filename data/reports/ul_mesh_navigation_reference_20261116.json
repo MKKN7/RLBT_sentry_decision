@@ -1,0 +1,1006 @@
+{
+  "artifact_type": "offline_UL_mesh_surface_envelope_probe_not_navigation_acceptance",
+  "mesh_file": "assets/rmul_2027/derived/field_reference.stl",
+  "mesh_sha256": "0f8be9e82d06f25fbcdfa0e17785c51225c0770349d8ae108637112ceece5f71",
+  "manifest_file": "assets/rmul_2027/derived/manifest.json",
+  "mesh_triangles": 3811,
+  "synthetic_envelope_cli": {
+    "length_m": 0.48,
+    "width_m": 0.4,
+    "body_height_m": 0.2,
+    "belly_clearance_m": 0.01,
+    "support_tolerance_m": 0.003,
+    "translation_step_m": 0.025,
+    "out": "data/reports/ul_mesh_navigation_reference_20261116.json"
+  },
+  "poses": [
+    {
+      "id": "red_supply_reference_surface",
+      "sampled_reference_pass": true,
+      "reasons": [],
+      "xy_m": [
+        1.5,
+        7.0
+      ],
+      "support_z_m": 0.003,
+      "yaw_rad": 0.0,
+      "envelope": {
+        "length_m": 0.48,
+        "width_m": 0.4,
+        "body_height_m": 0.2,
+        "belly_clearance_m": 0.01
+      },
+      "support_tolerance_m": 0.003,
+      "max_slope_deg": 20.0,
+      "support_samples": [
+        {
+          "xy_m": [
+            1.26,
+            6.8
+          ],
+          "eligible_surface_z_m": [
+            0.0020000000949949026
+          ],
+          "supported": true
+        },
+        {
+          "xy_m": [
+            1.26,
+            7.0
+          ],
+          "eligible_surface_z_m": [
+            0.0020000000949949026
+          ],
+          "supported": true
+        },
+        {
+          "xy_m": [
+            1.26,
+            7.2
+          ],
+          "eligible_surface_z_m": [
+            0.003000000026077032
+          ],
+          "supported": true
+        },
+        {
+          "xy_m": [
+            1.5,
+            6.8
+          ],
+          "eligible_surface_z_m": [
+            0.003000000026077032
+          ],
+          "supported": true
+        },
+        {
+          "xy_m": [
+            1.5,
+            7.0
+          ],
+          "eligible_surface_z_m": [
+            0.003000000026077032
+          ],
+          "supported": true
+        },
+        {
+          "xy_m": [
+            1.5,
+            7.2
+          ],
+          "eligible_surface_z_m": [
+            0.0020000000949949026
+          ],
+          "supported": true
+        },
+        {
+          "xy_m": [
+            1.74,
+            6.8
+          ],
+          "eligible_surface_z_m": [
+            0.003000000026077032
+          ],
+          "supported": true
+        },
+        {
+          "xy_m": [
+            1.74,
+            7.0
+          ],
+          "eligible_surface_z_m": [
+            0.003000000026077032
+          ],
+          "supported": true
+        },
+        {
+          "xy_m": [
+            1.74,
+            7.2
+          ],
+          "eligible_surface_z_m": [
+            0.003000000026077032
+          ],
+          "supported": true
+        }
+      ],
+      "intersecting_face_ids": [],
+      "hardware_reachability_certified": false
+    },
+    {
+      "id": "open_floor",
+      "sampled_reference_pass": true,
+      "reasons": [],
+      "xy_m": [
+        6.0,
+        1.0
+      ],
+      "support_z_m": 0.0,
+      "yaw_rad": 0.0,
+      "envelope": {
+        "length_m": 0.48,
+        "width_m": 0.4,
+        "body_height_m": 0.2,
+        "belly_clearance_m": 0.01
+      },
+      "support_tolerance_m": 0.003,
+      "max_slope_deg": 20.0,
+      "support_samples": [
+        {
+          "xy_m": [
+            5.76,
+            0.8
+          ],
+          "eligible_surface_z_m": [
+            0.0
+          ],
+          "supported": true
+        },
+        {
+          "xy_m": [
+            5.76,
+            1.0
+          ],
+          "eligible_surface_z_m": [
+            0.0
+          ],
+          "supported": true
+        },
+        {
+          "xy_m": [
+            5.76,
+            1.2
+          ],
+          "eligible_surface_z_m": [
+            0.0
+          ],
+          "supported": true
+        },
+        {
+          "xy_m": [
+            6.0,
+            0.8
+          ],
+          "eligible_surface_z_m": [
+            0.0
+          ],
+          "supported": true
+        },
+        {
+          "xy_m": [
+            6.0,
+            1.0
+          ],
+          "eligible_surface_z_m": [
+            0.0
+          ],
+          "supported": true
+        },
+        {
+          "xy_m": [
+            6.0,
+            1.2
+          ],
+          "eligible_surface_z_m": [
+            0.0
+          ],
+          "supported": true
+        },
+        {
+          "xy_m": [
+            6.24,
+            0.8
+          ],
+          "eligible_surface_z_m": [
+            0.0
+          ],
+          "supported": true
+        },
+        {
+          "xy_m": [
+            6.24,
+            1.0
+          ],
+          "eligible_surface_z_m": [
+            0.0
+          ],
+          "supported": true
+        },
+        {
+          "xy_m": [
+            6.24,
+            1.2
+          ],
+          "eligible_surface_z_m": [
+            0.0
+          ],
+          "supported": true
+        }
+      ],
+      "intersecting_face_ids": [],
+      "hardware_reachability_certified": false
+    },
+    {
+      "id": "red_highland_control_reference_surface",
+      "sampled_reference_pass": true,
+      "reasons": [],
+      "xy_m": [
+        3.5,
+        4.8
+      ],
+      "support_z_m": 0.2012,
+      "yaw_rad": 0.0,
+      "envelope": {
+        "length_m": 0.48,
+        "width_m": 0.4,
+        "body_height_m": 0.2,
+        "belly_clearance_m": 0.01
+      },
+      "support_tolerance_m": 0.003,
+      "max_slope_deg": 20.0,
+      "support_samples": [
+        {
+          "xy_m": [
+            3.26,
+            4.6
+          ],
+          "eligible_surface_z_m": [
+            0.2011999934911728
+          ],
+          "supported": true
+        },
+        {
+          "xy_m": [
+            3.26,
+            4.8
+          ],
+          "eligible_surface_z_m": [
+            0.2011999934911728
+          ],
+          "supported": true
+        },
+        {
+          "xy_m": [
+            3.26,
+            5.0
+          ],
+          "eligible_surface_z_m": [
+            0.2011999934911728
+          ],
+          "supported": true
+        },
+        {
+          "xy_m": [
+            3.5,
+            4.6
+          ],
+          "eligible_surface_z_m": [
+            0.2011999934911728
+          ],
+          "supported": true
+        },
+        {
+          "xy_m": [
+            3.5,
+            4.8
+          ],
+          "eligible_surface_z_m": [
+            0.20160000026226044
+          ],
+          "supported": true
+        },
+        {
+          "xy_m": [
+            3.5,
+            5.0
+          ],
+          "eligible_surface_z_m": [
+            0.2011999934911728
+          ],
+          "supported": true
+        },
+        {
+          "xy_m": [
+            3.74,
+            4.6
+          ],
+          "eligible_surface_z_m": [
+            0.2011999934911728
+          ],
+          "supported": true
+        },
+        {
+          "xy_m": [
+            3.74,
+            4.8
+          ],
+          "eligible_surface_z_m": [
+            0.2011999934911728
+          ],
+          "supported": true
+        },
+        {
+          "xy_m": [
+            3.74,
+            5.0
+          ],
+          "eligible_surface_z_m": [
+            0.2011999934911728
+          ],
+          "supported": true
+        }
+      ],
+      "intersecting_face_ids": [],
+      "hardware_reachability_certified": false
+    },
+    {
+      "id": "red_tunnel_lower_layer",
+      "sampled_reference_pass": true,
+      "reasons": [],
+      "xy_m": [
+        3.5,
+        7.46
+      ],
+      "support_z_m": 0.0005,
+      "yaw_rad": 0.0,
+      "envelope": {
+        "length_m": 0.48,
+        "width_m": 0.4,
+        "body_height_m": 0.2,
+        "belly_clearance_m": 0.01
+      },
+      "support_tolerance_m": 0.003,
+      "max_slope_deg": 20.0,
+      "support_samples": [
+        {
+          "xy_m": [
+            3.26,
+            7.26
+          ],
+          "eligible_surface_z_m": [
+            0.0005000000237487257
+          ],
+          "supported": true
+        },
+        {
+          "xy_m": [
+            3.26,
+            7.46
+          ],
+          "eligible_surface_z_m": [
+            0.0005000000237487257
+          ],
+          "supported": true
+        },
+        {
+          "xy_m": [
+            3.26,
+            7.66
+          ],
+          "eligible_surface_z_m": [
+            0.0005000000237487257
+          ],
+          "supported": true
+        },
+        {
+          "xy_m": [
+            3.5,
+            7.26
+          ],
+          "eligible_surface_z_m": [
+            0.0005000000237487257
+          ],
+          "supported": true
+        },
+        {
+          "xy_m": [
+            3.5,
+            7.46
+          ],
+          "eligible_surface_z_m": [
+            0.0005000000237487257
+          ],
+          "supported": true
+        },
+        {
+          "xy_m": [
+            3.5,
+            7.66
+          ],
+          "eligible_surface_z_m": [
+            0.0005000000237487257
+          ],
+          "supported": true
+        },
+        {
+          "xy_m": [
+            3.74,
+            7.26
+          ],
+          "eligible_surface_z_m": [
+            0.0005000000237487257
+          ],
+          "supported": true
+        },
+        {
+          "xy_m": [
+            3.74,
+            7.46
+          ],
+          "eligible_surface_z_m": [
+            0.0005000000237487257
+          ],
+          "supported": true
+        },
+        {
+          "xy_m": [
+            3.74,
+            7.66
+          ],
+          "eligible_surface_z_m": [
+            0.0005000000237487257
+          ],
+          "supported": true
+        }
+      ],
+      "intersecting_face_ids": [],
+      "hardware_reachability_certified": false
+    },
+    {
+      "id": "blue_tunnel_lower_layer",
+      "sampled_reference_pass": true,
+      "reasons": [],
+      "xy_m": [
+        8.5,
+        0.54
+      ],
+      "support_z_m": 0.0005,
+      "yaw_rad": 0.0,
+      "envelope": {
+        "length_m": 0.48,
+        "width_m": 0.4,
+        "body_height_m": 0.2,
+        "belly_clearance_m": 0.01
+      },
+      "support_tolerance_m": 0.003,
+      "max_slope_deg": 20.0,
+      "support_samples": [
+        {
+          "xy_m": [
+            8.26,
+            0.34
+          ],
+          "eligible_surface_z_m": [
+            0.0005000000237487257
+          ],
+          "supported": true
+        },
+        {
+          "xy_m": [
+            8.26,
+            0.54
+          ],
+          "eligible_surface_z_m": [
+            0.0005000000237487257
+          ],
+          "supported": true
+        },
+        {
+          "xy_m": [
+            8.26,
+            0.74
+          ],
+          "eligible_surface_z_m": [
+            0.0005000000237487257
+          ],
+          "supported": true
+        },
+        {
+          "xy_m": [
+            8.5,
+            0.34
+          ],
+          "eligible_surface_z_m": [
+            0.0005000000237487257
+          ],
+          "supported": true
+        },
+        {
+          "xy_m": [
+            8.5,
+            0.54
+          ],
+          "eligible_surface_z_m": [
+            0.0005000000237487257
+          ],
+          "supported": true
+        },
+        {
+          "xy_m": [
+            8.5,
+            0.74
+          ],
+          "eligible_surface_z_m": [
+            0.0005000000237487257
+          ],
+          "supported": true
+        },
+        {
+          "xy_m": [
+            8.74,
+            0.34
+          ],
+          "eligible_surface_z_m": [
+            0.0005000000237487257
+          ],
+          "supported": true
+        },
+        {
+          "xy_m": [
+            8.74,
+            0.54
+          ],
+          "eligible_surface_z_m": [
+            0.0005000000237487257
+          ],
+          "supported": true
+        },
+        {
+          "xy_m": [
+            8.74,
+            0.74
+          ],
+          "eligible_surface_z_m": [
+            0.0005000000237487257
+          ],
+          "supported": true
+        }
+      ],
+      "intersecting_face_ids": [],
+      "hardware_reachability_certified": false
+    },
+    {
+      "id": "red_tunnel_taller_counterexample",
+      "sampled_reference_pass": false,
+      "reasons": [
+        "body_box_intersects_mesh_surface"
+      ],
+      "xy_m": [
+        3.5,
+        7.46
+      ],
+      "support_z_m": 0.0005,
+      "yaw_rad": 0.0,
+      "envelope": {
+        "length_m": 0.48,
+        "width_m": 0.4,
+        "body_height_m": 0.3,
+        "belly_clearance_m": 0.01
+      },
+      "support_tolerance_m": 0.003,
+      "max_slope_deg": 20.0,
+      "support_samples": [
+        {
+          "xy_m": [
+            3.26,
+            7.26
+          ],
+          "eligible_surface_z_m": [
+            0.0005000000237487257
+          ],
+          "supported": true
+        },
+        {
+          "xy_m": [
+            3.26,
+            7.46
+          ],
+          "eligible_surface_z_m": [
+            0.0005000000237487257
+          ],
+          "supported": true
+        },
+        {
+          "xy_m": [
+            3.26,
+            7.66
+          ],
+          "eligible_surface_z_m": [
+            0.0005000000237487257
+          ],
+          "supported": true
+        },
+        {
+          "xy_m": [
+            3.5,
+            7.26
+          ],
+          "eligible_surface_z_m": [
+            0.0005000000237487257
+          ],
+          "supported": true
+        },
+        {
+          "xy_m": [
+            3.5,
+            7.46
+          ],
+          "eligible_surface_z_m": [
+            0.0005000000237487257
+          ],
+          "supported": true
+        },
+        {
+          "xy_m": [
+            3.5,
+            7.66
+          ],
+          "eligible_surface_z_m": [
+            0.0005000000237487257
+          ],
+          "supported": true
+        },
+        {
+          "xy_m": [
+            3.74,
+            7.26
+          ],
+          "eligible_surface_z_m": [
+            0.0005000000237487257
+          ],
+          "supported": true
+        },
+        {
+          "xy_m": [
+            3.74,
+            7.46
+          ],
+          "eligible_surface_z_m": [
+            0.0005000000237487257
+          ],
+          "supported": true
+        },
+        {
+          "xy_m": [
+            3.74,
+            7.66
+          ],
+          "eligible_surface_z_m": [
+            0.0005000000237487257
+          ],
+          "supported": true
+        }
+      ],
+      "intersecting_face_ids": [
+        2239,
+        2240,
+        2251,
+        2252,
+        2308,
+        2309,
+        2314,
+        2315
+      ],
+      "hardware_reachability_certified": false
+    },
+    {
+      "id": "red_tunnel_side_wall_counterexample",
+      "sampled_reference_pass": false,
+      "reasons": [
+        "missing_or_wrong_layer_support_sample",
+        "body_box_intersects_mesh_surface"
+      ],
+      "xy_m": [
+        3.5,
+        7.12
+      ],
+      "support_z_m": 0.0005,
+      "yaw_rad": 0.0,
+      "envelope": {
+        "length_m": 0.48,
+        "width_m": 0.4,
+        "body_height_m": 0.2,
+        "belly_clearance_m": 0.01
+      },
+      "support_tolerance_m": 0.003,
+      "max_slope_deg": 20.0,
+      "support_samples": [
+        {
+          "xy_m": [
+            3.26,
+            6.92
+          ],
+          "eligible_surface_z_m": [],
+          "supported": false
+        },
+        {
+          "xy_m": [
+            3.26,
+            7.12
+          ],
+          "eligible_surface_z_m": [
+            0.0005000000237487257
+          ],
+          "supported": true
+        },
+        {
+          "xy_m": [
+            3.26,
+            7.32
+          ],
+          "eligible_surface_z_m": [
+            0.0005000000237487257
+          ],
+          "supported": true
+        },
+        {
+          "xy_m": [
+            3.5,
+            6.92
+          ],
+          "eligible_surface_z_m": [],
+          "supported": false
+        },
+        {
+          "xy_m": [
+            3.5,
+            7.12
+          ],
+          "eligible_surface_z_m": [
+            0.0005000000237487257
+          ],
+          "supported": true
+        },
+        {
+          "xy_m": [
+            3.5,
+            7.32
+          ],
+          "eligible_surface_z_m": [
+            0.0005000000237487257
+          ],
+          "supported": true
+        },
+        {
+          "xy_m": [
+            3.74,
+            6.92
+          ],
+          "eligible_surface_z_m": [],
+          "supported": false
+        },
+        {
+          "xy_m": [
+            3.74,
+            7.12
+          ],
+          "eligible_surface_z_m": [
+            0.0005000000237487257
+          ],
+          "supported": true
+        },
+        {
+          "xy_m": [
+            3.74,
+            7.32
+          ],
+          "eligible_surface_z_m": [
+            0.0005000000237487257
+          ],
+          "supported": true
+        }
+      ],
+      "intersecting_face_ids": [
+        2235,
+        2236,
+        2237,
+        2248,
+        2249,
+        2250,
+        2276,
+        2277,
+        2278,
+        2279,
+        2280,
+        2281,
+        2282,
+        2283,
+        2284,
+        2288,
+        2289,
+        2290,
+        2291,
+        2292,
+        2293,
+        2310,
+        2311,
+        2312,
+        2313
+      ],
+      "hardware_reachability_certified": false
+    },
+    {
+      "id": "wrong_support_layer_counterexample",
+      "sampled_reference_pass": false,
+      "reasons": [
+        "missing_or_wrong_layer_support_sample",
+        "body_box_intersects_mesh_surface"
+      ],
+      "xy_m": [
+        3.5,
+        7.46
+      ],
+      "support_z_m": 0.12,
+      "yaw_rad": 0.0,
+      "envelope": {
+        "length_m": 0.48,
+        "width_m": 0.4,
+        "body_height_m": 0.2,
+        "belly_clearance_m": 0.01
+      },
+      "support_tolerance_m": 0.003,
+      "max_slope_deg": 20.0,
+      "support_samples": [
+        {
+          "xy_m": [
+            3.26,
+            7.26
+          ],
+          "eligible_surface_z_m": [],
+          "supported": false
+        },
+        {
+          "xy_m": [
+            3.26,
+            7.46
+          ],
+          "eligible_surface_z_m": [],
+          "supported": false
+        },
+        {
+          "xy_m": [
+            3.26,
+            7.66
+          ],
+          "eligible_surface_z_m": [],
+          "supported": false
+        },
+        {
+          "xy_m": [
+            3.5,
+            7.26
+          ],
+          "eligible_surface_z_m": [],
+          "supported": false
+        },
+        {
+          "xy_m": [
+            3.5,
+            7.46
+          ],
+          "eligible_surface_z_m": [],
+          "supported": false
+        },
+        {
+          "xy_m": [
+            3.5,
+            7.66
+          ],
+          "eligible_surface_z_m": [],
+          "supported": false
+        },
+        {
+          "xy_m": [
+            3.74,
+            7.26
+          ],
+          "eligible_surface_z_m": [],
+          "supported": false
+        },
+        {
+          "xy_m": [
+            3.74,
+            7.46
+          ],
+          "eligible_surface_z_m": [],
+          "supported": false
+        },
+        {
+          "xy_m": [
+            3.74,
+            7.66
+          ],
+          "eligible_surface_z_m": [],
+          "supported": false
+        }
+      ],
+      "intersecting_face_ids": [
+        2239,
+        2240,
+        2251,
+        2252,
+        2308,
+        2309,
+        2314,
+        2315
+      ],
+      "hardware_reachability_certified": false
+    }
+  ],
+  "sampled_segments": [
+    {
+      "id": "red_tunnel_crossing_reference",
+      "start_xy_supportz_yaw": [
+        2.8,
+        7.46,
+        0.0005,
+        0.0
+      ],
+      "end_xy_supportz_yaw": [
+        4.2,
+        7.46,
+        0.0005,
+        0.0
+      ],
+      "sampled_reference_pass": true,
+      "sample_count": 58,
+      "failed_sample_indices": [],
+      "first_failure": null,
+      "actual_translation_step_m": 0.024561403508771937,
+      "actual_yaw_step_rad": 0.0,
+      "hardware_reachability_certified": false
+    },
+    {
+      "id": "blue_tunnel_crossing_reference",
+      "start_xy_supportz_yaw": [
+        9.2,
+        0.54,
+        0.0005,
+        0.0
+      ],
+      "end_xy_supportz_yaw": [
+        7.8,
+        0.54,
+        0.0005,
+        0.0
+      ],
+      "sampled_reference_pass": true,
+      "sample_count": 57,
+      "failed_sample_indices": [],
+      "first_failure": null,
+      "actual_translation_step_m": 0.02499999999999999,
+      "actual_yaw_step_rad": 0.0,
+      "hardware_reachability_certified": false
+    }
+  ],
+  "actual_Nav2_MPPI_connected": false,
+  "hardware_reachability_certified": false,
+  "may_be_used_as_authoritative_RL_action_mask": false,
+  "limitations": [
+    "The provided box is a synthetic upright reference envelope, not measured robot geometry.",
+    "Triangle surface intersections do not classify closed-solid containment or semantically valid support.",
+    "A finite support stencil and finite path samples cannot certify continuous contact or clearance.",
+    "Pitch, roll, wheel contacts, suspension, localization uncertainty and dynamic obstacles are absent.",
+    "Zone IDs refer to nominal source surfaces; RFID and hardware TF registration are not validated."
+  ]
+}

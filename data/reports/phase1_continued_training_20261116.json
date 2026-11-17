@@ -1,0 +1,1959 @@
+{
+  "artifact_type": "continued_simplified_training_experiment_not_official_match_acceptance",
+  "run": "runs/phase1_continue_65536_20261116",
+  "summary": {
+    "status": "completed",
+    "run": "runs/phase1_continue_65536_20261116",
+    "decisions": 69632,
+    "additional_decisions": 65536,
+    "initial_decisions": 4096,
+    "completed_training_episodes": 817,
+    "wall_s": 1441.7764010631945,
+    "evaluation_status": "separate paired full-episode evaluation required",
+    "official_UL_UC_training": false
+  },
+  "verification": {
+    "training_completed": true,
+    "all_metric_values_finite": true,
+    "all_model_values_finite": true,
+    "source_hashes_match": true,
+    "source_count": 16,
+    "environment_snapshots": 8,
+    "final_latest_and_frozen_model_tensors_bitwise_equal": true,
+    "final_latest_and_frozen_metadata_equal": true,
+    "final_latest_and_frozen_torch_rng_equal": true,
+    "validation_complete_episodes": 160,
+    "test_complete_episodes": 160,
+    "test_pair_count": 80,
+    "checkpoint_sha256_matches_evaluator": true
+  },
+  "validation": [
+    {
+      "decisions": 4096,
+      "RL_wins": 12,
+      "BT_wins": 15,
+      "episodes_per_policy": 20
+    },
+    {
+      "decisions": 12288,
+      "RL_wins": 12,
+      "BT_wins": 15,
+      "episodes_per_policy": 20
+    },
+    {
+      "decisions": 36864,
+      "RL_wins": 13,
+      "BT_wins": 15,
+      "episodes_per_policy": 20
+    },
+    {
+      "decisions": 69632,
+      "RL_wins": 12,
+      "BT_wins": 15,
+      "episodes_per_policy": 20
+    }
+  ],
+  "final_test": {
+    "checkpoint": "/home/kellen/桌面/RL_BT_decision/runs/phase1_continue_65536_20261116/checkpoints/step_000069632.pt",
+    "checkpoint_sha256": "a73544d2ce217927e5ebc9c8a96ea2e92ec8236e8ded0307a01fea09bd832e65",
+    "evaluation_seeds": [
+      12001,
+      12002,
+      12003,
+      12004,
+      12005,
+      12006,
+      12007,
+      12008
+    ],
+    "groups": {
+      "bt_baseline/all_styles": {
+        "episodes": 80,
+        "wins": 63,
+        "win_rate": 0.7875,
+        "win_rate_wilson_95": [
+          0.6857784426940364,
+          0.8628761328230369
+        ],
+        "draws": 0,
+        "mean_return": 7.172165668426013,
+        "mean_switches": 5.4125,
+        "mean_overrides": 14.425,
+        "mean_recoveries": 0.7375,
+        "independent_seeds": 8,
+        "win_rate_seed_bootstrap_95": [
+          0.7625,
+          0.8
+        ],
+        "mean_sampled_alive_fraction": 0.8217798648953561,
+        "mean_sampled_center_fraction": 0.4616682735067559,
+        "mean_sampled_home_fraction": 0.12413478320451717,
+        "mean_damage_dealt": 421.05597438812254,
+        "mean_damage_share_of_team": 0.24649283328941968,
+        "mean_overrides_per_decision": 0.17671771146547346
+      },
+      "learned/all_styles": {
+        "episodes": 80,
+        "wins": 52,
+        "win_rate": 0.65,
+        "win_rate_wilson_95": [
+          0.5408000664880797,
+          0.7454544946512629
+        ],
+        "draws": 0,
+        "mean_return": 4.652183000037544,
+        "mean_switches": 1.375,
+        "mean_overrides": 20.1125,
+        "mean_recoveries": 0.375,
+        "independent_seeds": 8,
+        "win_rate_seed_bootstrap_95": [
+          0.6125,
+          0.7
+        ],
+        "mean_sampled_alive_fraction": 0.743270815356215,
+        "mean_sampled_center_fraction": 0.45344081034623224,
+        "mean_sampled_home_fraction": 0.19498649153464995,
+        "mean_damage_dealt": 247.93659473359585,
+        "mean_damage_share_of_team": 0.159490924534818,
+        "mean_overrides_per_decision": 0.2533720309014118
+      },
+      "bt_baseline/seen_styles": {
+        "episodes": 64,
+        "wins": 47,
+        "win_rate": 0.734375,
+        "win_rate_wilson_95": [
+          0.6151712627143521,
+          0.8270362092577718
+        ],
+        "draws": 0,
+        "mean_return": 6.254691922378704,
+        "mean_switches": 5.8125,
+        "mean_overrides": 15.796875,
+        "mean_recoveries": 0.765625,
+        "independent_seeds": 8,
+        "win_rate_seed_bootstrap_95": [
+          0.703125,
+          0.75
+        ],
+        "mean_sampled_alive_fraction": 0.8103745648711607,
+        "mean_sampled_center_fraction": 0.44288302291090775,
+        "mean_sampled_home_fraction": 0.12661223610779673,
+        "mean_damage_dealt": 440.11243891716003,
+        "mean_damage_share_of_team": 0.24269858189022336,
+        "mean_overrides_per_decision": 0.18797996409920323
+      },
+      "learned/seen_styles": {
+        "episodes": 64,
+        "wins": 36,
+        "win_rate": 0.5625,
+        "win_rate_wilson_95": [
+          0.44086208956993334,
+          0.6770599029559663
+        ],
+        "draws": 0,
+        "mean_return": 3.0019042428451184,
+        "mean_switches": 1.375,
+        "mean_overrides": 23.53125,
+        "mean_recoveries": 0.375,
+        "independent_seeds": 8,
+        "win_rate_seed_bootstrap_95": [
+          0.515625,
+          0.625
+        ],
+        "mean_sampled_alive_fraction": 0.7030205626872905,
+        "mean_sampled_center_fraction": 0.39208327794693426,
+        "mean_sampled_home_fraction": 0.2217897582717391,
+        "mean_damage_dealt": 206.73653883859515,
+        "mean_damage_share_of_team": 0.1203226067511562,
+        "mean_overrides_per_decision": 0.29276501360380314
+      },
+      "bt_baseline/held_out_style": {
+        "episodes": 16,
+        "wins": 16,
+        "win_rate": 1.0,
+        "win_rate_wilson_95": [
+          0.8063923194655722,
+          1.0000000000000002
+        ],
+        "draws": 0,
+        "mean_return": 10.842060652615249,
+        "mean_switches": 3.8125,
+        "mean_overrides": 8.9375,
+        "mean_recoveries": 0.625,
+        "independent_seeds": 8,
+        "win_rate_seed_bootstrap_95": [
+          1.0,
+          1.0
+        ],
+        "mean_sampled_alive_fraction": 0.8674010649921376,
+        "mean_sampled_center_fraction": 0.5368092758901486,
+        "mean_sampled_home_fraction": 0.11422497159139891,
+        "mean_damage_dealt": 344.83011627197266,
+        "mean_damage_share_of_team": 0.26166983888620476,
+        "mean_overrides_per_decision": 0.13166870093055438
+      },
+      "learned/held_out_style": {
+        "episodes": 16,
+        "wins": 16,
+        "win_rate": 1.0,
+        "win_rate_wilson_95": [
+          0.8063923194655722,
+          1.0000000000000002
+        ],
+        "draws": 0,
+        "mean_return": 11.253298028807247,
+        "mean_switches": 1.375,
+        "mean_overrides": 6.4375,
+        "mean_recoveries": 0.375,
+        "independent_seeds": 8,
+        "win_rate_seed_bootstrap_95": [
+          1.0,
+          1.0
+        ],
+        "mean_sampled_alive_fraction": 0.9042718260319128,
+        "mean_sampled_center_fraction": 0.6988709399434241,
+        "mean_sampled_home_fraction": 0.08777342458629336,
+        "mean_damage_dealt": 412.73681831359863,
+        "mean_damage_share_of_team": 0.3161641956694652,
+        "mean_overrides_per_decision": 0.09580010009184646
+      }
+    },
+    "paired": {
+      "all_styles": {
+        "pairs": 80,
+        "independent_seeds": 8,
+        "learned_wins_bt_does_not": 0,
+        "bt_wins_learned_does_not": 11,
+        "same_win_indicator": 69,
+        "learned_minus_bt": {
+          "win_difference": {
+            "mean": -0.1375,
+            "seed_bootstrap_95": [
+              -0.17531249999999973,
+              -0.08750000000000001
+            ],
+            "per_seed": [
+              {
+                "seed": 12001,
+                "mean": 0.0
+              },
+              {
+                "seed": 12002,
+                "mean": -0.1
+              },
+              {
+                "seed": 12003,
+                "mean": -0.2
+              },
+              {
+                "seed": 12004,
+                "mean": -0.1
+              },
+              {
+                "seed": 12005,
+                "mean": -0.2
+              },
+              {
+                "seed": 12006,
+                "mean": -0.1
+              },
+              {
+                "seed": 12007,
+                "mean": -0.2
+              },
+              {
+                "seed": 12008,
+                "mean": -0.2
+              }
+            ]
+          },
+          "match_points_difference": {
+            "mean": -0.1375,
+            "seed_bootstrap_95": [
+              -0.17531249999999973,
+              -0.08750000000000001
+            ],
+            "per_seed": [
+              {
+                "seed": 12001,
+                "mean": 0.0
+              },
+              {
+                "seed": 12002,
+                "mean": -0.1
+              },
+              {
+                "seed": 12003,
+                "mean": -0.2
+              },
+              {
+                "seed": 12004,
+                "mean": -0.1
+              },
+              {
+                "seed": 12005,
+                "mean": -0.2
+              },
+              {
+                "seed": 12006,
+                "mean": -0.1
+              },
+              {
+                "seed": 12007,
+                "mean": -0.2
+              },
+              {
+                "seed": 12008,
+                "mean": -0.2
+              }
+            ]
+          },
+          "return_difference": {
+            "mean": -2.5199826683884687,
+            "seed_bootstrap_95": [
+              -3.323215740288191,
+              -1.6029206904193758
+            ],
+            "per_seed": [
+              {
+                "seed": 12001,
+                "mean": 0.12657922991420448
+              },
+              {
+                "seed": 12002,
+                "mean": -2.071293046527314
+              },
+              {
+                "seed": 12003,
+                "mean": -2.9512784211414824
+              },
+              {
+                "seed": 12004,
+                "mean": -2.1849775817361823
+              },
+              {
+                "seed": 12005,
+                "mean": -4.001347219288609
+              },
+              {
+                "seed": 12006,
+                "mean": -1.785156408416693
+              },
+              {
+                "seed": 12007,
+                "mean": -3.548275730997709
+              },
+              {
+                "seed": 12008,
+                "mean": -3.7441121689139636
+              }
+            ]
+          }
+        },
+        "interpretation": "Matched trials against the same opponent, not direct RL-vs-BT games."
+      },
+      "seen_styles": {
+        "pairs": 64,
+        "independent_seeds": 8,
+        "learned_wins_bt_does_not": 0,
+        "bt_wins_learned_does_not": 11,
+        "same_win_indicator": 53,
+        "learned_minus_bt": {
+          "win_difference": {
+            "mean": -0.171875,
+            "seed_bootstrap_95": [
+              -0.21914062499999964,
+              -0.109375
+            ],
+            "per_seed": [
+              {
+                "seed": 12001,
+                "mean": 0.0
+              },
+              {
+                "seed": 12002,
+                "mean": -0.125
+              },
+              {
+                "seed": 12003,
+                "mean": -0.25
+              },
+              {
+                "seed": 12004,
+                "mean": -0.125
+              },
+              {
+                "seed": 12005,
+                "mean": -0.25
+              },
+              {
+                "seed": 12006,
+                "mean": -0.125
+              },
+              {
+                "seed": 12007,
+                "mean": -0.25
+              },
+              {
+                "seed": 12008,
+                "mean": -0.25
+              }
+            ]
+          },
+          "match_points_difference": {
+            "mean": -0.171875,
+            "seed_bootstrap_95": [
+              -0.21914062499999964,
+              -0.109375
+            ],
+            "per_seed": [
+              {
+                "seed": 12001,
+                "mean": 0.0
+              },
+              {
+                "seed": 12002,
+                "mean": -0.125
+              },
+              {
+                "seed": 12003,
+                "mean": -0.25
+              },
+              {
+                "seed": 12004,
+                "mean": -0.125
+              },
+              {
+                "seed": 12005,
+                "mean": -0.25
+              },
+              {
+                "seed": 12006,
+                "mean": -0.125
+              },
+              {
+                "seed": 12007,
+                "mean": -0.25
+              },
+              {
+                "seed": 12008,
+                "mean": -0.25
+              }
+            ]
+          },
+          "return_difference": {
+            "mean": -3.2527876795335846,
+            "seed_bootstrap_95": [
+              -4.2440871974347365,
+              -2.122291779721886
+            ],
+            "per_seed": [
+              {
+                "seed": 12001,
+                "mean": -0.0651599675559641
+              },
+              {
+                "seed": 12002,
+                "mean": -2.6494313327685037
+              },
+              {
+                "seed": 12003,
+                "mean": -4.086588270867629
+              },
+              {
+                "seed": 12004,
+                "mean": -2.662354307450476
+              },
+              {
+                "seed": 12005,
+                "mean": -4.998134132126629
+              },
+              {
+                "seed": 12006,
+                "mean": -2.2494577783870184
+              },
+              {
+                "seed": 12007,
+                "mean": -4.562975698135003
+              },
+              {
+                "seed": 12008,
+                "mean": -4.748199948977455
+              }
+            ]
+          }
+        },
+        "interpretation": "Matched trials against the same opponent, not direct RL-vs-BT games."
+      },
+      "held_out_style": {
+        "pairs": 16,
+        "independent_seeds": 8,
+        "learned_wins_bt_does_not": 0,
+        "bt_wins_learned_does_not": 0,
+        "same_win_indicator": 16,
+        "learned_minus_bt": {
+          "win_difference": {
+            "mean": 0.0,
+            "seed_bootstrap_95": [
+              0.0,
+              0.0
+            ],
+            "per_seed": [
+              {
+                "seed": 12001,
+                "mean": 0.0
+              },
+              {
+                "seed": 12002,
+                "mean": 0.0
+              },
+              {
+                "seed": 12003,
+                "mean": 0.0
+              },
+              {
+                "seed": 12004,
+                "mean": 0.0
+              },
+              {
+                "seed": 12005,
+                "mean": 0.0
+              },
+              {
+                "seed": 12006,
+                "mean": 0.0
+              },
+              {
+                "seed": 12007,
+                "mean": 0.0
+              },
+              {
+                "seed": 12008,
+                "mean": 0.0
+              }
+            ]
+          },
+          "match_points_difference": {
+            "mean": 0.0,
+            "seed_bootstrap_95": [
+              0.0,
+              0.0
+            ],
+            "per_seed": [
+              {
+                "seed": 12001,
+                "mean": 0.0
+              },
+              {
+                "seed": 12002,
+                "mean": 0.0
+              },
+              {
+                "seed": 12003,
+                "mean": 0.0
+              },
+              {
+                "seed": 12004,
+                "mean": 0.0
+              },
+              {
+                "seed": 12005,
+                "mean": 0.0
+              },
+              {
+                "seed": 12006,
+                "mean": 0.0
+              },
+              {
+                "seed": 12007,
+                "mean": 0.0
+              },
+              {
+                "seed": 12008,
+                "mean": 0.0
+              }
+            ]
+          },
+          "return_difference": {
+            "mean": 0.41123737619199696,
+            "seed_bootstrap_95": [
+              0.06515179606006206,
+              0.8247643353704038
+            ],
+            "per_seed": [
+              {
+                "seed": 12001,
+                "mean": 0.8935360197948787
+              },
+              {
+                "seed": 12002,
+                "mean": 0.24126009843744534
+              },
+              {
+                "seed": 12003,
+                "mean": 1.589960977763102
+              },
+              {
+                "seed": 12004,
+                "mean": -0.27547067887900933
+              },
+              {
+                "seed": 12005,
+                "mean": -0.014199567936524993
+              },
+              {
+                "seed": 12006,
+                "mean": 0.07204907146460915
+              },
+              {
+                "seed": 12007,
+                "mean": 0.51052413755147
+              },
+              {
+                "seed": 12008,
+                "mean": 0.27223895134000475
+              }
+            ]
+          }
+        },
+        "interpretation": "Matched trials against the same opponent, not direct RL-vs-BT games."
+      }
+    },
+    "by_style": {
+      "capture": {
+        "paired": {
+          "pairs": 16,
+          "independent_seeds": 8,
+          "learned_wins_bt_does_not": 0,
+          "bt_wins_learned_does_not": 0,
+          "same_win_indicator": 16,
+          "learned_minus_bt": {
+            "win_difference": {
+              "mean": 0.0,
+              "seed_bootstrap_95": [
+                0.0,
+                0.0
+              ],
+              "per_seed": [
+                {
+                  "seed": 12001,
+                  "mean": 0.0
+                },
+                {
+                  "seed": 12002,
+                  "mean": 0.0
+                },
+                {
+                  "seed": 12003,
+                  "mean": 0.0
+                },
+                {
+                  "seed": 12004,
+                  "mean": 0.0
+                },
+                {
+                  "seed": 12005,
+                  "mean": 0.0
+                },
+                {
+                  "seed": 12006,
+                  "mean": 0.0
+                },
+                {
+                  "seed": 12007,
+                  "mean": 0.0
+                },
+                {
+                  "seed": 12008,
+                  "mean": 0.0
+                }
+              ]
+            },
+            "match_points_difference": {
+              "mean": 0.0,
+              "seed_bootstrap_95": [
+                0.0,
+                0.0
+              ],
+              "per_seed": [
+                {
+                  "seed": 12001,
+                  "mean": 0.0
+                },
+                {
+                  "seed": 12002,
+                  "mean": 0.0
+                },
+                {
+                  "seed": 12003,
+                  "mean": 0.0
+                },
+                {
+                  "seed": 12004,
+                  "mean": 0.0
+                },
+                {
+                  "seed": 12005,
+                  "mean": 0.0
+                },
+                {
+                  "seed": 12006,
+                  "mean": 0.0
+                },
+                {
+                  "seed": 12007,
+                  "mean": 0.0
+                },
+                {
+                  "seed": 12008,
+                  "mean": 0.0
+                }
+              ]
+            },
+            "return_difference": {
+              "mean": 0.23551728036314956,
+              "seed_bootstrap_95": [
+                -0.11572188702013395,
+                0.5975243791696941
+              ],
+              "per_seed": [
+                {
+                  "seed": 12001,
+                  "mean": 0.632221267574872
+                },
+                {
+                  "seed": 12002,
+                  "mean": -0.2802610251605273
+                },
+                {
+                  "seed": 12003,
+                  "mean": 0.8980828587914438
+                },
+                {
+                  "seed": 12004,
+                  "mean": 1.0040619709171619
+                },
+                {
+                  "seed": 12005,
+                  "mean": 0.2632733248620127
+                },
+                {
+                  "seed": 12006,
+                  "mean": -0.5017222520297739
+                },
+                {
+                  "seed": 12007,
+                  "mean": -0.15159062528923073
+                },
+                {
+                  "seed": 12008,
+                  "mean": 0.020072723239238144
+                }
+              ]
+            }
+          },
+          "interpretation": "Matched trials against the same opponent, not direct RL-vs-BT games."
+        },
+        "bt_baseline": {
+          "episodes": 16,
+          "wins": 16,
+          "win_rate": 1.0,
+          "win_rate_wilson_95": [
+            0.8063923194655722,
+            1.0000000000000002
+          ],
+          "draws": 0,
+          "mean_return": 11.120994423170748,
+          "mean_switches": 3.875,
+          "mean_overrides": 8.75,
+          "mean_recoveries": 0.8125,
+          "independent_seeds": 8,
+          "win_rate_seed_bootstrap_95": [
+            1.0,
+            1.0
+          ],
+          "mean_sampled_alive_fraction": 0.8417531405621177,
+          "mean_sampled_center_fraction": 0.48547251120712387,
+          "mean_sampled_home_fraction": 0.12026532087715645,
+          "mean_damage_dealt": 327.4632616043091,
+          "mean_damage_share_of_team": 0.24435040793204682,
+          "mean_overrides_per_decision": 0.15724671247100053
+        },
+        "learned": {
+          "episodes": 16,
+          "wins": 16,
+          "win_rate": 1.0,
+          "win_rate_wilson_95": [
+            0.8063923194655722,
+            1.0000000000000002
+          ],
+          "draws": 0,
+          "mean_return": 11.356511703533897,
+          "mean_switches": 1.5,
+          "mean_overrides": 6.375,
+          "mean_recoveries": 0.5,
+          "independent_seeds": 8,
+          "win_rate_seed_bootstrap_95": [
+            1.0,
+            1.0
+          ],
+          "mean_sampled_alive_fraction": 0.8912215967382908,
+          "mean_sampled_center_fraction": 0.48864515564227795,
+          "mean_sampled_home_fraction": 0.2663045503997177,
+          "mean_damage_dealt": 334.4623737335205,
+          "mean_damage_share_of_team": 0.24924655731706993,
+          "mean_overrides_per_decision": 0.10774584172666138
+        }
+      },
+      "defense": {
+        "paired": {
+          "pairs": 16,
+          "independent_seeds": 8,
+          "learned_wins_bt_does_not": 0,
+          "bt_wins_learned_does_not": 0,
+          "same_win_indicator": 16,
+          "learned_minus_bt": {
+            "win_difference": {
+              "mean": 0.0,
+              "seed_bootstrap_95": [
+                0.0,
+                0.0
+              ],
+              "per_seed": [
+                {
+                  "seed": 12001,
+                  "mean": 0.0
+                },
+                {
+                  "seed": 12002,
+                  "mean": 0.0
+                },
+                {
+                  "seed": 12003,
+                  "mean": 0.0
+                },
+                {
+                  "seed": 12004,
+                  "mean": 0.0
+                },
+                {
+                  "seed": 12005,
+                  "mean": 0.0
+                },
+                {
+                  "seed": 12006,
+                  "mean": 0.0
+                },
+                {
+                  "seed": 12007,
+                  "mean": 0.0
+                },
+                {
+                  "seed": 12008,
+                  "mean": 0.0
+                }
+              ]
+            },
+            "match_points_difference": {
+              "mean": 0.0,
+              "seed_bootstrap_95": [
+                0.0,
+                0.0
+              ],
+              "per_seed": [
+                {
+                  "seed": 12001,
+                  "mean": 0.0
+                },
+                {
+                  "seed": 12002,
+                  "mean": 0.0
+                },
+                {
+                  "seed": 12003,
+                  "mean": 0.0
+                },
+                {
+                  "seed": 12004,
+                  "mean": 0.0
+                },
+                {
+                  "seed": 12005,
+                  "mean": 0.0
+                },
+                {
+                  "seed": 12006,
+                  "mean": 0.0
+                },
+                {
+                  "seed": 12007,
+                  "mean": 0.0
+                },
+                {
+                  "seed": 12008,
+                  "mean": 0.0
+                }
+              ]
+            },
+            "return_difference": {
+              "mean": -1.0248895430787646,
+              "seed_bootstrap_95": [
+                -1.5240493513539053,
+                -0.5430649733219267
+              ],
+              "per_seed": [
+                {
+                  "seed": 12001,
+                  "mean": 0.05225336607243847
+                },
+                {
+                  "seed": 12002,
+                  "mean": -0.18557822430402027
+                },
+                {
+                  "seed": 12003,
+                  "mean": -1.1019501769449738
+                },
+                {
+                  "seed": 12004,
+                  "mean": -0.6865232339330696
+                },
+                {
+                  "seed": 12005,
+                  "mean": -2.3416500253066452
+                },
+                {
+                  "seed": 12006,
+                  "mean": -1.0218124854701465
+                },
+                {
+                  "seed": 12007,
+                  "mean": -1.4493467267647313
+                },
+                {
+                  "seed": 12008,
+                  "mean": -1.4645088379789692
+                }
+              ]
+            }
+          },
+          "interpretation": "Matched trials against the same opponent, not direct RL-vs-BT games."
+        },
+        "bt_baseline": {
+          "episodes": 16,
+          "wins": 16,
+          "win_rate": 1.0,
+          "win_rate_wilson_95": [
+            0.8063923194655722,
+            1.0000000000000002
+          ],
+          "draws": 0,
+          "mean_return": 11.773814415753392,
+          "mean_switches": 4.375,
+          "mean_overrides": 12.5,
+          "mean_recoveries": 0.0625,
+          "independent_seeds": 8,
+          "win_rate_seed_bootstrap_95": [
+            1.0,
+            1.0
+          ],
+          "mean_sampled_alive_fraction": 0.8140811674749431,
+          "mean_sampled_center_fraction": 0.4531179798250166,
+          "mean_sampled_home_fraction": 0.1235185104664934,
+          "mean_damage_dealt": 416.97001361846924,
+          "mean_damage_share_of_team": 0.2843895092666538,
+          "mean_overrides_per_decision": 0.18400340320992406
+        },
+        "learned": {
+          "episodes": 16,
+          "wins": 16,
+          "win_rate": 1.0,
+          "win_rate_wilson_95": [
+            0.8063923194655722,
+            1.0000000000000002
+          ],
+          "draws": 0,
+          "mean_return": 10.748924872674628,
+          "mean_switches": 1.0625,
+          "mean_overrides": 35.75,
+          "mean_recoveries": 0.0625,
+          "independent_seeds": 8,
+          "win_rate_seed_bootstrap_95": [
+            1.0,
+            1.0
+          ],
+          "mean_sampled_alive_fraction": 0.5866358625700914,
+          "mean_sampled_center_fraction": 0.46299639070397625,
+          "mean_sampled_home_fraction": 0.05826477830833019,
+          "mean_damage_dealt": 216.87162685394287,
+          "mean_damage_share_of_team": 0.13390988289192549,
+          "mean_overrides_per_decision": 0.40892642430077153
+        }
+      },
+      "pretrained": {
+        "paired": {
+          "pairs": 16,
+          "independent_seeds": 8,
+          "learned_wins_bt_does_not": 0,
+          "bt_wins_learned_does_not": 0,
+          "same_win_indicator": 16,
+          "learned_minus_bt": {
+            "win_difference": {
+              "mean": 0.0,
+              "seed_bootstrap_95": [
+                0.0,
+                0.0
+              ],
+              "per_seed": [
+                {
+                  "seed": 12001,
+                  "mean": 0.0
+                },
+                {
+                  "seed": 12002,
+                  "mean": 0.0
+                },
+                {
+                  "seed": 12003,
+                  "mean": 0.0
+                },
+                {
+                  "seed": 12004,
+                  "mean": 0.0
+                },
+                {
+                  "seed": 12005,
+                  "mean": 0.0
+                },
+                {
+                  "seed": 12006,
+                  "mean": 0.0
+                },
+                {
+                  "seed": 12007,
+                  "mean": 0.0
+                },
+                {
+                  "seed": 12008,
+                  "mean": 0.0
+                }
+              ]
+            },
+            "match_points_difference": {
+              "mean": 0.0,
+              "seed_bootstrap_95": [
+                0.0,
+                0.0
+              ],
+              "per_seed": [
+                {
+                  "seed": 12001,
+                  "mean": 0.0
+                },
+                {
+                  "seed": 12002,
+                  "mean": 0.0
+                },
+                {
+                  "seed": 12003,
+                  "mean": 0.0
+                },
+                {
+                  "seed": 12004,
+                  "mean": 0.0
+                },
+                {
+                  "seed": 12005,
+                  "mean": 0.0
+                },
+                {
+                  "seed": 12006,
+                  "mean": 0.0
+                },
+                {
+                  "seed": 12007,
+                  "mean": 0.0
+                },
+                {
+                  "seed": 12008,
+                  "mean": 0.0
+                }
+              ]
+            },
+            "return_difference": {
+              "mean": 0.058680609057228106,
+              "seed_bootstrap_95": [
+                -0.008710149896904502,
+                0.11626220978781715
+              ],
+              "per_seed": [
+                {
+                  "seed": 12001,
+                  "mean": 0.08896817470358576
+                },
+                {
+                  "seed": 12002,
+                  "mean": 0.0367791988739774
+                },
+                {
+                  "seed": 12003,
+                  "mean": -0.11007686621658808
+                },
+                {
+                  "seed": 12004,
+                  "mean": -0.06323154809715081
+                },
+                {
+                  "seed": 12005,
+                  "mean": 0.1374433129228123
+                },
+                {
+                  "seed": 12006,
+                  "mean": 0.13785754914230974
+                },
+                {
+                  "seed": 12007,
+                  "mean": 0.11130775328969778
+                },
+                {
+                  "seed": 12008,
+                  "mean": 0.13039729783918075
+                }
+              ]
+            }
+          },
+          "interpretation": "Matched trials against the same opponent, not direct RL-vs-BT games."
+        },
+        "bt_baseline": {
+          "episodes": 16,
+          "wins": 0,
+          "win_rate": 0.0,
+          "win_rate_wilson_95": [
+            0.0,
+            0.1936076805344279
+          ],
+          "draws": 0,
+          "mean_return": -6.933058761278061,
+          "mean_switches": 8.5,
+          "mean_overrides": 29.0625,
+          "mean_recoveries": 1.1875,
+          "independent_seeds": 8,
+          "win_rate_seed_bootstrap_95": [
+            0.0,
+            0.0
+          ],
+          "mean_sampled_alive_fraction": 0.7031787520864763,
+          "mean_sampled_center_fraction": 0.28328190572427125,
+          "mean_sampled_home_fraction": 0.14893930452884382,
+          "mean_damage_dealt": 239.75720310211182,
+          "mean_damage_share_of_team": 0.1555477557206408,
+          "mean_overrides_per_decision": 0.29384773244562706
+        },
+        "learned": {
+          "episodes": 16,
+          "wins": 0,
+          "win_rate": 0.0,
+          "win_rate_wilson_95": [
+            0.0,
+            0.1936076805344279
+          ],
+          "draws": 0,
+          "mean_return": -6.8743781522208325,
+          "mean_switches": 1.0,
+          "mean_overrides": 31.6875,
+          "mean_recoveries": 0.0,
+          "independent_seeds": 8,
+          "win_rate_seed_bootstrap_95": [
+            0.0,
+            0.0
+          ],
+          "mean_sampled_alive_fraction": 0.4976115793513787,
+          "mean_sampled_center_fraction": 0.39569261549630497,
+          "mean_sampled_home_fraction": 0.01669632612392111,
+          "mean_damage_dealt": 5.059371754527092,
+          "mean_damage_share_of_team": 0.006069071956472577,
+          "mean_overrides_per_decision": 0.49173844210730683
+        }
+      },
+      "pursuit": {
+        "paired": {
+          "pairs": 16,
+          "independent_seeds": 8,
+          "learned_wins_bt_does_not": 0,
+          "bt_wins_learned_does_not": 0,
+          "same_win_indicator": 16,
+          "learned_minus_bt": {
+            "win_difference": {
+              "mean": 0.0,
+              "seed_bootstrap_95": [
+                0.0,
+                0.0
+              ],
+              "per_seed": [
+                {
+                  "seed": 12001,
+                  "mean": 0.0
+                },
+                {
+                  "seed": 12002,
+                  "mean": 0.0
+                },
+                {
+                  "seed": 12003,
+                  "mean": 0.0
+                },
+                {
+                  "seed": 12004,
+                  "mean": 0.0
+                },
+                {
+                  "seed": 12005,
+                  "mean": 0.0
+                },
+                {
+                  "seed": 12006,
+                  "mean": 0.0
+                },
+                {
+                  "seed": 12007,
+                  "mean": 0.0
+                },
+                {
+                  "seed": 12008,
+                  "mean": 0.0
+                }
+              ]
+            },
+            "match_points_difference": {
+              "mean": 0.0,
+              "seed_bootstrap_95": [
+                0.0,
+                0.0
+              ],
+              "per_seed": [
+                {
+                  "seed": 12001,
+                  "mean": 0.0
+                },
+                {
+                  "seed": 12002,
+                  "mean": 0.0
+                },
+                {
+                  "seed": 12003,
+                  "mean": 0.0
+                },
+                {
+                  "seed": 12004,
+                  "mean": 0.0
+                },
+                {
+                  "seed": 12005,
+                  "mean": 0.0
+                },
+                {
+                  "seed": 12006,
+                  "mean": 0.0
+                },
+                {
+                  "seed": 12007,
+                  "mean": 0.0
+                },
+                {
+                  "seed": 12008,
+                  "mean": 0.0
+                }
+              ]
+            },
+            "return_difference": {
+              "mean": 0.41123737619199696,
+              "seed_bootstrap_95": [
+                0.06515179606006206,
+                0.8247643353704038
+              ],
+              "per_seed": [
+                {
+                  "seed": 12001,
+                  "mean": 0.8935360197948787
+                },
+                {
+                  "seed": 12002,
+                  "mean": 0.24126009843744534
+                },
+                {
+                  "seed": 12003,
+                  "mean": 1.589960977763102
+                },
+                {
+                  "seed": 12004,
+                  "mean": -0.27547067887900933
+                },
+                {
+                  "seed": 12005,
+                  "mean": -0.014199567936524993
+                },
+                {
+                  "seed": 12006,
+                  "mean": 0.07204907146460915
+                },
+                {
+                  "seed": 12007,
+                  "mean": 0.51052413755147
+                },
+                {
+                  "seed": 12008,
+                  "mean": 0.27223895134000475
+                }
+              ]
+            }
+          },
+          "interpretation": "Matched trials against the same opponent, not direct RL-vs-BT games."
+        },
+        "bt_baseline": {
+          "episodes": 16,
+          "wins": 16,
+          "win_rate": 1.0,
+          "win_rate_wilson_95": [
+            0.8063923194655722,
+            1.0000000000000002
+          ],
+          "draws": 0,
+          "mean_return": 10.842060652615249,
+          "mean_switches": 3.8125,
+          "mean_overrides": 8.9375,
+          "mean_recoveries": 0.625,
+          "independent_seeds": 8,
+          "win_rate_seed_bootstrap_95": [
+            1.0,
+            1.0
+          ],
+          "mean_sampled_alive_fraction": 0.8674010649921376,
+          "mean_sampled_center_fraction": 0.5368092758901486,
+          "mean_sampled_home_fraction": 0.11422497159139891,
+          "mean_damage_dealt": 344.83011627197266,
+          "mean_damage_share_of_team": 0.26166983888620476,
+          "mean_overrides_per_decision": 0.13166870093055438
+        },
+        "learned": {
+          "episodes": 16,
+          "wins": 16,
+          "win_rate": 1.0,
+          "win_rate_wilson_95": [
+            0.8063923194655722,
+            1.0000000000000002
+          ],
+          "draws": 0,
+          "mean_return": 11.253298028807247,
+          "mean_switches": 1.375,
+          "mean_overrides": 6.4375,
+          "mean_recoveries": 0.375,
+          "independent_seeds": 8,
+          "win_rate_seed_bootstrap_95": [
+            1.0,
+            1.0
+          ],
+          "mean_sampled_alive_fraction": 0.9042718260319128,
+          "mean_sampled_center_fraction": 0.6988709399434241,
+          "mean_sampled_home_fraction": 0.08777342458629336,
+          "mean_damage_dealt": 412.73681831359863,
+          "mean_damage_share_of_team": 0.3161641956694652,
+          "mean_overrides_per_decision": 0.09580010009184646
+        }
+      },
+      "resupply": {
+        "paired": {
+          "pairs": 16,
+          "independent_seeds": 8,
+          "learned_wins_bt_does_not": 0,
+          "bt_wins_learned_does_not": 11,
+          "same_win_indicator": 5,
+          "learned_minus_bt": {
+            "win_difference": {
+              "mean": -0.6875,
+              "seed_bootstrap_95": [
+                -0.8765624999999986,
+                -0.4375
+              ],
+              "per_seed": [
+                {
+                  "seed": 12001,
+                  "mean": 0.0
+                },
+                {
+                  "seed": 12002,
+                  "mean": -0.5
+                },
+                {
+                  "seed": 12003,
+                  "mean": -1.0
+                },
+                {
+                  "seed": 12004,
+                  "mean": -0.5
+                },
+                {
+                  "seed": 12005,
+                  "mean": -1.0
+                },
+                {
+                  "seed": 12006,
+                  "mean": -0.5
+                },
+                {
+                  "seed": 12007,
+                  "mean": -1.0
+                },
+                {
+                  "seed": 12008,
+                  "mean": -1.0
+                }
+              ]
+            },
+            "match_points_difference": {
+              "mean": -0.6875,
+              "seed_bootstrap_95": [
+                -0.8765624999999986,
+                -0.4375
+              ],
+              "per_seed": [
+                {
+                  "seed": 12001,
+                  "mean": 0.0
+                },
+                {
+                  "seed": 12002,
+                  "mean": -0.5
+                },
+                {
+                  "seed": 12003,
+                  "mean": -1.0
+                },
+                {
+                  "seed": 12004,
+                  "mean": -0.5
+                },
+                {
+                  "seed": 12005,
+                  "mean": -1.0
+                },
+                {
+                  "seed": 12006,
+                  "mean": -0.5
+                },
+                {
+                  "seed": 12007,
+                  "mean": -1.0
+                },
+                {
+                  "seed": 12008,
+                  "mean": -1.0
+                }
+              ]
+            },
+            "return_difference": {
+              "mean": -12.280459064475952,
+              "seed_bootstrap_95": [
+                -15.80424508622642,
+                -8.235792545856087
+              ],
+              "per_seed": [
+                {
+                  "seed": 12001,
+                  "mean": -1.0340826785747526
+                },
+                {
+                  "seed": 12002,
+                  "mean": -10.168665280483445
+                },
+                {
+                  "seed": 12003,
+                  "mean": -16.032408899100396
+                },
+                {
+                  "seed": 12004,
+                  "mean": -10.903724418688846
+                },
+                {
+                  "seed": 12005,
+                  "mean": -18.051603140984696
+                },
+                {
+                  "seed": 12006,
+                  "mean": -7.612153925190464
+                },
+                {
+                  "seed": 12007,
+                  "mean": -16.762273193775748
+                },
+                {
+                  "seed": 12008,
+                  "mean": -17.678760979009272
+                }
+              ]
+            }
+          },
+          "interpretation": "Matched trials against the same opponent, not direct RL-vs-BT games."
+        },
+        "bt_baseline": {
+          "episodes": 16,
+          "wins": 15,
+          "win_rate": 0.9375,
+          "win_rate_wilson_95": [
+            0.7167126242970187,
+            0.9888806552353572
+          ],
+          "draws": 0,
+          "mean_return": 9.057017611868735,
+          "mean_switches": 6.5,
+          "mean_overrides": 12.875,
+          "mean_recoveries": 1.0,
+          "independent_seeds": 8,
+          "win_rate_seed_bootstrap_95": [
+            0.8125,
+            1.0
+          ],
+          "mean_sampled_alive_fraction": 0.8824851993611058,
+          "mean_sampled_center_fraction": 0.5496596948872194,
+          "mean_sampled_home_fraction": 0.1137258085586932,
+          "mean_damage_dealt": 776.25927734375,
+          "mean_damage_share_of_team": 0.28650665464155217,
+          "mean_overrides_per_decision": 0.1168220082702613
+        },
+        "learned": {
+          "episodes": 16,
+          "wins": 4,
+          "win_rate": 0.25,
+          "win_rate_wilson_95": [
+            0.10182067491213295,
+            0.494983165355081
+          ],
+          "draws": 0,
+          "mean_return": -3.2234414526072177,
+          "mean_switches": 1.9375,
+          "mean_overrides": 20.3125,
+          "mean_recoveries": 0.9375,
+          "independent_seeds": 8,
+          "win_rate_seed_bootstrap_95": [
+            0.0625,
+            0.5
+          ],
+          "mean_sampled_alive_fraction": 0.8366132120894012,
+          "mean_sampled_center_fraction": 0.22099894994517785,
+          "mean_sampled_home_fraction": 0.5458933782549875,
+          "mean_damage_dealt": 270.55278301239014,
+          "mean_damage_share_of_team": 0.09206491483915685,
+          "mean_overrides_per_decision": 0.16264934628047267
+        }
+      }
+    },
+    "by_side": {
+      "0": {
+        "paired": {
+          "pairs": 40,
+          "independent_seeds": 8,
+          "learned_wins_bt_does_not": 0,
+          "bt_wins_learned_does_not": 4,
+          "same_win_indicator": 36,
+          "learned_minus_bt": {
+            "win_difference": {
+              "mean": -0.1,
+              "seed_bootstrap_95": [
+                -0.17500000000000002,
+                -0.025
+              ],
+              "per_seed": [
+                {
+                  "seed": 12001,
+                  "mean": 0.0
+                },
+                {
+                  "seed": 12002,
+                  "mean": 0.0
+                },
+                {
+                  "seed": 12003,
+                  "mean": -0.2
+                },
+                {
+                  "seed": 12004,
+                  "mean": 0.0
+                },
+                {
+                  "seed": 12005,
+                  "mean": -0.2
+                },
+                {
+                  "seed": 12006,
+                  "mean": 0.0
+                },
+                {
+                  "seed": 12007,
+                  "mean": -0.2
+                },
+                {
+                  "seed": 12008,
+                  "mean": -0.2
+                }
+              ]
+            },
+            "match_points_difference": {
+              "mean": -0.1,
+              "seed_bootstrap_95": [
+                -0.17500000000000002,
+                -0.025
+              ],
+              "per_seed": [
+                {
+                  "seed": 12001,
+                  "mean": 0.0
+                },
+                {
+                  "seed": 12002,
+                  "mean": 0.0
+                },
+                {
+                  "seed": 12003,
+                  "mean": -0.2
+                },
+                {
+                  "seed": 12004,
+                  "mean": 0.0
+                },
+                {
+                  "seed": 12005,
+                  "mean": -0.2
+                },
+                {
+                  "seed": 12006,
+                  "mean": 0.0
+                },
+                {
+                  "seed": 12007,
+                  "mean": -0.2
+                },
+                {
+                  "seed": 12008,
+                  "mean": -0.2
+                }
+              ]
+            },
+            "return_difference": {
+              "mean": -1.904747026997786,
+              "seed_bootstrap_95": [
+                -3.078837250024303,
+                -0.7067408288167261
+              ],
+              "per_seed": [
+                {
+                  "seed": 12001,
+                  "mean": -0.1787591434632386
+                },
+                {
+                  "seed": 12002,
+                  "mean": -0.32450353406451937
+                },
+                {
+                  "seed": 12003,
+                  "mean": -2.8274466561474307
+                },
+                {
+                  "seed": 12004,
+                  "mean": -0.002801289539052654
+                },
+                {
+                  "seed": 12005,
+                  "mean": -3.592053499654052
+                },
+                {
+                  "seed": 12006,
+                  "mean": -0.4372714382411065
+                },
+                {
+                  "seed": 12007,
+                  "mean": -4.1330569671132436
+                },
+                {
+                  "seed": 12008,
+                  "mean": -3.7420836877596444
+                }
+              ]
+            }
+          },
+          "interpretation": "Matched trials against the same opponent, not direct RL-vs-BT games."
+        },
+        "bt_baseline": {
+          "episodes": 40,
+          "wins": 31,
+          "win_rate": 0.775,
+          "win_rate_wilson_95": [
+            0.6249690325769044,
+            0.8768390867645905
+          ],
+          "draws": 0,
+          "mean_return": 7.071432288803424,
+          "mean_switches": 5.25,
+          "mean_overrides": 13.625,
+          "mean_recoveries": 0.65,
+          "independent_seeds": 8,
+          "win_rate_seed_bootstrap_95": [
+            0.725,
+            0.8
+          ],
+          "mean_sampled_alive_fraction": 0.8293581583857161,
+          "mean_sampled_center_fraction": 0.4749688508520027,
+          "mean_sampled_home_fraction": 0.12115080325426675,
+          "mean_damage_dealt": 421.02646408081057,
+          "mean_damage_share_of_team": 0.2556435474019786,
+          "mean_overrides_per_decision": 0.16930737490642922
+        },
+        "learned": {
+          "episodes": 40,
+          "wins": 27,
+          "win_rate": 0.675,
+          "win_rate_wilson_95": [
+            0.5201774618987811,
+            0.7991549776821703
+          ],
+          "draws": 0,
+          "mean_return": 5.166685261805637,
+          "mean_switches": 1.325,
+          "mean_overrides": 18.475,
+          "mean_recoveries": 0.325,
+          "independent_seeds": 8,
+          "win_rate_seed_bootstrap_95": [
+            0.625,
+            0.75
+          ],
+          "mean_sampled_alive_fraction": 0.7632548631168927,
+          "mean_sampled_center_fraction": 0.5022447036368242,
+          "mean_sampled_home_fraction": 0.16775010178961136,
+          "mean_damage_dealt": 272.72817610502244,
+          "mean_damage_share_of_team": 0.1748667946571237,
+          "mean_overrides_per_decision": 0.23317401517431824
+        }
+      },
+      "1": {
+        "paired": {
+          "pairs": 40,
+          "independent_seeds": 8,
+          "learned_wins_bt_does_not": 0,
+          "bt_wins_learned_does_not": 7,
+          "same_win_indicator": 33,
+          "learned_minus_bt": {
+            "win_difference": {
+              "mean": -0.17500000000000002,
+              "seed_bootstrap_95": [
+                -0.2,
+                -0.125
+              ],
+              "per_seed": [
+                {
+                  "seed": 12001,
+                  "mean": 0.0
+                },
+                {
+                  "seed": 12002,
+                  "mean": -0.2
+                },
+                {
+                  "seed": 12003,
+                  "mean": -0.2
+                },
+                {
+                  "seed": 12004,
+                  "mean": -0.2
+                },
+                {
+                  "seed": 12005,
+                  "mean": -0.2
+                },
+                {
+                  "seed": 12006,
+                  "mean": -0.2
+                },
+                {
+                  "seed": 12007,
+                  "mean": -0.2
+                },
+                {
+                  "seed": 12008,
+                  "mean": -0.2
+                }
+              ]
+            },
+            "match_points_difference": {
+              "mean": -0.17500000000000002,
+              "seed_bootstrap_95": [
+                -0.2,
+                -0.125
+              ],
+              "per_seed": [
+                {
+                  "seed": 12001,
+                  "mean": 0.0
+                },
+                {
+                  "seed": 12002,
+                  "mean": -0.2
+                },
+                {
+                  "seed": 12003,
+                  "mean": -0.2
+                },
+                {
+                  "seed": 12004,
+                  "mean": -0.2
+                },
+                {
+                  "seed": 12005,
+                  "mean": -0.2
+                },
+                {
+                  "seed": 12006,
+                  "mean": -0.2
+                },
+                {
+                  "seed": 12007,
+                  "mean": -0.2
+                },
+                {
+                  "seed": 12008,
+                  "mean": -0.2
+                }
+              ]
+            },
+            "return_difference": {
+              "mean": -3.1352183097791513,
+              "seed_bootstrap_95": [
+                -3.9268128568737226,
+                -2.0188321813350973
+              ],
+              "per_seed": [
+                {
+                  "seed": 12001,
+                  "mean": 0.4319176032916475
+                },
+                {
+                  "seed": 12002,
+                  "mean": -3.8180825589901084
+                },
+                {
+                  "seed": 12003,
+                  "mean": -3.075110186135535
+                },
+                {
+                  "seed": 12004,
+                  "mean": -4.3671538739333124
+                },
+                {
+                  "seed": 12005,
+                  "mean": -4.410640938923164
+                },
+                {
+                  "seed": 12006,
+                  "mean": -3.13304137859228
+                },
+                {
+                  "seed": 12007,
+                  "mean": -2.9634944948821738
+                },
+                {
+                  "seed": 12008,
+                  "mean": -3.746140650068283
+                }
+              ]
+            }
+          },
+          "interpretation": "Matched trials against the same opponent, not direct RL-vs-BT games."
+        },
+        "bt_baseline": {
+          "episodes": 40,
+          "wins": 32,
+          "win_rate": 0.8,
+          "win_rate_wilson_95": [
+            0.6524269365360096,
+            0.8950001027456211
+          ],
+          "draws": 0,
+          "mean_return": 7.272899048048603,
+          "mean_switches": 5.575,
+          "mean_overrides": 15.225,
+          "mean_recoveries": 0.825,
+          "independent_seeds": 8,
+          "win_rate_seed_bootstrap_95": [
+            0.8,
+            0.8
+          ],
+          "mean_sampled_alive_fraction": 0.8142015714049963,
+          "mean_sampled_center_fraction": 0.44836769616150923,
+          "mean_sampled_home_fraction": 0.12711876315476758,
+          "mean_damage_dealt": 421.08548469543456,
+          "mean_damage_share_of_team": 0.23734211917686068,
+          "mean_overrides_per_decision": 0.1841280480245177
+        },
+        "learned": {
+          "episodes": 40,
+          "wins": 25,
+          "win_rate": 0.625,
+          "win_rate_wilson_95": [
+            0.4703243913730152,
+            0.7577702083276642
+          ],
+          "draws": 0,
+          "mean_return": 4.1376807382694505,
+          "mean_switches": 1.425,
+          "mean_overrides": 21.75,
+          "mean_recoveries": 0.425,
+          "independent_seeds": 8,
+          "win_rate_seed_bootstrap_95": [
+            0.6,
+            0.6749999999999999
+          ],
+          "mean_sampled_alive_fraction": 0.7232867675955371,
+          "mean_sampled_center_fraction": 0.4046369170556403,
+          "mean_sampled_home_fraction": 0.22222288127968862,
+          "mean_damage_dealt": 223.14501336216927,
+          "mean_damage_share_of_team": 0.14411505441251232,
+          "mean_overrides_per_decision": 0.27357004662850526
+        }
+      }
+    },
+    "limits": [
+      "Simplified alphaRM task proxy, not formal RMUL/RMUC win rates.",
+      "Fixed proxy navigation and autoaim; no ROS/MPPI or sentry stance validation.",
+      "Opponent styles share the same environment and may not represent real teams.",
+      "A completed training budget does not establish policy convergence."
+    ]
+  },
+  "actor_export": {
+    "status": "PASS",
+    "artifact_type": "phase1_actor_export_not_hardware_acceptance",
+    "checkpoint": "runs/phase1_continue_65536_20261116/latest.pt",
+    "onnx_path": "runs/phase1_continue_65536_20261116/export/actor.onnx",
+    "actor_sha256": "70b3b5054c6c239734d83d09a0134ed2e704d539ee66dd6a42da0771d6bb77cf",
+    "bytes": 102207,
+    "actor_parameters": 23815,
+    "max_abs_error": 2.86102294921875e-06,
+    "verified_batch_and_candidate_shapes": [
+      [
+        1,
+        16
+      ],
+      [
+        3,
+        9
+      ]
+    ],
+    "latency_ms_host_CPU_single_thread_warm": {
+      "p50": 0.017227954231202602,
+      "p95": 0.017883814871311184,
+      "p99": 0.019423295743763447
+    },
+    "critic_exported": false,
+    "stance_head": "untrained; phase-I must mask all except stance 0",
+    "limits": "Measured on this workstation, not NUC. Inputs still belong to simplified prototype."
+  },
+  "reward_design": "docs/11_reward_design.md",
+  "assessment": "current_final_policy_underperforms_BT_in_this_proxy_test; convergence_and_UL_UC_transfer_not_established",
+  "future_changes_require_new_test_suite": true
+}

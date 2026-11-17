@@ -1,0 +1,18 @@
+{
+  "checked_on": "2026-11-16",
+  "official_page": "https://bbs.robomaster.com/wiki/20204847/50179206",
+  "api": "https://bbs.robomaster.com/developers-server/rest/posts/info/1969150",
+  "retrieval_method": "POST {} to public official page API",
+  "attachment": {
+    "id": 14867050,
+    "src": "https://hz-rm-bbs-web-prod.oss-cn-hangzhou.aliyuncs.com/7d9d3af15fb94e9a9b29589a40dba80c1792049408959/RoboMaster 2027 机甲大师高校联盟赛比赛规则手册 V1.0.0（20261015）.pdf",
+    "name": "RoboMaster 2027 机甲大师高校联盟赛比赛规则手册 V1.0.0（20261015）.pdf",
+    "downloads": 0,
+    "md5": "d75e932a7d69dd2fa53906dfc67512be",
+    "len": 13455593
+  },
+  "local_path": "data/references/official_rmul_2027/rmul_2027_rules_v1.0.0_20261015.pdf",
+  "sha256": "a8fd7b7f6ea5212b9e4dfa590b478827992598d91912ed671653c8bdd9727fd6",
+  "md5_verified": true,
+  "bytes": 13455593
+}

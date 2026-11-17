@@ -1,0 +1,74 @@
+{
+  "scenario_id": "uc2027_observed_support_multistage_v1",
+  "deployment_adapter_connected": false,
+  "state": {
+    "shape": [
+      24
+    ],
+    "dtype": "float32",
+    "features": [
+      "objective_dx",
+      "objective_dy",
+      "objective_route_remaining",
+      "time_left",
+      "stage_fraction",
+      "stages_remaining",
+      "active",
+      "active_age",
+      "stall_age",
+      "support_valid",
+      "support_age",
+      "last_veto",
+      "last_arrival",
+      "last_recovery",
+      "active_target_dx",
+      "active_target_dy",
+      "active_route_remaining",
+      "acceptance_pending",
+      "no_safe_goals",
+      "pose_valid",
+      "progress_last_step",
+      "legal_count",
+      "recovery_cooldown",
+      "time_since_goal_switch"
+    ]
+  },
+  "candidates": {
+    "shape": [
+      16,
+      12
+    ],
+    "dtype": "float32",
+    "features": [
+      "dx",
+      "dy",
+      "route_length",
+      "distance_to_objective",
+      "objective",
+      "waypoint",
+      "recover",
+      "continue",
+      "hold",
+      "same_as_active",
+      "support_age",
+      "available"
+    ]
+  },
+  "mask": {
+    "shape": [
+      16
+    ],
+    "dtype": "bool",
+    "computed_by": "BT/environment support gate; not policy network"
+  },
+  "action_intents": {
+    "0..12": "candidate waypoint id",
+    "13": "cancel/recover request",
+    "14": "continue",
+    "15": "hold/wait"
+  },
+  "decision_period_s": 0.5,
+  "actor_parameters": 12449,
+  "velocity_aiming_fire_or_purchase_outputs": false,
+  "note": "Feature scalings and exact semantics are frozen in rl_bt/uc_support_env.py; this is an offline course schema, not a live ROS interface."
+}

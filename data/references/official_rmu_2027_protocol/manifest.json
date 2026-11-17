@@ -1,0 +1,18 @@
+{
+  "checked_on": "2026-11-16",
+  "official_page": "https://bbs.robomaster.com/wiki/20204847/50179263",
+  "api": "https://bbs.robomaster.com/developers-server/rest/posts/info/1969151",
+  "retrieval_method": "POST {} to public official page API",
+  "attachment": {
+    "id": 14892680,
+    "src": "https://hz-rm-bbs-web-prod.oss-cn-hangzhou.aliyuncs.com/3db568c5796b494190475a694f001e841793263540152/RoboMaster 2027 机甲大师高校系列赛通信协议 V1.0.0（20261029）.pdf",
+    "name": "RoboMaster 2027 机甲大师高校系列赛通信协议 V1.0.0（20261029）.pdf",
+    "downloads": 0,
+    "md5": "1ce2ec4322d6eb989122f6b651ef96a1",
+    "len": 3435583
+  },
+  "local_path": "data/references/official_rmu_2027_protocol/rmu_2027_protocol_v1.0.0_20261029.pdf",
+  "bytes": 3435583,
+  "sha256": "109a5e2a82afd3f253a5ac15aef7bb5e0aa354c6b41e3a6ceca7fed889e619e1",
+  "md5_verified": true
+}

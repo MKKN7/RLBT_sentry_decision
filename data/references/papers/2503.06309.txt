@@ -1,0 +1,796 @@
+                                            On the Fly Adaptation of Behavior Tree-Based
+                                              Policies through Reinforcement Learning
+
+                                         Marco Iannotta[0000−0002−2142−6516] , Johannes A. Stork[0000−0003−3958−6179] ,
+                                        Erik Schaffernicht[0000−0002−0804−8637] , and Todor Stoyanov[0000−0002−6013−4874]
+
+                                                    Center for Applied Autonomous Sensor Systems (AASS),
+arXiv:2503.06309v1 [cs.RO] 8 Mar 2025
+
+
+
+
+                                                    Örebro University, Sweden [firstname.lastname]@oru.se
+
+
+                                              Abstract. With the rising demand for flexible manufacturing, robots
+                                              are increasingly expected to operate in dynamic environments where
+                                              local disturbances—such as slight offsets or size differences in work-
+                                              pieces—are common. We propose to address the problem of adapting
+                                              robot behaviors to these task variations with a sample-efficient hierarchi-
+                                              cal reinforcement learning approach adapting Behavior Tree (BT)-based
+                                              policies. We maintain the core BT properties as an interpretable, mod-
+                                              ular framework for structuring reactive behaviors, but extend their use
+                                              beyond static tasks by inherently accommodating local task variations.
+                                              To show the efficiency and effectiveness of our approach, we conduct
+                                              experiments both in simulation and on a Franka Emika Panda 7-DoF,
+                                              with the manipulator adapting to different obstacle avoidance and piv-
+                                              oting tasks.
+
+                                              Keywords: Behavior Trees · Reinforcement Learning
+
+
+                                        1    Introduction
+                                        In recent years, there has been a growing demand for intelligent autonomous
+                                        systems to drive the adoption of flexible manufacturing processes in industry.
+                                        This shift requires that factory robots are able to adapt to the inherent vari-
+                                        ability of dynamic real-world scenarios and are imbued with intelligence beyond
+                                        simple reproduction of preprogrammed behaviors. While some situations invari-
+                                        ably would require that an intelligent robot change the high-level decision logic
+                                        it follows, many scenarios only feature local disturbances — e.g., a slight offset
+                                        or size difference of a workpiece the robot is picking. In this paper, we consider
+                                        such local disturbances, or task variations, and propose a method to adapt the
+                                        robot’s control policy in response.
+                                            Behavior Trees (BTs) have emerged as a powerful tool in the field of Artificial
+                                        Intelligence for representing and controlling the behavior of autonomous agents
+                                        and robots [9, 16]. BTs offer a hierarchical and modular framework that facil-
+                                        itates the design of reactive behaviors in dynamic environments. Recent work
+                                        has shown the feasibility of learning BT-based policies that work well under con-
+                                        trolled and static conditions [17, 25]. Compared to black-box policies (e.g. neu-
+                                        ral networks), BT-based policies not only provide interpretability of the robot’s
+                                        decision-making process but are also known to be faster and safer to learn [17,25].
+2      M. Iannotta et al.
+
+    However, adapting BT-based policies to novel task variations is challenging.
+Unlike black-box approaches often trained to be robust under different con-
+ditions, BT-based policies are usually designed or learned with a single task in
+mind. To our knowledge, Ahmad et al. [2] is the only work addressing the problem
+of adapting BT-based policies to novel task variations. Yet, their approach re-
+quires solving an optimization problem from scratch for a representative number
+of task variations, which can be prohibitive for problems with high-dimensional
+action spaces or a large space of variations. As the task variations we consider
+are generally local phenomena, there is a strong case for exploring methods that
+transfer experience between task variants during learning.
+    Our main contribution is an efficient method for learning how to adapt BT-
+based policies to novel task variations. We propose a hierarchical approach, where
+an upper-level policy learns to adapt the BT-based lower-level control policy, us-
+ing trial-and-error experience collected on a small set of sample task variations.
+The key concept is conditioning the upper-level policy on a context vector that
+describes the possible task variations, enabling the policy to adjust the robot’s
+behavior accordingly. We train the upper-level policy in a sample-efficient man-
+ner, by adapting online Reinforcement Learning (RL) to operate within the BT
+structure. This enables the policy to exploit prior experience when approaching
+new task variations during training. We evaluate the efficiency of our approach
+in simulation, showing that the convergence time is independent of the number
+of task variations considered during training. This enables training on large sets,
+improving generalization to task variations different from the ones used dur-
+ing training. Moreover, we demonstrate the efficiency and effectiveness of our
+approach by training a policy directly on a Franka Emika Panda robot.
+
+
+2   Related Work
+
+Recent works have explored different BT-based policies, combining BTs with di-
+verse low-level controllers to achieve complex multi-step tasks. Rovida et al. [22]
+combine BTs with Motion Generators to model skills for contact-rich tasks, such
+as inserting a peg into a hole. In [10], we exploit a Stack-of-Tasks control strat-
+egy to decompose a robot skill (e.g., picking an object) into a set of prioritised
+tasks, explicitly and concurrently handled by different BT nodes.
+    Manually configuring the nodes of a BT-based policy for a task can be chal-
+lenging. Most methods introduce parameters in the leaf nodes of a predefined BT
+structure, such as intermediate goal poses of a robot’s end-effector in a manip-
+ulation scenario. These parameters can then be optimized using Policy Search
+methods [7, 12] to achieve the desired robot behavior. Mayr et al. [17] use Co-
+variance Matrix Adaption Strategy to optimize the parameters of the BT-based
+policy proposed in [22], relying on a manually designed BT structure. They train
+in simulation, exploiting domain randomization techniques [26] to bridge the sim-
+to-real gap. Styrud et al. [25] generate BTs by building a reactive tree structure
+with a planner, and then optimizing the parameters with Bayesian Optimization.
+The above methods achieve good results under controlled and static conditions.
+                     On the Fly Adaptation of Behavior Tree-Based Policies        3
+
+Building upon [17], Ahmad et al. [2] tackle adapting BT-based policies to task
+variations. They train a Gaussian process support vector machine combined
+model on a dataset of task variations paired with optimal parameters. During
+inference, the learned model predicts optimal parameters for unseen variations
+on the fly. A key limitation is the training dataset construction, as it requires
+an optimization problem to be solved from scratch for each task variation (for
+example using [17,25]). In contrast, our approach avoids this cost by using online
+RL and sharing experience between task variants during training.
+    Our work can be viewed through the lens of contextual RL [14,18], which as-
+sumes underlying environment variations can be captured by a context, informing
+a generalizable agent to adapt its behavior accordingly. A naive approach con-
+catenates the context directly with the observation [3, 4, 23, 24]. More advanced
+techniques range from learning separate representations for context and state
+before concatenation [6] to using a hypernetwork to adapt the primary network
+weights to the context [5]. While these methods assume agents can observe the
+context, other works have focused on inferring it instead [4, 19]. In our work, we
+assume the context is observable and concatenate it with the observation.
+
+
+3     Learning of adaptive parameterized Behavior
+      Tree-based policies
+
+In this paper, we assume that we are given a predetermined BT policy, composed
+of a number of internal nodes, which dictate execution flow, and leaf nodes, which
+include Action Nodes (ANs) that interact with a low-level robot controller and
+Condition Nodes that check propositions. Further, some of the Action Nodes in
+the tree are parametrized, allowing us to set different values and locally adapt the
+robot behavior. Following terminology in [12], we adopt a hierarchical approach,
+where an upper-level policy selects a set of parameters that are used by a lower-
+level BT-based policy to control the robot (Fig. 1). The key idea is to condition
+the upper-level policy on a context vector encoding task variations, allowing
+it to select suitable parameters for different variations and adjust the robot’s
+behavior accordingly. Using online RL, we learn the upper-level policy efficiently,
+exploiting prior experience on other task variations during training.
+
+
+3.1   Parameterized BT-based Control Policy
+
+The lower-level policy is a BT-based control policy combining a controller with a
+BT. The former is a closed-loop controller that directly modifies the robot state
+(e.g., in a manipulation task a Cartesian or impedance controller). The latter is
+any BT whose ANs set commands to the controller to achieve a multi-step task.
+    Let π contr and π bt be the predefined controller and BT policies, respectively.
+Let A = {a1 , ..., an } be the set of ANs in π bt . Considering sequential BT execu-
+tion, π bt maps a state x to an AN a ∈ A:
+
+                                   π bt : x 7→ a,                               (1)
+4         M. Iannotta et al.
+
+
+                                                            2                            Agent
+     Environment                                                Upper-level policy
+
+                                                                                     3
+
+                                                     Lower-level policy   BT root
+                                                 1
+
+
+
+                                             4
+
+
+
+
+Fig. 1. Overview of our method for learning an agent that adapts to task variations.
+We propose a hierarchical approach, where an upper-level policy πω   up
+                                                                        selects a set of
+parameters that are used by a lower-level BT-based policy πθlow to control the robot.
+The upper-level policy is conditioned on a context vector c encoding task variations, to
+adjust the robot’s behavior accordingly. The environment provides an episodic context
+ce and the state xt . πθlow selects an Action Node ai to execute (1), and queries πω  up
+
+for parameters θ i (2 and 3). Then, ai with parameters θ i is executed until completion
+or until the BT halts it (4). The environment provides a reward r t , which is used to
+update the parameters ω of the upper-level policy and the process is repeated.
+
+
+where x can be composed of both internal states (e.g., joint velocities, end-
+effector pose) and external states (e.g., object locations). The AN a is then
+mapped by π contr to a robot control command u:
+                                    π contr : a 7→ u.                                            (2)
+π low denotes the lower-level BT-based policy that combines the controller π contr
+and the BT π bt to obtain a control command u, given a state x:
+                                     π low : x 7→ u.                                             (3)
+To adapt the robot behavior to task variations, we parameterize π bt with pa-
+rameter vector θ, denoting it as πθbt . This allows us to define an upper-level
+policy that, operating in the parameter space of πθbt , can adjust θ to achieve
+the desired robot behavior. In particular, we introduce parameters only in the
+ANs of the BT, assuming that the Condition Nodes are predefined. Having non-
+parameterized Condition Nodes entails that, for a given input state x, πθbt always
+selects the same AN a. Conversely, a parameterized AN allows for modifications
+to the parameters to directly affect the commands sent by the BT to the con-
+troller. As an example, in a robot manipulation scenario, these parameters may
+represent the target position and orientation of the end-effector. Formally, let
+A = {a1 (θ 1 ), . . . , an (θ n )} be the set of parameterized ANs in πθbt , such that:
+               i
+    – θ i ∈ Rm ∪ {∅} is the parameter vector of AN ai , with i = 1, . . . , n;
+             1           n     m
+           Pn, . . . , iθ ] ∈ R is the stacked parameter vector;
+    – θ = [θ
+    – and i=1 m = m is the dimensionality of θ.
+πθlow denotes the resulting parameterized lower-level BT-based policy, where θ
+is the parameter vector of πθbt .
+                     On the Fly Adaptation of Behavior Tree-Based Policies         5
+
+3.2   Upper-level Policy
+
+The upper-level policy selects parameters θ, used by the lower-level BT-based
+policy to control the robot and execute the task. The two main design concepts
+in our upper-level policy are: dynamic and step-based parameter selection.
+    Dynamic parameter selection. A fixed parameter choice would constrain
+the robot to a single, invariant behavior, which may be suboptimal or fail for even
+slight task variations [5]. Instead, we adjust the robot’s behaviour in response to
+task variations, by making the upper-level policy dynamically select parameters
+for the lower-level policy. To achieve this, we condition the upper-level policy on a
+context vector c ∈ Rc encoding the episodic task variations [12], i.e., all variables
+that remain unchanged within a single task instance but may vary across multiple
+instances. For example, in an obstacle avoidance task, this could represent the
+obstacle size and position. Being context-conditioned, the upper-level policy can
+distinguish between task variations and select parameters specifically.
+    Step-based parameter selection. Given the episodic context, one ap-
+proach to achieving task variation adaptation would be to select all AN pa-
+rameters θ at the beginning of each episode. However, this choice is suboptimal
+for two reasons. Firstly, the action space dimensionality of the upper-level policy
+scales linearly with the number of ANs. Secondly, during learning, the upper-
+level policy receives only episodic rewards, reflecting overall performance across
+the episode. These motivations lead us to define an upper-level policy that se-
+lects parameters only for the currently running AN. Since each AN parameter
+vector may have a different number of components mi , we design the upper-level
+policy to return a vector θ̂ ∈ Rp , where p is the maximum number of components
+among all the parameter vectors associated with the ANs:
+                                                    n
+                                                    X
+                      p = max{m1 , . . . , mn } <         mi = m.                (4)
+                                                    i=1
+
+We condition the upper-level policy on the index i of the AN ai selected by πθlow ,
+allowing the policy to select parameters θ̂ suitable for ai . We include x in the
+state, to differentiate between states with the same context c and index i.
+                                       up
+    The resulting upper-level policy πω   is defined as follows:
+                                  up
+                                 πω  : c, i, x 7→ θ̂,                            (5)
+
+where ω is the policy parameter vector, c ∈ Rc the context vector, i ∈ R the AN
+index selected by πθbt , x the environment state, and θ̂ ∈ Rp the policy action.
+
+
+3.3   Learning
+                                                              up
+We use online RL to efficiently learn the upper-level policy πω  . During learning
+the agent is presented with different task variants at every episode, chosen from
+a limited training set. This enables fast convergence to a generalizable policy,
+leveraging prior experience when facing new variations during training.
+6         M. Iannotta et al.
+
+
+    Algorithm 1: Learning of adaptive parameterized Behavior Tree-based
+    policies.
+   Initialize parameter vector ω and replay buffer R ← ∅.
+    1
+   for e = 1, . . . , episodes do
+    2
+ 3     Receive observation x1 and context ce
+ 4     Select Action Node a1 = πθbt (x1 )
+ 5     for t = 1, . . . , steps and !done do
+ 6          Select parameter vector θ̂ t = πω        up
+                                                         (ce , [at ]id )
+ 7          Select commands ut = π        contr
+                                                   (xt , at (θ̂ t ))
+ 8          Execute commands ut , observe rt and xt+1
+ 9          if done then
+10              at+1 ← none
+11          else
+12              Select next Action Node at+1 = πθbt (xt+1 )
+13          R ← R ∪ {((ce , [at ]id ), θ̂ t , rt , (ce , [at+1 ]id ))}
+14          for j = 1, . . . , iterations do
+15              Sample a random minibatch from R
+16              Update ω
+
+
+
+    Algorithm 1 describes the overall learning procedure, applicable to any off-
+policy RL algorithm. At the beginning of each episode, the environment provides
+the global context ce (line 3). At each time-step t, the BT policy πθbt selects the
+AN at to perform, based on the current environment state xt (lines 4 and 12).
+The upper-level policy πω up
+                             selects optimal parameters θˆt given context ce and
+the index of the selected AN at (line 6). We use [.]id to denote the operator
+that maps from at to index it . Last, π contr executes at with parameters θˆt until
+completion or until halted by the BT when a condition is no longer met (line 8).
+                  up
+Optimization of πω   relies on a replay buffer R, where we collect transitions as:
+
+                               ((ce , [at ]id ), θ̂ t , rt , (ce , [at+1 ]id )),        (6)
+
+                                                                 up
+where (ce , [at ]id ) and (ce , [at+1 ]id ) are the states for πω   at time-step t and t + 1
+                                                   up
+respectively, θ̂ t the action selected by πω at time-step t, and rt the reward
+                                                               up
+provided by the environment (line 13). The policy πω              is optimized by sampling
+a minibatch of transitions from R (lines 15-16).
+
+
+4       Evaluation
+
+In Sec. 4.1, we evaluate our approach in simulation, while in Sec. 4.2 we train
+a policy directly on a physical robot. As BT implementation we use the Behav-
+iorTree.CPP library [1]. For learning, we employ the Soft Actor-Critic (SAC)
+algorithm [13], in its implementation provided by Stable-Baselines3 [21].
+                          On the Fly Adaptation of Behavior Tree-Based Policies          7
+
+
+                                                                        BT root
+
+
+                                                                         →
+                                                                         R
+
+
+
+                                                         No Collision    →
+
+
+
+                    (a)                                                 (b)
+
+Fig. 2. Obstacle avoidance task. 2(a) The objective for a robotic arm is to move its
+end-effector between predetermined start and goal positions (S and G respectively)
+while avoiding a static obstacle. Task variations arise from different obstacle heights
+ho , widths wo , and positions in a horizontal direction xo . 2(b) We design a BT policy
+πθbt with 4 Action Nodes, each performing a linear motion. ∆xi and ∆zi are the goal
+relative coordinates for each motion w.r.t the current position. The last Action Node
+is not parameterized, as the goal location G is predetermined. R denotes a reactive
+control node [9], continuously checking for collisions during motion.
+
+
+
+4.1   Obstacle Avoidance
+
+Task description. The objective for a robotic arm is to move its end-effector
+between predetermined start and goal positions while avoiding collisions with a
+static obstacle in the workspace. Similarly to [2], we introduce task variations by
+alternating between different obstacle heights ho , widths wo , and positions in a
+horizontal direction xo . While the method in [2] controls the end-effector of a 7-
+DoF robot, their task reduces to controlling a point robot on a 2D plane, due to
+the absence of other relevant obstacles or undesirable regions. For simplicity and
+to enable rapid training, we solve the underlying 2-DoF task version directly. We
+implement a simple simulation environment featuring a 2D state space [xt , zt ] ∈
+R2 and a 2D action space [∆xt , ∆zt ] ∈ R2 that allows a low-level control policy
+to command linear motions between different points in the plane (Fig. 2(a)).
+    Lower-level policy. We design a BT policy πθbt with 4 ANs (Fig. 2(b)), each
+performing a linear motion by interpolating between the current and the desired
+position. The first three ANs are parameterized with the x and z coordinates of
+the commanded intermediate goals. The last AN is not parameterized, as the goal
+location G is predetermined. It follows that θ i = [xi , zi ] ∈ R2 , with i = 1, . . . , 3,
+and θ = [x1 , z1 , x2 , z2 , x3 , z3 ] ∈ R6 . This results in a 6D parameter space for
+θ, identical to the action space dimensionality in [2]. The task is successfully
+completed when the final goal location G is reached without collisions.
+    Upper-level policy. We learn the following policy:
+                            up
+                           πω  : [ho , wo , xo ], i, [x, z] 7→ [∆x, ∆z],               (7)
+
+where:
+8         M. Iannotta et al.
+
+    – [ho , wo , xo ] is the context vector c, with ho , wo , xo being the height, width
+      and x coordinate of the bottom left corner of the obstacle, respectively;
+    – [x, z] is the 2D robot position;
+    – [∆x, ∆z] is the output vector θ̂ of the policy, with ∆x and ∆z being the goal
+      relative coordinates for each motion w.r.t the end-effector position.
+
+    Reward function. We employ the same reward function as in [2,17], which
+is a weighted sum of three components: goal distance, collision avoidance, and
+task completion. The goal distance component rg rewards proximity to the goal
+position, while the collision avoidance component rc penalizes proximity to the
+obstacle. For more details on these two components, refer to [17]. Lastly, the
+task completion component rewards successful task completion by optimizing
+the number of steps taken. It is defined as rs (n_steps) = max _steps − n_steps,
+where max _steps = 200 and n_steps is the total number of way-points inter-
+polated from S. We compute rg and rc for each interpolated way-point until
+reaching the goal or colliding with an obstacle, while rs is considered only upon
+reaching the goal position. This ensures the policy focuses first on finding a
+collision-free path to the goal and then optimizing the path length.
+    Training. To assess the scalability of our approach, we train 5 different
+policies, increasing the number of task variations considered during training
+(Fig. 3(a)). We use the same task variation ranges considered in [2], employing
+Latin hypercube sampling. As a baseline, we train a SAC policy that directly
+selects local actions without utilizing any prior task knowledge encoded in the
+BT. This baseline allows us to highlight the efficiency advantage of our BT-
+based approach (BT-SAC ) and to establish a benchmark for evaluating the
+generalization capability of our method in terms of reward-based performance.
+    Furthermore, to investigate the efficiency advantage of a step-based param-
+eter selection, we compare our upper-level policy with an episode-based one
+(Fig. 3(b)). This policy maps the context [ho , wo , xo ] to the parameters θ of all
+ANs at the beginning of each episode, receiving a cumulative episodic reward for
+the entire executed trajectory. To emphasize the difference between the policies,
+we increase the task difficulty by introducing a forbidden area 10cm above the
+obstacle, triggering BT failure upon robot entry. We compare the policies on an
+increasing number of intermediate goals (i.e., ANs in Fig. 2(b)), to evaluate their
+scalability on the number of components of θ. Specifically, we consider 3, 4, 5,
+and 6 intermediate goals, resulting in a 6D, 8D, 10D, and 12D parameter space
+for θ, respectively, while keeping the number of training contexts fixed at 20.
+    Evaluation. We assess to what extent the policies learned on a different
+number of contexts in Fig. 3(a) can adapt to task variations not encountered
+during training. For this purpose, we evaluate their performance on 20 novel
+task variations, sampled using Latin Hypercube Sampling from the same train-
+ing ranges with a different seed. For both our BT-SAC and SAC, we evaluate the
+final models obtained at the end of training. Additionally, as baselines, we train
+three new policies on the 20 validation task variations: BT-SAC, SAC and a
+BT-based policy optimized through Bayesian Optimization (BT-BO) as in [25],
+in its implementation provided by [20]. These baselines show the performance
+                                On the Fly Adaptation of Behavior Tree-Based Policies                                9
+
+
+                 1500                                                        # goals=3
+
+
+
+
+        Reward
+                                                                     1500
+
+
+
+
+                                                            Reward
+                 1000
+                                                BT-SAC               1000
+                  500
+                                                SAC
+                           # contexts=1                               500                          step-based
+                    0
+                                                                                                   episode-based
+                 1500                                                   0
+        Reward
+                 1000                                                        # goals=4
+                                                                     1500
+
+
+
+
+                                                            Reward
+                  500
+                           # contexts=5                              1000
+                    0
+
+                 1500                                                 500
+        Reward
+
+
+
+
+                 1000                                                   0
+
+                  500                                                        # goals=5
+                                                                     1500
+                           # contexts=10
+
+
+
+
+                                                            Reward
+                    0
+                                                                     1000
+                 1500
+        Reward
+
+
+
+
+                 1000                                                 500
+
+                  500                                                   0
+                           # contexts=20                                     # goals=6
+                    0                                                1500
+
+
+
+
+                                                            Reward
+                 1500
+        Reward
+
+
+
+
+                                                                     1000
+                 1000
+                                                                      500
+                  500
+                           # contexts=30                                0
+                    0
+                     0   1000   2000   3000   4000   5000                0        500     1000      1500      2000
+                                 Episode                                                 Episode
+                                 (a)                                                     (b)
+
+Fig. 3. Learning curves for the obstacle avoidance task obtained by periodically eval-
+uating policies on all training contexts. The solid line and shaded region represent the
+mean and standard deviation, respectively (10 replicates). Fig. 3(a) compares our BT-
+based policy with a standard SAC policy on an increasing number of training contexts.
+The dashed line indicates our policy convergence (i.e., reward improvement over the
+last 150 episodes < 2%). Fig. 3(b) compares our step-based upper-level policy with an
+episode-based one on an increasing number of intermediate goals (ANs in Fig. 2(b)).
+
+
+achievable if the policies were trained specifically on the validation set. We are
+unable to conduct a fair direct comparison of reward-based performance with [2],
+due to the limited details provided on their training implementation. However,
+BT-BO enables an indirect comparison with [2], as their training data is gener-
+ated via black-box optimization, and their model can attain, at most, the reward
+achieved by the optimizer. The evaluation results are shown in Table 1.
+    Analysis. Analysis of the learning curves reveals two main key findings.
+Firstly, Fig. 3(a) shows that our BT-based approach exhibits consistent con-
+vergence behavior, reaching convergence within a similar number of episodes
+irrespective of the considered number of task variations. This provides a clear
+advantage compared to the state-of-the-art [2], which scales linearly with the
+number of task variations considered during training, as it requires solving an
+optimization problem from scratch for each training task variation. In contrast,
+our method enables the policy to exploit prior experience when facing new task
+variations during training, facilitating training on larger sets to improve its gen-
+eralization ability. We also observe that our approach converges faster and with
+less variance than SAC, due to the prior knowledge encoded in the BT — namely,
+10        M. Iannotta et al.
+
+     Table 1. Performance obstacle avoidance task. BT-SAC refers to our approach.
+
+         # contexts                  Reward                           # collisions
+                           BT-SAC      SAC        BT-BO   BT-SAC         SAC         BT-BO
+              1           1163 ± 65 653 ± 185       -     5.4 ± 1.0    7.2 ± 6.3       -
+              5           1417 ± 122 1370 ± 251     -     2.2 ± 1.8    3.6 ± 3.5       -
+             10           1443 ± 142 1550 ± 130     -     1.8 ± 2.2    1.0 ± 1.7       -
+             20           1560 ± 21 1590 ± 73       -     0.0 ± 0.0    0.4 ± 0.8       -
+             30           1567 ± 16 1577 ± 98       -     0.0 ± 0.0    0.0 ± 0.0       -
+
+ Trained on validation set 1559 ± 13 1632 ± 31 1608 ± 4 0.0 ± 0.0 0.0 ± 0.0 0.0 ± 0.0
+
+
+
+the task decomposition into three linear motions — which simplifies learning.
+Secondly, Fig. 3(b) shows the efficiency advantage of a step-based parameter
+selection. The step-based policy exhibits faster convergence and lower variance,
+while the episode-based policy suffers from the curse of dimensionality, ultimately
+failing to learn to complete the task with 6 intermediate goals.
+     Inspection of Table 1 indicates a clear trend: as the number of task varia-
+tions increases, so do the generalization capabilities of the policies. In contrast to
+SAC, our BT-SAC policies trained on 20 and 30 task variations achieve perfor-
+mance comparable to the corresponding ones trained directly on the validation
+set. Both policies trained on 30 contexts do not appear to yield additional ad-
+vantages, indicating an optimal basis of task variations beyond which further
+experience is redundant. While simplifying learning, the BT prior knowledge
+limits the policy’s expressiveness, leading to suboptimal performance, justifying
+the higher reward observed with SAC. This observation is further supported by
+the BT-BO performance, which shares the same underlying structure as BT-SAC
+and also underperforms compared to SAC. Finally, although BT-BO achieves
+marginally better performance than BT-SAC, it shares a key limitation with
+the episode-based upper-level policy analyzed in Fig. 3(b): susceptibility to the
+curse of dimensionality. This arises because it operates on the entire BT param-
+eter space, leading to a decrease in performance with an increasing number of
+BT parameters. This is also a limitation of [2], as their training data is likewise
+generated through black-box optimization.
+
+
+4.2     Pivoting
+
+Task description. The objective for a robotic arm is to manipulate an object
+adjacent to a wall, using the wall as a pivot to rotate the object by 90 degrees
+(Fig. 4). Recent works highlight the challenge of learning policies that generalize
+effectively across diverse variations of this task [8, 11, 27, 28]. We collect multiple
+boxes, constructing a dataset that comprises 16 different box sizes, whose range
+spans from 12.2cm to 20.5cm, with weights between 15g and 87g.
+    Lower-level policy. As low-level controller π contr , we use a Cartesian impe-
+dance controller, commonly used for contact-rich tasks as it regulates interaction
+forces and motions, ensuring stable and compliant interaction with the environ-
+ment [15]. We design a BT πθbt to command 4 linear motions, each in a different
+                      On the Fly Adaptation of Behavior Tree-Based Policies           11
+
+
+
+
+Fig. 4. Illustration of an object pivoting task being executed on a Franka Emika Panda
+7-DoF manipulator. We perform 4 motions in the x-z plane, by commanding goal rela-
+tive coordinates w.r.t. the current end-effector position. Solid arrows denote directions
+along which the goal relative coordinate is learned. The grey dashed line shows the
+overall trajectory.
+
+
+AN (Fig. 4). The first AN is not parameterized and aims to detect the box size.
+Starting from a predetermined position, the end-effector is commanded to ad-
+vance linearly along the x-axis until encountering the object. To accomplish this
+detection, we employ a Condition Node that evaluates whether the force exerted
+on the end-effector exceeds a specified threshold. Once contact with the object
+is detected, we use the x coordinate of the end-effector position as a context,
+allowing the upper-level policy to distinguish between different box sizes. The
+following 2 ANs are parameterized with the x and z coordinates of the inter-
+mediate goals to be commanded, while the last AN is parameterized only with
+the z coordinate. This is because the final goal coordinate x4 does not need to
+be learned, as it does not depend on the box size and can therefore be fixed.
+It follows that θ 1 ∈ {∅}, θ i = [xi , zi ] ∈ R2 , with i = 2, 3, and θ 4 = [z4 ] ∈ R,
+thus θ = [x2 , z2 , x3 , z3 , z4 ] ∈ R5 . The task is successfully completed when the
+end-effector reaches x4 without having dropped the box. For this purpose, we
+design a Condition Node, that triggers the BT failure if the box is dropped.
+    Upper-level policy. We learn the following policy:
+                             up
+                            πω  : [x1 ], i, [x, z] 7→ [∆x, ∆z],                      (8)
+where:
+ – [x1 ] is the context vector, with x1 being the x coordinate of the end-effector
+   when the box is detected;
+ – [x, z] is the 2D end-effector position;
+ – [∆x, ∆z] is the policy output vector θ̂, with ∆x and ∆z being the goal
+   relative coordinates for each motion w.r.t the initial end-effector position.
+    Reward function. We use a sum of three components: goal distance, ex-
+ploration incentive, and task completion. The goal distance component rewards
+proximity to the goal position, as in [17], but computes the distance only be-
+tween the last motion point and the goal coordinate x4 , independent of the box
+12         M. Iannotta et al.
+
+                Table 2. Pivoting task. Highlighted cells indicate training boxes.
+
+
+
+
+              .2
+             .5
+             .8
+             .0
+                                .0
+                                .5
+                                          .7
+                                          .2
+                                                   .5
+                                                        .7
+                                                              .5
+                                                              .0
+                                                              .8
+                                                                           .6
+                                                                            .5
+                                                                                    .5
+           12
+           12
+           12
+           13
+                              14
+                              14
+                                       14
+                                       15
+                                                15
+                                                     15
+                                                            16
+                                                            17
+                                                            17
+                                                                         18
+                                                                         19
+                                                                                  20
+     πi     ✓     ✓   ✓   ✓   ✓    ✓    ✓   ✓    ✓      ✓    ✓   ✓   ✓    ✓   ✓    ✓ 16/16
+
+     πes    ✓     ✓   ✓   ✓   ✓    ✓    ✓   ✓    ✓      ✓    ✓   ✗   ✗    ✗   ✗    ✗ 11/16
+     πel    ✗     ✗   ✓   ✗   ✓    ✓    ✓   ✓    ✓      ✓    ✓   ✓   ✓    ✓   ✓    ✓ 13/16
+
+
+
+size. To encourage exploration, the exploration incentive component penalizes
+trajectories shorter than 1cm by adding a fixed negative reward. Not being in-
+terested in optimizing the trajectory length, we consider a fixed positive reward
+upon task completion, instead of the path length-dependent one used in Sec. 4.1.
+    Training. We train 3 policies on 4 different box sizes each to explore the
+generalization capabilities of our approach. We assess interpolation by training
+a policy πi on a set spanning the entire context range with the smallest, largest,
+and two intermediate sizes. To evaluate extrapolation, we train the other two
+policies on extreme context ranges, using the 4 smallest sizes for πes and the
+4 largest for πel . We train each policy from scratch on a Franka Emika Panda
+7-DoF manipulator by cycling through its training set and positioning a different
+box in the same location at each episode. For each policy, we perform 80 random
+exploration steps plus 80 training steps, totalling about an hour of training.
+    Evaluation and analysis. We evaluate each policy on the entire dataset,
+with results in Table 2. All policies have learned to successfully flip the boxes pro-
+vided during training (highlighted in green in Table 2). As expected, πi achieves
+the best generalization, completing the task for all the boxes in the dataset.
+The other two policies show similar effectiveness in generalizing to distances of
+around 3/3.5cm from the training boxes. πel performs slightly better in terms
+of success rate, due to the uneven distribution of box sizes in the dataset.
+
+
+5     Conclusion
+
+In this work, we introduce an efficient method for learning how to adapt BT-
+based control policies to unseen task variations. We propose a hierarchical ap-
+proach, where an upper-level policy selects a set of parameters, which are then
+used by the corresponding lower-level BT-based policy to control the robot. By
+conditioning the upper-level policy on a context vector that encodes possible
+task variations, the upper-level policy can adjust the robot’s behavior accord-
+ingly. We exploit online RL to train the upper-level policy in a sample-efficient
+manner. Experiments in simulation and on a physical robot demonstrate the
+efficiency and effectiveness of our approach. One limitation is the assumption
+of non-parameterized Condition Nodes, which may hinder adaptation in some
+real-world scenarios. Future work should explore integrating learnability into
+Condition Nodes for more adaptive robot behavior.
+                      On the Fly Adaptation of Behavior Tree-Based Policies           13
+
+Acknowledgments. This work was supported in part by Industrial Graduate School
+Collaborative AI & Robotics (CoAIRob), in part by the Swedish Knowledge Foundation
+under Grant Dnr:20190128, and the Knut and Alice Wallenberg Foundation through
+Wallenberg AI, Autonomous Systems and Software Program (WASP).
+
+Disclosure of Interests. The authors have no competing interests to declare that
+are relevant to the content of this article.
+
+
+References
+ 1. BehaviorTree.CPP, https://www.behaviortree.dev/
+ 2. Ahmad, F., Mayr, M., Krueger, V.: Learning to adapt the parameters of behavior
+    trees and motion generators (btmgs) to task variations. In: 2023 IEEE/RSJ Inter-
+    national Conference on Intelligent Robots and Systems (IROS). pp. 10133–10140
+    (2023)
+ 3. Ball, P.J., Lu, C., Parker-Holder, J., Roberts, S.: Augmented world models fa-
+    cilitate zero-shot dynamics generalization from a single offline environment. In:
+    International Conference on Machine Learning. pp. 619–629. PMLR (2021)
+ 4. Benjamins, C., Eimer, T., Schubert, F., Mohan, A., Döhler, S., Biedenkapp, A.,
+    Rosenhahn, B., Hutter, F., Lindauer, M.: Contextualize me – the case for context
+    in reinforcement learning. Transactions on Machine Learning Research (2023)
+ 5. Beukman, M., Jarvis, D., Klein, R., James, S., Rosman, B.: Dynamics generali-
+    sation in reinforcement learning via adaptive context-aware policies. In: Thirty-
+    seventh Conference on Neural Information Processing Systems (2023)
+ 6. Biedenkapp, A., Speck, D., Sievers, S., Hutter, F., Lindauer, M., Seipp, J.: Learning
+    domain-independent policies for open list selection. In: ICAPS 2022 Workshop on
+    Bridging the Gap Between AI Planning and Reinforcement Learning (PRL) (2022)
+ 7. Chatzilygeroudis, K., Vassiliades, V., Stulp, F., Calinon, S., Mouret, J.B.: A survey
+    on policy search algorithms for learning robot controllers in a handful of trials.
+    IEEE Transactions on Robotics 36(2), 328–347 (2020)
+ 8. Chavan-Dafle, N., Rodriguez, A.: Sampling-based planning of in-hand manipula-
+    tion with external pushes. In: Amato, N.M., Hager, G., Thomas, S., Torres-Torriti,
+    M. (eds.) Robotics Research. pp. 523–539. Springer International Publishing, Cham
+    (2020)
+ 9. Colledanchise, M., Ögren, P.: Behavior trees in robotics and AI: an introduction.
+    CoRR abs/1709.00084 (2017)
+10. Cáceres Domínguez, D., Iannotta, M., Stork, J.A., Schaffernicht, E., Stoyanov, T.:
+    A stack-of-tasks approach combined with behavior trees: A new framework for
+    robot control. IEEE Robotics and Automation Letters 7(4), 12110–12117 (2022)
+11. Dafle, N.C., Rodriguez, A., Paolini, R., Tang, B., Srinivasa, S.S., Erdmann, M.,
+    Mason, M.T., Lundberg, I., Staab, H., Fuhlbrigge, T.: Extrinsic dexterity: In-hand
+    manipulation with external forces. In: 2014 IEEE International Conference on
+    Robotics and Automation (ICRA). pp. 1578–1585 (2014)
+12. Deisenroth, M.P., Neumann, G., Peters, J.: A Survey on Policy Search for Robotics
+    (2013)
+13. Haarnoja, T., Zhou, A., Abbeel, P., Levine, S.: Soft actor-critic: Off-policy max-
+    imum entropy deep reinforcement learning with a stochastic actor. In: Dy, J.,
+    Krause, A. (eds.) Proceedings of the 35th International Conference on Machine
+    Learning. Proceedings of Machine Learning Research, vol. 80, pp. 1861–1870.
+    PMLR (10–15 Jul 2018)
+14      M. Iannotta et al.
+
+14. Hallak, A., Di Castro, D., Mannor, S.: Contextual markov decision processes.
+    arXiv:1502.02259 [stats.ML] (2015)
+15. Hogan, N.: Impedance control: An approach to manipulation. In: 1984 American
+    Control Conference. pp. 304–313 (1984)
+16. Iovino, M., Scukins, E., Styrud, J., Ögren, P., Smith, C.: A survey of behavior trees
+    in robotics and AI. CoRR abs/2005.05842 (2020)
+17. Mayr, M., Chatzilygeroudis, K., Ahmad, F., Nardi, L., Krueger, V.: Learning of
+    parameters in behavior trees for movement skills. In: 2021 IEEE/RSJ International
+    Conference on Intelligent Robots and Systems (IROS). pp. 7572–7579 (2021)
+18. Modi, A., Jiang, N., Singh, S., Tewari, A.: Markov decision processes with contin-
+    uous side information. In: Janoos, F., Mohri, M., Sridharan, K. (eds.) Proceedings
+    of Algorithmic Learning Theory. vol. 83, pp. 597–618 (2018)
+19. Ndir, T.C., Biedenkapp, A., Awad, N.: Inferring behavior-specific context improves
+    zero-shot generalization in reinforcement learning (2024)
+20. Nogueira, F.: Bayesian Optimization: Open source constrained global optimiza-
+    tion tool for Python (2014–), https://github.com/bayesian-optimization/
+    BayesianOptimization
+21. Raffin, A., Hill, A., Gleave, A., Kanervisto, A., Ernestus, M., Dormann, N.: Stable-
+    baselines3: Reliable reinforcement learning implementations. Journal of Machine
+    Learning Research 22(268), 1–8 (2021)
+22. Rovida, F., Wuthier, D., Grossmann, B., Fumagalli, M., Krüger, V.: Motion gener-
+    ators combined with behavior trees: A novel approach to skill modelling. In: 2018
+    IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS).
+    pp. 5964–5971 (2018)
+23. Seyed Ghasemipour, S.K., Gu, S.S., Zemel, R.: Smile: Scalable meta inverse re-
+    inforcement learning through context-conditional policies. In: Advances in Neural
+    Information Processing Systems. vol. 32 (2019)
+24. Sodhani, S., Zhang, A., Pineau, J.: Multi-task reinforcement learning with context-
+    based representations. In: Meila, M., Zhang, T. (eds.) Proceedings of the 38th
+    International Conference on Machine Learning. vol. 139, pp. 9767–9779 (2021)
+25. Styrud, J., Mayr, M., Hellsten, E., Krueger, V., Smith, C.: Bebop-combining re-
+    active planning and bayesian optimization to solve robotic manipulation tasks. In:
+    2024 IEEE International Conference on Robotics and Automation (ICRA). pp.
+    16459–16466 (2024)
+26. Tobin, J., Fong, R., Ray, A., Schneider, J., Zaremba, W., Abbeel, P.: Domain
+    randomization for transferring deep neural networks from simulation to the real
+    world. p. 23–30. IEEE Press (2017)
+27. Yang, S.M., Magnusson, M., Stork, J.A., Stoyanov, T.: Learning extrinsic dexterity
+    with parameterized manipulation primitives (2023)
+28. Zhou, W., Held, D.: Learning to grasp the ungraspable with emergent extrinsic
+    dexterity. In: 6th Annual Conference on Robot Learning (2022)
+

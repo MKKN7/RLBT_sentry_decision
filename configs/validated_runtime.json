@@ -1,0 +1,16 @@
+{
+  "interpreter": "/home/kellen/anaconda3/envs/robot/bin/python",
+  "checked_on": "2026-11-16",
+  "packages": {
+    "numpy": "1.26.4",
+    "scipy": "1.17.1",
+    "torch": "2.6.0+cu118",
+    "onnx": "1.22.0",
+    "onnxruntime": "1.18.1",
+    "pytest": "9.0.2",
+    "matplotlib": "3.11.1",
+    "tensorboard": "2.20.0"
+  },
+  "new_packages_installed": false,
+  "GPU_used_by_phase1_training": false
+}

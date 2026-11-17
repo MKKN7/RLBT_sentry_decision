@@ -1,0 +1,733 @@
+{
+  "date": "2026-11-16",
+  "scope": "UC local multi-stage curriculum actual CPU training, fixed evaluation and export",
+  "source_and_document_files": [
+    "README.md",
+    "configs/training_design.json",
+    "configs/uc_support_training_schedule_v1.json",
+    "configs/uc_support_policy_schema_v1.json",
+    "docs/20_uc_support_training.md",
+    "rl_bt/uc_support_env.py",
+    "rl_bt/uc_support_policy.py",
+    "scripts/prepare_uc_support_training.py",
+    "scripts/train_uc_support.py",
+    "scripts/evaluate_uc_support.py",
+    "scripts/export_uc_support_actor.py",
+    "scripts/report_uc_support_training.py",
+    "scripts/report_competition_readiness.py",
+    "tests/test_prepare_uc_support_training.py",
+    "tests/test_uc_support_env.py",
+    "tests/test_uc_support_training.py"
+  ],
+  "artifacts": [
+    {
+      "path": "data/derived/uc_support_training_v1/data.npz",
+      "bytes": 10261,
+      "sha256": "2c06a2cb91c9b7576522c554c9d8ea768cfb764372bece88ec6cb7b9ff4558a9"
+    },
+    {
+      "path": "data/derived/uc_support_training_v1/execution_calibration.json",
+      "bytes": 9061,
+      "sha256": "1466d52e25d0aa64bd79e2d702e30b9bd0f3cdfbb1bad6cb1948e255648dc9e2"
+    },
+    {
+      "path": "data/derived/uc_support_training_v1/manifest.json",
+      "bytes": 1699,
+      "sha256": "e8027db24e3d6aefda30b1f5ebc2a9f0a352032feb95a4f698848624dbb87a8b"
+    },
+    {
+      "path": "data/derived/uc_support_training_v1/metadata.json",
+      "bytes": 37549,
+      "sha256": "3787cb04abc9420cbaa609b900ed72b35933a600f78e7181cdd6a3b2847a46f7"
+    },
+    {
+      "path": "data/derived/uc_support_training_v1/splits.json",
+      "bytes": 2194,
+      "sha256": "a847deabdf55d26526d29f9dca516f4053f96d10bee32b62a3984d63ce5f0bfe"
+    },
+    {
+      "path": "data/derived/uc_support_training_v1/verification.json",
+      "bytes": 2738,
+      "sha256": "cbb8a6bc2c856c797f1cc314ad38de68deb515ed292baafaf700a44a00502cf3"
+    },
+    {
+      "path": "data/reports/competition_readiness_20261116.json",
+      "bytes": 4302,
+      "sha256": "39e829101ab5f6ab21a7c36a709e0dc84f8b687078a980597dc44b37a9181c33"
+    },
+    {
+      "path": "data/reports/uc_support_training_20261116.json",
+      "bytes": 19252,
+      "sha256": "4a582ae813bb11bb3a52c6e40dc772438a22a68c7c69f136cd3e85cf8599b3cc"
+    },
+    {
+      "path": "runs/uc_support_multistage_32768_20261116/actor.onnx",
+      "bytes": 53598,
+      "sha256": "260dc96b9694e9893ee5267b41a3c0803202fae41f37a73e942784aa4abff0f5"
+    },
+    {
+      "path": "runs/uc_support_multistage_32768_20261116/bt_warmstart.npz",
+      "bytes": 300889,
+      "sha256": "7f15aa63891f807f023af99fb282cf6aac0ba6144ac082aaa1ef6e2cb7e6552f"
+    },
+    {
+      "path": "runs/uc_support_multistage_32768_20261116/bt_warmstart_report.json",
+      "bytes": 1374,
+      "sha256": "666556cd7912015eecab3c94c893454ba4818c45507b490312398248fd5d2bb0"
+    },
+    {
+      "path": "runs/uc_support_multistage_32768_20261116/comparison.json",
+      "bytes": 1638,
+      "sha256": "c34dd55068b3304ebabbe4c018c3d337ae0331b4ecc1c42300851ead123596fa"
+    },
+    {
+      "path": "runs/uc_support_multistage_32768_20261116/config.json",
+      "bytes": 8535,
+      "sha256": "cb2380dc81c7c6370ee0beba27f5d2a8adc2b4a72d4fe1595db42d7b45c16dca"
+    },
+    {
+      "path": "runs/uc_support_multistage_32768_20261116/episodes.jsonl",
+      "bytes": 2430209,
+      "sha256": "3b8e3594c189abb0cb402078b596a18c392d309f6bdaf7504d0702a2588330ba"
+    },
+    {
+      "path": "runs/uc_support_multistage_32768_20261116/evaluation.json",
+      "bytes": 239450,
+      "sha256": "a47027cf4b6b45f7a4ed2c79524e2f5e0fc65ff2c1a60515b485f35b24f5c682"
+    },
+    {
+      "path": "runs/uc_support_multistage_32768_20261116/evaluation_test.json",
+      "bytes": 464858,
+      "sha256": "8aeaf25b7a7d4833eed086cb7c2ba12e234aee958c58a1e56cf54a6d6bdfac6a"
+    },
+    {
+      "path": "runs/uc_support_multistage_32768_20261116/export_verification.json",
+      "bytes": 793,
+      "sha256": "8170cafbdb8bfd3fde64923c448238b29cf1783a8e8a54f23dc0006375c9eb0d"
+    },
+    {
+      "path": "runs/uc_support_multistage_32768_20261116/final.pt",
+      "bytes": 1318187,
+      "sha256": "f1b095e1e947db74314e83c12d234be9ca4d7f52502902729503ba302b0c0da7"
+    },
+    {
+      "path": "runs/uc_support_multistage_32768_20261116/initial.pt",
+      "bytes": 107817,
+      "sha256": "e24aa7b44b540c4bbbf99712f42729a9ab61a5c89ce7f48bb1881214c6cec48d"
+    },
+    {
+      "path": "runs/uc_support_multistage_32768_20261116/latest.pt",
+      "bytes": 1318187,
+      "sha256": "8d25d4994ac8d7d8e0af27ad721d04d389617d014327f373c52ea364e2377bd0"
+    },
+    {
+      "path": "runs/uc_support_multistage_32768_20261116/resume.jsonl",
+      "bytes": 213,
+      "sha256": "c7d3a82334d11b27fe15f283f5223338858b00a7bec9c08d81143bf143023507"
+    },
+    {
+      "path": "runs/uc_support_multistage_32768_20261116/rounds/32768/config.json",
+      "bytes": 8535,
+      "sha256": "cb2380dc81c7c6370ee0beba27f5d2a8adc2b4a72d4fe1595db42d7b45c16dca"
+    },
+    {
+      "path": "runs/uc_support_multistage_32768_20261116/rounds/32768/episodes.jsonl",
+      "bytes": 1207333,
+      "sha256": "56f024c60a03032e36e9ab96ca93095a6ecf1191f569e8dc9873a7fbd9146711"
+    },
+    {
+      "path": "runs/uc_support_multistage_32768_20261116/rounds/32768/evaluation.json",
+      "bytes": 239420,
+      "sha256": "14eb6d0f88d8393786f1c4e1418f750afe2cc7fccf3c44c06b9ddb2664274b0c"
+    },
+    {
+      "path": "runs/uc_support_multistage_32768_20261116/rounds/32768/final.pt",
+      "bytes": 790891,
+      "sha256": "2636a687c7e9099245f6a88ee2bca9d2efb61a19dcb7b2d1e24ca6b91fa7eb7c"
+    },
+    {
+      "path": "runs/uc_support_multistage_32768_20261116/rounds/32768/status.json",
+      "bytes": 5599,
+      "sha256": "9bd7d36304bd67f3c6ed78d2dec0f0fee06a0d22b30cdecf8c3a3b5a12384a2e"
+    },
+    {
+      "path": "runs/uc_support_multistage_32768_20261116/rounds/32768/summary.json",
+      "bytes": 5599,
+      "sha256": "9bd7d36304bd67f3c6ed78d2dec0f0fee06a0d22b30cdecf8c3a3b5a12384a2e"
+    },
+    {
+      "path": "runs/uc_support_multistage_32768_20261116/rounds/32768/train.jsonl",
+      "bytes": 89059,
+      "sha256": "d12fb94401f04566c0945bd05805b4eff1cf28a79bf588c0fbf171aa4aed78ac"
+    },
+    {
+      "path": "runs/uc_support_multistage_32768_20261116/source/dataset/execution_calibration.json",
+      "bytes": 9061,
+      "sha256": "1466d52e25d0aa64bd79e2d702e30b9bd0f3cdfbb1bad6cb1948e255648dc9e2"
+    },
+    {
+      "path": "runs/uc_support_multistage_32768_20261116/source/dataset/manifest.json",
+      "bytes": 1699,
+      "sha256": "e8027db24e3d6aefda30b1f5ebc2a9f0a352032feb95a4f698848624dbb87a8b"
+    },
+    {
+      "path": "runs/uc_support_multistage_32768_20261116/source/dataset/metadata.json",
+      "bytes": 37549,
+      "sha256": "3787cb04abc9420cbaa609b900ed72b35933a600f78e7181cdd6a3b2847a46f7"
+    },
+    {
+      "path": "runs/uc_support_multistage_32768_20261116/source/dataset/splits.json",
+      "bytes": 2194,
+      "sha256": "a847deabdf55d26526d29f9dca516f4053f96d10bee32b62a3984d63ce5f0bfe"
+    },
+    {
+      "path": "runs/uc_support_multistage_32768_20261116/source/dataset/verification.json",
+      "bytes": 2738,
+      "sha256": "cbb8a6bc2c856c797f1cc314ad38de68deb515ed292baafaf700a44a00502cf3"
+    },
+    {
+      "path": "runs/uc_support_multistage_32768_20261116/source/evaluate_uc_support.py",
+      "bytes": 2911,
+      "sha256": "c668b90a0d56d962ae41946898f29f8f06e93a6f4a52c6fd9365cde00cc15ffa"
+    },
+    {
+      "path": "runs/uc_support_multistage_32768_20261116/source/rl_bt/__init__.py",
+      "bytes": 81,
+      "sha256": "01ab044bd576e4dc10d85e5f67b41b38d419e5f1aec6611d86ed201f33f55cb8"
+    },
+    {
+      "path": "runs/uc_support_multistage_32768_20261116/source/rl_bt/alpharm_task_env.py",
+      "bytes": 17268,
+      "sha256": "ed77f2f432388593f6eefd914338f887823e317773d85ba5b17c93aaf9ae3221"
+    },
+    {
+      "path": "runs/uc_support_multistage_32768_20261116/source/rl_bt/contracts.py",
+      "bytes": 1040,
+      "sha256": "1b9bef4da0347bf5c52d62b8dff7c039c84327d19add973a3fd5e9d675c1c95e"
+    },
+    {
+      "path": "runs/uc_support_multistage_32768_20261116/source/rl_bt/economy.py",
+      "bytes": 6577,
+      "sha256": "3c3218d49d50ab3150744c2e9eedc1ce5bc7e7f85962e3b259c5454bd8a69890"
+    },
+    {
+      "path": "runs/uc_support_multistage_32768_20261116/source/rl_bt/estimated_twist.py",
+      "bytes": 4540,
+      "sha256": "618db35cfcc411926d4dc465282f4fda1306f9e221c29b972d164b30cf6fd8b2"
+    },
+    {
+      "path": "runs/uc_support_multistage_32768_20261116/source/rl_bt/geometry.py",
+      "bytes": 5327,
+      "sha256": "8ba0448a8ef43235c79653e6c5a58f17cded6a9b089107284c90d5b7bde0bfbb"
+    },
+    {
+      "path": "runs/uc_support_multistage_32768_20261116/source/rl_bt/healing.py",
+      "bytes": 6251,
+      "sha256": "f7e3e5c9b1d11acea18b2323e6aa2647e89d18444185e03e38140d4a6f69d3d2"
+    },
+    {
+      "path": "runs/uc_support_multistage_32768_20261116/source/rl_bt/layered_geometry.py",
+      "bytes": 6146,
+      "sha256": "9259301340f9a68c4f237977b6860c20a6c8c138bd67ca6136fa53c2fcaf16fc"
+    },
+    {
+      "path": "runs/uc_support_multistage_32768_20261116/source/rl_bt/mesh_navigation.py",
+      "bytes": 11525,
+      "sha256": "aba31e38e1900e88312311e837a9f476f6cce6b3fb96cde9791512a493067bb1"
+    },
+    {
+      "path": "runs/uc_support_multistage_32768_20261116/source/rl_bt/nav2_mujoco.py",
+      "bytes": 10064,
+      "sha256": "ae3a622d394bc182445d05ee4c8e41fe1ffe1c05669e4a19bc36f7cd89bf8033"
+    },
+    {
+      "path": "runs/uc_support_multistage_32768_20261116/source/rl_bt/nav2_transport.py",
+      "bytes": 2035,
+      "sha256": "55520c30280efff19eb3152e5e87cc20eccbfc1946de33d29be3b34a77dfaa00"
+    },
+    {
+      "path": "runs/uc_support_multistage_32768_20261116/source/rl_bt/navigation_contract.py",
+      "bytes": 15904,
+      "sha256": "2fb7e56c7108495d8846dfe10340667c7a306e9ccb5e8b14bad5a7ec151bfcd1"
+    },
+    {
+      "path": "runs/uc_support_multistage_32768_20261116/source/rl_bt/policy.py",
+      "bytes": 2300,
+      "sha256": "20879e34e8753dbb4b04a5cb1a425a9c564c3e500fbd599ed8038ebdc2462d08"
+    },
+    {
+      "path": "runs/uc_support_multistage_32768_20261116/source/rl_bt/referee_protocol.py",
+      "bytes": 5249,
+      "sha256": "7f1ed6265f9c3e7051cf97396f3930694f2d9938d055da3d1a9e58e7d434e344"
+    },
+    {
+      "path": "runs/uc_support_multistage_32768_20261116/source/rl_bt/resource_executor.py",
+      "bytes": 4110,
+      "sha256": "68b5ac43d1022b4f1ea936e915302779c9cbfa2fe535ca381cf046771f04bbd2"
+    },
+    {
+      "path": "runs/uc_support_multistage_32768_20261116/source/rl_bt/reward_components.py",
+      "bytes": 7645,
+      "sha256": "0c949af5b0102fc87901060577286bc62e75877e328f6ce4d9b34be0570ec882"
+    },
+    {
+      "path": "runs/uc_support_multistage_32768_20261116/source/rl_bt/rewards.py",
+      "bytes": 2409,
+      "sha256": "a7ab15578289ae450cf1c41ecff422d1af5ccd0c14015aa3a640cdbe0c71dbe4"
+    },
+    {
+      "path": "runs/uc_support_multistage_32768_20261116/source/rl_bt/scan_registration.py",
+      "bytes": 11553,
+      "sha256": "a36fa9d04f59e26e7087cdfe77e8659decf744fc92eeb1af65d8fcb5881adf52"
+    },
+    {
+      "path": "runs/uc_support_multistage_32768_20261116/source/rl_bt/support_costmap.py",
+      "bytes": 11948,
+      "sha256": "aa4f4c89049968f87092baf8a5807f48fc7891911b75b28b9a964e71045481db"
+    },
+    {
+      "path": "runs/uc_support_multistage_32768_20261116/source/rl_bt/terrain_worker.py",
+      "bytes": 16126,
+      "sha256": "33d0ab46544051bb9f4581f93536f3eeeba4aea44b99b22768be8fefba4078eb"
+    },
+    {
+      "path": "runs/uc_support_multistage_32768_20261116/source/rl_bt/uc_field_reference.py",
+      "bytes": 1885,
+      "sha256": "8a81ba01a1b60afff0db82ffbadc80a9cdaf724150cc25ffcbffe4f336ab914b"
+    },
+    {
+      "path": "runs/uc_support_multistage_32768_20261116/source/rl_bt/uc_rules.py",
+      "bytes": 5242,
+      "sha256": "8da3710913dedc66c1e55d5f1b43b1191bd27ce5bb4d09f33f247169e97e8c31"
+    },
+    {
+      "path": "runs/uc_support_multistage_32768_20261116/source/rl_bt/uc_support_env.py",
+      "bytes": 19964,
+      "sha256": "fe4edb522a3dc4195c76a41b6970595c0986e67b3d0c1c2a7a0439e993dec8cd"
+    },
+    {
+      "path": "runs/uc_support_multistage_32768_20261116/source/rl_bt/uc_support_policy.py",
+      "bytes": 1163,
+      "sha256": "aeaa9fbf0124953ed7b25e50e9c8c7be1b482749e8493e56a4ea87c51d706e60"
+    },
+    {
+      "path": "runs/uc_support_multistage_32768_20261116/source/rl_bt/ul_curriculum_policy.py",
+      "bytes": 4043,
+      "sha256": "91ddfdecfee3867b980dec207276ec6e79db384a2fa278f3ce91d8ac9eea6cbf"
+    },
+    {
+      "path": "runs/uc_support_multistage_32768_20261116/source/rl_bt/ul_navigation.py",
+      "bytes": 14045,
+      "sha256": "6c8155bd5582fda600620df492619a17dc7f96b93235be609dcdeb1bdb0c5de9"
+    },
+    {
+      "path": "runs/uc_support_multistage_32768_20261116/source/rl_bt/ul_observation.py",
+      "bytes": 6897,
+      "sha256": "a7cb3b7f7a1097c1a06f29fac21fcb0bbc82ae9c3041141fcdda626ede6d178d"
+    },
+    {
+      "path": "runs/uc_support_multistage_32768_20261116/source/rl_bt/ul_rules.py",
+      "bytes": 9599,
+      "sha256": "5c8127066bc862c47c3c8593914fb5849fec700ac205809ee32e1ac18016b9b7"
+    },
+    {
+      "path": "runs/uc_support_multistage_32768_20261116/source/rl_bt/ul_task_env.py",
+      "bytes": 22122,
+      "sha256": "a3691e68519435d85020af229138893a34946958dc635d5968819d42fd69ddce"
+    },
+    {
+      "path": "runs/uc_support_multistage_32768_20261116/source/rl_bt/voxel_terrain.py",
+      "bytes": 14948,
+      "sha256": "7e30160046bd491b483f35d088867d340f919376e27ab3bdb30b0850741fd343"
+    },
+    {
+      "path": "runs/uc_support_multistage_32768_20261116/source/scripts/train_uc_support.py",
+      "bytes": 30984,
+      "sha256": "1364afc553c952c4490a1b78c93c9249d533705ad11e9ae266f40649f6f19e6f"
+    },
+    {
+      "path": "runs/uc_support_multistage_32768_20261116/source/scripts/train_ul_curriculum.py",
+      "bytes": 22097,
+      "sha256": "9105f1e32abc43638549836f7c2dd40870c6df09cae872b4fd9b7aa5da4f53ee"
+    },
+    {
+      "path": "runs/uc_support_multistage_32768_20261116/source/training_schedule.json",
+      "bytes": 1172,
+      "sha256": "c8894dba636bd0cc99d5f7ea23cb9c55cd763358319f5ccc11a766994fa0c01d"
+    },
+    {
+      "path": "runs/uc_support_multistage_32768_20261116/status.json",
+      "bytes": 5613,
+      "sha256": "cea70eb21cb2f1c7f6f27e659ecc8e41bce89c1b992ff3dac54142d1b685d931"
+    },
+    {
+      "path": "runs/uc_support_multistage_32768_20261116/summary.json",
+      "bytes": 5613,
+      "sha256": "cea70eb21cb2f1c7f6f27e659ecc8e41bce89c1b992ff3dac54142d1b685d931"
+    },
+    {
+      "path": "runs/uc_support_multistage_32768_20261116/tb/events.out.tfevents.1794821727.Radar.1337032.0",
+      "bytes": 169070,
+      "sha256": "61dfb5e9ff69640cebf4b02e6466edbc1edae2ecbe1c704ce491241dfb81603b"
+    },
+    {
+      "path": "runs/uc_support_multistage_32768_20261116/tb/events.out.tfevents.1794821887.Radar.1339968.0",
+      "bytes": 170533,
+      "sha256": "d17b22f91c2965d6462fce1a44fe9c3bb0da2a43c99a8b5eab9bd297a884fb04"
+    },
+    {
+      "path": "runs/uc_support_multistage_32768_20261116/train.jsonl",
+      "bytes": 177767,
+      "sha256": "6ac6751504576014e8f9b74951a3d7d4f26040361fc9693b75c5708dd129d701"
+    },
+    {
+      "path": "runs/uc_support_multistage_32768_20261116/training_curves.png",
+      "bytes": 368329,
+      "sha256": "753c89f113e336d41c4ad8d21640e3544f49a12fc2cf30aade6f22a15211f9a5"
+    },
+    {
+      "path": "runs/uc_support_multistage_32768_20261116/training_report.md",
+      "bytes": 5297,
+      "sha256": "99ec178d4f499ae6fee587f07fccead872a38c85f12cfe18e980d6ebb10c8f1a"
+    },
+    {
+      "path": "runs/uc_support_multistage_32768_20261116/untrained.pt",
+      "bytes": 107817,
+      "sha256": "f30d1baba07f24862bd2900152e39d6a676307606bada765ffaf3219e67f6a82"
+    },
+    {
+      "path": "runs/uc_support_multistage_32768_20261116/validation_failure_traces.json",
+      "bytes": 109606,
+      "sha256": "89654bdf6516e53aa593d0eb90516d41aaa706d704ba498eb458c6226f438a61"
+    },
+    {
+      "path": "runs/uc_support_multistage_32768_20261116/verification.json",
+      "bytes": 797,
+      "sha256": "c753ff9cb1e3365b1f2aa53a94f4beb27788a75a0a94e4e4ccea4bd7bd7eb90e"
+    },
+    {
+      "path": "runs/uc_support_multistage_smoke_20261116/bt_warmstart.npz",
+      "bytes": 36279,
+      "sha256": "cd360fc7226bb3757670c41e15067f530b5dd34fbcdf7b4bd1d82c2011ebe54c"
+    },
+    {
+      "path": "runs/uc_support_multistage_smoke_20261116/bt_warmstart_report.json",
+      "bytes": 507,
+      "sha256": "8b60c3994fc16030af6a22182163f5d427f6b054aec7cb4342effe4f77d4f757"
+    },
+    {
+      "path": "runs/uc_support_multistage_smoke_20261116/config.json",
+      "bytes": 7982,
+      "sha256": "448f6ddd6766bd3a5957a9b6c2a964d4e515b6f785467439f696f6d14ad850bc"
+    },
+    {
+      "path": "runs/uc_support_multistage_smoke_20261116/episodes.jsonl",
+      "bytes": 6234,
+      "sha256": "4c0c813e8763c0e0995d8b3b2cc29a71d6adfe2b7e0bd80058cf8e6098ba285d"
+    },
+    {
+      "path": "runs/uc_support_multistage_smoke_20261116/final.pt",
+      "bytes": 251371,
+      "sha256": "633122502f55a729e797ca97fa43db360494e7deeba405d69bda427b5ae97dae"
+    },
+    {
+      "path": "runs/uc_support_multistage_smoke_20261116/initial.pt",
+      "bytes": 100777,
+      "sha256": "d2d1de3cc58059ed8cae80ed4637d591b66ac303c959615af528c3890360e5ef"
+    },
+    {
+      "path": "runs/uc_support_multistage_smoke_20261116/source/dataset/execution_calibration.json",
+      "bytes": 9061,
+      "sha256": "1466d52e25d0aa64bd79e2d702e30b9bd0f3cdfbb1bad6cb1948e255648dc9e2"
+    },
+    {
+      "path": "runs/uc_support_multistage_smoke_20261116/source/dataset/manifest.json",
+      "bytes": 1699,
+      "sha256": "e8027db24e3d6aefda30b1f5ebc2a9f0a352032feb95a4f698848624dbb87a8b"
+    },
+    {
+      "path": "runs/uc_support_multistage_smoke_20261116/source/dataset/metadata.json",
+      "bytes": 37549,
+      "sha256": "3787cb04abc9420cbaa609b900ed72b35933a600f78e7181cdd6a3b2847a46f7"
+    },
+    {
+      "path": "runs/uc_support_multistage_smoke_20261116/source/dataset/splits.json",
+      "bytes": 2194,
+      "sha256": "a847deabdf55d26526d29f9dca516f4053f96d10bee32b62a3984d63ce5f0bfe"
+    },
+    {
+      "path": "runs/uc_support_multistage_smoke_20261116/source/dataset/verification.json",
+      "bytes": 2738,
+      "sha256": "cbb8a6bc2c856c797f1cc314ad38de68deb515ed292baafaf700a44a00502cf3"
+    },
+    {
+      "path": "runs/uc_support_multistage_smoke_20261116/source/rl_bt/__init__.py",
+      "bytes": 81,
+      "sha256": "01ab044bd576e4dc10d85e5f67b41b38d419e5f1aec6611d86ed201f33f55cb8"
+    },
+    {
+      "path": "runs/uc_support_multistage_smoke_20261116/source/rl_bt/alpharm_task_env.py",
+      "bytes": 17268,
+      "sha256": "ed77f2f432388593f6eefd914338f887823e317773d85ba5b17c93aaf9ae3221"
+    },
+    {
+      "path": "runs/uc_support_multistage_smoke_20261116/source/rl_bt/contracts.py",
+      "bytes": 1040,
+      "sha256": "1b9bef4da0347bf5c52d62b8dff7c039c84327d19add973a3fd5e9d675c1c95e"
+    },
+    {
+      "path": "runs/uc_support_multistage_smoke_20261116/source/rl_bt/economy.py",
+      "bytes": 6577,
+      "sha256": "3c3218d49d50ab3150744c2e9eedc1ce5bc7e7f85962e3b259c5454bd8a69890"
+    },
+    {
+      "path": "runs/uc_support_multistage_smoke_20261116/source/rl_bt/estimated_twist.py",
+      "bytes": 4540,
+      "sha256": "618db35cfcc411926d4dc465282f4fda1306f9e221c29b972d164b30cf6fd8b2"
+    },
+    {
+      "path": "runs/uc_support_multistage_smoke_20261116/source/rl_bt/geometry.py",
+      "bytes": 5327,
+      "sha256": "8ba0448a8ef43235c79653e6c5a58f17cded6a9b089107284c90d5b7bde0bfbb"
+    },
+    {
+      "path": "runs/uc_support_multistage_smoke_20261116/source/rl_bt/healing.py",
+      "bytes": 6251,
+      "sha256": "f7e3e5c9b1d11acea18b2323e6aa2647e89d18444185e03e38140d4a6f69d3d2"
+    },
+    {
+      "path": "runs/uc_support_multistage_smoke_20261116/source/rl_bt/layered_geometry.py",
+      "bytes": 6146,
+      "sha256": "9259301340f9a68c4f237977b6860c20a6c8c138bd67ca6136fa53c2fcaf16fc"
+    },
+    {
+      "path": "runs/uc_support_multistage_smoke_20261116/source/rl_bt/mesh_navigation.py",
+      "bytes": 11525,
+      "sha256": "aba31e38e1900e88312311e837a9f476f6cce6b3fb96cde9791512a493067bb1"
+    },
+    {
+      "path": "runs/uc_support_multistage_smoke_20261116/source/rl_bt/nav2_mujoco.py",
+      "bytes": 10064,
+      "sha256": "ae3a622d394bc182445d05ee4c8e41fe1ffe1c05669e4a19bc36f7cd89bf8033"
+    },
+    {
+      "path": "runs/uc_support_multistage_smoke_20261116/source/rl_bt/nav2_transport.py",
+      "bytes": 2035,
+      "sha256": "55520c30280efff19eb3152e5e87cc20eccbfc1946de33d29be3b34a77dfaa00"
+    },
+    {
+      "path": "runs/uc_support_multistage_smoke_20261116/source/rl_bt/navigation_contract.py",
+      "bytes": 15904,
+      "sha256": "2fb7e56c7108495d8846dfe10340667c7a306e9ccb5e8b14bad5a7ec151bfcd1"
+    },
+    {
+      "path": "runs/uc_support_multistage_smoke_20261116/source/rl_bt/policy.py",
+      "bytes": 2300,
+      "sha256": "20879e34e8753dbb4b04a5cb1a425a9c564c3e500fbd599ed8038ebdc2462d08"
+    },
+    {
+      "path": "runs/uc_support_multistage_smoke_20261116/source/rl_bt/referee_protocol.py",
+      "bytes": 5249,
+      "sha256": "7f1ed6265f9c3e7051cf97396f3930694f2d9938d055da3d1a9e58e7d434e344"
+    },
+    {
+      "path": "runs/uc_support_multistage_smoke_20261116/source/rl_bt/resource_executor.py",
+      "bytes": 4110,
+      "sha256": "68b5ac43d1022b4f1ea936e915302779c9cbfa2fe535ca381cf046771f04bbd2"
+    },
+    {
+      "path": "runs/uc_support_multistage_smoke_20261116/source/rl_bt/reward_components.py",
+      "bytes": 7645,
+      "sha256": "0c949af5b0102fc87901060577286bc62e75877e328f6ce4d9b34be0570ec882"
+    },
+    {
+      "path": "runs/uc_support_multistage_smoke_20261116/source/rl_bt/rewards.py",
+      "bytes": 2409,
+      "sha256": "a7ab15578289ae450cf1c41ecff422d1af5ccd0c14015aa3a640cdbe0c71dbe4"
+    },
+    {
+      "path": "runs/uc_support_multistage_smoke_20261116/source/rl_bt/scan_registration.py",
+      "bytes": 11553,
+      "sha256": "a36fa9d04f59e26e7087cdfe77e8659decf744fc92eeb1af65d8fcb5881adf52"
+    },
+    {
+      "path": "runs/uc_support_multistage_smoke_20261116/source/rl_bt/support_costmap.py",
+      "bytes": 11948,
+      "sha256": "aa4f4c89049968f87092baf8a5807f48fc7891911b75b28b9a964e71045481db"
+    },
+    {
+      "path": "runs/uc_support_multistage_smoke_20261116/source/rl_bt/terrain_worker.py",
+      "bytes": 16126,
+      "sha256": "33d0ab46544051bb9f4581f93536f3eeeba4aea44b99b22768be8fefba4078eb"
+    },
+    {
+      "path": "runs/uc_support_multistage_smoke_20261116/source/rl_bt/uc_field_reference.py",
+      "bytes": 1885,
+      "sha256": "8a81ba01a1b60afff0db82ffbadc80a9cdaf724150cc25ffcbffe4f336ab914b"
+    },
+    {
+      "path": "runs/uc_support_multistage_smoke_20261116/source/rl_bt/uc_rules.py",
+      "bytes": 5242,
+      "sha256": "8da3710913dedc66c1e55d5f1b43b1191bd27ce5bb4d09f33f247169e97e8c31"
+    },
+    {
+      "path": "runs/uc_support_multistage_smoke_20261116/source/rl_bt/uc_support_env.py",
+      "bytes": 19247,
+      "sha256": "13ad936fe9cafad12ed3d4170d61bf5696bf92cce57e4424bdb655ca54319670"
+    },
+    {
+      "path": "runs/uc_support_multistage_smoke_20261116/source/rl_bt/ul_curriculum_policy.py",
+      "bytes": 4043,
+      "sha256": "91ddfdecfee3867b980dec207276ec6e79db384a2fa278f3ce91d8ac9eea6cbf"
+    },
+    {
+      "path": "runs/uc_support_multistage_smoke_20261116/source/rl_bt/ul_navigation.py",
+      "bytes": 14045,
+      "sha256": "6c8155bd5582fda600620df492619a17dc7f96b93235be609dcdeb1bdb0c5de9"
+    },
+    {
+      "path": "runs/uc_support_multistage_smoke_20261116/source/rl_bt/ul_observation.py",
+      "bytes": 6897,
+      "sha256": "a7cb3b7f7a1097c1a06f29fac21fcb0bbc82ae9c3041141fcdda626ede6d178d"
+    },
+    {
+      "path": "runs/uc_support_multistage_smoke_20261116/source/rl_bt/ul_rules.py",
+      "bytes": 9599,
+      "sha256": "5c8127066bc862c47c3c8593914fb5849fec700ac205809ee32e1ac18016b9b7"
+    },
+    {
+      "path": "runs/uc_support_multistage_smoke_20261116/source/rl_bt/ul_task_env.py",
+      "bytes": 22122,
+      "sha256": "a3691e68519435d85020af229138893a34946958dc635d5968819d42fd69ddce"
+    },
+    {
+      "path": "runs/uc_support_multistage_smoke_20261116/source/rl_bt/voxel_terrain.py",
+      "bytes": 14948,
+      "sha256": "7e30160046bd491b483f35d088867d340f919376e27ab3bdb30b0850741fd343"
+    },
+    {
+      "path": "runs/uc_support_multistage_smoke_20261116/source/scripts/train_uc_support.py",
+      "bytes": 28560,
+      "sha256": "622d49116b1f2f2bb67e9a5140cc922c9b287aded14c33120c8f06210afcd13b"
+    },
+    {
+      "path": "runs/uc_support_multistage_smoke_20261116/source/scripts/train_ul_curriculum.py",
+      "bytes": 22097,
+      "sha256": "9105f1e32abc43638549836f7c2dd40870c6df09cae872b4fd9b7aa5da4f53ee"
+    },
+    {
+      "path": "runs/uc_support_multistage_smoke_20261116/status.json",
+      "bytes": 489,
+      "sha256": "36d780e1c5c1010a6f387f4bf15816873060214a3f08d1273174b05d5ecb1db0"
+    },
+    {
+      "path": "runs/uc_support_multistage_smoke_20261116/summary.json",
+      "bytes": 489,
+      "sha256": "36d780e1c5c1010a6f387f4bf15816873060214a3f08d1273174b05d5ecb1db0"
+    },
+    {
+      "path": "runs/uc_support_multistage_smoke_20261116/tb/events.out.tfevents.1794821601.Radar.1334958.0",
+      "bytes": 2706,
+      "sha256": "a580e51e27dbdb0099687c913be5e6b47e187949590aa63a39d59a7b9cb60356"
+    },
+    {
+      "path": "runs/uc_support_multistage_smoke_20261116/train.jsonl",
+      "bytes": 1465,
+      "sha256": "82aad6160f7ac6344fe897161e89404b2c683279b477de76f742c23b73f2e410"
+    },
+    {
+      "path": "runs/uc_support_multistage_smoke_20261116/untrained.pt",
+      "bytes": 100777,
+      "sha256": "24f9d7ca30e175e5f83e2cecff290e980fa4c6167955af227824d9c19386177f"
+    }
+  ],
+  "source_hashes": [
+    {
+      "path": "README.md",
+      "bytes": 10064,
+      "sha256": "7ac3459140403bcb0e2e0c697d275a24825bafb339275ca5fb003182312a2ff8"
+    },
+    {
+      "path": "configs/training_design.json",
+      "bytes": 19590,
+      "sha256": "13ad703dc18ff05babb7582ee40a8b02e782dec3b0c500e26106612f471aaec0"
+    },
+    {
+      "path": "configs/uc_support_training_schedule_v1.json",
+      "bytes": 1172,
+      "sha256": "c8894dba636bd0cc99d5f7ea23cb9c55cd763358319f5ccc11a766994fa0c01d"
+    },
+    {
+      "path": "configs/uc_support_policy_schema_v1.json",
+      "bytes": 1652,
+      "sha256": "5af0ab49cf014b1355cecc9ddb837ca8c9f77415b0d8341f3e083a0d9163c6cc"
+    },
+    {
+      "path": "docs/20_uc_support_training.md",
+      "bytes": 8598,
+      "sha256": "ca3497b3c7731eb9b4cc75980a2ba554c1e9edc60c5b81b09e935aacf8313784"
+    },
+    {
+      "path": "rl_bt/uc_support_env.py",
+      "bytes": 19964,
+      "sha256": "fe4edb522a3dc4195c76a41b6970595c0986e67b3d0c1c2a7a0439e993dec8cd"
+    },
+    {
+      "path": "rl_bt/uc_support_policy.py",
+      "bytes": 1163,
+      "sha256": "aeaa9fbf0124953ed7b25e50e9c8c7be1b482749e8493e56a4ea87c51d706e60"
+    },
+    {
+      "path": "scripts/prepare_uc_support_training.py",
+      "bytes": 19784,
+      "sha256": "0ee1612fa956db5f0a0cc51f58917985386f0730ad8b6b2bc322da70b22e1a97"
+    },
+    {
+      "path": "scripts/train_uc_support.py",
+      "bytes": 30984,
+      "sha256": "1364afc553c952c4490a1b78c93c9249d533705ad11e9ae266f40649f6f19e6f"
+    },
+    {
+      "path": "scripts/evaluate_uc_support.py",
+      "bytes": 2911,
+      "sha256": "c668b90a0d56d962ae41946898f29f8f06e93a6f4a52c6fd9365cde00cc15ffa"
+    },
+    {
+      "path": "scripts/export_uc_support_actor.py",
+      "bytes": 4233,
+      "sha256": "145c93f69632f00eaffe7190166b63c25b8e9915a3f920a2b69fce41a0a58117"
+    },
+    {
+      "path": "scripts/report_uc_support_training.py",
+      "bytes": 13641,
+      "sha256": "cfd9292dd52e383069c9d38473f976d28344f8e4277508bf01b1f72c7a1c16d7"
+    },
+    {
+      "path": "scripts/report_competition_readiness.py",
+      "bytes": 6616,
+      "sha256": "f8139edfc8cb55322759d0309d7ed7278760e3593c6cef40c689b1212a17f087"
+    },
+    {
+      "path": "tests/test_prepare_uc_support_training.py",
+      "bytes": 2877,
+      "sha256": "4cad21d26310a416be7a75eb5803aad9ac13dee48da4dd818c6eb80a47d5cb71"
+    },
+    {
+      "path": "tests/test_uc_support_env.py",
+      "bytes": 3953,
+      "sha256": "eeee3badf18a30aa9474a53846c48e9669b3b6ce1b8004926d1fcd5c63847cc9"
+    },
+    {
+      "path": "tests/test_uc_support_training.py",
+      "bytes": 8499,
+      "sha256": "50c09b5b505ca59e29054322782f1828292fbddd7ec7d39e9211d723fa8ccb8c"
+    }
+  ],
+  "not_modified": [
+    "original navigation project",
+    "original robot parameters",
+    "UL checkpoints",
+    "GPU or unrelated training processes"
+  ],
+  "verification": "runs/uc_support_multistage_32768_20261116/verification.json"
+}

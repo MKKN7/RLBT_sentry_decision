@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "comparison": "128 uninterrupted decisions vs 64 + checkpoint + 64 resumed",
+  "environment_count": 4,
+  "sampling_workers": 4,
+  "model_max_abs_difference": 0.0,
+  "all_second_rollout_arrays_exactly_equal": true,
+  "numpy_rng_equal": true,
+  "torch_rng_equal": true,
+  "notes": [
+    "Local runtime/RNG checkpoints resume exactly; old 4096 checkpoint cannot restore absent state and restarts episode stream."
+  ]
+}

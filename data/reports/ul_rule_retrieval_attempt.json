@@ -1,0 +1,22 @@
+{
+  "checked_on": "2026-11-15",
+  "resource_hub_snapshot": "data/references/rm_wiki.html",
+  "observed_menu_entry": {
+    "key": 50179206,
+    "postsId": 1969150,
+    "title": "RMUL 2027 比赛规则文件 Competition Rules"
+  },
+  "attempts": [
+    {
+      "url": "https://bbs.robomaster.com/wiki/50179206",
+      "http_status": 500,
+      "page_error": "Fetch failed due to hard timeout 5000ms: /rest/wiki/info/50179206"
+    },
+    {
+      "url": "https://bbs.robomaster.com/rest/wiki/info/50179206",
+      "http_status": 404
+    }
+  ],
+  "official_UL_manual_obtained": false,
+  "official_UL_rule_values_inferred_from_alphaRM": false
+}

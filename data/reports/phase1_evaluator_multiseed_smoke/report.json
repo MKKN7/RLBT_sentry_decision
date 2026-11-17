@@ -1,0 +1,853 @@
+{
+  "scenario_id": "alpharm_task_prototype_v1",
+  "official_competition_profile": null,
+  "checkpoint": "/home/kellen/桌面/RL_BT_decision/runs/phase1_bt_warmstart_20261115/latest.pt",
+  "checkpoint_sha256": "e9422e6a186895c2995bc7fa5ffcbc34c0bf45ccab25eadadde733194ff2f6e9",
+  "training_decisions": 4096,
+  "evaluation_split": "validation",
+  "evaluation_seeds": [
+    11001,
+    11002
+  ],
+  "styles": [
+    "capture"
+  ],
+  "sides": [
+    0,
+    1
+  ],
+  "randomization": true,
+  "learned_action_selection": "deterministic_argmax",
+  "trace": "none",
+  "paired_on": [
+    "seed",
+    "style",
+    "side"
+  ],
+  "evaluator_sha256": "f65a5f8374238eab52106da10af634929b5100df288ba5bd22b6df0b886a31ee",
+  "evaluation_seed": null,
+  "wall_s": 26.52768172393553,
+  "groups": {
+    "bt_baseline/all_styles": {
+      "episodes": 4,
+      "wins": 4,
+      "win_rate": 1.0,
+      "win_rate_wilson_95": [
+        0.5101091635454165,
+        1.0
+      ],
+      "draws": 0,
+      "mean_return": 10.931934638940827,
+      "mean_switches": 4.0,
+      "mean_overrides": 10.25,
+      "mean_recoveries": 1.25,
+      "independent_seeds": 2,
+      "win_rate_seed_bootstrap_95": [
+        1.0,
+        1.0
+      ]
+    },
+    "learned/all_styles": {
+      "episodes": 4,
+      "wins": 4,
+      "win_rate": 1.0,
+      "win_rate_wilson_95": [
+        0.5101091635454165,
+        1.0
+      ],
+      "draws": 0,
+      "mean_return": 11.020474600793838,
+      "mean_switches": 2.0,
+      "mean_overrides": 10.0,
+      "mean_recoveries": 1.0,
+      "independent_seeds": 2,
+      "win_rate_seed_bootstrap_95": [
+        1.0,
+        1.0
+      ]
+    },
+    "bt_baseline/seen_styles": {
+      "episodes": 4,
+      "wins": 4,
+      "win_rate": 1.0,
+      "win_rate_wilson_95": [
+        0.5101091635454165,
+        1.0
+      ],
+      "draws": 0,
+      "mean_return": 10.931934638940827,
+      "mean_switches": 4.0,
+      "mean_overrides": 10.25,
+      "mean_recoveries": 1.25,
+      "independent_seeds": 2,
+      "win_rate_seed_bootstrap_95": [
+        1.0,
+        1.0
+      ]
+    },
+    "learned/seen_styles": {
+      "episodes": 4,
+      "wins": 4,
+      "win_rate": 1.0,
+      "win_rate_wilson_95": [
+        0.5101091635454165,
+        1.0
+      ],
+      "draws": 0,
+      "mean_return": 11.020474600793838,
+      "mean_switches": 2.0,
+      "mean_overrides": 10.0,
+      "mean_recoveries": 1.0,
+      "independent_seeds": 2,
+      "win_rate_seed_bootstrap_95": [
+        1.0,
+        1.0
+      ]
+    },
+    "bt_baseline/held_out_style": {
+      "episodes": 0,
+      "wins": 0,
+      "win_rate": null,
+      "win_rate_wilson_95": [
+        null,
+        null
+      ],
+      "draws": 0,
+      "mean_return": null,
+      "independent_seeds": 0,
+      "win_rate_seed_bootstrap_95": [
+        null,
+        null
+      ]
+    },
+    "learned/held_out_style": {
+      "episodes": 0,
+      "wins": 0,
+      "win_rate": null,
+      "win_rate_wilson_95": [
+        null,
+        null
+      ],
+      "draws": 0,
+      "mean_return": null,
+      "independent_seeds": 0,
+      "win_rate_seed_bootstrap_95": [
+        null,
+        null
+      ]
+    }
+  },
+  "paired": {
+    "all_styles": {
+      "pairs": 4,
+      "independent_seeds": 2,
+      "learned_wins_bt_does_not": 0,
+      "bt_wins_learned_does_not": 0,
+      "same_win_indicator": 4,
+      "learned_minus_bt": {
+        "win_difference": {
+          "mean": 0.0,
+          "seed_bootstrap_95": [
+            0.0,
+            0.0
+          ],
+          "per_seed": [
+            {
+              "seed": 11001,
+              "mean": 0.0
+            },
+            {
+              "seed": 11002,
+              "mean": 0.0
+            }
+          ]
+        },
+        "match_points_difference": {
+          "mean": 0.0,
+          "seed_bootstrap_95": [
+            0.0,
+            0.0
+          ],
+          "per_seed": [
+            {
+              "seed": 11001,
+              "mean": 0.0
+            },
+            {
+              "seed": 11002,
+              "mean": 0.0
+            }
+          ]
+        },
+        "return_difference": {
+          "mean": 0.08853996185301094,
+          "seed_bootstrap_95": [
+            0.005819390014361048,
+            0.17126053369166083
+          ],
+          "per_seed": [
+            {
+              "seed": 11001,
+              "mean": 0.005819390014361048
+            },
+            {
+              "seed": 11002,
+              "mean": 0.17126053369166083
+            }
+          ]
+        }
+      },
+      "interpretation": "Matched trials against the same opponent, not direct RL-vs-BT games."
+    },
+    "seen_styles": {
+      "pairs": 4,
+      "independent_seeds": 2,
+      "learned_wins_bt_does_not": 0,
+      "bt_wins_learned_does_not": 0,
+      "same_win_indicator": 4,
+      "learned_minus_bt": {
+        "win_difference": {
+          "mean": 0.0,
+          "seed_bootstrap_95": [
+            0.0,
+            0.0
+          ],
+          "per_seed": [
+            {
+              "seed": 11001,
+              "mean": 0.0
+            },
+            {
+              "seed": 11002,
+              "mean": 0.0
+            }
+          ]
+        },
+        "match_points_difference": {
+          "mean": 0.0,
+          "seed_bootstrap_95": [
+            0.0,
+            0.0
+          ],
+          "per_seed": [
+            {
+              "seed": 11001,
+              "mean": 0.0
+            },
+            {
+              "seed": 11002,
+              "mean": 0.0
+            }
+          ]
+        },
+        "return_difference": {
+          "mean": 0.08853996185301094,
+          "seed_bootstrap_95": [
+            0.005819390014361048,
+            0.17126053369166083
+          ],
+          "per_seed": [
+            {
+              "seed": 11001,
+              "mean": 0.005819390014361048
+            },
+            {
+              "seed": 11002,
+              "mean": 0.17126053369166083
+            }
+          ]
+        }
+      },
+      "interpretation": "Matched trials against the same opponent, not direct RL-vs-BT games."
+    },
+    "held_out_style": {
+      "pairs": 0,
+      "independent_seeds": 0,
+      "learned_wins_bt_does_not": 0,
+      "bt_wins_learned_does_not": 0,
+      "same_win_indicator": 0,
+      "learned_minus_bt": {
+        "win_difference": {
+          "mean": null,
+          "seed_bootstrap_95": [
+            null,
+            null
+          ],
+          "per_seed": []
+        },
+        "match_points_difference": {
+          "mean": null,
+          "seed_bootstrap_95": [
+            null,
+            null
+          ],
+          "per_seed": []
+        },
+        "return_difference": {
+          "mean": null,
+          "seed_bootstrap_95": [
+            null,
+            null
+          ],
+          "per_seed": []
+        }
+      },
+      "interpretation": "Matched trials against the same opponent, not direct RL-vs-BT games."
+    }
+  },
+  "by_style": {
+    "capture": {
+      "paired": {
+        "pairs": 4,
+        "independent_seeds": 2,
+        "learned_wins_bt_does_not": 0,
+        "bt_wins_learned_does_not": 0,
+        "same_win_indicator": 4,
+        "learned_minus_bt": {
+          "win_difference": {
+            "mean": 0.0,
+            "seed_bootstrap_95": [
+              0.0,
+              0.0
+            ],
+            "per_seed": [
+              {
+                "seed": 11001,
+                "mean": 0.0
+              },
+              {
+                "seed": 11002,
+                "mean": 0.0
+              }
+            ]
+          },
+          "match_points_difference": {
+            "mean": 0.0,
+            "seed_bootstrap_95": [
+              0.0,
+              0.0
+            ],
+            "per_seed": [
+              {
+                "seed": 11001,
+                "mean": 0.0
+              },
+              {
+                "seed": 11002,
+                "mean": 0.0
+              }
+            ]
+          },
+          "return_difference": {
+            "mean": 0.08853996185301094,
+            "seed_bootstrap_95": [
+              0.005819390014361048,
+              0.17126053369166083
+            ],
+            "per_seed": [
+              {
+                "seed": 11001,
+                "mean": 0.005819390014361048
+              },
+              {
+                "seed": 11002,
+                "mean": 0.17126053369166083
+              }
+            ]
+          }
+        },
+        "interpretation": "Matched trials against the same opponent, not direct RL-vs-BT games."
+      },
+      "bt_baseline": {
+        "episodes": 4,
+        "wins": 4,
+        "win_rate": 1.0,
+        "win_rate_wilson_95": [
+          0.5101091635454165,
+          1.0
+        ],
+        "draws": 0,
+        "mean_return": 10.931934638940827,
+        "mean_switches": 4.0,
+        "mean_overrides": 10.25,
+        "mean_recoveries": 1.25,
+        "independent_seeds": 2,
+        "win_rate_seed_bootstrap_95": [
+          1.0,
+          1.0
+        ]
+      },
+      "learned": {
+        "episodes": 4,
+        "wins": 4,
+        "win_rate": 1.0,
+        "win_rate_wilson_95": [
+          0.5101091635454165,
+          1.0
+        ],
+        "draws": 0,
+        "mean_return": 11.020474600793838,
+        "mean_switches": 2.0,
+        "mean_overrides": 10.0,
+        "mean_recoveries": 1.0,
+        "independent_seeds": 2,
+        "win_rate_seed_bootstrap_95": [
+          1.0,
+          1.0
+        ]
+      }
+    }
+  },
+  "by_side": {
+    "0": {
+      "paired": {
+        "pairs": 2,
+        "independent_seeds": 2,
+        "learned_wins_bt_does_not": 0,
+        "bt_wins_learned_does_not": 0,
+        "same_win_indicator": 2,
+        "learned_minus_bt": {
+          "win_difference": {
+            "mean": 0.0,
+            "seed_bootstrap_95": [
+              0.0,
+              0.0
+            ],
+            "per_seed": [
+              {
+                "seed": 11001,
+                "mean": 0.0
+              },
+              {
+                "seed": 11002,
+                "mean": 0.0
+              }
+            ]
+          },
+          "match_points_difference": {
+            "mean": 0.0,
+            "seed_bootstrap_95": [
+              0.0,
+              0.0
+            ],
+            "per_seed": [
+              {
+                "seed": 11001,
+                "mean": 0.0
+              },
+              {
+                "seed": 11002,
+                "mean": 0.0
+              }
+            ]
+          },
+          "return_difference": {
+            "mean": 0.004644640724454696,
+            "seed_bootstrap_95": [
+              -0.4998810318064866,
+              0.509170313255396
+            ],
+            "per_seed": [
+              {
+                "seed": 11001,
+                "mean": -0.4998810318064866
+              },
+              {
+                "seed": 11002,
+                "mean": 0.509170313255396
+              }
+            ]
+          }
+        },
+        "interpretation": "Matched trials against the same opponent, not direct RL-vs-BT games."
+      },
+      "bt_baseline": {
+        "episodes": 2,
+        "wins": 2,
+        "win_rate": 1.0,
+        "win_rate_wilson_95": [
+          0.34238022750666547,
+          1.0
+        ],
+        "draws": 0,
+        "mean_return": 10.661011708484708,
+        "mean_switches": 4.5,
+        "mean_overrides": 10.5,
+        "mean_recoveries": 1.5,
+        "independent_seeds": 2,
+        "win_rate_seed_bootstrap_95": [
+          1.0,
+          1.0
+        ]
+      },
+      "learned": {
+        "episodes": 2,
+        "wins": 2,
+        "win_rate": 1.0,
+        "win_rate_wilson_95": [
+          0.34238022750666547,
+          1.0
+        ],
+        "draws": 0,
+        "mean_return": 10.665656349209163,
+        "mean_switches": 2.0,
+        "mean_overrides": 10.0,
+        "mean_recoveries": 1.0,
+        "independent_seeds": 2,
+        "win_rate_seed_bootstrap_95": [
+          1.0,
+          1.0
+        ]
+      }
+    },
+    "1": {
+      "paired": {
+        "pairs": 2,
+        "independent_seeds": 2,
+        "learned_wins_bt_does_not": 0,
+        "bt_wins_learned_does_not": 0,
+        "same_win_indicator": 2,
+        "learned_minus_bt": {
+          "win_difference": {
+            "mean": 0.0,
+            "seed_bootstrap_95": [
+              0.0,
+              0.0
+            ],
+            "per_seed": [
+              {
+                "seed": 11001,
+                "mean": 0.0
+              },
+              {
+                "seed": 11002,
+                "mean": 0.0
+              }
+            ]
+          },
+          "match_points_difference": {
+            "mean": 0.0,
+            "seed_bootstrap_95": [
+              0.0,
+              0.0
+            ],
+            "per_seed": [
+              {
+                "seed": 11001,
+                "mean": 0.0
+              },
+              {
+                "seed": 11002,
+                "mean": 0.0
+              }
+            ]
+          },
+          "return_difference": {
+            "mean": 0.17243528298156718,
+            "seed_bootstrap_95": [
+              -0.1666492458720743,
+              0.5115198118352087
+            ],
+            "per_seed": [
+              {
+                "seed": 11001,
+                "mean": 0.5115198118352087
+              },
+              {
+                "seed": 11002,
+                "mean": -0.1666492458720743
+              }
+            ]
+          }
+        },
+        "interpretation": "Matched trials against the same opponent, not direct RL-vs-BT games."
+      },
+      "bt_baseline": {
+        "episodes": 2,
+        "wins": 2,
+        "win_rate": 1.0,
+        "win_rate_wilson_95": [
+          0.34238022750666547,
+          1.0
+        ],
+        "draws": 0,
+        "mean_return": 11.202857569396945,
+        "mean_switches": 3.5,
+        "mean_overrides": 10.0,
+        "mean_recoveries": 1.0,
+        "independent_seeds": 2,
+        "win_rate_seed_bootstrap_95": [
+          1.0,
+          1.0
+        ]
+      },
+      "learned": {
+        "episodes": 2,
+        "wins": 2,
+        "win_rate": 1.0,
+        "win_rate_wilson_95": [
+          0.34238022750666547,
+          1.0
+        ],
+        "draws": 0,
+        "mean_return": 11.375292852378513,
+        "mean_switches": 2.0,
+        "mean_overrides": 10.0,
+        "mean_recoveries": 1.0,
+        "independent_seeds": 2,
+        "win_rate_seed_bootstrap_95": [
+          1.0,
+          1.0
+        ]
+      }
+    }
+  },
+  "episodes": [
+    {
+      "policy": "bt_baseline",
+      "seed": 11001,
+      "held_out_style": false,
+      "scenario_id": "alpharm_task_prototype_v1",
+      "seed_note": "see run seed and reset order",
+      "team": 0,
+      "opponent_style": "capture",
+      "return": 10.972485067299015,
+      "decisions": 55,
+      "winner": 1,
+      "outcome": 1,
+      "score": [
+        90.10014343261719,
+        25.20003318786621
+      ],
+      "win": true,
+      "draw": false,
+      "switches": 4,
+      "overrides": 10,
+      "recoveries": 1,
+      "randomization": {
+        "position_std_m": 0.07361574911533941,
+        "miss_probability": 0.05396017559821312,
+        "obs_delay_decisions": 0,
+        "command_delay_ticks": 2,
+        "speed_scale": 0.8192644084157519
+      }
+    },
+    {
+      "policy": "learned",
+      "seed": 11001,
+      "held_out_style": false,
+      "scenario_id": "alpharm_task_prototype_v1",
+      "seed_note": "see run seed and reset order",
+      "team": 0,
+      "opponent_style": "capture",
+      "return": 10.472604035492528,
+      "decisions": 62,
+      "winner": 1,
+      "outcome": 1,
+      "score": [
+        95.99981689453125,
+        41.49992752075195
+      ],
+      "win": true,
+      "draw": false,
+      "switches": 2,
+      "overrides": 10,
+      "recoveries": 1,
+      "randomization": {
+        "position_std_m": 0.07361574911533941,
+        "miss_probability": 0.05396017559821312,
+        "obs_delay_decisions": 0,
+        "command_delay_ticks": 2,
+        "speed_scale": 0.8192644084157519
+      }
+    },
+    {
+      "policy": "bt_baseline",
+      "seed": 11001,
+      "held_out_style": false,
+      "scenario_id": "alpharm_task_prototype_v1",
+      "seed_note": "see run seed and reset order",
+      "team": 1,
+      "opponent_style": "capture",
+      "return": 10.916689241642683,
+      "decisions": 58,
+      "winner": 2,
+      "outcome": 2,
+      "score": [
+        26.500038146972656,
+        90.09979248046875
+      ],
+      "win": true,
+      "draw": false,
+      "switches": 4,
+      "overrides": 10,
+      "recoveries": 1,
+      "randomization": {
+        "position_std_m": 0.07361574911533941,
+        "miss_probability": 0.05396017559821312,
+        "obs_delay_decisions": 0,
+        "command_delay_ticks": 2,
+        "speed_scale": 0.8192644084157519
+      }
+    },
+    {
+      "policy": "learned",
+      "seed": 11001,
+      "held_out_style": false,
+      "scenario_id": "alpharm_task_prototype_v1",
+      "seed_note": "see run seed and reset order",
+      "team": 1,
+      "opponent_style": "capture",
+      "return": 11.428209053477891,
+      "decisions": 64,
+      "winner": 2,
+      "outcome": 2,
+      "score": [
+        24.90003204345703,
+        99.5997543334961
+      ],
+      "win": true,
+      "draw": false,
+      "switches": 2,
+      "overrides": 10,
+      "recoveries": 1,
+      "randomization": {
+        "position_std_m": 0.07361574911533941,
+        "miss_probability": 0.05396017559821312,
+        "obs_delay_decisions": 0,
+        "command_delay_ticks": 2,
+        "speed_scale": 0.8192644084157519
+      }
+    },
+    {
+      "policy": "bt_baseline",
+      "seed": 11002,
+      "held_out_style": false,
+      "scenario_id": "alpharm_task_prototype_v1",
+      "seed_note": "see run seed and reset order",
+      "team": 0,
+      "opponent_style": "capture",
+      "return": 10.349538349670402,
+      "decisions": 59,
+      "winner": 1,
+      "outcome": 1,
+      "score": [
+        90.00007629394531,
+        37.39999771118164
+      ],
+      "win": true,
+      "draw": false,
+      "switches": 5,
+      "overrides": 11,
+      "recoveries": 2,
+      "randomization": {
+        "position_std_m": 0.044430595873899394,
+        "miss_probability": 0.01647402009757864,
+        "obs_delay_decisions": 1,
+        "command_delay_ticks": 1,
+        "speed_scale": 0.8242166309168634
+      }
+    },
+    {
+      "policy": "learned",
+      "seed": 11002,
+      "held_out_style": false,
+      "scenario_id": "alpharm_task_prototype_v1",
+      "seed_note": "see run seed and reset order",
+      "team": 0,
+      "opponent_style": "capture",
+      "return": 10.858708662925798,
+      "decisions": 63,
+      "winner": 1,
+      "outcome": 1,
+      "score": [
+        90.09969329833984,
+        26.300037384033203
+      ],
+      "win": true,
+      "draw": false,
+      "switches": 2,
+      "overrides": 10,
+      "recoveries": 1,
+      "randomization": {
+        "position_std_m": 0.044430595873899394,
+        "miss_probability": 0.01647402009757864,
+        "obs_delay_decisions": 1,
+        "command_delay_ticks": 1,
+        "speed_scale": 0.8242166309168634
+      }
+    },
+    {
+      "policy": "bt_baseline",
+      "seed": 11002,
+      "held_out_style": false,
+      "scenario_id": "alpharm_task_prototype_v1",
+      "seed_note": "see run seed and reset order",
+      "team": 1,
+      "opponent_style": "capture",
+      "return": 11.489025897151208,
+      "decisions": 46,
+      "winner": 2,
+      "outcome": 2,
+      "score": [
+        16.600000381469727,
+        90.199951171875
+      ],
+      "win": true,
+      "draw": false,
+      "switches": 3,
+      "overrides": 10,
+      "recoveries": 1,
+      "randomization": {
+        "position_std_m": 0.044430595873899394,
+        "miss_probability": 0.01647402009757864,
+        "obs_delay_decisions": 1,
+        "command_delay_ticks": 1,
+        "speed_scale": 0.8242166309168634
+      }
+    },
+    {
+      "policy": "learned",
+      "seed": 11002,
+      "held_out_style": false,
+      "scenario_id": "alpharm_task_prototype_v1",
+      "seed_note": "see run seed and reset order",
+      "team": 1,
+      "opponent_style": "capture",
+      "return": 11.322376651279134,
+      "decisions": 54,
+      "winner": 2,
+      "outcome": 2,
+      "score": [
+        19.0,
+        90.1998291015625
+      ],
+      "win": true,
+      "draw": false,
+      "switches": 2,
+      "overrides": 10,
+      "recoveries": 1,
+      "randomization": {
+        "position_std_m": 0.044430595873899394,
+        "miss_probability": 0.01647402009757864,
+        "obs_delay_decisions": 1,
+        "command_delay_ticks": 1,
+        "speed_scale": 0.8242166309168634
+      }
+    }
+  ],
+  "assessment": "prototype_checkpoint_measurement_only; training convergence not established",
+  "statistics": {
+    "primary_comparison": "paired learned-minus-BT mean by independent seed",
+    "confidence_interval": "percentile bootstrap of whole seed blocks, 10000 resamples",
+    "wilson_interval": "descriptive unclustered interval; use seed bootstrap for comparisons",
+    "seed_count_warning": "Fewer than 8 independent seeds gives a very unstable interval.",
+    "checkpoint_selection": "Repeated checkpoint comparisons belong to validation; test labels do not enforce seed isolation."
+  },
+  "limits": [
+    "Simplified alphaRM task proxy, not formal RMUL/RMUC win rates.",
+    "Fixed proxy navigation and autoaim; no ROS/MPPI or sentry stance validation.",
+    "Opponent styles share the same environment and may not represent real teams.",
+    "A completed training budget does not establish policy convergence."
+  ]
+}

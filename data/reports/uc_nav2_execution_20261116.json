@@ -1,0 +1,177 @@
+{
+  "artifact_type": "actual_UC_navigation_execution_not_RL_training",
+  "runs": [
+    {
+      "run": "runs/uc_rmuc_driveable_nav2_forward_20261116",
+      "verification": "runs/uc_rmuc_driveable_nav2_forward_20261116/verification.json",
+      "source_snapshot_hashes_verified": 12,
+      "scene": "rmuc",
+      "field_source": {
+        "prepared_field": "/opt/mid360_mujoco/generated/rmuc2027-v5",
+        "original_source": "/opt/pb2025_nav_ws/src/pb2025_light_sim/meshes/rmuc_2027_driveable.stl",
+        "source_sha256": "97faa279776cc7b00a635dde51b1bc3dcf8ea91cb949fc73e88e28ea7b94905f",
+        "translation_already_applied": [
+          -0.14910008013248444,
+          -0.06378698348999023,
+          -0.019413471221923828
+        ],
+        "triangles": 385026,
+        "collision_pieces": 24325,
+        "source_manifest_sha256": "29b0741c979e4e9e347838a45eead1f577935d3f1260568e2a6393cec591d49b",
+        "geometry_variant": "previously_flattened_driveable_derivative",
+        "unmodified_original_rmuc_STL_validated": false,
+        "RFID_regions_registered": false
+      },
+      "goal_xy_m": [
+        1.2,
+        0.0
+      ],
+      "actual_action_status": "succeeded",
+      "success_for_reported_scope": true,
+      "final_estimated_goal_error_m": 0.1482344730739204,
+      "MPPI_command_samples": 2525,
+      "simulation_s": 23.604,
+      "wall_s": 132.02460449910723,
+      "simulation_to_wall_ratio": 0.17878485672842606,
+      "terminal_sim_time_s": 23.2,
+      "post_terminal_simulation_s": 0.4039999999999999,
+      "post_terminal_wait_clock": "runner uses wall time, distinct from simulation time",
+      "safety_stop_latched": false,
+      "GT_used_for_navigation": false,
+      "RL_training_validated": false,
+      "unknown_support_enforced_in_costmap": false,
+      "plot": "runs/uc_rmuc_driveable_nav2_forward_20261116/trajectory.png"
+    },
+    {
+      "run": "runs/uc_rmuc_original_nav2_forward_20261116",
+      "verification": "runs/uc_rmuc_original_nav2_forward_20261116/verification.json",
+      "source_snapshot_hashes_verified": 13,
+      "scene": "rmuc",
+      "field_source": {
+        "prepared_field": "/tmp/rl_bt_nav_probe/fields/rmuc2027_original",
+        "original_source": "/opt/pb2025_sim_nuc/src/pb2025_light_sim/meshes/rmuc_2027.stl",
+        "source_sha256": "2835c0e755c255f757d810d260283c623fbd4a49a8fd986487c70ad2a89e9d10",
+        "prepared_mesh_sha256": "93ff0118af176f388c171b239acfdcac72c17cbe0b523350d5d916d3236fe10b",
+        "translation_already_applied": [
+          -0.14910008013248444,
+          -0.06378698348999023,
+          -0.019413471221923828
+        ],
+        "triangles": 379082,
+        "collision_pieces": 20649,
+        "source_manifest_sha256": "1245a540fa245ac0de531d1772b7035538402a02f18ebf39900fefb100ea8c9f",
+        "geometry_variant": "unmodified_rmuc_2027_source_with_approximate_contact_hulls",
+        "contact_model_is_approximation": true,
+        "RFID_regions_registered": false,
+        "official_referee_coordinate_registration_verified": false
+      },
+      "goal_xy_m": [
+        1.2,
+        0.0
+      ],
+      "actual_action_status": "succeeded",
+      "success_for_reported_scope": true,
+      "final_estimated_goal_error_m": 0.13330381472416017,
+      "MPPI_command_samples": 335,
+      "simulation_s": 7.804,
+      "wall_s": 20.45835378114134,
+      "simulation_to_wall_ratio": 0.38145786721088887,
+      "terminal_sim_time_s": 7.4,
+      "post_terminal_simulation_s": 0.4039999999999999,
+      "post_terminal_wait_clock": "runner uses wall time, distinct from simulation time",
+      "safety_stop_latched": false,
+      "GT_used_for_navigation": false,
+      "RL_training_validated": false,
+      "unknown_support_enforced_in_costmap": false,
+      "plot": "runs/uc_rmuc_original_nav2_forward_20261116/trajectory.png"
+    },
+    {
+      "run": "runs/uc_rmuc_original_nav2_worker_forward_20261116",
+      "verification": "runs/uc_rmuc_original_nav2_worker_forward_20261116/verification.json",
+      "source_snapshot_hashes_verified": 14,
+      "scene": "rmuc",
+      "field_source": {
+        "prepared_field": "/tmp/rl_bt_nav_probe/fields/rmuc2027_original",
+        "original_source": "/opt/pb2025_sim_nuc/src/pb2025_light_sim/meshes/rmuc_2027.stl",
+        "source_sha256": "2835c0e755c255f757d810d260283c623fbd4a49a8fd986487c70ad2a89e9d10",
+        "prepared_mesh_sha256": "93ff0118af176f388c171b239acfdcac72c17cbe0b523350d5d916d3236fe10b",
+        "translation_already_applied": [
+          -0.14910008013248444,
+          -0.06378698348999023,
+          -0.019413471221923828
+        ],
+        "triangles": 379082,
+        "collision_pieces": 20649,
+        "source_manifest_sha256": "1245a540fa245ac0de531d1772b7035538402a02f18ebf39900fefb100ea8c9f",
+        "geometry_variant": "unmodified_rmuc_2027_source_with_approximate_contact_hulls",
+        "contact_model_is_approximation": true,
+        "RFID_regions_registered": false,
+        "official_referee_coordinate_registration_verified": false
+      },
+      "goal_xy_m": [
+        1.2,
+        0.0
+      ],
+      "actual_action_status": "succeeded",
+      "success_for_reported_scope": true,
+      "final_estimated_goal_error_m": 0.1334357769552066,
+      "MPPI_command_samples": 153,
+      "simulation_s": 10.131,
+      "wall_s": 13.129402896855026,
+      "simulation_to_wall_ratio": 0.7716268652572728,
+      "terminal_sim_time_s": 9.26,
+      "post_terminal_simulation_s": 0.8710000000000004,
+      "post_terminal_wait_clock": "runner uses wall time, distinct from simulation time",
+      "safety_stop_latched": false,
+      "GT_used_for_navigation": false,
+      "RL_training_validated": false,
+      "unknown_support_enforced_in_costmap": false,
+      "plot": "runs/uc_rmuc_original_nav2_worker_forward_20261116/trajectory.png"
+    },
+    {
+      "run": "runs/uc_rmuc_original_nav2_worker_cancel_20261116",
+      "verification": "runs/uc_rmuc_original_nav2_worker_cancel_20261116/verification.json",
+      "source_snapshot_hashes_verified": 14,
+      "scene": "rmuc",
+      "field_source": {
+        "prepared_field": "/tmp/rl_bt_nav_probe/fields/rmuc2027_original",
+        "original_source": "/opt/pb2025_sim_nuc/src/pb2025_light_sim/meshes/rmuc_2027.stl",
+        "source_sha256": "2835c0e755c255f757d810d260283c623fbd4a49a8fd986487c70ad2a89e9d10",
+        "prepared_mesh_sha256": "93ff0118af176f388c171b239acfdcac72c17cbe0b523350d5d916d3236fe10b",
+        "translation_already_applied": [
+          -0.14910008013248444,
+          -0.06378698348999023,
+          -0.019413471221923828
+        ],
+        "triangles": 379082,
+        "collision_pieces": 20649,
+        "source_manifest_sha256": "1245a540fa245ac0de531d1772b7035538402a02f18ebf39900fefb100ea8c9f",
+        "geometry_variant": "unmodified_rmuc_2027_source_with_approximate_contact_hulls",
+        "contact_model_is_approximation": true,
+        "RFID_regions_registered": false,
+        "official_referee_coordinate_registration_verified": false
+      },
+      "goal_xy_m": [
+        2.0,
+        0.0
+      ],
+      "actual_action_status": "canceled",
+      "success_for_reported_scope": true,
+      "final_estimated_goal_error_m": 1.6041615883901195,
+      "MPPI_command_samples": 53,
+      "simulation_s": 5.729,
+      "wall_s": 7.652865038951859,
+      "simulation_to_wall_ratio": 0.7486085238456848,
+      "terminal_sim_time_s": 4.81,
+      "post_terminal_simulation_s": 0.9190000000000005,
+      "post_terminal_wait_clock": "runner uses wall time, distinct from simulation time",
+      "safety_stop_latched": true,
+      "GT_used_for_navigation": false,
+      "RL_training_validated": false,
+      "unknown_support_enforced_in_costmap": false,
+      "plot": "runs/uc_rmuc_original_nav2_worker_cancel_20261116/trajectory.png"
+    }
+  ],
+  "formal_match_or_full_field_reliability_validated": false,
+  "original_robot_or_shared_system_modified": false
+}
